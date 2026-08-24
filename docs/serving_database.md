@@ -70,8 +70,8 @@ uv run --extra geo python scripts/load_serving_database.py
 uv run --extra geo python scripts/validate_serving_database.py
 ```
 
-The Compose service uses the stable PostGIS image configured in
-`compose.yaml`: `postgis/postgis:18-3.6`.
+The Compose service builds a local image from official `postgres:18` for the
+host architecture and installs `postgresql-18-postgis-3` version `3.6.4`.
 
 ## Reset Local Database
 

@@ -569,6 +569,37 @@ def output_record(
 
 
 def write_manifest(root: Path, outputs: list[dict[str, Any]], geometry: dict[str, Any]) -> None:
+    path = root / MANIFEST_PATH
+    generated_at = datetime.now(UTC).isoformat(timespec="seconds")
+    if path.exists():
+        existing = yaml.safe_load(path.read_text(encoding="utf-8"))
+        existing_stable = {
+            key: existing.get(key)
+            for key in [
+                "canonical_version",
+                "release_id",
+                "method_version",
+                "geography_version",
+                "source_release_status",
+                "source_quality_status",
+                "source_release_gate",
+                "outputs",
+                "geometry_validation",
+            ]
+        }
+        new_stable = {
+            "canonical_version": CANONICAL_VERSION,
+            "release_id": RELEASE_ID,
+            "method_version": METHOD_VERSION,
+            "geography_version": GEOGRAPHY_VERSION,
+            "source_release_status": "VALIDATING",
+            "source_quality_status": "VALIDATED",
+            "source_release_gate": "PASS",
+            "outputs": outputs,
+            "geometry_validation": geometry,
+        }
+        if existing_stable == new_stable:
+            generated_at = existing["generated_at"]
     manifest = {
         "canonical_version": CANONICAL_VERSION,
         "release_id": RELEASE_ID,
@@ -577,11 +608,10 @@ def write_manifest(root: Path, outputs: list[dict[str, Any]], geometry: dict[str
         "source_release_status": "VALIDATING",
         "source_quality_status": "VALIDATED",
         "source_release_gate": "PASS",
-        "generated_at": datetime.now(UTC).isoformat(timespec="seconds"),
+        "generated_at": generated_at,
         "outputs": outputs,
         "geometry_validation": geometry,
     }
-    path = root / MANIFEST_PATH
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8") as handle:
         yaml.safe_dump(manifest, handle, sort_keys=False, allow_unicode=False)

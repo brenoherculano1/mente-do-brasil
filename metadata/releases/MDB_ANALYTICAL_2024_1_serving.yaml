@@ -1,0 +1,55 @@
+serving_database_status: VALIDATED_LOCAL
+release_id: MDB_ANALYTICAL_2024_1
+canonical_version: MDB_CANONICAL_1.0
+method_version: MDB_METHOD_1.0
+geography_version: BR_HEALTH_REGIONS_END2024_V1
+source_release_status: VALIDATING
+source_quality_status: VALIDATED
+source_release_gate: PASS
+public_release_status: NOT_RELEASED
+validated_at: '2026-08-24T22:55:00+00:00'
+database:
+  engine: PostgreSQL
+  engine_version: '18.6'
+  postgis_version: '3.6.4'
+  docker_engine_version: 29.7.2
+  docker_compose_version: v5.4.0
+  host_architecture: arm64
+  bind_host: 127.0.0.1
+image:
+  local_tag: mente-do-brasil-postgis:18-3.6.4
+  local_digest: sha256:efbe9919290ea632ce1acb3145d984935d73c1976e882b14b806a6ee3e35dd4e
+  compose_image_manifest: sha256:5d375c314fd95fe6262c27ead543e54c7c05d4714503bce4885edead31a4afd7
+  base_image: postgres:18
+  base_digest: sha256:06cad38a5d9f5d24b4d83d86def30795d5e4b757fedbf5281172b576dedcd941
+  official_postgis_18_3_6_digest: sha256:8d67cc8fe5f45808d54fe95cc210b05ce6b3ea3682e9a97c36362f3e1b8ff939
+  official_postgis_18_3_6_arm64_available: false
+counts:
+  releases: 1
+  health_regions: 439
+  municipalities: 5570
+  metrics: 439
+  serving_health_region_profile: 439
+  serving_health_region_map: 439
+  serving_health_region_lookup: 439
+geometry:
+  non_null: 439
+  srid_4674: 439
+  valid: 439
+  type_smoke_test: MULTIPOLYGON
+scientific_locks:
+  global_moran_i: 0.525494388844
+  pseudo_p: 0.0001
+  lisa_significant: 135
+  hh: 60
+  ll: 66
+  hl: 4
+  lh: 5
+  invalid_old_moran_i: 0.218740812099
+flags:
+  SMALL_SUICIDE_COUNT: 7
+  ZERO_REGISTERED_BEDS: 275
+guardrails:
+  idempotent_reload: PASS / NO CHANGE
+  immutability_guard: PASS
+  constraint_tests: PASS

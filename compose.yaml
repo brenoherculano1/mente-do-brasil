@@ -1,15 +1,18 @@
 services:
   postgres:
-    image: postgis/postgis:18-3.6
+    build:
+      context: ./db/docker
+      dockerfile: Dockerfile
+    image: mente-do-brasil-postgis:18-3.6.4
     container_name: mente-do-brasil-postgres
     environment:
       POSTGRES_DB: ${MDB_DB_NAME:-mente_do_brasil}
       POSTGRES_USER: ${MDB_DB_USER:-mente_do_brasil}
-      POSTGRES_PASSWORD: ${MDB_DB_PASSWORD:-CHANGE_ME}
+      POSTGRES_PASSWORD: ${MDB_DB_PASSWORD:?Set MDB_DB_PASSWORD in local .env}
     ports:
-      - "${MDB_DB_PORT:-5432}:5432"
+      - "127.0.0.1:${MDB_DB_PORT:-5432}:5432"
     volumes:
-      - mente_do_brasil_pgdata:/var/lib/postgresql/data
+      - mente_do_brasil_pgdata:/var/lib/postgresql
     healthcheck:
       test:
         [

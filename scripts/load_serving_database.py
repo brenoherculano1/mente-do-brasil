@@ -63,12 +63,27 @@ def sha256_file(path: Path) -> str:
 
 
 def dsn() -> str:
-    host = os.environ.get("MDB_DB_HOST", "localhost")
+    load_local_env()
+    host = os.environ.get("MDB_DB_HOST", "127.0.0.1")
     port = os.environ.get("MDB_DB_PORT", "5432")
     dbname = os.environ.get("MDB_DB_NAME", "mente_do_brasil")
     user = os.environ.get("MDB_DB_USER", "mente_do_brasil")
-    password = os.environ.get("MDB_DB_PASSWORD", "CHANGE_ME")
+    password = os.environ.get("MDB_DB_PASSWORD")
+    if not password:
+        raise RuntimeError("MDB_DB_PASSWORD must be set in the local environment or .env file.")
     return f"host={host} port={port} dbname={dbname} user={user} password={password}"
+
+
+def load_local_env() -> None:
+    env_path = repo_root() / ".env"
+    if not env_path.exists():
+        return
+    for line in env_path.read_text(encoding="utf-8").splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#") or "=" not in stripped:
+            continue
+        key, value = stripped.split("=", 1)
+        os.environ.setdefault(key, value)
 
 
 def connect():
@@ -404,6 +419,7 @@ def insert_metrics(connection, health_regions: pd.DataFrame) -> None:
     ]
     for row in health_regions.itertuples(index=False):
         values = {field: getattr(row, field) for field in fields}
+        values["data_quality_flags"] = list(values["data_quality_flags"])
         values.update(
             {
                 "release_id": RELEASE_ID,
@@ -584,16 +600,26 @@ def assert_database_matches_canonical(
 
 
 def validate_database(connection, release: dict[str, Any]) -> dict[str, Any]:
+    geography_version = release["geography_version"]
     checks = {
         "releases": scalar(
             connection,
             "SELECT count(*) FROM meta.releases WHERE release_id = %s",
             (RELEASE_ID,),
         ),
-        "health_regions": scalar(connection, "SELECT count(*) FROM geo.health_regions"),
+        "health_regions": scalar(
+            connection,
+            "SELECT count(*) FROM geo.health_regions WHERE geography_version = %s",
+            (geography_version,),
+        ),
         "municipalities": scalar(
             connection,
-            "SELECT count(*) FROM geo.municipality_health_region_crosswalk",
+            """
+            SELECT count(*)
+            FROM geo.municipality_health_region_crosswalk
+            WHERE geography_version = %s
+            """,
+            (geography_version,),
         ),
         "metrics": scalar(
             connection,
@@ -617,11 +643,21 @@ def validate_database(connection, release: dict[str, Any]) -> dict[str, Any]:
         ),
         "srid_4674": scalar(
             connection,
-            "SELECT count(*) FROM geo.health_regions WHERE ST_SRID(geom) = 4674",
+            """
+            SELECT count(*)
+            FROM geo.health_regions
+            WHERE geography_version = %s AND ST_SRID(geom) = 4674
+            """,
+            (geography_version,),
         ),
         "valid_geom": scalar(
             connection,
-            "SELECT count(*) FROM geo.health_regions WHERE ST_IsValid(geom)",
+            """
+            SELECT count(*)
+            FROM geo.health_regions
+            WHERE geography_version = %s AND ST_IsValid(geom)
+            """,
+            (geography_version,),
         ),
         "lisa_significant": scalar(
             connection,
@@ -637,18 +673,18 @@ def validate_database(connection, release: dict[str, Any]) -> dict[str, Any]:
             """
             SELECT count(*)
             FROM analytics.health_region_metrics
-            WHERE %s = ANY(data_quality_flags)
+            WHERE release_id = %s AND %s = ANY(data_quality_flags)
             """,
-            ("SMALL_SUICIDE_COUNT",),
+            (RELEASE_ID, "SMALL_SUICIDE_COUNT"),
         ),
         "zero_beds": scalar(
             connection,
             """
             SELECT count(*)
             FROM analytics.health_region_metrics
-            WHERE %s = ANY(data_quality_flags)
+            WHERE release_id = %s AND %s = ANY(data_quality_flags)
             """,
-            ("ZERO_REGISTERED_BEDS",),
+            (RELEASE_ID, "ZERO_REGISTERED_BEDS"),
         ),
     }
     expected = {

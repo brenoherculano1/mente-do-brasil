@@ -69,21 +69,31 @@ class ServingDatabaseStaticTests(unittest.TestCase):
 
     def test_compose_uses_non_beta_postgis(self):
         compose = (REPO_ROOT / "compose.yaml").read_text()
-        self.assertIn("postgis/postgis:18-3.6", compose)
+        dockerfile = (REPO_ROOT / "db/docker/Dockerfile").read_text()
+        self.assertIn("mente-do-brasil-postgis:18-3.6.4", compose)
+        self.assertIn("FROM postgres:18", dockerfile)
+        self.assertIn("postgresql-18-postgis-3=3.6.4", dockerfile)
         self.assertNotRegex(compose, r"19|3\.7|beta|alpha")
+        self.assertIn("127.0.0.1:${MDB_DB_PORT:-5432}:5432", compose)
+        self.assertNotIn("0.0.0.0", compose)
+        self.assertIn("${MDB_DB_PASSWORD:?Set MDB_DB_PASSWORD in local .env}", compose)
+        self.assertNotIn("POSTGRES_PASSWORD: ${MDB_DB_PASSWORD:-CHANGE_ME}", compose)
         self.assertIn("healthcheck:", compose)
         self.assertIn("mente_do_brasil_pgdata", compose)
+        self.assertIn(":/var/lib/postgresql", compose)
+        self.assertNotIn(":/var/lib/postgresql/data", compose)
 
     def test_env_example_has_local_database_settings_without_real_secret(self):
         env = (REPO_ROOT / ".env.example").read_text()
         for key in [
-            "MDB_DB_HOST=localhost",
+            "MDB_DB_HOST=127.0.0.1",
             "MDB_DB_PORT=5432",
             "MDB_DB_NAME=mente_do_brasil",
             "MDB_DB_USER=mente_do_brasil",
-            "MDB_DB_PASSWORD=CHANGE_ME",
+            "MDB_DB_PASSWORD=SET_A_LOCAL_PASSWORD",
         ]:
             self.assertIn(key, env)
+        self.assertNotIn("MDB_DB_PASSWORD=CHANGE_ME", env)
 
     def test_loader_has_canonical_hash_and_release_gate_checks(self):
         loader = (REPO_ROOT / "scripts/load_serving_database.py").read_text()
@@ -96,8 +106,13 @@ class ServingDatabaseStaticTests(unittest.TestCase):
             "sha256_file",
             "health_regions.parquet",
             "municipality_health_region_crosswalk.parquet",
+            "release[\"geography_version\"]",
+            "WHERE geography_version = %s",
+            "load_local_env",
+            "MDB_DB_PASSWORD must be set",
         ]:
             self.assertIn(fragment, loader)
+        self.assertNotIn('"CHANGE_ME"', loader)
 
     def test_loader_has_immutability_guard(self):
         loader = (REPO_ROOT / "scripts/load_serving_database.py").read_text()
