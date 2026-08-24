@@ -2,7 +2,11 @@
 
 Mente do Brasil is a Brazilian public data and territorial intelligence project for mental health.
 
-The repository is at foundation stage. It currently defines the technical structure, metadata contracts, release/version conventions, and structural data-quality rules needed to receive the validated scientific data. It does not yet contain a public website, dashboard, authentication, API, cloud database, or raw administrative datasets.
+The repository is at local serving-database preparation stage. It currently
+defines the technical structure, metadata contracts, release/version
+conventions, canonical analytical layer, and PostgreSQL/PostGIS serving schema
+needed to support a future read-only API. It does not yet contain a public
+website, dashboard, authentication, API, cloud database, or deployed service.
 
 ## Scientific Scope
 
@@ -24,6 +28,9 @@ data/
   staging/      derived intermediate files
   canonical/    cleaned canonical analytical tables
   releases/     immutable public/final release artifacts
+
+db/
+  migrations/   SQL migrations for the local PostgreSQL/PostGIS serving database
 
 pipeline/
   geography/    geographic crosswalk and geometry preparation
@@ -47,6 +54,18 @@ tests/
 web/
   reserved only; no frontend exists yet
 ```
+
+Current product data flow:
+
+```text
+RAW
+  -> CANONICAL
+  -> POSTGRESQL/POSTGIS SERVING
+  -> API [future]
+  -> WEB [future]
+```
+
+The API and frontend have not been built.
 
 ## Data Philosophy
 
@@ -121,7 +140,6 @@ This repository does not yet include:
 - authentication;
 - cloud database;
 - deployment;
-- generated release datasets;
 - recalculated spatial analyses.
 
 Placeholders are explicit where source URLs, file hashes, extraction timestamps, or final generated artifacts are not yet available.
