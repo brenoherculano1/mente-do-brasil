@@ -1,0 +1,59 @@
+manifest_id: MDB_SOURCE_MANIFEST_INITIAL
+status: DRAFT
+created_at: "2026-08-24"
+rule: Do not invent URLs, hashes, or extracted_at values for source files not yet obtained.
+sources:
+  - source_id: SIM_SUICIDE_2022_2024
+    organization: DATASUS
+    system: SIM
+    expected_use: suicide_asmr
+    raw_path: PLACEHOLDER_RAW_PATH
+    source_url: PLACEHOLDER_SOURCE_URL
+    extracted_at: PLACEHOLDER_EXTRACTED_AT
+    file_hash_sha256: PLACEHOLDER_SHA256
+    license_or_access: public administrative data
+  - source_id: SIH_PSYCHIATRIC_ADMISSIONS_2022_2024
+    organization: DATASUS
+    system: SIH/SUS
+    expected_use: psychiatric_admission_rate
+    raw_path: PLACEHOLDER_RAW_PATH
+    source_url: PLACEHOLDER_SOURCE_URL
+    extracted_at: PLACEHOLDER_EXTRACTED_AT
+    file_hash_sha256: PLACEHOLDER_SHA256
+    license_or_access: public administrative data
+  - source_id: CNES_ST_2024_12
+    organization: DATASUS
+    system: CNES ST
+    expected_use: caps_rate
+    raw_path: PLACEHOLDER_RAW_PATH
+    source_url: PLACEHOLDER_SOURCE_URL
+    extracted_at: PLACEHOLDER_EXTRACTED_AT
+    file_hash_sha256: PLACEHOLDER_SHA256
+    license_or_access: public administrative data
+  - source_id: CNES_LT_2024_12
+    organization: DATASUS
+    system: CNES LT
+    expected_use: mental_health_beds_sus_rate
+    raw_path: PLACEHOLDER_RAW_PATH
+    source_url: PLACEHOLDER_SOURCE_URL
+    extracted_at: PLACEHOLDER_EXTRACTED_AT
+    file_hash_sha256: PLACEHOLDER_SHA256
+    license_or_access: public administrative data
+  - source_id: CNES_PF_2024_12
+    organization: DATASUS
+    system: CNES PF
+    expected_use: psychiatrist_fte_rate
+    raw_path: PLACEHOLDER_RAW_PATH
+    source_url: PLACEHOLDER_SOURCE_URL
+    extracted_at: PLACEHOLDER_EXTRACTED_AT
+    file_hash_sha256: PLACEHOLDER_SHA256
+    license_or_access: public administrative data
+  - source_id: POPULATION_2024
+    organization: IBGE/DATASUS
+    system: population denominator
+    expected_use: rates and denominators
+    raw_path: PLACEHOLDER_RAW_PATH
+    source_url: PLACEHOLDER_SOURCE_URL
+    extracted_at: PLACEHOLDER_EXTRACTED_AT
+    file_hash_sha256: PLACEHOLDER_SHA256
+    license_or_access: public administrative data

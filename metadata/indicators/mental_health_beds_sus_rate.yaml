@@ -1,0 +1,41 @@
+indicator_id: mental_health_beds_sus_rate
+indicator_name_pt: Taxa de leitos SUS de saude mental em hospitais gerais
+indicator_name_en: SUS mental-health beds rate in general hospitals
+domain: capacity
+description: SUS mental-health bed counts registered in CNES LT for December 2024.
+interpretation: Registered SUS mental-health bed capacity in general hospitals.
+what_it_does_not_measure:
+  - bed occupancy
+  - effective availability
+  - waiting time
+  - service quality
+source_organization: DATASUS
+source_system: CNES
+source_dataset: CNES LT
+source_file_pattern: PLACEHOLDER_SOURCE_FILE_PATTERN
+source_url: PLACEHOLDER_SOURCE_URL
+observation_start: null
+observation_end: null
+reference_date: "2024-12-01"
+extracted_at: PLACEHOLDER_EXTRACTED_AT
+geography_version: BR_HEALTH_REGIONS_END2024_V1
+aggregation_geography: Health Region
+numerator_definition: QT_SUS for bed records with TP_UNID = 05 and CODLEITO = 87.
+denominator_definition: 2024 population denominator.
+unit: SUS beds per 100,000 residents
+filters:
+  TP_UNID: 05
+  CODLEITO: 87
+  quantity_field: QT_SUS
+transformation: national Health Region percentile rank for composite construction
+standardization_method: not applicable
+missing_value_rule: missing values remain explicit and are not converted to zero
+small_number_rule: not applicable
+deduplication_rule: PLACEHOLDER_DEDUPLICATION_RULE
+method_version: MDB_METHOD_1.0
+code_version: PLACEHOLDER_CODE_VERSION
+release_id: MDB_ANALYTICAL_2024_1
+quality_status: DRAFT
+limitations:
+  - Registered beds are not equivalent to effective availability or care quality.
+citation: PLACEHOLDER_CITATION

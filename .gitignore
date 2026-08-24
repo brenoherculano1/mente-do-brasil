@@ -1,0 +1,49 @@
+# Operating system
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Raw and large data are tracked through manifests, not Git
+data/raw/**
+data/staging/**
+data/canonical/**
+data/releases/**
+!data/raw/.gitkeep
+!data/staging/.gitkeep
+!data/canonical/.gitkeep
+!data/releases/.gitkeep
+
+# Common large analytical artifacts
+*.parquet
+*.feather
+*.duckdb
+*.db
+*.sqlite
+*.gpkg
+*.shp
+*.shx
+*.dbf
+*.tif
+*.tiff
+*.zip
+*.7z
+*.gz
+
+# Keep source and release metadata versioned
+!metadata/**/*.yaml
+!metadata/**/*.yml
+!metadata/**/*.md

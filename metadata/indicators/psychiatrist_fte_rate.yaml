@@ -1,0 +1,42 @@
+indicator_id: psychiatrist_fte_rate
+indicator_name_pt: Taxa de FTE de psiquiatras SUS
+indicator_name_en: SUS psychiatrist FTE rate
+domain: capacity
+description: SUS psychiatrist full-time equivalent capacity calculated from CNES PF weekly hours.
+interpretation: Registered SUS psychiatrist workload capacity.
+what_it_does_not_measure:
+  - unique psychiatrist headcount
+  - actual patient access
+  - waiting time
+  - quality or continuity of care
+source_organization: DATASUS
+source_system: CNES
+source_dataset: CNES PF
+source_file_pattern: PLACEHOLDER_SOURCE_FILE_PATTERN
+source_url: PLACEHOLDER_SOURCE_URL
+observation_start: null
+observation_end: null
+reference_date: "2024-12-01"
+extracted_at: PLACEHOLDER_EXTRACTED_AT
+geography_version: BR_HEALTH_REGIONS_END2024_V1
+aggregation_geography: Health Region
+numerator_definition: Sum of valid weekly SUS psychiatrist hours divided by 40.
+denominator_definition: 2024 population denominator.
+unit: psychiatrist FTE per 100,000 residents
+filters:
+  CBO: 225133
+  PROF_SUS: 1
+  weekly_hours_fields: [HORA_AMB, HORAHOSP, HORAOUTR]
+transformation: national Health Region percentile rank for composite construction
+standardization_method: not applicable
+missing_value_rule: missing values remain explicit and are not converted to zero
+small_number_rule: not applicable
+deduplication_rule: remove exact duplicate professional-establishment-link records only; do not deduplicate professionals across multiple establishments
+method_version: MDB_METHOD_1.0
+code_version: PLACEHOLDER_CODE_VERSION
+release_id: MDB_ANALYTICAL_2024_1
+quality_status: DRAFT
+limitations:
+  - FTE depends on reported CNES working hours.
+  - PROF_SUS indicates SUS linkage but does not prove effective clinical availability.
+citation: PLACEHOLDER_CITATION

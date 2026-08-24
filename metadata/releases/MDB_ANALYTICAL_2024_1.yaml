@@ -1,0 +1,52 @@
+release_id: MDB_ANALYTICAL_2024_1
+release_status: DRAFT
+method_version: MDB_METHOD_1.0
+geography_version: BR_HEALTH_REGIONS_END2024_V1
+immutability_rule: Once status becomes RELEASED, do not overwrite this release. Corrections require a new release_id.
+primary_geography:
+  unit: Health Region
+  health_region_count: 439
+  municipality_count: 5570
+  canonical_key: health_region_code
+indicators:
+  need:
+    - suicide_asmr
+    - psychiatric_admission_rate
+  capacity:
+    - caps_rate
+    - mental_health_beds_sus_rate
+    - psychiatrist_fte_rate
+composites:
+  need_score: mean(percentile(suicide_asmr), percentile(psychiatric_admission_rate))
+  capacity_score: mean(percentile(caps_rate), percentile(mental_health_beds_sus_rate), percentile(psychiatrist_fte_rate))
+  mismatch_score: need_score - capacity_score
+interpretation_boundaries:
+  mismatch_score_does_not_mean:
+    - unmet need
+    - lack of access
+    - low quality
+    - care deficit
+    - abandoned region
+locked_spatial_results:
+  status: validated_external_result_placeholder
+  recalculated_in_this_repository_foundation: false
+  global_moran_i: 0.525494388844
+  pseudo_p: 0.0001
+  permutations: 9999
+  seed: 20260823
+  weights: queen_contiguity
+  row_standardized: true
+  islands: 0
+  lisa_fdr_significant: 135
+  hh: 60
+  ll: 66
+  hl: 4
+  lh: 5
+invalid_values:
+  old_global_moran_i: 0.218740812099
+  rule: never_use
+provenance:
+  source_manifest: metadata/sources/source_manifest_initial.yaml
+  generated_outputs_manifest: PLACEHOLDER_RELEASE_OUTPUT_MANIFEST
+quality_status: DRAFT
+created_at: "2026-08-24"

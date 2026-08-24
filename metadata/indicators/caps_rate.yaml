@@ -1,0 +1,39 @@
+indicator_id: caps_rate
+indicator_name_pt: Taxa de CAPS registrados
+indicator_name_en: Registered CAPS rate
+domain: capacity
+description: Unique CNES CAPS establishments in December 2024.
+interpretation: Registered public-sector psychosocial care establishment capacity.
+what_it_does_not_measure:
+  - effective access
+  - service quality
+  - staffing adequacy
+  - opening hours
+source_organization: DATASUS
+source_system: CNES
+source_dataset: CNES ST
+source_file_pattern: PLACEHOLDER_SOURCE_FILE_PATTERN
+source_url: PLACEHOLDER_SOURCE_URL
+observation_start: null
+observation_end: null
+reference_date: "2024-12-01"
+extracted_at: PLACEHOLDER_EXTRACTED_AT
+geography_version: BR_HEALTH_REGIONS_END2024_V1
+aggregation_geography: Health Region
+numerator_definition: Unique CNES establishments with TP_UNID = 70.
+denominator_definition: 2024 population denominator.
+unit: CAPS per 100,000 residents
+filters:
+  TP_UNID: 70
+transformation: national Health Region percentile rank for composite construction
+standardization_method: not applicable
+missing_value_rule: missing values remain explicit and are not converted to zero
+small_number_rule: not applicable
+deduplication_rule: count unique CNES establishments
+method_version: MDB_METHOD_1.0
+code_version: PLACEHOLDER_CODE_VERSION
+release_id: MDB_ANALYTICAL_2024_1
+quality_status: DRAFT
+limitations:
+  - CNES captures registered establishments, not effective access or quality.
+citation: PLACEHOLDER_CITATION
