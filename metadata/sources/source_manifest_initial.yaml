@@ -1,59 +1,95 @@
 manifest_id: MDB_SOURCE_MANIFEST_INITIAL
-status: DRAFT
+status: VALIDATED
 created_at: "2026-08-24"
-rule: Do not invent URLs, hashes, or extracted_at values for source files not yet obtained.
+source_access_date: "2026-08-23"
+extracted_at: null
+rule: Do not invent URLs, hashes, or extracted_at values not preserved in provenance.
+detailed_manifest_path: metadata/provenance/phase2_raw_data_manifest_2026-08-23.csv
+provenance_summary:
+  total_files: 1137
+  source_distribution:
+    DATASUS IBGE POPSVS: 3
+    SIM/DATASUS DORES: 81
+    SIH/SUS RD: 972
+    CNES ST: 27
+    CNES LT: 27
+    CNES PF: 27
 sources:
+  - source_id: POPULATION_2022_2024
+    organization: DATASUS/IBGE
+    system: DATASUS IBGE POPSVS
+    expected_use: rates and denominators
+    period: "2022-2024"
+    file_pattern: POPSBR{YY}.zip
+    file_count: 3
+    source_url_status: preserved_in_detailed_manifest
+    source_access_date: "2026-08-23"
+    extracted_at: null
+    detailed_manifest_path: metadata/provenance/phase2_raw_data_manifest_2026-08-23.csv
+    provenance_status: VALIDATED
   - source_id: SIM_SUICIDE_2022_2024
     organization: DATASUS
-    system: SIM
+    system: SIM/DATASUS DORES
     expected_use: suicide_asmr
-    raw_path: PLACEHOLDER_RAW_PATH
-    source_url: PLACEHOLDER_SOURCE_URL
-    extracted_at: PLACEHOLDER_EXTRACTED_AT
-    file_hash_sha256: PLACEHOLDER_SHA256
-    license_or_access: public administrative data
+    period: "2022-2024"
+    file_pattern: DO{UF}{YYYY}.dbc
+    file_count: 81
+    source_url_status: preserved_in_detailed_manifest
+    source_access_date: "2026-08-23"
+    extracted_at: null
+    detailed_manifest_path: metadata/provenance/phase2_raw_data_manifest_2026-08-23.csv
+    provenance_status: VALIDATED
   - source_id: SIH_PSYCHIATRIC_ADMISSIONS_2022_2024
     organization: DATASUS
-    system: SIH/SUS
+    system: SIH/SUS RD
     expected_use: psychiatric_admission_rate
-    raw_path: PLACEHOLDER_RAW_PATH
-    source_url: PLACEHOLDER_SOURCE_URL
-    extracted_at: PLACEHOLDER_EXTRACTED_AT
-    file_hash_sha256: PLACEHOLDER_SHA256
-    license_or_access: public administrative data
+    period: "2022-2024"
+    file_pattern: RD{UF}{YY}{MM}.dbc
+    file_count: 972
+    source_url_status: preserved_in_detailed_manifest
+    source_access_date: "2026-08-23"
+    extracted_at: null
+    detailed_manifest_path: metadata/provenance/phase2_raw_data_manifest_2026-08-23.csv
+    provenance_status: VALIDATED
   - source_id: CNES_ST_2024_12
     organization: DATASUS
     system: CNES ST
     expected_use: caps_rate
-    raw_path: PLACEHOLDER_RAW_PATH
-    source_url: PLACEHOLDER_SOURCE_URL
-    extracted_at: PLACEHOLDER_EXTRACTED_AT
-    file_hash_sha256: PLACEHOLDER_SHA256
-    license_or_access: public administrative data
+    period: "2024-12"
+    file_pattern: ST{UF}2412.dbc
+    file_count: 27
+    source_url: null
+    source_url_status: unavailable_in_archived_provenance
+    source_access_date: "2026-08-23"
+    extracted_at: null
+    detailed_manifest_path: metadata/provenance/phase2_raw_data_manifest_2026-08-23.csv
+    provenance_status: VALIDATED
+    provenance_note: Files were linked from the validated Paper 1 DATASUS cache; filename, SHA-256, competence and source system are preserved.
   - source_id: CNES_LT_2024_12
     organization: DATASUS
     system: CNES LT
     expected_use: mental_health_beds_sus_rate
-    raw_path: PLACEHOLDER_RAW_PATH
-    source_url: PLACEHOLDER_SOURCE_URL
-    extracted_at: PLACEHOLDER_EXTRACTED_AT
-    file_hash_sha256: PLACEHOLDER_SHA256
-    license_or_access: public administrative data
+    period: "2024-12"
+    file_pattern: LT{UF}2412.dbc
+    file_count: 27
+    source_url: null
+    source_url_status: unavailable_in_archived_provenance
+    source_access_date: "2026-08-23"
+    extracted_at: null
+    detailed_manifest_path: metadata/provenance/phase2_raw_data_manifest_2026-08-23.csv
+    provenance_status: VALIDATED
+    provenance_note: Files were linked from the validated Paper 1 DATASUS cache; filename, SHA-256, competence and source system are preserved.
   - source_id: CNES_PF_2024_12
     organization: DATASUS
     system: CNES PF
     expected_use: psychiatrist_fte_rate
-    raw_path: PLACEHOLDER_RAW_PATH
-    source_url: PLACEHOLDER_SOURCE_URL
-    extracted_at: PLACEHOLDER_EXTRACTED_AT
-    file_hash_sha256: PLACEHOLDER_SHA256
-    license_or_access: public administrative data
-  - source_id: POPULATION_2024
-    organization: IBGE/DATASUS
-    system: population denominator
-    expected_use: rates and denominators
-    raw_path: PLACEHOLDER_RAW_PATH
-    source_url: PLACEHOLDER_SOURCE_URL
-    extracted_at: PLACEHOLDER_EXTRACTED_AT
-    file_hash_sha256: PLACEHOLDER_SHA256
-    license_or_access: public administrative data
+    period: "2024-12"
+    file_pattern: PF{UF}2412.dbc
+    file_count: 27
+    source_url: null
+    source_url_status: unavailable_in_archived_provenance
+    source_access_date: "2026-08-23"
+    extracted_at: null
+    detailed_manifest_path: metadata/provenance/phase2_raw_data_manifest_2026-08-23.csv
+    provenance_status: VALIDATED
+    provenance_note: Files were linked from the validated Paper 1 DATASUS cache; filename, SHA-256, competence and source system are preserved.

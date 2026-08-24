@@ -2,7 +2,7 @@ bundle_id: "MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24"
 release_id: "MDB_ANALYTICAL_2024_1"
 geography_version: "BR_HEALTH_REGIONS_END2024_V1"
 method_version: "MDB_METHOD_1.0"
-status: "VALIDATING"
+status: "VALIDATED"
 origin: "Google Drive scientific validated import bundle"
 google_drive_file_id: "1Q90JOpkU4IzlqQ4lhFe5Ir8hXdG0X4Q5"
 bundle_zip_size_bytes: 67516917
@@ -20,7 +20,7 @@ files:
     google_drive_file_id: "1Q90JOpkU4IzlqQ4lhFe5Ir8hXdG0X4Q5"
     imported_at: "2026-08-24T20:08:35+00:00"
     size_bytes: 2346
-    validation_status: "VALIDATING"
+    validation_status: "VALIDATED"
   - name: "LISA_primary_corrected.csv"
     raw_path: "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/analytical_release/LISA_primary_corrected.csv"
     sha256: "8cc338aefd7e95c8699ea89c8e663cf99e1ee2c4f8329c53d773e99e58fa82b4"
@@ -32,7 +32,7 @@ files:
     google_drive_file_id: "1Q90JOpkU4IzlqQ4lhFe5Ir8hXdG0X4Q5"
     imported_at: "2026-08-24T20:08:35+00:00"
     size_bytes: 61232
-    validation_status: "VALIDATING"
+    validation_status: "VALIDATED"
   - name: "corrected_Supplement_All_439_Health_Regions.csv"
     raw_path: "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/analytical_release/corrected_Supplement_All_439_Health_Regions.csv"
     sha256: "8c7db70d8230c6f85cfc82249234fc0b450bb1b6aaafd89ecfed1226dcc423f7"
@@ -44,7 +44,7 @@ files:
     google_drive_file_id: "1Q90JOpkU4IzlqQ4lhFe5Ir8hXdG0X4Q5"
     imported_at: "2026-08-24T20:08:35+00:00"
     size_bytes: 200700
-    validation_status: "VALIDATING"
+    validation_status: "VALIDATED"
   - name: "corrected_result_freeze_hashes.txt"
     raw_path: "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/analytical_release/corrected_result_freeze_hashes.txt"
     sha256: "bfad57c64cf7e22274659b1b2465e4f84088454c4c16990951a935a01804bbd5"
@@ -56,7 +56,7 @@ files:
     google_drive_file_id: "1Q90JOpkU4IzlqQ4lhFe5Ir8hXdG0X4Q5"
     imported_at: "2026-08-24T20:08:35+00:00"
     size_bytes: 1277
-    validation_status: "VALIDATING"
+    validation_status: "VALIDATED"
   - name: "global_moran_primary_corrected.json"
     raw_path: "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/analytical_release/global_moran_primary_corrected.json"
     sha256: "fedb3cfce1e8b9a0d3528b2b74aaa2f7232436a581e5aaa8498d43a63bc7a69a"
@@ -68,7 +68,7 @@ files:
     google_drive_file_id: "1Q90JOpkU4IzlqQ4lhFe5Ir8hXdG0X4Q5"
     imported_at: "2026-08-24T20:08:35+00:00"
     size_bytes: 338
-    validation_status: "VALIDATING"
+    validation_status: "VALIDATED"
   - name: "health_region_analysis_dataset_corrected.csv"
     raw_path: "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/analytical_release/health_region_analysis_dataset_corrected.csv"
     sha256: "9a820a543a28ac35eba9797ba3597aa5c8efec5e593fd80b4c60f02f94f40e48"
@@ -80,7 +80,7 @@ files:
     google_drive_file_id: "1Q90JOpkU4IzlqQ4lhFe5Ir8hXdG0X4Q5"
     imported_at: "2026-08-24T20:08:35+00:00"
     size_bytes: 174292
-    validation_status: "VALIDATING"
+    validation_status: "VALIDATED"
   - name: "mismatch_scores_corrected.csv"
     raw_path: "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/analytical_release/mismatch_scores_corrected.csv"
     sha256: "b69a343e9d2bbd8902359f3086594ebb4d54c7db205426561dc1ca4e493241b1"
@@ -92,7 +92,7 @@ files:
     google_drive_file_id: "1Q90JOpkU4IzlqQ4lhFe5Ir8hXdG0X4Q5"
     imported_at: "2026-08-24T20:08:35+00:00"
     size_bytes: 39133
-    validation_status: "VALIDATING"
+    validation_status: "VALIDATED"
   - name: "phase2c_summary.json"
     raw_path: "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/analytical_release/phase2c_summary.json"
     sha256: "b1f5edb261f40b9caa96c553d7ed19708a46951d8ff89c2c49e304121a449d8f"
@@ -104,7 +104,7 @@ files:
     google_drive_file_id: "1Q90JOpkU4IzlqQ4lhFe5Ir8hXdG0X4Q5"
     imported_at: "2026-08-24T20:08:35+00:00"
     size_bytes: 3129
-    validation_status: "VALIDATING"
+    validation_status: "VALIDATED"
   - name: "GEOGRAPHY_LOCK_DECISION.md"
     raw_path: "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/geography/GEOGRAPHY_LOCK_DECISION.md"
     sha256: "b27c04f17828bbb2b3265c4a8670761fc67342015fafb2fe3619a8c3e4487f38"
@@ -116,7 +116,7 @@ files:
     google_drive_file_id: "1Q90JOpkU4IzlqQ4lhFe5Ir8hXdG0X4Q5"
     imported_at: "2026-08-24T20:08:35+00:00"
     size_bytes: 1303
-    validation_status: "VALIDATING"
+    validation_status: "VALIDATED"
   - name: "geography_reference_date_LOCK.md"
     raw_path: "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/geography/geography_reference_date_LOCK.md"
     sha256: "41861d979815935c0a80a6082bc54d751ee549c129cd31ed2cd982623799fa82"
@@ -128,7 +128,7 @@ files:
     google_drive_file_id: "1Q90JOpkU4IzlqQ4lhFe5Ir8hXdG0X4Q5"
     imported_at: "2026-08-24T20:08:35+00:00"
     size_bytes: 637
-    validation_status: "VALIDATING"
+    validation_status: "VALIDATED"
   - name: "health_region_crosswalk_LOCKED.csv"
     raw_path: "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/geography/health_region_crosswalk_LOCKED.csv"
     sha256: "71239b3c9ec6d08422273e950b1227e31fca856fa8ee7aedb69ac0f8157377cb"
@@ -140,7 +140,7 @@ files:
     google_drive_file_id: "1Q90JOpkU4IzlqQ4lhFe5Ir8hXdG0X4Q5"
     imported_at: "2026-08-24T20:08:35+00:00"
     size_bytes: 1074733
-    validation_status: "VALIDATING"
+    validation_status: "VALIDATED"
   - name: "health_regions_LOCKED.gpkg"
     raw_path: "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/geography/health_regions_LOCKED.gpkg"
     sha256: "657355adb0df88dfcfff2400751eff6ae97b367effe8e90223d0267e0437ba48"
@@ -152,7 +152,7 @@ files:
     google_drive_file_id: "1Q90JOpkU4IzlqQ4lhFe5Ir8hXdG0X4Q5"
     imported_at: "2026-08-24T20:08:35+00:00"
     size_bytes: 93306880
-    validation_status: "VALIDATING"
+    validation_status: "VALIDATED"
   - name: "FDR_corrected_verification.csv"
     raw_path: "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/qc/FDR_corrected_verification.csv"
     sha256: "2abcb5de1436a720290547054aa5b27736193a6eecbec4504b87fb71eed092a9"
@@ -164,7 +164,7 @@ files:
     google_drive_file_id: "1Q90JOpkU4IzlqQ4lhFe5Ir8hXdG0X4Q5"
     imported_at: "2026-08-24T20:08:35+00:00"
     size_bytes: 51483
-    validation_status: "VALIDATING"
+    validation_status: "VALIDATED"
   - name: "INVALIDATED_PHASE2_SPATIAL_OUTPUTS.md"
     raw_path: "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/qc/INVALIDATED_PHASE2_SPATIAL_OUTPUTS.md"
     sha256: "af0e009258217b56cb6b1c9373540f81df02f86ea7936b1d8b0e70e0f25ecfef"
@@ -176,7 +176,7 @@ files:
     google_drive_file_id: "1Q90JOpkU4IzlqQ4lhFe5Ir8hXdG0X4Q5"
     imported_at: "2026-08-24T20:08:35+00:00"
     size_bytes: 987
-    validation_status: "VALIDATING"
+    validation_status: "VALIDATED"
   - name: "corrected_reproducibility_run.md"
     raw_path: "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/qc/corrected_reproducibility_run.md"
     sha256: "12a49755fcac6fc490ac48409b07e608b91a179dc1f47fc8c770efee47de091f"
@@ -188,7 +188,7 @@ files:
     google_drive_file_id: "1Q90JOpkU4IzlqQ4lhFe5Ir8hXdG0X4Q5"
     imported_at: "2026-08-24T20:08:35+00:00"
     size_bytes: 548
-    validation_status: "VALIDATING"
+    validation_status: "VALIDATED"
   - name: "geometry_QC_FINAL.md"
     raw_path: "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/qc/geometry_QC_FINAL.md"
     sha256: "d5f2cbcd531db7018d5e6bda9f422594578e7d22ab81bd57f0ccb15791a80d34"
@@ -200,7 +200,7 @@ files:
     google_drive_file_id: "1Q90JOpkU4IzlqQ4lhFe5Ir8hXdG0X4Q5"
     imported_at: "2026-08-24T20:08:35+00:00"
     size_bytes: 719
-    validation_status: "VALIDATING"
+    validation_status: "VALIDATED"
   - name: "independent_moran_alignment_verification.md"
     raw_path: "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/qc/independent_moran_alignment_verification.md"
     sha256: "59c3f174f51d363dce660edfb3d69e92f2f3882cfd2ea14b256dbeb911828778"
@@ -212,7 +212,7 @@ files:
     google_drive_file_id: "1Q90JOpkU4IzlqQ4lhFe5Ir8hXdG0X4Q5"
     imported_at: "2026-08-24T20:08:35+00:00"
     size_bytes: 257
-    validation_status: "VALIDATING"
+    validation_status: "VALIDATED"
   - name: "municipality_crosswalk_QC.md"
     raw_path: "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/qc/municipality_crosswalk_QC.md"
     sha256: "6b445d34f5c15d08074d1909133fe26b58d94c35336792187980e49aa5715e7a"
@@ -224,7 +224,7 @@ files:
     google_drive_file_id: "1Q90JOpkU4IzlqQ4lhFe5Ir8hXdG0X4Q5"
     imported_at: "2026-08-24T20:08:35+00:00"
     size_bytes: 444
-    validation_status: "VALIDATING"
+    validation_status: "VALIDATED"
   - name: "spatial_alignment_QC.md"
     raw_path: "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/qc/spatial_alignment_QC.md"
     sha256: "268523bb92446d76f980062f8ffcf14e2282d800440d65e93b49ff7930623b79"
@@ -236,4 +236,4 @@ files:
     google_drive_file_id: "1Q90JOpkU4IzlqQ4lhFe5Ir8hXdG0X4Q5"
     imported_at: "2026-08-24T20:08:35+00:00"
     size_bytes: 105
-    validation_status: "VALIDATING"
+    validation_status: "VALIDATED"

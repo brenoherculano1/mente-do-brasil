@@ -1,5 +1,8 @@
 release_id: MDB_ANALYTICAL_2024_1
-release_status: DRAFT
+release_status: VALIDATING
+release_gate: PASS
+release_readiness: READY
+public_release_status: NOT_RELEASED
 method_version: MDB_METHOD_1.0
 geography_version: BR_HEALTH_REGIONS_END2024_V1
 immutability_rule: Once status becomes RELEASED, do not overwrite this release. Corrections require a new release_id.
@@ -28,7 +31,7 @@ interpretation_boundaries:
     - care deficit
     - abandoned region
 locked_spatial_results:
-  status: validated_external_result_placeholder
+  status: VALIDATED_LOCKED
   recalculated_in_this_repository_foundation: false
   global_moran_i: 0.525494388844
   pseudo_p: 0.0001
@@ -47,6 +50,22 @@ invalid_values:
   rule: never_use
 provenance:
   source_manifest: metadata/sources/source_manifest_initial.yaml
-  generated_outputs_manifest: PLACEHOLDER_RELEASE_OUTPUT_MANIFEST
-quality_status: DRAFT
+  detailed_raw_provenance_manifest: metadata/provenance/phase2_raw_data_manifest_2026-08-23.csv
+  phase2_run_manifest: metadata/provenance/phase2_run_manifest_2026-08-23.md
+  phase2_script_hashes: metadata/provenance/phase2_script_hashes_2026-08-23.txt
+  phase2c_run_manifest: metadata/provenance/phase2c_run_manifest_2026-08-23.md
+  phase2c_script_hashes: metadata/provenance/phase2c_script_hashes_2026-08-23.txt
+  phase2c_corrected_reproducibility_hashes: metadata/provenance/phase2c_corrected_reproducibility_hashes_2026-08-23.txt
+  generated_outputs_manifest: metadata/releases/MDB_ANALYTICAL_2024_1_outputs.yaml
+pipeline_hashes:
+  config_sha256: 3e81c8924848fa47e1efd78c85f3145459b5df891801e655e102c0e453d9d26e
+  crosswalk_sha256: 71239b3c9ec6d08422273e950b1227e31fca856fa8ee7aedb69ac0f8157377cb
+  geometry_sha256: 657355adb0df88dfcfff2400751eff6ae97b367effe8e90223d0267e0437ba48
+  phase2_script:
+    script: run_phase2_full_analysis.py
+    sha256: 8612690ed9e6dfb70be526c307d1696a04c7550e3c27a3bda57f1a1bb6a44e4e
+  phase2c_corrected_script:
+    script: run_phase2c_corrected_analysis.py
+    sha256: e3073122ed63a434b087c5a61c1e9ec6c38c49d68d45c3de7eb16fe39a837bfe
+quality_status: VALIDATED
 created_at: "2026-08-24"

@@ -12,12 +12,15 @@ what_it_does_not_measure:
 source_organization: DATASUS
 source_system: SIM
 source_dataset: Mortality Information System
-source_file_pattern: PLACEHOLDER_SOURCE_FILE_PATTERN
-source_url: PLACEHOLDER_SOURCE_URL
+source_file_pattern: DO{UF}{YYYY}.dbc
+population_source_file_pattern: POPSBR{YY}.zip
+source_url_status: preserved_in_detailed_manifest
+source_access_date: "2026-08-23"
+detailed_manifest_path: metadata/provenance/phase2_raw_data_manifest_2026-08-23.csv
 observation_start: "2022-01-01"
 observation_end: "2024-12-31"
 reference_date: null
-extracted_at: PLACEHOLDER_EXTRACTED_AT
+extracted_at: null
 geography_version: BR_HEALTH_REGIONS_END2024_V1
 aggregation_geography: Health Region
 numerator_definition: Deaths by underlying-cause ICD-10 X60-X84, residence-based.
@@ -32,10 +35,12 @@ missing_value_rule: missing values remain explicit and are not converted to zero
 small_number_rule: flag regions with fewer than 10 pooled deaths as SMALL_SUICIDE_COUNT
 deduplication_rule: not applicable to mortality records at aggregate stage
 method_version: MDB_METHOD_1.0
-code_version: PLACEHOLDER_CODE_VERSION
+code_version:
+  script: run_phase2_full_analysis.py
+  sha256: 8612690ed9e6dfb70be526c307d1696a04c7550e3c27a3bda57f1a1bb6a44e4e
 release_id: MDB_ANALYTICAL_2024_1
-quality_status: DRAFT
+quality_status: VALIDATED
 limitations:
   - Suicide is a severe and specific proxy for mental-health need.
   - Small-number instability may remain in selected regions despite pooling.
-citation: PLACEHOLDER_CITATION
+citation: DATASUS. Sistema de Informações sobre Mortalidade (SIM).

@@ -4,7 +4,7 @@
 - release_id: `MDB_ANALYTICAL_2024_1`
 - geography_version: `BR_HEALTH_REGIONS_END2024_V1`
 - method_version: `MDB_METHOD_1.0`
-- status: `VALIDATING`
+- status: `VALIDATED`
 - imported_at: `2026-08-24T20:08:35+00:00`
 - origin: `Google Drive scientific validated import bundle`
 - Google Drive file ID: `1Q90JOpkU4IzlqQ4lhFe5Ir8hXdG0X4Q5`
