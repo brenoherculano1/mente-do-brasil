@@ -19,7 +19,6 @@ import pyarrow as pa
 import pyarrow.parquet as pq
 import yaml
 
-
 RELEASE_ID = "MDB_ANALYTICAL_2024_1"
 CANONICAL_VERSION = "MDB_CANONICAL_1.0"
 METHOD_VERSION = "MDB_METHOD_1.0"

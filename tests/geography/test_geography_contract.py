@@ -41,7 +41,11 @@ class GeographyContractTests(unittest.TestCase):
         self.assertTrue(any(issue.rule == "valid_uf" for issue in issues))
 
     def test_join_loss_is_detected(self):
-        issues = detect_silent_join_loss(["001", "002", "003"], ["001", "003"], key_name="municipality_code")
+        issues = detect_silent_join_loss(
+            ["001", "002", "003"],
+            ["001", "003"],
+            key_name="municipality_code",
+        )
 
         self.assertEqual(len(issues), 1)
         self.assertEqual(issues[0].rule, "no_silent_join_loss")

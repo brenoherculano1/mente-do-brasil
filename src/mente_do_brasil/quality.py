@@ -7,9 +7,9 @@ recalculate, or alter scientific results.
 from __future__ import annotations
 
 from collections import Counter
+from collections.abc import Iterable, Mapping, Sequence
 from dataclasses import dataclass
 from enum import StrEnum
-from typing import Iterable, Mapping, Sequence
 
 from .constants import EXPECTED_HEALTH_REGION_COUNT, EXPECTED_MUNICIPALITY_COUNT, VALID_UFS
 
@@ -142,11 +142,21 @@ def validate_health_region_table(
         for field in nonnegative_fields:
             value = row.get(field)
             if not _is_missing(value):
-                _require(float(value) >= 0, f"{field}_nonnegative", f"{field} cannot be negative.", issues)
+                _require(
+                    float(value) >= 0,
+                    f"{field}_nonnegative",
+                    f"{field} cannot be negative.",
+                    issues,
+                )
         for field in bounded_0_1_fields:
             value = row.get(field)
             if not _is_missing(value):
-                _require(0 <= float(value) <= 1, f"{field}_bounded", f"{field} must be in [0, 1].", issues)
+                _require(
+                    0 <= float(value) <= 1,
+                    f"{field}_bounded",
+                    f"{field} must be in [0, 1].",
+                    issues,
+                )
         mismatch = row.get("mismatch_score")
         if not _is_missing(mismatch):
             _require(

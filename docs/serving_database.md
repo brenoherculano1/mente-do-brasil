@@ -6,13 +6,13 @@ The Mente do Brasil local serving database sits after the canonical layer:
 RAW
   -> CANONICAL
   -> POSTGRESQL/POSTGIS SERVING DATABASE
-  -> API [future]
+  -> INTERNAL LOCAL READ-ONLY API
   -> WEB [future]
 ```
 
 The serving database does not recalculate scientific outputs. It copies the
 locked canonical Parquet files, validates hashes, imports the locked geography,
-and exposes read-oriented serving views for a future API.
+and exposes read-oriented serving views for the internal local API.
 
 ## Schemas
 
@@ -41,6 +41,14 @@ and exposes read-oriented serving views for a future API.
 - `serving.health_region_map`: map-ready view with full locked geometry.
 - `serving.health_region_lookup`: compact lookup/autocomplete source.
 
+## API Readiness State
+
+- `meta.serving_database_status`: records whether a release has passed local
+  serving-database validation.
+- `VALIDATED_LOCAL`: required by the local API readiness check.
+- `metadata/releases/MDB_ANALYTICAL_2024_1_api.yaml`: records the internal API
+  validation state.
+
 ## Keys
 
 - `geo.health_regions`: `(geography_version, health_region_code)`.
@@ -68,6 +76,9 @@ cp .env.example .env
 docker compose up -d
 uv run --extra geo python scripts/load_serving_database.py
 uv run --extra geo python scripts/validate_serving_database.py
+uv run python scripts/provision_api_db_role.py
+uv run uvicorn api.main:app --host 127.0.0.1 --port 8000
+uv run python scripts/validate_api.py
 ```
 
 The Compose service builds a local image from official `postgres:18` for the

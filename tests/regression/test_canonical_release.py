@@ -3,7 +3,6 @@ import subprocess
 import unittest
 from pathlib import Path
 
-
 try:
     import pandas as pd
     import pyarrow as pa

@@ -1,0 +1,42 @@
+api_status: VALIDATED_LOCAL
+release_id: MDB_ANALYTICAL_2024_1
+serving_database_status: VALIDATED_LOCAL
+validated_at: '2026-08-24T23:40:00+00:00'
+runtime:
+  framework: FastAPI
+  pydantic: '2'
+  database_driver: psycopg 3
+  pool: psycopg_pool
+  min_pool_size: 1
+  max_pool_size: 4
+  statement_timeout_seconds: 30
+  bind_host: 127.0.0.1
+  default_port: 8000
+database_role:
+  role_name: mente_do_brasil_api
+  access: read-only
+  default_transaction_read_only: on
+  statement_timeout_seconds: 30
+cors:
+  wildcard_allowed: false
+  allowed_origins:
+    - http://localhost:3000
+    - http://127.0.0.1:3000
+endpoints:
+  - GET /health
+  - GET /ready
+  - GET /api/v1/releases
+  - GET /api/v1/releases/{release_id}
+  - GET /api/v1/indicators
+  - GET /api/v1/indicators/{indicator_id}
+  - GET /api/v1/health-regions
+  - GET /api/v1/health-regions/{health_region_code}
+  - GET /api/v1/map/health-regions
+  - GET /api/v1/municipalities/{municipality_code_ibge}/health-region
+  - GET /api/v1/ufs
+guardrails:
+  no_frontend: true
+  no_public_deployment: true
+  no_authentication_layer: true
+  no_scientific_recalculation: true
+  no_write_endpoints: true

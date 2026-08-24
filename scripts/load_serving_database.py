@@ -13,7 +13,6 @@ import pandas as pd
 import pyarrow.parquet as pq
 import yaml
 
-
 RELEASE_ID = "MDB_ANALYTICAL_2024_1"
 CANONICAL_VERSION = "MDB_CANONICAL_1.0"
 METHOD_VERSION = "MDB_METHOD_1.0"
@@ -30,6 +29,7 @@ INVALID_GLOBAL_MORAN_I = 0.218740812099
 
 CANONICAL_MANIFEST = Path("metadata/releases/MDB_ANALYTICAL_2024_1_canonical.yaml")
 SCIENTIFIC_RELEASE = Path("metadata/releases/MDB_ANALYTICAL_2024_1.yaml")
+SERVING_RELEASE = Path("metadata/releases/MDB_ANALYTICAL_2024_1_serving.yaml")
 INDICATOR_DIR = Path("metadata/indicators")
 GPKG = Path(
     "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/"
@@ -259,6 +259,30 @@ def insert_release(connection, release: dict[str, Any]) -> None:
         ON CONFLICT (release_id) DO NOTHING
         """,
         release,
+    )
+
+
+def insert_serving_status(connection, root: Path) -> None:
+    status_manifest = load_yaml(root / SERVING_RELEASE)
+    if status_manifest["release_id"] != RELEASE_ID:
+        raise AssertionError("Serving status manifest release_id differs from current release.")
+    if status_manifest["serving_database_status"] != "VALIDATED_LOCAL":
+        raise AssertionError("Serving database status is not VALIDATED_LOCAL.")
+    connection.execute(
+        """
+        INSERT INTO meta.serving_database_status (
+            release_id, serving_database_status, validated_at
+        )
+        VALUES (%s, %s, %s)
+        ON CONFLICT (release_id) DO UPDATE SET
+            serving_database_status = EXCLUDED.serving_database_status,
+            validated_at = EXCLUDED.validated_at
+        """,
+        (
+            status_manifest["release_id"],
+            status_manifest["serving_database_status"],
+            status_manifest["validated_at"],
+        ),
     )
 
 
@@ -607,6 +631,15 @@ def validate_database(connection, release: dict[str, Any]) -> dict[str, Any]:
             "SELECT count(*) FROM meta.releases WHERE release_id = %s",
             (RELEASE_ID,),
         ),
+        "serving_status": scalar(
+            connection,
+            """
+            SELECT count(*)
+            FROM meta.serving_database_status
+            WHERE release_id = %s AND serving_database_status = 'VALIDATED_LOCAL'
+            """,
+            (RELEASE_ID,),
+        ),
         "health_regions": scalar(
             connection,
             "SELECT count(*) FROM geo.health_regions WHERE geography_version = %s",
@@ -689,6 +722,7 @@ def validate_database(connection, release: dict[str, Any]) -> dict[str, Any]:
     }
     expected = {
         "releases": 1,
+        "serving_status": 1,
         "health_regions": 439,
         "municipalities": 5570,
         "metrics": 439,
@@ -748,6 +782,7 @@ def load() -> dict[str, Any]:
             apply_migrations(connection, root)
             mode = enforce_release_immutability(connection, release)
             insert_release(connection, release)
+            insert_serving_status(connection, root)
             insert_indicators(connection, indicators)
             insert_geography(connection, health_regions, geometry)
             insert_crosswalk(connection, crosswalk)

@@ -2,11 +2,11 @@
 
 Mente do Brasil is a Brazilian public data and territorial intelligence project for mental health.
 
-The repository is at local serving-database preparation stage. It currently
+The repository is at local API validation stage. It currently
 defines the technical structure, metadata contracts, release/version
-conventions, canonical analytical layer, and PostgreSQL/PostGIS serving schema
-needed to support a future read-only API. It does not yet contain a public
-website, dashboard, authentication, API, cloud database, or deployed service.
+conventions, canonical analytical layer, PostgreSQL/PostGIS serving schema, and
+first internal read-only FastAPI API. It does not yet contain a public website,
+dashboard, authentication, cloud database, or deployed service.
 
 ## Scientific Scope
 
@@ -31,6 +31,11 @@ data/
 
 db/
   migrations/   SQL migrations for the local PostgreSQL/PostGIS serving database
+
+api/
+  routers/      internal read-only FastAPI route handlers
+  schemas/      Pydantic response and error contracts
+  services/     explicit SQL reads from serving views
 
 pipeline/
   geography/    geographic crosswalk and geometry preparation
@@ -61,11 +66,11 @@ Current product data flow:
 RAW
   -> CANONICAL
   -> POSTGRESQL/POSTGIS SERVING
-  -> API [future]
+  -> INTERNAL LOCAL READ-ONLY API
   -> WEB [future]
 ```
 
-The API and frontend have not been built.
+The frontend has not been built. The API is local-only and read-only.
 
 ## Data Philosophy
 
@@ -122,13 +127,29 @@ The invalid old Moran value `0.218740812099` must never be used.
 
 ## Running Tests
 
-The initial test suite uses Python's standard library `unittest` so it can run before scientific dependencies are installed:
+The scientific foundation tests can run with Python's standard library:
 
 ```bash
 PYTHONPATH=src python3 -m unittest discover -s tests
 ```
 
-After setting up a scientific environment, the same rules can be migrated or mirrored in `pytest`.
+After setting up the project environment:
+
+```bash
+uv run --extra geo pytest
+uv run ruff check api scripts tests
+```
+
+For the local API validation, start Docker and the API first:
+
+```bash
+docker compose up -d
+uv run --extra geo python scripts/load_serving_database.py
+uv run python scripts/provision_api_db_role.py
+uv run uvicorn api.main:app --host 127.0.0.1 --port 8000
+uv run python scripts/validate_api.py
+uv run pytest tests/api/test_api_contract.py
+```
 
 ## What Does Not Exist Yet
 
@@ -136,7 +157,7 @@ This repository does not yet include:
 
 - raw DATASUS/CNES/IBGE files;
 - frontend or dashboard;
-- public API;
+- public API or deployed API;
 - authentication;
 - cloud database;
 - deployment;

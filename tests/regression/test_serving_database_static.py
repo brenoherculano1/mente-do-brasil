@@ -3,7 +3,6 @@ import re
 import unittest
 from pathlib import Path
 
-
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
 
@@ -18,6 +17,7 @@ class ServingDatabaseStaticTests(unittest.TestCase):
                 "003_tables.sql",
                 "004_constraints_indexes.sql",
                 "005_serving_views.sql",
+                "006_serving_status.sql",
             ],
         )
 
@@ -35,6 +35,7 @@ class ServingDatabaseStaticTests(unittest.TestCase):
             "CREATE TABLE IF NOT EXISTS geo.health_regions",
             "CREATE TABLE IF NOT EXISTS geo.municipality_health_region_crosswalk",
             "CREATE TABLE IF NOT EXISTS analytics.health_region_metrics",
+            "CREATE TABLE IF NOT EXISTS meta.serving_database_status",
             "CREATE OR REPLACE VIEW serving.health_region_profile",
             "CREATE OR REPLACE VIEW serving.health_region_map",
             "CREATE OR REPLACE VIEW serving.health_region_lookup",

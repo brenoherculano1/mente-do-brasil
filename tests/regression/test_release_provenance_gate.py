@@ -4,7 +4,6 @@ import unittest
 from collections import Counter
 from pathlib import Path
 
-
 REPO_ROOT = Path(__file__).resolve().parents[2]
 METADATA_PATHS = [
     REPO_ROOT / "metadata/releases/MDB_ANALYTICAL_2024_1.yaml",
