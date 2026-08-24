@@ -1,0 +1,96 @@
+schema_id: MDB_CANONICAL_MUNICIPALITY_HEALTH_REGION_CROSSWALK_V1
+canonical_version: MDB_CANONICAL_1.0
+release_id: MDB_ANALYTICAL_2024_1
+primary_key: municipality_code_ibge
+row_grain: one row per Brazilian municipality
+columns:
+  - name: geography_version
+    type: string
+    nullable: false
+    description: Locked health-region geography version.
+    unit: null
+    source_field: constant BR_HEALTH_REGIONS_END2024_V1
+    related_indicator: geography
+    enters_mismatch: false
+    interpretation: Identifies the territorial version used by the crosswalk.
+    limitations: Valid only for the locked end-2024 geography.
+  - name: reference_date
+    type: string
+    nullable: false
+    description: Reference date of the locked crosswalk.
+    unit: date
+    source_field: reference_date
+    related_indicator: geography
+    enters_mismatch: false
+    interpretation: Date attached to the municipality-health-region assignment.
+    limitations: Stored as ISO-style string for stable interchange.
+  - name: municipality_code_ibge
+    type: string
+    nullable: false
+    description: Seven-character IBGE municipality code.
+    unit: null
+    source_field: municipality_code_ibge
+    related_indicator: geography
+    enters_mismatch: false
+    interpretation: Primary municipality key.
+    limitations: Must remain string to preserve formatting.
+  - name: municipality_code_datasus6
+    type: string
+    nullable: false
+    description: Six-character DATASUS municipality code.
+    unit: null
+    source_field: municipality_code_datasus6
+    related_indicator: geography
+    enters_mismatch: false
+    interpretation: DATASUS-compatible municipal key.
+    limitations: Not interchangeable with the seven-character IBGE key.
+  - name: municipality_name
+    type: string
+    nullable: false
+    description: Municipality name.
+    unit: null
+    source_field: municipality_name
+    related_indicator: geography
+    enters_mismatch: false
+    interpretation: Human-readable municipal label.
+    limitations: Inherits source spelling and accent conventions.
+  - name: uf
+    type: string
+    nullable: false
+    description: Brazilian state abbreviation.
+    unit: null
+    source_field: UF
+    related_indicator: geography
+    enters_mismatch: false
+    interpretation: State abbreviation for the municipality.
+    limitations: Not a substitute for municipality_code_ibge.
+  - name: health_region_code
+    type: string
+    nullable: false
+    description: Five-character health-region code assigned to the municipality.
+    unit: null
+    source_field: health_region_code
+    related_indicator: geography
+    enters_mismatch: false
+    interpretation: Foreign key to canonical health_regions.
+    limitations: Must remain string to preserve formatting.
+  - name: health_region_name
+    type: string
+    nullable: false
+    description: Health-region name assigned to the municipality.
+    unit: null
+    source_field: health_region_name
+    related_indicator: geography
+    enters_mismatch: false
+    interpretation: Human-readable region label.
+    limitations: Inherits locked crosswalk naming.
+  - name: source
+    type: string
+    nullable: false
+    description: Source note from the locked crosswalk.
+    unit: null
+    source_field: source
+    related_indicator: geography
+    enters_mismatch: false
+    interpretation: Provenance text for the assignment.
+    limitations: Not parsed into subcomponents in this canonical version.

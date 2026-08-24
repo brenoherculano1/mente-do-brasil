@@ -1,0 +1,356 @@
+schema_id: MDB_CANONICAL_HEALTH_REGIONS_V1
+canonical_version: MDB_CANONICAL_1.0
+release_id: MDB_ANALYTICAL_2024_1
+primary_key: health_region_code
+row_grain: one row per Brazilian health region
+columns:
+  - name: release_id
+    type: string
+    nullable: false
+    description: Locked analytical release identifier.
+    unit: null
+    source_field: constant MDB_ANALYTICAL_2024_1
+    related_indicator: null
+    enters_mismatch: false
+    interpretation: Release provenance field, not an analytical measure.
+    limitations: Does not imply public release status.
+  - name: method_version
+    type: string
+    nullable: false
+    description: Locked method version used by the source scientific release.
+    unit: null
+    source_field: constant MDB_METHOD_1.0
+    related_indicator: null
+    enters_mismatch: false
+    interpretation: Method provenance field.
+    limitations: Not a recalculation marker.
+  - name: geography_version
+    type: string
+    nullable: false
+    description: Locked health-region geography version.
+    unit: null
+    source_field: constant BR_HEALTH_REGIONS_END2024_V1
+    related_indicator: null
+    enters_mismatch: false
+    interpretation: Geography provenance field.
+    limitations: Valid only for the locked end-2024 health-region definition.
+  - name: health_region_code
+    type: string
+    nullable: false
+    description: Five-character health-region code.
+    unit: null
+    source_field: health_region_code
+    related_indicator: null
+    enters_mismatch: false
+    interpretation: Primary key for canonical health-region records.
+    limitations: Must remain a string to preserve leading structure.
+  - name: health_region_name
+    type: string
+    nullable: false
+    description: Health-region name in the locked analytical dataset.
+    unit: null
+    source_field: health_region_name
+    related_indicator: null
+    enters_mismatch: false
+    interpretation: Human-readable health-region label.
+    limitations: Names inherit source spelling and accent conventions.
+  - name: uf_code
+    type: string
+    nullable: false
+    description: Two-digit federative-unit prefix derived from health_region_code.
+    unit: null
+    source_field: health_region_code prefix
+    related_indicator: null
+    enters_mismatch: false
+    interpretation: Territorial key for joining state-level references.
+    limitations: Derived only as a code-format validation, not as a new measure.
+  - name: uf
+    type: string
+    nullable: false
+    description: Brazilian state abbreviation.
+    unit: null
+    source_field: UF
+    related_indicator: null
+    enters_mismatch: false
+    interpretation: State abbreviation associated with the health region.
+    limitations: Validated against the health_region_code prefix.
+  - name: municipality_count
+    type: int64
+    nullable: false
+    description: Number of municipalities in the health region.
+    unit: municipalities
+    source_field: municipality_count
+    related_indicator: geography
+    enters_mismatch: false
+    interpretation: Territorial composition count.
+    limitations: Depends on the locked end-2024 crosswalk.
+  - name: population
+    type: int64
+    nullable: false
+    description: Health-region population used by the scientific release.
+    unit: people
+    source_field: population_2024
+    related_indicator: denominator
+    enters_mismatch: false
+    interpretation: Population denominator for 2024 rate fields.
+    limitations: Not updated beyond the locked source release.
+  - name: area_km2
+    type: float64
+    nullable: false
+    description: Health-region land area.
+    unit: square kilometers
+    source_field: area_km2
+    related_indicator: geography
+    enters_mismatch: false
+    interpretation: Territorial area used for density.
+    limitations: Inherits locked geography precision.
+  - name: population_density
+    type: float64
+    nullable: false
+    description: Population density for the health region.
+    unit: people per square kilometer
+    source_field: population_density_2024
+    related_indicator: geography
+    enters_mismatch: false
+    interpretation: Contextual density measure.
+    limitations: Not part of the mismatch score.
+  - name: suicide_deaths
+    type: int64
+    nullable: false
+    description: Pooled suicide deaths from the locked source period.
+    unit: deaths
+    source_field: deaths_pooled
+    related_indicator: suicide_asmr
+    enters_mismatch: false
+    interpretation: Count underlying the suicide mortality indicator.
+    limitations: Public interpretation should account for small-number flags.
+  - name: suicide_asmr
+    type: float64
+    nullable: false
+    description: Age-standardized suicide mortality rate.
+    unit: deaths per 100000 population
+    source_field: ASMR
+    related_indicator: suicide mortality
+    enters_mismatch: true
+    interpretation: Higher values indicate higher suicide mortality need.
+    limitations: Locked scientific output; not recalculated here.
+  - name: suicide_percentile
+    type: float64
+    nullable: false
+    description: Percentile rank for suicide mortality need.
+    unit: percentile scaled 0 to 1
+    source_field: suicide_percentile
+    related_indicator: suicide mortality
+    enters_mismatch: true
+    interpretation: Higher values indicate higher relative need.
+    limitations: Percentile is copied from locked output, not recalculated.
+  - name: psychiatric_admissions
+    type: int64
+    nullable: false
+    description: Psychiatric admissions count from SIH/SUS.
+    unit: admissions
+    source_field: admission_n
+    related_indicator: psychiatric admission rate
+    enters_mismatch: false
+    interpretation: Count underlying the admission-rate need indicator.
+    limitations: Captures SIH/SUS admissions only.
+  - name: psychiatric_admission_rate
+    type: float64
+    nullable: false
+    description: Psychiatric admission rate.
+    unit: admissions per 100000 population
+    source_field: admission_rate
+    related_indicator: psychiatric admissions
+    enters_mismatch: true
+    interpretation: Higher values contribute to higher measured need.
+    limitations: Locked scientific output; not recalculated here.
+  - name: psychiatric_admission_percentile
+    type: float64
+    nullable: false
+    description: Percentile rank for psychiatric admission rate.
+    unit: percentile scaled 0 to 1
+    source_field: admissions_percentile
+    related_indicator: psychiatric admissions
+    enters_mismatch: true
+    interpretation: Higher values indicate higher relative need.
+    limitations: Percentile is copied from locked output, not recalculated.
+  - name: caps_count
+    type: int64
+    nullable: false
+    description: Unique CAPS count.
+    unit: services
+    source_field: unique_CAPS_n
+    related_indicator: CAPS capacity
+    enters_mismatch: false
+    interpretation: Service count underlying CAPS capacity rate.
+    limitations: CNES-based locked count.
+  - name: caps_rate
+    type: float64
+    nullable: false
+    description: CAPS rate per population.
+    unit: CAPS per 100000 population
+    source_field: CAPS_rate_per_100k
+    related_indicator: CAPS capacity
+    enters_mismatch: true
+    interpretation: Higher values indicate higher service capacity.
+    limitations: Locked scientific output; not recalculated here.
+  - name: caps_percentile
+    type: float64
+    nullable: false
+    description: Percentile rank for CAPS rate.
+    unit: percentile scaled 0 to 1
+    source_field: CAPS_percentile
+    related_indicator: CAPS capacity
+    enters_mismatch: true
+    interpretation: Higher values indicate higher relative capacity.
+    limitations: Percentile is copied from locked output, not recalculated.
+  - name: mental_health_beds_sus_count
+    type: int64
+    nullable: false
+    description: SUS mental-health beds count.
+    unit: beds
+    source_field: SUS_mental_health_beds_n
+    related_indicator: mental health beds
+    enters_mismatch: false
+    interpretation: Bed count underlying the SUS mental-health bed rate.
+    limitations: CNES-based locked count.
+  - name: mental_health_beds_sus_rate
+    type: float64
+    nullable: false
+    description: SUS mental-health bed rate.
+    unit: beds per 100000 population
+    source_field: bed_rate_per_100k
+    related_indicator: mental health beds
+    enters_mismatch: true
+    interpretation: Higher values indicate higher bed capacity.
+    limitations: Locked scientific output; not recalculated here.
+  - name: beds_percentile
+    type: float64
+    nullable: false
+    description: Percentile rank for SUS mental-health bed rate.
+    unit: percentile scaled 0 to 1
+    source_field: beds_percentile
+    related_indicator: mental health beds
+    enters_mismatch: true
+    interpretation: Higher values indicate higher relative capacity.
+    limitations: Percentile is copied from locked output, not recalculated.
+  - name: psychiatrist_fte
+    type: float64
+    nullable: false
+    description: SUS psychiatrist full-time equivalent count.
+    unit: 40-hour weekly FTE
+    source_field: psychiatrist_FTE
+    related_indicator: psychiatrist workforce
+    enters_mismatch: false
+    interpretation: Workforce capacity expressed as FTE.
+    limitations: Inherits CNES PF source limitations documented in the release.
+  - name: psychiatrist_fte_rate
+    type: float64
+    nullable: false
+    description: SUS psychiatrist FTE rate.
+    unit: FTE per 100000 population
+    source_field: FTE_rate_per_100k
+    related_indicator: psychiatrist workforce
+    enters_mismatch: true
+    interpretation: Higher values indicate higher workforce capacity.
+    limitations: Locked scientific output; not recalculated here.
+  - name: psychiatrist_fte_percentile
+    type: float64
+    nullable: false
+    description: Percentile rank for SUS psychiatrist FTE rate.
+    unit: percentile scaled 0 to 1
+    source_field: FTE_percentile
+    related_indicator: psychiatrist workforce
+    enters_mismatch: true
+    interpretation: Higher values indicate higher relative capacity.
+    limitations: Percentile is copied from locked output, not recalculated.
+  - name: need_score
+    type: float64
+    nullable: false
+    description: Composite need score from the locked method.
+    unit: score scaled 0 to 1
+    source_field: Need_r
+    related_indicator: need composite
+    enters_mismatch: true
+    interpretation: Higher values indicate higher measured mental-health need.
+    limitations: Copied from locked output; component weights are not modified here.
+  - name: capacity_score
+    type: float64
+    nullable: false
+    description: Composite capacity score from the locked method.
+    unit: score scaled 0 to 1
+    source_field: Capacity_r
+    related_indicator: capacity composite
+    enters_mismatch: true
+    interpretation: Higher values indicate higher measured system capacity.
+    limitations: Copied from locked output; component weights are not modified here.
+  - name: mismatch_score
+    type: float64
+    nullable: false
+    description: Locked need-capacity mismatch score.
+    unit: score scaled -1 to 1
+    source_field: Mismatch_r
+    related_indicator: mismatch
+    enters_mismatch: true
+    interpretation: Higher values indicate greater need relative to capacity.
+    limitations: Integrity-checked against need minus capacity but never overwritten.
+  - name: lisa_local_i
+    type: float64
+    nullable: false
+    description: Local Moran statistic for mismatch.
+    unit: local Moran I
+    source_field: local_I
+    related_indicator: spatial clustering
+    enters_mismatch: false
+    interpretation: Local spatial association measure.
+    limitations: Uses locked corrected spatial output only.
+  - name: lisa_p
+    type: float64
+    nullable: false
+    description: Raw pseudo-p value for local spatial association.
+    unit: probability
+    source_field: raw_pseudo_p
+    related_indicator: spatial clustering
+    enters_mismatch: false
+    interpretation: Unadjusted local significance evidence.
+    limitations: Do not use alone as the locked FDR decision.
+  - name: lisa_q
+    type: float64
+    nullable: false
+    description: Benjamini-Hochberg adjusted q value.
+    unit: probability
+    source_field: BH_adjusted_q
+    related_indicator: spatial clustering
+    enters_mismatch: false
+    interpretation: FDR-adjusted local significance evidence.
+    limitations: The boolean lisa_significant is the canonical locked decision.
+  - name: lisa_significant
+    type: bool
+    nullable: false
+    description: Locked FDR significance indicator at q < 0.10.
+    unit: null
+    source_field: significant_at_q_0.10
+    related_indicator: spatial clustering
+    enters_mismatch: false
+    interpretation: True means LISA is significant under the locked FDR rule.
+    limitations: Not derived from cluster_label text.
+  - name: lisa_cluster
+    type: string
+    nullable: false
+    description: LISA cluster label from the corrected locked output.
+    unit: null
+    source_field: cluster_label
+    related_indicator: spatial clustering
+    enters_mismatch: false
+    interpretation: Spatial mismatch cluster class or not_significant.
+    limitations: Significance is represented by lisa_significant, not inferred from this label.
+  - name: data_quality_flags
+    type: list<string>
+    nullable: false
+    description: Directly supported quality flags for public product interpretation.
+    unit: null
+    source_field: small_number_flag; SUS_mental_health_beds_n
+    related_indicator: quality
+    enters_mismatch: false
+    interpretation: Empty list means no canonical flag assigned.
+    limitations: Only SMALL_SUICIDE_COUNT and ZERO_REGISTERED_BEDS are created in this version.
