@@ -6,10 +6,10 @@ frontend_foundation_commit: 5674db2
 validation_round: frontend_v1_ux_production_qa_2026_08_25
 routes_implemented:
   - /
+  - /metodologia
   - /regiao/[codigo]
 routes_intentionally_not_implemented:
   - /estado/[uf]
-  - /metodologia
   - /dados
   - /sobre
 api_base_url_env: NEXT_PUBLIC_MDB_API_BASE_URL
@@ -37,3 +37,4 @@ notes:
   - Mobile home order keeps the map before selected-region support text, legend, and accessible list.
   - Accessible list is collapsed by default and expands to all 439 Health Regions.
   - Tooltip content is rendered with DOM text nodes, not injected HTML.
+  - Methodology route is static, readable, audit-oriented, and does not call the map API.

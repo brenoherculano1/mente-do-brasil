@@ -27,6 +27,7 @@ html {
   background: var(--background);
   color: var(--text);
   font-family: var(--font-body);
+  scroll-padding-top: 88px;
   scroll-behavior: smooth;
 }
 
@@ -99,7 +100,7 @@ button {
   top: 0;
   z-index: 20;
   border-bottom: 1px solid var(--border);
-  background: rgb(245 247 242 / 92%);
+  background: var(--background);
   backdrop-filter: blur(14px);
 }
 
@@ -538,6 +539,290 @@ button {
   padding: 24px;
 }
 
+.methodology-shell {
+  min-width: 0;
+  padding-bottom: 56px;
+}
+
+.methodology-hero {
+  max-width: 1000px;
+}
+
+.metadata-strip,
+.version-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.version-pill {
+  background: rgb(255 255 255 / 82%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: grid;
+  gap: 3px;
+  min-width: 180px;
+  padding: 10px 12px;
+}
+
+.version-pill span {
+  color: var(--text-muted);
+  font-size: 0.74rem;
+  font-weight: 760;
+  text-transform: uppercase;
+}
+
+.version-pill strong {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  overflow-wrap: anywhere;
+}
+
+.methodology-layout {
+  align-items: start;
+  display: grid;
+  gap: 26px;
+  grid-template-columns: 240px minmax(0, 860px);
+  min-width: 0;
+}
+
+.methodology-sidebar {
+  position: sticky;
+  top: 90px;
+}
+
+.methodology-sidebar nav,
+.mobile-page-nav-list nav {
+  background: rgb(255 255 255 / 80%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: grid;
+  padding: 10px;
+}
+
+.methodology-sidebar a,
+.mobile-page-nav-list a {
+  border-radius: 6px;
+  color: var(--text-muted);
+  display: block;
+  font-size: 0.9rem;
+  padding: 8px 9px;
+}
+
+.methodology-sidebar a:hover,
+.mobile-page-nav-list a:hover {
+  background: var(--surface-muted);
+  color: var(--text);
+}
+
+.mobile-page-nav {
+  display: none;
+  min-width: 0;
+  width: 100%;
+}
+
+.methodology-content {
+  display: grid;
+  gap: 18px;
+  min-width: 0;
+}
+
+.method-section {
+  background: rgb(255 255 255 / 88%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  min-width: 0;
+  padding: 24px;
+}
+
+.method-section h2 {
+  font-size: clamp(1.45rem, 2.4vw, 2.05rem);
+  line-height: 1.08;
+  margin: 0 0 14px;
+}
+
+.method-section h3 {
+  margin: 0 0 8px;
+}
+
+.method-section p,
+.method-section li {
+  line-height: 1.55;
+}
+
+.method-flow {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.method-flow-step {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: grid;
+  gap: 8px;
+  min-height: 150px;
+  padding: 12px;
+  position: relative;
+}
+
+.method-flow-step:not(:last-child)::after {
+  color: var(--text-muted);
+  content: "→";
+  font-weight: 800;
+  position: absolute;
+  right: -10px;
+  top: 16px;
+}
+
+.method-flow-step span {
+  align-items: center;
+  background: var(--accent);
+  border-radius: 999px;
+  color: white;
+  display: inline-flex;
+  font-family: var(--font-mono);
+  height: 26px;
+  justify-content: center;
+  width: 26px;
+}
+
+.method-flow-step p,
+.method-card p,
+.technical-block p {
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.method-card-grid,
+.use-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 16px;
+}
+
+.method-card-grid.compact {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.method-card,
+.technical-block,
+.claim-box,
+.limitation-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+
+.formula-box {
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-weight: 760;
+  line-height: 1.45;
+  margin: 14px 0;
+  padding: 14px;
+}
+
+.method-details {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-top: 14px;
+  padding: 12px 14px;
+}
+
+.method-details summary {
+  cursor: pointer;
+  font-weight: 760;
+}
+
+.technical-rows {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+}
+
+.technical-rows div {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: minmax(130px, 0.32fr) minmax(0, 0.68fr);
+  min-width: 0;
+}
+
+.technical-rows dt {
+  color: var(--text-muted);
+  font-weight: 760;
+}
+
+.technical-rows dd {
+  margin: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.table-wrap {
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+  min-width: 680px;
+  width: 100%;
+}
+
+th,
+td {
+  border-bottom: 1px solid var(--border);
+  padding: 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+}
+
+.percentile-scale {
+  align-items: center;
+  background: linear-gradient(90deg, var(--map-negative), var(--map-neutral), var(--map-positive));
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text);
+  display: flex;
+  font-family: var(--font-mono);
+  font-weight: 760;
+  justify-content: space-between;
+  margin: 16px 0 8px;
+  min-height: 34px;
+  padding: 0 12px;
+}
+
+.claim-box {
+  background: var(--danger-muted);
+  margin-top: 16px;
+}
+
+.limitation-list {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.use-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 @media (max-width: 940px) {
   .explorer-grid {
     grid-template-areas:
@@ -549,6 +834,50 @@ button {
 
   .profile-grid {
     grid-template-columns: 1fr;
+  }
+
+  .methodology-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .methodology-sidebar {
+    display: none;
+  }
+
+  .mobile-page-nav {
+    display: grid;
+    gap: 10px;
+  }
+
+  .mobile-page-nav-list,
+  .mobile-page-nav-list nav {
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .mobile-page-nav-list a {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .method-flow,
+  .method-card-grid,
+  .method-card-grid.compact,
+  .use-grid,
+  .limitation-list {
+    grid-template-columns: 1fr;
+  }
+
+  .method-flow-step {
+    min-height: auto;
+  }
+
+  .method-flow-step:not(:last-child)::after {
+    bottom: -16px;
+    content: "↓";
+    right: 14px;
+    top: auto;
   }
 
   .map-frame,
@@ -585,6 +914,14 @@ button {
 
   .panel {
     padding: 14px;
+  }
+
+  .method-section {
+    padding: 18px;
+  }
+
+  .technical-rows div {
+    grid-template-columns: 1fr;
   }
 
   .map-frame,

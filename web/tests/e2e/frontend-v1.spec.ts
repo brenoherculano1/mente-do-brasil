@@ -2,9 +2,11 @@ import { expect, test } from "@playwright/test";
 import { mkdirSync, writeFileSync } from "node:fs";
 
 const QA_DIR = "../docs/frontend_qc_2026-08-25";
+const METHODOLOGY_QA_DIR = "../docs/methodology_qc_2026-08-25";
 
 test.beforeAll(() => {
   mkdirSync(QA_DIR, { recursive: true });
+  mkdirSync(METHODOLOGY_QA_DIR, { recursive: true });
 });
 
 test("home loads map, metric selector, search, and navigates to region profile", async ({ page }, testInfo) => {
@@ -88,6 +90,85 @@ test("invalid region shows not found state", async ({ page }) => {
   await expect(page.getByRole("link", { name: "Voltar para explorar o Brasil" })).toBeVisible();
 });
 
+test("methodology desktop page loads, navigates sections, and opens details", async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== "desktop", "desktop-only methodology QA");
+  const mapRequests = trackMapRequests(page);
+  await page.goto("/metodologia");
+  await expect(page.getByRole("heading", { level: 1, name: "Metodologia" })).toBeVisible();
+  await expect(page.getByLabel("Identificadores metodológicos").getByText("MDB_METHOD_1.0")).toBeVisible();
+  await expect(page.getByText("Mismatch = Need Score - Capacity Score")).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Global Moran's I" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "LISA" })).toBeVisible();
+
+  const nav = page.locator(".methodology-sidebar").getByRole("navigation", {
+    name: "Seções da metodologia",
+  });
+  await nav.getByRole("link", { name: "Mismatch" }).click();
+  await expect(page.locator("#mismatch")).toBeInViewport();
+
+  const geographyDetails = page.getByText("Como a geografia foi construída");
+  await geographyDetails.click();
+  await expect(page.getByText("Crosswalk primário: DATASUS TAB_POP HR CNV.")).toBeVisible();
+
+  const percentileDetails = page.getByText("Detalhes do cálculo de percentis");
+  await percentileDetails.click();
+  await expect(page.getByText(/less \+ \(equal - 1\) \/ 2/)).toBeVisible();
+  await expect(page.locator("[data-nextjs-dev-tools-button]")).toHaveCount(0);
+  await expect(page.locator("canvas")).toHaveCount(0);
+  expect(mapRequests).toHaveLength(0);
+  await expectNoGlobalHorizontalOverflow(page);
+
+  await page.screenshot({
+    path: `${METHODOLOGY_QA_DIR}/desktop_methodology_full.png`,
+    fullPage: true,
+  });
+  await page.locator("#overview").screenshot({
+    path: `${METHODOLOGY_QA_DIR}/desktop_methodology_top.png`,
+  });
+  await page.locator("#capacity").screenshot({
+    path: `${METHODOLOGY_QA_DIR}/desktop_methodology_need_capacity.png`,
+  });
+  await page.locator("#spatial").screenshot({
+    path: `${METHODOLOGY_QA_DIR}/desktop_methodology_spatial.png`,
+  });
+  await page.locator("#limitations").screenshot({
+    path: `${METHODOLOGY_QA_DIR}/desktop_methodology_limitations.png`,
+  });
+});
+
+test("methodology mobile page has compact navigation and no global overflow", async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== "mobile", "mobile-only methodology QA");
+  const mapRequests = trackMapRequests(page);
+  await page.goto("/metodologia");
+  await expect(page.getByRole("heading", { level: 1, name: "Metodologia" })).toBeVisible();
+  await page.screenshot({
+    path: `${METHODOLOGY_QA_DIR}/mobile_methodology_top.png`,
+  });
+  await page.screenshot({
+    path: `${METHODOLOGY_QA_DIR}/mobile_methodology_full.png`,
+    fullPage: true,
+  });
+  const mobileNav = page.getByRole("button", { name: "Nesta página" });
+  await expect(mobileNav).toHaveAttribute("aria-expanded", "false");
+  await mobileNav.click();
+  await expect(mobileNav).toHaveAttribute("aria-expanded", "true");
+  await page.locator("#mobile-methodology-nav").getByRole("link", { name: "Análise espacial" }).click();
+  await expect(page.locator("#spatial")).toBeInViewport();
+  await page.locator("#percentiles summary").click();
+  await expect(page.getByText(/Empates recebem a posição média/)).toBeVisible();
+  await expect(page.locator("canvas")).toHaveCount(0);
+  expect(mapRequests).toHaveLength(0);
+  await expectNoGlobalHorizontalOverflow(page);
+
+  await page.screenshot({
+    path: `${METHODOLOGY_QA_DIR}/mobile_methodology_mid.png`,
+  });
+  await page.locator("#citation").scrollIntoViewIfNeeded();
+  await page.screenshot({
+    path: `${METHODOLOGY_QA_DIR}/mobile_methodology_bottom.png`,
+  });
+});
+
 async function waitForMapPixels(page: import("@playwright/test").Page) {
   await page.waitForFunction(() => {
     const canvas = document.querySelector("canvas") as HTMLCanvasElement | null;
@@ -112,4 +193,22 @@ async function measureHome(page: import("@playwright/test").Page) {
     controlsPanelHeight: panelBox?.height ?? null,
     supportPanelTop: supportBox?.y ?? null,
   };
+}
+
+async function expectNoGlobalHorizontalOverflow(page: import("@playwright/test").Page) {
+  const overflow = await page.evaluate(() => {
+    const documentElement = document.documentElement;
+    return documentElement.scrollWidth - documentElement.clientWidth;
+  });
+  expect(overflow).toBeLessThanOrEqual(1);
+}
+
+function trackMapRequests(page: import("@playwright/test").Page) {
+  const mapRequests: string[] = [];
+  page.on("request", (request) => {
+    if (request.url().includes("/api/v1/map/health-regions")) {
+      mapRequests.push(request.url());
+    }
+  });
+  return mapRequests;
 }

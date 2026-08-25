@@ -1,6 +1,10 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export function AppHeader() {
+  const pathname = usePathname();
   return (
     <header className="app-header">
       <div className="header-inner">
@@ -8,12 +12,12 @@ export function AppHeader() {
           Mente do Brasil
         </Link>
         <nav aria-label="Navegação principal" className="nav-links">
-          <Link aria-current="page" href="/">
+          <Link aria-current={pathname === "/" ? "page" : undefined} href="/">
             Explorar
           </Link>
-          <span className="muted-link" aria-disabled="true">
+          <Link aria-current={pathname === "/metodologia" ? "page" : undefined} href="/metodologia">
             Metodologia
-          </span>
+          </Link>
           <span className="muted-link" aria-disabled="true">
             Dados
           </span>

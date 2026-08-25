@@ -9,11 +9,11 @@ Implemented:
 
 - `/`: Explorar o Brasil.
 - `/regiao/[codigo]`: Perfil da Região de Saúde.
+- `/metodologia`: Como medimos.
 
 Reserved for later UX review:
 
 - `/estado/[uf]`
-- `/metodologia`
 - `/dados`
 - `/sobre`
 
@@ -132,4 +132,4 @@ http://127.0.0.1:8000
 
 This slice does not include login, deployment, analytics, rankings, chatbot, CMS,
 download center, comparison tools, peer regions, trend charts, full state pages,
-full methodology/data/about pages, or any scientific recalculation.
+data/about pages, or any scientific recalculation.

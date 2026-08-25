@@ -48,13 +48,14 @@ Open `http://127.0.0.1:3000`.
 
 - `/`: Explorer with national overview map, metric selector, territorial
   search, selected-region panel, and accessible region list.
+- `/metodologia`: Static, readable explanation of the locked method, sources,
+  denominators, percentiles, spatial analysis, flags, limitations, and versions.
 - `/regiao/[codigo]`: Health Region profile using the API semantic profile
   endpoint.
 
 ## Future Routes
 
 - `/estado/[uf]`
-- `/metodologia`
 - `/dados`
 - `/sobre`
 

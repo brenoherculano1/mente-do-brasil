@@ -8,7 +8,7 @@ export function AppFooter() {
         </div>
         <div className="small-text">
           <div>Release: MDB_ANALYTICAL_2024_1</div>
-          <div>Rotas futuras: Metodologia, Dados, Sobre</div>
+          <div>Rotas futuras: Dados, Sobre</div>
         </div>
       </div>
     </footer>
