@@ -93,14 +93,14 @@ export function DataPage() {
                 <dl className="dataset-meta">
                   <Row label="artefato" value={dataset.path} />
                   <Row label="unidade" value={dataset.unit} />
-                  <Row label="rows" value={String(dataset.rows)} />
-                  <Row label="columns" value={String(dataset.columns)} />
+                  <Row label="linhas" value={String(dataset.rows)} />
+                  <Row label="colunas" value={String(dataset.columns)} />
                   <Row label="formato" value={dataset.format} />
-                  <Row label="canonical" value={dataset.canonical} />
+                  <Row label="canônico" value={dataset.canonical} />
                   <Row label="release" value={dataset.release} />
-                  <Row label="method" value={dataset.method} />
-                  <Row label="geography" value={dataset.geography} />
-                  <Row label="sha256" value={dataset.sha256} />
+                  <Row label="método" value={dataset.method} />
+                  <Row label="geografia" value={dataset.geography} />
+                  <Row label="SHA256" value={dataset.sha256} />
                 </dl>
               </article>
             ))}
@@ -174,7 +174,7 @@ export function DataPage() {
                               <span className="field-note">{field.limitations}</span>
                             </td>
                             <td>{field.type}</td>
-                            <td>{field.unit || "not_applicable"}</td>
+                            <td>{field.unit || "não se aplica"}</td>
                             <td>{field.nullable ? "sim" : "não"}</td>
                             <td>{field.sourceField}</td>
                           </tr>
@@ -221,8 +221,8 @@ export function DataPage() {
             para que cada release possa ser auditado e reconstruído.
           </p>
           <div className="provenance-grid">
-            <InfoBlock label="access date" value={PROVENANCE.accessDate} />
-            <InfoBlock label="raw provenance records" value="1.137" />
+            <InfoBlock label="data de acesso" value={PROVENANCE.accessDate} />
+            <InfoBlock label="registros de proveniência bruta" value="1.137" />
           </div>
           <div className="table-wrap compact-table">
             <table>
@@ -252,7 +252,7 @@ export function DataPage() {
             <Row label="Contrato de dados" value={DATA_RELEASE.dataContract} />
             <Row label="Método" value={DATA_RELEASE.methodVersion} />
             <Row label="Release analítico" value={DATA_RELEASE.releaseId} />
-            <Row label="Canonical" value={DATA_RELEASE.canonicalVersion} />
+            <Row label="Canônico" value={DATA_RELEASE.canonicalVersion} />
             <Row label="Geografia" value={DATA_RELEASE.geographyVersion} />
             <Row label="Geometria web" value={DATA_RELEASE.webGeometryVersion} />
           </dl>

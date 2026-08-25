@@ -1,0 +1,55 @@
+COMMAND:
+validate locked /dados screenshots
+OUTPUT:
+{
+  "screenshots": [
+    {
+      "file": "docs/data_page_qc_2026-08-25_locked/desktop_data_top.png",
+      "exists": true,
+      "size_bytes": 36043
+    },
+    {
+      "file": "docs/data_page_qc_2026-08-25_locked/desktop_data_datasets.png",
+      "exists": true,
+      "size_bytes": 174298
+    },
+    {
+      "file": "docs/data_page_qc_2026-08-25_locked/desktop_data_dictionary.png",
+      "exists": true,
+      "size_bytes": 897811
+    },
+    {
+      "file": "docs/data_page_qc_2026-08-25_locked/desktop_data_release_policy.png",
+      "exists": true,
+      "size_bytes": 76235
+    },
+    {
+      "file": "docs/data_page_qc_2026-08-25_locked/desktop_data_full.png",
+      "exists": true,
+      "size_bytes": 1694235
+    },
+    {
+      "file": "docs/data_page_qc_2026-08-25_locked/mobile_data_top.png",
+      "exists": true,
+      "size_bytes": 217882
+    },
+    {
+      "file": "docs/data_page_qc_2026-08-25_locked/mobile_data_dictionary.png",
+      "exists": true,
+      "size_bytes": 206386
+    },
+    {
+      "file": "docs/data_page_qc_2026-08-25_locked/mobile_data_bottom.png",
+      "exists": true,
+      "size_bytes": 210241
+    },
+    {
+      "file": "docs/data_page_qc_2026-08-25_locked/mobile_data_full.png",
+      "exists": true,
+      "size_bytes": 4839968
+    }
+  ],
+  "pass": true
+}
+
+EXIT_CODE: 0

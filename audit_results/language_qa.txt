@@ -1,5 +1,5 @@
 COMMAND:
-node source language QA for /dados
+source language QA for /dados
 OUTPUT:
 {
   "forbidden_matches": [],

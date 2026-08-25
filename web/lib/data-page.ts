@@ -41,7 +41,7 @@ export const DATASETS = [
     unit: "Região de Saúde",
     rows: 439,
     columns: 35,
-    format: "Parquet canonical",
+    format: "Parquet canônico",
     sha256: DATA_RELEASE.canonicalHash,
     release: DATA_RELEASE.releaseId,
     method: DATA_RELEASE.methodVersion,
@@ -56,7 +56,7 @@ export const DATASETS = [
     unit: "Município",
     rows: 5570,
     columns: 9,
-    format: "Parquet canonical",
+    format: "Parquet canônico",
     sha256: DATA_RELEASE.crosswalkHash,
     release: DATA_RELEASE.releaseId,
     method: DATA_RELEASE.methodVersion,
@@ -98,8 +98,8 @@ export const PROVENANCE = {
 };
 
 export const PRIMARY_SOURCES = [
-  ["SIM", "Mortalidade por suicídio", "2022-2024 pooled"],
-  ["SIH/SUS", "Internações psiquiátricas", "2022-2024 pooled"],
+  ["SIM", "Mortalidade por suicídio", "2022–2024 agrupado"],
+  ["SIH/SUS", "Internações psiquiátricas", "2022–2024 agrupado"],
   ["CNES", "CAPS, leitos e psiquiatras FTE", "dezembro de 2024"],
   ["DATASUS", "População e crosswalk de Regiões de Saúde conforme metodologia", "referência 2024"],
   ["IBGE", "Geometria municipal utilizada para composição territorial", "referência 2024"],

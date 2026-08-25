@@ -52,6 +52,22 @@ describe("data page", () => {
     expect(text).not.toMatch(/schema canonical/i);
   });
 
+  it("renders public dataset and provenance labels in Portuguese", () => {
+    const { container } = render(<DataPage />);
+    const text = container.textContent || "";
+    expect(text).toContain("linhas");
+    expect(text).toContain("colunas");
+    expect(text).toContain("método");
+    expect(text).toContain("geografia");
+    expect(text).toContain("data de acesso");
+    expect(text).toContain("registros de proveniência bruta");
+    expect(text).toContain("não se aplica");
+    expect(text).toContain("2022–2024 agrupado");
+    expect(text).toContain("Parquet canônico");
+    expect(text).not.toMatch(/not_applicable|2022-2024 pooled|2022–2024 pooled/i);
+    expect(text).not.toMatch(/Parquet canonical|raw provenance records|access date/i);
+  });
+
   it("documents null semantics, license uncertainty, and citation state", () => {
     const { container } = render(<DataPage />);
     expect(screen.getByText(/Null não equivale a zero/i)).toBeInTheDocument();

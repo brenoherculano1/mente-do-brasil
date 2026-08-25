@@ -3,7 +3,7 @@ import { mkdirSync, writeFileSync } from "node:fs";
 
 const QA_DIR = "../docs/frontend_qc_2026-08-25";
 const METHODOLOGY_QA_DIR = "../docs/methodology_qc_2026-08-25";
-const DATA_QA_DIR = "../docs/data_page_qc_2026-08-25";
+const DATA_QA_DIR = "../docs/data_page_qc_2026-08-25_locked";
 
 test.beforeAll(() => {
   mkdirSync(QA_DIR, { recursive: true });
@@ -196,6 +196,15 @@ test("data page exposes release inventory and filters dictionary on desktop", as
   await expect(page.locator("body")).not.toContainText("Locked analytical");
   await expect(page.locator("body")).not.toContainText("Higher values");
   await expect(page.locator("body")).not.toContainText("schema canonical");
+  await expect(page.locator("body")).not.toContainText("not_applicable");
+  await expect(page.locator("body")).not.toContainText("2022-2024 pooled");
+  await expect(page.locator("body")).not.toContainText("2022–2024 pooled");
+  await expect(page.locator("body")).not.toContainText("Parquet canonical");
+  await expect(page.locator("body")).not.toContainText("raw provenance records");
+  await expect(page.locator("body")).not.toContainText("access date");
+  await expect(page.locator("body")).toContainText("linhas");
+  await expect(page.locator("body")).toContainText("colunas");
+  await expect(page.locator("body")).toContainText("Parquet canônico");
   await expect(page.getByRole("link", { name: /download/i })).toHaveCount(0);
   await expect(page.locator("body")).not.toContainText("http://127.0.0.1");
   await expect(page.locator("[data-nextjs-dev-tools-button]")).toHaveCount(0);
@@ -222,6 +231,9 @@ test("data page remains usable on mobile", async ({ page }, testInfo) => {
   await expect(page.getByText("MDB_DATA_CONTRACT_V1.0")).toBeVisible();
   await expect(page.locator("body")).not.toContainText("Não versionado neste release");
   await expect(page.locator("body")).not.toContainText("schema canonical");
+  await expect(page.locator("body")).not.toContainText("not_applicable");
+  await expect(page.locator("body")).not.toContainText("Parquet canonical");
+  await expect(page.locator("body")).toContainText("não se aplica");
   await expectNoGlobalHorizontalOverflow(page);
   await page.screenshot({ path: `${DATA_QA_DIR}/mobile_data_top.png` });
   await page.screenshot({ path: `${DATA_QA_DIR}/mobile_data_full.png`, fullPage: true });
