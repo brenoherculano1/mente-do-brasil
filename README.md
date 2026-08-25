@@ -2,11 +2,12 @@
 
 Mente do Brasil is a Brazilian public data and territorial intelligence project for mental health.
 
-The repository is at local API validation stage. It currently
+The repository is at local frontend V1 validation stage. It currently
 defines the technical structure, metadata contracts, release/version
 conventions, canonical analytical layer, PostgreSQL/PostGIS serving schema, and
-first internal read-only FastAPI API. It does not yet contain a public website,
-dashboard, authentication, cloud database, or deployed service.
+first public frontend vertical slice over the internal read-only FastAPI API. It
+does not yet contain a deployed service, authentication, cloud database, or the
+complete public website.
 
 ## Scientific Scope
 
@@ -57,7 +58,7 @@ tests/
   regression/   locked result regression tests
 
 web/
-  reserved only; no frontend exists yet
+  local Next.js frontend vertical slice for the explorer and region profile
 ```
 
 Current product data flow:
@@ -68,10 +69,10 @@ RAW
   -> POSTGRESQL/POSTGIS SERVING
   -> WEB GEOMETRY DERIVATION
   -> INTERNAL LOCAL READ-ONLY API
-  -> WEB [future]
+  -> WEB FRONTEND V1
 ```
 
-The frontend has not been built. The API is local-only and read-only.
+The frontend is local-only. The API is local-only and read-only.
 
 ## Data Philosophy
 
@@ -166,11 +167,11 @@ Git; their hashes and sizes are recorded in metadata.
 This repository does not yet include:
 
 - raw DATASUS/CNES/IBGE files;
-- frontend or dashboard;
 - public API or deployed API;
 - authentication;
 - cloud database;
 - deployment;
+- complete `/estado/[uf]`, `/metodologia`, `/dados`, or `/sobre` pages;
 - recalculated spatial analyses.
 
 Placeholders are explicit where source URLs, file hashes, extraction timestamps, or final generated artifacts are not yet available.

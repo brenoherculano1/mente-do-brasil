@@ -1,0 +1,33 @@
+frontend_id: FRONTEND_FOUNDATION_V1
+frontend_status: VALIDATED_LOCAL
+validated_at: 2026-08-24
+commit_basis: fc0a6a2
+routes_implemented:
+  - /
+  - /regiao/[codigo]
+routes_intentionally_not_implemented:
+  - /estado/[uf]
+  - /metodologia
+  - /dados
+  - /sobre
+api_base_url_env: NEXT_PUBLIC_MDB_API_BASE_URL
+api_base_url_default: http://127.0.0.1:8000
+map_library: MapLibre GL JS
+map_geometry_profile: overview
+map_geometry_version: MDB_WEB_GEOMETRY_V1
+normal_frontend_full_geometry: forbidden
+release_id: MDB_ANALYTICAL_2024_1
+scientific_recalculation_in_frontend: false
+quality_gates:
+  lint: PASS
+  typecheck: PASS
+  unit_tests: PASS
+  e2e: PASS
+  production_build: PASS
+  api_regression: PASS
+  serving_regression: PASS
+  scientific_regression: PASS
+  screenshots: PASS
+notes:
+  - Vertical slice only; no deployment, auth, rankings, chatbot, analytics, CMS, or download center.
+  - Search supports Health Region name/code and 7-digit IBGE municipality lookup.
