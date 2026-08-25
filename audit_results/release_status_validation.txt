@@ -1,5 +1,5 @@
 COMMAND:
-uv run python validate release status
+validate release status
 OUTPUT:
 {
   "release_status": "VALIDATING",
@@ -7,7 +7,8 @@ OUTPUT:
   "release_gate": "PASS",
   "release_readiness": "READY",
   "public_release_status": "NOT_RELEASED",
-  "serving_public_release_status": "NOT_RELEASED"
+  "serving_public_release_status": "NOT_RELEASED",
+  "pass": true
 }
 
 EXIT_CODE: 0

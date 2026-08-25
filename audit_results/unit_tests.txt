@@ -8,17 +8,18 @@ OUTPUT:
 
  RUN  v3.2.7 /Users/brenoherculano/Documents/New project/mente-do-brasil/web
 
- ✓ tests/unit/color-scale.test.ts (5 tests) 4ms
- ✓ tests/unit/format.test.ts (3 tests) 10ms
- ✓ tests/unit/profile-components.test.tsx (4 tests) 55ms
- ✓ tests/unit/methodology-page.test.tsx (6 tests) 483ms
- ✓ tests/unit/data-page.test.tsx (5 tests) 871ms
-   ✓ data page > renders release identifiers, counts, and locked hashes  380ms
+ ✓ tests/unit/color-scale.test.ts (5 tests) 41ms
+ ✓ tests/unit/format.test.ts (3 tests) 36ms
+ ✓ tests/unit/profile-components.test.tsx (4 tests) 96ms
+ ✓ tests/unit/methodology-page.test.tsx (6 tests) 795ms
+   ✓ methodology page > renders locked metadata identifiers and standard population  361ms
+ ✓ tests/unit/data-page.test.tsx (6 tests) 1300ms
+   ✓ data page > renders release identifiers, counts, and locked hashes  626ms
 
  Test Files  5 passed (5)
-      Tests  23 passed (23)
-   Start at  11:42:16
-   Duration  3.85s (transform 797ms, setup 2.04s, collect 1.68s, tests 1.42s, environment 7.53s, prepare 1.00s)
+      Tests  24 passed (24)
+   Start at  13:00:16
+   Duration  4.98s (transform 592ms, setup 2.12s, collect 2.27s, tests 2.27s, environment 7.75s, prepare 1.90s)
 
 
 EXIT_CODE: 0

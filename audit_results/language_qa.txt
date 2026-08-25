@@ -1,0 +1,10 @@
+COMMAND:
+node source language QA for /dados
+OUTPUT:
+{
+  "forbidden_matches": [],
+  "missing_required_terms": [],
+  "pass": true
+}
+
+EXIT_CODE: 0

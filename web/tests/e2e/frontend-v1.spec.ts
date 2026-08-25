@@ -178,6 +178,7 @@ test("data page exposes release inventory and filters dictionary on desktop", as
   await expect(page.getByRole("heading", { level: 1, name: "Dados e versões" })).toBeVisible();
   await expect(page.getByText("Ainda não publicado", { exact: true })).toBeVisible();
   await expect(page.getByText("MDB_ANALYTICAL_2024_1").first()).toBeVisible();
+  await expect(page.getByText("MDB_DATA_CONTRACT_V1.0")).toBeVisible();
   await expect(page.getByText("439").first()).toBeVisible();
   await expect(page.getByText("5.570")).toBeVisible();
   await expect(page.getByText("35").first()).toBeVisible();
@@ -191,6 +192,10 @@ test("data page exposes release inventory and filters dictionary on desktop", as
   await page.goBack();
   await expect(page.getByText("Os formatos públicos serão definidos")).toBeVisible();
   await expect(page.getByText("A API pública ainda não foi publicada")).toHaveCount(0);
+  await expect(page.locator("body")).not.toContainText("Não versionado neste release");
+  await expect(page.locator("body")).not.toContainText("Locked analytical");
+  await expect(page.locator("body")).not.toContainText("Higher values");
+  await expect(page.locator("body")).not.toContainText("schema canonical");
   await expect(page.getByRole("link", { name: /download/i })).toHaveCount(0);
   await expect(page.locator("body")).not.toContainText("http://127.0.0.1");
   await expect(page.locator("[data-nextjs-dev-tools-button]")).toHaveCount(0);
@@ -198,10 +203,14 @@ test("data page exposes release inventory and filters dictionary on desktop", as
   await expectNoGlobalHorizontalOverflow(page);
 
   await page.screenshot({ path: `${DATA_QA_DIR}/desktop_data_full.png`, fullPage: true });
-  await page.locator("#data-title").screenshot({ path: `${DATA_QA_DIR}/desktop_data_top.png` });
-  await page.locator("#datasets-title").screenshot({ path: `${DATA_QA_DIR}/desktop_data_datasets.png` });
-  await page.locator("#dictionary-title").screenshot({ path: `${DATA_QA_DIR}/desktop_data_dictionary.png` });
-  await page.locator("#versions-title").screenshot({ path: `${DATA_QA_DIR}/desktop_data_release_policy.png` });
+  await page.locator(".data-hero").screenshot({ path: `${DATA_QA_DIR}/desktop_data_top.png` });
+  await page.locator(".dataset-list").screenshot({ path: `${DATA_QA_DIR}/desktop_data_datasets.png` });
+  await page.locator('[aria-labelledby="dictionary-title"]').screenshot({
+    path: `${DATA_QA_DIR}/desktop_data_dictionary.png`,
+  });
+  await page.locator('[aria-labelledby="versions-title"]').screenshot({
+    path: `${DATA_QA_DIR}/desktop_data_release_policy.png`,
+  });
 });
 
 test("data page remains usable on mobile", async ({ page }, testInfo) => {
@@ -210,6 +219,9 @@ test("data page remains usable on mobile", async ({ page }, testInfo) => {
   await page.goto("/dados");
   await expect(page.getByRole("heading", { level: 1, name: "Dados e versões" })).toBeVisible();
   await expect(page.getByText("Ainda não publicado", { exact: true })).toBeVisible();
+  await expect(page.getByText("MDB_DATA_CONTRACT_V1.0")).toBeVisible();
+  await expect(page.locator("body")).not.toContainText("Não versionado neste release");
+  await expect(page.locator("body")).not.toContainText("schema canonical");
   await expectNoGlobalHorizontalOverflow(page);
   await page.screenshot({ path: `${DATA_QA_DIR}/mobile_data_top.png` });
   await page.screenshot({ path: `${DATA_QA_DIR}/mobile_data_full.png`, fullPage: true });

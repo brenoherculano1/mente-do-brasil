@@ -1,0 +1,15 @@
+COMMAND:
+.venv/bin/pytest tests/regression/test_data_contract.py
+OUTPUT:
+============================= test session starts ==============================
+platform darwin -- Python 3.13.5, pytest-9.1.1, pluggy-1.6.0
+rootdir: /Users/brenoherculano/Documents/New project/mente-do-brasil
+configfile: pyproject.toml
+plugins: anyio-4.14.2
+collected 4 items
+
+tests/regression/test_data_contract.py ....                              [100%]
+
+============================== 4 passed in 0.07s ===============================
+
+EXIT_CODE: 0

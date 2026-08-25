@@ -1,14 +1,20 @@
 COMMAND:
-node production serving check for /dados
+production serving /dados contract/copy validation
 OUTPUT:
 {
-  "status": 200,
-  "ok": true,
-  "has_public_availability": true,
-  "has_not_released": true,
-  "has_localhost": false,
-  "has_public_download": false,
-  "has_false_doi": false
+  "checks": {
+    "status_200": true,
+    "has_data_contract": true,
+    "removed_old_unversioned_copy": true,
+    "has_not_released": true,
+    "has_not_released_status": true,
+    "no_public_download_link": true,
+    "no_localhost_rendered": true,
+    "no_fake_doi_or_license": true,
+    "no_english_public_dictionary_phrases": true,
+    "no_literal_backticks_schema": true
+  },
+  "pass": true
 }
 
 EXIT_CODE: 0

@@ -1,0 +1,37 @@
+contract_id: MDB_DATA_CONTRACT_V1.0
+status: LOCKED
+primary_release: MDB_ANALYTICAL_2024_1
+method_version: MDB_METHOD_1.0
+geography_version: BR_HEALTH_REGIONS_END2024_V1
+canonical_version: MDB_CANONICAL_1.0
+primary_unit: Health Region
+primary_key: health_region_code
+health_region_count: 439
+canonical_schema: metadata/canonical/health_regions_v1.yaml
+crosswalk_schema: metadata/canonical/municipality_health_region_crosswalk_v1.yaml
+null_semantics:
+  null_is_not_zero: true
+  missing_is_preserved: true
+scientific_recalculation_rule:
+  consumers_must_not_recalculate_locked_scientific_outputs: true
+release_isolation:
+  release_id_required: true
+geography_isolation:
+  geography_version_required: true
+data_quality_flags_type: list<string>
+schema_references:
+  health_regions:
+    path: metadata/canonical/health_regions_v1.yaml
+    row_count: 439
+    column_count: 35
+    primary_key: health_region_code
+  municipality_health_region_crosswalk:
+    path: metadata/canonical/municipality_health_region_crosswalk_v1.yaml
+    row_count: 5570
+    column_count: 9
+provenance:
+  origin: project_locked_decision
+  note: >
+    MDB_DATA_CONTRACT_V1.0 was already defined as a locked project identifier
+    before this repository artifact was materialized. This file records that
+    existing decision and does not introduce a new methodological version.

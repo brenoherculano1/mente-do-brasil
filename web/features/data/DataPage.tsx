@@ -123,9 +123,9 @@ export function DataPage() {
           <p className="eyebrow">Schema</p>
           <h2 id="dictionary-title">Dicionário de dados</h2>
           <p>
-            O dicionário abaixo representa o schema canonical
-            `metadata/canonical/health_regions_v1.yaml`. Valores ausentes são
-            preservados como ausentes. Null não equivale a zero.
+            O dicionário abaixo representa o schema canônico versionado do dataset
+            analítico. Valores ausentes são preservados como ausentes. Null não
+            equivale a zero.
           </p>
           <div className="dictionary-search">
             <label htmlFor="field-search">Buscar campo</label>
@@ -249,12 +249,12 @@ export function DataPage() {
           <p className="eyebrow">Versionamento</p>
           <h2 id="versions-title">Versões</h2>
           <dl className="technical-rows">
-            <Row label="Data contract" value={DATA_RELEASE.dataContract} />
-            <Row label="Method" value={DATA_RELEASE.methodVersion} />
-            <Row label="Analytical release" value={DATA_RELEASE.releaseId} />
+            <Row label="Contrato de dados" value={DATA_RELEASE.dataContract} />
+            <Row label="Método" value={DATA_RELEASE.methodVersion} />
+            <Row label="Release analítico" value={DATA_RELEASE.releaseId} />
             <Row label="Canonical" value={DATA_RELEASE.canonicalVersion} />
-            <Row label="Geography" value={DATA_RELEASE.geographyVersion} />
-            <Row label="Web geometry" value={DATA_RELEASE.webGeometryVersion} />
+            <Row label="Geografia" value={DATA_RELEASE.geographyVersion} />
+            <Row label="Geometria web" value={DATA_RELEASE.webGeometryVersion} />
           </dl>
           <p>
             Um release do Mente do Brasil representa uma combinação versionada de

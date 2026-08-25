@@ -1,0 +1,10 @@
+COMMAND:
+playwright capture final /dados screenshots
+OUTPUT:
+{
+  "output_dir": "/Users/brenoherculano/Documents/New project/mente-do-brasil/docs/data_page_qc_2026-08-25_final",
+  "screenshots": 6,
+  "pass": true
+}
+
+EXIT_CODE: 0

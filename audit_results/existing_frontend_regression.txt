@@ -8,24 +8,24 @@ OUTPUT:
 
 Running 12 tests using 2 workers
 
-(node:87342) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(node:96187) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
-(node:87343) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(node:96186) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
-  ✓   1 [desktop] › tests/e2e/frontend-v1.spec.ts:14:5 › home loads map, metric selector, search, and navigates to region profile (4.5s)
-  ✓   2 [mobile] › tests/e2e/frontend-v1.spec.ts:14:5 › home loads map, metric selector, search, and navigates to region profile (5.1s)
-  ✓   3 [desktop] › tests/e2e/frontend-v1.spec.ts:47:5 › captures home screenshot and keeps mobile layout usable (2.9s)
-  ✓   4 [mobile] › tests/e2e/frontend-v1.spec.ts:47:5 › captures home screenshot and keeps mobile layout usable (3.3s)
-  ✓   5 [desktop] › tests/e2e/frontend-v1.spec.ts:71:5 › accessible list expands, filters rationally, and captures QA screenshot (2.7s)
-  ✓   7 [desktop] › tests/e2e/frontend-v1.spec.ts:89:5 › invalid region shows not found state (315ms)
-  ✓   6 [mobile] › tests/e2e/frontend-v1.spec.ts:71:5 › accessible list expands, filters rationally, and captures QA screenshot (3.2s)
-  ✓   9 [mobile] › tests/e2e/frontend-v1.spec.ts:89:5 › invalid region shows not found state (267ms)
+  ✓   1 [mobile] › tests/e2e/frontend-v1.spec.ts:14:5 › home loads map, metric selector, search, and navigates to region profile (8.7s)
+  ✓   2 [desktop] › tests/e2e/frontend-v1.spec.ts:14:5 › home loads map, metric selector, search, and navigates to region profile (9.1s)
+  ✓   4 [desktop] › tests/e2e/frontend-v1.spec.ts:47:5 › captures home screenshot and keeps mobile layout usable (2.8s)
+  ✓   3 [mobile] › tests/e2e/frontend-v1.spec.ts:47:5 › captures home screenshot and keeps mobile layout usable (3.3s)
+  ✓   5 [desktop] › tests/e2e/frontend-v1.spec.ts:71:5 › accessible list expands, filters rationally, and captures QA screenshot (3.1s)
+  ✓   7 [desktop] › tests/e2e/frontend-v1.spec.ts:89:5 › invalid region shows not found state (405ms)
+  ✓   6 [mobile] › tests/e2e/frontend-v1.spec.ts:71:5 › accessible list expands, filters rationally, and captures QA screenshot (3.3s)
+  ✓   9 [mobile] › tests/e2e/frontend-v1.spec.ts:89:5 › invalid region shows not found state (552ms)
   -  10 [mobile] › tests/e2e/frontend-v1.spec.ts:95:5 › methodology desktop page loads, navigates sections, and opens details
-  ✓   8 [desktop] › tests/e2e/frontend-v1.spec.ts:95:5 › methodology desktop page loads, navigates sections, and opens details (3.9s)
+  ✓   8 [desktop] › tests/e2e/frontend-v1.spec.ts:95:5 › methodology desktop page loads, navigates sections, and opens details (7.2s)
   -  12 [desktop] › tests/e2e/frontend-v1.spec.ts:141:5 › methodology mobile page has compact navigation and no global overflow
-  ✓  11 [mobile] › tests/e2e/frontend-v1.spec.ts:141:5 › methodology mobile page has compact navigation and no global overflow (7.8s)
+  ✓  11 [mobile] › tests/e2e/frontend-v1.spec.ts:141:5 › methodology mobile page has compact navigation and no global overflow (9.6s)
 
   2 skipped
-  10 passed (20.9s)
+  10 passed (28.8s)
 
 EXIT_CODE: 0

@@ -1,10 +1,7 @@
 COMMAND:
-uv run python validate provenance for /dados
+validate provenance for /dados
 OUTPUT:
 {
-  "access_dates": [
-    "2026-08-23"
-  ],
   "expected_counts": {
     "CNES LT": 27,
     "CNES PF": 27,

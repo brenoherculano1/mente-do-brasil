@@ -1,90 +1,18 @@
 COMMAND:
-uv run python validate data inventory
+validate data inventory
 OUTPUT:
 {
-  "release_id": "MDB_ANALYTICAL_2024_1",
-  "public_release_status": "NOT_RELEASED",
   "health_regions_shape": [
     439,
     35
   ],
-  "health_regions_columns": [
-    "release_id",
-    "method_version",
-    "geography_version",
-    "health_region_code",
-    "health_region_name",
-    "uf_code",
-    "uf",
-    "municipality_count",
-    "population",
-    "area_km2",
-    "population_density",
-    "suicide_deaths",
-    "suicide_asmr",
-    "suicide_percentile",
-    "psychiatric_admissions",
-    "psychiatric_admission_rate",
-    "psychiatric_admission_percentile",
-    "caps_count",
-    "caps_rate",
-    "caps_percentile",
-    "mental_health_beds_sus_count",
-    "mental_health_beds_sus_rate",
-    "beds_percentile",
-    "psychiatrist_fte",
-    "psychiatrist_fte_rate",
-    "psychiatrist_fte_percentile",
-    "need_score",
-    "capacity_score",
-    "mismatch_score",
-    "lisa_local_i",
-    "lisa_p",
-    "lisa_q",
-    "lisa_significant",
-    "lisa_cluster",
-    "data_quality_flags"
-  ],
-  "health_regions_sha256": "a3cc8f3aefc9d556d1bacc636dc72cabf04155052dd63c426dda9bec58ada515",
+  "canonical_sha256": "a3cc8f3aefc9d556d1bacc636dc72cabf04155052dd63c426dda9bec58ada515",
   "crosswalk_shape": [
     5570,
     9
   ],
-  "crosswalk_columns": [
-    "geography_version",
-    "reference_date",
-    "municipality_code_ibge",
-    "municipality_code_datasus6",
-    "municipality_name",
-    "uf",
-    "health_region_code",
-    "health_region_name",
-    "source"
-  ],
   "crosswalk_sha256": "acd7ab896566d5ea730719eb46a079b0571d73fec617ef1d39db93099bd06b15",
-  "metadata_outputs": [
-    {
-      "path": "data/canonical/MDB_ANALYTICAL_2024_1/health_regions.parquet",
-      "row_count": 439,
-      "column_count": 35,
-      "sha256": "a3cc8f3aefc9d556d1bacc636dc72cabf04155052dd63c426dda9bec58ada515",
-      "schema_reference": "metadata/canonical/health_regions_v1.yaml",
-      "source_files": [
-        "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/analytical_release/health_region_analysis_dataset_corrected.csv",
-        "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/analytical_release/LISA_primary_corrected.csv"
-      ]
-    },
-    {
-      "path": "data/canonical/MDB_ANALYTICAL_2024_1/municipality_health_region_crosswalk.parquet",
-      "row_count": 5570,
-      "column_count": 9,
-      "sha256": "acd7ab896566d5ea730719eb46a079b0571d73fec617ef1d39db93099bd06b15",
-      "schema_reference": "metadata/canonical/municipality_health_region_crosswalk_v1.yaml",
-      "source_files": [
-        "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/geography/health_region_crosswalk_LOCKED.csv"
-      ]
-    }
-  ]
+  "pass": true
 }
 
 EXIT_CODE: 0
