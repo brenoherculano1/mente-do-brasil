@@ -1,0 +1,30 @@
+web_geometry_version: MDB_WEB_GEOMETRY_V1
+source_geography_version: BR_HEALTH_REGIONS_END2024_V1
+source_table: geo.health_regions
+source_srid: 4674
+metric_operation_srid: 5880
+output_srid: 4326
+profiles:
+  overview:
+    method: PostGIS ST_CoverageSimplify in EPSG:5880, transformed to EPSG:4326
+    tolerance_m: 5000
+  detail:
+    method: PostGIS ST_CoverageSimplify in EPSG:5880, transformed to EPSG:4326
+    tolerance_m: 1000
+selection_rationale: >
+  Final tolerances are selected only after benchmark/QC execution. Overview is
+  intended for national browser rendering and detail for state or regional zoom.
+  The generated manifest records the measured performance and QC evidence.
+qc_thresholds:
+  feature_count: 439
+  unique_health_region_codes: 439
+  required_output_srid: 4326
+  invalid_geometry_count: 0
+  empty_geometry_count: 0
+  coverage_invalid_edges: 0
+  minimum_payload_reduction_percent: 90
+guardrails:
+  source_geometry_mutation_allowed: false
+  scientific_metric_recalculation_allowed: false
+  frontend_creation_allowed: false
+  full_geometry_default_allowed: false

@@ -4,7 +4,7 @@ from typing import Any, Literal
 
 from pydantic import BaseModel
 
-from .common import Metric
+from .common import GeometryProfile, Metric
 from .releases import ReleasePublic
 
 
@@ -111,10 +111,17 @@ class GeoJsonFeature(BaseModel):
     properties: HealthRegionMapItem
 
 
+class GeometryMetadata(BaseModel):
+    profile: GeometryProfile
+    version: str
+    crs: str
+
+
 class GeoJsonFeatureCollection(BaseModel):
     type: Literal["FeatureCollection"]
     features: list[GeoJsonFeature]
     crs: dict[str, Any]
+    geometry_metadata: GeometryMetadata
 
 
 class MunicipalityHealthRegion(BaseModel):

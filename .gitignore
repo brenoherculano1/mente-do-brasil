@@ -23,6 +23,7 @@ data/raw/**
 data/staging/**
 data/canonical/**
 data/releases/**
+data/web/**
 !data/raw/.gitkeep
 !data/staging/.gitkeep
 !data/canonical/.gitkeep

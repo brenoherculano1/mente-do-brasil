@@ -76,17 +76,29 @@ The `metric` parameter uses a closed enum. Invalid map metrics return
 ## Geometry
 
 `include_geometry=false` is the default for map data. When
-`include_geometry=true`, the API returns a GeoJSON FeatureCollection with the
-locked PostGIS geometry from `serving.health_region_map`.
+`include_geometry=true`, the API returns a GeoJSON FeatureCollection.
 
-- CRS: EPSG:4674 / SIRGAS 2000 geographic
-- No simplification
-- No reprojection
-- No coordinate rounding
-- No geometry repair
+`geometry_profile` controls which geometry is returned:
 
-The full national GeoJSON payload is large and should be treated as a local
-validation artifact until a frontend-specific delivery strategy is designed.
+- omitted with `include_geometry=true`: `overview`
+- `overview`: `MDB_WEB_GEOMETRY_V1` derived web geometry, EPSG:4326
+- `detail`: `MDB_WEB_GEOMETRY_V1` derived web geometry, EPSG:4326
+- `full`: locked scientific geometry, EPSG:4674
+
+Every GeoJSON response includes:
+
+```json
+{
+  "geometry_metadata": {
+    "profile": "overview",
+    "version": "MDB_WEB_GEOMETRY_V1",
+    "crs": "EPSG:4326"
+  }
+}
+```
+
+Full geometry is preserved for audit only. Do not use `geometry_profile=full`
+for normal web map rendering.
 
 ## Run Locally
 

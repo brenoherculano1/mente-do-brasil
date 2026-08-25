@@ -23,6 +23,7 @@ EXPECTED_HEALTH_REGIONS = 439
 EXPECTED_MUNICIPALITIES = 5570
 EXPECTED_LISA = {"high-high": 60, "low-low": 66, "high-low": 4, "low-high": 5}
 EXPECTED_FLAGS = {"SMALL_SUICIDE_COUNT": 7, "ZERO_REGISTERED_BEDS": 275}
+WEB_GEOMETRY_VERSION = "MDB_WEB_GEOMETRY_V1"
 
 
 @dataclass
@@ -48,6 +49,16 @@ def request(path: str, expected_status: int = 200) -> Response:
     if status != expected_status:
         raise AssertionError(f"{path} returned {status}, expected {expected_status}: {raw[:300]!r}")
     return Response(status, json.loads(raw.decode("utf-8")), elapsed_ms, len(raw))
+
+
+def gzip_size(path: str) -> tuple[int, int, str | None]:
+    settings = get_settings()
+    base = f"http://{settings.api_host}:{settings.api_port}"
+    request_obj = urllib.request.Request(base + path, headers={"Accept-Encoding": "gzip"})
+    with urllib.request.urlopen(request_obj, timeout=60) as response:
+        raw = response.read()
+        encoding = response.headers.get("Content-Encoding")
+    return len(raw), response.status, encoding
 
 
 def db_scalar(sql: str, params: tuple = ()) -> Any:
@@ -157,6 +168,21 @@ def validate() -> None:
         raise AssertionError("Municipality count changed.")
     print("municipality lookup PASS")
 
+    web_geometry = db_row(
+        """
+        SELECT count(*) FILTER (WHERE geometry_profile = 'overview'),
+               count(*) FILTER (WHERE geometry_profile = 'detail'),
+               min(ST_SRID(geom)), max(ST_SRID(geom)),
+               count(*) FILTER (WHERE NOT ST_IsValid(geom))
+        FROM web.health_region_geometry
+        WHERE web_geometry_version = %s
+          AND geography_version = 'BR_HEALTH_REGIONS_END2024_V1'
+        """,
+        (WEB_GEOMETRY_VERSION,),
+    )
+    if web_geometry != (439, 439, 4326, 4326, 0):
+        raise AssertionError(f"Web geometry table failed: {web_geometry}")
+
     map_rows = request("/api/v1/map/health-regions?include_geometry=false&metric=mismatch_score")
     if len(map_rows.body) != EXPECTED_HEALTH_REGIONS:
         raise AssertionError("Map metadata endpoint did not return 439 regions.")
@@ -165,7 +191,45 @@ def validate() -> None:
     map_geo = request("/api/v1/map/health-regions?include_geometry=true&metric=mismatch_score")
     if map_geo.body["type"] != "FeatureCollection" or len(map_geo.body["features"]) != 439:
         raise AssertionError("GeoJSON endpoint did not return 439 features.")
-    print(f"map geometry PASS bytes={map_geo.size_bytes}")
+    if map_geo.body["geometry_metadata"] != {
+        "profile": "overview",
+        "version": WEB_GEOMETRY_VERSION,
+        "crs": "EPSG:4326",
+    }:
+        raise AssertionError("Default geometry profile is not overview.")
+    overview = request(
+        "/api/v1/map/health-regions?include_geometry=true&metric=mismatch_score"
+        "&geometry_profile=overview"
+    )
+    detail = request(
+        "/api/v1/map/health-regions?include_geometry=true&metric=mismatch_score"
+        "&geometry_profile=detail"
+    )
+    full = request(
+        "/api/v1/map/health-regions?include_geometry=true&metric=mismatch_score"
+        "&geometry_profile=full"
+    )
+    if len(overview.body["features"]) != 439 or len(detail.body["features"]) != 439:
+        raise AssertionError("Web geometry profile feature count changed.")
+    if len(full.body["features"]) != 439:
+        raise AssertionError("Full geometry feature count changed.")
+    if not (overview.size_bytes < detail.size_bytes < full.size_bytes):
+        raise AssertionError("Geometry payload size ordering failed.")
+    gz_bytes, gz_status, gz_encoding = gzip_size(
+        "/api/v1/map/health-regions?include_geometry=true&metric=mismatch_score"
+        "&geometry_profile=overview"
+    )
+    if gz_status != 200 or gz_encoding != "gzip" or gz_bytes >= overview.size_bytes:
+        raise AssertionError("HTTP gzip validation failed.")
+    print(
+        "map geometry PASS",
+        {
+            "overview_bytes": overview.size_bytes,
+            "detail_bytes": detail.size_bytes,
+            "full_bytes": full.size_bytes,
+            "overview_gzip_bytes": gz_bytes,
+        },
+    )
 
     lisa_counts = {}
     for row in map_rows.body:
@@ -186,6 +250,7 @@ def validate() -> None:
     request("/api/v1/health-regions/99999", 404)
     request("/api/v1/municipalities/9999999/health-region", 404)
     request("/api/v1/map/health-regions?metric=not_a_metric", 422)
+    request("/api/v1/map/health-regions?geometry_profile=unknown", 422)
     request("/api/v1/health-regions?uf=ABCDE", 422)
     injection = urllib.parse.quote("12001' OR '1'='1", safe="")
     request(f"/api/v1/health-regions?q={injection}&limit=10")
@@ -199,7 +264,9 @@ def validate() -> None:
         {
             "health": round(health.elapsed_ms, 2),
             "ready": round(ready.elapsed_ms, 2),
-            "map_geometry": round(map_geo.elapsed_ms, 2),
+            "map_geometry_overview": round(map_geo.elapsed_ms, 2),
+            "map_geometry_detail": round(detail.elapsed_ms, 2),
+            "map_geometry_full": round(full.elapsed_ms, 2),
         },
     )
     print("PASS")

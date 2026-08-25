@@ -5,7 +5,7 @@ from typing import Annotated
 from fastapi import APIRouter, Path, Query
 
 from api.dependencies import DatabaseDep, SettingsDep
-from api.schemas.common import Metric, PaginatedResponse, Pagination
+from api.schemas.common import GeometryProfile, Metric, PaginatedResponse, Pagination
 from api.schemas.health_regions import (
     GeoJsonFeatureCollection,
     HealthRegionLookup,
@@ -68,6 +68,7 @@ def health_region_map(
     metric: Metric = Metric.mismatch_score,
     uf: Annotated[str | None, Query(pattern=r"^[A-Za-z]{2}$")] = None,
     include_geometry: bool = False,
+    geometry_profile: GeometryProfile | None = None,
 ) -> list[HealthRegionMapItem] | GeoJsonFeatureCollection:
     return list_map_data(
         db,
@@ -75,6 +76,7 @@ def health_region_map(
         metric,
         uf.upper() if uf else None,
         include_geometry,
+        geometry_profile,
     )
 
 

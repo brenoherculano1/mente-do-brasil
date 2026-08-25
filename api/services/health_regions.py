@@ -6,13 +6,14 @@ import json
 
 from api.db import Database
 from api.errors import api_error
-from api.schemas.common import Metric
+from api.schemas.common import GeometryProfile, Metric
 from api.schemas.health_regions import (
     BedsCapacity,
     CapacityProfile,
     CapsCapacity,
     GeoJsonFeature,
     GeoJsonFeatureCollection,
+    GeometryMetadata,
     HealthRegionLookup,
     HealthRegionMapItem,
     HealthRegionProfile,
@@ -28,6 +29,8 @@ from api.schemas.health_regions import (
 )
 from api.schemas.indicators import IndicatorPublic
 from api.schemas.releases import ReleasePublic
+
+WEB_GEOMETRY_VERSION = "MDB_WEB_GEOMETRY_V1"
 
 RELEASE_COLUMNS = """
 release_id, canonical_version, method_version, geography_version, release_status,
@@ -241,25 +244,56 @@ def list_map_data(
     metric: Metric,
     uf: str | None,
     include_geometry: bool,
+    geometry_profile: GeometryProfile | None,
 ) -> list[HealthRegionMapItem] | GeoJsonFeatureCollection:
     ensure_release_exists(db, release_id)
     metric_column = metric.value
-    filters = ["release_id = %s"]
-    params: list = [release_id]
+    filters = ["m.release_id = %s"]
+    filter_params: list = [release_id]
     if uf:
-        filters.append("uf = %s")
-        params.append(uf.upper())
+        filters.append("m.uf = %s")
+        filter_params.append(uf.upper())
     where_clause = " AND ".join(filters)
-    geometry_select = ", ST_AsGeoJSON(geom)::json AS geometry" if include_geometry else ""
+    profile = geometry_profile or GeometryProfile.overview
+    join_params: list = []
+    if include_geometry and profile == GeometryProfile.full:
+        geometry_join = ""
+        geometry_select = ", ST_AsGeoJSON(m.geom)::json AS geometry"
+        geometry_metadata = GeometryMetadata(
+            profile=GeometryProfile.full,
+            version="BR_HEALTH_REGIONS_END2024_V1",
+            crs="EPSG:4674",
+        )
+    elif include_geometry:
+        geometry_join = """
+        JOIN web.health_region_geometry w
+          ON w.geography_version = m.geography_version
+         AND w.health_region_code = m.health_region_code
+         AND w.web_geometry_version = %s
+         AND w.geometry_profile = %s
+        """
+        join_params.extend([WEB_GEOMETRY_VERSION, profile.value])
+        geometry_select = ", ST_AsGeoJSON(w.geom)::json AS geometry"
+        geometry_metadata = GeometryMetadata(
+            profile=profile,
+            version=WEB_GEOMETRY_VERSION,
+            crs="EPSG:4326",
+        )
+    else:
+        geometry_join = ""
+        geometry_select = ""
+        geometry_metadata = None
     rows = db.rows(
         f"""
-        SELECT health_region_code, health_region_name, uf, population, {metric_column} AS value,
-               data_quality_flags, lisa_significant, lisa_cluster{geometry_select}
-        FROM serving.health_region_map
+        SELECT m.health_region_code, m.health_region_name, m.uf, m.population,
+               m.{metric_column} AS value, m.data_quality_flags, m.lisa_significant,
+               m.lisa_cluster{geometry_select}
+        FROM serving.health_region_map m
+        {geometry_join}
         WHERE {where_clause}
-        ORDER BY uf, health_region_name, health_region_code
+        ORDER BY m.uf, m.health_region_name, m.health_region_code
         """,
-        tuple(params),
+        tuple(join_params + filter_params),
     )
     items = [
         HealthRegionMapItem(
@@ -277,6 +311,8 @@ def list_map_data(
     ]
     if not include_geometry:
         return items
+    if len(items) != len(rows):
+        raise api_error(503, "DATABASE_UNAVAILABLE", "Geometry layer is not ready.")
     features = [
         GeoJsonFeature(
             type="Feature",
@@ -289,7 +325,8 @@ def list_map_data(
     return GeoJsonFeatureCollection(
         type="FeatureCollection",
         features=features,
-        crs={"type": "name", "properties": {"name": "EPSG:4674"}},
+        crs={"type": "name", "properties": {"name": geometry_metadata.crs}},
+        geometry_metadata=geometry_metadata,
     )
 
 

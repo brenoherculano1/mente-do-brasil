@@ -6,6 +6,7 @@ The Mente do Brasil local serving database sits after the canonical layer:
 RAW
   -> CANONICAL
   -> POSTGRESQL/POSTGIS SERVING DATABASE
+  -> WEB GEOMETRY DERIVATION
   -> INTERNAL LOCAL READ-ONLY API
   -> WEB [future]
 ```
@@ -20,6 +21,7 @@ and exposes read-oriented serving views for the internal local API.
 - `geo`: locked health-region geography and municipality crosswalk.
 - `analytics`: release-specific analytical metrics.
 - `serving`: read-oriented views for future API consumption.
+- `web`: derived browser-oriented geometry assets loaded from locked geometry.
 
 ## Tables
 
@@ -33,6 +35,9 @@ and exposes read-oriented serving views for the internal local API.
   region crosswalk.
 - `analytics.health_region_metrics`: release-specific metrics keyed by
   `release_id` and `health_region_code`.
+- `web.health_region_geometry`: versioned derived geometry for web map
+  rendering. It stores only `overview` and `detail`, never the full scientific
+  geometry.
 
 ## Views
 

@@ -11,6 +11,7 @@ import pytest
 from api.config import get_settings
 
 RELEASE_ID = "MDB_ANALYTICAL_2024_1"
+WEB_GEOMETRY_VERSION = "MDB_WEB_GEOMETRY_V1"
 
 
 def api_get(path: str) -> tuple[int, object]:
@@ -32,6 +33,17 @@ def db_fetchone(sql: str, params: tuple = ()) -> tuple:
             return connection.execute(sql, params).fetchone()
     except psycopg.OperationalError as error:
         pytest.skip(f"Local serving database is not available: {error}")
+
+
+def api_get_raw(path: str, headers: dict[str, str] | None = None) -> tuple[int, bytes, str | None]:
+    settings = get_settings()
+    base = f"http://{settings.api_host}:{settings.api_port}"
+    request = urllib.request.Request(base + path, headers=headers or {})
+    try:
+        with urllib.request.urlopen(request, timeout=60) as response:
+            return response.status, response.read(), response.headers.get("Content-Encoding")
+    except OSError as error:
+        pytest.skip(f"Local API is not running: {error}")
 
 
 def test_health_and_ready_contracts():
@@ -106,7 +118,67 @@ def test_health_region_list_profile_and_map_match_locked_counts():
     assert status == 200
     assert geojson["type"] == "FeatureCollection"
     assert len(geojson["features"]) == 439
-    assert geojson["crs"]["properties"]["name"] == "EPSG:4674"
+    assert geojson["crs"]["properties"]["name"] == "EPSG:4326"
+    assert geojson["geometry_metadata"] == {
+        "profile": "overview",
+        "version": WEB_GEOMETRY_VERSION,
+        "crs": "EPSG:4326",
+    }
+
+
+def test_web_geometry_profiles_and_full_geometry_contracts():
+    db_row = db_fetchone(
+        """
+        SELECT count(*) FILTER (WHERE geometry_profile = 'overview'),
+               count(*) FILTER (WHERE geometry_profile = 'detail'),
+               min(ST_SRID(geom)), max(ST_SRID(geom)),
+               count(*) FILTER (WHERE NOT ST_IsValid(geom))
+        FROM web.health_region_geometry
+        WHERE web_geometry_version = %s
+          AND geography_version = 'BR_HEALTH_REGIONS_END2024_V1'
+        """,
+        (WEB_GEOMETRY_VERSION,),
+    )
+    assert db_row == (439, 439, 4326, 4326, 0)
+
+    paths = {
+        "overview": "/api/v1/map/health-regions?include_geometry=true"
+        "&geometry_profile=overview",
+        "detail": "/api/v1/map/health-regions?include_geometry=true&geometry_profile=detail",
+        "full": "/api/v1/map/health-regions?include_geometry=true&geometry_profile=full",
+    }
+    payloads = {}
+    for profile, path in paths.items():
+        status, raw, encoding = api_get_raw(path)
+        assert status == 200
+        assert encoding is None
+        payload = json.loads(raw.decode("utf-8"))
+        assert len(payload["features"]) == 439
+        assert payload["geometry_metadata"]["profile"] == profile
+        payloads[profile] = raw
+
+    assert len(payloads["overview"]) < len(payloads["detail"]) < len(payloads["full"])
+    assert len(payloads["overview"]) < len(payloads["full"]) * 0.1
+    assert len(payloads["detail"]) < len(payloads["full"]) * 0.1
+    assert json.loads(payloads["full"].decode("utf-8"))["geometry_metadata"] == {
+        "profile": "full",
+        "version": "BR_HEALTH_REGIONS_END2024_V1",
+        "crs": "EPSG:4674",
+    }
+
+
+def test_http_gzip_for_geometry_payloads():
+    status, compressed, encoding = api_get_raw(
+        "/api/v1/map/health-regions?include_geometry=true&geometry_profile=overview",
+        headers={"Accept-Encoding": "gzip"},
+    )
+    assert status == 200
+    assert encoding == "gzip"
+    status_plain, plain, _ = api_get_raw(
+        "/api/v1/map/health-regions?include_geometry=true&geometry_profile=overview"
+    )
+    assert status_plain == 200
+    assert len(compressed) < len(plain)
 
 
 def test_municipality_and_uf_lookup_contracts():
@@ -130,6 +202,7 @@ def test_error_contracts_and_parameter_guards():
     )
     assert invalid_metric_status == 422
     assert invalid_metric["error"]["code"] == "INVALID_METRIC"
+    assert api_get("/api/v1/map/health-regions?geometry_profile=unknown")[0] == 422
     assert api_get("/api/v1/health-regions?uf=ABCDE")[0] == 422
     assert api_get("/api/v1/health-regions?limit=101")[0] == 422
     assert api_get("/api/v1/health-regions?offset=-1")[0] == 422

@@ -45,6 +45,11 @@ PostgreSQL/PostGIS serving database.
 - UF lookup endpoint: PASS
 - Map metadata endpoint: PASS
 - GeoJSON map endpoint: PASS
+- Default geometry profile: `overview`
+- Overview geometry: PASS, 439 features, EPSG:4326
+- Detail geometry: PASS, 439 features, EPSG:4326
+- Full geometry: PASS, 439 features, EPSG:4674
+- HTTP gzip: PASS
 - Error contract: PASS
 - Parameter guards: PASS
 - Invalid metric error code: `INVALID_METRIC`
@@ -69,12 +74,14 @@ PostgreSQL/PostGIS serving database.
 
 - `/health`: PASS
 - `/ready`: PASS
-- `/api/v1/map/health-regions?include_geometry=true&metric=mismatch_score`:
-  439 features, 146,130,031 bytes, approximately 22.3 seconds locally after
-  increasing the API role statement timeout to 30 seconds.
+- no geometry map: 108,467 bytes, approximately 127 ms locally
+- overview map: 756,156 bytes, approximately 60 ms locally
+- overview map with HTTP gzip: 200,382 bytes
+- detail map: 2,763,517 bytes, approximately 165 ms locally
+- full scientific map: 146,130,129 bytes, approximately 19.4 seconds locally
 
-The full GeoJSON payload is heavy. It was documented and preserved without
-simplification, reprojection, rounding, or geometry repair.
+The full GeoJSON payload remains heavy. It is explicitly preserved for audit,
+not normal frontend map rendering.
 
 ## Commands
 

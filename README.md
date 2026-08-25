@@ -66,6 +66,7 @@ Current product data flow:
 RAW
   -> CANONICAL
   -> POSTGRESQL/POSTGIS SERVING
+  -> WEB GEOMETRY DERIVATION
   -> INTERNAL LOCAL READ-ONLY API
   -> WEB [future]
 ```
@@ -150,6 +151,15 @@ uv run uvicorn api.main:app --host 127.0.0.1 --port 8000
 uv run python scripts/validate_api.py
 uv run pytest tests/api/test_api_contract.py
 ```
+
+To rebuild the derived web geometry layer:
+
+```bash
+uv run python scripts/build_web_geometry.py
+```
+
+Derived GeoJSON assets are written under `data/web/` and are not tracked by
+Git; their hashes and sizes are recorded in metadata.
 
 ## What Does Not Exist Yet
 

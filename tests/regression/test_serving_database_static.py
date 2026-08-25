@@ -18,6 +18,7 @@ class ServingDatabaseStaticTests(unittest.TestCase):
                 "004_constraints_indexes.sql",
                 "005_serving_views.sql",
                 "006_serving_status.sql",
+                "007_web_geometry.sql",
             ],
         )
 
@@ -36,6 +37,7 @@ class ServingDatabaseStaticTests(unittest.TestCase):
             "CREATE TABLE IF NOT EXISTS geo.municipality_health_region_crosswalk",
             "CREATE TABLE IF NOT EXISTS analytics.health_region_metrics",
             "CREATE TABLE IF NOT EXISTS meta.serving_database_status",
+            "CREATE TABLE IF NOT EXISTS web.health_region_geometry",
             "CREATE OR REPLACE VIEW serving.health_region_profile",
             "CREATE OR REPLACE VIEW serving.health_region_map",
             "CREATE OR REPLACE VIEW serving.health_region_lookup",

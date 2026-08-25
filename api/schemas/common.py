@@ -17,6 +17,12 @@ class Metric(StrEnum):
     psychiatrist_fte_rate = "psychiatrist_fte_rate"
 
 
+class GeometryProfile(StrEnum):
+    overview = "overview"
+    detail = "detail"
+    full = "full"
+
+
 class ErrorDetail(BaseModel):
     code: str
     message: str

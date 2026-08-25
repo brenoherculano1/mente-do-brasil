@@ -1,0 +1,222 @@
+web_geometry_version: MDB_WEB_GEOMETRY_V1
+generated_at: '2026-08-25T00:27:44+00:00'
+source:
+  table: geo.health_regions
+  geography_version: BR_HEALTH_REGIONS_END2024_V1
+  source_srid: 4674
+  web_srid: 4326
+  feature_count: 439
+  vertex_count: 5796847
+  geometry_types:
+  - ST_MultiPolygon
+  bbox: POLYGON((-73.99044999999995 -33.75117799999998,-73.99044999999995 5.271841100000074,-28.847639899999933
+    5.271841100000074,-28.847639899999933 -33.75117799999998,-73.99044999999995 -33.75117799999998))
+  source_geometry_fingerprint_sha256: 8a360459aaa5f779493e39aebdffc1e77057e0677ab4befc2c3870e812fed7c9
+baseline_payload:
+  scientific_geojson_size_bytes: 146065496
+  scientific_geojson_gzip_size_bytes: 42643251
+  api_full_response_size_bytes: 146130031
+method: PostGIS ST_CoverageSimplify in EPSG:5880, transformed to EPSG:4326
+candidate_benchmark:
+- tolerance_m: 5000
+  status: PASS
+  elapsed_ms: 26704.08
+  feature_count: 439
+  unique_codes: 439
+  output_vertices: 23789
+  vertex_reduction_percent: 99.5896
+  valid_geometry_count: 439
+  empty_geometry_count: 0
+  srid_min: 4326
+  srid_max: 4326
+  area_diff_percent: 0.00933
+  symdiff_area_percent: 2.476617
+  max_hausdorff_m: 14959.29
+  coverage_invalid_edges: 0
+  bbox: POLYGON((-73.98333939999998 -33.74390499999999,-73.98333939999998 5.271841100000066,-28.84783879999997
+    5.271841100000066,-28.84783879999997 -33.74390499999999,-73.98333939999998 -33.74390499999999))
+  error: null
+- tolerance_m: 2000
+  status: PASS
+  elapsed_ms: 41472.64
+  feature_count: 439
+  unique_codes: 439
+  output_vertices: 53365
+  vertex_reduction_percent: 99.0794
+  valid_geometry_count: 439
+  empty_geometry_count: 0
+  srid_min: 4326
+  srid_max: 4326
+  area_diff_percent: 4.8e-05
+  symdiff_area_percent: 1.030776
+  max_hausdorff_m: 8371.448
+  coverage_invalid_edges: 0
+  bbox: POLYGON((-73.99044999999994 -33.748301599999934,-73.99044999999994 5.271841100000066,-28.84783879999997
+    5.271841100000066,-28.84783879999997 -33.748301599999934,-73.99044999999994 -33.748301599999934))
+  error: null
+- tolerance_m: 1000
+  status: PASS
+  elapsed_ms: 72865.0
+  feature_count: 439
+  unique_codes: 439
+  output_vertices: 103715
+  vertex_reduction_percent: 98.2108
+  valid_geometry_count: 439
+  empty_geometry_count: 0
+  srid_min: 4326
+  srid_max: 4326
+  area_diff_percent: 0.00058
+  symdiff_area_percent: 0.514727
+  max_hausdorff_m: 3528.879
+  coverage_invalid_edges: 0
+  bbox: POLYGON((-73.99044999999994 -33.75077219999997,-73.99044999999994 5.271841100000066,-28.84783879999997
+    5.271841100000066,-28.84783879999997 -33.75077219999997,-73.99044999999994 -33.75077219999997))
+  error: null
+- tolerance_m: 500
+  status: TIMEOUT
+  elapsed_ms: 120767.0
+  feature_count: null
+  unique_codes: null
+  output_vertices: null
+  vertex_reduction_percent: null
+  valid_geometry_count: null
+  empty_geometry_count: null
+  srid_min: null
+  srid_max: null
+  area_diff_percent: null
+  symdiff_area_percent: null
+  max_hausdorff_m: null
+  coverage_invalid_edges: null
+  bbox: null
+  error: statement_timeout
+- tolerance_m: 250
+  status: SKIPPED_AFTER_TIMEOUT
+  elapsed_ms: 0
+  feature_count: null
+  unique_codes: null
+  output_vertices: null
+  vertex_reduction_percent: null
+  valid_geometry_count: null
+  empty_geometry_count: null
+  srid_min: null
+  srid_max: null
+  area_diff_percent: null
+  symdiff_area_percent: null
+  max_hausdorff_m: null
+  coverage_invalid_edges: null
+  bbox: null
+  error: finer_than_timed_out_candidate
+- tolerance_m: 100
+  status: SKIPPED_AFTER_TIMEOUT
+  elapsed_ms: 0
+  feature_count: null
+  unique_codes: null
+  output_vertices: null
+  vertex_reduction_percent: null
+  valid_geometry_count: null
+  empty_geometry_count: null
+  srid_min: null
+  srid_max: null
+  area_diff_percent: null
+  symdiff_area_percent: null
+  max_hausdorff_m: null
+  coverage_invalid_edges: null
+  bbox: null
+  error: finer_than_timed_out_candidate
+- tolerance_m: 50
+  status: SKIPPED_AFTER_TIMEOUT
+  elapsed_ms: 0
+  feature_count: null
+  unique_codes: null
+  output_vertices: null
+  vertex_reduction_percent: null
+  valid_geometry_count: null
+  empty_geometry_count: null
+  srid_min: null
+  srid_max: null
+  area_diff_percent: null
+  symdiff_area_percent: null
+  max_hausdorff_m: null
+  coverage_invalid_edges: null
+  bbox: null
+  error: finer_than_timed_out_candidate
+selected_profiles:
+  overview:
+    method: PostGIS ST_CoverageSimplify in EPSG:5880, transformed to EPSG:4326
+    tolerance_m: 5000
+  detail:
+    method: PostGIS ST_CoverageSimplify in EPSG:5880, transformed to EPSG:4326
+    tolerance_m: 1000
+selection_rationale: overview uses 5000 m because it reduces the national geometry
+  to a very small browser-suitable layer while preserving all regions and valid shared
+  coverage; detail uses 1000 m because it keeps substantially more boundary detail
+  for state/regional zoom while remaining far smaller than full geometry.
+qc_thresholds:
+  feature_count: 439
+  unique_codes: 439
+  required_srid: 4326
+  invalid_geometry_count: 0
+  empty_geometry_count: 0
+  coverage_invalid_edges: 0
+  minimum_payload_reduction_percent: 90
+outputs:
+- profile: overview
+  feature_count: 439
+  source_vertex_count: 5796847
+  output_vertex_count: 23789
+  vertex_reduction_percent: 99.5896
+  uncompressed_size_bytes: 682734
+  gzip_size_bytes: 189864
+  sha256: 3b855693fb527f666af2c7b110b5355b664d890677a2a4741deb1c609fa5c304
+  gzip_sha256: 9753b7306236679128c4f681806883e36b499f41bef29c737e4eaa3acd4cf23c
+  method: PostGIS ST_CoverageSimplify in EPSG:5880, transformed to EPSG:4326
+  tolerance_m: 5000
+  crs: EPSG:4326
+  valid_geometry_count: 439
+  path: data/web/MDB_WEB_GEOMETRY_V1/health_regions_overview.geojson
+  gzip_path: data/web/MDB_WEB_GEOMETRY_V1/health_regions_overview.geojson.gz
+- profile: detail
+  feature_count: 439
+  source_vertex_count: 5796847
+  output_vertex_count: 103715
+  vertex_reduction_percent: 98.2108
+  uncompressed_size_bytes: 2690097
+  gzip_size_bytes: 887284
+  sha256: 56dc748587c5a7c7e43ec37403866a3c044782aaace57c97b4fa4defe8686630
+  gzip_sha256: e58280d87248a404266a827d3994d1b962e1d0c531e8c53aafe8a0aeb636e2e4
+  method: PostGIS ST_CoverageSimplify in EPSG:5880, transformed to EPSG:4326
+  tolerance_m: 1000
+  crs: EPSG:4326
+  valid_geometry_count: 439
+  path: data/web/MDB_WEB_GEOMETRY_V1/health_regions_detail.geojson
+  gzip_path: data/web/MDB_WEB_GEOMETRY_V1/health_regions_detail.geojson.gz
+load_qc:
+  source_unchanged: true
+  profiles:
+    detail:
+      feature_count: 439
+      unique_codes: 439
+      valid_geometry_count: 439
+      empty_geometry_count: 0
+      srid_min: 4326
+      srid_max: 4326
+      coverage_invalid_edges: 0
+    overview:
+      feature_count: 439
+      unique_codes: 439
+      valid_geometry_count: 439
+      empty_geometry_count: 0
+      srid_min: 4326
+      srid_max: 4326
+      coverage_invalid_edges: 0
+visual_qc:
+- docs/web_geometry_qc_2026-08-24/brazil_original_vs_overview.svg
+- docs/web_geometry_qc_2026-08-24/brazil_original_vs_detail.svg
+- docs/web_geometry_qc_2026-08-24/coastal_region_original_vs_detail.svg
+- docs/web_geometry_qc_2026-08-24/small_complex_region_original_vs_detail.svg
+- docs/web_geometry_qc_2026-08-24/dense_internal_boundaries_original_vs_overview.svg
+limitations:
+- Derived web geometry is for visualization only.
+- Scientific area_km2 and all analytical metrics remain sourced from canonical/serving
+  data.
+- Full scientific geometry remains available only via explicit API request.
