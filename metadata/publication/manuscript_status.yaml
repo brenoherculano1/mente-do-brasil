@@ -1,0 +1,47 @@
+manuscript_id: spatial_mismatch_mental_health_need_capacity_health_regions
+title: "Spatial mismatch between mental-health need indicators and public-sector capacity across Brazilian Health Regions"
+journal: "Health & Place"
+submission_status: "SUBMITTED"
+observed_editorial_status: "WITH_EDITOR"
+status_observed_date: "2026-08-23"
+public_claim: "Status: manuscrito submetido ao Health & Place."
+evidence_incorporated_date: "2026-08-25"
+evidence_scope: "submission provenance only"
+source_note: >
+  This repository record was incorporated from externally verified Google Drive
+  evidence supplied in the task instructions. It was not inferred from the
+  scientific code. The observed "With Editor" state indicates the manuscript
+  had entered the journal editorial workflow; the public claim is deliberately
+  limited to the stable historical event of submission.
+privacy_note: >
+  Private administrative fields, email addresses, credentials, login details,
+  and other nonessential personal data from the source spreadsheet were
+  excluded.
+source_provenance:
+  - source_type: "verified_external_google_drive_record"
+    source_title: "Status dos Papers"
+    google_drive_file_id: "1stuAlos640pRFyGe_XZlmAPMWcdC0rgrKM45NdbKbNk"
+    source_file_type: "Google Sheets"
+    sheet_name: "Página1"
+    source_row: 7
+    observed_fields:
+      paper: "Spatial mismatch between mental-health need indicators and public-sector capacity across Brazilian Health Regions"
+      status: "With Editor"
+      journal: "Health and Place"
+      date: "23/08/2026"
+    evidence_role: "editorial status record"
+  - source_type: "verified_external_google_drive_document"
+    source_title: "Health_and_Place_Cover_Letter.docx"
+    google_drive_file_id: "1wMW6UQ5zjDBRRADvJAW73mcEspjKh5iQ"
+    source_file_type: "Word document"
+    evidence_role: "submission cover letter"
+    verified_phrase: >
+      We are pleased to submit the original research article entitled
+      'Spatial mismatch between mental-health need indicators and public-sector
+      capacity across Brazilian Health Regions' for consideration in Health &
+      Place.
+  - source_type: "verified_external_google_drive_document"
+    source_title: "Health_and_Place_Main_Manuscript.docx"
+    google_drive_file_id: "1prQSpPxR3a7AzsxfzH0lLkL0E1YA8yIV"
+    source_file_type: "Word document"
+    evidence_role: "main manuscript title confirmation"

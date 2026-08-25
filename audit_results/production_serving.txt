@@ -1,0 +1,11 @@
+COMMAND:
+node production serving check for /metodologia
+OUTPUT:
+{
+  "status": 200,
+  "ok": true,
+  "has_public_claim": true,
+  "has_published_claim": false
+}
+
+EXIT_CODE: 0

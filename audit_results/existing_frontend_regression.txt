@@ -1,0 +1,26 @@
+COMMAND:
+npm run test:e2e -- --grep-invert methodology
+OUTPUT:
+
+> mente-do-brasil-web@0.1.0 test:e2e
+> playwright test --grep-invert methodology
+
+
+Running 8 tests using 2 workers
+
+(node:84116) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:84117) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  2 [mobile] › tests/e2e/frontend-v1.spec.ts:12:5 › home loads map, metric selector, search, and navigates to region profile (12.8s)
+  ✓  1 [desktop] › tests/e2e/frontend-v1.spec.ts:12:5 › home loads map, metric selector, search, and navigates to region profile (16.4s)
+  ✓  3 [mobile] › tests/e2e/frontend-v1.spec.ts:45:5 › captures home screenshot and keeps mobile layout usable (7.4s)
+  ✓  4 [desktop] › tests/e2e/frontend-v1.spec.ts:45:5 › captures home screenshot and keeps mobile layout usable (3.9s)
+  ✓  6 [desktop] › tests/e2e/frontend-v1.spec.ts:69:5 › accessible list expands, filters rationally, and captures QA screenshot (4.2s)
+  ✓  5 [mobile] › tests/e2e/frontend-v1.spec.ts:69:5 › accessible list expands, filters rationally, and captures QA screenshot (4.5s)
+  ✓  8 [mobile] › tests/e2e/frontend-v1.spec.ts:87:5 › invalid region shows not found state (664ms)
+  ✓  7 [desktop] › tests/e2e/frontend-v1.spec.ts:87:5 › invalid region shows not found state (735ms)
+
+  8 passed (27.9s)
+
+EXIT_CODE: 0

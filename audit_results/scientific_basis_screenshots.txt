@@ -1,0 +1,7 @@
+COMMAND:
+node Playwright screenshot capture for scientific basis section
+OUTPUT:
+{"target":"desktop","hasClaim":true,"overflow":0,"devTools":0,"screenshot":"/Users/brenoherculano/Documents/New project/mente-do-brasil/docs/methodology_qc_2026-08-25_final/desktop_methodology_scientific_basis.png"}
+{"target":"mobile","hasClaim":true,"overflow":0,"devTools":0,"screenshot":"/Users/brenoherculano/Documents/New project/mente-do-brasil/docs/methodology_qc_2026-08-25_final/mobile_methodology_scientific_basis.png"}
+
+EXIT_CODE: 0

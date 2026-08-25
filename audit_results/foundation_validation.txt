@@ -1,0 +1,10 @@
+COMMAND:
+uv run python scripts/validate_foundation.py
+OUTPUT:
+.....................................................
+----------------------------------------------------------------------
+Ran 53 tests in 1.929s
+
+OK
+
+EXIT_CODE: 0

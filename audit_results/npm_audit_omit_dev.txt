@@ -1,0 +1,6 @@
+COMMAND:
+npm audit --omit=dev
+OUTPUT:
+found 0 vulnerabilities
+
+EXIT_CODE: 0

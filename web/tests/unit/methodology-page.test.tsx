@@ -1,7 +1,12 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { MethodologyPage } from "@/features/methodology/MethodologyPage";
-import { METHOD_IDENTIFIERS, METHODOLOGY_LOCKS, RATE_DENOMINATORS } from "@/lib/methodology";
+import {
+  MANUSCRIPT_PUBLIC_STATUS,
+  METHOD_IDENTIFIERS,
+  METHODOLOGY_LOCKS,
+  RATE_DENOMINATORS,
+} from "@/lib/methodology";
 
 describe("methodology page", () => {
   it("renders locked metadata identifiers and standard population", () => {
@@ -55,5 +60,11 @@ describe("methodology page", () => {
     expect(
       screen.getByText(/Um cluster HH não deve ser interpretado como um hotspot de doença mental/i),
     ).toBeInTheDocument();
+  });
+
+  it("renders the conservative manuscript submission status", () => {
+    render(<MethodologyPage />);
+    expect(screen.getByText(new RegExp(MANUSCRIPT_PUBLIC_STATUS.title))).toBeInTheDocument();
+    expect(screen.getByText(/Status: manuscrito submetido ao Health & Place\./)).toBeInTheDocument();
   });
 });

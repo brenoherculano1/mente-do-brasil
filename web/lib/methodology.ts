@@ -16,6 +16,7 @@ export const SCIENTIFIC_SOURCES = {
   beds: "metadata/indicators/mental_health_beds_sus_rate.yaml",
   psychiatrists: "metadata/indicators/psychiatrist_fte_rate.yaml",
   percentiles: "src/mente_do_brasil/quality.py",
+  manuscriptStatus: "metadata/publication/manuscript_status.yaml",
   lockedConfig:
     "/Users/brenoherculano/Desktop/Brazil Mental Health Spatial Inequality Project/phase1_method_lock/analysis_config_LOCKED.yaml",
   methodLedger:
@@ -50,6 +51,13 @@ export const METHODOLOGY_LOCKS = {
   percentileTies: "Empates recebem a posição média dentro do grupo empatado.",
   percentileNullHandling:
     "Valores ausentes semânticos, null, not_available, not_applicable e suppressed são preservados; zeros válidos são mantidos.",
+};
+
+export const MANUSCRIPT_PUBLIC_STATUS = {
+  title:
+    "Spatial mismatch between mental-health need indicators and public-sector capacity across Brazilian Health Regions",
+  publicClaim: "Status: manuscrito submetido ao Health & Place.",
+  source: SCIENTIFIC_SOURCES.manuscriptStatus,
 };
 
 export const RATE_DENOMINATORS = [

@@ -1,0 +1,10 @@
+COMMAND:
+claim audit forbidden publication/status terms
+OUTPUT:
+{"file":"web/features/methodology/MethodologyPage.tsx","forbidden_matches":[]}
+{"file":"web/lib/methodology.ts","forbidden_matches":[]}
+{"file":"metadata/publication/manuscript_status.yaml","forbidden_matches":[]}
+{"file":"docs/methodology_page_2026-08-25.md","forbidden_matches":[]}
+{"renderedClaim":true,"sourceClaim":true}
+
+EXIT_CODE: 0

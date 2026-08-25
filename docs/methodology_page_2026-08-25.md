@@ -14,6 +14,7 @@ features.
 - `metadata/releases/MDB_ANALYTICAL_2024_1.yaml`
 - `metadata/releases/MDB_ANALYTICAL_2024_1_canonical.yaml`
 - `metadata/releases/MDB_ANALYTICAL_2024_1_serving.yaml`
+- `metadata/publication/manuscript_status.yaml`
 - `metadata/indicators/suicide_asmr.yaml`
 - `metadata/indicators/psychiatric_admission_rate.yaml`
 - `metadata/indicators/caps_rate.yaml`
@@ -58,9 +59,19 @@ bundle preserves result artifacts rather than the full original analysis config.
 - LISA HH/LL/HL/LH: 60/66/4/5.
 - `SMALL_SUICIDE_COUNT`: 7.
 - `ZERO_REGISTERED_BEDS`: 275.
+- Manuscript status public claim: `Status: manuscrito submetido ao Health & Place.`
 
 `MDB_DATA_CONTRACT_V1.0` was not rendered because it was not found as a
 versioned identifier in the repository.
+
+## Manuscript Provenance
+
+The public manuscript claim is backed by
+`metadata/publication/manuscript_status.yaml`. The record was incorporated from
+externally verified Google Drive evidence supplied in the task instructions,
+with private administrative fields excluded. The public page deliberately states
+only the stable historical event of submission and does not display mutable
+editorial workflow state.
 
 ## UX Decisions
 
@@ -89,7 +100,7 @@ Final local validation:
 
 - `npm run lint`: PASS.
 - `npm run typecheck`: PASS.
-- `npm run test`: PASS, 17/17.
+- `npm run test`: PASS, 18/18.
 - `npm run build`: PASS; `/metodologia` prerendered as static content.
 - `npm run test:e2e`: PASS, 10/10 executed, 2 project-scope skips.
 - `npm audit --omit=dev`: PASS, 0 vulnerabilities.
@@ -110,3 +121,5 @@ Screenshots generated from the production Next server:
 - `docs/methodology_qc_2026-08-25/mobile_methodology_top.png`
 - `docs/methodology_qc_2026-08-25/mobile_methodology_mid.png`
 - `docs/methodology_qc_2026-08-25/mobile_methodology_bottom.png`
+- `docs/methodology_qc_2026-08-25_final/desktop_methodology_scientific_basis.png`
+- `docs/methodology_qc_2026-08-25_final/mobile_methodology_scientific_basis.png`

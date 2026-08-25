@@ -3,6 +3,7 @@
 import { useState } from "react";
 import {
   METHOD_IDENTIFIERS,
+  MANUSCRIPT_PUBLIC_STATUS,
   METHODOLOGY_LOCKS,
   METHODOLOGY_NAV,
   RATE_DENOMINATORS,
@@ -526,8 +527,9 @@ export function MethodologyPage() {
               registrada nas Regiões de Saúde brasileiras.
             </p>
             <p className="small-text">
-              Spatial mismatch between mental-health need indicators and public-sector
-              capacity across Brazilian Health Regions.
+              {MANUSCRIPT_PUBLIC_STATUS.title}
+              <br />
+              {MANUSCRIPT_PUBLIC_STATUS.publicClaim}
             </p>
           </Section>
 

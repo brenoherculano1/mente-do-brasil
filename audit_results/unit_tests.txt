@@ -1,0 +1,22 @@
+COMMAND:
+npm run test
+OUTPUT:
+
+> mente-do-brasil-web@0.1.0 test
+> vitest run
+
+
+ RUN  v3.2.7 /Users/brenoherculano/Documents/New project/mente-do-brasil/web
+
+ ✓ tests/unit/color-scale.test.ts (5 tests) 6ms
+ ✓ tests/unit/format.test.ts (3 tests) 3ms
+ ✓ tests/unit/profile-components.test.tsx (4 tests) 62ms
+ ✓ tests/unit/methodology-page.test.tsx (6 tests) 365ms
+
+ Test Files  4 passed (4)
+      Tests  18 passed (18)
+   Start at  07:29:23
+   Duration  1.73s (transform 262ms, setup 507ms, collect 510ms, tests 435ms, environment 2.68s, prepare 509ms)
+
+
+EXIT_CODE: 0
