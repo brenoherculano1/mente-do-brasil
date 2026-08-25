@@ -70,7 +70,8 @@ npm run build
 npm run test:e2e
 ```
 
-The E2E suite expects Docker/PostgreSQL and the local FastAPI API to be running.
+The E2E suite runs against `npm run start`, so run `npm run build` first. It
+also expects Docker/PostgreSQL and the local FastAPI API to be running.
 
 ## Architecture
 

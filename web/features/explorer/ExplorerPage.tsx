@@ -82,33 +82,12 @@ export function ExplorerPage({ initialMetric }: { initialMetric: MetricId }) {
       </section>
 
       <section className="explorer-grid" aria-label="Explorador territorial">
-        <aside className="panel" aria-label="Controles do mapa">
+        <aside className="panel controls-panel" aria-label="Controles do mapa">
           <TerritorySearch onSelectRegion={selectRegion} />
           <MetricSelector value={metric} onChange={onMetricChange} />
-          <div className="control-group">
-            <p className="field-label">Indicador selecionado</p>
-            <strong>{metricConfig.label}</strong>
-            <p className="small-text">{metricConfig.description}</p>
-            <p className="small-text">{metricConfig.secondary}</p>
-          </div>
-          <MapLegend metric={metricConfig} values={mapData?.features.map((f) => f.properties.value) ?? []} />
-          <p className="small-text">
-            Dados: 2022-2024 / dezembro de 2024 conforme indicador. Release:{" "}
-            {ACTIVE_RELEASE_ID}.
-          </p>
-          <SelectedRegionPanel
-            feature={selectedFeature}
-            profile={selectedProfile}
-            loading={Boolean(selectedCode && !selectedProfile)}
-          />
-          <AccessibleRegionList
-            features={mapData?.features ?? []}
-            selectedCode={selectedCode}
-            onSelectRegion={selectRegion}
-          />
         </aside>
 
-        <div className="map-frame" aria-label="Mapa nacional das Regiões de Saúde">
+        <div className="map-frame" aria-label="Mapa nacional das Regiões de Saúde" data-testid="map-frame">
           {loading && (
             <div className="map-overlay">
               <div className="map-status">Carregando mapa nacional...</div>
@@ -128,6 +107,33 @@ export function ExplorerPage({ initialMetric }: { initialMetric: MetricId }) {
             onSelectRegion={selectRegion}
           />
         </div>
+
+        <aside className="panel support-panel" aria-label="Informações do mapa">
+          <SelectedRegionPanel
+            feature={selectedFeature}
+            profile={selectedProfile}
+            loading={Boolean(selectedCode && !selectedProfile)}
+          />
+          <div className="control-group">
+            <p className="field-label">Indicador selecionado</p>
+            <strong>{metricConfig.label}</strong>
+            <p className="small-text">{metricConfig.description}</p>
+            <p className="small-text">{metricConfig.secondary}</p>
+          </div>
+          <MapLegend
+            metric={metricConfig}
+            values={mapData?.features.map((f) => f.properties.value) ?? []}
+          />
+          <p className="small-text">
+            Dados: 2022-2024 / dezembro de 2024 conforme indicador. Release:{" "}
+            {ACTIVE_RELEASE_ID}.
+          </p>
+          <AccessibleRegionList
+            features={mapData?.features ?? []}
+            selectedCode={selectedCode}
+            onSelectRegion={selectRegion}
+          />
+        </aside>
       </section>
     </div>
   );
@@ -142,31 +148,66 @@ function AccessibleRegionList({
   selectedCode: string | null;
   onSelectRegion: (code: string) => void;
 }) {
+  const [expanded, setExpanded] = useState(false);
+  const [filter, setFilter] = useState("");
+  const normalizedFilter = filter.trim().toLocaleLowerCase("pt-BR");
+  const visibleFeatures = normalizedFilter
+    ? features.filter((feature) => {
+        const properties = feature.properties;
+        return `${properties.health_region_name} ${properties.uf} ${properties.health_region_code}`
+          .toLocaleLowerCase("pt-BR")
+          .includes(normalizedFilter);
+      })
+    : features;
   if (features.length === 0) return null;
   return (
-    <div className="control-group" aria-labelledby="region-list-title">
-      <p className="field-label" id="region-list-title">
-        Lista acessível
+    <div className="control-group accessible-region-panel" aria-labelledby="region-list-title">
+      <button
+        className="text-button disclosure-button"
+        type="button"
+        aria-expanded={expanded}
+        aria-controls="accessible-region-list"
+        onClick={() => setExpanded((current) => !current)}
+      >
+        Ver lista de Regiões de Saúde
+      </button>
+      <p className="small-text" id="region-list-title">
+        Alternativa textual ao mapa. A lista completa fica recolhida para não empurrar
+        o mapa para baixo.
       </p>
-      <ul className="accessible-list">
-        {features.slice(0, 8).map((feature) => (
-          <li key={feature.id}>
-            <button
-              className="result-button"
-              onClick={() => onSelectRegion(feature.properties.health_region_code)}
-              aria-current={selectedCode === feature.properties.health_region_code}
-            >
-              <strong>{feature.properties.health_region_name}</strong>
-              <span className="small-text">
-                {feature.properties.uf} · {feature.properties.health_region_code}
-              </span>
-            </button>
-          </li>
-        ))}
-      </ul>
-      <p className="small-text">
-        A busca acima permite acessar as demais Regiões de Saúde sem depender do mapa.
-      </p>
+      {expanded && (
+        <div id="accessible-region-list" className="accessible-list-shell">
+          <label className="control-group">
+            <span className="field-label">Filtrar lista</span>
+            <input
+              className="input"
+              value={filter}
+              onChange={(event) => setFilter(event.target.value)}
+              placeholder="Nome, UF ou código da região"
+              autoComplete="off"
+            />
+          </label>
+          <p className="small-text" aria-live="polite">
+            {visibleFeatures.length} de {features.length} Regiões de Saúde.
+          </p>
+          <ul className="accessible-list" aria-label="Lista textual de Regiões de Saúde">
+            {visibleFeatures.map((feature) => (
+              <li key={feature.id}>
+                <button
+                  className="result-button"
+                  onClick={() => onSelectRegion(feature.properties.health_region_code)}
+                  aria-current={selectedCode === feature.properties.health_region_code}
+                >
+                  <strong>{feature.properties.health_region_name}</strong>
+                  <span className="small-text">
+                    {feature.properties.uf} · {feature.properties.health_region_code}
+                  </span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }

@@ -12,6 +12,7 @@ __pycache__/
 htmlcov/
 .venv/
 venv/
+*.tsbuildinfo
 
 # Environment and secrets
 .env

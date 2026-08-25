@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import maplibregl, { Map, Popup } from "maplibre-gl";
 import { formatMetricValue } from "@/lib/format";
 import { getScaleDomain, mapLibreFillExpression } from "@/lib/map/color-scale";
+import { createTooltipNode } from "@/lib/map/tooltip";
 import type { MetricConfig } from "@/lib/metrics";
 import type { HealthRegionFeatureCollection } from "@/types/api";
 
@@ -106,11 +107,18 @@ export function HealthRegionMap({
           const feature = event.features?.[0];
           if (!feature || !event.lngLat) return;
           const properties = feature.properties as Record<string, unknown>;
+          const value = typeof properties.value === "number" ? properties.value : null;
           const hasFlags = String(properties.data_quality_flags ?? "").length > 2;
           popupRef.current
             ?.setLngLat(event.lngLat)
-            .setHTML(
-              `<div class="tooltip"><strong>${properties.health_region_name} — ${properties.uf}</strong><span>${metric.shortLabel}: ${formatMetricValue(Number(properties.value), metric.scale)}</span>${hasFlags ? "<span>Dados com observação</span>" : ""}</div>`,
+            .setDOMContent(
+              createTooltipNode({
+                name: String(properties.health_region_name ?? ""),
+                uf: String(properties.uf ?? ""),
+                metricLabel: metric.shortLabel,
+                value: formatMetricValue(value, metric.scale),
+                hasFlags,
+              }),
             )
             .addTo(map);
         });

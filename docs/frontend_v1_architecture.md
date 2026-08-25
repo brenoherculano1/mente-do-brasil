@@ -100,16 +100,19 @@ scientific model:
 
 ## Responsive Strategy
 
-Desktop uses a two-column explorer with controls on the left and a large national
-map on the right. Mobile stacks header, intro, controls, map, and selected
-region panel with a usable map height.
+Desktop uses a two-column explorer with controls and supporting context on the
+left and a large national map on the right. Mobile stacks header, intro, search,
+metric selector, map, selected-region summary, legend/explanations, and the
+accessible list in that order, so the map remains the primary surface.
 
 ## Accessibility
 
 The app uses semantic landmarks, labels, visible focus, button/link semantics,
-and an accessible region list so the map is not the only navigation path.
-Tooltips are concise and duplicate information is available through search and
-profile pages.
+and a collapsed accessible region list so the map is not the only navigation
+path. The complete 439-region list is available on demand and can be filtered by
+name, UF, or Health Region code without pushing the map below the fold by
+default. Tooltips are built with DOM nodes and `textContent`, not injected HTML;
+duplicate information is available through search and profile pages.
 
 ## API Dependency
 

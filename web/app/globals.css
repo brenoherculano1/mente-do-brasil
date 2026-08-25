@@ -166,6 +166,9 @@ button {
   align-items: start;
   display: grid;
   gap: 18px;
+  grid-template-areas:
+    "controls map"
+    "support map";
   grid-template-columns: minmax(320px, 0.36fr) minmax(0, 0.64fr);
   padding: 10px 0 40px;
 }
@@ -186,6 +189,14 @@ button {
   display: grid;
   gap: 18px;
   padding: 18px;
+}
+
+.controls-panel {
+  grid-area: controls;
+}
+
+.support-panel {
+  grid-area: support;
 }
 
 .control-group {
@@ -245,6 +256,7 @@ button {
 }
 
 .map-frame {
+  grid-area: map;
   height: min(78vh, 760px);
   min-height: 620px;
   overflow: hidden;
@@ -317,6 +329,19 @@ button {
 .result-list li,
 .accessible-list li {
   list-style: none;
+}
+
+.accessible-list-shell {
+  display: grid;
+  gap: 10px;
+  max-height: 420px;
+  overflow: auto;
+  padding-right: 2px;
+}
+
+.disclosure-button {
+  justify-content: space-between;
+  width: 100%;
 }
 
 .result-button {
@@ -514,7 +539,14 @@ button {
 }
 
 @media (max-width: 940px) {
-  .explorer-grid,
+  .explorer-grid {
+    grid-template-areas:
+      "controls"
+      "map"
+      "support";
+    grid-template-columns: 1fr;
+  }
+
   .profile-grid {
     grid-template-columns: 1fr;
   }
@@ -561,6 +593,17 @@ button {
     min-height: 520px;
   }
 
+  .metric-row,
+  .indicator-values {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .accessible-list-shell {
+    max-height: 360px;
+  }
+}
+
+@media (max-width: 360px) {
   .metric-row,
   .indicator-values {
     grid-template-columns: 1fr;

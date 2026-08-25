@@ -1,7 +1,9 @@
 frontend_id: FRONTEND_FOUNDATION_V1
 frontend_status: VALIDATED_LOCAL
-validated_at: 2026-08-24
-commit_basis: fc0a6a2
+validated_at: 2026-08-25
+base_commit: fc0a6a2
+frontend_foundation_commit: 5674db2
+validation_round: frontend_v1_ux_production_qa_2026_08_25
 routes_implemented:
   - /
   - /regiao/[codigo]
@@ -23,6 +25,7 @@ quality_gates:
   typecheck: PASS
   unit_tests: PASS
   e2e: PASS
+  production_e2e: PASS
   production_build: PASS
   api_regression: PASS
   serving_regression: PASS
@@ -31,3 +34,6 @@ quality_gates:
 notes:
   - Vertical slice only; no deployment, auth, rankings, chatbot, analytics, CMS, or download center.
   - Search supports Health Region name/code and 7-digit IBGE municipality lookup.
+  - Mobile home order keeps the map before selected-region support text, legend, and accessible list.
+  - Accessible list is collapsed by default and expands to all 439 Health Regions.
+  - Tooltip content is rendered with DOM text nodes, not injected HTML.
