@@ -18,9 +18,9 @@ export function AppHeader() {
           <Link aria-current={pathname === "/metodologia" ? "page" : undefined} href="/metodologia">
             Metodologia
           </Link>
-          <span className="muted-link" aria-disabled="true">
+          <Link aria-current={pathname === "/dados" ? "page" : undefined} href="/dados">
             Dados
-          </span>
+          </Link>
           <span className="muted-link" aria-disabled="true">
             Sobre
           </span>

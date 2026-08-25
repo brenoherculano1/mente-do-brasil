@@ -19,6 +19,6 @@ tests/regression/test_serving_database_static.py ...........             [ 76%]
 tests/regression/test_validated_import_bundle.py ............            [ 95%]
 tests/regression/test_web_geometry.py ...                                [100%]
 
-======================== 65 passed in 73.59s (0:01:13) =========================
+======================== 65 passed in 76.37s (0:01:16) =========================
 
 EXIT_CODE: 0

@@ -3,7 +3,7 @@ uv run python scripts/validate_foundation.py
 OUTPUT:
 .....................................................
 ----------------------------------------------------------------------
-Ran 53 tests in 1.929s
+Ran 53 tests in 3.924s
 
 OK
 

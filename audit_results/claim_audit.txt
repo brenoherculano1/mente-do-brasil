@@ -1,10 +1,22 @@
 COMMAND:
-claim audit forbidden publication/status terms
+node rendered /dados claim audit
 OUTPUT:
-{"file":"web/features/methodology/MethodologyPage.tsx","forbidden_matches":[]}
-{"file":"web/lib/methodology.ts","forbidden_matches":[]}
-{"file":"metadata/publication/manuscript_status.yaml","forbidden_matches":[]}
-{"file":"docs/methodology_page_2026-08-25.md","forbidden_matches":[]}
-{"renderedClaim":true,"sourceClaim":true}
+{
+  "checks": {
+    "status_200": true,
+    "has_h1": true,
+    "has_public_availability": true,
+    "has_release_id": true,
+    "has_hash": true,
+    "has_public_download_link": false,
+    "exposes_localhost_or_loopback": false,
+    "claims_public_api_active": false,
+    "claims_publication_or_doi": false,
+    "has_license_pending": true,
+    "has_citation_pending": true,
+    "has_methodology_link": true
+  },
+  "pass": true
+}
 
 EXIT_CODE: 0

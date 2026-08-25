@@ -1,0 +1,55 @@
+COMMAND:
+python validate /dados E2E screenshots exist and are non-empty
+OUTPUT:
+{
+  "screenshots": [
+    {
+      "file": "docs/data_page_qc_2026-08-25/desktop_data_top.png",
+      "exists": true,
+      "size_bytes": 131737
+    },
+    {
+      "file": "docs/data_page_qc_2026-08-25/desktop_data_datasets.png",
+      "exists": true,
+      "size_bytes": 182417
+    },
+    {
+      "file": "docs/data_page_qc_2026-08-25/desktop_data_dictionary.png",
+      "exists": true,
+      "size_bytes": 141268
+    },
+    {
+      "file": "docs/data_page_qc_2026-08-25/desktop_data_release_policy.png",
+      "exists": true,
+      "size_bytes": 145184
+    },
+    {
+      "file": "docs/data_page_qc_2026-08-25/desktop_data_full.png",
+      "exists": true,
+      "size_bytes": 1573658
+    },
+    {
+      "file": "docs/data_page_qc_2026-08-25/mobile_data_top.png",
+      "exists": true,
+      "size_bytes": 64632
+    },
+    {
+      "file": "docs/data_page_qc_2026-08-25/mobile_data_dictionary.png",
+      "exists": true,
+      "size_bytes": 65887
+    },
+    {
+      "file": "docs/data_page_qc_2026-08-25/mobile_data_bottom.png",
+      "exists": true,
+      "size_bytes": 60495
+    },
+    {
+      "file": "docs/data_page_qc_2026-08-25/mobile_data_full.png",
+      "exists": true,
+      "size_bytes": 1356638
+    }
+  ],
+  "pass": true
+}
+
+EXIT_CODE: 0

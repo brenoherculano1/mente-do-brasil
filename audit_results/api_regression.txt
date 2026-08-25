@@ -15,7 +15,7 @@ scientific regression PASS
 flags PASS
 errors PASS
 read-only PASS
-latency_ms {'health': 45.23, 'ready': 6.58, 'map_geometry_overview': 52.92, 'map_geometry_detail': 203.56, 'map_geometry_full': 42723.69}
+latency_ms {'health': 55.2, 'ready': 16.55, 'map_geometry_overview': 291.74, 'map_geometry_detail': 447.49, 'map_geometry_full': 42023.23}
 PASS
 
 EXIT_CODE: 0

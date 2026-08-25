@@ -1,11 +1,14 @@
 COMMAND:
-node production serving check for /metodologia
+node production serving check for /dados
 OUTPUT:
 {
   "status": 200,
   "ok": true,
-  "has_public_claim": true,
-  "has_published_claim": false
+  "has_public_availability": true,
+  "has_not_released": true,
+  "has_localhost": false,
+  "has_public_download": false,
+  "has_false_doi": false
 }
 
 EXIT_CODE: 0

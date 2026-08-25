@@ -8,6 +8,7 @@ public website.
 Implemented:
 
 - `/`: Explorar o Brasil.
+- `/dados`: Dados e versões.
 - `/regiao/[codigo]`: Perfil da Região de Saúde.
 - `/metodologia`: Como medimos.
 
@@ -132,4 +133,4 @@ http://127.0.0.1:8000
 
 This slice does not include login, deployment, analytics, rankings, chatbot, CMS,
 download center, comparison tools, peer regions, trend charts, full state pages,
-data/about pages, or any scientific recalculation.
+about pages, or any scientific recalculation.

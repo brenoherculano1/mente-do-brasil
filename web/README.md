@@ -48,6 +48,8 @@ Open `http://127.0.0.1:3000`.
 
 - `/`: Explorer with national overview map, metric selector, territorial
   search, selected-region panel, and accessible region list.
+- `/dados`: Static release transparency page with dataset inventory, versions,
+  provenance, data dictionary, and publication policy.
 - `/metodologia`: Static, readable explanation of the locked method, sources,
   denominators, percentiles, spatial analysis, flags, limitations, and versions.
 - `/regiao/[codigo]`: Health Region profile using the API semantic profile
@@ -56,7 +58,6 @@ Open `http://127.0.0.1:3000`.
 ## Future Routes
 
 - `/estado/[uf]`
-- `/dados`
 - `/sobre`
 
 These are navigation placeholders only in this vertical slice.

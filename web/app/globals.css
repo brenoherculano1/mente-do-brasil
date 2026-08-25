@@ -823,6 +823,253 @@ th {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.data-shell {
+  padding-bottom: 56px;
+}
+
+.data-hero {
+  max-width: 1040px;
+}
+
+.data-content {
+  display: grid;
+  gap: 18px;
+  max-width: 1040px;
+  min-width: 0;
+}
+
+.data-section {
+  background: rgb(255 255 255 / 88%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  min-width: 0;
+  padding: 24px;
+}
+
+.data-section h2 {
+  font-size: clamp(1.45rem, 2.4vw, 2.05rem);
+  line-height: 1.08;
+  margin: 0 0 14px;
+}
+
+.data-section h3 {
+  margin: 0 0 8px;
+}
+
+.data-section p,
+.data-section li {
+  line-height: 1.55;
+}
+
+.availability-section {
+  border-left: 6px solid var(--accent);
+}
+
+.status-grid,
+.release-stat-grid,
+.two-column,
+.provenance-grid,
+.policy-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.status-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 18px 0;
+}
+
+.status-item,
+.release-stat,
+.info-block,
+.policy-block {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+
+.status-item,
+.info-block {
+  display: grid;
+  gap: 5px;
+}
+
+.status-item span,
+.info-block span {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 760;
+  text-transform: uppercase;
+}
+
+.status-item strong,
+.info-block strong {
+  overflow-wrap: anywhere;
+}
+
+.release-stat-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 18px 0;
+}
+
+.release-stat strong {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1;
+}
+
+.release-stat span {
+  color: var(--text-muted);
+  display: block;
+  margin-top: 8px;
+}
+
+.two-column,
+.provenance-grid,
+.policy-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.data-details {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+}
+
+.data-details summary,
+.dictionary-group summary {
+  cursor: pointer;
+  font-weight: 760;
+}
+
+.dataset-list,
+.dictionary-groups {
+  display: grid;
+  gap: 14px;
+}
+
+.dataset-item {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: grid;
+  gap: 18px;
+  grid-template-columns: minmax(220px, 0.38fr) minmax(0, 0.62fr);
+  padding: 18px;
+}
+
+.dataset-item p,
+.policy-block p,
+.field-note {
+  color: var(--text-muted);
+}
+
+.dataset-meta {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  min-width: 0;
+}
+
+.dataset-meta div {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: minmax(96px, 0.28fr) minmax(0, 0.72fr);
+  min-width: 0;
+}
+
+.dataset-meta dt {
+  color: var(--text-muted);
+  font-weight: 760;
+}
+
+.dataset-meta dd {
+  font-family: var(--font-mono);
+  margin: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.dictionary-search {
+  display: grid;
+  gap: 8px;
+  margin-top: 18px;
+  max-width: 560px;
+}
+
+.dictionary-search label {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 760;
+  text-transform: uppercase;
+}
+
+.dictionary-group {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  min-width: 0;
+  padding: 12px;
+}
+
+.dictionary-group summary {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dictionary-group summary span {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.dictionary-table-wrap {
+  margin-top: 12px;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+}
+
+.dictionary-table {
+  min-width: 900px;
+}
+
+.dictionary-table th[scope="row"] {
+  min-width: 190px;
+}
+
+.dictionary-table th[scope="row"] span,
+.dictionary-table th[scope="row"] code,
+.field-note {
+  display: block;
+}
+
+.dictionary-table code {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  margin-top: 4px;
+  overflow-wrap: anywhere;
+}
+
+.field-note {
+  margin-top: 8px;
+}
+
+.compact-table table {
+  min-width: 360px;
+}
+
+.methodology-cta {
+  align-items: center;
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+}
+
 @media (max-width: 940px) {
   .explorer-grid {
     grid-template-areas:
@@ -865,8 +1112,19 @@ th {
   .method-card-grid,
   .method-card-grid.compact,
   .use-grid,
-  .limitation-list {
+  .limitation-list,
+  .status-grid,
+  .release-stat-grid,
+  .two-column,
+  .provenance-grid,
+  .policy-grid,
+  .dataset-item {
     grid-template-columns: 1fr;
+  }
+
+  .methodology-cta {
+    align-items: stretch;
+    flex-direction: column;
   }
 
   .method-flow-step {
@@ -918,6 +1176,46 @@ th {
 
   .method-section {
     padding: 18px;
+  }
+
+  .data-section {
+    padding: 18px;
+  }
+
+  .dataset-meta div {
+    grid-template-columns: 1fr;
+  }
+
+  .dictionary-table,
+  .dictionary-table thead,
+  .dictionary-table tbody,
+  .dictionary-table tr,
+  .dictionary-table th,
+  .dictionary-table td {
+    display: block;
+  }
+
+  .dictionary-table {
+    min-width: 0;
+  }
+
+  .dictionary-table thead {
+    clip: rect(0 0 0 0);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+  }
+
+  .dictionary-table tr {
+    border-bottom: 1px solid var(--border);
+    padding: 12px 0;
+  }
+
+  .dictionary-table td,
+  .dictionary-table th {
+    border-bottom: 0;
+    padding: 6px 0;
   }
 
   .technical-rows div {

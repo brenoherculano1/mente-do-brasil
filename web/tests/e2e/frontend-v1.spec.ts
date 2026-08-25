@@ -3,10 +3,12 @@ import { mkdirSync, writeFileSync } from "node:fs";
 
 const QA_DIR = "../docs/frontend_qc_2026-08-25";
 const METHODOLOGY_QA_DIR = "../docs/methodology_qc_2026-08-25";
+const DATA_QA_DIR = "../docs/data_page_qc_2026-08-25";
 
 test.beforeAll(() => {
   mkdirSync(QA_DIR, { recursive: true });
   mkdirSync(METHODOLOGY_QA_DIR, { recursive: true });
+  mkdirSync(DATA_QA_DIR, { recursive: true });
 });
 
 test("home loads map, metric selector, search, and navigates to region profile", async ({ page }, testInfo) => {
@@ -167,6 +169,61 @@ test("methodology mobile page has compact navigation and no global overflow", as
   await page.screenshot({
     path: `${METHODOLOGY_QA_DIR}/mobile_methodology_bottom.png`,
   });
+});
+
+test("data page exposes release inventory and filters dictionary on desktop", async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== "desktop", "desktop-only data page QA");
+  const mapRequests = trackMapRequests(page);
+  await page.goto("/dados");
+  await expect(page.getByRole("heading", { level: 1, name: "Dados e versões" })).toBeVisible();
+  await expect(page.getByText("Ainda não publicado", { exact: true })).toBeVisible();
+  await expect(page.getByText("MDB_ANALYTICAL_2024_1").first()).toBeVisible();
+  await expect(page.getByText("439").first()).toBeVisible();
+  await expect(page.getByText("5.570")).toBeVisible();
+  await expect(page.getByText("35").first()).toBeVisible();
+  await expect(page.getByText("a3cc8f3aefc9d556d1bacc636dc72cabf04155052dd63c426dda9bec58ada515")).toBeVisible();
+  await expect(page.getByText("acd7ab896566d5ea730719eb46a079b0571d73fec617ef1d39db93099bd06b15")).toBeVisible();
+  await page.getByLabel("Buscar campo").fill("psychiatrist");
+  await expect(page.getByText("psychiatrist_fte_rate")).toBeVisible();
+  await expect(page.getByText("suicide_asmr")).toHaveCount(0);
+  await page.getByRole("link", { name: /Entender como os indicadores são calculados/ }).click();
+  await expect(page).toHaveURL(/\/metodologia/);
+  await page.goBack();
+  await expect(page.getByText("Os formatos públicos serão definidos")).toBeVisible();
+  await expect(page.getByText("A API pública ainda não foi publicada")).toHaveCount(0);
+  await expect(page.getByRole("link", { name: /download/i })).toHaveCount(0);
+  await expect(page.locator("body")).not.toContainText("http://127.0.0.1");
+  await expect(page.locator("[data-nextjs-dev-tools-button]")).toHaveCount(0);
+  expect(mapRequests).toHaveLength(0);
+  await expectNoGlobalHorizontalOverflow(page);
+
+  await page.screenshot({ path: `${DATA_QA_DIR}/desktop_data_full.png`, fullPage: true });
+  await page.locator("#data-title").screenshot({ path: `${DATA_QA_DIR}/desktop_data_top.png` });
+  await page.locator("#datasets-title").screenshot({ path: `${DATA_QA_DIR}/desktop_data_datasets.png` });
+  await page.locator("#dictionary-title").screenshot({ path: `${DATA_QA_DIR}/desktop_data_dictionary.png` });
+  await page.locator("#versions-title").screenshot({ path: `${DATA_QA_DIR}/desktop_data_release_policy.png` });
+});
+
+test("data page remains usable on mobile", async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== "mobile", "mobile-only data page QA");
+  const mapRequests = trackMapRequests(page);
+  await page.goto("/dados");
+  await expect(page.getByRole("heading", { level: 1, name: "Dados e versões" })).toBeVisible();
+  await expect(page.getByText("Ainda não publicado", { exact: true })).toBeVisible();
+  await expectNoGlobalHorizontalOverflow(page);
+  await page.screenshot({ path: `${DATA_QA_DIR}/mobile_data_top.png` });
+  await page.screenshot({ path: `${DATA_QA_DIR}/mobile_data_full.png`, fullPage: true });
+  await page.getByLabel("Buscar campo").fill("lisa");
+  await expect(page.getByText("lisa_local_i")).toBeVisible();
+  await expect(page.getByText("lisa_cluster")).toBeVisible();
+  await expectNoGlobalHorizontalOverflow(page);
+  await page.screenshot({ path: `${DATA_QA_DIR}/mobile_data_dictionary.png` });
+  await page.locator("#versions-title").scrollIntoViewIfNeeded();
+  await page.screenshot({ path: `${DATA_QA_DIR}/mobile_data_bottom.png` });
+  await expect(page.getByRole("link", { name: /download/i })).toHaveCount(0);
+  await expect(page.locator("body")).not.toContainText("localhost");
+  await expect(page.locator("[data-nextjs-dev-tools-button]")).toHaveCount(0);
+  expect(mapRequests).toHaveLength(0);
 });
 
 async function waitForMapPixels(page: import("@playwright/test").Page) {
