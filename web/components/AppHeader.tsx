@@ -21,9 +21,9 @@ export function AppHeader() {
           <Link aria-current={pathname === "/dados" ? "page" : undefined} href="/dados">
             Dados
           </Link>
-          <span className="muted-link" aria-disabled="true">
+          <Link aria-current={pathname === "/sobre" ? "page" : undefined} href="/sobre">
             Sobre
-          </span>
+          </Link>
         </nav>
       </div>
     </header>

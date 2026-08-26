@@ -1,16 +1,1 @@
-COMMAND:
-production serving /dados locked language validation
-OUTPUT:
-{
-  "checks": {
-    "status_200": true,
-    "forbidden_matches": [],
-    "missing_required_terms": [],
-    "no_public_download": true,
-    "no_localhost_rendered": true,
-    "no_fake_doi_or_license": true
-  },
-  "pass": true
-}
-
-EXIT_CODE: 0
+{'status': 'PASS', 'missing': [], 'forbidden_hits': [], 'status_code': 200}

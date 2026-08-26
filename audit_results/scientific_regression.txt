@@ -1,6 +1,3 @@
-COMMAND:
-PATH=.venv/bin:$PATH .venv/bin/pytest
-OUTPUT:
 ============================= test session starts ==============================
 platform darwin -- Python 3.13.5, pytest-9.1.1, pluggy-1.6.0
 rootdir: /Users/brenoherculano/Documents/New project/mente-do-brasil
@@ -20,6 +17,4 @@ tests/regression/test_serving_database_static.py ...........             [ 78%]
 tests/regression/test_validated_import_bundle.py ............            [ 95%]
 tests/regression/test_web_geometry.py ...                                [100%]
 
-======================== 69 passed in 109.26s (0:01:49) ========================
-
-EXIT_CODE: 0
+============================= 69 passed in 46.09s ==============================

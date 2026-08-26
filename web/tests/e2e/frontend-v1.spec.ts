@@ -4,11 +4,13 @@ import { mkdirSync, writeFileSync } from "node:fs";
 const QA_DIR = "../docs/frontend_qc_2026-08-25";
 const METHODOLOGY_QA_DIR = "../docs/methodology_qc_2026-08-25";
 const DATA_QA_DIR = "../docs/data_page_qc_2026-08-25_locked";
+const ABOUT_QA_DIR = "../docs/about_page_qc_2026-08-25";
 
 test.beforeAll(() => {
   mkdirSync(QA_DIR, { recursive: true });
   mkdirSync(METHODOLOGY_QA_DIR, { recursive: true });
   mkdirSync(DATA_QA_DIR, { recursive: true });
+  mkdirSync(ABOUT_QA_DIR, { recursive: true });
 });
 
 test("home loads map, metric selector, search, and navigates to region profile", async ({ page }, testInfo) => {
@@ -248,6 +250,93 @@ test("data page remains usable on mobile", async ({ page }, testInfo) => {
   await expect(page.locator("body")).not.toContainText("localhost");
   await expect(page.locator("[data-nextjs-dev-tools-button]")).toHaveCount(0);
   expect(mapRequests).toHaveLength(0);
+});
+
+test("about page states independence, scope, and links on desktop", async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== "desktop", "desktop-only about page QA");
+  const mapRequests = trackMapRequests(page);
+  await page.goto("/sobre");
+  await expect(page.getByRole("heading", { level: 1, name: "Sobre o Mente do Brasil" })).toBeVisible();
+  await expect(page.getByText("O Mente do Brasil é uma infraestrutura independente")).toBeVisible();
+  await expect(page.getByText(/não é um sistema oficial do Ministério da Saúde/)).toBeVisible();
+  await expect(page.getByText(/não implica vínculo institucional, endosso ou participação/)).toBeVisible();
+  await expect(page.getByText("439").first()).toBeVisible();
+  await expect(page.getByText("5.570")).toBeVisible();
+  await expect(page.getByText("2022–2024")).toBeVisible();
+  await expect(page.getByText("Dezembro de 2024")).toBeVisible();
+  await expect(page.getByText("NOT_RELEASED")).toBeVisible();
+  await expect(page.getByText(/ainda não foi publicado publicamente/)).toBeVisible();
+  await expect(page.getByText("Status: manuscrito submetido ao Health & Place.")).toBeVisible();
+  await expect(page.getByRole("heading", { name: "O que o Mente do Brasil não é" })).toBeVisible();
+  await expect(page.locator("body")).not.toContainText("déficit assistencial");
+  await expect(page.locator("body")).not.toContainText("necessidade não atendida");
+  await expect(page.locator("body")).not.toContainText("hotspot de doença mental");
+  await expect(page.locator("body")).not.toContainText("dados que salvam vidas");
+  await expect(page.locator("body")).not.toContainText("melhores regiões");
+  await expect(page.locator("body")).not.toContainText("piores regiões");
+  await expect(page.locator("body")).not.toContainText("published");
+  await expect(page.locator("body")).not.toContainText("accepted");
+  await expect(page.locator("body")).not.toContainText("in press");
+  await expect(page.locator("body")).not.toContainText("peer-reviewed");
+  await expect(page.locator("body")).not.toContainText("plataforma oficial");
+  await expect(page.locator("body")).not.toContainText("produto do SUS");
+  await expect(page.locator("canvas")).toHaveCount(0);
+  expect(mapRequests).toHaveLength(0);
+  await expectNoGlobalHorizontalOverflow(page);
+
+  await page.getByRole("link", { name: "Entender a metodologia" }).click();
+  await expect(page).toHaveURL(/\/metodologia/);
+  await page.goBack();
+  await page.getByRole("link", { name: "Ver dados e versões" }).click();
+  await expect(page).toHaveURL(/\/dados/);
+  await page.goBack();
+  await page.getByRole("link", { name: "Explorar o Brasil" }).click();
+  await expect(page).toHaveURL(/\/$/);
+  await page.goto("/sobre");
+
+  await page.screenshot({ path: `${ABOUT_QA_DIR}/desktop_about_full.png`, fullPage: true });
+  await page.locator(".about-hero").screenshot({ path: `${ABOUT_QA_DIR}/desktop_about_top.png` });
+  await page.locator('[aria-labelledby="principles-title"]').screenshot({
+    path: `${ABOUT_QA_DIR}/desktop_about_principles.png`,
+  });
+  await page.locator('[aria-labelledby="scope-title"]').screenshot({
+    path: `${ABOUT_QA_DIR}/desktop_about_scope.png`,
+  });
+  await page.locator('[aria-labelledby="independence-title"]').screenshot({
+    path: `${ABOUT_QA_DIR}/desktop_about_independence.png`,
+  });
+  await page.locator('[aria-labelledby="explore-title"]').screenshot({
+    path: `${ABOUT_QA_DIR}/desktop_about_bottom.png`,
+  });
+});
+
+test("about page stays readable and responsive on mobile", async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== "mobile", "mobile-only about page QA");
+  const mapRequests = trackMapRequests(page);
+  await page.goto("/sobre");
+  await expect(page.getByRole("heading", { level: 1, name: "Sobre o Mente do Brasil" })).toBeVisible();
+  await expect(page.getByText(/iniciativa independente/)).toBeVisible();
+  await expect(page.getByText("439").first()).toBeVisible();
+  await expect(page.getByText("5.570")).toBeVisible();
+  await expect(page.getByRole("link", { name: "Explorar o Brasil" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Entender a metodologia" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Ver dados e versões" })).toBeVisible();
+  await expect(page.locator("canvas")).toHaveCount(0);
+  expect(mapRequests).toHaveLength(0);
+  await expectNoGlobalHorizontalOverflow(page);
+
+  await page.screenshot({ path: `${ABOUT_QA_DIR}/mobile_about_top.png` });
+  await page.locator("#scope-title").scrollIntoViewIfNeeded();
+  await page.screenshot({ path: `${ABOUT_QA_DIR}/mobile_about_scope.png` });
+  await page.locator("#explore-title").scrollIntoViewIfNeeded();
+  await page.screenshot({ path: `${ABOUT_QA_DIR}/mobile_about_bottom.png` });
+  await page.screenshot({ path: `${ABOUT_QA_DIR}/mobile_about_full.png`, fullPage: true });
+
+  await page.getByRole("link", { name: "Entender a metodologia" }).click();
+  await expect(page).toHaveURL(/\/metodologia/);
+  await page.goBack();
+  await page.getByRole("link", { name: "Ver dados e versões" }).click();
+  await expect(page).toHaveURL(/\/dados/);
 });
 
 async function waitForMapPixels(page: import("@playwright/test").Page) {

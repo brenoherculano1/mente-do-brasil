@@ -1070,6 +1070,138 @@ th {
   justify-content: space-between;
 }
 
+.about-shell {
+  padding-bottom: 56px;
+}
+
+.about-hero {
+  max-width: 1040px;
+}
+
+.about-content {
+  display: grid;
+  gap: 18px;
+  max-width: 1040px;
+  min-width: 0;
+}
+
+.about-section {
+  background: rgb(255 255 255 / 88%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  min-width: 0;
+  padding: 24px;
+}
+
+.about-section h2 {
+  font-size: clamp(1.45rem, 2.4vw, 2.05rem);
+  line-height: 1.08;
+  margin: 0 0 14px;
+}
+
+.about-section h3 {
+  font-size: 1rem;
+  margin: 0 0 8px;
+  text-transform: none;
+}
+
+.about-section p,
+.about-section li {
+  line-height: 1.55;
+}
+
+.about-flow {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+}
+
+.about-flow li {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 0.86rem;
+  font-weight: 760;
+  min-height: 82px;
+  padding: 14px 12px;
+  position: relative;
+}
+
+.about-flow li:not(:last-child)::after {
+  color: var(--text-muted);
+  content: "→";
+  font-weight: 800;
+  position: absolute;
+  right: -10px;
+  top: 16px;
+}
+
+.about-card-grid,
+.about-list-grid,
+.about-scope-grid,
+.about-link-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.about-card-grid,
+.principles-grid,
+.release-components {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.about-card,
+.about-list-grid li {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  min-width: 0;
+  padding: 16px;
+}
+
+.about-card p {
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.about-list-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  list-style: none;
+  margin: 16px 0;
+  padding: 0;
+}
+
+.about-scope-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 18px 0;
+}
+
+.about-negative-section {
+  border-left: 6px solid var(--focus);
+}
+
+.about-not-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.about-explore {
+  align-items: center;
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+}
+
+.about-link-grid {
+  grid-template-columns: repeat(3, max-content);
+}
+
 @media (max-width: 940px) {
   .explorer-grid {
     grid-template-areas:
@@ -1113,8 +1245,14 @@ th {
   .method-card-grid.compact,
   .use-grid,
   .limitation-list,
+  .about-flow,
+  .about-card-grid,
+  .principles-grid,
+  .release-components,
+  .about-list-grid,
   .status-grid,
   .release-stat-grid,
+  .about-scope-grid,
   .two-column,
   .provenance-grid,
   .policy-grid,
@@ -1136,6 +1274,26 @@ th {
     content: "↓";
     right: 14px;
     top: auto;
+  }
+
+  .about-flow li {
+    min-height: auto;
+  }
+
+  .about-flow li:not(:last-child)::after {
+    bottom: -16px;
+    content: "↓";
+    right: 14px;
+    top: auto;
+  }
+
+  .about-explore {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .about-link-grid {
+    grid-template-columns: 1fr;
   }
 
   .map-frame,
@@ -1179,6 +1337,10 @@ th {
   }
 
   .data-section {
+    padding: 18px;
+  }
+
+  .about-section {
     padding: 18px;
   }
 
