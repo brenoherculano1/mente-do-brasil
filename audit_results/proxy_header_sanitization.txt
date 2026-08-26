@@ -1,0 +1,20 @@
+COMMAND: python proxy header sanitization validation
+EXIT_CODE: 0
+OUTPUT:
+path=/api/v1/states/AC
+status=200
+bytes=2155
+content_type=application/json
+server_header=None
+x_powered_by=None
+upstream_server_uvicorn_exposed=NO
+x_powered_by_nextjs=NO
+path=/api/v1/map/health-regions?include_geometry=true&geometry_profile=overview
+status=200
+bytes=756156
+content_type=application/json
+server_header=None
+x_powered_by=None
+upstream_server_uvicorn_exposed=NO
+x_powered_by_nextjs=NO
+PASS

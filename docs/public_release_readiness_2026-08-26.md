@@ -19,9 +19,10 @@ NAO.
 - `geometry_profile=full` was reachable on the operational API in the original
   audit and returned 146,130,129 bytes. This specific blocker was mitigated in
   the first public-release hardening round by blocking `full` by default.
-- Security headers, rate limiting, production cache policy, robots/indexing,
-  observability, privacy/contact disclosures, and production backup/restore
-  procedure are not launch-ready.
+- Security headers and operational FastAPI docs posture were mitigated in the
+  third public-release hardening round. Rate limiting, production cache policy,
+  robots/indexing, observability, privacy/contact disclosures, and production
+  backup/restore procedure are not launch-ready.
 - Public data downloads and a public API product are separate releases and are
   not ready because licensing/reuse, attribution/legal review, and API product
   controls are unresolved.
@@ -70,7 +71,6 @@ metadata, DNS, deployment, or public status was changed.
 The V1 website should not be made public until the operational hardening items
 below are closed:
 
-- Add production security headers.
 - Add endpoint-class rate limiting and response-size controls.
 - Add cache policy for versioned release data and geometry.
 - Define robots/indexing behavior before first public URL.
@@ -100,10 +100,10 @@ decisions. It is not required for V1 website launch.
 
 | Dimension | Status | Rationale |
 |---|---:|---|
-| Application security | WARNING | XSS and SQL tests pass, but production headers and rate limits are missing. |
+| Application security | WARNING | XSS, SQL tests, and baseline security headers pass; rate limits are still missing. |
 | Infrastructure security | WARNING | Local DB is bound to `127.0.0.1`; production architecture is not defined. |
-| API exposure | WARNING | `full` geometry is blocked by default and browser requests now use same-origin `/api/v1`; remaining API exposure work is docs posture, rate limits, cache, and response-size controls. |
-| Production deployment readiness | BLOCKER | Same-origin ingress is prepared, but no production headers/cache/rate-limit/observability plan is implemented. |
+| API exposure | WARNING | `full` geometry is blocked by default, browser requests use same-origin `/api/v1`, and FastAPI docs are off by default; remaining API exposure work is rate limits, cache, and response-size controls. |
+| Production deployment readiness | BLOCKER | Same-origin ingress and baseline headers are prepared, but no production cache/rate-limit/observability plan is implemented. |
 | Privacy / data collection | HUMAN_DECISION_REQUIRED | Dataset is aggregate-only; public privacy/contact posture is not defined. |
 | Legal / licensing / attribution | HUMAN_DECISION_REQUIRED | Public data license and attribution/legal review are unresolved. |
 | Reliability / observability / recovery | WARNING | Rebuildability passes; production backup/restore and observability are missing. |
@@ -124,12 +124,12 @@ decisions. It is not required for V1 website launch.
 | DB network exposure | PASS local | `audit_results/db_network_validation.txt` | REQUIRED_BEFORE_LAUNCH | Production Postgres must not be public. | CODEX |
 | CORS production origin | PASS | `audit_results/cors_after_same_origin.txt` | PREPARED | Normal browser path is same-origin; FastAPI wildcard remains rejected. | CODEX |
 | Direct browser API model | PASS | `audit_results/browser_network_same_origin.txt` | CLOSED | Browser data requests go to the Next origin `/api/v1/*`; direct FastAPI browser requests were 0. | CODEX |
-| FastAPI docs exposure | WARNING | `audit_results/fastapi_docs_audit.txt` | REQUIRED_BEFORE_LAUNCH | Disable/protect docs if backend is internet-reachable. | CODEX |
+| FastAPI docs exposure | PASS | `audit_results/fastapi_docs_posture.txt` | CLOSED | Docs, Redoc, and OpenAPI HTTP endpoints are disabled by default and require explicit server-side opt-in. | CODEX |
 | Full geometry exposure | PASS | `audit_results/api_regression.txt`, `audit_results/full_geometry_policy_validation.txt` | CLOSED | `full` is blocked by default before the heavy query path. | CODEX |
 | Detail geometry exposure | WARNING | `audit_results/geometry_exposure_audit.txt` | RECOMMENDED | Restrict or heavily cache if not needed. | CODEX |
 | Rate limiting | WARNING | `audit_results/rate_limit_audit.txt` | REQUIRED_BEFORE_LAUNCH | Add class-based limits and size gates. | CODEX |
 | Cache/compression | WARNING | `audit_results/cache_audit.txt` | REQUIRED_BEFORE_LAUNCH | Add CDN/API cache policy for versioned data. | CODEX |
-| Security headers | WARNING | `audit_results/production_security_headers.txt` | REQUIRED_BEFORE_LAUNCH | Add CSP/HSTS/referrer/permissions/content-type/frame policy. | CODEX |
+| Security headers | PASS | `audit_results/security_headers_validation.txt` | CLOSED | CSP, HSTS, nosniff, Referrer-Policy, Permissions-Policy, and X-Frame-Options are emitted by Next. | CODEX |
 | Privacy dataset | PASS | `audit_results/privacy_dataset_audit.txt` | REQUIRED_BEFORE_LAUNCH | Keep aggregate-only data contract. | CODEX |
 | Website trackers/cookies | PASS | `audit_results/privacy_website_audit.txt` | RECOMMENDED | Recheck if analytics are added. | CODEX |
 | Third-party network requests | PASS | `audit_results/third_party_requests.txt` | RECOMMENDED | Keep no external basemap/token dependency. | CODEX |
@@ -191,14 +191,20 @@ The frontend now uses same-origin `/api/v1/...` browser requests through a
 single Next Route Handler at `web/app/api/v1/[...path]/route.ts`. The browser no
 longer needs `NEXT_PUBLIC_MDB_API_BASE_URL`.
 
-FastAPI docs are enabled locally:
+FastAPI docs were enabled locally during the original audit:
 
 - `/docs`: 200
 - `/redoc`: 200
 - `/openapi.json`: 200
 
-If the backend is internet-reachable in production, those should be disabled or
-protected unless there is an explicit decision to expose operational API docs.
+They are now disabled by default through `MDB_API_ENABLE_DOCS=false`:
+
+- `/docs`: 404 by default.
+- `/redoc`: 404 by default.
+- `/openapi.json`: 404 by default.
+
+Internal/local docs access requires explicit `MDB_API_ENABLE_DOCS=true`.
+Programmatic `app.openapi()` remains available for internal tooling.
 
 ## Geometry endpoint risk
 
@@ -432,7 +438,7 @@ Next server runtime is required for the current V1.
 | API availability | Scraping heavy endpoints | Read-only API | Edge throttling and cache | HIGH |
 | Database | Mutation through API role | Read-only role and transaction mode | Production role separation proof | HIGH |
 | Credentials | Secret leak | `.env` ignored, secret scan pass | Production secret manager | HIGH |
-| Browser users | XSS | `setDOMContent`, validation, tests | CSP | MEDIUM |
+| Browser users | XSS | `setDOMContent`, validation, tests, CSP | Continue avoiding HTML injection | LOW |
 | Website availability | Runtime failure | `/health` and `/ready` | Uptime alerts and rollback | MEDIUM |
 | Product readiness | Premature indexing | None | Robots/staging/prod index policy | MEDIUM |
 
@@ -443,8 +449,8 @@ Required before website launch:
 - [x] Block/restrict `geometry_profile=full`.
 - [x] Choose same-origin production architecture.
 - [x] Configure production CORS or remove cross-origin need through proxy.
-- [ ] Disable/protect FastAPI docs if backend is reachable.
-- [ ] Add production security headers.
+- [x] Disable/protect FastAPI docs if backend is reachable.
+- [x] Add production security headers.
 - [ ] Add rate limiting and response-size controls.
 - [ ] Add cache/compression policy.
 - [ ] Configure robots/indexing.
@@ -482,12 +488,11 @@ Required before public data/API release:
 
 ## Recommended implementation sequence
 
-1. Add production security headers and disable/protect FastAPI docs.
-2. Add endpoint-class rate limiting, response-size controls, and cache policy.
-3. Add robots/indexing policy, privacy disclosure, and contact/correction
+1. Add endpoint-class rate limiting, response-size controls, and cache policy.
+2. Add robots/indexing policy, privacy disclosure, and contact/correction
    channel after human decisions.
-4. Add minimal observability, health checks, and backup/restore or rebuild drill.
-5. Deploy staging only, run full regression plus smoke/security checks.
-6. Obtain explicit human release approval.
-7. Deploy production/domain and change `public_release_status` only in the
+3. Add minimal observability, health checks, and backup/restore or rebuild drill.
+4. Deploy staging only, run full regression plus smoke/security checks.
+5. Obtain explicit human release approval.
+6. Deploy production/domain and change `public_release_status` only in the
     approved release step.

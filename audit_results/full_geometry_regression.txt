@@ -1,0 +1,10 @@
+direct_full_status=403
+direct_full_bytes=112
+direct_full_error_code=FULL_GEOMETRY_RESTRICTED
+same_origin_full_status=403
+same_origin_full_bytes=112
+same_origin_full_error_code=FULL_GEOMETRY_RESTRICTED
+COMMAND: python full geometry regression
+EXIT_CODE: 0
+OUTPUT: full geometry remains blocked without downloading full payload
+PASS

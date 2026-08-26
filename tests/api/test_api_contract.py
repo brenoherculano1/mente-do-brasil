@@ -195,6 +195,31 @@ def test_full_geometry_policy_is_server_side_and_fail_closed(monkeypatch):
     assert get_settings().allow_full_geometry is True
 
 
+def test_fastapi_docs_policy_is_server_side_and_fail_closed(monkeypatch):
+    monkeypatch.delenv("MDB_API_ENABLE_DOCS", raising=False)
+    assert get_settings().enable_docs is False
+
+    monkeypatch.setenv("MDB_API_ENABLE_DOCS", "false")
+    assert get_settings().enable_docs is False
+
+    monkeypatch.setenv("MDB_API_ENABLE_DOCS", "0")
+    assert get_settings().enable_docs is False
+
+    monkeypatch.setenv("MDB_API_ENABLE_DOCS", "not-valid")
+    assert get_settings().enable_docs is False
+
+    monkeypatch.setenv("MDB_API_ENABLE_DOCS", "true")
+    assert get_settings().enable_docs is True
+
+
+def test_programmatic_openapi_remains_available_when_docs_http_is_disabled():
+    from api.main import app
+
+    schema = app.openapi()
+    assert "/api/v1/states/{uf}" in schema["paths"]
+    assert "/api/v1/map/health-regions" in schema["paths"]
+
+
 def test_full_geometry_block_short_circuits_before_heavy_query(monkeypatch):
     calls = []
 

@@ -1,0 +1,12 @@
+COMMAND: playwright CSP browser validation
+EXIT_CODE: 0
+OUTPUT:
+csp_violations=0
+page_errors=0
+console_errors=0
+third_party_requests=0
+violations_detail=[]
+page_errors_detail=[]
+console_errors_detail=[]
+external_requests_detail=[]
+PASS

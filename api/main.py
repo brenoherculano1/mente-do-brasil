@@ -41,6 +41,7 @@ async def lifespan(app: FastAPI):
         pool.close()
 
 
+settings = get_settings()
 app = FastAPI(
     title="Mente do Brasil API",
     version="0.1.0",
@@ -49,9 +50,11 @@ app = FastAPI(
         "data platform."
     ),
     lifespan=lifespan,
+    docs_url="/docs" if settings.enable_docs else None,
+    redoc_url="/redoc" if settings.enable_docs else None,
+    openapi_url="/openapi.json" if settings.enable_docs else None,
 )
 
-settings = get_settings()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=list(settings.allowed_origins),

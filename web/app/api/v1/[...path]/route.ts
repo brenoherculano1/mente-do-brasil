@@ -46,7 +46,9 @@ export async function GET(
   const headers = new Headers(response.headers);
   headers.delete("content-encoding");
   headers.delete("content-length");
+  headers.delete("server");
   headers.delete("transfer-encoding");
+  headers.delete("x-powered-by");
 
   return new Response(response.body, {
     status: response.status,

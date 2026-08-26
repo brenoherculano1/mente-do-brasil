@@ -1,0 +1,20 @@
+COMMAND: python FastAPI docs env and programmatic OpenAPI validation
+EXIT_CODE: 0
+OUTPUT:
+value=None enable_docs=False
+value='' enable_docs=False
+value='false' enable_docs=False
+value='0' enable_docs=False
+value='no' enable_docs=False
+value='not-valid' enable_docs=False
+value='true' enable_docs=True
+value='1' enable_docs=True
+value='yes' enable_docs=True
+value='on' enable_docs=True
+variable=MDB_API_ENABLE_DOCS
+server_only=PASS
+default=false
+fail_closed=PASS
+programmatic_app_openapi=PASS
+client_bundle_matches=0
+PASS

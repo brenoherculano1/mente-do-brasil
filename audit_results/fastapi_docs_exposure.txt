@@ -1,5 +1,17 @@
-/docs: status=200 content_type=text/html; charset=utf-8 bytes=1018
-/redoc: status=200 content_type=text/html; charset=utf-8 bytes=900
-/openapi.json: status=200 content_type=application/json bytes=20948
-status=WARNING
-summary=FastAPI interactive docs and OpenAPI schema are enabled by default locally; if API is internet-reachable in production, they would be exposed unless disabled or protected.
+COMMAND: python FastAPI docs posture validation
+EXIT_CODE: 0
+OUTPUT:
+env_absent_docs_status=404
+env_absent_redoc_status=404
+env_absent_openapi_status=404
+env_false_docs_status=404
+env_false_redoc_status=404
+env_false_openapi_status=404
+env_true_docs_status=200
+env_true_redoc_status=200
+env_true_openapi_status=200
+same_origin_docs_status=404
+same_origin_redoc_status=404
+same_origin_openapi_status=404
+operational_production_policy=MDB_API_ENABLE_DOCS=false
+PASS
