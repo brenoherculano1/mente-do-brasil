@@ -15,8 +15,9 @@ NAO.
   or safely parameterized.
 - The current public exposure model is not launch-hardened: the browser talks
   directly to FastAPI through `NEXT_PUBLIC_MDB_API_BASE_URL`.
-- `geometry_profile=full` is reachable on the operational API and returned
-  146,130,129 bytes in the API regression, making it a pre-launch blocker.
+- `geometry_profile=full` was reachable on the operational API in the original
+  audit and returned 146,130,129 bytes. This specific blocker was mitigated in
+  the first public-release hardening round by blocking `full` by default.
 - Security headers, rate limiting, production cache policy, robots/indexing,
   observability, privacy/contact disclosures, and production backup/restore
   procedure are not launch-ready.
@@ -68,7 +69,6 @@ metadata, DNS, deployment, or public status was changed.
 The V1 website should not be made public until the operational hardening items
 below are closed:
 
-- Block or restrict `geometry_profile=full` on the production operational API.
 - Choose and implement a production same-origin or equivalent API ingress model.
 - Configure production CORS for the final origin.
 - Add production security headers.
@@ -103,7 +103,7 @@ decisions. It is not required for V1 website launch.
 |---|---:|---|
 | Application security | WARNING | XSS and SQL tests pass, but production headers and rate limits are missing. |
 | Infrastructure security | WARNING | Local DB is bound to `127.0.0.1`; production architecture is not defined. |
-| API exposure | BLOCKER | `full` geometry is expensive and currently reachable. |
+| API exposure | WARNING | `full` geometry is now blocked by default; remaining API exposure work is production ingress, docs posture, rate limits, and response-size controls. |
 | Production deployment readiness | BLOCKER | No production ingress/CORS/cache/rate-limit/headers/observability plan implemented. |
 | Privacy / data collection | HUMAN_DECISION_REQUIRED | Dataset is aggregate-only; public privacy/contact posture is not defined. |
 | Legal / licensing / attribution | HUMAN_DECISION_REQUIRED | Public data license and attribution/legal review are unresolved. |
@@ -126,7 +126,7 @@ decisions. It is not required for V1 website launch.
 | CORS production origin | WARNING | `audit_results/cors_audit.txt` | REQUIRED_BEFORE_LAUNCH | Configure final origin or same-origin proxy. | CODEX |
 | Direct browser API model | WARNING | `audit_results/api_exposure_model.txt` | REQUIRED_BEFORE_LAUNCH | Prefer same-origin `/api` ingress. | CODEX |
 | FastAPI docs exposure | WARNING | `audit_results/fastapi_docs_audit.txt` | REQUIRED_BEFORE_LAUNCH | Disable/protect docs if backend is internet-reachable. | CODEX |
-| Full geometry exposure | BLOCKER | `audit_results/api_regression.txt`, `geometry_exposure_audit.txt` | BLOCKER | Block/restrict full on operational API. | CODEX |
+| Full geometry exposure | PASS | `audit_results/api_regression.txt`, `audit_results/full_geometry_policy_validation.txt` | CLOSED | `full` is blocked by default before the heavy query path. | CODEX |
 | Detail geometry exposure | WARNING | `audit_results/geometry_exposure_audit.txt` | RECOMMENDED | Restrict or heavily cache if not needed. | CODEX |
 | Rate limiting | WARNING | `audit_results/rate_limit_audit.txt` | REQUIRED_BEFORE_LAUNCH | Add class-based limits and size gates. | CODEX |
 | Cache/compression | WARNING | `audit_results/cache_audit.txt` | REQUIRED_BEFORE_LAUNCH | Add CDN/API cache policy for versioned data. | CODEX |
@@ -217,18 +217,20 @@ Audited geometry sizes:
 
 - `overview`: 756,156 bytes JSON; 200,382 bytes gzip in API validation.
 - `detail`: 2,763,517 bytes JSON.
-- `full`: 146,130,129 bytes JSON; 33.5 seconds in this API regression.
+- `full`: 146,130,129 bytes JSON; 33.5 seconds in the original
+  public-readiness API regression before hardening.
 
-`full` is a CRITICAL public operational API risk because it creates bandwidth
+`full` was a CRITICAL public operational API risk because it created bandwidth
 amplification, worker exhaustion, memory pressure, accidental client request
-risk, and denial-of-service exposure. It should not remain publicly reachable on
-the production operational API.
+risk, and denial-of-service exposure. It is now blocked by default before the
+heavy query path.
 
 Recommended policy:
 
-Block `full` on the production operational API. Keep full scientific geometry
-for internal/admin use or future versioned download after licensing, caching,
-and distribution terms are decided. Keep V1 website maps on `overview`.
+Keep `full` blocked on the production operational API unless explicitly enabled
+server-side for internal validation. Keep full scientific geometry for
+internal/admin use or future versioned download after licensing, caching, and
+distribution terms are decided. Keep V1 website maps on `overview`.
 
 ## Database / infrastructure
 
@@ -426,7 +428,7 @@ Next server runtime is required for the current V1.
 | Scientific integrity | Silent recalculation | Locked regressions and release hashes | Production release flip procedure | HIGH |
 | Scientific integrity | Release mixing | Release IDs and API tests | Public release operational checklist | MEDIUM |
 | Scientific integrity | NULL to zero | Regression tests and copy discipline | Continue tests for new pages | MEDIUM |
-| API availability | DoS via full geometry | 30s DB statement timeout, pool size 4 | Full block, rate limits, response size gate | CRITICAL |
+| API availability | DoS via full geometry | `full` blocked by default before heavy query | Rate limits and response size gate | MEDIUM |
 | API availability | Scraping heavy endpoints | Read-only API | Edge throttling and cache | HIGH |
 | Database | Mutation through API role | Read-only role and transaction mode | Production role separation proof | HIGH |
 | Credentials | Secret leak | `.env` ignored, secret scan pass | Production secret manager | HIGH |
@@ -438,7 +440,7 @@ Next server runtime is required for the current V1.
 
 Required before website launch:
 
-- [ ] Block/restrict `geometry_profile=full`.
+- [x] Block/restrict `geometry_profile=full`.
 - [ ] Choose same-origin production architecture.
 - [ ] Configure production CORS or remove cross-origin need through proxy.
 - [ ] Disable/protect FastAPI docs if backend is reachable.
@@ -480,16 +482,15 @@ Required before public data/API release:
 
 ## Recommended implementation sequence
 
-1. Block/restrict `geometry_profile=full` and optionally restrict `detail`.
-2. Implement same-origin `/api` production ingress/proxy strategy.
-3. Configure CORS for the final production origin or eliminate cross-origin
+1. Implement same-origin `/api` production ingress/proxy strategy.
+2. Configure CORS for the final production origin or eliminate cross-origin
    browser calls.
-4. Add production security headers and disable/protect FastAPI docs.
-5. Add endpoint-class rate limiting, response-size controls, and cache policy.
-6. Add robots/indexing policy, privacy disclosure, and contact/correction
+3. Add production security headers and disable/protect FastAPI docs.
+4. Add endpoint-class rate limiting, response-size controls, and cache policy.
+5. Add robots/indexing policy, privacy disclosure, and contact/correction
    channel after human decisions.
-7. Add minimal observability, health checks, and backup/restore or rebuild drill.
-8. Deploy staging only, run full regression plus smoke/security checks.
-9. Obtain explicit human release approval.
-10. Deploy production/domain and change `public_release_status` only in the
+6. Add minimal observability, health checks, and backup/restore or rebuild drill.
+7. Deploy staging only, run full regression plus smoke/security checks.
+8. Obtain explicit human release approval.
+9. Deploy production/domain and change `public_release_status` only in the
     approved release step.

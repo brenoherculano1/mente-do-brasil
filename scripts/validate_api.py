@@ -231,13 +231,24 @@ def validate() -> None:
     )
     full = request(
         "/api/v1/map/health-regions?include_geometry=true&metric=mismatch_score"
-        "&geometry_profile=full"
+        "&geometry_profile=full",
+        403,
     )
     if len(overview.body["features"]) != 439 or len(detail.body["features"]) != 439:
         raise AssertionError("Web geometry profile feature count changed.")
-    if len(full.body["features"]) != 439:
-        raise AssertionError("Full geometry feature count changed.")
-    if not (overview.size_bytes < detail.size_bytes < full.size_bytes):
+    if full.body != {
+        "error": {
+            "code": "FULL_GEOMETRY_RESTRICTED",
+            "message": "Full geometry is not available on the operational API.",
+        }
+    }:
+        raise AssertionError("Full geometry restriction error contract changed.")
+    if full.size_bytes >= 512 or full.elapsed_ms >= 500:
+        raise AssertionError(
+            "Full geometry restriction should return a small response before heavy work: "
+            f"{full.size_bytes} bytes, {full.elapsed_ms:.2f} ms"
+        )
+    if not (overview.size_bytes < detail.size_bytes):
         raise AssertionError("Geometry payload size ordering failed.")
     gz_bytes, gz_status, gz_encoding = gzip_size(
         "/api/v1/map/health-regions?include_geometry=true&metric=mismatch_score"
@@ -250,7 +261,9 @@ def validate() -> None:
         {
             "overview_bytes": overview.size_bytes,
             "detail_bytes": detail.size_bytes,
-            "full_bytes": full.size_bytes,
+            "full_blocked_status": full.status,
+            "full_blocked_bytes": full.size_bytes,
+            "full_blocked_elapsed_ms": round(full.elapsed_ms, 2),
             "overview_gzip_bytes": gz_bytes,
         },
     )
@@ -291,7 +304,7 @@ def validate() -> None:
             "ready": round(ready.elapsed_ms, 2),
             "map_geometry_overview": round(map_geo.elapsed_ms, 2),
             "map_geometry_detail": round(detail.elapsed_ms, 2),
-            "map_geometry_full": round(full.elapsed_ms, 2),
+            "map_geometry_full_blocked": round(full.elapsed_ms, 2),
         },
     )
     print("PASS")

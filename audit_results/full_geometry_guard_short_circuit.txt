@@ -1,0 +1,4 @@
+FULL_GEOMETRY_GUARD_SHORT_CIRCUIT
+status=403
+heavy_query_calls=0
+PASS

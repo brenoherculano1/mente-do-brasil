@@ -5,19 +5,19 @@
 
  RUN  v3.2.7 /Users/brenoherculano/Documents/New project/mente-do-brasil/web
 
- ✓ tests/unit/format.test.ts (3 tests) 13ms
- ✓ tests/unit/color-scale.test.ts (5 tests) 11ms
- ✓ tests/unit/profile-components.test.tsx (4 tests) 106ms
- ✓ tests/unit/about-page.test.tsx (6 tests) 738ms
-   ✓ about page > renders the institutional positioning and current scope  326ms
- ✓ tests/unit/methodology-page.test.tsx (6 tests) 903ms
-   ✓ methodology page > renders locked metadata identifiers and standard population  427ms
- ✓ tests/unit/state-page.test.tsx (5 tests) 808ms
-   ✓ state page > renders AC with three Health Regions and no state score or ranking  390ms
- ✓ tests/unit/data-page.test.tsx (7 tests) 1150ms
-   ✓ data page > renders release identifiers, counts, and locked hashes  562ms
+ ✓ tests/unit/color-scale.test.ts (5 tests) 3ms
+ ✓ tests/unit/format.test.ts (3 tests) 18ms
+ ✓ tests/unit/profile-components.test.tsx (4 tests) 119ms
+ ✓ tests/unit/about-page.test.tsx (6 tests) 1053ms
+   ✓ about page > renders the institutional positioning and current scope  574ms
+ ✓ tests/unit/methodology-page.test.tsx (6 tests) 1246ms
+   ✓ methodology page > renders locked metadata identifiers and standard population  675ms
+ ✓ tests/unit/state-page.test.tsx (5 tests) 1317ms
+   ✓ state page > renders AC with three Health Regions and no state score or ranking  815ms
+ ✓ tests/unit/data-page.test.tsx (7 tests) 1668ms
+   ✓ data page > renders release identifiers, counts, and locked hashes  888ms
 
  Test Files  7 passed (7)
       Tests  36 passed (36)
-   Start at  06:58:57
-   Duration  3.85s (transform 930ms, setup 1.28s, collect 2.71s, tests 3.73s, environment 9.13s, prepare 2.41s)
+   Start at  17:58:47
+   Duration  4.70s (transform 967ms, setup 1.60s, collect 3.77s, tests 5.42s, environment 9.21s, prepare 2.28s)

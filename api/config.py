@@ -34,6 +34,7 @@ class Settings:
     api_host: str
     api_port: int
     allowed_origins: tuple[str, ...]
+    allow_full_geometry: bool
 
     @property
     def dsn(self) -> str:
@@ -61,6 +62,7 @@ def get_settings() -> Settings:
     api_host = os.environ.get("MDB_API_HOST", "127.0.0.1")
     if api_host == "0.0.0.0":
         raise RuntimeError("The local API must not bind to 0.0.0.0 by default.")
+    allow_full_geometry = os.environ.get("MDB_API_ALLOW_FULL_GEOMETRY", "").strip().lower()
     return Settings(
         default_release_id=os.environ.get("MDB_DEFAULT_RELEASE_ID", "MDB_ANALYTICAL_2024_1"),
         db_host=os.environ.get("MDB_DB_HOST", "127.0.0.1"),
@@ -71,4 +73,5 @@ def get_settings() -> Settings:
         api_host=api_host,
         api_port=int(os.environ.get("MDB_API_PORT", "8000")),
         allowed_origins=origins,
+        allow_full_geometry=allow_full_geometry in {"1", "true", "yes", "on"},
     )

@@ -8,10 +8,10 @@ state profiles PASS
 profile PASS
 municipality lookup PASS
 map metadata PASS
-map geometry PASS {'overview_bytes': 756156, 'detail_bytes': 2763517, 'full_bytes': 146130129, 'overview_gzip_bytes': 200382}
+map geometry PASS {'overview_bytes': 756156, 'detail_bytes': 2763517, 'full_blocked_status': 403, 'full_blocked_bytes': 112, 'full_blocked_elapsed_ms': 2.49, 'overview_gzip_bytes': 200382}
 scientific regression PASS
 flags PASS
 errors PASS
 read-only PASS
-latency_ms {'health': 125.8, 'ready': 12.85, 'map_geometry_overview': 127.17, 'map_geometry_detail': 300.87, 'map_geometry_full': 33510.68}
+latency_ms {'health': 33.03, 'ready': 6.63, 'map_geometry_overview': 65.32, 'map_geometry_detail': 249.88, 'map_geometry_full_blocked': 2.49}
 PASS

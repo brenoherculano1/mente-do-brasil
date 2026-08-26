@@ -4,11 +4,15 @@ import json
 import urllib.error
 import urllib.parse
 import urllib.request
+from types import SimpleNamespace
 
+from fastapi import HTTPException
 import psycopg
 import pytest
 
 from api.config import get_settings
+from api.routers import health_regions as health_regions_router
+from api.schemas.common import GeometryProfile, Metric
 
 RELEASE_ID = "MDB_ANALYTICAL_2024_1"
 WEB_GEOMETRY_VERSION = "MDB_WEB_GEOMETRY_V1"
@@ -42,6 +46,8 @@ def api_get_raw(path: str, headers: dict[str, str] | None = None) -> tuple[int, 
     try:
         with urllib.request.urlopen(request, timeout=60) as response:
             return response.status, response.read(), response.headers.get("Content-Encoding")
+    except urllib.error.HTTPError as error:
+        return error.code, error.read(), error.headers.get("Content-Encoding")
     except OSError as error:
         pytest.skip(f"Local API is not running: {error}")
 
@@ -126,7 +132,7 @@ def test_health_region_list_profile_and_map_match_locked_counts():
     }
 
 
-def test_web_geometry_profiles_and_full_geometry_contracts():
+def test_web_geometry_profiles_and_full_geometry_policy():
     db_row = db_fetchone(
         """
         SELECT count(*) FILTER (WHERE geometry_profile = 'overview'),
@@ -145,7 +151,6 @@ def test_web_geometry_profiles_and_full_geometry_contracts():
         "overview": "/api/v1/map/health-regions?include_geometry=true"
         "&geometry_profile=overview",
         "detail": "/api/v1/map/health-regions?include_geometry=true&geometry_profile=detail",
-        "full": "/api/v1/map/health-regions?include_geometry=true&geometry_profile=full",
     }
     payloads = {}
     for profile, path in paths.items():
@@ -157,14 +162,82 @@ def test_web_geometry_profiles_and_full_geometry_contracts():
         assert payload["geometry_metadata"]["profile"] == profile
         payloads[profile] = raw
 
-    assert len(payloads["overview"]) < len(payloads["detail"]) < len(payloads["full"])
-    assert len(payloads["overview"]) < len(payloads["full"]) * 0.1
-    assert len(payloads["detail"]) < len(payloads["full"]) * 0.1
-    assert json.loads(payloads["full"].decode("utf-8"))["geometry_metadata"] == {
-        "profile": "full",
-        "version": "BR_HEALTH_REGIONS_END2024_V1",
-        "crs": "EPSG:4674",
+    assert len(payloads["overview"]) < len(payloads["detail"])
+
+    status, raw, encoding = api_get_raw(
+        "/api/v1/map/health-regions?include_geometry=true&geometry_profile=full"
+    )
+    assert status == 403
+    assert encoding is None
+    assert len(raw) < 512
+    assert json.loads(raw.decode("utf-8")) == {
+        "error": {
+            "code": "FULL_GEOMETRY_RESTRICTED",
+            "message": "Full geometry is not available on the operational API.",
+        }
     }
+
+
+def test_full_geometry_policy_is_server_side_and_fail_closed(monkeypatch):
+    monkeypatch.delenv("MDB_API_ALLOW_FULL_GEOMETRY", raising=False)
+    assert get_settings().allow_full_geometry is False
+
+    monkeypatch.setenv("MDB_API_ALLOW_FULL_GEOMETRY", "false")
+    assert get_settings().allow_full_geometry is False
+
+    monkeypatch.setenv("MDB_API_ALLOW_FULL_GEOMETRY", "0")
+    assert get_settings().allow_full_geometry is False
+
+    monkeypatch.setenv("MDB_API_ALLOW_FULL_GEOMETRY", "not-valid")
+    assert get_settings().allow_full_geometry is False
+
+    monkeypatch.setenv("MDB_API_ALLOW_FULL_GEOMETRY", "true")
+    assert get_settings().allow_full_geometry is True
+
+
+def test_full_geometry_block_short_circuits_before_heavy_query(monkeypatch):
+    calls = []
+
+    def fail_if_called(*args, **kwargs):
+        calls.append((args, kwargs))
+        raise AssertionError("Full geometry query path should not be called when blocked.")
+
+    monkeypatch.setattr(health_regions_router, "list_map_data", fail_if_called)
+    settings = SimpleNamespace(default_release_id=RELEASE_ID, allow_full_geometry=False)
+    with pytest.raises(HTTPException) as error:
+        health_regions_router.health_region_map(
+            db=object(),
+            settings=settings,
+            metric=Metric.mismatch_score,
+            include_geometry=True,
+            geometry_profile=GeometryProfile.full,
+        )
+
+    assert error.value.status_code == 403
+    assert calls == []
+
+
+def test_full_geometry_policy_allows_internal_opt_in_without_fetching_payload(monkeypatch):
+    calls = []
+
+    def fake_list_map_data(*args):
+        calls.append(args)
+        return []
+
+    monkeypatch.setattr(health_regions_router, "list_map_data", fake_list_map_data)
+    settings = SimpleNamespace(default_release_id=RELEASE_ID, allow_full_geometry=True)
+
+    result = health_regions_router.health_region_map(
+        db=object(),
+        settings=settings,
+        metric=Metric.mismatch_score,
+        include_geometry=True,
+        geometry_profile=GeometryProfile.full,
+    )
+
+    assert result == []
+    assert len(calls) == 1
+    assert calls[0][-1] == GeometryProfile.full
 
 
 def test_http_gzip_for_geometry_payloads():

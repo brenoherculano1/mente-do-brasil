@@ -5,32 +5,32 @@
 
 Running 26 tests using 2 workers
 
-  ✓   2 [mobile] › tests/e2e/frontend-v1.spec.ts:18:5 › home loads map, metric selector, search, and navigates to region profile (9.4s)
-  ✓   1 [desktop] › tests/e2e/frontend-v1.spec.ts:18:5 › home loads map, metric selector, search, and navigates to region profile (11.4s)
-  ✓   3 [mobile] › tests/e2e/frontend-v1.spec.ts:51:5 › captures home screenshot and keeps mobile layout usable (7.2s)
-  ✓   4 [desktop] › tests/e2e/frontend-v1.spec.ts:51:5 › captures home screenshot and keeps mobile layout usable (6.7s)
-  ✓   6 [desktop] › tests/e2e/frontend-v1.spec.ts:75:5 › accessible list expands, filters rationally, and captures QA screenshot (13.0s)
-  ✓   7 [desktop] › tests/e2e/frontend-v1.spec.ts:93:5 › invalid region shows not found state (560ms)
-  ✓   5 [mobile] › tests/e2e/frontend-v1.spec.ts:75:5 › accessible list expands, filters rationally, and captures QA screenshot (15.2s)
-  ✓   9 [mobile] › tests/e2e/frontend-v1.spec.ts:93:5 › invalid region shows not found state (573ms)
+  ✓   1 [mobile] › tests/e2e/frontend-v1.spec.ts:18:5 › home loads map, metric selector, search, and navigates to region profile (7.8s)
+  ✓   2 [desktop] › tests/e2e/frontend-v1.spec.ts:18:5 › home loads map, metric selector, search, and navigates to region profile (8.0s)
+  ✓   4 [desktop] › tests/e2e/frontend-v1.spec.ts:51:5 › captures home screenshot and keeps mobile layout usable (3.4s)
+  ✓   3 [mobile] › tests/e2e/frontend-v1.spec.ts:51:5 › captures home screenshot and keeps mobile layout usable (4.0s)
+  ✓   5 [desktop] › tests/e2e/frontend-v1.spec.ts:75:5 › accessible list expands, filters rationally, and captures QA screenshot (2.4s)
+  ✓   7 [desktop] › tests/e2e/frontend-v1.spec.ts:93:5 › invalid region shows not found state (334ms)
+  ✓   6 [mobile] › tests/e2e/frontend-v1.spec.ts:75:5 › accessible list expands, filters rationally, and captures QA screenshot (3.0s)
+  ✓   9 [mobile] › tests/e2e/frontend-v1.spec.ts:93:5 › invalid region shows not found state (283ms)
   -  10 [mobile] › tests/e2e/frontend-v1.spec.ts:99:5 › methodology desktop page loads, navigates sections, and opens details
-  ✓   8 [desktop] › tests/e2e/frontend-v1.spec.ts:99:5 › methodology desktop page loads, navigates sections, and opens details (6.4s)
+  ✓   8 [desktop] › tests/e2e/frontend-v1.spec.ts:99:5 › methodology desktop page loads, navigates sections, and opens details (3.9s)
   -  12 [desktop] › tests/e2e/frontend-v1.spec.ts:145:5 › methodology mobile page has compact navigation and no global overflow
-  ✓  11 [mobile] › tests/e2e/frontend-v1.spec.ts:145:5 › methodology mobile page has compact navigation and no global overflow (11.3s)
-  -  14 [mobile] › tests/e2e/frontend-v1.spec.ts:178:5 › data page exposes release inventory and filters dictionary on desktop
-  ✓  13 [desktop] › tests/e2e/frontend-v1.spec.ts:178:5 › data page exposes release inventory and filters dictionary on desktop (6.4s)
-  -  16 [desktop] › tests/e2e/frontend-v1.spec.ts:229:5 › data page remains usable on mobile
-  ✓  17 [desktop] › tests/e2e/frontend-v1.spec.ts:257:5 › about page states independence, scope, and links on desktop (10.3s)
+  ✓  13 [desktop] › tests/e2e/frontend-v1.spec.ts:178:5 › data page exposes release inventory and filters dictionary on desktop (4.8s)
+  -  14 [desktop] › tests/e2e/frontend-v1.spec.ts:229:5 › data page remains usable on mobile
+  ✓  11 [mobile] › tests/e2e/frontend-v1.spec.ts:145:5 › methodology mobile page has compact navigation and no global overflow (8.1s)
+  -  16 [mobile] › tests/e2e/frontend-v1.spec.ts:178:5 › data page exposes release inventory and filters dictionary on desktop
+  ✓  15 [desktop] › tests/e2e/frontend-v1.spec.ts:257:5 › about page states independence, scope, and links on desktop (5.0s)
   -  18 [desktop] › tests/e2e/frontend-v1.spec.ts:315:5 › about page stays readable and responsive on mobile
-  ✓  15 [mobile] › tests/e2e/frontend-v1.spec.ts:229:5 › data page remains usable on mobile (14.5s)
+  ✓  17 [mobile] › tests/e2e/frontend-v1.spec.ts:229:5 › data page remains usable on mobile (7.6s)
   -  20 [mobile] › tests/e2e/frontend-v1.spec.ts:257:5 › about page states independence, scope, and links on desktop
-  ✓  19 [desktop] › tests/e2e/frontend-v1.spec.ts:344:5 › state page for AC shows three regions, overview map, distribution, and profile links (12.1s)
-  ✓  21 [mobile] › tests/e2e/frontend-v1.spec.ts:315:5 › about page stays readable and responsive on mobile (10.4s)
-  -  23 [mobile] › tests/e2e/frontend-v1.spec.ts:344:5 › state page for AC shows three regions, overview map, distribution, and profile links
-  -  24 [mobile] › tests/e2e/frontend-v1.spec.ts:396:5 › state page handles a large state and DF without truncating regions
-  ✓  22 [desktop] › tests/e2e/frontend-v1.spec.ts:396:5 › state page handles a large state and DF without truncating regions (14.8s)
-  -  26 [desktop] › tests/e2e/frontend-v1.spec.ts:424:5 › state page normalizes lowercase, rejects invalid UF, and keeps mobile map early
-  ✓  25 [mobile] › tests/e2e/frontend-v1.spec.ts:424:5 › state page normalizes lowercase, rejects invalid UF, and keeps mobile map early (23.8s)
+  ✓  19 [desktop] › tests/e2e/frontend-v1.spec.ts:344:5 › state page for AC shows three regions, overview map, distribution, and profile links (4.7s)
+  ✓  22 [desktop] › tests/e2e/frontend-v1.spec.ts:396:5 › state page handles a large state and DF without truncating regions (2.4s)
+  -  23 [desktop] › tests/e2e/frontend-v1.spec.ts:424:5 › state page normalizes lowercase, rejects invalid UF, and keeps mobile map early
+  ✓  21 [mobile] › tests/e2e/frontend-v1.spec.ts:315:5 › about page stays readable and responsive on mobile (5.0s)
+  -  24 [mobile] › tests/e2e/frontend-v1.spec.ts:344:5 › state page for AC shows three regions, overview map, distribution, and profile links
+  -  25 [mobile] › tests/e2e/frontend-v1.spec.ts:396:5 › state page handles a large state and DF without truncating regions
+  ✓  26 [mobile] › tests/e2e/frontend-v1.spec.ts:424:5 › state page normalizes lowercase, rejects invalid UF, and keeps mobile map early (9.7s)
 
   9 skipped
-  17 passed (1.6m)
+  17 passed (48.1s)

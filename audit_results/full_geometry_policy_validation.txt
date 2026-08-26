@@ -1,0 +1,14 @@
+FULL_GEOMETRY_POLICY_VALIDATION
+default_full_status=403
+default_full_bytes=112
+default_full_elapsed_ms=1.84
+default_full_body={'error': {'code': 'FULL_GEOMETRY_RESTRICTED', 'message': 'Full geometry is not available on the operational API.'}}
+overview_status=200
+overview_features=439
+overview_bytes=756156
+detail_status=200
+detail_features=439
+detail_bytes=2763517
+env_absent_or_false_behavior=BLOCKED_BY_SERVER_CONFIG
+env_true_behavior=COVERED_BY_DIRECT_POLICY_TEST
+PASS

@@ -1,0 +1,14 @@
+FULL_GEOMETRY_ENV_VALIDATION
+value=None allow_full_geometry=False
+value='' allow_full_geometry=False
+value='false' allow_full_geometry=False
+value='0' allow_full_geometry=False
+value='no' allow_full_geometry=False
+value='not-valid' allow_full_geometry=False
+value='true' allow_full_geometry=True
+value='1' allow_full_geometry=True
+value='yes' allow_full_geometry=True
+value='on' allow_full_geometry=True
+server_only_variable=MDB_API_ALLOW_FULL_GEOMETRY
+next_public_full_geometry_refs=0
+PASS

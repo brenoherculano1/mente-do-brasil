@@ -1,0 +1,5 @@
+FULL_GEOMETRY_FRONTEND_USAGE
+production_request_references:
+type_union_mentions_allowed:
+web/types/api.ts:11:export type GeometryProfile = "overview" | "detail" | "full";
+PASS

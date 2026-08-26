@@ -77,7 +77,8 @@ Metrics remain in the API/serving layer.
 - `include_geometry=true`: defaults to `geometry_profile=overview`
 - `geometry_profile=overview`: web geometry, EPSG:4326
 - `geometry_profile=detail`: web geometry, EPSG:4326
-- `geometry_profile=full`: scientific geometry, EPSG:4674
+- `geometry_profile=full`: scientific geometry, EPSG:4674; blocked by default
+  on the operational HTTP API.
 
 Full geometry is for audit only. Do not use full geometry for normal web map
 rendering.

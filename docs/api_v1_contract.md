@@ -83,7 +83,9 @@ The `metric` parameter uses a closed enum. Invalid map metrics return
 - omitted with `include_geometry=true`: `overview`
 - `overview`: `MDB_WEB_GEOMETRY_V1` derived web geometry, EPSG:4326
 - `detail`: `MDB_WEB_GEOMETRY_V1` derived web geometry, EPSG:4326
-- `full`: locked scientific geometry, EPSG:4674
+- `full`: locked scientific geometry, EPSG:4674; blocked by default on the
+  operational HTTP API unless the server-only `MDB_API_ALLOW_FULL_GEOMETRY`
+  setting is explicitly enabled for internal validation.
 
 Every GeoJSON response includes:
 
@@ -97,8 +99,9 @@ Every GeoJSON response includes:
 }
 ```
 
-Full geometry is preserved for audit only. Do not use `geometry_profile=full`
-for normal web map rendering.
+Full geometry is preserved for audit only. Public/default operational API
+requests for `geometry_profile=full` return `403 FULL_GEOMETRY_RESTRICTED`.
+Do not use `geometry_profile=full` for normal web map rendering.
 
 ## Run Locally
 

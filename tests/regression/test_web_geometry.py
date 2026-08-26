@@ -81,7 +81,7 @@ def test_web_geometry_database_qc_and_source_unchanged():
     assert web == (439, 439, 439, 4326, 4326, 878, 0)
 
 
-def test_web_geometry_api_profiles_are_reachable():
+def test_web_geometry_api_profiles_are_reachable_with_full_restricted_by_default():
     assert api_status("/api/v1/map/health-regions?include_geometry=true") == 200
     assert (
         api_status("/api/v1/map/health-regions?include_geometry=true&geometry_profile=overview")
@@ -93,7 +93,7 @@ def test_web_geometry_api_profiles_are_reachable():
     )
     assert (
         api_status("/api/v1/map/health-regions?include_geometry=true&geometry_profile=full")
-        == 200
+        == 403
     )
     assert (
         api_status("/api/v1/map/health-regions?include_geometry=true&geometry_profile=unknown")

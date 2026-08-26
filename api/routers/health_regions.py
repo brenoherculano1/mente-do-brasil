@@ -5,6 +5,7 @@ from typing import Annotated
 from fastapi import APIRouter, Path, Query
 
 from api.dependencies import DatabaseDep, SettingsDep
+from api.errors import api_error
 from api.schemas.common import GeometryProfile, Metric, PaginatedResponse, Pagination
 from api.schemas.health_regions import (
     GeoJsonFeatureCollection,
@@ -80,15 +81,25 @@ def health_region_map(
     metric: Metric = Metric.mismatch_score,
     uf: Annotated[str | None, Query(pattern=r"^[A-Za-z]{2}$")] = None,
     include_geometry: bool = False,
-    geometry_profile: GeometryProfile | None = None,
+    geometry_profile: Annotated[
+        GeometryProfile | None,
+        Query(description="Geometry profile. full is restricted on the operational API by default."),
+    ] = None,
 ) -> list[HealthRegionMapItem] | GeoJsonFeatureCollection:
+    profile = geometry_profile or GeometryProfile.overview
+    if include_geometry and profile == GeometryProfile.full and not settings.allow_full_geometry:
+        raise api_error(
+            403,
+            "FULL_GEOMETRY_RESTRICTED",
+            "Full geometry is not available on the operational API.",
+        )
     return list_map_data(
         db,
         release_id or settings.default_release_id,
         metric,
         uf.upper() if uf else None,
         include_geometry,
-        geometry_profile,
+        profile,
     )
 
 
