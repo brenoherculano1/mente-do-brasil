@@ -1,0 +1,6 @@
+status=PASS
+source_of_truth=locked raw/imported bundle manifests, canonical release metadata, hashes, migration scripts, and serving loader
+serving_database=rebuildable derived operational store, not scientific source of truth
+rebuild_evidence=metadata/releases/MDB_ANALYTICAL_2024_1_serving.yaml records idempotent reload PASS / NO CHANGE, immutability guard PASS, constraint tests PASS
+backup_gap=production PostgreSQL backup/restore procedure not yet documented or tested in cloud environment
+minimum_before_launch=managed backup enabled, one restore test or deterministic rebuild drill, separate runtime read-only and migration/admin credentials

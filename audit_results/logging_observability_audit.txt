@@ -1,0 +1,9 @@
+status=WARNING
+request_logs=uvicorn default logs when server is run; no structured logging config found
+error_monitoring=not configured
+uptime_monitor=not configured
+metrics=not configured
+tracing=not configured
+alerting=not configured
+sensitive_logging=no evidence of explicit credential logging; query params may appear in access logs depending hosting layer
+minimum_v1=structured app/server logs, uptime checks for /health and /ready, error alerting, and log redaction policy

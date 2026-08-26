@@ -1,0 +1,4 @@
+status=WARNING
+robots_txt=not implemented if /robots.txt returned non-200
+sitemap_xml=not implemented if /sitemap.xml returned non-200
+risk=if deployed accidentally, default indexing behavior may allow crawling of public pages

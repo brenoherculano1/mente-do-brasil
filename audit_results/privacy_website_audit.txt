@@ -1,0 +1,4 @@
+status=CHECK
+cookies_storage_analytics_external_hits:
+web/package-lock.json: gtag
+web/package-lock.json: mapbox

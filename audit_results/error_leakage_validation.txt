@@ -1,0 +1,7 @@
+status=PASS
+/api/v1/health-regions/abcde: status=422 leak=False body={"error":{"code":"VALIDATION_ERROR","message":"Invalid request parameters."}}
+/api/v1/states/XX: status=404 leak=False body={"error":{"code":"STATE_NOT_FOUND","message":"State not found for the requested release."}}
+/api/v1/releases/NO_SUCH_RELEASE: status=404 leak=False body={"error":{"code":"RELEASE_NOT_FOUND","message":"Release not found."}}
+/api/v1/map/health-regions?metric=bad: status=422 leak=False body={"error":{"code":"INVALID_METRIC","message":"Invalid map metric."}}
+/api/v1/municipalities/abcdefg/health-region: status=422 leak=False body={"error":{"code":"VALIDATION_ERROR","message":"Invalid request parameters."}}
+/nope: status=404 leak=False body={"detail":"Not Found"}

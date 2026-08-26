@@ -1,0 +1,20 @@
+status=WARNING
+local_next_headers:
+Content-Security-Policy: None
+Strict-Transport-Security: None
+X-Content-Type-Options: None
+Referrer-Policy: None
+Permissions-Policy: None
+X-Frame-Options: None
+X-Powered-By: Next.js
+Server: None
+local_api_headers:
+Content-Security-Policy: None
+Strict-Transport-Security: None
+X-Content-Type-Options: None
+Referrer-Policy: None
+Permissions-Policy: None
+X-Frame-Options: None
+X-Powered-By: None
+Server: None
+Content-Encoding: None

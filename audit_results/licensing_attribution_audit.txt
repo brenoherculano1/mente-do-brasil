@@ -1,0 +1,6 @@
+status=HUMAN_DECISION_REQUIRED
+dataset_license=not defined in /dados and repo metadata
+public_website=can be visible without data downloads if reuse license remains undefined, provided copy stays clear that downloads/reuse are not released
+public_data_download=blocked until license/reuse terms are decided
+source_attribution_repo_evidence=metadata indicator files cite DATASUS/CNES/SIM/SIH/SUS and IBGE/DATASUS population/geography sources; exact public attribution/legal wording still needs review before launch
+external_research_required=source licensing/attribution obligations for DATASUS, SIM, SIH/SUS, CNES, IBGE if publishing downloads or reuse license

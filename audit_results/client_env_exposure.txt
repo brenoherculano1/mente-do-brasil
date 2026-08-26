@@ -1,0 +1,5 @@
+status=PASS
+client_public_env_vars=NEXT_PUBLIC_MDB_API_BASE_URL
+expected_public_value=API base URL only; no secret by design
+bundle_secret_hits=0
+bundle_secret_hits_detail=NONE

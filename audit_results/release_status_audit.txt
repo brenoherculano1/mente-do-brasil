@@ -1,0 +1,8 @@
+status=PASS
+release_status=VALIDATING
+quality_status=VALIDATED
+release_gate=PASS
+release_readiness=READY
+public_release_status=NOT_RELEASED
+changed_in_this_audit=NO
+first_public_release_candidate=MDB_ANALYTICAL_2024_1 after explicit human approval and launch blockers closed

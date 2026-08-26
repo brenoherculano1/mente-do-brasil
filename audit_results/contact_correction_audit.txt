@@ -1,0 +1,5 @@
+status=HUMAN_DECISION_REQUIRED
+contact_channel=not found in current public pages
+correction_channel=not found as public-facing process
+security_reporting=security.txt not found
+recommendation=define one contact/correction/security reporting channel before public website launch; do not invent email in code without human decision

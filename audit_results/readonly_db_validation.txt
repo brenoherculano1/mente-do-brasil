@@ -1,0 +1,8 @@
+status=PASS
+role=mente_do_brasil_api
+default_transaction_read_only=on
+INSERT=REJECTED cannot execute INSERT in a read-only transaction
+UPDATE=REJECTED cannot execute UPDATE in a read-only transaction
+DELETE=REJECTED permission denied for analytics schema before mutation could occur
+DDL=REJECTED cannot execute CREATE TABLE in a read-only transaction
+summary=API role is read-only and cannot mutate serving source tables or create objects.

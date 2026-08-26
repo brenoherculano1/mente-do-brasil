@@ -1,0 +1,65 @@
+status=PASS
+pages_checked=6
+bad_internal_links=0
+links:
+/	/	200
+/	/	200
+/	/metodologia	200
+/	/dados	200
+/	/sobre	200
+/metodologia	/	200
+/metodologia	/	200
+/metodologia	/metodologia	200
+/metodologia	/dados	200
+/metodologia	/sobre	200
+/metodologia	EXTERNAL #overview	target=null rel=null
+/metodologia	EXTERNAL #geography	target=null rel=null
+/metodologia	EXTERNAL #sources	target=null rel=null
+/metodologia	EXTERNAL #need	target=null rel=null
+/metodologia	EXTERNAL #capacity	target=null rel=null
+/metodologia	EXTERNAL #percentiles	target=null rel=null
+/metodologia	EXTERNAL #mismatch	target=null rel=null
+/metodologia	EXTERNAL #spatial	target=null rel=null
+/metodologia	EXTERNAL #quality	target=null rel=null
+/metodologia	EXTERNAL #limitations	target=null rel=null
+/metodologia	EXTERNAL #use	target=null rel=null
+/metodologia	EXTERNAL #versions	target=null rel=null
+/metodologia	EXTERNAL #reproducibility	target=null rel=null
+/metodologia	EXTERNAL #scientific-base	target=null rel=null
+/metodologia	EXTERNAL #citation	target=null rel=null
+/dados	/	200
+/dados	/	200
+/dados	/metodologia	200
+/dados	/dados	200
+/dados	/sobre	200
+/dados	/metodologia	200
+/sobre	/	200
+/sobre	/	200
+/sobre	/metodologia	200
+/sobre	/dados	200
+/sobre	/sobre	200
+/sobre	/metodologia	200
+/sobre	/dados	200
+/sobre	/	200
+/sobre	/metodologia	200
+/sobre	/dados	200
+/estado/AC	/	200
+/estado/AC	/	200
+/estado/AC	/metodologia	200
+/estado/AC	/dados	200
+/estado/AC	/sobre	200
+/estado/AC	/regiao/12001	200
+/estado/AC	/regiao/12002	200
+/estado/AC	/regiao/12003	200
+/estado/AC	/metodologia	200
+/estado/AC	/dados	200
+/regiao/12001	/	200
+/regiao/12001	/	200
+/regiao/12001	/metodologia	200
+/regiao/12001	/dados	200
+/regiao/12001	/sobre	200
+/regiao/12001	/	200
+/regiao/12001	/	200
+/regiao/12001	/estado/AC	200
+/regiao/12001	/metodologia	200
+/regiao/12001	/dados	200

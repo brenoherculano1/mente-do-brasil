@@ -1,0 +1,6 @@
+status=WARNING
+api_unavailable=interactive explorer, profiles, state pages that fetch API data fail or render not-found/error states depending route; static methodology/data/about remain available from Next server
+map_unavailable=map component has loading/error boundaries in frontend tests, but production network outage UX should be smoke-tested in staging
+profile_unavailable=/regiao/[codigo] server route depends on API; unavailable API can produce controlled not-found/failure but not offline content
+state_unavailable=/estado/[uf] server route depends on API profile plus client map request; unavailable API blocks page data
+ db_unavailable=/ready should fail because it depends on DB/default release; API data endpoints fail; static Next pages still render if Next runtime remains up

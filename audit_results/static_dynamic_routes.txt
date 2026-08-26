@@ -1,0 +1,10 @@
+status=PASS
+static_export_possible=NO
+reason=dynamic SSR routes /, /estado/[uf], and /regiao/[codigo] fetch live API data; client map fetch also depends on runtime API base URL
+routes_from_production_build:
+/ = dynamic server-rendered on demand
+/estado/[uf] = dynamic server-rendered on demand plus client map request
+/regiao/[codigo] = dynamic server-rendered on demand
+/metodologia = static
+/dados = static
+/sobre = static

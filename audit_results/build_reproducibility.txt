@@ -1,0 +1,9 @@
+status=PASS
+node_version=v22.15.0
+npm_version=10.9.2
+python_version=Python 3.14.7
+uv_version=uv 0.11.25 (Homebrew 2026-06-26 aarch64-apple-darwin)
+docker_version=Docker version 29.7.2, build a7dcaa6
+docker_compose_version=Docker Compose version v5.4.0
+lockfiles=web/package-lock.json present; uv.lock present
+docker_image_strategy=local image tag pinned to mente-do-brasil-postgis:18-3.6.4; digest recorded in serving metadata; Dockerfile apt package versions pinned for PostGIS packages

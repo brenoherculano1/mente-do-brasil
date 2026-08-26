@@ -1,0 +1,10 @@
+status=WARNING
+/: status=200 title=True description=True canonical=False og=False bytes=11648
+/metodologia: status=200 title=True description=True canonical=False og=False bytes=31312
+/dados: status=200 title=True description=True canonical=False og=False bytes=33923
+/sobre: status=200 title=True description=True canonical=False og=False bytes=35999
+/estado/AC: status=200 title=True description=True canonical=True og=False bytes=22300
+/regiao/12001: status=200 title=True description=True canonical=False og=False bytes=27572
+/robots.txt: status=404 bytes=10521
+/sitemap.xml: status=404 bytes=10521
+gaps=canonical URLs, OpenGraph/Twitter cards, favicon/app icons, sitemap/robots strategy not implemented

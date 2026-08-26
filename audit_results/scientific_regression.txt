@@ -6,7 +6,7 @@ testpaths: tests
 plugins: anyio-4.14.2
 collected 71 items
 
-tests/api/test_api_contract.py ...s.......                               [ 15%]
+tests/api/test_api_contract.py ...........                               [ 15%]
 tests/data_quality/test_metric_contract.py ....                          [ 21%]
 tests/geography/test_geography_contract.py ....                          [ 26%]
 tests/regression/test_canonical_release.py ............                  [ 43%]
@@ -17,4 +17,4 @@ tests/regression/test_serving_database_static.py ...........             [ 78%]
 tests/regression/test_validated_import_bundle.py ............            [ 95%]
 tests/regression/test_web_geometry.py ...                                [100%]
 
-================== 70 passed, 1 skipped in 102.09s (0:01:42) ===================
+======================== 71 passed in 124.61s (0:02:04) ========================

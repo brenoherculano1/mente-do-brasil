@@ -1,0 +1,6 @@
+status=WARNING
+overview: status=200 bytes=756156 elapsed_ms=123.2 features=439 metadata={'profile': 'overview', 'version': 'MDB_WEB_GEOMETRY_V1', 'crs': 'EPSG:4326'}
+detail: status=200 bytes=2763517 elapsed_ms=200.0 features=439 metadata={'profile': 'detail', 'version': 'MDB_WEB_GEOMETRY_V1', 'crs': 'EPSG:4326'}
+metadata_only: status=200 bytes=108467 rows=439
+full: not re-downloaded in this audit; prior validated evidence says approx 146MB JSON and approx 48s local latency
+risk=CRITICAL for public operational API if full remains accessible without auth/rate/size controls

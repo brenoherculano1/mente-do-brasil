@@ -1,0 +1,3 @@
+status=PASS
+method=uv export requirements + uvx pip-audit --disable-pip --no-deps
+vulnerabilities=0

@@ -1,0 +1,7 @@
+status=WARNING
+frontend_access=browser client components fetch directly from NEXT_PUBLIC_MDB_API_BASE_URL
+current_default=http://127.0.0.1:8000
+same_origin_proxy=not implemented
+api_public_product=not implemented; endpoints are operational API for frontend, not a documented API product
+production_gap=direct browser-to-FastAPI requires production CORS origin and exposes backend hostname unless same-origin reverse proxy is used
+recommendation=prefer same-origin /api ingress/proxy for public website launch

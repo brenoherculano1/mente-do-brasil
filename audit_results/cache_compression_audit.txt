@@ -1,0 +1,9 @@
+status=WARNING
+api_gzip=FastAPI GZipMiddleware minimum_size=1024; verified by Accept-Encoding below
+HTTP/1.1 200 OK
+content-length: 200382
+vary: Accept-Encoding
+content-encoding: gzip
+next_static_assets=Next production serves hashed _next assets; platform/CDN should apply long immutable caching
+api_cache_headers=no explicit Cache-Control on API responses currently
+recommendation=configure CDN/reverse proxy caching for release-versioned metadata/profiles/overview geometry before launch

@@ -1,0 +1,4 @@
+status=PASS
+findings:
+web/features/explorer/HealthRegionMap.tsx:114: setDOMContent: .setDOMContent(
+web/tests/unit/profile-components.test.tsx:44: innerHTML: expect(node.innerHTML).toContain("&lt;img");

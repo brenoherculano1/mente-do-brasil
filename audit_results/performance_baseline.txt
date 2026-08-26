@@ -1,0 +1,11 @@
+status=PASS
+note=local production-mode baseline, not internet benchmark; one warmup-free sample per endpoint
+api_health: status=200 elapsed_ms=37.6 bytes=15 content_encoding=None cache_control=None
+api_ready: status=200 elapsed_ms=8.4 bytes=71 content_encoding=None cache_control=None
+national_overview_map: status=200 elapsed_ms=72.2 bytes=756156 content_encoding=None cache_control=None
+state_ac: status=200 elapsed_ms=4.5 bytes=2155 content_encoding=None cache_control=None
+state_sp: status=200 elapsed_ms=5.6 bytes=33944 content_encoding=None cache_control=None
+profile_12001: status=200 elapsed_ms=3.6 bytes=1217 content_encoding=None cache_control=None
+municipality_lookup: status=200 elapsed_ms=3.7 bytes=201 content_encoding=None cache_control=None
+home_page: status=200 elapsed_ms=53.1 bytes=11648 content_encoding=None cache_control=private, no-cache, no-store, max-age=0, must-revalidate
+state_page_ac: status=200 elapsed_ms=31.7 bytes=22300 content_encoding=None cache_control=private, no-cache, no-store, max-age=0, must-revalidate

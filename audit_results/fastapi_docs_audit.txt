@@ -1,0 +1,5 @@
+/docs: status=200 content_type=text/html; charset=utf-8 bytes=1018
+/redoc: status=200 content_type=text/html; charset=utf-8 bytes=900
+/openapi.json: status=200 content_type=application/json bytes=20948
+status=WARNING
+summary=FastAPI interactive docs and OpenAPI schema are enabled by default locally; if API is internet-reachable in production, they would be exposed unless disabled or protected.

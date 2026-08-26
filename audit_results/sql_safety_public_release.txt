@@ -1,0 +1,7 @@
+status=PASS
+uf_path: status=422 leak=False body={"error":{"code":"VALIDATION_ERROR","message":"Invalid request parameters."}}
+region_code_path: status=422 leak=False body={"error":{"code":"VALIDATION_ERROR","message":"Invalid request parameters."}}
+search_q: status=200 leak=False body={"items":[],"pagination":{"limit":50,"offset":0,"count":0,"total":0}}
+release_id_query: status=404 leak=False body={"error":{"code":"RELEASE_NOT_FOUND","message":"Release not found."}}
+municipality_code_path: status=422 leak=False body={"error":{"code":"VALIDATION_ERROR","message":"Invalid request parameters."}}
+ready_after_injection_tests: status=200 body={"status":"ready","database":"ok","release_id":"MDB_ANALYTICAL_2024_1"}

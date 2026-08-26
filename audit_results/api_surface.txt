@@ -1,0 +1,15 @@
+status=PASS
+openapi_status=200
+path	method	frontend_needed	risk	status
+/api/v1/health-regions	GET	YES	LOW/MEDIUM read-only aggregate data	operational_endpoint
+/api/v1/health-regions/{health_region_code}	GET	YES	LOW/MEDIUM read-only aggregate data	operational_endpoint
+/api/v1/indicators	GET	YES	LOW/MEDIUM read-only aggregate data	operational_endpoint
+/api/v1/indicators/{indicator_id}	GET	NO	LOW/MEDIUM read-only aggregate data	operational_endpoint
+/api/v1/map/health-regions	GET	YES	HIGH if include_geometry=full remains public; otherwise MEDIUM	operational_endpoint
+/api/v1/municipalities/{municipality_code_ibge}/health-region	GET	YES	LOW/MEDIUM read-only aggregate data	operational_endpoint
+/api/v1/releases	GET	YES	LOW/MEDIUM read-only aggregate data	operational_endpoint
+/api/v1/releases/{release_id}	GET	NO	LOW/MEDIUM read-only aggregate data	operational_endpoint
+/api/v1/states/{uf}	GET	YES	LOW/MEDIUM read-only aggregate data	operational_endpoint
+/api/v1/ufs	GET	YES	LOW/MEDIUM read-only aggregate data	operational_endpoint
+/health	GET	NO	LOW	operational_endpoint
+/ready	GET	NO	LOW	operational_endpoint

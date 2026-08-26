@@ -1,0 +1,14 @@
+status=PASS
+name	component	secret	local_source	production_requirement
+MDB_API_DB_PASSWORD	api/db	YES	.env/.env.example	required if component deployed
+MDB_API_DB_USER	api/db	NO	.env/.env.example	required if component deployed
+MDB_API_HOST	api/db	NO	.env/.env.example	required if component deployed
+MDB_API_PORT	api/db	NO	.env/.env.example	required if component deployed
+MDB_DB_HOST	api/db	NO	.env/.env.example	required if component deployed
+MDB_DB_NAME	api/db	NO	.env/.env.example	required if component deployed
+MDB_DB_PASSWORD	api/db	YES	.env/.env.example	required if component deployed
+MDB_DB_PORT	api/db	NO	.env/.env.example	required if component deployed
+MDB_DB_USER	api/db	NO	.env/.env.example	required if component deployed
+MDB_DEFAULT_RELEASE_ID	api/db	NO	.env/.env.example	required if component deployed
+MDB_IMPORTED_AT	api/db	NO	.env/.env.example	required if component deployed
+NEXT_PUBLIC_MDB_API_BASE_URL	frontend	NO	.env/.env.example	required if component deployed

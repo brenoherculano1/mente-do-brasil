@@ -1,0 +1,7 @@
+status=PASS
+docker_compose_ps:
+NAME                       IMAGE                              COMMAND                  SERVICE    CREATED        STATUS                       PORTS
+mente-do-brasil-postgres   mente-do-brasil-postgis:18-3.6.4   "docker-entrypoint.s…"   postgres   35 hours ago   Up About an hour (healthy)   127.0.0.1:5432->5432/tcp
+lsof:
+COMMAND    PID           USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+com.docke 7291 brenoherculano   93u  IPv4 0xacf2635ede611615      0t0  TCP 127.0.0.1:5432 (LISTEN)

@@ -1,0 +1,11 @@
+status=WARNING
+configured_in=api/main.py + api/config.py
+allowed_origins=http://localhost:3000,http://127.0.0.1:3000 unless overridden by MDB_API_ALLOWED_ORIGINS
+allow_credentials=False
+allow_methods=GET
+allow_headers=*
+wildcard_origins_guard=RuntimeError if * configured
+GET origin=http://127.0.0.1:3000 status=200 access-control-allow-origin=http://127.0.0.1:3000
+OPTIONS origin=http://127.0.0.1:3000 status=200 access-control-allow-methods=GET access-control-allow-origin=http://127.0.0.1:3000
+OPTIONS origin=https://evil.example status=400 access-control-allow-origin=None
+production_gap=no official production origin configured; pre-deploy blocker

@@ -1,0 +1,10 @@
+status=WARNING
+application_rate_limiter=not found
+reverse_proxy_rate_limiter=not configured in repo
+statement_timeout=30s configured per API DB connection
+pool_max_size=4 configured
+max_response_size=not configured
+request_timeout=not configured at FastAPI app layer
+pagination_bounds=health-regions limit ge=1 le=100; map endpoint intentionally returns 439; state SP max observed 62
+critical_gap=geometry full endpoint is expensive and currently has no per-endpoint throttle or response-size gate
+recommendation=add endpoint-class rate limiting and block/restrict full geometry before public launch
