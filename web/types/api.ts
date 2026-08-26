@@ -138,3 +138,37 @@ export type MunicipalityHealthRegion = {
   health_region_name: string;
   geography_version: string;
 };
+
+export type StateRegion = {
+  health_region_code: string;
+  health_region_name: string;
+  uf: string;
+  population: number;
+  municipality_count: number;
+  suicide_percentile: number | null;
+  psychiatric_admission_percentile: number | null;
+  need_score: number | null;
+  caps_percentile: number | null;
+  beds_percentile: number | null;
+  psychiatrist_fte_percentile: number | null;
+  capacity_score: number | null;
+  mismatch_score: number | null;
+  lisa_significant: boolean;
+  lisa_cluster: LisaCluster | null;
+  data_quality_flags: string[];
+};
+
+export type StateProfile = {
+  release: ReleasePublic;
+  state: {
+    uf: string;
+    state_name: string;
+    health_region_count: number;
+    population: number;
+    municipality_count: number;
+    lisa_significant_count: number;
+    lisa_cluster_counts: Record<string, number>;
+    quality_flag_counts: Record<string, number>;
+  };
+  regions: StateRegion[];
+};

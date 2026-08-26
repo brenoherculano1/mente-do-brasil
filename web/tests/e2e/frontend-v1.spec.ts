@@ -5,12 +5,14 @@ const QA_DIR = "../docs/frontend_qc_2026-08-25";
 const METHODOLOGY_QA_DIR = "../docs/methodology_qc_2026-08-25";
 const DATA_QA_DIR = "../docs/data_page_qc_2026-08-25_locked";
 const ABOUT_QA_DIR = "../docs/about_page_qc_2026-08-25";
+const STATE_QA_DIR = "../docs/state_page_qc_2026-08-26";
 
 test.beforeAll(() => {
   mkdirSync(QA_DIR, { recursive: true });
   mkdirSync(METHODOLOGY_QA_DIR, { recursive: true });
   mkdirSync(DATA_QA_DIR, { recursive: true });
   mkdirSync(ABOUT_QA_DIR, { recursive: true });
+  mkdirSync(STATE_QA_DIR, { recursive: true });
 });
 
 test("home loads map, metric selector, search, and navigates to region profile", async ({ page }, testInfo) => {
@@ -339,6 +341,121 @@ test("about page stays readable and responsive on mobile", async ({ page }, test
   await expect(page).toHaveURL(/\/dados/);
 });
 
+test("state page for AC shows three regions, overview map, distribution, and profile links", async ({
+  page,
+}, testInfo) => {
+  test.skip(testInfo.project.name !== "desktop", "desktop-only state AC QA");
+  const mapResponse = page.waitForResponse((response) =>
+    response.url().includes("/api/v1/map/health-regions") &&
+    response.url().includes("uf=AC") &&
+    response.url().includes("geometry_profile=overview") &&
+    response.status() === 200,
+  );
+  await page.goto("/estado/AC");
+  const statePayload = await fetchApi(page, "/api/v1/states/AC");
+  const mapPayload = await (await mapResponse).json();
+  expect(statePayload.state.health_region_count).toBe(3);
+  expect(mapPayload.features).toHaveLength(3);
+  expect(mapPayload.geometry_metadata).toEqual({
+    profile: "overview",
+    version: "MDB_WEB_GEOMETRY_V1",
+    crs: "EPSG:4326",
+  });
+  await waitForMapPixels(page);
+  await expect(page.getByRole("heading", { level: 1, name: "Acre" })).toBeVisible();
+  await expect(page.getByText("3 de 3 Regiões de Saúde.")).toBeVisible();
+  await expect(page.locator(".distribution-row")).toHaveCount(3);
+  await expect(page.getByRole("heading", { level: 3, name: "Alto Acre" })).toBeVisible();
+  await expect(page.locator("body")).not.toContainText("ranking");
+  await expect(page.locator("body")).not.toContainText("melhor região");
+  await expect(page.locator("body")).not.toContainText("pior região");
+  await expectNoGlobalHorizontalOverflow(page);
+
+  await page.getByLabel(/Alto Acre, Mismatch/).click();
+  await expect(page.getByRole("link", { name: "Ver perfil da região" })).toBeVisible();
+  await page.getByRole("link", { name: "Ver perfil da região" }).click();
+  await expect(page).toHaveURL(/\/regiao\/12001/);
+  await expect(page.getByRole("heading", { name: "Alto Acre" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Ver estado: Acre" })).toHaveAttribute("href", "/estado/AC");
+  await page.getByRole("link", { name: "Ver estado: Acre" }).click();
+  await expect(page).toHaveURL(/\/estado\/AC/);
+  await expect(page.getByRole("heading", { level: 1, name: "Acre" })).toBeVisible();
+  await expect(page.locator(".distribution-row")).toHaveCount(3);
+  await waitForMapPixels(page);
+
+  await page.screenshot({ path: `${STATE_QA_DIR}/desktop_state_ac_full.png`, fullPage: true });
+  await page.locator(".state-hero").screenshot({ path: `${STATE_QA_DIR}/desktop_state_ac_top.png` });
+  await page.locator('[aria-labelledby="distribution-title"]').screenshot({
+    path: `${STATE_QA_DIR}/desktop_state_ac_distribution.png`,
+  });
+  await page.locator('[aria-labelledby="regions-title"]').screenshot({
+    path: `${STATE_QA_DIR}/desktop_state_ac_regions.png`,
+  });
+});
+
+test("state page handles a large state and DF without truncating regions", async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== "desktop", "desktop-only state large/DF QA");
+  const spMapResponse = page.waitForResponse((response) =>
+    response.url().includes("/api/v1/map/health-regions") &&
+    response.url().includes("uf=SP") &&
+    response.status() === 200,
+  );
+  await page.goto("/estado/SP");
+  const sp = await fetchApi(page, "/api/v1/states/SP");
+  const spMap = await (await spMapResponse).json();
+  expect(sp.state.health_region_count).toBeGreaterThan(3);
+  expect(sp.regions).toHaveLength(sp.state.health_region_count);
+  expect(spMap.features).toHaveLength(sp.state.health_region_count);
+  await expect(page.locator(".distribution-row")).toHaveCount(sp.state.health_region_count);
+  await expect(page.locator(".state-region-card")).toHaveCount(sp.state.health_region_count);
+  await expectNoGlobalHorizontalOverflow(page);
+  await page.screenshot({ path: `${STATE_QA_DIR}/desktop_state_large_top.png` });
+  await page.locator('[aria-labelledby="distribution-title"]').screenshot({
+    path: `${STATE_QA_DIR}/desktop_state_large_distribution.png`,
+  });
+
+  await page.goto("/estado/DF");
+  const df = await fetchApi(page, "/api/v1/states/DF");
+  expect(df.state.uf).toBe("DF");
+  expect(df.regions.length).toBe(df.state.health_region_count);
+  await expect(page.getByRole("heading", { level: 1, name: "Distrito Federal" })).toBeVisible();
+});
+
+test("state page normalizes lowercase, rejects invalid UF, and keeps mobile map early", async ({
+  page,
+}, testInfo) => {
+  test.skip(testInfo.project.name !== "mobile", "mobile-only state QA");
+  await page.goto("/estado/ac");
+  await expect(page).toHaveURL(/\/estado\/AC/);
+  await expect(page.getByRole("heading", { level: 1, name: "Acre" })).toBeVisible();
+  await waitForMapPixels(page);
+  const mapTop = await page.getByTestId("map-frame").evaluate((node) => {
+    const box = (node as HTMLElement).getBoundingClientRect();
+    return Math.round(box.top + window.scrollY);
+  });
+  expect(mapTop).toBeLessThanOrEqual(800);
+  await expect(page.locator(".distribution-row")).toHaveCount(3);
+  await expectNoGlobalHorizontalOverflow(page);
+  await page.screenshot({ path: `${STATE_QA_DIR}/mobile_state_ac_full.png`, fullPage: true });
+  await page.screenshot({ path: `${STATE_QA_DIR}/mobile_state_ac_top.png` });
+  await page.locator('[aria-labelledby="distribution-title"]').screenshot({
+    path: `${STATE_QA_DIR}/mobile_state_ac_distribution.png`,
+  });
+  await page.getByLabel("Buscar Região de Saúde neste estado").fill("Juruá");
+  await expect(page.getByText("1 de 3 Regiões de Saúde.")).toBeVisible();
+  await expectNoGlobalHorizontalOverflow(page);
+  await page.locator('[aria-labelledby="regions-title"]').screenshot({
+    path: `${STATE_QA_DIR}/mobile_state_ac_regions.png`,
+  });
+
+  await page.goto("/estado/SP");
+  await expect(page.getByRole("heading", { level: 1, name: "São Paulo" })).toBeVisible();
+  await page.screenshot({ path: `${STATE_QA_DIR}/mobile_state_large.png`, fullPage: true });
+
+  await page.goto("/estado/XX");
+  await expect(page.getByRole("heading", { name: "Estado não encontrado." })).toBeVisible();
+});
+
 async function waitForMapPixels(page: import("@playwright/test").Page) {
   await page.waitForFunction(() => {
     const canvas = document.querySelector("canvas") as HTMLCanvasElement | null;
@@ -381,4 +498,11 @@ function trackMapRequests(page: import("@playwright/test").Page) {
     }
   });
   return mapRequests;
+}
+
+async function fetchApi(page: import("@playwright/test").Page, path: string) {
+  return page.evaluate(async (requestPath) => {
+    const response = await fetch(`http://127.0.0.1:8000${requestPath}`);
+    return response.json();
+  }, path);
 }

@@ -1,0 +1,1 @@
+{'status': 'PASS', 'health_regions': 3, 'map_features': 3, 'geometry_metadata': {'profile': 'overview', 'version': 'MDB_WEB_GEOMETRY_V1', 'crs': 'EPSG:4326'}}

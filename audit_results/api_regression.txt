@@ -4,6 +4,7 @@ ready PASS
 releases PASS
 indicators PASS
 health regions PASS
+state profiles PASS
 profile PASS
 municipality lookup PASS
 map metadata PASS
@@ -12,5 +13,5 @@ scientific regression PASS
 flags PASS
 errors PASS
 read-only PASS
-latency_ms {'health': 56.8, 'ready': 10.71, 'map_geometry_overview': 86.61, 'map_geometry_detail': 193.45, 'map_geometry_full': 26067.99}
+latency_ms {'health': 98.84, 'ready': 8.18, 'map_geometry_overview': 73.14, 'map_geometry_detail': 208.43, 'map_geometry_full': 48207.15}
 PASS

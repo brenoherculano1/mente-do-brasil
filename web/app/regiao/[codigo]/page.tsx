@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getHealthRegionProfile } from "@/lib/api/client";
 import { isNotFound } from "@/lib/api/errors";
 import { formatInteger, formatRate, formatScore } from "@/lib/format";
+import { stateNameForUf } from "@/lib/states";
 import { DataQualityNotice } from "@/features/profile/DataQualityNotice";
 import { IndicatorMetric } from "@/features/profile/IndicatorMetric";
 import { ScoreOverview } from "@/features/profile/ScoreOverview";
@@ -180,8 +181,15 @@ export default async function RegionProfilePage({ params }: RegionPageProps) {
           <Link className="text-button" href="/">
             Voltar ao mapa
           </Link>
-          <span className="muted-link">Ver metodologia</span>
-          <span className="muted-link">Ver dados</span>
+          <Link className="text-button" href={`/estado/${territory.uf}`}>
+            Ver estado: {stateNameForUf(territory.uf)}
+          </Link>
+          <Link className="text-button" href="/metodologia">
+            Ver metodologia
+          </Link>
+          <Link className="text-button" href="/dados">
+            Ver dados
+          </Link>
         </div>
       </section>
     </div>

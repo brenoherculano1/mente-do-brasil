@@ -4,17 +4,17 @@ rootdir: /Users/brenoherculano/Documents/New project/mente-do-brasil
 configfile: pyproject.toml
 testpaths: tests
 plugins: anyio-4.14.2
-collected 69 items
+collected 71 items
 
-tests/api/test_api_contract.py .........                                 [ 13%]
-tests/data_quality/test_metric_contract.py ....                          [ 18%]
-tests/geography/test_geography_contract.py ....                          [ 24%]
-tests/regression/test_canonical_release.py ............                  [ 42%]
-tests/regression/test_data_contract.py ....                              [ 47%]
-tests/regression/test_locked_results.py ..                               [ 50%]
-tests/regression/test_release_provenance_gate.py ........                [ 62%]
+tests/api/test_api_contract.py ...s.......                               [ 15%]
+tests/data_quality/test_metric_contract.py ....                          [ 21%]
+tests/geography/test_geography_contract.py ....                          [ 26%]
+tests/regression/test_canonical_release.py ............                  [ 43%]
+tests/regression/test_data_contract.py ....                              [ 49%]
+tests/regression/test_locked_results.py ..                               [ 52%]
+tests/regression/test_release_provenance_gate.py ........                [ 63%]
 tests/regression/test_serving_database_static.py ...........             [ 78%]
 tests/regression/test_validated_import_bundle.py ............            [ 95%]
 tests/regression/test_web_geometry.py ...                                [100%]
 
-============================= 69 passed in 46.09s ==============================
+================== 70 passed, 1 skipped in 102.09s (0:01:42) ===================

@@ -194,6 +194,88 @@ def test_municipality_and_uf_lookup_contracts():
     assert sum(row["health_region_count"] for row in ufs) == 439
 
 
+def test_state_profile_contract_has_no_state_score_or_ranking():
+    status, ac = api_get("/api/v1/states/AC")
+    assert status == 200
+    assert ac["release"]["release_id"] == RELEASE_ID
+    assert ac["release"]["public_release_status"] == "NOT_RELEASED"
+    assert ac["state"]["uf"] == "AC"
+    assert ac["state"]["state_name"] == "Acre"
+    assert ac["state"]["health_region_count"] == 3
+    assert len(ac["regions"]) == 3
+    assert [region["health_region_name"] for region in ac["regions"]] == sorted(
+        region["health_region_name"] for region in ac["regions"]
+    )
+    assert ac["state"]["population"] == sum(region["population"] for region in ac["regions"])
+    assert ac["state"]["municipality_count"] == sum(
+        region["municipality_count"] for region in ac["regions"]
+    )
+    forbidden_state_fields = {
+        "state_need_score",
+        "state_capacity_score",
+        "state_mismatch_score",
+        "state_rank",
+        "state_index",
+        "state_grade",
+        "ranking",
+    }
+    assert forbidden_state_fields.isdisjoint(ac["state"])
+    assert all(forbidden_state_fields.isdisjoint(region) for region in ac["regions"])
+    expected_region_fields = {
+        "health_region_code",
+        "health_region_name",
+        "uf",
+        "population",
+        "municipality_count",
+        "suicide_percentile",
+        "psychiatric_admission_percentile",
+        "need_score",
+        "caps_percentile",
+        "beds_percentile",
+        "psychiatrist_fte_percentile",
+        "capacity_score",
+        "mismatch_score",
+        "lisa_significant",
+        "lisa_cluster",
+        "data_quality_flags",
+    }
+    assert set(ac["regions"][0]) == expected_region_fields
+
+    status, ac_lowercase = api_get("/api/v1/states/ac")
+    assert status == 200
+    assert ac_lowercase == ac
+
+    status, ac_map = api_get(
+        "/api/v1/map/health-regions?uf=AC&include_geometry=true&geometry_profile=overview"
+    )
+    assert status == 200
+    assert len(ac_map["features"]) == ac["state"]["health_region_count"]
+    assert ac_map["geometry_metadata"] == {
+        "profile": "overview",
+        "version": WEB_GEOMETRY_VERSION,
+        "crs": "EPSG:4326",
+    }
+
+
+def test_state_profile_handles_df_large_state_and_invalid_inputs():
+    status, sp = api_get("/api/v1/states/SP")
+    assert status == 200
+    assert sp["state"]["uf"] == "SP"
+    assert sp["state"]["state_name"] == "São Paulo"
+    assert sp["state"]["health_region_count"] == len(sp["regions"])
+    assert sp["state"]["health_region_count"] > 3
+
+    status, df = api_get("/api/v1/states/DF")
+    assert status == 200
+    assert df["state"]["uf"] == "DF"
+    assert df["state"]["state_name"] == "Distrito Federal"
+    assert df["state"]["health_region_count"] == len(df["regions"])
+
+    assert api_get("/api/v1/states/XX")[0] == 404
+    injection = urllib.parse.quote("AC' OR '1'='1", safe="")
+    assert api_get(f"/api/v1/states/{injection}")[0] == 422
+
+
 def test_error_contracts_and_parameter_guards():
     assert api_get("/api/v1/health-regions/99999")[0] == 404
     assert api_get("/api/v1/municipalities/9999999/health-region")[0] == 404
@@ -209,6 +291,7 @@ def test_error_contracts_and_parameter_guards():
     assert api_get("/api/v1/releases/NOT_A_RELEASE")[0] == 404
     assert api_get("/api/v1/health-regions?release_id=NOT_A_RELEASE")[0] == 404
     assert api_get("/api/v1/map/health-regions?release_id=NOT_A_RELEASE")[0] == 404
+    assert api_get("/api/v1/states/AC?release_id=NOT_A_RELEASE")[0] == 404
 
     injected = urllib.parse.quote("12001' OR '1'='1", safe="")
     status, payload = api_get(f"/api/v1/health-regions?q={injected}&limit=10")

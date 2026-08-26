@@ -1,0 +1,1 @@
+{'status': 'PASS', 'valid_ufs': 27, 'national_total': 439, 'ac_regions': 3, 'sp_regions': 62, 'df_regions': 1, 'forbidden_state_fields': [], 'ac_population_matches_regions': True, 'ac_municipalities_matches_regions': True, 'public_release_status': 'NOT_RELEASED'}

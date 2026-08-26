@@ -1,0 +1,16 @@
+
+> mente-do-brasil-web@0.1.0 test:e2e
+> playwright test --grep state page
+
+
+Running 6 tests using 2 workers
+
+  -  2 [mobile] › tests/e2e/frontend-v1.spec.ts:344:5 › state page for AC shows three regions, overview map, distribution, and profile links
+  -  3 [mobile] › tests/e2e/frontend-v1.spec.ts:396:5 › state page handles a large state and DF without truncating regions
+  ✓  1 [desktop] › tests/e2e/frontend-v1.spec.ts:344:5 › state page for AC shows three regions, overview map, distribution, and profile links (4.9s)
+  ✓  5 [desktop] › tests/e2e/frontend-v1.spec.ts:396:5 › state page handles a large state and DF without truncating regions (5.6s)
+  -  6 [desktop] › tests/e2e/frontend-v1.spec.ts:424:5 › state page normalizes lowercase, rejects invalid UF, and keeps mobile map early
+  ✓  4 [mobile] › tests/e2e/frontend-v1.spec.ts:424:5 › state page normalizes lowercase, rejects invalid UF, and keeps mobile map early (11.9s)
+
+  3 skipped
+  3 passed (13.5s)

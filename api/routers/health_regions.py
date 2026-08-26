@@ -12,10 +12,12 @@ from api.schemas.health_regions import (
     HealthRegionMapItem,
     HealthRegionProfile,
     MunicipalityHealthRegion,
+    StateProfile,
     UfOption,
 )
 from api.services.health_regions import (
     get_health_region_profile,
+    get_state_profile,
     list_health_regions,
     list_map_data,
     municipality_health_region,
@@ -55,6 +57,16 @@ def health_region_profile(
     return get_health_region_profile(
         db, release_id or settings.default_release_id, health_region_code
     )
+
+
+@router.get("/states/{uf}", response_model=StateProfile)
+def state_profile(
+    uf: Annotated[str, Path(pattern=r"^[A-Za-z]{2}$")],
+    db: DatabaseDep,
+    settings: SettingsDep,
+    release_id: str | None = None,
+) -> StateProfile:
+    return get_state_profile(db, release_id or settings.default_release_id, uf.upper())
 
 
 @router.get(

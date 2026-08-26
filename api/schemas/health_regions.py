@@ -136,3 +136,39 @@ class MunicipalityHealthRegion(BaseModel):
 class UfOption(BaseModel):
     uf: str
     health_region_count: int
+
+
+class StateRegion(BaseModel):
+    health_region_code: str
+    health_region_name: str
+    uf: str
+    population: int
+    municipality_count: int
+    suicide_percentile: float | None
+    psychiatric_admission_percentile: float | None
+    need_score: float | None
+    caps_percentile: float | None
+    beds_percentile: float | None
+    psychiatrist_fte_percentile: float | None
+    capacity_score: float | None
+    mismatch_score: float | None
+    lisa_significant: bool
+    lisa_cluster: str | None
+    data_quality_flags: list[str]
+
+
+class StateSummary(BaseModel):
+    uf: str
+    state_name: str
+    health_region_count: int
+    population: int
+    municipality_count: int
+    lisa_significant_count: int
+    lisa_cluster_counts: dict[str, int]
+    quality_flag_counts: dict[str, int]
+
+
+class StateProfile(BaseModel):
+    release: ReleasePublic
+    state: StateSummary
+    regions: list[StateRegion]

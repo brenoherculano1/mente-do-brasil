@@ -3,28 +3,34 @@
 > playwright test
 
 
-Running 20 tests using 2 workers
+Running 26 tests using 2 workers
 
-  ✓   1 [mobile] › tests/e2e/frontend-v1.spec.ts:16:5 › home loads map, metric selector, search, and navigates to region profile (7.7s)
-  ✓   2 [desktop] › tests/e2e/frontend-v1.spec.ts:16:5 › home loads map, metric selector, search, and navigates to region profile (8.2s)
-  ✓   4 [desktop] › tests/e2e/frontend-v1.spec.ts:49:5 › captures home screenshot and keeps mobile layout usable (2.7s)
-  ✓   3 [mobile] › tests/e2e/frontend-v1.spec.ts:49:5 › captures home screenshot and keeps mobile layout usable (3.6s)
-  ✓   5 [desktop] › tests/e2e/frontend-v1.spec.ts:73:5 › accessible list expands, filters rationally, and captures QA screenshot (2.9s)
-  ✓   7 [desktop] › tests/e2e/frontend-v1.spec.ts:91:5 › invalid region shows not found state (381ms)
-  ✓   6 [mobile] › tests/e2e/frontend-v1.spec.ts:73:5 › accessible list expands, filters rationally, and captures QA screenshot (4.0s)
-  ✓   9 [mobile] › tests/e2e/frontend-v1.spec.ts:91:5 › invalid region shows not found state (346ms)
-  -  10 [mobile] › tests/e2e/frontend-v1.spec.ts:97:5 › methodology desktop page loads, navigates sections, and opens details
-  ✓   8 [desktop] › tests/e2e/frontend-v1.spec.ts:97:5 › methodology desktop page loads, navigates sections, and opens details (4.0s)
-  -  12 [desktop] › tests/e2e/frontend-v1.spec.ts:143:5 › methodology mobile page has compact navigation and no global overflow
-  ✓  13 [desktop] › tests/e2e/frontend-v1.spec.ts:176:5 › data page exposes release inventory and filters dictionary on desktop (5.0s)
-  -  14 [desktop] › tests/e2e/frontend-v1.spec.ts:227:5 › data page remains usable on mobile
-  ✓  11 [mobile] › tests/e2e/frontend-v1.spec.ts:143:5 › methodology mobile page has compact navigation and no global overflow (9.0s)
-  -  16 [mobile] › tests/e2e/frontend-v1.spec.ts:176:5 › data page exposes release inventory and filters dictionary on desktop
-  ✓  15 [desktop] › tests/e2e/frontend-v1.spec.ts:255:5 › about page states independence, scope, and links on desktop (4.8s)
-  -  18 [desktop] › tests/e2e/frontend-v1.spec.ts:313:5 › about page stays readable and responsive on mobile
-  ✓  17 [mobile] › tests/e2e/frontend-v1.spec.ts:227:5 › data page remains usable on mobile (6.6s)
-  -  19 [mobile] › tests/e2e/frontend-v1.spec.ts:255:5 › about page states independence, scope, and links on desktop
-  ✓  20 [mobile] › tests/e2e/frontend-v1.spec.ts:313:5 › about page stays readable and responsive on mobile (4.4s)
+  ✓   1 [mobile] › tests/e2e/frontend-v1.spec.ts:18:5 › home loads map, metric selector, search, and navigates to region profile (6.9s)
+  ✓   2 [desktop] › tests/e2e/frontend-v1.spec.ts:18:5 › home loads map, metric selector, search, and navigates to region profile (7.1s)
+  ✓   4 [desktop] › tests/e2e/frontend-v1.spec.ts:51:5 › captures home screenshot and keeps mobile layout usable (3.1s)
+  ✓   3 [mobile] › tests/e2e/frontend-v1.spec.ts:51:5 › captures home screenshot and keeps mobile layout usable (3.6s)
+  ✓   5 [desktop] › tests/e2e/frontend-v1.spec.ts:75:5 › accessible list expands, filters rationally, and captures QA screenshot (2.6s)
+  ✓   7 [desktop] › tests/e2e/frontend-v1.spec.ts:93:5 › invalid region shows not found state (434ms)
+  ✓   6 [mobile] › tests/e2e/frontend-v1.spec.ts:75:5 › accessible list expands, filters rationally, and captures QA screenshot (3.4s)
+  ✓   9 [mobile] › tests/e2e/frontend-v1.spec.ts:93:5 › invalid region shows not found state (380ms)
+  -  10 [mobile] › tests/e2e/frontend-v1.spec.ts:99:5 › methodology desktop page loads, navigates sections, and opens details
+  ✓   8 [desktop] › tests/e2e/frontend-v1.spec.ts:99:5 › methodology desktop page loads, navigates sections, and opens details (5.6s)
+  -  12 [desktop] › tests/e2e/frontend-v1.spec.ts:145:5 › methodology mobile page has compact navigation and no global overflow
+  ✓  11 [mobile] › tests/e2e/frontend-v1.spec.ts:145:5 › methodology mobile page has compact navigation and no global overflow (10.9s)
+  -  14 [mobile] › tests/e2e/frontend-v1.spec.ts:178:5 › data page exposes release inventory and filters dictionary on desktop
+  ✓  13 [desktop] › tests/e2e/frontend-v1.spec.ts:178:5 › data page exposes release inventory and filters dictionary on desktop (6.5s)
+  -  16 [desktop] › tests/e2e/frontend-v1.spec.ts:229:5 › data page remains usable on mobile
+  ✓  17 [desktop] › tests/e2e/frontend-v1.spec.ts:257:5 › about page states independence, scope, and links on desktop (8.9s)
+  -  18 [desktop] › tests/e2e/frontend-v1.spec.ts:315:5 › about page stays readable and responsive on mobile
+  ✓  15 [mobile] › tests/e2e/frontend-v1.spec.ts:229:5 › data page remains usable on mobile (10.5s)
+  -  20 [mobile] › tests/e2e/frontend-v1.spec.ts:257:5 › about page states independence, scope, and links on desktop
+  ✓  21 [mobile] › tests/e2e/frontend-v1.spec.ts:315:5 › about page stays readable and responsive on mobile (5.5s)
+  -  22 [mobile] › tests/e2e/frontend-v1.spec.ts:344:5 › state page for AC shows three regions, overview map, distribution, and profile links
+  -  23 [mobile] › tests/e2e/frontend-v1.spec.ts:396:5 › state page handles a large state and DF without truncating regions
+  ✓  19 [desktop] › tests/e2e/frontend-v1.spec.ts:344:5 › state page for AC shows three regions, overview map, distribution, and profile links (8.9s)
+  ✓  25 [desktop] › tests/e2e/frontend-v1.spec.ts:396:5 › state page handles a large state and DF without truncating regions (3.6s)
+  -  26 [desktop] › tests/e2e/frontend-v1.spec.ts:424:5 › state page normalizes lowercase, rejects invalid UF, and keeps mobile map early
+  ✓  24 [mobile] › tests/e2e/frontend-v1.spec.ts:424:5 › state page normalizes lowercase, rejects invalid UF, and keeps mobile map early (15.8s)
 
-  6 skipped
-  14 passed (38.0s)
+  9 skipped
+  17 passed (59.5s)

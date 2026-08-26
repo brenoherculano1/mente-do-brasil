@@ -5,15 +5,19 @@
 
  RUN  v3.2.7 /Users/brenoherculano/Documents/New project/mente-do-brasil/web
 
- ✓ tests/unit/color-scale.test.ts (5 tests) 4ms
- ✓ tests/unit/format.test.ts (3 tests) 11ms
- ✓ tests/unit/profile-components.test.tsx (4 tests) 38ms
- ✓ tests/unit/about-page.test.tsx (6 tests) 289ms
- ✓ tests/unit/methodology-page.test.tsx (6 tests) 355ms
- ✓ tests/unit/data-page.test.tsx (7 tests) 539ms
+ ✓ tests/unit/color-scale.test.ts (5 tests) 3ms
+ ✓ tests/unit/format.test.ts (3 tests) 5ms
+ ✓ tests/unit/profile-components.test.tsx (4 tests) 68ms
+ ✓ tests/unit/about-page.test.tsx (6 tests) 614ms
+ ✓ tests/unit/methodology-page.test.tsx (6 tests) 821ms
+ ✓ tests/unit/state-page.test.tsx (5 tests) 805ms
+   ✓ state page > renders AC with three Health Regions and no state score or ranking  332ms
+ ✓ tests/unit/data-page.test.tsx (7 tests) 1465ms
+   ✓ data page > renders release identifiers, counts, and locked hashes  474ms
+   ✓ data page > renders the complete 35-field dictionary and filters locally  303ms
 
- Test Files  6 passed (6)
-      Tests  31 passed (31)
-   Start at  05:24:08
-   Duration  2.07s (transform 426ms, setup 1.19s, collect 1.27s, tests 1.24s, environment 3.91s, prepare 865ms)
+ Test Files  7 passed (7)
+      Tests  36 passed (36)
+   Start at  06:19:27
+   Duration  3.81s (transform 754ms, setup 1.26s, collect 2.45s, tests 3.78s, environment 7.30s, prepare 1.84s)
 

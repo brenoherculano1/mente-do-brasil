@@ -131,6 +131,30 @@ def validate() -> None:
         raise AssertionError("Health region total changed.")
     print("health regions PASS")
 
+    state_ac = request("/api/v1/states/AC")
+    if state_ac.body["state"]["health_region_count"] != 3 or len(state_ac.body["regions"]) != 3:
+        raise AssertionError("AC state contract did not return 3 Health Regions.")
+    if any(
+        field in state_ac.body["state"]
+        for field in ["state_need_score", "state_capacity_score", "state_mismatch_score", "ranking"]
+    ):
+        raise AssertionError("State contract exposed a state score or ranking field.")
+    if state_ac.body["state"]["population"] != sum(
+        region["population"] for region in state_ac.body["regions"]
+    ):
+        raise AssertionError("State population aggregation mismatch.")
+    state_sp = request("/api/v1/states/SP")
+    if state_sp.body["state"]["health_region_count"] != len(state_sp.body["regions"]):
+        raise AssertionError("Large-state count mismatch.")
+    state_df = request("/api/v1/states/DF")
+    if state_df.body["state"]["uf"] != "DF" or not state_df.body["regions"]:
+        raise AssertionError("DF state contract failed.")
+    request("/api/v1/states/ac")
+    request("/api/v1/states/XX", 404)
+    injection_state = urllib.parse.quote("AC' OR '1'='1", safe="")
+    request(f"/api/v1/states/{injection_state}", 422)
+    print("state profiles PASS")
+
     profile = request("/api/v1/health-regions/12001")
     db_profile = db_row(
         """
@@ -252,6 +276,7 @@ def validate() -> None:
     request("/api/v1/map/health-regions?metric=not_a_metric", 422)
     request("/api/v1/map/health-regions?geometry_profile=unknown", 422)
     request("/api/v1/health-regions?uf=ABCDE", 422)
+    request("/api/v1/states/AC?release_id=NOT_A_RELEASE", 404)
     injection = urllib.parse.quote("12001' OR '1'='1", safe="")
     request(f"/api/v1/health-regions?q={injection}&limit=10")
     print("errors PASS")

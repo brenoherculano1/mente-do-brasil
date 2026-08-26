@@ -1,0 +1,1 @@
+{'status': 'PASS', 'checks': {'dado_indisponivel_copy': True, 'null_not_zero_distribution': True, 'formatters_accept_null': True}}

@@ -23,6 +23,9 @@ from api.schemas.health_regions import (
     PsychiatricAdmissionsNeed,
     PsychiatristFteCapacity,
     SpatialProfile,
+    StateProfile,
+    StateRegion,
+    StateSummary,
     SuicideNeed,
     TerritoryProfile,
     UfOption,
@@ -31,6 +34,36 @@ from api.schemas.indicators import IndicatorPublic
 from api.schemas.releases import ReleasePublic
 
 WEB_GEOMETRY_VERSION = "MDB_WEB_GEOMETRY_V1"
+
+STATE_NAMES = {
+    "AC": "Acre",
+    "AL": "Alagoas",
+    "AP": "Amapá",
+    "AM": "Amazonas",
+    "BA": "Bahia",
+    "CE": "Ceará",
+    "DF": "Distrito Federal",
+    "ES": "Espírito Santo",
+    "GO": "Goiás",
+    "MA": "Maranhão",
+    "MT": "Mato Grosso",
+    "MS": "Mato Grosso do Sul",
+    "MG": "Minas Gerais",
+    "PA": "Pará",
+    "PB": "Paraíba",
+    "PR": "Paraná",
+    "PE": "Pernambuco",
+    "PI": "Piauí",
+    "RJ": "Rio de Janeiro",
+    "RN": "Rio Grande do Norte",
+    "RS": "Rio Grande do Sul",
+    "RO": "Rondônia",
+    "RR": "Roraima",
+    "SC": "Santa Catarina",
+    "SP": "São Paulo",
+    "SE": "Sergipe",
+    "TO": "Tocantins",
+}
 
 RELEASE_COLUMNS = """
 release_id, canonical_version, method_version, geography_version, release_status,
@@ -235,6 +268,69 @@ def get_health_region_profile(db: Database, release_id: str, code: str) -> Healt
             lisa_cluster=row["lisa_cluster"],
         ),
         data_quality_flags=list(row["data_quality_flags"]),
+    )
+
+
+def get_state_profile(db: Database, release_id: str, uf: str) -> StateProfile:
+    ensure_release_exists(db, release_id)
+    normalized_uf = uf.upper()
+    if normalized_uf not in STATE_NAMES:
+        raise api_error(404, "STATE_NOT_FOUND", "State not found for the requested release.")
+    rows = db.rows(
+        f"""
+        SELECT {PROFILE_COLUMNS}
+        FROM serving.health_region_profile
+        WHERE release_id = %s AND uf = %s
+        ORDER BY health_region_name, health_region_code
+        """,
+        (release_id, normalized_uf),
+    )
+    if not rows:
+        raise api_error(404, "STATE_NOT_FOUND", "State not found for the requested release.")
+    release = release_from_row(rows[0])
+    regions = [
+        StateRegion(
+            health_region_code=row["health_region_code"],
+            health_region_name=row["health_region_name"],
+            uf=row["uf"],
+            population=row["population"],
+            municipality_count=row["municipality_count"],
+            suicide_percentile=row["suicide_percentile"],
+            psychiatric_admission_percentile=row["psychiatric_admission_percentile"],
+            need_score=row["need_score"],
+            caps_percentile=row["caps_percentile"],
+            beds_percentile=row["beds_percentile"],
+            psychiatrist_fte_percentile=row["psychiatrist_fte_percentile"],
+            capacity_score=row["capacity_score"],
+            mismatch_score=row["mismatch_score"],
+            lisa_significant=row["lisa_significant"],
+            lisa_cluster=row["lisa_cluster"],
+            data_quality_flags=list(row["data_quality_flags"]),
+        )
+        for row in rows
+    ]
+    lisa_cluster_counts: dict[str, int] = {}
+    quality_flag_counts: dict[str, int] = {}
+    for region in regions:
+        if region.lisa_significant and region.lisa_cluster:
+            lisa_cluster_counts[region.lisa_cluster] = (
+                lisa_cluster_counts.get(region.lisa_cluster, 0) + 1
+            )
+        for flag in region.data_quality_flags:
+            quality_flag_counts[flag] = quality_flag_counts.get(flag, 0) + 1
+    return StateProfile(
+        release=release,
+        state=StateSummary(
+            uf=normalized_uf,
+            state_name=STATE_NAMES[normalized_uf],
+            health_region_count=len(regions),
+            population=sum(region.population for region in regions),
+            municipality_count=sum(region.municipality_count for region in regions),
+            lisa_significant_count=sum(1 for region in regions if region.lisa_significant),
+            lisa_cluster_counts=lisa_cluster_counts,
+            quality_flag_counts=quality_flag_counts,
+        ),
+        regions=regions,
     )
 
 

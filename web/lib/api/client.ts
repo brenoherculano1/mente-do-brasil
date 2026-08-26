@@ -9,6 +9,7 @@ import type {
   MetricId,
   MunicipalityHealthRegion,
   PaginatedResponse,
+  StateProfile,
 } from "@/types/api";
 
 type ApiErrorBody = {
@@ -60,16 +61,24 @@ export function lookupMunicipality(code: string) {
   );
 }
 
-export function getMapData(metric: MetricId) {
+export function getStateProfile(uf: string) {
+  return request<StateProfile>(`/api/v1/states/${uf}`, {
+    cache: "no-store",
+  });
+}
+
+export function getMapData(metric: MetricId, uf?: string) {
   const params = new URLSearchParams({
     metric,
     include_geometry: "true",
     geometry_profile: "overview",
   });
+  if (uf) params.set("uf", uf);
   return request<HealthRegionFeatureCollection>(`/api/v1/map/health-regions?${params}`);
 }
 
-export function getMapItems(metric: MetricId) {
+export function getMapItems(metric: MetricId, uf?: string) {
   const params = new URLSearchParams({ metric });
+  if (uf) params.set("uf", uf);
   return request<MapItem[]>(`/api/v1/map/health-regions?${params}`);
 }
