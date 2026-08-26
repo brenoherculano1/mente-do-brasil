@@ -1,14 +1,8 @@
-status=PASS
-name	component	secret	local_source	production_requirement
-MDB_API_DB_PASSWORD	api/db	YES	.env/.env.example	required if component deployed
-MDB_API_DB_USER	api/db	NO	.env/.env.example	required if component deployed
-MDB_API_HOST	api/db	NO	.env/.env.example	required if component deployed
-MDB_API_PORT	api/db	NO	.env/.env.example	required if component deployed
-MDB_DB_HOST	api/db	NO	.env/.env.example	required if component deployed
-MDB_DB_NAME	api/db	NO	.env/.env.example	required if component deployed
-MDB_DB_PASSWORD	api/db	YES	.env/.env.example	required if component deployed
-MDB_DB_PORT	api/db	NO	.env/.env.example	required if component deployed
-MDB_DB_USER	api/db	NO	.env/.env.example	required if component deployed
-MDB_DEFAULT_RELEASE_ID	api/db	NO	.env/.env.example	required if component deployed
-MDB_IMPORTED_AT	api/db	NO	.env/.env.example	required if component deployed
-NEXT_PUBLIC_MDB_API_BASE_URL	frontend	NO	.env/.env.example	required if component deployed
+COMMAND: update env inventory after same-origin hardening
+EXIT_CODE: 0
+OUTPUT:
+MDB_API_INTERNAL_BASE_URL	server-only	NO	.env.example/web.env.example	required in production runtime for Next API ingress and server rendered API requests
+MDB_API_ALLOW_FULL_GEOMETRY	server-only	NO	.env.example	default false; full geometry remains blocked unless explicitly enabled
+MDB_API_ALLOWED_ORIGINS	server	NO	.env.example	FastAPI CORS allowlist; wildcard rejected
+NEXT_PUBLIC_MDB_API_BASE_URL	deprecated	NO	none	not required by production frontend runtime
+PASS

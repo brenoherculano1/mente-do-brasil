@@ -1,0 +1,15 @@
+COMMAND: python same-origin proxy performance sample
+EXIT_CODE: 0
+OUTPUT:
+state_ac_direct_ms=34.81
+state_ac_proxy_ms=52.95
+state_ac_overhead_ms=18.13
+profile_12001_direct_ms=7.32
+profile_12001_proxy_ms=12.54
+profile_12001_overhead_ms=5.21
+overview_geometry_direct_ms=202.14
+overview_geometry_proxy_ms=370.47
+overview_geometry_overhead_ms=168.32
+sample_size_per_path=3
+full_geometry_benchmarked=NO
+PASS

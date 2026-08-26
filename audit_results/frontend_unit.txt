@@ -1,3 +1,5 @@
+COMMAND: npm run test
+OUTPUT:
 
 > mente-do-brasil-web@0.1.0 test
 > vitest run
@@ -5,19 +7,21 @@
 
  RUN  v3.2.7 /Users/brenoherculano/Documents/New project/mente-do-brasil/web
 
- ✓ tests/unit/color-scale.test.ts (5 tests) 3ms
- ✓ tests/unit/format.test.ts (3 tests) 18ms
- ✓ tests/unit/profile-components.test.tsx (4 tests) 119ms
- ✓ tests/unit/about-page.test.tsx (6 tests) 1053ms
-   ✓ about page > renders the institutional positioning and current scope  574ms
- ✓ tests/unit/methodology-page.test.tsx (6 tests) 1246ms
-   ✓ methodology page > renders locked metadata identifiers and standard population  675ms
- ✓ tests/unit/state-page.test.tsx (5 tests) 1317ms
-   ✓ state page > renders AC with three Health Regions and no state score or ranking  815ms
- ✓ tests/unit/data-page.test.tsx (7 tests) 1668ms
-   ✓ data page > renders release identifiers, counts, and locked hashes  888ms
+ ✓ tests/unit/color-scale.test.ts (5 tests) 6ms
+ ✓ tests/unit/format.test.ts (3 tests) 33ms
+ ✓ tests/unit/profile-components.test.tsx (4 tests) 100ms
+ ✓ tests/unit/about-page.test.tsx (6 tests) 934ms
+   ✓ about page > renders the institutional positioning and current scope  422ms
+ ✓ tests/unit/methodology-page.test.tsx (6 tests) 1186ms
+   ✓ methodology page > renders locked metadata identifiers and standard population  595ms
+ ✓ tests/unit/state-page.test.tsx (5 tests) 1251ms
+   ✓ state page > renders AC with three Health Regions and no state score or ranking  649ms
+ ✓ tests/unit/data-page.test.tsx (7 tests) 1893ms
+   ✓ data page > renders release identifiers, counts, and locked hashes  909ms
 
  Test Files  7 passed (7)
       Tests  36 passed (36)
-   Start at  17:58:47
-   Duration  4.70s (transform 967ms, setup 1.60s, collect 3.77s, tests 5.42s, environment 9.21s, prepare 2.28s)
+   Start at  18:19:54
+   Duration  8.02s (transform 2.30s, setup 3.94s, collect 8.83s, tests 5.40s, environment 20.84s, prepare 3.16s)
+
+EXIT_CODE: 0

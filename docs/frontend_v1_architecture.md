@@ -117,16 +117,17 @@ duplicate information is available through search and profile pages.
 
 ## API Dependency
 
-The API base URL is centralized in `lib/api/config.ts` and configured by:
+The browser does not require a public API base URL. Next.js exposes a narrow
+same-origin ingress at:
 
 ```text
-NEXT_PUBLIC_MDB_API_BASE_URL
+/api/v1/*
 ```
 
-Default local value:
+The internal FastAPI base URL is server-only:
 
 ```text
-http://127.0.0.1:8000
+MDB_API_INTERNAL_BASE_URL
 ```
 
 ## Intentionally Not Implemented

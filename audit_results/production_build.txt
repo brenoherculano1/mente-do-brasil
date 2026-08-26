@@ -1,25 +1,28 @@
+COMMAND: MDB_API_INTERNAL_BASE_URL=http://127.0.0.1:8000 npm run build
+OUTPUT:
 
 > mente-do-brasil-web@0.1.0 build
 > next build
 
 ▲ Next.js 16.3.2 (Turbopack)
-✓ Running next.config.ts took 98ms
+✓ Running next.config.ts took 1514ms
 
   Creating an optimized production build ...
-✓ Compiled successfully in 562ms
+✓ Compiled successfully in 718ms
   Running TypeScript ...
-  Finished TypeScript in 1689ms ...
+  Finished TypeScript in 3.5s ...
   Collecting page data using 7 workers ...
   Generating static pages using 7 workers (0/6) ...
   Generating static pages using 7 workers (1/6) 
   Generating static pages using 7 workers (2/6) 
   Generating static pages using 7 workers (4/6) 
-✓ Generating static pages using 7 workers (6/6) in 242ms
+✓ Generating static pages using 7 workers (6/6) in 604ms
   Finalizing page optimization ...
 
 Route (app)
 ┌ ƒ /
 ├ ○ /_not-found
+├ ƒ /api/v1/[...path]
 ├ ○ /dados
 ├ ƒ /estado/[uf]
 ├ ○ /metodologia
@@ -30,3 +33,4 @@ Route (app)
 ○  (Static)   prerendered as static content
 ƒ  (Dynamic)  server-rendered on demand
 
+EXIT_CODE: 0

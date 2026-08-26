@@ -1,5 +1,8 @@
-status=PASS
-client_public_env_vars=NEXT_PUBLIC_MDB_API_BASE_URL
-expected_public_value=API base URL only; no secret by design
-bundle_secret_hits=0
-bundle_secret_hits_detail=NONE
+COMMAND: update client env exposure after same-origin hardening
+EXIT_CODE: 0
+OUTPUT:
+client_public_env_vars=none required for API base URL
+NEXT_PUBLIC_MDB_API_BASE_URL=removed_from_frontend_runtime_requirement
+MDB_API_INTERNAL_BASE_URL=server_only
+client_bundle_backend_matches=0 per client_backend_exposure.txt
+PASS

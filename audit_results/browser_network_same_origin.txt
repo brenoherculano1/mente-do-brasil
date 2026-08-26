@@ -1,0 +1,9 @@
+COMMAND: playwright browser network same-origin audit
+EXIT_CODE: 0
+OUTPUT:
+browser_data_requests_total=2
+same_origin_requests=2
+direct_fastapi_browser_requests=0
+internal_api_url_exposed=NO
+sample_requests=["http://127.0.0.1:3000/api/v1/map/health-regions?metric=mismatch_score&include_geometry=true&geometry_profile=overview","http://127.0.0.1:3000/api/v1/map/health-regions?metric=mismatch_score&include_geometry=true&geometry_profile=overview&uf=AC"]
+PASS

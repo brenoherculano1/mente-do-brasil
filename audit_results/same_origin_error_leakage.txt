@@ -1,0 +1,11 @@
+COMMAND: python same-origin backend-unavailable leakage validation
+EXIT_CODE: 0
+OUTPUT:
+status=503
+error_code=UPSTREAM_UNAVAILABLE
+content_type=None
+body_bytes=97
+internal_url_leakage=PASS
+leak_terms_found=[]
+body_preview='{"error":{"code":"UPSTREAM_UNAVAILABLE","message":"Operational API is temporarily unavailable."}}'
+PASS

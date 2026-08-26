@@ -1,0 +1,10 @@
+COMMAND: python CORS validation after same-origin hardening
+EXIT_CODE: 0
+OUTPUT:
+wildcard_rejected=True
+local_allowed_origin_status=200
+local_allowed_origin_acao=http://localhost:3000
+random_external_origin_status=200
+random_external_origin_acao=None
+browser_normal_path_cross_origin=NO
+PASS

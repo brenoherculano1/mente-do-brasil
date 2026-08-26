@@ -1,0 +1,26 @@
+COMMAND: python same-origin proxy contract validation
+EXIT_CODE: 0
+OUTPUT:
+state_ac_status=200
+state_ac_regions=3
+region_12001_name=Alto Acre
+municipality_1100015_region=11005
+overview_status=200
+overview_features=439
+overview_semantic_equal_direct=True
+overview_proxy_bytes=756156
+overview_direct_bytes=756156
+overview_proxy_content_encoding=None
+full_status=403
+full_error_code=FULL_GEOMETRY_RESTRICTED
+invalid_profile_status=422
+invalid_region_status=404
+/api/docs_status=404
+/api/redoc_status=404
+/api/openapi.json_status=404
+/docs_status=404
+/redoc_status=404
+/openapi.json_status=404
+/api/health_status=404
+/api/ready_status=404
+PASS

@@ -1,7 +1,10 @@
-RELEASE_STATUS_VALIDATION
+COMMAND: python release status validation
+EXIT_CODE: 0
+OUTPUT:
 release_id=MDB_ANALYTICAL_2024_1
 release_status=VALIDATING
 quality_status=VALIDATED
 release_gate=PASS
+release_readiness=READY (documented gate state; not a meta.releases column)
 public_release_status=NOT_RELEASED
 PASS

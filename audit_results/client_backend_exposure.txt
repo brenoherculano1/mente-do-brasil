@@ -1,0 +1,11 @@
+COMMAND: rg client bundle for backend/internal API exposure
+EXIT_CODE: 0
+OUTPUT:
+pattern=NEXT_PUBLIC_MDB_API_BASE_URL client_bundle_matches=0
+pattern=MDB_API_INTERNAL_BASE_URL client_bundle_matches=0
+pattern=127.0.0.1:8000 client_bundle_matches=0
+pattern=localhost:8000 client_bundle_matches=0
+pattern=FastAPI client_bundle_matches=0
+client_bundle_scope=web/.next/static + web/.next/types
+internal_backend_url_client_exposure=PASS
+PASS

@@ -1,3 +1,5 @@
+COMMAND: PATH=".venv/bin:$PATH" .venv/bin/python scripts/validate_api.py
+OUTPUT:
 MENTE DO BRASIL API VALIDATION
 health PASS
 ready PASS
@@ -8,10 +10,11 @@ state profiles PASS
 profile PASS
 municipality lookup PASS
 map metadata PASS
-map geometry PASS {'overview_bytes': 756156, 'detail_bytes': 2763517, 'full_blocked_status': 403, 'full_blocked_bytes': 112, 'full_blocked_elapsed_ms': 2.49, 'overview_gzip_bytes': 200382}
+map geometry PASS {'overview_bytes': 756156, 'detail_bytes': 2763517, 'full_blocked_status': 403, 'full_blocked_bytes': 112, 'full_blocked_elapsed_ms': 4.88, 'overview_gzip_bytes': 200382}
 scientific regression PASS
 flags PASS
 errors PASS
 read-only PASS
-latency_ms {'health': 33.03, 'ready': 6.63, 'map_geometry_overview': 65.32, 'map_geometry_detail': 249.88, 'map_geometry_full_blocked': 2.49}
+latency_ms {'health': 70.76, 'ready': 36.65, 'map_geometry_overview': 175.2, 'map_geometry_detail': 521.52, 'map_geometry_full_blocked': 4.88}
 PASS
+EXIT_CODE: 0

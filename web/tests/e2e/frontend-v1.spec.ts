@@ -502,7 +502,7 @@ function trackMapRequests(page: import("@playwright/test").Page) {
 
 async function fetchApi(page: import("@playwright/test").Page, path: string) {
   return page.evaluate(async (requestPath) => {
-    const response = await fetch(`http://127.0.0.1:8000${requestPath}`);
+    const response = await fetch(requestPath);
     return response.json();
   }, path);
 }

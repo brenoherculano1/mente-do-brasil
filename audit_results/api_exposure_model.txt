@@ -1,7 +1,10 @@
-status=WARNING
-frontend_access=browser client components fetch directly from NEXT_PUBLIC_MDB_API_BASE_URL
-current_default=http://127.0.0.1:8000
-same_origin_proxy=not implemented
-api_public_product=not implemented; endpoints are operational API for frontend, not a documented API product
-production_gap=direct browser-to-FastAPI requires production CORS origin and exposes backend hostname unless same-origin reverse proxy is used
-recommendation=prefer same-origin /api ingress/proxy for public website launch
+COMMAND: update API exposure model after same-origin hardening
+EXIT_CODE: 0
+OUTPUT:
+frontend_access=browser client components fetch same-origin /api/v1 paths
+server_access=server components use server-only MDB_API_INTERNAL_BASE_URL
+same_origin_proxy=implemented via web/app/api/v1/[...path]/route.ts
+proxy_scope=/api/v1/* only
+direct_fastapi_browser_requests=0 per browser_network_same_origin.txt
+production_gap=security headers, rate limiting, cache, docs posture, robots, privacy/contact, observability, backup/recovery remain unresolved
+PASS

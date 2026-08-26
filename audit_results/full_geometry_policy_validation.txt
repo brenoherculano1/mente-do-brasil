@@ -1,14 +1,13 @@
-FULL_GEOMETRY_POLICY_VALIDATION
-default_full_status=403
-default_full_bytes=112
-default_full_elapsed_ms=1.84
-default_full_body={'error': {'code': 'FULL_GEOMETRY_RESTRICTED', 'message': 'Full geometry is not available on the operational API.'}}
-overview_status=200
-overview_features=439
-overview_bytes=756156
-detail_status=200
-detail_features=439
-detail_bytes=2763517
-env_absent_or_false_behavior=BLOCKED_BY_SERVER_CONFIG
-env_true_behavior=COVERED_BY_DIRECT_POLICY_TEST
+COMMAND: python full geometry policy validation through direct API and same-origin proxy
+EXIT_CODE: 0
+OUTPUT:
+direct_full_status=403
+direct_full_bytes=112
+direct_full_elapsed_ms=75.73
+direct_full_error_code=FULL_GEOMETRY_RESTRICTED
+proxy_full_status=403
+proxy_full_bytes=112
+proxy_full_elapsed_ms=107.75
+proxy_full_error_code=FULL_GEOMETRY_RESTRICTED
+MDB_API_ALLOW_FULL_GEOMETRY_default=false
 PASS

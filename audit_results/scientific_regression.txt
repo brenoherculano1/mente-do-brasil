@@ -1,3 +1,6 @@
+COMMAND: PATH=".venv/bin:$PATH" .venv/bin/pytest -q
+OUTPUT:
 ........................................................................ [ 97%]
 ..                                                                       [100%]
-74 passed in 5.89s
+74 passed in 24.02s
+EXIT_CODE: 0

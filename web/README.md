@@ -17,7 +17,7 @@ Copy `.env.example` to `.env.local` only for local overrides. Do not commit
 `.env.local`.
 
 ```bash
-NEXT_PUBLIC_MDB_API_BASE_URL=http://127.0.0.1:8000
+MDB_API_INTERNAL_BASE_URL=http://127.0.0.1:8000
 ```
 
 ## Local Run
@@ -77,7 +77,9 @@ also expects Docker/PostgreSQL and the local FastAPI API to be running.
 
 ## Architecture
 
-API access is centralized in `lib/api`. Formatting is centralized in
+Browser API access is centralized in `lib/api/client.ts` and uses same-origin
+`/api/v1/...` paths. Server-rendered pages use `lib/api/server.ts` with the
+server-only `MDB_API_INTERNAL_BASE_URL`. Formatting is centralized in
 `lib/format.ts`. Map color rules are in `lib/map/color-scale.ts` and are visual
 only; the frontend does not recalculate scientific metrics, percentiles,
 Moran/LISA, flags, rates, Need, Capacity, or Mismatch.

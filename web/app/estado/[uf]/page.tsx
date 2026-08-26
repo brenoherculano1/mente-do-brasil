@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
-import { getStateProfile } from "@/lib/api/client";
 import { isNotFound } from "@/lib/api/errors";
+import { getStateProfileServer } from "@/lib/api/server";
 import { isValidUf, normalizeUf, stateNameForUf } from "@/lib/states";
 import { StatePage } from "@/features/state/StatePage";
 
@@ -34,7 +34,7 @@ export default async function Page({ params }: StatePageProps) {
 
 async function loadStateProfile(uf: string) {
   try {
-    return await getStateProfile(uf);
+    return await getStateProfileServer(uf);
   } catch (error) {
     if (isNotFound(error)) notFound();
     throw error;

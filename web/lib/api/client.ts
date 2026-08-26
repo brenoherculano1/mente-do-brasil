@@ -1,4 +1,4 @@
-import { API_BASE_URL } from "@/lib/api/config";
+import { sameOriginApiPath } from "@/lib/api/config";
 import { MdbApiError } from "@/lib/api/errors";
 import type {
   HealthRegionFeatureCollection,
@@ -20,7 +20,7 @@ type ApiErrorBody = {
 };
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
-  const response = await fetch(`${API_BASE_URL}${path}`, {
+  const response = await fetch(sameOriginApiPath(path), {
     ...init,
     headers: { Accept: "application/json", ...init?.headers },
   });
