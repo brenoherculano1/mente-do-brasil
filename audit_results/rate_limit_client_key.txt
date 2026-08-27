@@ -1,0 +1,22 @@
+HARDENING_04_RATE_LIMIT_CLIENT_KEY
+status=PASS
+
+headers_considered_when_explicitly_trusted:
+- x-forwarded-for
+- x-real-ip
+- forwarded
+
+trust_assumption:
+- Default is not to trust arbitrary client-supplied proxy headers.
+- Trusted proxy headers are used only if MDB_RATE_LIMIT_TRUST_PROXY_HEADERS=true is set server-side.
+- Production reverse proxy must overwrite these headers if that option is enabled.
+
+fallback_behavior:
+- If no trusted identifier is available, key=anonymous-global.
+- Fallback remains protected; rate limiting is not disabled.
+
+privacy:
+- IP persisted: NO.
+- IP written by limiter to permanent audit logs: NO.
+- Database/table for rate limiting: NO.
+- Trusted identifiers are hashed one-way in memory.

@@ -1,29 +1,16 @@
-COMMAND: npm run test
-OUTPUT:
+HARDENING_04_FRONTEND_UNIT
+status=PASS
 
-> mente-do-brasil-web@0.1.0 test
-> vitest run
+command:
+- npm test
 
+result:
+- Test Files: 9 passed.
+- Tests: 46 passed.
 
- RUN  v3.2.7 /Users/brenoherculano/Documents/New project/mente-do-brasil/web
+new_coverage:
+- API ingress policy classification/cache/rate-limit tests.
+- API route short-circuit test proving upstream_calls=0 on rejected request.
 
- ✓ tests/unit/color-scale.test.ts (5 tests) 6ms
- ✓ tests/unit/format.test.ts (3 tests) 113ms
- ✓ tests/unit/profile-components.test.tsx (4 tests) 111ms
- ✓ tests/unit/about-page.test.tsx (6 tests) 1127ms
-   ✓ about page > renders the institutional positioning and current scope  558ms
- ✓ tests/unit/methodology-page.test.tsx (6 tests) 1460ms
-   ✓ methodology page > renders locked metadata identifiers and standard population  756ms
- ✓ tests/unit/state-page.test.tsx (5 tests) 1489ms
-   ✓ state page > renders AC with three Health Regions and no state score or ranking  686ms
- ✓ tests/unit/data-page.test.tsx (7 tests) 2182ms
-   ✓ data page > renders release identifiers, counts, and locked hashes  945ms
-   ✓ data page > translates NOT_RELEASED without exposing downloads or localhost  306ms
-   ✓ data page > renders the complete 35-field dictionary and filters locally  346ms
-
- Test Files  7 passed (7)
-      Tests  36 passed (36)
-   Start at  18:59:33
-   Duration  7.74s (transform 2.27s, setup 6.15s, collect 9.31s, tests 6.49s, environment 18.12s, prepare 1.55s)
-
-EXIT_CODE: 0
+known_noise:
+- Existing React act(...) warnings in state-page tests; tests pass.

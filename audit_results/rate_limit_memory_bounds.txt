@@ -1,0 +1,18 @@
+HARDENING_04_RATE_LIMIT_MEMORY_BOUNDS
+status=PASS
+
+implementation:
+- MAX_RATE_LIMIT_BUCKETS=5000.
+- RATE_LIMIT_BUCKET_TTL_MS=120000.
+- Cleanup removes expired buckets.
+- Capacity pressure evicts expired buckets first, then oldest-expiring bucket.
+
+unit_validation:
+- Fake clients generated at 2x test cap.
+- bucket_count <= configured cap: PASS.
+- expired bucket cleanup: PASS.
+- final test bucket_count=0 after TTL cleanup: PASS.
+
+privacy:
+- Buckets store hashed or fallback keys only.
+- No IP persistence.

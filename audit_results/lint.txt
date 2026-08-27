@@ -1,7 +1,8 @@
-COMMAND: npm run lint
-OUTPUT:
+HARDENING_04_LINT
+status=PASS
 
-> mente-do-brasil-web@0.1.0 lint
-> eslint .
+command:
+- npm run lint
 
-EXIT_CODE: 0
+result:
+- eslint . completed successfully.

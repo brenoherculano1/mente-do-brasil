@@ -1,0 +1,13 @@
+HARDENING_04_RATE_LIMIT_UPSTREAM_SHORT_CIRCUIT
+status=PASS
+
+unit_test:
+- web/tests/unit/api-route-rate-limit.test.ts.
+- Upstream fetch was mocked.
+- D_GEOMETRY_DETAIL limit=6.
+- Request 7 returned 429.
+- fetch calls observed: 6.
+- upstream_calls_for_rejected_request=0.
+
+result:
+- Rate-limited requests are rejected by Next before FastAPI fetch.

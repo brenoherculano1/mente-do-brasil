@@ -1,0 +1,17 @@
+HARDENING_04_RATE_LIMIT_POLICY
+status=PASS
+algorithm=token_bucket
+window=60 seconds
+storage=in-memory per Node process
+max_buckets=5000
+bucket_ttl_ms=120000
+
+class	endpoint_patterns	limit	rationale
+A_METADATA	/api/v1/releases, /api/v1/indicators, /api/v1/ufs	180 requests / 60 seconds / client	cheap metadata
+B_NORMAL_READ	/api/v1/states/*, /api/v1/health-regions*, /api/v1/municipalities/*/health-region, non-geometry map rows	120 requests / 60 seconds / client	normal human reads/search
+C_GEOMETRY_OVERVIEW	/api/v1/map/health-regions with include_geometry=true and geometry_profile omitted/overview/full	30 requests / 60 seconds / client	large public map payload
+D_GEOMETRY_DETAIL	/api/v1/map/health-regions with include_geometry=true and geometry_profile=detail	6 requests / 60 seconds / client	largest public geometry payload
+
+distributed_limitation:
+- The limiter is per-process. Multiple production instances can multiply effective capacity.
+- Future edge/distributed enforcement can reinforce the same class policy.

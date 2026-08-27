@@ -1,0 +1,10 @@
+HARDENING_04_FASTAPI_DOCS_REGRESSION
+status=PASS
+
+default_env:
+- GET http://127.0.0.1:8000/docs => 404.
+- GET http://127.0.0.1:8000/openapi.json => 404.
+
+notes:
+- FastAPI docs remain outside the same-origin public ingress.
+- No docs route was enabled in this hardening.

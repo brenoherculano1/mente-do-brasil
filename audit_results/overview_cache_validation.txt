@@ -1,0 +1,24 @@
+HARDENING_04_OVERVIEW_CACHE_VALIDATION
+status=PASS
+
+overview:
+- endpoint=/api/v1/map/health-regions?include_geometry=true&geometry_profile=overview.
+- status=200.
+- features=439.
+- raw_size_bytes=756156.
+- gzip_size_bytes=197556.
+- content_encoding_with_accept_encoding_gzip=gzip.
+- Cache-Control=public, max-age=300, s-maxage=3600, stale-while-revalidate=86400.
+
+detail:
+- endpoint=/api/v1/map/health-regions?include_geometry=true&geometry_profile=detail.
+- status=200.
+- features=439.
+- raw_size_bytes=2763517.
+- Cache-Control=public, max-age=60, s-maxage=900, stale-while-revalidate=3600.
+
+full_guard:
+- same-origin status=403.
+- direct FastAPI status=403.
+- full_cache=no-store.
+- Full geometry was not downloaded.

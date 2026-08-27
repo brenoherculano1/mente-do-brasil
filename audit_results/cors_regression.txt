@@ -1,8 +1,12 @@
-COMMAND: python CORS regression
-EXIT_CODE: 0
-OUTPUT:
-wildcard_rejected=True
-local_allowed_origin_acao=http://localhost:3000
-random_external_origin_acao=None
-browser_normal_path_cross_origin=NO
-PASS
+HARDENING_04_CORS_REGRESSION
+status=PASS
+
+direct_fastapi_preflight:
+- Method: OPTIONS.
+- Origin: https://example.invalid.
+- Access-Control-Request-Method: GET.
+- Status: 400.
+- Access-Control-Allow-Origin wildcard: absent.
+
+same_origin:
+- Browser public path remains same-origin /api/v1/*.

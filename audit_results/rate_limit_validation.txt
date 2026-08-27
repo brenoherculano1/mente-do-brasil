@@ -1,0 +1,27 @@
+HARDENING_04_RATE_LIMIT_VALIDATION
+status=PASS
+
+unit:
+- npm test: 46/46 PASS.
+- within_limit: PASS.
+- over_limit: PASS.
+- 429 status: PASS.
+- Retry-After > 0: PASS.
+- window/token reset with fake clock: PASS.
+- different clients independent: PASS.
+- classes independent: PASS.
+- fallback client protected: PASS.
+- 429 body stable: PASS.
+- 429 Cache-Control: no-store PASS.
+
+real_http:
+- Endpoint: /api/v1/map/health-regions?include_geometry=true&geometry_profile=detail.
+- Requests 1-6: 200.
+- Request 7: 429.
+- Retry-After observed: 6 seconds.
+- RateLimit-Limit observed: 6.
+- RateLimit-Remaining observed: 0.
+- Cache-Control observed on 429: no-store.
+- 429 body: {"error":{"code":"RATE_LIMITED","message":"Too many requests. Try again shortly."}}
+- Security headers on 429: CSP, HSTS, nosniff, Referrer-Policy, Permissions-Policy, X-Frame-Options present.
+- X-Powered-By on 429: absent.

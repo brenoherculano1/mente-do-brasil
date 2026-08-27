@@ -71,8 +71,6 @@ metadata, DNS, deployment, or public status was changed.
 The V1 website should not be made public until the operational hardening items
 below are closed:
 
-- Add endpoint-class rate limiting and response-size controls.
-- Add cache policy for versioned release data and geometry.
 - Define robots/indexing behavior before first public URL.
 - Define privacy/contact/correction/security reporting channel.
 - Add minimum production observability and backup/restore procedure.
@@ -100,10 +98,10 @@ decisions. It is not required for V1 website launch.
 
 | Dimension | Status | Rationale |
 |---|---:|---|
-| Application security | WARNING | XSS, SQL tests, and baseline security headers pass; rate limits are still missing. |
+| Application security | PASS | XSS, SQL tests, baseline security headers, and same-origin API rate limiting pass locally. |
 | Infrastructure security | WARNING | Local DB is bound to `127.0.0.1`; production architecture is not defined. |
-| API exposure | WARNING | `full` geometry is blocked by default, browser requests use same-origin `/api/v1`, and FastAPI docs are off by default; remaining API exposure work is rate limits, cache, and response-size controls. |
-| Production deployment readiness | BLOCKER | Same-origin ingress and baseline headers are prepared, but no production cache/rate-limit/observability plan is implemented. |
+| API exposure | PASS | `full` geometry is blocked by default, browser requests use same-origin `/api/v1`, FastAPI docs are off by default, rate limits are active, and API cache policy is explicit. |
+| Production deployment readiness | BLOCKER | Same-origin ingress, baseline headers, rate limits, and HTTP cache policy are prepared, but robots/indexing, privacy/contact, observability, and backup/recovery remain open. |
 | Privacy / data collection | HUMAN_DECISION_REQUIRED | Dataset is aggregate-only; public privacy/contact posture is not defined. |
 | Legal / licensing / attribution | HUMAN_DECISION_REQUIRED | Public data license and attribution/legal review are unresolved. |
 | Reliability / observability / recovery | WARNING | Rebuildability passes; production backup/restore and observability are missing. |
@@ -127,8 +125,8 @@ decisions. It is not required for V1 website launch.
 | FastAPI docs exposure | PASS | `audit_results/fastapi_docs_posture.txt` | CLOSED | Docs, Redoc, and OpenAPI HTTP endpoints are disabled by default and require explicit server-side opt-in. | CODEX |
 | Full geometry exposure | PASS | `audit_results/api_regression.txt`, `audit_results/full_geometry_policy_validation.txt` | CLOSED | `full` is blocked by default before the heavy query path. | CODEX |
 | Detail geometry exposure | WARNING | `audit_results/geometry_exposure_audit.txt` | RECOMMENDED | Restrict or heavily cache if not needed. | CODEX |
-| Rate limiting | WARNING | `audit_results/rate_limit_audit.txt` | REQUIRED_BEFORE_LAUNCH | Add class-based limits and size gates. | CODEX |
-| Cache/compression | WARNING | `audit_results/cache_audit.txt` | REQUIRED_BEFORE_LAUNCH | Add CDN/API cache policy for versioned data. | CODEX |
+| Rate limiting | PASS | `audit_results/rate_limit_validation.txt`, `audit_results/rate_limit_policy.txt` | MITIGATED | Preserve class-based limits and document any future edge reinforcement separately. | CODEX |
+| Cache/compression | PASS | `audit_results/cache_policy.txt`, `audit_results/overview_cache_validation.txt` | MITIGATED | Preserve API Cache-Control policy; future CDN may honor these headers. | CODEX |
 | Security headers | PASS | `audit_results/security_headers_validation.txt` | CLOSED | CSP, HSTS, nosniff, Referrer-Policy, Permissions-Policy, and X-Frame-Options are emitted by Next. | CODEX |
 | Privacy dataset | PASS | `audit_results/privacy_dataset_audit.txt` | REQUIRED_BEFORE_LAUNCH | Keep aggregate-only data contract. | CODEX |
 | Website trackers/cookies | PASS | `audit_results/privacy_website_audit.txt` | RECOMMENDED | Recheck if analytics are added. | CODEX |
@@ -451,8 +449,8 @@ Required before website launch:
 - [x] Configure production CORS or remove cross-origin need through proxy.
 - [x] Disable/protect FastAPI docs if backend is reachable.
 - [x] Add production security headers.
-- [ ] Add rate limiting and response-size controls.
-- [ ] Add cache/compression policy.
+- [x] Add endpoint-class rate limiting.
+- [x] Add API cache/compression policy.
 - [ ] Configure robots/indexing.
 - [ ] Define contact/correction/security reporting channel.
 - [ ] Add minimal privacy disclosure.
@@ -488,11 +486,10 @@ Required before public data/API release:
 
 ## Recommended implementation sequence
 
-1. Add endpoint-class rate limiting, response-size controls, and cache policy.
-2. Add robots/indexing policy, privacy disclosure, and contact/correction
+1. Add robots/indexing policy, privacy disclosure, and contact/correction
    channel after human decisions.
-3. Add minimal observability, health checks, and backup/restore or rebuild drill.
-4. Deploy staging only, run full regression plus smoke/security checks.
-5. Obtain explicit human release approval.
-6. Deploy production/domain and change `public_release_status` only in the
+2. Add minimal observability, health checks, and backup/restore or rebuild drill.
+3. Deploy staging only, run full regression plus smoke/security checks.
+4. Obtain explicit human release approval.
+5. Deploy production/domain and change `public_release_status` only in the
     approved release step.

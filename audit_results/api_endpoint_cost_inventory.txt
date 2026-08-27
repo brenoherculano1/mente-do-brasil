@@ -1,0 +1,23 @@
+HARDENING_04_ENDPOINT_COST_INVENTORY
+status=PASS
+scope=/api/v1/* same-origin Next ingress
+
+method	path	frontend_usage	observed_payload_or_cost	expected_frequency	cacheable	rate_class	cache_class
+GET	/api/v1/releases	/dados release inventory	285 bytes	low/medium	yes	A_METADATA	A_METADATA
+GET	/api/v1/releases/{release_id}	contract endpoint	small	low	yes	A_METADATA	A_METADATA
+GET	/api/v1/indicators	home/data dictionary	3094 bytes	low/medium	yes	A_METADATA	A_METADATA
+GET	/api/v1/indicators/{indicator_id}	contract endpoint	small	low	yes	A_METADATA	A_METADATA
+GET	/api/v1/ufs	lookup/filter support	987 bytes	low	yes	A_METADATA	A_METADATA
+GET	/api/v1/states/{uf}	state pages	2155 bytes for AC	normal	yes	B_NORMAL_READ	B_NORMAL_READ
+GET	/api/v1/health-regions	search/list	normal paginated JSON	normal	yes	B_NORMAL_READ	B_NORMAL_READ
+GET	/api/v1/health-regions/{code}	region profile	1217 bytes for 12001	normal	yes	B_NORMAL_READ	B_NORMAL_READ
+GET	/api/v1/municipalities/{code}/health-region	municipality lookup	206 bytes for 1100015	low/medium	yes	B_NORMAL_READ	B_NORMAL_READ
+GET	/api/v1/map/health-regions?include_geometry=false	map item list	normal JSON	normal	yes	B_NORMAL_READ	B_NORMAL_READ
+GET	/api/v1/map/health-regions?include_geometry=true&geometry_profile=overview	home/state maps	756156 bytes raw, 197556 bytes gzip, 439 features	normal map load	yes	C_GEOMETRY_OVERVIEW	C_GEOMETRY_OVERVIEW
+GET	/api/v1/map/health-regions?include_geometry=true&geometry_profile=detail	public detail geometry	2763517 bytes raw, 439 features	rare	yes	D_GEOMETRY_DETAIL	D_GEOMETRY_DETAIL
+GET	/api/v1/map/health-regions?include_geometry=true&geometry_profile=full	not public	403, 112-byte error	should not be used	no-store	C_GEOMETRY_OVERVIEW	no-store
+
+notes:
+- Frontend browser calls use same-origin /api/v1/*.
+- Server Components may call FastAPI directly through MDB_API_INTERNAL_BASE_URL; trusted internal traffic is not forced through the public limiter.
+- No endpoint body was reserialized by the proxy for cache policy.

@@ -1,0 +1,23 @@
+HARDENING_04_CACHE_ERROR_VALIDATION
+status=PASS
+
+403_full_geometry:
+- status=403.
+- Cache-Control=no-store.
+
+422_invalid_metric:
+- status=422.
+- Cache-Control=no-store.
+
+429_rate_limit:
+- status=429.
+- Cache-Control=no-store.
+- Retry-After present.
+
+503_upstream_unavailable:
+- status=503.
+- Cache-Control=no-store.
+- body={"error":{"code":"UPSTREAM_UNAVAILABLE","message":"Operational API is temporarily unavailable."}}
+
+result:
+- Future CDN/reverse proxy should not cache operational failures.

@@ -1,0 +1,15 @@
+HARDENING_04_RATE_LIMIT_PERFORMANCE
+status=PASS
+
+measurement_scope:
+- In-process token bucket: map lookup, arithmetic refill, bounded cleanup.
+- No network storage, Redis, Upstash, Memcached, database, or object cache.
+
+observations:
+- Unit route/policy tests passed without real-time waits.
+- Production E2E did not hit rate limits during normal human-use flows.
+- Real HTTP detail sequence returned 6 allowed responses and then 429 as expected.
+
+overhead_summary:
+- Expected overhead is low single-process CPU work per request.
+- No internal cache-hit claim was made; Cache-Control is declarative for browser/CDN/reverse proxy.

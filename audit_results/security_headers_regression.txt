@@ -1,0 +1,28 @@
+HARDENING_04_SECURITY_HEADERS_REGRESSION
+status=PASS
+
+same_origin_api_200:
+- CSP: present.
+- HSTS: present.
+- X-Content-Type-Options=nosniff.
+- Referrer-Policy: present.
+- Permissions-Policy: present.
+- X-Frame-Options=DENY.
+- X-Powered-By: absent.
+
+rate_limited_429:
+- CSP: present.
+- HSTS: present.
+- X-Content-Type-Options=nosniff.
+- Referrer-Policy: present.
+- Permissions-Policy: present.
+- X-Frame-Options=DENY.
+- X-Powered-By: absent.
+
+upstream_unavailable_503:
+- CSP: present.
+- HSTS: present.
+- X-Content-Type-Options=nosniff.
+- Referrer-Policy: present.
+- Permissions-Policy: present.
+- X-Frame-Options=DENY.

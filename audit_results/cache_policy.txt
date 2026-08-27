@@ -1,0 +1,21 @@
+HARDENING_04_CACHE_POLICY
+status=PASS
+
+endpoint	status	policy_class	Cache-Control
+/api/v1/releases	200	A_METADATA	public, max-age=300, s-maxage=3600, stale-while-revalidate=86400
+/api/v1/indicators	200	A_METADATA	public, max-age=300, s-maxage=3600, stale-while-revalidate=86400
+/api/v1/ufs	200	A_METADATA	public, max-age=300, s-maxage=3600, stale-while-revalidate=86400
+/api/v1/states/AC	200	B_NORMAL_READ	public, max-age=60, s-maxage=900, stale-while-revalidate=3600
+/api/v1/health-regions/12001	200	B_NORMAL_READ	public, max-age=60, s-maxage=900, stale-while-revalidate=3600
+/api/v1/municipalities/1100015/health-region	200	B_NORMAL_READ	public, max-age=60, s-maxage=900, stale-while-revalidate=3600
+/api/v1/map/health-regions?include_geometry=true&geometry_profile=overview	200	C_GEOMETRY_OVERVIEW	public, max-age=300, s-maxage=3600, stale-while-revalidate=86400
+/api/v1/map/health-regions?include_geometry=true&geometry_profile=detail	200	D_GEOMETRY_DETAIL	public, max-age=60, s-maxage=900, stale-while-revalidate=3600
+/api/v1/map/health-regions?include_geometry=true&geometry_profile=full	403	error	no-store
+/api/v1/map/health-regions?metric=not_a_metric	422	error	no-store
+/api/v1/releases when FastAPI unavailable	503	error	no-store
+
+immutable:
+- Not used in API responses.
+
+etag:
+- No large-response hashing added in this hardening.
