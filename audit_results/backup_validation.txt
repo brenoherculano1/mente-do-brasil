@@ -1,0 +1,4 @@
+backup_file=backups/serving_db/mente_do_brasil_serving_20260827T092020Z.dump
+size_bytes=82593912
+sha256=9b4b455fc42b459a97771beb946fecf53c2b759526385c668cb2d137a626ddf6
+backups/serving_db/mente_do_brasil_serving_20260827T092020Z.dump: PostgreSQL custom database dump - v1.16-0

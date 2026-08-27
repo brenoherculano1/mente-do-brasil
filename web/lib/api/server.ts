@@ -10,7 +10,7 @@ type ApiErrorBody = {
   };
 };
 
-function internalApiBaseUrl(): string {
+export function internalApiBaseUrl(): string {
   const configured = process.env.MDB_API_INTERNAL_BASE_URL?.replace(/\/$/, "");
   if (configured) return configured;
   if (process.env.NODE_ENV !== "production") return "http://127.0.0.1:8000";

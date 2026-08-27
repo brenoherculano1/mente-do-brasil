@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { isNotFound } from "@/lib/api/errors";
 import { getHealthRegionProfileServer } from "@/lib/api/server";
 import { formatInteger, formatRate, formatScore } from "@/lib/format";
+import { pageMetadata } from "@/lib/seo";
 import { stateNameForUf } from "@/lib/states";
 import { DataQualityNotice } from "@/features/profile/DataQualityNotice";
 import { IndicatorMetric } from "@/features/profile/IndicatorMetric";
@@ -16,12 +17,16 @@ type RegionPageProps = {
 
 export async function generateMetadata({ params }: RegionPageProps): Promise<Metadata> {
   const { codigo } = await params;
+  if (!/^\d{5}$/.test(codigo)) {
+    return { title: "Região de Saúde não encontrada — Mente do Brasil" };
+  }
   try {
     const profile = await getHealthRegionProfileServer(codigo);
-    return {
-      title: `${profile.territory.health_region_name} — Mente do Brasil`,
-      description: `Perfil da Região de Saúde ${profile.territory.health_region_name}.`,
-    };
+    return pageMetadata(
+      `/regiao/${profile.territory.health_region_code}`,
+      `${profile.territory.health_region_name} | Mente do Brasil`,
+      `Perfil da Região de Saúde ${profile.territory.health_region_name}.`,
+    );
   } catch {
     return {
       title: "Região de Saúde não encontrada — Mente do Brasil",
@@ -31,6 +36,7 @@ export async function generateMetadata({ params }: RegionPageProps): Promise<Met
 
 export default async function RegionProfilePage({ params }: RegionPageProps) {
   const { codigo } = await params;
+  if (!/^\d{5}$/.test(codigo)) notFound();
   let profile;
   try {
     profile = await getHealthRegionProfileServer(codigo);

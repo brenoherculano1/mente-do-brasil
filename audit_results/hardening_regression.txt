@@ -1,0 +1,22 @@
+## HARDENING_REGRESSION
+full_geometry_direct_status=
+403
+{"error":{"code":"FULL_GEOMETRY_RESTRICTED","message":"Full geometry is not available on the operational API."}}
+api_docs_status=
+404
+openapi_status=
+404
+invalid_metric_status=
+422
+{"error":{"code":"INVALID_METRIC","message":"Invalid map metric."}}
+sql_injection_probe_status=
+200
+rows= 2
+proxy_rate_limit_status=
+429
+429
+429
+429
+429
+rate_limit_429_seen=
+12

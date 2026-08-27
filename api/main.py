@@ -14,6 +14,7 @@ from api.errors import (
     unhandled_exception_handler,
     validation_exception_handler,
 )
+from api.observability import configure_logging, operational_log, request_id_from_value
 from api.routers.health import router as health_router
 from api.routers.health_regions import router as health_regions_router
 from api.routers.indicators import router as indicators_router
@@ -24,6 +25,7 @@ from api.services.health_regions import ready_check
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     settings = get_settings()
+    operational_log("startup", status="starting", release_id=settings.default_release_id)
     pool = create_pool(settings)
     pool.open(wait=True)
     with pool.connection() as connection:
@@ -35,13 +37,16 @@ async def lifespan(app: FastAPI):
     ready_check(Database(pool), settings.default_release_id)
     app.state.settings = settings
     app.state.pool = pool
+    operational_log("startup", status="ready", release_id=settings.default_release_id)
     try:
         yield
     finally:
         pool.close()
+        operational_log("shutdown", status="complete", release_id=settings.default_release_id)
 
 
 settings = get_settings()
+configure_logging()
 app = FastAPI(
     title="Mente do Brasil API",
     version="0.1.0",
@@ -72,3 +77,12 @@ app.include_router(health_router)
 app.include_router(releases_router)
 app.include_router(indicators_router)
 app.include_router(health_regions_router)
+
+
+@app.middleware("http")
+async def request_id_middleware(request, call_next):
+    request_id = request_id_from_value(request.headers.get("x-request-id"))
+    request.state.request_id = request_id
+    response = await call_next(request)
+    response.headers["X-Request-ID"] = request_id
+    return response

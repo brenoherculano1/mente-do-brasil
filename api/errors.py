@@ -6,6 +6,8 @@ from fastapi import HTTPException, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 
+from api.observability import operational_log
+
 
 def error_payload(code: str, message: str) -> dict:
     return {"error": {"code": code, "message": message}}
@@ -40,6 +42,12 @@ async def validation_exception_handler(
 
 
 async def unhandled_exception_handler(request: Request, exc: Exception) -> JSONResponse:
+    operational_log(
+        "unexpected_exception",
+        level="error",
+        request_id=getattr(request.state, "request_id", None),
+        error_code=type(exc).__name__,
+    )
     return JSONResponse(
         status_code=500,
         content=error_payload("INTERNAL_ERROR", "Internal server error."),

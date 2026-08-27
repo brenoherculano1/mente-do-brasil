@@ -1,0 +1,7 @@
+status=FAIL_PUBLIC_CONFIG
+public_mode=True
+indexing_enabled=True
+site_url_valid=False
+contact_email_configured=False
+security_email_resolved=False
+failures=site_url_https_origin,contact_email,security_email

@@ -1,13 +1,4 @@
-HARDENING_04_RELEASE_STATUS_VALIDATION
-status=PASS
-
-observed_release:
-- release_id=MDB_ANALYTICAL_2024_1.
-- release_status=VALIDATING.
-- quality_status=VALIDATED.
-- release_gate=PASS.
-- release_readiness=READY.
-- public_release_status=NOT_RELEASED.
-
-result:
-- public_release_status preserved as NOT_RELEASED.
+## RELEASE_STATUS_VALIDATION
+MDB_ANALYTICAL_2024_1
+NOT_RELEASED
+None

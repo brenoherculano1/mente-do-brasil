@@ -1,0 +1,4 @@
+status=PASS
+public_release_status=NOT_RELEASED
+production_foundation_status=PRODUCTION_FOUNDATION_COMPLETE_LOCAL
+deployment_status=NOT_DEPLOYED

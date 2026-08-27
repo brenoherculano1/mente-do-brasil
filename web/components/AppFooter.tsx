@@ -9,6 +9,10 @@ export function AppFooter() {
         <div className="small-text">
           <div>Release: MDB_ANALYTICAL_2024_1</div>
           <div>Infraestrutura independente baseada em dados públicos.</div>
+          <div className="footer-links">
+            <a href="/privacidade">Privacidade</a>
+            <a href="/contato">Contato</a>
+          </div>
         </div>
       </div>
     </footer>

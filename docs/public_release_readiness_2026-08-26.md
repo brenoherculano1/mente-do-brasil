@@ -21,8 +21,8 @@ NAO.
   the first public-release hardening round by blocking `full` by default.
 - Security headers and operational FastAPI docs posture were mitigated in the
   third public-release hardening round. Rate limiting, production cache policy,
-  robots/indexing, observability, privacy/contact disclosures, and production
-  backup/restore procedure are not launch-ready.
+  remote staging/production infrastructure, human mailbox configuration, and
+  explicit release approval are not complete.
 - Public data downloads and a public API product are separate releases and are
   not ready because licensing/reuse, attribution/legal review, and API product
   controls are unresolved.
@@ -68,12 +68,12 @@ metadata, DNS, deployment, or public status was changed.
 
 `WEBSITE_RELEASE_READY: NO`
 
-The V1 website should not be made public until the operational hardening items
-below are closed:
+`APPLICATION_PRODUCTION_FOUNDATION: COMPLETE`
 
-- Define robots/indexing behavior before first public URL.
-- Define privacy/contact/correction/security reporting channel.
-- Add minimum production observability and backup/restore procedure.
+The application-side production foundation is complete. The V1 website should
+still not be made public until remote staging/production infrastructure, human
+mailbox configuration, monitoring provider setup, and explicit release approval
+are complete.
 
 ## Public data release gate
 
@@ -101,11 +101,11 @@ decisions. It is not required for V1 website launch.
 | Application security | PASS | XSS, SQL tests, baseline security headers, and same-origin API rate limiting pass locally. |
 | Infrastructure security | WARNING | Local DB is bound to `127.0.0.1`; production architecture is not defined. |
 | API exposure | PASS | `full` geometry is blocked by default, browser requests use same-origin `/api/v1`, FastAPI docs are off by default, rate limits are active, and API cache policy is explicit. |
-| Production deployment readiness | BLOCKER | Same-origin ingress, baseline headers, rate limits, and HTTP cache policy are prepared, but robots/indexing, privacy/contact, observability, and backup/recovery remain open. |
-| Privacy / data collection | HUMAN_DECISION_REQUIRED | Dataset is aggregate-only; public privacy/contact posture is not defined. |
+| Production deployment readiness | BLOCKER | Application foundation is complete, but remote staging/production infrastructure and release approval do not exist yet. |
+| Privacy / data collection | HUMAN_CONFIGURATION_REQUIRED | Dataset is aggregate-only and factual privacy/contact pages exist; public mailbox configuration is still required. |
 | Legal / licensing / attribution | HUMAN_DECISION_REQUIRED | Public data license and attribution/legal review are unresolved. |
-| Reliability / observability / recovery | WARNING | Rebuildability passes; production backup/restore and observability are missing. |
-| Product / SEO / disclosure | WARNING | Titles/descriptions exist; robots, sitemap, OG/Twitter, and canonical coverage are incomplete. |
+| Reliability / observability / recovery | PASS application-side | Structured logs, request IDs, health/ready endpoints, backup/restore/rebuild scripts, and recovery runbook are prepared. |
+| Product / SEO / disclosure | PASS application-side | Indexing fail-closed, robots, sitemap, canonical metadata, OG/Twitter metadata, privacy, and contact routes are prepared. |
 
 ### Findings matrix
 
@@ -131,15 +131,15 @@ decisions. It is not required for V1 website launch.
 | Privacy dataset | PASS | `audit_results/privacy_dataset_audit.txt` | REQUIRED_BEFORE_LAUNCH | Keep aggregate-only data contract. | CODEX |
 | Website trackers/cookies | PASS | `audit_results/privacy_website_audit.txt` | RECOMMENDED | Recheck if analytics are added. | CODEX |
 | Third-party network requests | PASS | `audit_results/third_party_requests.txt` | RECOMMENDED | Keep no external basemap/token dependency. | CODEX |
-| Privacy policy/disclosure | HUMAN_DECISION_REQUIRED | `audit_results/contact_correction_audit.txt` | REQUIRED_BEFORE_LAUNCH | Decide minimal public privacy/contact text. | HUMAN |
+| Privacy policy/disclosure | PASS application-side | `audit_results/privacy_validation.txt`, `metadata/legal/privacy_notice.yaml` | CONFIG_REQUIRED_BEFORE_RELEASE | Configure human contact mailbox before public release. | HUMAN |
 | Dataset license | HUMAN_DECISION_REQUIRED | `audit_results/licensing_attribution_audit.txt` | BLOCKER for data downloads | Choose license/reuse terms. | HUMAN |
 | Source attribution/legal review | EXTERNAL_RESEARCH_REQUIRED | `audit_results/licensing_attribution_audit.txt` | REQUIRED_BEFORE_DATA_RELEASE | Verify DATASUS/SIM/SIH/CNES/IBGE attribution/reuse obligations. | EXTERNAL_RESEARCH |
 | Contact/correction channel | HUMAN_DECISION_REQUIRED | `audit_results/contact_correction_audit.txt` | REQUIRED_BEFORE_LAUNCH | Provide contact/correction/security channel. | HUMAN |
-| SEO basics | WARNING | `audit_results/seo_audit.txt` | RECOMMENDED | Add canonical coverage, OG/Twitter, icons. | CODEX |
-| Robots/indexing | WARNING | `audit_results/robots_indexing_audit.txt` | REQUIRED_BEFORE_LAUNCH | Decide staging/prod index strategy. | HUMAN + CODEX |
-| Sitemap | WARNING | `audit_results/seo_audit.txt` | RECOMMENDED | Decide whether to index 27 states and 439 regions. | HUMAN + CODEX |
-| Observability | WARNING | `audit_results/logging_observability_audit.txt` | REQUIRED_BEFORE_LAUNCH | Add uptime/error/logging minimum. | CODEX |
-| Backup/recovery | WARNING | `audit_results/rebuildability_recovery_audit.txt` | REQUIRED_BEFORE_LAUNCH | Add production backup/restore or rebuild drill. | CODEX |
+| SEO basics | PASS application-side | `audit_results/canonical_validation.txt`, `audit_results/http_public_mode_validation.txt` | CONFIG_REQUIRED_BEFORE_RELEASE | Keep indexing disabled until explicit release approval and production URL configuration are complete. | CODEX |
+| Robots/indexing | PASS application-side | `audit_results/robots_validation.txt` | CONFIG_REQUIRED_BEFORE_RELEASE | Keep indexing disabled until explicit public release approval. | HUMAN + CODEX |
+| Sitemap | PASS application-side | `audit_results/sitemap_validation.txt` | CONFIG_REQUIRED_BEFORE_RELEASE | Public-mode sitemap is ready with 27 states and 439 regions; activate only after final public release approval. | HUMAN + CODEX |
+| Observability | PASS application-side | `audit_results/health_ready_validation.txt`, `docs/operations/observability.md` | PROVIDER_REQUIRED_BEFORE_RELEASE | Configure future remote provider alerts. | CODEX + HUMAN |
+| Backup/recovery | PASS application-side | `audit_results/backup_validation.txt`, `audit_results/restore_drill.txt`, `audit_results/rebuild_drill.txt` | PROVIDER_REQUIRED_BEFORE_RELEASE | Configure remote/provider backup policy in deployment phase. | CODEX + HUMAN |
 | Rebuildability | PASS | `audit_results/rebuildability_recovery_audit.txt` | REQUIRED_BEFORE_LAUNCH | Preserve deterministic rebuild path. | CODEX |
 | README public consistency | WARNING | `audit_results/readme_public_consistency_audit.txt` | RECOMMENDED | Update stale public-facing README language. | CODEX |
 
@@ -451,11 +451,13 @@ Required before website launch:
 - [x] Add production security headers.
 - [x] Add endpoint-class rate limiting.
 - [x] Add API cache/compression policy.
-- [ ] Configure robots/indexing.
+- [x] Configure robots/indexing fail-closed with public-mode switch.
 - [ ] Define contact/correction/security reporting channel.
-- [ ] Add minimal privacy disclosure.
-- [ ] Add observability and health monitoring.
-- [ ] Add production backup/restore or deterministic rebuild drill.
+- [x] Add minimal factual privacy disclosure.
+- [x] Add application health/readiness and structured-log foundation.
+- [x] Add backup/restore/rebuild scripts and local restore/rebuild drills.
+- [ ] Configure human contact/security mailbox.
+- [ ] Configure remote staging/production infrastructure and monitoring provider.
 - [ ] Run full regression and staging smoke test.
 - [ ] Obtain explicit human public release decision.
 
@@ -486,10 +488,9 @@ Required before public data/API release:
 
 ## Recommended implementation sequence
 
-1. Add robots/indexing policy, privacy disclosure, and contact/correction
-   channel after human decisions.
-2. Add minimal observability, health checks, and backup/restore or rebuild drill.
-3. Deploy staging only, run full regression plus smoke/security checks.
+1. Configure human contact/security mailbox values.
+2. Deploy staging only, run full regression plus smoke/security checks.
+3. Configure remote monitoring and backup provider policies.
 4. Obtain explicit human release approval.
 5. Deploy production/domain and change `public_release_status` only in the
     approved release step.

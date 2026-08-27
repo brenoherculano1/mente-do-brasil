@@ -1,0 +1,4 @@
+status=PASS
+request_id_header=validated_on_healthz_readyz_and_api_proxy
+safe_inbound_request_id=request_12345678
+generated_request_id=uuid_when_missing_or_invalid

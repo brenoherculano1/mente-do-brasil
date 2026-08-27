@@ -1,0 +1,7 @@
+status=PASS_PRE_RELEASE
+public_mode=False
+indexing_enabled=False
+site_url_valid=False
+contact_email_configured=False
+security_email_resolved=False
+failures=none

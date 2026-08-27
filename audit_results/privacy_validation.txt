@@ -1,0 +1,6 @@
+status=PASS
+privacy_notice_version=MDB_PRIVACY_NOTICE_1.0
+privacy_notice_status=DRAFT_PRE_RELEASE
+no_patient_level_records_claim=true
+no_current_analytics_or_marketing_cookies_claim=true
+hosting_logs_future_processing_disclosed=true

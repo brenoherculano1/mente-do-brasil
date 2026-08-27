@@ -1,8 +1,4 @@
-HARDENING_04_TYPECHECK
-status=PASS
 
-command:
-- npm run typecheck
+> mente-do-brasil-web@0.1.0 typecheck
+> tsc --noEmit
 
-result:
-- tsc --noEmit completed successfully.

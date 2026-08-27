@@ -247,6 +247,11 @@ export function applyOperationalApiHeaders(
   return headers;
 }
 
+export function applyOperationalSecurityHeaders(headers: Headers): Headers {
+  applySecurityHeaders(headers);
+  return headers;
+}
+
 function applySecurityHeaders(headers: Headers): void {
   for (const [key, value] of Object.entries(OPERATIONAL_API_SECURITY_HEADERS)) {
     if (!headers.has(key)) headers.set(key, value);

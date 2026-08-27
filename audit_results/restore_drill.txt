@@ -1,0 +1,35 @@
+restore_target=mdb_restore_20260827093618
+restore_target=mdb_restore_20260827093618
+restore_exit=0
+SERVING DATABASE VALIDATION
+release: PASS
+geography: PASS
+metrics: PASS
+geometry: PASS
+LISA: PASS
+flags: PASS
+constraints: PASS
+views: PASS
+immutability: PASS
+{
+  "health_regions": 439,
+  "lisa_significant": 135,
+  "lookup": 439,
+  "map": 439,
+  "metrics": 439,
+  "municipalities": 5570,
+  "profile": 439,
+  "releases": 1,
+  "serving_status": 1,
+  "small_suicide": 7,
+  "srid_4674": 439,
+  "valid_geom": 439,
+  "zero_beds": 275
+}
+PASS
+known_lock_ac_regions=3
+known_lock_sp_regions=62
+known_lock_df_regions=1
+known_lock_alto_acre=Alto Acre
+known_lock_municipality_1100015=11005
+restore_cleanup=done

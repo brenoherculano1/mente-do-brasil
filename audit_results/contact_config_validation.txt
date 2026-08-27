@@ -1,0 +1,5 @@
+status=PASS_WITH_HUMAN_CONFIG_PENDING
+contact_env=MDB_PUBLIC_CONTACT_EMAIL
+security_env=MDB_PUBLIC_SECURITY_EMAIL
+human_mailbox_configured=false
+corrections_channel_prepared=true

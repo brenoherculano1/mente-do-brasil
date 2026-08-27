@@ -1,0 +1,7 @@
+status=APPLICATION_PUBLIC_CONFIG_READY
+public_mode=True
+indexing_enabled=True
+site_url_valid=True
+contact_email_configured=True
+security_email_resolved=True
+failures=none

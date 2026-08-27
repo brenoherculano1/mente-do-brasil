@@ -1,0 +1,24 @@
+## PUBLIC_ROBOTS
+User-Agent: *
+Allow: /
+
+Sitemap: https://mentedobrasil.com.br/sitemap.xml
+
+## PUBLIC_SITEMAP_AUDIT
+total_urls=472
+state_urls=27
+region_urls=439
+api_urls=0
+lowercase_state_urls=0
+first_url=https://mentedobrasil.com.br/
+sitemap_url_seen=https://mentedobrasil.com.br/sitemap.xml
+## CANONICALS
+['https://mentedobrasil.com.br/estado/AC']
+['https://mentedobrasil.com.br/regiao/12001']
+## SECURITY_TXT_PUBLIC
+HTTP/1.1 200 OK
+cache-control: no-store
+x-request-id: b017d9b7-462d-449c-8102-1a506edf8227
+Contact: mailto:security@example.org
+Preferred-Languages: pt-BR, en
+Canonical: https://mentedobrasil.com.br/.well-known/security.txt

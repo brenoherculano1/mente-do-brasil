@@ -1,8 +1,4 @@
-HARDENING_04_LINT
-status=PASS
 
-command:
-- npm run lint
+> mente-do-brasil-web@0.1.0 lint
+> eslint .
 
-result:
-- eslint . completed successfully.

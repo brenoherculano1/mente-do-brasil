@@ -256,6 +256,56 @@ button {
   line-height: 1.45;
 }
 
+.footer-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.footer-links a,
+.inline-link {
+  color: var(--accent-strong);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.document-page {
+  max-width: 920px;
+  padding-bottom: 72px;
+  padding-top: 44px;
+}
+
+.document-header {
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 28px;
+  padding-bottom: 22px;
+}
+
+.document-header h1 {
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  letter-spacing: 0;
+  line-height: 1.02;
+  margin: 0;
+}
+
+.document-header p,
+.document-section p,
+.document-section li {
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.document-section {
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+}
+
+.document-section h2 {
+  font-size: 1.15rem;
+  margin: 0 0 10px;
+}
+
 .map-frame {
   grid-area: map;
   height: min(78vh, 760px);

@@ -5,6 +5,7 @@ import {
   classifyApiCachePolicy,
   rateLimitExceededResponse,
 } from "@/lib/api/ingress-policy";
+import { operationalLog, requestIdFromHeaders } from "@/lib/observability";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -38,10 +39,20 @@ export async function GET(
   context: { params: Promise<{ path: string[] }> },
 ) {
   const { path } = await context.params;
+  const startedAt = Date.now();
+  const requestId = requestIdFromHeaders(request.headers);
   const pathname = `/api/v1/${path.join("/")}`;
   const rateLimit = checkApiRateLimit(request.headers, pathname, request.nextUrl.searchParams);
   if (!rateLimit.allowed) {
-    return rateLimitExceededResponse(rateLimit);
+    operationalLog("rate_limited", {
+      request_id: requestId,
+      route_class: rateLimit.className,
+      route: pathname,
+      status: 429,
+    });
+    const rejected = rateLimitExceededResponse(rateLimit);
+    rejected.headers.set("X-Request-ID", requestId);
+    return rejected;
   }
 
   let response: Response;
@@ -49,10 +60,23 @@ export async function GET(
     response = await fetch(upstreamUrl(request, path), {
       headers: {
         Accept: request.headers.get("accept") ?? "application/json",
+        "X-Request-ID": requestId,
       },
       cache: "no-store",
     });
   } catch {
+    operationalLog("upstream_unavailable", {
+      request_id: requestId,
+      route_class: rateLimit.className,
+      route: pathname,
+      status: 503,
+      duration_ms: Date.now() - startedAt,
+    });
+    const headers = applyOperationalApiHeaders(
+      new Headers({ "X-Request-ID": requestId }),
+      rateLimit,
+      classifyApiCachePolicy(pathname, request.nextUrl.searchParams, 503),
+    );
     return NextResponse.json(
       {
         error: {
@@ -62,11 +86,7 @@ export async function GET(
       },
       {
         status: 503,
-        headers: applyOperationalApiHeaders(
-          new Headers(),
-          rateLimit,
-          classifyApiCachePolicy(pathname, request.nextUrl.searchParams, 503),
-        ),
+        headers,
       },
     );
   }
@@ -82,6 +102,7 @@ export async function GET(
     rateLimit,
     classifyApiCachePolicy(pathname, request.nextUrl.searchParams, response.status),
   );
+  headers.set("X-Request-ID", requestId);
   const body = maybeCompressBody(request, response, headers);
 
   return new Response(body, {

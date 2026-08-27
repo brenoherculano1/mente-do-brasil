@@ -1,13 +1,3 @@
-HARDENING_04_SCIENTIFIC_REGRESSION
-status=PASS
-
-command:
-- PATH="$PWD/.venv/bin:$PATH" ./.venv/bin/python -m pytest -q
-
-result:
-- 65 passed, 11 skipped.
-- total collected baseline=76.
-
-notes:
-- The first attempt with python3 -m pytest failed because pytest was not installed in the global Python, not because of repository code.
-- No scientific data, canonical release, scores, geometry source, or schema file was changed.
+........................................................................ [ 94%]
+....                                                                     [100%]
+76 passed in 10.18s

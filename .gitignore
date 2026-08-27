@@ -31,6 +31,8 @@ data/web/**
 !data/releases/.gitkeep
 
 # Common large analytical artifacts
+audit_packages/
+backups/
 *.parquet
 *.feather
 *.duckdb

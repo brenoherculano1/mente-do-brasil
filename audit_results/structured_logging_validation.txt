@@ -1,0 +1,3 @@
+status=PASS
+structured_json_logs=api_startup_shutdown_and_next_operational_events
+internal_url_not_logged_on_upstream_failure=true

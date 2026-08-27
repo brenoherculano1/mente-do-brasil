@@ -1,0 +1,36 @@
+## PRELAUNCH_ROBOTS
+User-Agent: *
+Disallow: /
+
+
+## PRELAUNCH_SITEMAP_URL_COUNT
+0
+<?xml version="1.0" encoding="UTF-8"?> <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> </urlset> 
+## HEALTHZ
+HTTP/1.1 200 OK
+cache-control: no-store
+x-request-id: c5c92f83-a4ae-4b51-9f00-3c75c371cb71
+{"status":"ok"}
+## READYZ
+HTTP/1.1 200 OK
+cache-control: no-store
+x-request-id: 258a4de7-8541-403d-9ca2-79679d701bfc
+{"status":"ready"}
+## INVALID_STATE
+404
+## INVALID_REGION
+404
+## LOWERCASE_STATE
+HTTP/1.1 308 Permanent Redirect
+location: /estado/AC
+## SECURITY_TXT_PRELAUNCH
+HTTP/1.1 404 Not Found
+cache-control: no-store
+x-request-id: dee9c428-d928-4f46-8c10-61a132a4b394
+Not configured.
+
+## API_PROXY_REQUEST_ID
+HTTP/1.1 200 OK
+cache-control: public, max-age=300, s-maxage=3600, stale-while-revalidate=86400
+x-request-id: request_12345678
+MDB_ANALYTICAL_2024_1

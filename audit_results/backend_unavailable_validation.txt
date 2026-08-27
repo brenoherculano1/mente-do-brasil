@@ -1,0 +1,10 @@
+## READYZ_BACKEND_UNAVAILABLE
+HTTP/1.1 503 Service Unavailable
+cache-control: no-store
+x-request-id: 38d6d75f-d649-454a-9727-26fd5b8b4c5b
+{"status":"unavailable"}
+## API_PROXY_BACKEND_UNAVAILABLE
+HTTP/1.1 503 Service Unavailable
+cache-control: no-store
+x-request-id: 3ae7dafd-c667-4028-9428-4928db9726eb
+{"error":{"code":"UPSTREAM_UNAVAILABLE","message":"Operational API is temporarily unavailable."}}
