@@ -7,6 +7,7 @@ export const DATA_PAGE_SOURCES = {
   crosswalkSchema: "metadata/canonical/municipality_health_region_crosswalk_v1.yaml",
   rawProvenance: "metadata/provenance/phase2_raw_data_manifest_2026-08-23.csv",
   webGeometry: "metadata/web_geometry/MDB_WEB_GEOMETRY_V1.yaml",
+  productIntelligence: "metadata/product_intelligence/MDB_TERRITORIAL_INTELLIGENCE_1.0.yaml",
 };
 
 export const DATA_RELEASE = {
@@ -16,6 +17,10 @@ export const DATA_RELEASE = {
   geographyVersion: "BR_HEALTH_REGIONS_END2024_V1",
   webGeometryVersion: "MDB_WEB_GEOMETRY_V1",
   dataContract: "MDB_DATA_CONTRACT_V1.0",
+  intelligenceVersion: "MDB_TERRITORIAL_INTELLIGENCE_1.0",
+  radarRulesetVersion: "MDB_RADAR_RULESET_1.0",
+  decompositionVersion: "MDB_MISMATCH_DECOMPOSITION_1.0",
+  peerMethodVersion: "MDB_PEER_METHOD_1.0",
   releaseStatus: "VALIDATING",
   qualityStatus: "VALIDATED",
   releaseGate: "PASS",
@@ -31,6 +36,9 @@ export const DATA_RELEASE = {
   crosswalkFields: 9,
   canonicalHash: "a3cc8f3aefc9d556d1bacc636dc72cabf04155052dd63c426dda9bec58ada515",
   crosswalkHash: "acd7ab896566d5ea730719eb46a079b0571d73fec617ef1d39db93099bd06b15",
+  intelligenceHash: "130480cb4423bbe5bd0999293dd2310e8d5860f4847ccb3622988c864a27ed1d",
+  peersHash: "e084f8e775b8788afdd9a57c09154d0cb829bae061a6fcb9a3b7fc60ebad7d00",
+  peerBenchmarksHash: "aab4ae0ae5dce321d847195b52272e0a3f715c52348e2a7463a750472005712f",
 };
 
 export const DATASETS = [
@@ -62,6 +70,51 @@ export const DATASETS = [
     method: DATA_RELEASE.methodVersion,
     geography: DATA_RELEASE.geographyVersion,
     canonical: DATA_RELEASE.canonicalVersion,
+  },
+  {
+    title: "Inteligência territorial por Região de Saúde",
+    path: "data/product_intelligence/MDB_ANALYTICAL_2024_1/health_region_intelligence.parquet",
+    purpose:
+      "Camada derivada para Radar Territorial, sinais transparentes e decomposição algébrica.",
+    unit: "Região de Saúde",
+    rows: 439,
+    columns: 38,
+    format: "Parquet derivado",
+    sha256: DATA_RELEASE.intelligenceHash,
+    release: DATA_RELEASE.releaseId,
+    method: DATA_RELEASE.intelligenceVersion,
+    geography: DATA_RELEASE.geographyVersion,
+    canonical: "derivado do canônico",
+  },
+  {
+    title: "Peers estruturais por Região de Saúde",
+    path: "data/product_intelligence/MDB_ANALYTICAL_2024_1/health_region_peers.parquet",
+    purpose:
+      "Lista determinística das 10 Regiões de Saúde estruturalmente mais semelhantes por região.",
+    unit: "par alvo-peer",
+    rows: 4390,
+    columns: 6,
+    format: "Parquet derivado",
+    sha256: DATA_RELEASE.peersHash,
+    release: DATA_RELEASE.releaseId,
+    method: DATA_RELEASE.peerMethodVersion,
+    geography: DATA_RELEASE.geographyVersion,
+    canonical: "derivado do canônico",
+  },
+  {
+    title: "Benchmarks dos peers estruturais",
+    path: "data/product_intelligence/MDB_ANALYTICAL_2024_1/peer_benchmarks.parquet",
+    purpose:
+      "Mediana, intervalo interquartil, mínimo e máximo dos peers para oito indicadores.",
+    unit: "Região de Saúde x indicador",
+    rows: 3512,
+    columns: 13,
+    format: "Parquet derivado",
+    sha256: DATA_RELEASE.peerBenchmarksHash,
+    release: DATA_RELEASE.releaseId,
+    method: DATA_RELEASE.peerMethodVersion,
+    geography: DATA_RELEASE.geographyVersion,
+    canonical: "derivado do canônico",
   },
 ];
 

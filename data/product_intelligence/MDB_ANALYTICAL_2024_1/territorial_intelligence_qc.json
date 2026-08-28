@@ -1,0 +1,80 @@
+{
+  "benchmark_rows": 3512,
+  "decomposition_max_absolute_error": 2.498001805406602e-16,
+  "duplicate_peers": 0,
+  "matched_signal_families_distribution": {
+    "0": 187,
+    "1": 139,
+    "2": 67,
+    "3": 39,
+    "4": 4,
+    "5": 3
+  },
+  "output_hashes": {
+    "health_region_intelligence.parquet": "130480cb4423bbe5bd0999293dd2310e8d5860f4847ccb3622988c864a27ed1d",
+    "health_region_peers.parquet": "e084f8e775b8788afdd9a57c09154d0cb829bae061a6fcb9a3b7fc60ebad7d00",
+    "peer_benchmarks.parquet": "aab4ae0ae5dce321d847195b52272e0a3f715c52348e2a7463a750472005712f"
+  },
+  "peer_feature_stats": {
+    "municipality_count": {
+      "log1p_mean": 2.487919942608546,
+      "log1p_population_std_ddof0": 0.5108475705377904,
+      "original_max": 55.0,
+      "original_median": 11.0,
+      "original_min": 1.0,
+      "z_max": 3.009570440959689,
+      "z_median": -0.005898614370179984,
+      "z_min": -3.51332347564885
+    },
+    "population": {
+      "log1p_mean": 12.54039893945689,
+      "log1p_population_std_ddof0": 0.9210780912094607,
+      "original_max": 11895578.0,
+      "original_median": 262638.0,
+      "original_min": 26739.0,
+      "z_max": 4.072704011519961,
+      "z_median": -0.0671638977978282,
+      "z_min": -2.547539791897349
+    },
+    "population_density": {
+      "log1p_mean": 3.5473159590257906,
+      "log1p_population_std_ddof0": 1.4007007274517258,
+      "original_max": 7765.90840188795,
+      "original_median": 34.39124766616006,
+      "original_min": 0.5698197390498458,
+      "z_max": 3.8625749312810247,
+      "z_median": 0.013670721447213466,
+      "z_min": -2.2105758221332503
+    }
+  },
+  "peer_hubness": {
+    "max": 19,
+    "median": 10.0,
+    "min": 1,
+    "top10": {
+      "25006": 18,
+      "31034": 17,
+      "31059": 16,
+      "31068": 19,
+      "31098": 17,
+      "35013": 17,
+      "35113": 17,
+      "41005": 18,
+      "41018": 17,
+      "43009": 17
+    }
+  },
+  "peer_rows": 4390,
+  "peers_per_region_max": 10,
+  "peers_per_region_min": 10,
+  "radar_counts": {
+    "CAPACITY_COMPONENT_LOW": 184,
+    "CAPACITY_LOW": 38,
+    "MISMATCH_MARKED_POSITIVE": 68,
+    "NEED_HIGH": 71,
+    "SPATIAL_HH_MISMATCH": 60
+  },
+  "radar_rows": 439,
+  "reciprocal_peer_rate": 0.7412300683371298,
+  "self_peers": 0
+}

@@ -1,0 +1,5 @@
+ public_release_status 
+-----------------------
+ NOT_RELEASED
+(1 row)
+

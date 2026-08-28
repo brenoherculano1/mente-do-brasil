@@ -1,11 +1,17 @@
-HARDENING_04_API_REGRESSION
-status=PASS
-
-command:
-- PATH="$PWD/.venv/bin:$PATH" ./.venv/bin/python -m pytest tests/api/test_api_contract.py -q
-
-result:
-- 6 passed, 10 skipped.
-
-note:
-- Direct FastAPI API regression does not pass through the Next limiter by design.
+MENTE DO BRASIL API VALIDATION
+health PASS
+ready PASS
+releases PASS
+indicators PASS
+health regions PASS
+state profiles PASS
+profile PASS
+municipality lookup PASS
+map metadata PASS
+map geometry PASS {'overview_bytes': 756156, 'detail_bytes': 2763517, 'full_blocked_status': 403, 'full_blocked_bytes': 112, 'full_blocked_elapsed_ms': 3.79, 'overview_gzip_bytes': 200382}
+scientific regression PASS
+flags PASS
+errors PASS
+read-only PASS
+latency_ms {'health': 282.28, 'ready': 69.53, 'map_geometry_overview': 140.27, 'map_geometry_detail': 284.81, 'map_geometry_full_blocked': 3.79}
+PASS

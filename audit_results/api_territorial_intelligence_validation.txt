@@ -1,0 +1,27 @@
+{
+  "checks": {
+    "benchmark_count": 8,
+    "explanation_components": 5,
+    "explanation_identity_max_error": 9.194034422677078e-17,
+    "explanation_status": 200,
+    "injection_search_total": 0,
+    "invalid_min_status": 422,
+    "invalid_signal_status": 422,
+    "invalid_uf_status": 404,
+    "methods_release": "MDB_TERRITORIAL_INTELLIGENCE_1.0",
+    "methods_status": 200,
+    "peer_count": 10,
+    "peers_status": 200,
+    "radar_all_features": 439,
+    "radar_all_regions": 439,
+    "radar_all_status": 200,
+    "radar_default_min_families": 2,
+    "radar_default_status": 200,
+    "radar_default_total": 113,
+    "radar_geometry_profile": "overview",
+    "self_peer_present": false,
+    "spatial_hh_status": 200,
+    "spatial_hh_total": 60
+  },
+  "status": "PASS"
+}

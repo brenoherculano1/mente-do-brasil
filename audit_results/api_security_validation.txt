@@ -1,0 +1,6 @@
+status=PASS
+invalid_signal=422
+invalid_min_signal_families=422
+invalid_uf=404
+injection_search_total=0
+read_only_role=PASS

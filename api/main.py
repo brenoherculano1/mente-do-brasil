@@ -18,6 +18,7 @@ from api.observability import configure_logging, operational_log, request_id_fro
 from api.routers.health import router as health_router
 from api.routers.health_regions import router as health_regions_router
 from api.routers.indicators import router as indicators_router
+from api.routers.intelligence import router as intelligence_router
 from api.routers.releases import router as releases_router
 from api.services.health_regions import ready_check
 
@@ -77,6 +78,7 @@ app.include_router(health_router)
 app.include_router(releases_router)
 app.include_router(indicators_router)
 app.include_router(health_regions_router)
+app.include_router(intelligence_router)
 
 
 @app.middleware("http")

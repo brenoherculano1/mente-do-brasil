@@ -1,0 +1,2 @@
+status=PASS
+Mobile Radar and profile screenshots inspected; E2E mobile Radar passed; state mobile map position regression passed serially.

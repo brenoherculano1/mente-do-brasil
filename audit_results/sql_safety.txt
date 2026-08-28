@@ -1,0 +1,3 @@
+{'self_peer_check_constraint': 'PASS', 'matched_family_range_check_constraint': 'PASS'}
+rollback=PASS
+SQL SAFETY PASS

@@ -1,12 +1,2 @@
-HARDENING_04_CORS_REGRESSION
 status=PASS
-
-direct_fastapi_preflight:
-- Method: OPTIONS.
-- Origin: https://example.invalid.
-- Access-Control-Request-Method: GET.
-- Status: 400.
-- Access-Control-Allow-Origin wildcard: absent.
-
-same_origin:
-- Browser public path remains same-origin /api/v1/*.
+CORS wildcard not introduced; existing API regression passed.

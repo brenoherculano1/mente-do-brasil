@@ -6,7 +6,6 @@ from pathlib import Path
 
 import pyarrow.parquet as pq
 
-
 ROOT = Path(__file__).resolve().parents[1]
 CANONICAL_HEALTH_REGIONS = ROOT / "data/canonical/MDB_ANALYTICAL_2024_1/health_regions.parquet"
 OUTPUT = ROOT / "web/lib/public-route-inventory.ts"

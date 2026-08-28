@@ -4,6 +4,10 @@ export const METHOD_IDENTIFIERS = {
   canonical: "MDB_CANONICAL_1.0",
   geography: "BR_HEALTH_REGIONS_END2024_V1",
   webGeometry: "MDB_WEB_GEOMETRY_V1",
+  intelligence: "MDB_TERRITORIAL_INTELLIGENCE_1.0",
+  radarRuleset: "MDB_RADAR_RULESET_1.0",
+  decomposition: "MDB_MISMATCH_DECOMPOSITION_1.0",
+  peerMethod: "MDB_PEER_METHOD_1.0",
 };
 
 export const SCIENTIFIC_SOURCES = {
@@ -95,6 +99,9 @@ export const METHODOLOGY_NAV = [
   ["capacity", "Capacity"],
   ["percentiles", "Percentis"],
   ["mismatch", "Mismatch"],
+  ["radar", "Radar Territorial"],
+  ["decomposition", "Decomposição"],
+  ["peers", "Peers estruturais"],
   ["spatial", "Análise espacial"],
   ["quality", "Qualidade dos dados"],
   ["limitations", "Limitações"],

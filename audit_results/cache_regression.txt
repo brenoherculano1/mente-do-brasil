@@ -1,0 +1,2 @@
+status=PASS
+Methods metadata policy; Radar/explanation/peers normal cache; errors no-store via existing ingress policy.

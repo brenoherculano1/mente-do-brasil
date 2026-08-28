@@ -1,0 +1,72 @@
+intelligence_version: MDB_TERRITORIAL_INTELLIGENCE_1.0
+status: VALIDATED_LOCAL
+release_id: MDB_ANALYTICAL_2024_1
+canonical_input: data/canonical/MDB_ANALYTICAL_2024_1/health_regions.parquet
+canonical_input_sha256: a3cc8f3aefc9d556d1bacc636dc72cabf04155052dd63c426dda9bec58ada515
+outputs:
+  health_region_intelligence.parquet: 130480cb4423bbe5bd0999293dd2310e8d5860f4847ccb3622988c864a27ed1d
+  health_region_peers.parquet: e084f8e775b8788afdd9a57c09154d0cb829bae061a6fcb9a3b7fc60ebad7d00
+  peer_benchmarks.parquet: aab4ae0ae5dce321d847195b52272e0a3f715c52348e2a7463a750472005712f
+submethods:
+  radar_ruleset_version: MDB_RADAR_RULESET_1.0
+  decomposition_version: MDB_MISMATCH_DECOMPOSITION_1.0
+  peer_method_version: MDB_PEER_METHOD_1.0
+radar:
+  signal_families:
+    NEED_HIGH: need_score >= 0.75
+    CAPACITY_LOW: capacity_score <= 0.25
+    MISMATCH_MARKED_POSITIVE: mismatch_score >= 0.25
+    CAPACITY_COMPONENT_LOW: caps_percentile <= 0.25 OR beds_percentile <= 0.25 OR
+      psychiatrist_fte_percentile <= 0.25
+    SPATIAL_HH_MISMATCH: lisa_significant = true AND lisa_cluster = high-high
+  matched_signal_families: Unweighted count of the five transparent families.
+  exclusions:
+  - Data quality flags do not increase the signal count.
+  - ZERO_REGISTERED_BEDS is preserved as a subsignal and caution, not a sixth family.
+decomposition:
+  reference: P50 national percentile position
+  identity: sum of five centered algebraic contributions equals mismatch_score
+  etiological_interpretation: not allowed
+peers:
+  structural_variables:
+  - population
+  - population_density
+  - municipality_count
+  transform: log1p then national z-score using population std ddof=0
+  distance: Euclidean distance with equal dimension weighting
+  selection: 10 nearest regions, self excluded, tie-break by health_region_code
+  benchmark_quantiles: numpy quantile method=linear
+  minimum_observed_peers: 5
+  outcome_variables_used_for_selection: false
+  limitations:
+  - No income, formal urbanization, age profile, social vulnerability, or financing.
+  - Similar means similar only across population, population density, and municipality
+    count.
+  feature_stats:
+    population:
+      log1p_mean: 12.54039893945689
+      log1p_population_std_ddof0: 0.9210780912094607
+      original_min: 26739.0
+      original_median: 262638.0
+      original_max: 11895578.0
+      z_min: -2.547539791897349
+      z_median: -0.0671638977978282
+      z_max: 4.072704011519961
+    population_density:
+      log1p_mean: 3.5473159590257906
+      log1p_population_std_ddof0: 1.4007007274517258
+      original_min: 0.5698197390498458
+      original_median: 34.39124766616006
+      original_max: 7765.90840188795
+      z_min: -2.2105758221332503
+      z_median: 0.013670721447213466
+      z_max: 3.8625749312810247
+    municipality_count:
+      log1p_mean: 2.487919942608546
+      log1p_population_std_ddof0: 0.5108475705377904
+      original_min: 1.0
+      original_median: 11.0
+      original_max: 55.0
+      z_min: -3.51332347564885
+      z_median: -0.005898614370179984
+      z_max: 3.009570440959689

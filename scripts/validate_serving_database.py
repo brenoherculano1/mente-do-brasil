@@ -47,6 +47,12 @@ def main() -> int:
         "flags": checks["small_suicide"] == 7 and checks["zero_beds"] == 275,
         "constraints": True,
         "views": checks["profile"] == 439 and checks["map"] == 439 and checks["lookup"] == 439,
+        "product_intelligence": (
+            checks["intelligence_versions"] == 1
+            and checks["intelligence"] == 439
+            and checks["peers"] == 4390
+            and checks["peer_benchmarks"] == 3512
+        ),
         "immutability": True,
     }
     for name, passed in sections.items():

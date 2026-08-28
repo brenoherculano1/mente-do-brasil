@@ -1,0 +1,13 @@
+FORMULA SCAN - WEB
+web/app/globals.css:1864:  grid-template-columns: minmax(170px, 0.75fr) minmax(220px, 1fr);
+web/features/methodology/MethodologyPage.tsx:360:                ["NEED_HIGH", "need_score >= 0,75"],
+web/features/methodology/MethodologyPage.tsx:361:                ["CAPACITY_LOW", "capacity_score <= 0,25"],
+web/features/methodology/MethodologyPage.tsx:362:                ["MISMATCH_MARKED_POSITIVE", "mismatch_score >= 0,25"],
+web/features/methodology/MethodologyPage.tsx:413:                ["Transformação", "log1p e z-score nacional com std populacional ddof=0"],
+web/package-lock.json:4874:        "hermes-parser": "^0.25.1",
+web/package-lock.json:5446:      "version": "0.25.1",
+web/package-lock.json:5447:      "resolved": "https://registry.npmjs.org/hermes-estree/-/hermes-estree-0.25.1.tgz",
+web/package-lock.json:5453:      "version": "0.25.1",
+web/package-lock.json:5454:      "resolved": "https://registry.npmjs.org/hermes-parser/-/hermes-parser-0.25.1.tgz",
+web/package-lock.json:5459:        "hermes-estree": "0.25.1"
+PASS: frontend has display/methodology text only; product calculations remain upstream.

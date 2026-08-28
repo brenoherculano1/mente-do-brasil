@@ -172,3 +172,137 @@ export type StateProfile = {
   };
   regions: StateRegion[];
 };
+
+export type RadarSignalFamily =
+  | "NEED_HIGH"
+  | "CAPACITY_LOW"
+  | "MISMATCH_MARKED_POSITIVE"
+  | "CAPACITY_COMPONENT_LOW"
+  | "SPATIAL_HH_MISMATCH";
+
+export type RadarSignals = {
+  need_high: boolean;
+  capacity_low: boolean;
+  mismatch_marked_positive: boolean;
+  capacity_component_low: boolean;
+  spatial_hh_mismatch: boolean;
+  caps_low: boolean;
+  beds_low: boolean;
+  psychiatrist_fte_low: boolean;
+  zero_registered_beds: boolean;
+  matched_signal_families: number;
+};
+
+export type RadarRegion = {
+  health_region_code: string;
+  health_region_name: string;
+  uf: string;
+  population: number;
+  municipality_count: number;
+  need_score: number;
+  capacity_score: number;
+  mismatch_score: number;
+  matched_signal_families: number;
+  signals: RadarSignals;
+  data_quality_flags: string[];
+};
+
+export type RadarFeature = {
+  type: "Feature";
+  id: string;
+  geometry: GeoJSON.Geometry;
+  properties: RadarRegion;
+};
+
+export type RadarResponse = {
+  release: {
+    release_id: string;
+    intelligence_version: string;
+    radar_ruleset_version: string;
+    decomposition_version: string;
+    peer_method_version: string;
+  };
+  filters: Record<string, unknown>;
+  signal_definitions: Record<RadarSignalFamily, string>;
+  total_matching: number;
+  regions: RadarRegion[];
+  geometry: {
+    type: "FeatureCollection";
+    features: RadarFeature[];
+    crs: { type: "name"; properties: { name: string } };
+    geometry_metadata: {
+      profile: "overview";
+      version: string;
+      crs: string;
+    };
+  } | null;
+};
+
+export type DecompositionItem = {
+  component: string;
+  label: string;
+  source_percentile: number;
+  contribution: number;
+  caution: string | null;
+};
+
+export type ExplanationResponse = {
+  release: RadarResponse["release"];
+  health_region_code: string;
+  health_region_name: string;
+  uf: string;
+  matched_signal_families: number;
+  triggers: string[];
+  subsignals: string[];
+  quality_cautions: string[];
+  decomposition: DecompositionItem[];
+  decomposition_sum: number;
+  mismatch_score: number;
+  interpretation: string;
+};
+
+export type PeerBenchmark = {
+  metric_id: MetricId;
+  target_value: number;
+  peer_n_observed: number;
+  peer_median: number | null;
+  peer_q1: number | null;
+  peer_q3: number | null;
+  peer_min: number | null;
+  peer_max: number | null;
+  relative_to_peer_iqr:
+    | "BELOW_PEER_IQR"
+    | "WITHIN_PEER_IQR"
+    | "ABOVE_PEER_IQR"
+    | null;
+  insufficient_reason: string | null;
+};
+
+export type PeerRegion = {
+  health_region_code: string;
+  health_region_name: string;
+  uf: string;
+  population: number;
+  population_density: number;
+  municipality_count: number;
+  metric_value: number | null;
+};
+
+export type PeersResponse = {
+  release: RadarResponse["release"];
+  health_region_code: string;
+  health_region_name: string;
+  uf: string;
+  method: {
+    version: string;
+    structural_variables: string[];
+    transform: string;
+    distance: string;
+    selection: string;
+    outcome_variables_used_for_selection: boolean;
+    limitations: string[];
+  };
+  selected_metric: MetricId;
+  peers: PeerRegion[];
+  benchmarks: PeerBenchmark[];
+};

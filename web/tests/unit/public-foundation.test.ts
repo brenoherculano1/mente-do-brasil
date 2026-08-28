@@ -52,7 +52,7 @@ describe("public production foundation config", () => {
 
     expect(PUBLIC_ROUTE_UFS).toHaveLength(27);
     expect(PUBLIC_ROUTE_HEALTH_REGION_CODES).toHaveLength(439);
-    expect(urls).toHaveLength(6 + 27 + 439);
+    expect(urls).toHaveLength(7 + 27 + 439);
     expect(urls.some((entry) => entry.url.endsWith("/estado/AC"))).toBe(true);
     expect(urls.some((entry) => entry.url.endsWith("/estado/ac"))).toBe(false);
     expect(urls.some((entry) => entry.url.endsWith("/regiao/12001"))).toBe(true);

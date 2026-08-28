@@ -1,4 +1,1 @@
-
-> mente-do-brasil-web@0.1.0 lint
-> eslint .
-
+All checks passed!

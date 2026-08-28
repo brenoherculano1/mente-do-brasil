@@ -1,0 +1,32 @@
+{
+  "explanation": {
+    "elapsed_ms": 5.1,
+    "gzip_bytes": 813,
+    "raw_bytes": 1698,
+    "status": "PASS"
+  },
+  "methods": {
+    "elapsed_ms": 2.65,
+    "gzip_bytes": 900,
+    "raw_bytes": 1631,
+    "status": "PASS"
+  },
+  "peers": {
+    "elapsed_ms": 15.4,
+    "gzip_bytes": 1806,
+    "raw_bytes": 5297,
+    "status": "PASS"
+  },
+  "radar_no_geometry": {
+    "elapsed_ms": 61.59,
+    "gzip_bytes": 6099,
+    "raw_bytes": 63451,
+    "status": "PASS"
+  },
+  "radar_overview_geometry": {
+    "elapsed_ms": 85.75,
+    "gzip_bytes": 255186,
+    "raw_bytes": 1135358,
+    "status": "PASS"
+  }
+}

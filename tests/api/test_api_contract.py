@@ -6,9 +6,9 @@ import urllib.parse
 import urllib.request
 from types import SimpleNamespace
 
-from fastapi import HTTPException
 import psycopg
 import pytest
+from fastapi import HTTPException
 
 from api.config import get_settings
 from api.routers import health_regions as health_regions_router
@@ -395,6 +395,73 @@ def test_error_contracts_and_parameter_guards():
     status, payload = api_get(f"/api/v1/health-regions?q={injected}&limit=10")
     assert status == 200
     assert payload["pagination"]["total"] == 0
+
+
+def test_territorial_intelligence_radar_contract():
+    status, radar = api_get("/api/v1/radar/health-regions")
+    assert status == 200
+    assert radar["release"]["intelligence_version"] == "MDB_TERRITORIAL_INTELLIGENCE_1.0"
+    assert radar["filters"]["min_signal_families"] == 2
+    assert radar["total_matching"] == 113
+    assert radar["geometry"] is None
+    assert {region["signals"]["matched_signal_families"] for region in radar["regions"]} <= {
+        2,
+        3,
+        4,
+        5,
+    }
+
+    status, geojson = api_get(
+        "/api/v1/radar/health-regions?min_signal_families=0&include_geometry=true"
+    )
+    assert status == 200
+    assert geojson["total_matching"] == 439
+    assert len(geojson["regions"]) == 439
+    assert len(geojson["geometry"]["features"]) == 439
+    assert geojson["geometry"]["geometry_metadata"] == {
+        "profile": "overview",
+        "version": WEB_GEOMETRY_VERSION,
+        "crs": "EPSG:4326",
+    }
+
+    status, ac = api_get("/api/v1/radar/health-regions?uf=AC&min_signal_families=0")
+    assert status == 200
+    assert {region["uf"] for region in ac["regions"]} == {"AC"}
+    assert ac["total_matching"] == 3
+
+    status, signal = api_get(
+        "/api/v1/radar/health-regions?signal=SPATIAL_HH_MISMATCH&min_signal_families=0"
+    )
+    assert status == 200
+    assert signal["total_matching"] == 60
+    assert all(region["signals"]["spatial_hh_mismatch"] for region in signal["regions"])
+
+    assert api_get("/api/v1/radar/health-regions?signal=UNKNOWN")[0] == 422
+    assert api_get("/api/v1/radar/health-regions?min_signal_families=6")[0] == 422
+    assert api_get("/api/v1/radar/health-regions?uf=XX")[0] == 404
+
+
+def test_territorial_intelligence_explanation_and_peers_contract():
+    status, explanation = api_get("/api/v1/health-regions/12001/explanation")
+    assert status == 200
+    assert explanation["health_region_code"] == "12001"
+    assert len(explanation["decomposition"]) == 5
+    decomposition_sum = sum(item["contribution"] for item in explanation["decomposition"])
+    assert abs(decomposition_sum - explanation["mismatch_score"]) <= 1e-12
+    assert abs(explanation["decomposition_sum"] - explanation["mismatch_score"]) <= 1e-12
+
+    status, peers = api_get("/api/v1/health-regions/12001/peers")
+    assert status == 200
+    assert peers["release"]["peer_method_version"] == "MDB_PEER_METHOD_1.0"
+    assert len(peers["peers"]) == 10
+    assert "12001" not in {peer["health_region_code"] for peer in peers["peers"]}
+    assert len(peers["benchmarks"]) == 8
+    assert {benchmark["peer_n_observed"] for benchmark in peers["benchmarks"]} == {10}
+    assert peers["method"]["outcome_variables_used_for_selection"] is False
+
+    status, methods = api_get("/api/v1/intelligence/methods")
+    assert status == 200
+    assert methods["release"]["radar_ruleset_version"] == "MDB_RADAR_RULESET_1.0"
 
 
 def test_no_unrequested_product_surfaces_exist():

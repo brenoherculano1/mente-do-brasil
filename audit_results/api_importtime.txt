@@ -1,0 +1,274 @@
+import time: self [us] | cumulative | imported package
+import time:       754 |        754 |   _io
+import time:       210 |        210 |   marshal
+import time:       832 |        832 |   posix
+import time:      1869 |       3664 | _frozen_importlib_external
+import time:       505 |        505 |   time
+import time:       318 |        823 | zipimport
+import time:        86 |         86 |     _codecs
+import time:       998 |       1084 |   codecs
+import time:      1419 |       1419 |   encodings.aliases
+import time:      1746 |       4248 | encodings
+import time:       306 |        306 | encodings.utf_8
+import time:       117 |        117 | _signal
+import time:        39 |         39 |     _abc
+import time:       264 |        303 |   abc
+import time:       298 |        600 | io
+import time:        52 |         52 |       _stat
+import time:       160 |        212 |     stat
+import time:      1070 |       1070 |     _collections_abc
+import time:        60 |         60 |       errno
+import time:       157 |        157 |       genericpath
+import time:       173 |        389 |     posixpath
+import time:       617 |       2286 |   os
+import time:        87 |         87 |   _sitebuiltins
+import time:       474 |        474 |   sitecustomize
+import time:      1545 |       4390 | site
+import time:       510 |        510 | linecache
+import time:       256 |        256 |   api
+import time:       494 |        494 |   __future__
+import time:       322 |        322 |       itertools
+import time:       307 |        307 |       keyword
+import time:        76 |         76 |         _operator
+import time:      1276 |       1352 |       operator
+import time:       578 |        578 |       reprlib
+import time:        73 |         73 |       _collections
+import time:      1072 |       3702 |     collections
+import time:       108 |        108 |       _functools
+import time:      1307 |       1415 |     functools
+import time:       521 |        521 |     types
+import time:       751 |       6387 |   contextlib
+import time:       418 |        418 |     starlette
+import time:       507 |        507 |       warnings
+import time:      1706 |       1706 |           enum
+import time:       828 |       2533 |         http
+import time:       451 |       2983 |       starlette.exceptions
+import time:       959 |       4449 |     starlette.status
+import time:       372 |        372 |         copyreg
+import time:       391 |        391 |         _typing
+import time:      2637 |       3398 |       typing
+import time:       605 |        605 |         annotated_doc.main
+import time:       465 |       1070 |       annotated_doc
+import time:       474 |        474 |             _weakrefset
+import time:       532 |       1006 |           weakref
+import time:       505 |       1510 |         copy
+import time:       301 |        301 |           email
+import time:       408 |        408 |           binascii
+import time:       125 |        125 |               _sre
+import time:       547 |        547 |                 re._constants
+import time:       675 |       1221 |               re._parser
+import time:       279 |        279 |               re._casefix
+import time:       718 |       2341 |             re._compiler
+import time:       777 |       3117 |           re
+import time:       357 |        357 |           quopri
+import time:       345 |        345 |               _datetime
+import time:       394 |        738 |             datetime
+import time:       254 |        254 |               urllib
+import time:       300 |        300 |               math
+import time:      1177 |       1177 |               ipaddress
+import time:      1412 |       3142 |             urllib.parse
+import time:       892 |        892 |             email._parseaddr
+import time:      1045 |       5816 |           email.utils
+import time:       901 |        901 |           email.errors
+import time:        34 |         34 |                   _string
+import time:       742 |        776 |                 string
+import time:       445 |       1220 |               email.quoprimime
+import time:       108 |        108 |                     _struct
+import time:       247 |        354 |                   struct
+import time:       416 |        769 |                 base64
+import time:       274 |       1043 |               email.base64mime
+import time:       243 |        243 |                 email.encoders
+import time:       347 |        590 |               email.charset
+import time:       747 |       3599 |             email.header
+import time:       590 |       4188 |           email._policybase
+import time:       369 |        369 |           email._encoded_words
+import time:       251 |        251 |           email.iterators
+import time:      1671 |      17375 |         email.message
+import time:        64 |         64 |             _ast
+import time:      1883 |       1947 |           ast
+import time:        43 |         43 |               _opcode
+import time:       332 |        332 |               _opcode_metadata
+import time:       443 |        816 |             opcode
+import time:      1151 |       1967 |           dis
+import time:       353 |        353 |             importlib
+import time:       123 |        476 |           importlib.machinery
+import time:       339 |        339 |             token
+import time:        36 |         36 |             _tokenize
+import time:       884 |       1259 |           tokenize
+import time:      2281 |       7928 |         inspect
+import time:       472 |        472 |               _json
+import time:       534 |       1006 |             json.scanner
+import time:       794 |       1800 |           json.decoder
+import time:       580 |        580 |           json.encoder
+import time:       517 |       2896 |         json
+import time:      1258 |       1258 |         threading
+import time:       196 |        196 |           _contextvars
+import time:       510 |        705 |         contextvars
+import time:       771 |        771 |         dataclasses
+import time:       408 |        408 |             anyio._core
+import time:       648 |       1055 |           anyio._core._contextmanagers
+import time:       947 |        947 |               textwrap
+import time:       462 |       1409 |             anyio._core._exceptions
+import time:        90 |         90 |             sniffio
+import time:       515 |       2012 |           anyio._core._eventloop
+import time:       418 |        418 |                   fnmatch
+import time:       924 |       1342 |                 glob
+import time:      1252 |       2593 |               pathlib._abc
+import time:       164 |        164 |                   _winapi
+import time:        83 |         83 |                   nt
+import time:        62 |         62 |                   nt
+import time:        65 |         65 |                   nt
+import time:        50 |         50 |                   nt
+import time:       110 |        110 |                   nt
+import time:       118 |        118 |                   nt
+import time:        59 |         59 |                   nt
+import time:       758 |       1465 |                 ntpath
+import time:        73 |         73 |                 pwd
+import time:        32 |         32 |                 grp
+import time:      2977 |       4545 |               pathlib._local
+import time:       651 |       7788 |             pathlib
+import time:       401 |        401 |             anyio.to_thread
+import time:      1326 |       1326 |                 signal
+import time:      2007 |       2007 |                   _socket
+import time:       506 |        506 |                     select
+import time:      3261 |       3767 |                   selectors
+import time:        85 |         85 |                   array
+import time:      1454 |       7311 |                 socket
+import time:      1150 |       9787 |               anyio.abc._eventloop
+import time:      4145 |       4145 |               anyio.abc._resources
+import time:       397 |        397 |                 anyio._core._typedattr
+import time:       444 |        444 |                   anyio.abc._tasks
+import time:       921 |       1365 |                 anyio.abc._streams
+import time:      1153 |       2914 |               anyio.abc._sockets
+import time:       407 |        407 |               anyio.abc._subprocesses
+import time:       331 |        331 |               anyio.abc._testing
+import time:      1000 |       1000 |                 anyio.lowlevel
+import time:       683 |        683 |                 anyio._core._tasks
+import time:       357 |        357 |                 anyio._core._testing
+import time:      3696 |       5734 |               anyio._core._synchronization
+import time:       759 |        759 |                   concurrent
+import time:       421 |        421 |                         _colorize
+import time:       962 |       1383 |                       traceback
+import time:        89 |         89 |                       atexit
+import time:      2567 |       4038 |                     logging
+import time:      1126 |       5164 |                   concurrent.futures._base
+import time:       987 |       6908 |                 concurrent.futures
+import time:      1106 |       8013 |               anyio.from_thread
+import time:       450 |      31778 |             anyio.abc
+import time:      1397 |      41362 |           anyio._core._fileio
+import time:       320 |        320 |           anyio._core._resources
+import time:       280 |        280 |           anyio._core._signals
+import time:       595 |        595 |               _ssl
+import time:      6076 |       6671 |             ssl
+import time:       292 |        292 |               anyio.streams
+import time:      1948 |       2240 |             anyio.streams.stapled
+import time:      1320 |       1320 |             anyio.streams.tls
+import time:      1892 |      12120 |           anyio._core._sockets
+import time:      2604 |       2604 |             anyio.streams.memory
+import time:       572 |       3175 |           anyio._core._streams
+import time:        76 |         76 |                 _locale
+import time:      1219 |       1294 |               locale
+import time:       205 |        205 |               fcntl
+import time:       128 |        128 |               msvcrt
+import time:        31 |         31 |               _posixsubprocess
+import time:      3081 |       4737 |             subprocess
+import time:       451 |       5188 |           anyio._core._subprocesses
+import time:       109 |        109 |                 zlib
+import time:       665 |        665 |                   _compression
+import time:       256 |        256 |                   _bz2
+import time:       610 |       1530 |                 bz2
+import time:       127 |        127 |                   _lzma
+import time:       573 |        700 |                 lzma
+import time:      1537 |       3875 |               shutil
+import time:        35 |         35 |                   _bisect
+import time:       562 |        597 |                 bisect
+import time:        84 |         84 |                 _random
+import time:      1586 |       2266 |               random
+import time:      1282 |       7421 |             tempfile
+import time:       791 |       8212 |           anyio._core._tempfile
+import time:       600 |      74320 |         anyio
+import time:      5959 |       5959 |                       typing_extensions
+import time:      1504 |       1504 |                       pydantic_core._pydantic_core
+import time:       733 |        733 |                             numbers
+import time:      1684 |       2417 |                           _decimal
+import time:      1025 |       3442 |                         decimal
+import time:    994980 |     998421 |                       pydantic_core.core_schema
+import time:       742 |    1006625 |                     pydantic_core
+import time:       578 |    1007203 |                   pydantic.version
+import time:       615 |    1007817 |                 pydantic.warnings
+import time:       720 |    1008537 |               pydantic._migration
+import time:    719188 |     719188 |                   typing_inspection
+import time:   1083043 |    1083043 |                   typing_inspection.typing_objects
+import time:    739869 |    2542099 |                 typing_inspection.introspection
+import time:    737004 |     737004 |                 pydantic._internal
+import time:    857298 |     857298 |                     pydantic._internal._namespace_utils
+import time:   1253488 |    2110785 |                   pydantic._internal._typing_extra
+import time:    649846 |    2760630 |                 pydantic._internal._repr
+import time:    732062 |    6771794 |               pydantic.errors
+import time:       663 |    7780993 |             pydantic
+import time:       667 |        667 |                 pydantic._internal._internal_dataclass
+import time:    722594 |     723261 |               pydantic.aliases
+import time:   1871513 |    1871513 |               pydantic.config
+import time:   1071747 |    3666520 |             pydantic._internal._config
+import time:      7379 |       7379 |               pydantic._internal._core_utils
+import time:      2874 |       2874 |                 pydantic._internal._import_utils
+import time:    949298 |     952172 |               pydantic._internal._utils
+import time:   1431566 |    2391116 |             pydantic._internal._decorators
+import time:      3814 |       3814 |                 pydantic._internal._forward_ref
+import time:   1516205 |    1520019 |               pydantic._internal._generics
+import time:    776685 |     776685 |               pydantic._internal._docs_extraction
+import time:    895373 |    3192076 |             pydantic._internal._fields
+import time:    994487 |     994487 |                 pydantic.plugin
+import time:    781001 |    1775488 |               pydantic.plugin._schema_validator
+import time:   1912861 |    3688348 |             pydantic._internal._mock_val_ser
+import time:      3041 |       3041 |                 fractions
+import time:       729 |        729 |                   _uuid
+import time:       711 |       1440 |                 uuid
+import time:      2294 |       2294 |                     sysconfig
+import time:      1657 |       1657 |                     _sysconfigdata__darwin_darwin
+import time:       876 |        876 |                     _osx_support
+import time:      3405 |       8231 |                   zoneinfo._tzpath
+import time:       341 |        341 |                   zoneinfo._common
+import time:       795 |        795 |                   _zoneinfo
+import time:      1014 |      10379 |                 zoneinfo
+import time:   1544082 |    1544082 |                 pydantic.annotated_handlers
+import time:    938616 |     938616 |                 pydantic.functional_validators
+import time:      1279 |       1279 |                   pydantic._internal._core_metadata
+import time:    671433 |     671433 |                   pydantic._internal._schema_generation_shared
+import time:    828154 |    1500866 |                 pydantic.json_schema
+import time: 142883173 |  142883173 |                 pydantic._internal._discriminated_union
+import time:   1416218 |  148297812 |               pydantic._internal._generate_schema
+import time:    763557 |  149061368 |             pydantic._internal._model_construction
+import time:   1342591 |  171123009 |           fastapi.exceptions
+import time:       708 |  171123716 |         fastapi.params
+import time:      3316 |  171233790 |       fastapi.routing
+import time:      2221 |  171240478 |     fastapi.applications
+import time:      1950 |  171247293 |   fastapi
+import time:      4661 |  171259089 | api.main
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import api.main; print('IMPORT_OK')
+    ^^^^^^^^^^^^^^^
+  File "/Users/brenoherculano/Documents/New project/mente-do-brasil/api/main.py", line 5, in <module>
+    from fastapi import FastAPI, HTTPException
+  File "/Users/brenoherculano/Documents/New project/mente-do-brasil/.venv/lib/python3.13/site-packages/fastapi/__init__.py", line 7, in <module>
+  File "/Users/brenoherculano/Documents/New project/mente-do-brasil/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 7, in <module>
+  File "/Users/brenoherculano/Documents/New project/mente-do-brasil/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 45, in <module>
+  File "/Users/brenoherculano/Documents/New project/mente-do-brasil/.venv/lib/python3.13/site-packages/fastapi/params.py", line 7, in <module>
+  File "/Users/brenoherculano/Documents/New project/mente-do-brasil/.venv/lib/python3.13/site-packages/fastapi/exceptions.py", line 5, in <module>
+  File "<frozen importlib._bootstrap>", line 1412, in _handle_fromlist
+  File "/Users/brenoherculano/Documents/New project/mente-do-brasil/.venv/lib/python3.13/site-packages/pydantic/__init__.py", line 446, in __getattr__
+    module = import_module(module_name, package=package)
+  File "/Users/brenoherculano/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/brenoherculano/Documents/New project/mente-do-brasil/.venv/lib/python3.13/site-packages/pydantic/main.py", line 36, in <module>
+  File "/Users/brenoherculano/Documents/New project/mente-do-brasil/.venv/lib/python3.13/site-packages/pydantic/_internal/_model_construction.py", line 25, in <module>
+  File "/Users/brenoherculano/Documents/New project/mente-do-brasil/.venv/lib/python3.13/site-packages/pydantic/_internal/_generate_schema.py", line 77, in <module>
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1159, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1218, in get_data
+TimeoutError: [Errno 60] Operation timed out

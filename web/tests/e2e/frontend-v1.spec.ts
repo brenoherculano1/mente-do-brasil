@@ -1,11 +1,12 @@
 import { expect, test } from "@playwright/test";
 import { mkdirSync, writeFileSync } from "node:fs";
 
-const QA_DIR = "../docs/frontend_qc_2026-08-25";
-const METHODOLOGY_QA_DIR = "../docs/methodology_qc_2026-08-25";
-const DATA_QA_DIR = "../docs/data_page_qc_2026-08-25_locked";
-const ABOUT_QA_DIR = "../docs/about_page_qc_2026-08-25";
-const STATE_QA_DIR = "../docs/state_page_qc_2026-08-26";
+const PHASE_QA_DIR = "../docs/territorial_intelligence_qc_2026-08-27";
+const QA_DIR = `${PHASE_QA_DIR}/frontend_v1`;
+const METHODOLOGY_QA_DIR = `${PHASE_QA_DIR}/methodology`;
+const DATA_QA_DIR = `${PHASE_QA_DIR}/data`;
+const ABOUT_QA_DIR = `${PHASE_QA_DIR}/about`;
+const STATE_QA_DIR = `${PHASE_QA_DIR}/state`;
 
 test.beforeAll(() => {
   mkdirSync(QA_DIR, { recursive: true });

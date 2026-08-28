@@ -255,6 +255,10 @@ export function DataPage() {
             <Row label="Canônico" value={DATA_RELEASE.canonicalVersion} />
             <Row label="Geografia" value={DATA_RELEASE.geographyVersion} />
             <Row label="Geometria web" value={DATA_RELEASE.webGeometryVersion} />
+            <Row label="Inteligência territorial" value={DATA_RELEASE.intelligenceVersion} />
+            <Row label="Radar" value={DATA_RELEASE.radarRulesetVersion} />
+            <Row label="Decomposição" value={DATA_RELEASE.decompositionVersion} />
+            <Row label="Peers" value={DATA_RELEASE.peerMethodVersion} />
           </dl>
           <p>
             Um release do Mente do Brasil representa uma combinação versionada de

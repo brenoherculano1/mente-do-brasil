@@ -1,0 +1,2 @@
+status=PASS
+Radar accessible list present; chart text summaries present; E2E validated no global overflow in desktop/mobile target paths.

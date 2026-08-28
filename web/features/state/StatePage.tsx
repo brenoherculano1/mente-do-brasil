@@ -103,8 +103,8 @@ export function StatePage({ stateProfile }: { stateProfile: StateProfile }) {
           <p className="small-text">{metricConfig.description}</p>
           {metric === "mismatch_score" && (
             <p className="small-text">
-              Não é uma medida direta de déficit, acesso, qualidade ou necessidade não
-              atendida.
+              Não é uma medida direta de acesso, qualidade ou volume de recursos a
+              adicionar.
             </p>
           )}
         </section>
@@ -263,6 +263,9 @@ export function StatePage({ stateProfile }: { stateProfile: StateProfile }) {
             </Link>
             <Link className="text-button" href="/dados">
               Ver dados e versões
+            </Link>
+            <Link className="text-button" href={`/radar?uf=${stateProfile.state.uf}`}>
+              Abrir Radar deste estado
             </Link>
           </div>
         </section>

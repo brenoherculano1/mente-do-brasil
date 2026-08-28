@@ -1,0 +1,3 @@
+API DB ROLE PROVISIONED
+role=mente_do_brasil_api
+privileges=read-only

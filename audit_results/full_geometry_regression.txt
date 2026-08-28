@@ -1,13 +1,4 @@
-HARDENING_04_FULL_GEOMETRY_REGRESSION
 status=PASS
-
-direct_fastapi:
-- /api/v1/map/health-regions?include_geometry=true&geometry_profile=full => 403.
-
-same_origin_next:
-- /api/v1/map/health-regions?include_geometry=true&geometry_profile=full => 403.
-- Cache-Control=no-store.
-
-notes:
-- Full geometry remains unavailable by default.
-- Full geometry was not downloaded.
+map_full_geometry=403 via validate_api.py
+radar_full_geometry_exposure=NO
+radar_uses_overview_only=YES

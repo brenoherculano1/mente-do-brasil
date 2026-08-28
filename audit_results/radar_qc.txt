@@ -1,0 +1,20 @@
+{
+  "matched_signal_families_distribution": {
+    "0": 187,
+    "1": 139,
+    "2": 67,
+    "3": 39,
+    "4": 4,
+    "5": 3
+  },
+  "quality_flags_included_in_count": false,
+  "radar_counts": {
+    "CAPACITY_COMPONENT_LOW": 184,
+    "CAPACITY_LOW": 38,
+    "MISMATCH_MARKED_POSITIVE": 68,
+    "NEED_HIGH": 71,
+    "SPATIAL_HH_MISMATCH": 60
+  },
+  "radar_rows": 439,
+  "status": "PASS"
+}

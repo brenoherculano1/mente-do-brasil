@@ -19,6 +19,7 @@ class ServingDatabaseStaticTests(unittest.TestCase):
                 "005_serving_views.sql",
                 "006_serving_status.sql",
                 "007_web_geometry.sql",
+                "008_product_intelligence.sql",
             ],
         )
 
@@ -38,6 +39,10 @@ class ServingDatabaseStaticTests(unittest.TestCase):
             "CREATE TABLE IF NOT EXISTS analytics.health_region_metrics",
             "CREATE TABLE IF NOT EXISTS meta.serving_database_status",
             "CREATE TABLE IF NOT EXISTS web.health_region_geometry",
+            "CREATE TABLE IF NOT EXISTS meta.product_intelligence_versions",
+            "CREATE TABLE IF NOT EXISTS analytics.health_region_intelligence",
+            "CREATE TABLE IF NOT EXISTS analytics.health_region_peers",
+            "CREATE TABLE IF NOT EXISTS analytics.health_region_peer_benchmarks",
             "CREATE OR REPLACE VIEW serving.health_region_profile",
             "CREATE OR REPLACE VIEW serving.health_region_map",
             "CREATE OR REPLACE VIEW serving.health_region_lookup",
@@ -67,6 +72,9 @@ class ServingDatabaseStaticTests(unittest.TestCase):
             "CHECK (lisa_p IS NULL OR lisa_p BETWEEN 0 AND 1)",
             "CHECK (lisa_q IS NULL OR lisa_q BETWEEN 0 AND 1)",
             "abs(mismatch_score - (need_score - capacity_score)) <= 1e-12",
+            "matched_signal_families BETWEEN 0 AND 5",
+            "abs(decomposition_sum - mismatch_score) <= 1e-12",
+            "peer_rank BETWEEN 1 AND 10",
         ]:
             self.assertIn(fragment, sql)
 
@@ -123,6 +131,11 @@ class ServingDatabaseStaticTests(unittest.TestCase):
         self.assertIn("existing release_id has different canonical hashes", loader)
         self.assertIn("ON CONFLICT (release_id) DO NOTHING", loader)
 
+    def test_api_role_can_read_analytics_layer(self):
+        provisioner = (REPO_ROOT / "scripts/provision_api_db_role.py").read_text()
+        self.assertIn('"analytics"', provisioner)
+        self.assertIn("GRANT SELECT ON ALL TABLES IN SCHEMA", provisioner)
+
     def test_loader_does_not_recalculate_scientific_rates(self):
         loader = (REPO_ROOT / "scripts/load_serving_database.py").read_text()
         prohibited_assignment_patterns = [
@@ -151,6 +164,7 @@ class ServingDatabaseStaticTests(unittest.TestCase):
             "constraints",
             "views",
             "immutability",
+            "product_intelligence",
         ]:
             self.assertIn(label, validator)
 

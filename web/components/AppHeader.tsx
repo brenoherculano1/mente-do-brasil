@@ -15,6 +15,9 @@ export function AppHeader() {
           <Link aria-current={pathname === "/" ? "page" : undefined} href="/">
             Explorar
           </Link>
+          <Link aria-current={pathname === "/radar" ? "page" : undefined} href="/radar">
+            Radar
+          </Link>
           <Link aria-current={pathname === "/metodologia" ? "page" : undefined} href="/metodologia">
             Metodologia
           </Link>

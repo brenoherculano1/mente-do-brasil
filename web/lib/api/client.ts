@@ -9,6 +9,9 @@ import type {
   MetricId,
   MunicipalityHealthRegion,
   PaginatedResponse,
+  PeersResponse,
+  RadarResponse,
+  RadarSignalFamily,
   StateProfile,
 } from "@/types/api";
 
@@ -81,4 +84,28 @@ export function getMapItems(metric: MetricId, uf?: string) {
   const params = new URLSearchParams({ metric });
   if (uf) params.set("uf", uf);
   return request<MapItem[]>(`/api/v1/map/health-regions?${params}`);
+}
+
+export function getRadarHealthRegions(options: {
+  uf?: string;
+  signal?: RadarSignalFamily;
+  minSignalFamilies?: number;
+  q?: string;
+  sort?: "signals" | "mismatch" | "name";
+  includeGeometry?: boolean;
+}) {
+  const params = new URLSearchParams({
+    min_signal_families: String(options.minSignalFamilies ?? 2),
+    sort: options.sort ?? "signals",
+    include_geometry: options.includeGeometry ? "true" : "false",
+  });
+  if (options.uf) params.set("uf", options.uf);
+  if (options.signal) params.set("signal", options.signal);
+  if (options.q) params.set("q", options.q);
+  return request<RadarResponse>(`/api/v1/radar/health-regions?${params}`);
+}
+
+export function getHealthRegionPeers(code: string, metric: MetricId) {
+  const params = new URLSearchParams({ metric });
+  return request<PeersResponse>(`/api/v1/health-regions/${code}/peers?${params}`);
 }

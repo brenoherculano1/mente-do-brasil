@@ -1,0 +1,12 @@
+CLAIM SCAN - PRODUCT SURFACE
+docs/territorial_intelligence_phase1_2026-08-27.md:38:It is not a ranking, risk score, priority score, or resource recommendation.
+web/tests/e2e/frontend-v1.spec.ts:274:  await expect(page.locator("body")).not.toContainText("déficit assistencial");
+web/tests/e2e/frontend-v1.spec.ts:275:  await expect(page.locator("body")).not.toContainText("necessidade não atendida");
+web/tests/e2e/frontend-v1.spec.ts:276:  await expect(page.locator("body")).not.toContainText("hotspot de doença mental");
+web/tests/e2e/frontend-v1.spec.ts:278:  await expect(page.locator("body")).not.toContainText("melhores regiões");
+web/tests/e2e/frontend-v1.spec.ts:279:  await expect(page.locator("body")).not.toContainText("piores regiões");
+web/tests/e2e/territorial-intelligence.spec.ts:28:  await expect(page.locator("body")).not.toContainText("déficit assistencial");
+web/tests/e2e/territorial-intelligence.spec.ts:29:  await expect(page.locator("body")).not.toContainText("hotspot de doença mental");
+web/tests/unit/about-page.test.tsx:63:    expect(text).not.toMatch(/déficit assistencial|necessidade não atendida|hotspot de doença mental/i);
+web/tests/unit/about-page.test.tsx:64:    expect(text).not.toMatch(/melhores regiões|piores regiões|recomendamos/i);
+PASS: no prohibited affirmative product wording in shipped UI/API/docs for this phase.

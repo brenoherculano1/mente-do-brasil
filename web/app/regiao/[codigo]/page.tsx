@@ -2,10 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { isNotFound } from "@/lib/api/errors";
-import { getHealthRegionProfileServer } from "@/lib/api/server";
+import {
+  getHealthRegionExplanationServer,
+  getHealthRegionPeersServer,
+  getHealthRegionProfileServer,
+} from "@/lib/api/server";
 import { formatInteger, formatRate, formatScore } from "@/lib/format";
 import { pageMetadata } from "@/lib/seo";
 import { stateNameForUf } from "@/lib/states";
+import type { ExplanationResponse, HealthRegionProfile, PeersResponse } from "@/types/api";
+import { RegionIntelligence } from "@/features/intelligence/RegionIntelligence";
 import { DataQualityNotice } from "@/features/profile/DataQualityNotice";
 import { IndicatorMetric } from "@/features/profile/IndicatorMetric";
 import { ScoreOverview } from "@/features/profile/ScoreOverview";
@@ -37,13 +43,18 @@ export async function generateMetadata({ params }: RegionPageProps): Promise<Met
 export default async function RegionProfilePage({ params }: RegionPageProps) {
   const { codigo } = await params;
   if (!/^\d{5}$/.test(codigo)) notFound();
-  let profile;
+  let data: [HealthRegionProfile, ExplanationResponse, PeersResponse];
   try {
-    profile = await getHealthRegionProfileServer(codigo);
+    data = await Promise.all([
+      getHealthRegionProfileServer(codigo),
+      getHealthRegionExplanationServer(codigo),
+      getHealthRegionPeersServer(codigo),
+    ]);
   } catch (error) {
     if (isNotFound(error)) notFound();
     throw error;
   }
+  const [profile, explanation, peers] = data;
   const territory = profile.territory;
   return (
     <div className="profile-shell page-shell">
@@ -82,7 +93,7 @@ export default async function RegionProfilePage({ params }: RegionPageProps) {
           </p>
           <p className="small-text">
             Ele funciona como um sinal para investigação territorial e não como uma
-            medida direta de acesso, qualidade ou necessidade não atendida.
+            medida direta de acesso, qualidade ou volume de recursos a adicionar.
           </p>
         </div>
 
@@ -104,6 +115,8 @@ export default async function RegionProfilePage({ params }: RegionPageProps) {
           </div>
         </div>
       </section>
+
+      <RegionIntelligence explanation={explanation} peers={peers} />
 
       <section className="profile-grid">
         <div className="profile-section">

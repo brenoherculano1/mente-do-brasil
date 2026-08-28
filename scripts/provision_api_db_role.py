@@ -85,7 +85,7 @@ def provision() -> None:
                 sql.Identifier("mente_do_brasil"), sql.Identifier(API_USER)
             )
         )
-        for schema_name in ["meta", "geo", "serving", "web"]:
+        for schema_name in ["meta", "geo", "analytics", "serving", "web"]:
             connection.execute(
                 sql.SQL("GRANT USAGE ON SCHEMA {} TO {}").format(
                     sql.Identifier(schema_name), sql.Identifier(API_USER)

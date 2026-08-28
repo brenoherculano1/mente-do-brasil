@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { getHealthRegionProfile, getMapData } from "@/lib/api/client";
@@ -79,6 +80,9 @@ export function ExplorerPage({ initialMetric }: { initialMetric: MetricId }) {
           territoriais entre indicadores de necessidade medida e capacidade registrada
           nas 439 Regiões de Saúde do país.
         </p>
+        <Link className="text-button" href="/radar">
+          Abrir Radar Territorial
+        </Link>
       </section>
 
       <section className="explorer-grid" aria-label="Explorador territorial">

@@ -1,0 +1,2 @@
+status=PASS
+Inspected desktop_radar_brazil.png and mobile_profile_peers.png; map, controls, drawer, decomposition and peers rendered with sober non-moral color semantics.

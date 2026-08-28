@@ -17,6 +17,11 @@ RELEASE_ID = "MDB_ANALYTICAL_2024_1"
 CANONICAL_VERSION = "MDB_CANONICAL_1.0"
 METHOD_VERSION = "MDB_METHOD_1.0"
 GEOGRAPHY_VERSION = "BR_HEALTH_REGIONS_END2024_V1"
+INTELLIGENCE_VERSION = "MDB_TERRITORIAL_INTELLIGENCE_1.0"
+RADAR_RULESET_VERSION = "MDB_RADAR_RULESET_1.0"
+DECOMPOSITION_VERSION = "MDB_MISMATCH_DECOMPOSITION_1.0"
+PEER_METHOD_VERSION = "MDB_PEER_METHOD_1.0"
+CANONICAL_INPUT_HASH = "a3cc8f3aefc9d556d1bacc636dc72cabf04155052dd63c426dda9bec58ada515"
 
 EXPECTED_HEALTH_REGIONS = 439
 EXPECTED_MUNICIPALITIES = 5570
@@ -40,6 +45,7 @@ GLOBAL_MORAN = Path(
     "mdb_import_bundle/analytical_release/global_moran_primary_corrected.json"
 )
 MIGRATIONS_DIR = Path("db/migrations")
+PRODUCT_INTELLIGENCE_DIR = Path("data/product_intelligence/MDB_ANALYTICAL_2024_1")
 
 INDICATOR_IDS = [
     "suicide_asmr",
@@ -388,6 +394,17 @@ def insert_geography(connection, health_regions: pd.DataFrame, geometry: pd.Data
         )
 
 
+def database_has_geography(connection) -> bool:
+    return (
+        scalar(
+            connection,
+            "SELECT count(*) FROM geo.health_regions WHERE geography_version = %s",
+            (GEOGRAPHY_VERSION,),
+        )
+        == EXPECTED_HEALTH_REGIONS
+    )
+
+
 def insert_crosswalk(connection, crosswalk: pd.DataFrame) -> None:
     for row in crosswalk.itertuples(index=False):
         connection.execute(
@@ -480,6 +497,217 @@ def insert_metrics(connection, health_regions: pd.DataFrame) -> None:
             """,
             values,
         )
+
+
+def product_intelligence_paths(root: Path) -> dict[str, Path]:
+    return {
+        "intelligence": root / PRODUCT_INTELLIGENCE_DIR / "health_region_intelligence.parquet",
+        "peers": root / PRODUCT_INTELLIGENCE_DIR / "health_region_peers.parquet",
+        "benchmarks": root / PRODUCT_INTELLIGENCE_DIR / "peer_benchmarks.parquet",
+    }
+
+
+def read_product_intelligence(
+    root: Path,
+) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, dict]:
+    paths = product_intelligence_paths(root)
+    for path in paths.values():
+        if not path.exists():
+            raise AssertionError(f"Product intelligence output missing: {path}")
+    intelligence = pq.read_table(paths["intelligence"]).to_pandas()
+    peers = pq.read_table(paths["peers"]).to_pandas()
+    benchmarks = pq.read_table(paths["benchmarks"]).to_pandas()
+    output_hashes = {name: sha256_file(path) for name, path in paths.items()}
+    if len(intelligence) != 439:
+        raise AssertionError("Product intelligence must contain 439 rows.")
+    if len(peers) != 4390:
+        raise AssertionError("Product peers must contain 4390 rows.")
+    if len(benchmarks) != 3512:
+        raise AssertionError("Product peer benchmarks must contain 3512 rows.")
+    if int(intelligence["spatial_hh_mismatch"].sum()) != 60:
+        raise AssertionError("SPATIAL_HH_MISMATCH must equal 60 in product intelligence.")
+    max_error = (
+        intelligence["decomposition_sum"].astype(float)
+        - intelligence["mismatch_score"].astype(float)
+    ).abs().max()
+    if max_error > 1e-12:
+        raise AssertionError(f"Product decomposition identity failed: {max_error}")
+    return intelligence, peers, benchmarks, output_hashes
+
+
+def enforce_product_intelligence_immutability(connection, hashes: dict[str, str]) -> None:
+    existing = connection.execute(
+        """
+        SELECT canonical_input_sha256, intelligence_sha256, peers_sha256, benchmarks_sha256
+        FROM meta.product_intelligence_versions
+        WHERE release_id = %s AND intelligence_version = %s
+        """,
+        (RELEASE_ID, INTELLIGENCE_VERSION),
+    ).fetchone()
+    if not existing:
+        return
+    expected = (
+        CANONICAL_INPUT_HASH,
+        hashes["intelligence"],
+        hashes["peers"],
+        hashes["benchmarks"],
+    )
+    if tuple(existing) != expected:
+        raise AssertionError(
+            "IMMUTABILITY VIOLATION: existing intelligence version has different hashes."
+        )
+
+
+def insert_product_intelligence_version(connection, hashes: dict[str, str]) -> None:
+    connection.execute(
+        """
+        INSERT INTO meta.product_intelligence_versions (
+            release_id, intelligence_version, radar_ruleset_version,
+            decomposition_version, peer_method_version, status, canonical_input_sha256,
+            intelligence_sha256, peers_sha256, benchmarks_sha256
+        )
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+        ON CONFLICT (release_id, intelligence_version) DO NOTHING
+        """,
+        (
+            RELEASE_ID,
+            INTELLIGENCE_VERSION,
+            RADAR_RULESET_VERSION,
+            DECOMPOSITION_VERSION,
+            PEER_METHOD_VERSION,
+            "VALIDATED_LOCAL",
+            CANONICAL_INPUT_HASH,
+            hashes["intelligence"],
+            hashes["peers"],
+            hashes["benchmarks"],
+        ),
+    )
+
+
+def insert_product_intelligence_rows(connection, intelligence: pd.DataFrame) -> None:
+    fields = [
+        "release_id",
+        "geography_version",
+        "intelligence_version",
+        "radar_ruleset_version",
+        "decomposition_version",
+        "peer_method_version",
+        "health_region_code",
+        "health_region_name",
+        "uf",
+        "population",
+        "population_density",
+        "municipality_count",
+        "need_score",
+        "capacity_score",
+        "mismatch_score",
+        "suicide_percentile",
+        "psychiatric_admission_percentile",
+        "caps_percentile",
+        "beds_percentile",
+        "psychiatrist_fte_percentile",
+        "need_high",
+        "capacity_low",
+        "mismatch_marked_positive",
+        "capacity_component_low",
+        "spatial_hh_mismatch",
+        "caps_low",
+        "beds_low",
+        "psychiatrist_fte_low",
+        "zero_registered_beds",
+        "small_suicide_count",
+        "matched_signal_families",
+        "suicide_contribution",
+        "admissions_contribution",
+        "caps_contribution",
+        "beds_contribution",
+        "psychiatrist_contribution",
+        "decomposition_sum",
+        "data_quality_flags",
+    ]
+    placeholders = ", ".join(f"%({field})s" for field in fields)
+    records = []
+    for row in intelligence.itertuples(index=False):
+        values = {field: getattr(row, field) for field in fields}
+        values["data_quality_flags"] = list(values["data_quality_flags"])
+        records.append(values)
+    with connection.cursor() as cursor:
+        cursor.executemany(
+            f"""
+            INSERT INTO analytics.health_region_intelligence ({", ".join(fields)})
+            VALUES ({placeholders})
+            ON CONFLICT (release_id, intelligence_version, health_region_code) DO NOTHING
+            """,
+            records,
+        )
+
+
+def insert_product_peers(connection, peers: pd.DataFrame) -> None:
+    records = [
+        (
+            row.release_id,
+            row.peer_method_version,
+            row.health_region_code,
+            row.peer_health_region_code,
+            int(row.peer_rank),
+            float(row.structural_distance),
+        )
+        for row in peers.itertuples(index=False)
+    ]
+    with connection.cursor() as cursor:
+        cursor.executemany(
+            """
+            INSERT INTO analytics.health_region_peers (
+                release_id, peer_method_version, health_region_code, peer_health_region_code,
+                peer_rank, structural_distance
+            )
+            VALUES (%s, %s, %s, %s, %s, %s)
+            ON CONFLICT (release_id, peer_method_version, health_region_code, peer_rank)
+            DO NOTHING
+            """,
+            records,
+        )
+
+
+def insert_product_peer_benchmarks(connection, benchmarks: pd.DataFrame) -> None:
+    records = [
+        (
+            row.release_id,
+            row.peer_method_version,
+            row.health_region_code,
+            row.metric_id,
+            float(row.target_value),
+            int(row.peer_n_observed),
+            none_if_nan(row.peer_median),
+            none_if_nan(row.peer_q1),
+            none_if_nan(row.peer_q3),
+            none_if_nan(row.peer_min),
+            none_if_nan(row.peer_max),
+            none_if_nan(row.relative_to_peer_iqr),
+            none_if_nan(row.insufficient_reason),
+        )
+        for row in benchmarks.itertuples(index=False)
+    ]
+    with connection.cursor() as cursor:
+        cursor.executemany(
+            """
+            INSERT INTO analytics.health_region_peer_benchmarks (
+                release_id, peer_method_version, health_region_code, metric_id, target_value,
+                peer_n_observed, peer_median, peer_q1, peer_q3, peer_min, peer_max,
+                relative_to_peer_iqr, insufficient_reason
+            )
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            ON CONFLICT (release_id, peer_method_version, health_region_code, metric_id)
+            DO NOTHING
+            """,
+            records,
+        )
+
+
+def none_if_nan(value):
+    if pd.isna(value):
+        return None
+    return value
 
 
 def scalar(connection, sql: str, params: tuple[Any, ...] = ()) -> Any:
@@ -604,23 +832,24 @@ def assert_database_matches_canonical(
                 f"geo.municipality_health_region_crosswalk.{column}", db_value, expected_value
             )
 
-    db_geometry = connection.execute(
-        """
-        SELECT health_region_code, ST_AsBinary(geom)
-        FROM geo.health_regions
-        WHERE geography_version = %s
-        ORDER BY health_region_code
-        """,
-        (GEOGRAPHY_VERSION,),
-    ).fetchall()
-    expected_geometry = geometry.sort_values("health_region_code")
-    expected_wkb = {
-        row.health_region_code: bytes(row.geometry.wkb)
-        for row in expected_geometry.itertuples(index=False)
-    }
-    for code, db_wkb in db_geometry:
-        if bytes(db_wkb) != expected_wkb[code]:
-            raise AssertionError(f"Database geometry differs for health_region_code={code}")
+    if geometry is not None:
+        db_geometry = connection.execute(
+            """
+            SELECT health_region_code, ST_AsBinary(geom)
+            FROM geo.health_regions
+            WHERE geography_version = %s
+            ORDER BY health_region_code
+            """,
+            (GEOGRAPHY_VERSION,),
+        ).fetchall()
+        expected_geometry = geometry.sort_values("health_region_code")
+        expected_wkb = {
+            row.health_region_code: bytes(row.geometry.wkb)
+            for row in expected_geometry.itertuples(index=False)
+        }
+        for code, db_wkb in db_geometry:
+            if bytes(db_wkb) != expected_wkb[code]:
+                raise AssertionError(f"Database geometry differs for health_region_code={code}")
 
 
 def validate_database(connection, release: dict[str, Any]) -> dict[str, Any]:
@@ -719,6 +948,42 @@ def validate_database(connection, release: dict[str, Any]) -> dict[str, Any]:
             """,
             (RELEASE_ID, "ZERO_REGISTERED_BEDS"),
         ),
+        "intelligence_versions": scalar(
+            connection,
+            """
+            SELECT count(*)
+            FROM meta.product_intelligence_versions
+            WHERE release_id = %s AND intelligence_version = %s
+            """,
+            (RELEASE_ID, INTELLIGENCE_VERSION),
+        ),
+        "intelligence": scalar(
+            connection,
+            """
+            SELECT count(*)
+            FROM analytics.health_region_intelligence
+            WHERE release_id = %s AND intelligence_version = %s
+            """,
+            (RELEASE_ID, INTELLIGENCE_VERSION),
+        ),
+        "peers": scalar(
+            connection,
+            """
+            SELECT count(*)
+            FROM analytics.health_region_peers
+            WHERE release_id = %s AND peer_method_version = %s
+            """,
+            (RELEASE_ID, PEER_METHOD_VERSION),
+        ),
+        "peer_benchmarks": scalar(
+            connection,
+            """
+            SELECT count(*)
+            FROM analytics.health_region_peer_benchmarks
+            WHERE release_id = %s AND peer_method_version = %s
+            """,
+            (RELEASE_ID, PEER_METHOD_VERSION),
+        ),
     }
     expected = {
         "releases": 1,
@@ -734,6 +999,10 @@ def validate_database(connection, release: dict[str, Any]) -> dict[str, Any]:
         "lisa_significant": 135,
         "small_suicide": 7,
         "zero_beds": 275,
+        "intelligence_versions": 1,
+        "intelligence": 439,
+        "peers": 4390,
+        "peer_benchmarks": 3512,
     }
     if checks != expected:
         raise AssertionError(f"Database validation failed: got={checks}, expected={expected}")
@@ -752,6 +1021,63 @@ def validate_database(connection, release: dict[str, Any]) -> dict[str, Any]:
     expected_clusters = {"high-high": 60, "low-low": 66, "high-low": 4, "low-high": 5}
     if clusters != expected_clusters:
         raise AssertionError(f"LISA cluster counts changed: {clusters}")
+
+    intelligence_checks = {
+        "spatial_hh_mismatch": scalar(
+            connection,
+            """
+            SELECT count(*)
+            FROM analytics.health_region_intelligence
+            WHERE release_id = %s AND intelligence_version = %s AND spatial_hh_mismatch
+            """,
+            (RELEASE_ID, INTELLIGENCE_VERSION),
+        ),
+        "self_peers": scalar(
+            connection,
+            """
+            SELECT count(*)
+            FROM analytics.health_region_peers
+            WHERE release_id = %s AND peer_method_version = %s
+              AND health_region_code = peer_health_region_code
+            """,
+            (RELEASE_ID, PEER_METHOD_VERSION),
+        ),
+        "duplicate_peers": scalar(
+            connection,
+            """
+            SELECT count(*)
+            FROM (
+                SELECT health_region_code, peer_health_region_code, count(*) AS n
+                FROM analytics.health_region_peers
+                WHERE release_id = %s AND peer_method_version = %s
+                GROUP BY health_region_code, peer_health_region_code
+                HAVING count(*) > 1
+            ) d
+            """,
+            (RELEASE_ID, PEER_METHOD_VERSION),
+        ),
+        "decomposition_failures": scalar(
+            connection,
+            """
+            SELECT count(*)
+            FROM analytics.health_region_intelligence
+            WHERE release_id = %s AND intelligence_version = %s
+              AND abs(decomposition_sum - mismatch_score) > 1e-12
+            """,
+            (RELEASE_ID, INTELLIGENCE_VERSION),
+        ),
+    }
+    expected_intelligence = {
+        "spatial_hh_mismatch": 60,
+        "self_peers": 0,
+        "duplicate_peers": 0,
+        "decomposition_failures": 0,
+    }
+    if intelligence_checks != expected_intelligence:
+        raise AssertionError(
+            f"Product intelligence validation failed: "
+            f"got={intelligence_checks}, expected={expected_intelligence}"
+        )
 
     hashes = connection.execute(
         """
@@ -774,19 +1100,26 @@ def load() -> dict[str, Any]:
     crosswalk = read_crosswalk(root, manifest)
     validate_lisa_and_flags(health_regions)
     release = release_values(manifest)
-    geometry = load_geometry(root)
     indicators = indicator_records(root)
+    intelligence, peers, benchmarks, intelligence_hashes = read_product_intelligence(root)
 
     with connect() as connection:
         with connection.transaction():
             apply_migrations(connection, root)
             mode = enforce_release_immutability(connection, release)
+            enforce_product_intelligence_immutability(connection, intelligence_hashes)
+            geometry = None if database_has_geography(connection) else load_geometry(root)
             insert_release(connection, release)
             insert_serving_status(connection, root)
             insert_indicators(connection, indicators)
-            insert_geography(connection, health_regions, geometry)
+            if geometry is not None:
+                insert_geography(connection, health_regions, geometry)
             insert_crosswalk(connection, crosswalk)
             insert_metrics(connection, health_regions)
+            insert_product_intelligence_version(connection, intelligence_hashes)
+            insert_product_intelligence_rows(connection, intelligence)
+            insert_product_peers(connection, peers)
+            insert_product_peer_benchmarks(connection, benchmarks)
             checks = validate_database(connection, release)
             assert_database_matches_canonical(connection, health_regions, crosswalk, geometry)
     return {"status": mode, "checks": checks}

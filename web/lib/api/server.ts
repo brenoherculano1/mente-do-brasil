@@ -1,7 +1,12 @@
 import "server-only";
 
 import { MdbApiError } from "@/lib/api/errors";
-import type { HealthRegionProfile, StateProfile } from "@/types/api";
+import type {
+  ExplanationResponse,
+  HealthRegionProfile,
+  PeersResponse,
+  StateProfile,
+} from "@/types/api";
 
 type ApiErrorBody = {
   error?: {
@@ -49,6 +54,18 @@ export function getHealthRegionProfileServer(code: string) {
 
 export function getStateProfileServer(uf: string) {
   return request<StateProfile>(`/api/v1/states/${uf}`, {
+    cache: "no-store",
+  });
+}
+
+export function getHealthRegionExplanationServer(code: string) {
+  return request<ExplanationResponse>(`/api/v1/health-regions/${code}/explanation`, {
+    cache: "no-store",
+  });
+}
+
+export function getHealthRegionPeersServer(code: string) {
+  return request<PeersResponse>(`/api/v1/health-regions/${code}/peers?metric=mismatch_score`, {
     cache: "no-store",
   });
 }

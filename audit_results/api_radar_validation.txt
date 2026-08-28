@@ -1,0 +1,15 @@
+{
+  "injection_search_total": 0,
+  "invalid_min_status": 422,
+  "invalid_signal_status": 422,
+  "invalid_uf_status": 404,
+  "radar_all_features": 439,
+  "radar_all_regions": 439,
+  "radar_all_status": 200,
+  "radar_default_min_families": 2,
+  "radar_default_status": 200,
+  "radar_default_total": 113,
+  "radar_geometry_profile": "overview",
+  "spatial_hh_status": 200,
+  "spatial_hh_total": 60
+}

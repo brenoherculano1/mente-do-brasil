@@ -46,19 +46,29 @@ describe("methodology page", () => {
   it("preserves claim discipline and limitations", () => {
     render(<MethodologyPage />);
     expect(
-      screen.getByText(/não uma medida direta de déficit, acesso, qualidade ou necessidade não atendida/i),
+      screen.getByText(/não uma medida direta de acesso efetivo, qualidade assistencial/i),
     ).toBeInTheDocument();
     expect(screen.getByRole("heading", { level: 2, name: "Limitações" })).toBeInTheDocument();
-    expect(screen.getByText("Mismatch não é causal")).toBeInTheDocument();
+    expect(screen.getByText("Mismatch não tem leitura etiológica")).toBeInTheDocument();
     expect(screen.getByText(/Need Score combina dois indicadores distintos/i)).toBeInTheDocument();
   });
 
-  it("renders LISA counts and warning without disease-hotspot claim", () => {
+  it("documents territorial intelligence product methods without recalculating science", () => {
+    render(<MethodologyPage />);
+    expect(screen.getByText(METHOD_IDENTIFIERS.intelligence)).toBeInTheDocument();
+    expect(screen.getByText(METHOD_IDENTIFIERS.radarRuleset)).toBeInTheDocument();
+    expect(screen.getByText(METHOD_IDENTIFIERS.decomposition)).toBeInTheDocument();
+    expect(screen.getByText(METHOD_IDENTIFIERS.peerMethod)).toBeInTheDocument();
+    expect(screen.getByText(/Variáveis de outcome não entram na seleção dos peers/i))
+      .toBeInTheDocument();
+  });
+
+  it("renders LISA counts and warning without disease concentration claim", () => {
     render(<MethodologyPage />);
     expect(screen.getByText(String(METHODOLOGY_LOCKS.lisaSignificant))).toBeInTheDocument();
     expect(screen.getByText("60 / 66 / 4 / 5")).toBeInTheDocument();
     expect(
-      screen.getByText(/Um cluster HH não deve ser interpretado como um hotspot de doença mental/i),
+      screen.getByText(/Um cluster HH não deve ser interpretado como concentração de doença mental/i),
     ).toBeInTheDocument();
   });
 

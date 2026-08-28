@@ -1,0 +1,8 @@
+{
+  "benchmark_count": 8,
+  "methods_release": "MDB_TERRITORIAL_INTELLIGENCE_1.0",
+  "methods_status": 200,
+  "peer_count": 10,
+  "peers_status": 200,
+  "self_peer_present": false
+}

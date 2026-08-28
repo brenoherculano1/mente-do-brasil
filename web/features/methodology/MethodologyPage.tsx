@@ -96,7 +96,8 @@ export function MethodologyPage() {
                 </p>
                 <p className="small-text">
                   Isso é um sinal territorial para investigação, e não uma medida
-                  direta de déficit, acesso, qualidade ou necessidade não atendida.
+                  direta de acesso efetivo, qualidade assistencial ou volume de
+                  recursos a adicionar.
                 </p>
               </div>
             </div>
@@ -335,9 +336,9 @@ export function MethodologyPage() {
             <div className="claim-box">
               <h3>O que Mismatch não significa</h3>
               <p>
-                Mismatch não mede diretamente déficit assistencial, falta de
-                atendimento, qualidade do cuidado, necessidade não atendida ou
-                quantidade de recursos que deveria ser adicionada a um território.
+                Mismatch não mede diretamente acesso efetivo, qualidade do cuidado,
+                cobertura adequada ou quantidade de recursos que deveria ser
+                adicionada a um território.
               </p>
             </div>
             <p>
@@ -345,6 +346,82 @@ export function MethodologyPage() {
               medida e capacidade registrada que pode justificar investigação
               adicional.
             </p>
+          </Section>
+
+          <Section id="radar" title="Radar Territorial">
+            <p>
+              O Radar Territorial é uma camada de produto derivada do release
+              canônico. Ele não altera o método científico e apenas identifica
+              confluência de cinco famílias transparentes de sinais.
+            </p>
+            <TechnicalBlock
+              title="Famílias do Radar"
+              rows={[
+                ["NEED_HIGH", "need_score >= 0,75"],
+                ["CAPACITY_LOW", "capacity_score <= 0,25"],
+                ["MISMATCH_MARKED_POSITIVE", "mismatch_score >= 0,25"],
+                [
+                  "CAPACITY_COMPONENT_LOW",
+                  "CAPS, leitos ou psiquiatras FTE em percentil <= 0,25",
+                ],
+                ["SPATIAL_HH_MISMATCH", "LISA significativo com cluster HH de Mismatch"],
+              ]}
+            />
+            <p className="small-text">
+              matched_signal_families é uma contagem sem pesos de 0 a 5. Flags de
+              qualidade e ZERO_REGISTERED_BEDS não aumentam essa contagem.
+            </p>
+            <div className="version-grid">
+              <VersionPill label="Inteligência" value={METHOD_IDENTIFIERS.intelligence} />
+              <VersionPill label="Radar" value={METHOD_IDENTIFIERS.radarRuleset} />
+            </div>
+          </Section>
+
+          <Section id="decomposition" title="Decomposição do Mismatch">
+            <p>
+              A decomposição mostra a contribuição algébrica de cada componente em
+              torno do P50 nacional. A soma das cinco contribuições deve ser igual ao
+              Mismatch da região.
+            </p>
+            <TechnicalBlock
+              title="Contribuições centradas no P50"
+              rows={[
+                ["Suicídio", "0,5 × (percentil de suicídio - 0,5)"],
+                ["Internações", "0,5 × (percentil de internações - 0,5)"],
+                ["CAPS", "-1/3 × (percentil de CAPS - 0,5)"],
+                ["Leitos", "-1/3 × (percentil de leitos - 0,5)"],
+                ["Psiquiatras FTE", "-1/3 × (percentil de psiquiatras FTE - 0,5)"],
+              ]}
+            />
+            <p className="small-text">
+              Essa leitura é contábil e relativa; não identifica mecanismos
+              etiológicos nem prescreve alocação de recursos.
+            </p>
+            <VersionPill label="Decomposição" value={METHOD_IDENTIFIERS.decomposition} />
+          </Section>
+
+          <Section id="peers" title="Peers estruturais">
+            <p>
+              Peers estruturais comparam cada Região de Saúde com dez regiões
+              semelhantes em população, densidade populacional e número de
+              municípios. Variáveis de outcome não entram na seleção dos peers.
+            </p>
+            <TechnicalBlock
+              title="Método dos peers"
+              rows={[
+                ["Variáveis", "population, population_density, municipality_count"],
+                ["Transformação", "log1p e z-score nacional com std populacional ddof=0"],
+                ["Distância", "Euclidiana, com pesos iguais"],
+                ["Seleção", "10 regiões mais próximas; self excluído"],
+                ["Desempate", "health_region_code"],
+                ["Benchmarks", "mediana, q1, q3, mínimo e máximo dos peers"],
+              ]}
+            />
+            <p className="small-text">
+              Peers V1 não incorpora renda, urbanização formal, perfil etário,
+              vulnerabilidade social ou financiamento.
+            </p>
+            <VersionPill label="Peers" value={METHOD_IDENTIFIERS.peerMethod} />
           </Section>
 
           <Section id="spatial" title="Contexto espacial">
@@ -380,7 +457,7 @@ export function MethodologyPage() {
             />
             <p className="small-text">
               Os clusters LISA referem-se ao Mismatch. Um cluster HH não deve ser
-              interpretado como um hotspot de doença mental.
+              interpretado como concentração de doença mental.
             </p>
           </Section>
 
@@ -438,8 +515,8 @@ export function MethodologyPage() {
                   "Need, Capacity e Mismatch dependem da distribuição nacional das 439 regiões. Uma posição relativa pode mudar mesmo quando o valor absoluto de uma região não muda, caso a distribuição nacional se altere.",
                 ],
                 [
-                  "Mismatch não é causal",
-                  "Os dados podem revelar padrões territoriais, mas não demonstram que um componente específico causou determinado desfecho nem indicam automaticamente qual recurso deveria ser adicionado a uma região.",
+                  "Mismatch não tem leitura etiológica",
+                  "Os dados podem revelar padrões territoriais, mas não demonstram mecanismo etiológico nem indicam automaticamente qual recurso deveria ser adicionado a uma região.",
                 ],
               ].map(([title, text]) => (
                 <div className="limitation-item" key={title}>
@@ -471,8 +548,8 @@ export function MethodologyPage() {
                   <li>diagnosticar indivíduos;</li>
                   <li>declarar prevalência;</li>
                   <li>produzir ranking moral de melhor e pior;</li>
-                  <li>afirmar causalidade;</li>
-                  <li>concluir automaticamente que uma região possui déficit;</li>
+                  <li>atribuir mecanismos etiológicos;</li>
+                  <li>concluir automaticamente que uma região precisa de recursos específicos;</li>
                   <li>prescrever alocação específica de recursos apenas com esses indicadores.</li>
                 </ul>
               </div>

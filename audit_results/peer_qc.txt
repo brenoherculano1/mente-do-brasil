@@ -1,0 +1,9 @@
+{
+  "benchmark_rows": 3512,
+  "duplicate_peers": 0,
+  "peer_rows": 4390,
+  "peers_per_region_max": 10,
+  "peers_per_region_min": 10,
+  "self_peers": 0,
+  "status": "PASS"
+}

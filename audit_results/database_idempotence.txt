@@ -1,0 +1,24 @@
+SERVING DATABASE LOAD
+PASS
+{
+  "checks": {
+    "health_regions": 439,
+    "intelligence": 439,
+    "intelligence_versions": 1,
+    "lisa_significant": 135,
+    "lookup": 439,
+    "map": 439,
+    "metrics": 439,
+    "municipalities": 5570,
+    "peer_benchmarks": 3512,
+    "peers": 4390,
+    "profile": 439,
+    "releases": 1,
+    "serving_status": 1,
+    "small_suicide": 7,
+    "srid_4674": 439,
+    "valid_geom": 439,
+    "zero_beds": 275
+  },
+  "status": "PASS / NO CHANGE"
+}

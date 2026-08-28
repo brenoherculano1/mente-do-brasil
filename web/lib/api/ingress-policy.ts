@@ -302,6 +302,16 @@ function classifyByPath(pathname: string, searchParams: URLSearchParams): ApiRat
     return "A_METADATA";
   }
 
+  if (first === "intelligence" && second === "methods") {
+    return "A_METADATA";
+  }
+
+  if (first === "radar" && second === "health-regions") {
+    return searchParams.get("include_geometry")?.toLowerCase() === "true"
+      ? "C_GEOMETRY_OVERVIEW"
+      : "B_NORMAL_READ";
+  }
+
   if (
     first === "health-regions" ||
     first === "states" ||

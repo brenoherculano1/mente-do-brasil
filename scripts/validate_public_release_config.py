@@ -8,7 +8,6 @@ import re
 from pathlib import Path
 from urllib.parse import urlparse
 
-
 ROOT = Path(__file__).resolve().parents[1]
 EMAIL = re.compile(r"^[^\s@]+@[^\s@]+\.[^\s@]+$")
 TRUE_VALUES = {"1", "true", "yes", "on"}

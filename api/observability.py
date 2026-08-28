@@ -9,10 +9,16 @@ import uuid
 from datetime import datetime, timezone
 from typing import Any
 
-
 SAFE_REQUEST_ID = re.compile(r"^[A-Za-z0-9._:-]{8,80}$")
-RAW_IP_VALUE = re.compile(r"^(?:(?:\d{1,3}\.){3}\d{1,3}|(?:[a-f0-9]{1,4}:){2,}[a-f0-9]{1,4})$", re.I)
-SENSITIVE_KEY = re.compile(r"authorization|cookie|password|token|secret|database_url|dsn|ip|x-forwarded-for|x-real-ip", re.I)
+RAW_IP_VALUE = re.compile(
+    r"^(?:(?:\d{1,3}\.){3}\d{1,3}|(?:[a-f0-9]{1,4}:){2,}[a-f0-9]{1,4})$",
+    re.I,
+)
+SENSITIVE_KEY = re.compile(
+    "authorization|cookie|password|token|secret|database_url|dsn|ip|"
+    "x-forwarded-for|x-real-ip",
+    re.I,
+)
 
 logger = logging.getLogger("mente_do_brasil")
 

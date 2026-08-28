@@ -3,31 +3,38 @@
 > vitest run
 
 
- RUN  v3.2.7 /Users/brenoherculano/Documents/New project/mente-do-brasil/web
+ RUN  v3.2.7 /private/tmp/mdb-web-check-20260827192938
 
+ ✓ tests/unit/api-ingress-policy.test.ts (9 tests) 73ms
+ ✓ tests/unit/public-foundation.test.ts (7 tests) 179ms
+ ✓ tests/unit/profile-components.test.tsx (4 tests) 128ms
+ ✓ tests/unit/about-page.test.tsx (6 tests) 1601ms
+   ✓ about page > renders the institutional positioning and current scope  574ms
+   ✓ about page > renders six principles without commercial or invented-governance claims  431ms
+ ✓ tests/unit/methodology-page.test.tsx (7 tests) 2628ms
+   ✓ methodology page > renders locked metadata identifiers and standard population  844ms
+   ✓ methodology page > renders Need, Capacity, and Mismatch formulas  356ms
+   ✓ methodology page > preserves claim discipline and limitations  487ms
+   ✓ methodology page > renders LISA counts and warning without disease concentration claim  335ms
+   ✓ methodology page > renders the conservative manuscript submission status  304ms
+ ✓ tests/unit/state-page.test.tsx (5 tests) 2210ms
+   ✓ state page > renders AC with three Health Regions and no state score or ranking  792ms
+   ✓ state page > keeps alphabetical ordering and filters within the state  476ms
+   ✓ state page > uses locked regional values in the distribution and preserves mismatch copy  429ms
 stdout | tests/unit/api-route-rate-limit.test.ts > operational API route rate limit > short-circuits over-limit requests before calling the upstream FastAPI service
-{"timestamp":"2026-08-27T09:33:00.626Z","level":"info","service":"mente-do-brasil-next","event":"rate_limited","request_id":"2500ba5e-683a-49fa-b08b-881917e82eca","route_class":"D_GEOMETRY_DETAIL","route":"/api/v1/map/health-regions","status":429}
+{"timestamp":"2026-08-27T22:43:24.936Z","level":"info","service":"mente-do-brasil-next","event":"rate_limited","request_id":"fdafc37a-73f8-4a35-b05f-3622da6d09ee","route_class":"D_GEOMETRY_DETAIL","route":"/api/v1/map/health-regions","status":429}
 
- ✓ tests/unit/api-route-rate-limit.test.ts (1 test) 76ms
- ✓ tests/unit/public-foundation.test.ts (7 tests) 131ms
- ✓ tests/unit/profile-components.test.tsx (4 tests) 160ms
- ✓ tests/unit/about-page.test.tsx (6 tests) 904ms
-   ✓ about page > renders the institutional positioning and current scope  419ms
- ✓ tests/unit/methodology-page.test.tsx (6 tests) 1254ms
-   ✓ methodology page > renders locked metadata identifiers and standard population  498ms
-   ✓ methodology page > renders the conservative manuscript submission status  325ms
- ✓ tests/unit/state-page.test.tsx (5 tests) 1375ms
-   ✓ state page > renders AC with three Health Regions and no state score or ranking  567ms
-   ✓ state page > uses locked regional values in the distribution and preserves mismatch copy  345ms
- ✓ tests/unit/data-page.test.tsx (7 tests) 1644ms
-   ✓ data page > renders release identifiers, counts, and locked hashes  567ms
-   ✓ data page > renders the complete 35-field dictionary and filters locally  448ms
- ✓ tests/unit/color-scale.test.ts (5 tests) 6ms
- ✓ tests/unit/format.test.ts (3 tests) 4ms
- ✓ tests/unit/api-ingress-policy.test.ts (9 tests) 24ms
+ ✓ tests/unit/api-route-rate-limit.test.ts (1 test) 180ms
+ ✓ tests/unit/color-scale.test.ts (5 tests) 9ms
+ ✓ tests/unit/format.test.ts (3 tests) 7ms
+ ✓ tests/unit/data-page.test.tsx (7 tests) 3218ms
+   ✓ data page > renders release identifiers, counts, and locked hashes  1224ms
+   ✓ data page > translates NOT_RELEASED without exposing downloads or localhost  468ms
+   ✓ data page > renders the complete 35-field dictionary and filters locally  627ms
+   ✓ data page > keeps public dictionary copy in Portuguese while preserving technical names  317ms
 
  Test Files  10 passed (10)
-      Tests  53 passed (53)
-   Start at  06:32:58
-   Duration  4.69s (transform 2.12s, setup 2.20s, collect 5.57s, tests 5.58s, environment 10.44s, prepare 2.27s)
+      Tests  54 passed (54)
+   Start at  19:43:16
+   Duration  8.37s (transform 2.74s, setup 3.15s, collect 7.40s, tests 10.23s, environment 17.55s, prepare 7.98s)
 

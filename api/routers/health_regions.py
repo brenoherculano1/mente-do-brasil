@@ -83,7 +83,9 @@ def health_region_map(
     include_geometry: bool = False,
     geometry_profile: Annotated[
         GeometryProfile | None,
-        Query(description="Geometry profile. full is restricted on the operational API by default."),
+        Query(
+            description="Geometry profile. full is restricted on the operational API by default."
+        ),
     ] = None,
 ) -> list[HealthRegionMapItem] | GeoJsonFeatureCollection:
     profile = geometry_profile or GeometryProfile.overview

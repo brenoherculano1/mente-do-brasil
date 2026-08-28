@@ -1,0 +1,2 @@
+status=PASS
+Radar geometry classified as overview class C; non-geometry Radar/explanation/peers class B; methods class A.

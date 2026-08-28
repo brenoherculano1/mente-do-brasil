@@ -1,0 +1,4 @@
+status=PASS
+path=/Users/brenoherculano/Documents/New project/mente-do-brasil/data/canonical/MDB_ANALYTICAL_2024_1/health_regions.parquet
+sha256=a3cc8f3aefc9d556d1bacc636dc72cabf04155052dd63c426dda9bec58ada515
+rows=439

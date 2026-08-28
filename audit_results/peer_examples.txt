@@ -1,0 +1,61 @@
+status=PASS
+
+12001 Alto Acre AC
+  1. 31077 João Pinheiro MG
+  2. 51015 Vale do Peixoto MT
+  3. 22007 Tabuleiros do Alto Parnaíba PI
+  4. 31053 Januária MG
+  5. 31076 Manga MG
+  6. 51016 Vale dos Arinos MT
+  7. 31051 Francisco Sá MG
+  8. 31100 São Francisco MG
+  9. 31050 Coração de Jesus MG
+  10. 52006 Nordeste I GO
+
+35011 Alto do Tietê SP
+  1. 29020 Salvador BA
+  2. 31016 Belo Horizonte/Nova Lima/Santa Luzia MG
+  3. 35041 Baixada Santista SP
+  4. 33006 Metropolitana II RJ
+  5. 35072 Região Metropolitana de Campinas SP
+  6. 27001 1ª Região de Saúde AL
+  7. 25001 1ª Região Mata Atlântica PB
+  8. 43010 Região 10 - Capital e Vale do Gravataí RS
+  9. 35015 Grande ABC SP
+  10. 26010 Recife PE
+
+26011 Salgueiro PE
+  1. 41021 21ª RS Telêmaco Borba PR
+  2. 31030 Formiga MG
+  3. 31028 Bom Despacho MG
+  4. 31027 Turmalina/Minas Novas/Capelinha MG
+  5. 31082 São Gotardo MG
+  6. 31070 Araxá MG
+  7. 52018 São Patrício II GO
+  8. 41006 6ª RS União da Vitória PR
+  9. 35133 Vale das Cachoeiras SP
+  10. 41004 4ª RS Irati PR
+
+11005 Zona da Mata RO
+  1. 31055 Pirapora MG
+  2. 52014 Serra da Mesa GO
+  3. 50016 Sudeste MS
+  4. 50014 Nordeste MS
+  5. 11006 Cone Sul RO
+  6. 29008 Ibotirama BA
+  7. 43024 Região 24 - Campos de Cima da Serra RS
+  8. 50015 Norte MS
+  9. 31085 Taiobeiras MG
+  10. 51005 Garças Araguaia MT
+
+53001 Distrito Federal DF
+  1. 31018 Contagem MG
+  2. 15006 Metropolitana I PA
+  3. 21016 São Luís MA
+  4. 24007 7ª Região de Saúde - Metropolitana RN
+  5. 35016 São Paulo SP
+  6. 43010 Região 10 - Capital e Vale do Gravataí RS
+  7. 33006 Metropolitana II RJ
+  8. 35012 Franco da Rocha SP
+  9. 42011 Nordeste SC
+  10. 35102 Limeira SP
