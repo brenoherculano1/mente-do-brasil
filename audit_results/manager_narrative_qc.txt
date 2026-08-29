@@ -1,0 +1,12 @@
+{
+  "checked": 439,
+  "forbidden_hits": [],
+  "broken_narratives": [],
+  "false_positive_terms": [
+    "Bananal",
+    "Mananciais",
+    "Nanuque",
+    "Fernandópolis"
+  ],
+  "status": "PASS"
+}

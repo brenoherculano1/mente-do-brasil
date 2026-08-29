@@ -1,0 +1,4 @@
+status: PASS
+avg_sample_ms: 22.22
+max_smoke_ms: 45.21
+max_sample_size_bytes: 9320

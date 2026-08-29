@@ -1,0 +1,29 @@
+{
+  "brief_median_ms": 7.2,
+  "brief_max_ms": 128.17,
+  "compare": [
+    {
+      "codes": "12001,31001",
+      "ms": 5.71,
+      "bytes": 4544,
+      "order": [
+        "12001",
+        "31001"
+      ],
+      "ranking_introduced": false
+    },
+    {
+      "codes": "12001,31001,41006,53001",
+      "ms": 7.81,
+      "bytes": 8243,
+      "order": [
+        "12001",
+        "31001",
+        "41006",
+        "53001"
+      ],
+      "ranking_introduced": false
+    }
+  ],
+  "status": "PASS"
+}

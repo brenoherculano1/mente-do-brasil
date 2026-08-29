@@ -1,0 +1,4 @@
+status: PASS
+content_type: application/pdf
+x_robots_tag: noindex
+magic: %PDF

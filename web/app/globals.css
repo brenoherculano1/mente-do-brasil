@@ -1995,6 +1995,205 @@ th {
   gap: 2px;
 }
 
+.manager-shell {
+  display: grid;
+  gap: 24px;
+}
+
+.manager-selector {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: end;
+}
+
+.manager-suggestions {
+  position: absolute;
+  top: calc(100% - 4px);
+  left: 18px;
+  z-index: 20;
+  display: grid;
+  width: min(560px, calc(100% - 36px));
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.manager-suggestions button,
+.selected-tags button {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.manager-suggestions button {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.manager-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+.manager-tabs button {
+  min-height: 42px;
+  padding: 0 14px;
+  border: 1px solid transparent;
+  border-bottom: 0;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+}
+
+.manager-tabs button.active,
+.manager-tabs button:focus-visible {
+  border-color: var(--border);
+  background: #ffffff;
+  color: var(--text);
+}
+
+.manager-empty {
+  display: grid;
+  min-height: 220px;
+  place-content: center;
+  text-align: center;
+}
+
+.manager-quick {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.65fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.manager-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.manager-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.question-list {
+  display: grid;
+  gap: 9px;
+}
+
+.question-item {
+  border: 1px solid var(--border);
+  background: #fbfbf6;
+}
+
+.question-item summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.question-item summary strong {
+  padding: 3px 7px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.question-item p {
+  margin: 0;
+  padding: 0 12px 12px;
+}
+
+.manager-report {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.manager-compare-controls {
+  display: grid;
+  grid-template-columns: minmax(160px, 0.45fr) minmax(220px, 1fr) auto;
+  gap: 12px;
+  align-items: end;
+}
+
+.selected-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 12px 0;
+}
+
+.selected-tags button {
+  padding: 6px 9px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: #ffffff;
+}
+
+.compare-dotplot {
+  display: grid;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.compare-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 90px 120px 90px;
+  gap: 12px;
+  align-items: center;
+  padding: 11px 12px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+}
+
+.compare-row small,
+.compare-row em {
+  color: var(--muted);
+  font-style: normal;
+}
+
+.manager-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.manager-table caption {
+  margin-bottom: 8px;
+  color: var(--muted);
+  text-align: left;
+}
+
+.manager-table th,
+.manager-table td {
+  padding: 9px;
+  border: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.manager-table th {
+  background: #f1f1eb;
+}
+
 @media (max-width: 1020px) {
   .radar-grid {
     grid-template-columns: 1fr;
@@ -2010,6 +2209,13 @@ th {
   }
 
   .intelligence-profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .manager-selector,
+  .manager-quick,
+  .manager-grid,
+  .manager-compare-controls {
     grid-template-columns: 1fr;
   }
 }
@@ -2029,6 +2235,16 @@ th {
   }
 
   .peer-dot-plot {
+    overflow-x: auto;
+  }
+
+  .compare-row {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+
+  .manager-table {
+    display: block;
     overflow-x: auto;
   }
 }

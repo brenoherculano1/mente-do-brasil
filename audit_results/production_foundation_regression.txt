@@ -1,2 +1,5 @@
-status=PASS
-No deploy, DNS, public API publication, downloads, license, or public_release_status change.
+status: PASS
+validate_public_release_config private: PASS_PRE_RELEASE
+validate_public_release_config public simulation: APPLICATION_PUBLIC_CONFIG_READY
+production build: PASS
+production e2e: 21 passed, 13 skipped

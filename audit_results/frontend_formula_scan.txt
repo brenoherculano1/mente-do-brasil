@@ -1,0 +1,80 @@
+status: PASS
+frontend_recomputes_scientific_scores: false
+formula_like_hits_reviewed: 15
+[
+  {
+    "file": "web/features/manager/ManagerWorkbench.tsx",
+    "line": 349,
+    "text": "<span>{formatPercentile(item.source_percentile)} · {formatScore(item.contribution, true)}</span>"
+  },
+  {
+    "file": "web/features/manager/ManagerWorkbench.tsx",
+    "line": 502,
+    "text": "<small>{item?.percentile == null ? \"sem percentil\" : formatPercentile(item.percentile)}</small>"
+  },
+  {
+    "file": "web/types/api.ts",
+    "line": 102,
+    "text": "suicide: { deaths: number; asmr: number; percentile: number };"
+  },
+  {
+    "file": "web/types/api.ts",
+    "line": 103,
+    "text": "psychiatric_admissions: { count: number; rate: number; percentile: number };"
+  },
+  {
+    "file": "web/types/api.ts",
+    "line": 107,
+    "text": "caps: { count: number; rate: number; percentile: number };"
+  },
+  {
+    "file": "web/types/api.ts",
+    "line": 108,
+    "text": "mental_health_beds_sus: { count: number; rate: number; percentile: number };"
+  },
+  {
+    "file": "web/types/api.ts",
+    "line": 109,
+    "text": "psychiatrist_fte: { fte: number; rate: number; percentile: number };"
+  },
+  {
+    "file": "web/types/api.ts",
+    "line": 148,
+    "text": "suicide_percentile: number | null;"
+  },
+  {
+    "file": "web/types/api.ts",
+    "line": 149,
+    "text": "psychiatric_admission_percentile: number | null;"
+  },
+  {
+    "file": "web/types/api.ts",
+    "line": 151,
+    "text": "caps_percentile: number | null;"
+  },
+  {
+    "file": "web/types/api.ts",
+    "line": 152,
+    "text": "beds_percentile: number | null;"
+  },
+  {
+    "file": "web/types/api.ts",
+    "line": 153,
+    "text": "psychiatrist_fte_percentile: number | null;"
+  },
+  {
+    "file": "web/types/api.ts",
+    "line": 244,
+    "text": "source_percentile: number;"
+  },
+  {
+    "file": "web/types/api.ts",
+    "line": 324,
+    "text": "percentile: number | null;"
+  },
+  {
+    "file": "web/types/api.ts",
+    "line": 396,
+    "text": "ranking_introduced: boolean;"
+  }
+]

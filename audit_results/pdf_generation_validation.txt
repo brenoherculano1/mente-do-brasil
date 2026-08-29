@@ -1,0 +1,221 @@
+{
+  "samples": [
+    {
+      "filename": "sample_report_12001.pdf",
+      "code": "12001",
+      "status": 200,
+      "size": 8709,
+      "elapsed_ms": 85.54,
+      "content_type": "application/pdf",
+      "content_disposition": "attachment; filename=\"mente-do-brasil_relatorio_12001_alto-acre_MDB_ANALYTICAL_2024_1.pdf\"",
+      "cache_control": "public, max-age=60, s-maxage=900, stale-while-revalidate=3600",
+      "etag": "\"9a43890c2a7c020ea6ad9c7af7ebb1b7-MDB_REPORTLAB_GENERATOR_1.0\"",
+      "x_robots_tag": "noindex",
+      "magic": "%PDF",
+      "sha256": "e80eddde1ef8d310087142837b8ec77cf8823c6d87ecaa4b71affaaa6bdc7213"
+    },
+    {
+      "filename": "sample_report_high_radar.pdf",
+      "code": "41006",
+      "status": 200,
+      "size": 9320,
+      "elapsed_ms": 7.79,
+      "content_type": "application/pdf",
+      "content_disposition": "attachment; filename=\"mente-do-brasil_relatorio_41006_6a-rs-uniao-da-vitoria_MDB_ANALYTICAL_2024_1.pdf\"",
+      "cache_control": "public, max-age=60, s-maxage=900, stale-while-revalidate=3600",
+      "etag": "\"7958f3dcdcc2865270fedfc6aa214541-MDB_REPORTLAB_GENERATOR_1.0\"",
+      "x_robots_tag": "noindex",
+      "magic": "%PDF",
+      "sha256": "f9d38c7fe01f022b3a4003881eb7ab019475c2ee3f001d73fec0bbabf9580b96"
+    },
+    {
+      "filename": "sample_report_zero_radar.pdf",
+      "code": "11002",
+      "status": 200,
+      "size": 8455,
+      "elapsed_ms": 7.23,
+      "content_type": "application/pdf",
+      "content_disposition": "attachment; filename=\"mente-do-brasil_relatorio_11002_cafe_MDB_ANALYTICAL_2024_1.pdf\"",
+      "cache_control": "public, max-age=60, s-maxage=900, stale-while-revalidate=3600",
+      "etag": "\"9163f8c08d38859da724434ad80787b8-MDB_REPORTLAB_GENERATOR_1.0\"",
+      "x_robots_tag": "noindex",
+      "magic": "%PDF",
+      "sha256": "6ce10755ca23953462dd452a90d10a7869ca48cf4569a7a029da52156bf9eae0"
+    },
+    {
+      "filename": "sample_report_quality_caution.pdf",
+      "code": "31062",
+      "status": 200,
+      "size": 8370,
+      "elapsed_ms": 4.53,
+      "content_type": "application/pdf",
+      "content_disposition": "attachment; filename=\"mente-do-brasil_relatorio_31062_aguas-formosas_MDB_ANALYTICAL_2024_1.pdf\"",
+      "cache_control": "public, max-age=60, s-maxage=900, stale-while-revalidate=3600",
+      "etag": "\"b57a54b8d43f6c0f836f221764a65e64-MDB_REPORTLAB_GENERATOR_1.0\"",
+      "x_robots_tag": "noindex",
+      "magic": "%PDF",
+      "sha256": "24e84ba7137c2689c67cc35283506010a9b08f09e025247d058e082335fbecf4"
+    },
+    {
+      "filename": "sample_report_df.pdf",
+      "code": "53001",
+      "status": 200,
+      "size": 8311,
+      "elapsed_ms": 6.01,
+      "content_type": "application/pdf",
+      "content_disposition": "attachment; filename=\"mente-do-brasil_relatorio_53001_distrito-federal_MDB_ANALYTICAL_2024_1.pdf\"",
+      "cache_control": "public, max-age=60, s-maxage=900, stale-while-revalidate=3600",
+      "etag": "\"5f9935c86b26a85622c2ea46646f4f23-MDB_REPORTLAB_GENERATOR_1.0\"",
+      "x_robots_tag": "noindex",
+      "magic": "%PDF",
+      "sha256": "ff438a9543b70366f832c63933165f64c02f08fc05908ff6a461710a284bc1b3"
+    }
+  ],
+  "smoke": [
+    {
+      "code": "11001",
+      "status": 200,
+      "size": 8942,
+      "elapsed_ms": 45.21,
+      "magic": "%PDF"
+    },
+    {
+      "code": "11002",
+      "status": 200,
+      "size": 8455,
+      "elapsed_ms": 7.43,
+      "magic": "%PDF"
+    },
+    {
+      "code": "11003",
+      "status": 200,
+      "size": 8634,
+      "elapsed_ms": 14.96,
+      "magic": "%PDF"
+    },
+    {
+      "code": "11004",
+      "status": 200,
+      "size": 8689,
+      "elapsed_ms": 16.43,
+      "magic": "%PDF"
+    },
+    {
+      "code": "11005",
+      "status": 200,
+      "size": 9208,
+      "elapsed_ms": 21.74,
+      "magic": "%PDF"
+    },
+    {
+      "code": "11006",
+      "status": 200,
+      "size": 8078,
+      "elapsed_ms": 13.07,
+      "magic": "%PDF"
+    },
+    {
+      "code": "11007",
+      "status": 200,
+      "size": 9143,
+      "elapsed_ms": 16.29,
+      "magic": "%PDF"
+    },
+    {
+      "code": "12001",
+      "status": 200,
+      "size": 8709,
+      "elapsed_ms": 4.34,
+      "magic": "%PDF"
+    },
+    {
+      "code": "12002",
+      "status": 200,
+      "size": 8990,
+      "elapsed_ms": 4.2,
+      "magic": "%PDF"
+    },
+    {
+      "code": "12003",
+      "status": 200,
+      "size": 8988,
+      "elapsed_ms": 15.11,
+      "magic": "%PDF"
+    },
+    {
+      "code": "13001",
+      "status": 200,
+      "size": 9076,
+      "elapsed_ms": 9.14,
+      "magic": "%PDF"
+    },
+    {
+      "code": "13002",
+      "status": 200,
+      "size": 9057,
+      "elapsed_ms": 19.75,
+      "magic": "%PDF"
+    },
+    {
+      "code": "13003",
+      "status": 200,
+      "size": 8721,
+      "elapsed_ms": 15.45,
+      "magic": "%PDF"
+    },
+    {
+      "code": "13004",
+      "status": 200,
+      "size": 9049,
+      "elapsed_ms": 15.42,
+      "magic": "%PDF"
+    },
+    {
+      "code": "13005",
+      "status": 200,
+      "size": 9158,
+      "elapsed_ms": 26.47,
+      "magic": "%PDF"
+    },
+    {
+      "code": "13006",
+      "status": 200,
+      "size": 9038,
+      "elapsed_ms": 23.45,
+      "magic": "%PDF"
+    },
+    {
+      "code": "13007",
+      "status": 200,
+      "size": 9186,
+      "elapsed_ms": 26.93,
+      "magic": "%PDF"
+    },
+    {
+      "code": "13008",
+      "status": 200,
+      "size": 9034,
+      "elapsed_ms": 18.3,
+      "magic": "%PDF"
+    },
+    {
+      "code": "13009",
+      "status": 200,
+      "size": 9135,
+      "elapsed_ms": 15.42,
+      "magic": "%PDF"
+    },
+    {
+      "code": "14001",
+      "status": 200,
+      "size": 8085,
+      "elapsed_ms": 25.89,
+      "magic": "%PDF"
+    }
+  ],
+  "smoke_count": 20,
+  "max_sample_size": 9320,
+  "avg_sample_ms": 22.22,
+  "max_smoke_ms": 45.21,
+  "status": "PASS"
+}

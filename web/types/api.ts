@@ -306,3 +306,92 @@ export type PeersResponse = {
   peers: PeerRegion[];
   benchmarks: PeerBenchmark[];
 };
+
+export type InvestigationQuestion = {
+  rule_id: string;
+  version: string;
+  category: "Base" | "Radar" | "Capacity" | "Spatial" | "Quality";
+  question: string;
+  rationale: string;
+  priority: number;
+  claim_limit: string;
+};
+
+export type ManagerMetricValue = {
+  metric_id: MetricId;
+  label: string;
+  value: number | null;
+  percentile: number | null;
+  unit: string;
+};
+
+export type ManagerSpatialContext = {
+  lisa_significant: boolean;
+  lisa_cluster: LisaCluster | null;
+  lisa_local_i: number | null;
+  lisa_p: number | null;
+  description: string;
+};
+
+export type ManagerVersions = RadarResponse["release"] & {
+  manager_mode_version: string;
+  report_version: string;
+  investigation_guide_version: string;
+  manager_brief_version: string;
+};
+
+export type ManagerRegionIdentity = {
+  health_region_code: string;
+  health_region_name: string;
+  uf: string;
+  population: number;
+  municipality_count: number;
+};
+
+export type ManagerBrief = {
+  release: ReleasePublic;
+  versions: ManagerVersions;
+  region: ManagerRegionIdentity;
+  need_score: number;
+  capacity_score: number;
+  mismatch_score: number;
+  radar_signals: RadarSignals;
+  matched_signal_families: number;
+  radar_triggers: string[];
+  radar_subsignals: string[];
+  deterministic_summary: string;
+  decomposition: DecompositionItem[];
+  peer_summary: {
+    method_version: string;
+    peer_count: number;
+    default_metric: MetricId;
+    selected_benchmarks: PeerBenchmark[];
+  };
+  spatial_context: ManagerSpatialContext;
+  quality_cautions: string[];
+  indicators: ManagerMetricValue[];
+  investigation_questions: InvestigationQuestion[];
+  method_references: string[];
+  report_content_sha256: string;
+};
+
+export type ManagerCompareRegion = {
+  identity: ManagerRegionIdentity;
+  need_score: number;
+  capacity_score: number;
+  mismatch_score: number;
+  indicators: ManagerMetricValue[];
+  radar_signals: RadarSignals;
+  matched_signal_families: number;
+  quality_cautions: string[];
+  lisa_context: ManagerSpatialContext;
+};
+
+export type ManagerCompareResponse = {
+  release: ReleasePublic;
+  versions: ManagerVersions;
+  requested_codes: string[];
+  metric_options: MetricId[];
+  regions: ManagerCompareRegion[];
+  ranking_introduced: boolean;
+};

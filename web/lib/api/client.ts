@@ -6,6 +6,8 @@ import type {
   HealthRegionProfile,
   IndicatorPublic,
   MapItem,
+  ManagerBrief,
+  ManagerCompareResponse,
   MetricId,
   MunicipalityHealthRegion,
   PaginatedResponse,
@@ -108,4 +110,17 @@ export function getRadarHealthRegions(options: {
 export function getHealthRegionPeers(code: string, metric: MetricId) {
   const params = new URLSearchParams({ metric });
   return request<PeersResponse>(`/api/v1/health-regions/${code}/peers?${params}`);
+}
+
+export function getManagerBrief(code: string) {
+  return request<ManagerBrief>(`/api/v1/manager/health-regions/${code}`, {
+    cache: "no-store",
+  });
+}
+
+export function getManagerCompare(codes: string[]) {
+  const params = new URLSearchParams({ codes: codes.join(",") });
+  return request<ManagerCompareResponse>(`/api/v1/manager/compare?${params}`, {
+    cache: "no-store",
+  });
 }

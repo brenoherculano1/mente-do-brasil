@@ -1,3 +1,2 @@
-status=PASS
-Next proxy route preserved at /api/v1/[...path]
-client internal API URL exposure=NO
+status: PASS
+manager PDF links are same-origin relative paths: /api/v1/health-regions/{code}/report.pdf

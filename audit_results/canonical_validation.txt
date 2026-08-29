@@ -1,24 +1,34 @@
-## PUBLIC_ROBOTS
-User-Agent: *
-Allow: /
-
-Sitemap: https://mentedobrasil.com.br/sitemap.xml
-
-## PUBLIC_SITEMAP_AUDIT
-total_urls=472
-state_urls=27
-region_urls=439
-api_urls=0
-lowercase_state_urls=0
-first_url=https://mentedobrasil.com.br/
-sitemap_url_seen=https://mentedobrasil.com.br/sitemap.xml
-## CANONICALS
-['https://mentedobrasil.com.br/estado/AC']
-['https://mentedobrasil.com.br/regiao/12001']
-## SECURITY_TXT_PUBLIC
-HTTP/1.1 200 OK
-cache-control: no-store
-x-request-id: b017d9b7-462d-449c-8102-1a506edf8227
-Contact: mailto:security@example.org
-Preferred-Languages: pt-BR, en
-Canonical: https://mentedobrasil.com.br/.well-known/security.txt
+status: PASS
+serving_validation: PASS
+canonical files unchanged by this phase
+SERVING DATABASE VALIDATION
+release: PASS
+geography: PASS
+metrics: PASS
+geometry: PASS
+LISA: PASS
+flags: PASS
+constraints: PASS
+views: PASS
+product_intelligence: PASS
+immutability: PASS
+{
+  "health_regions": 439,
+  "intelligence": 439,
+  "intelligence_versions": 1,
+  "lisa_significant": 135,
+  "lookup": 439,
+  "map": 439,
+  "metrics": 439,
+  "municipalities": 5570,
+  "peer_benchmarks": 3512,
+  "peers": 4390,
+  "profile": 439,
+  "releases": 1,
+  "serving_status": 1,
+  "small_suicide": 7,
+  "srid_4674": 439,
+  "valid_geom": 439,
+  "zero_beds": 275
+}
+PASS

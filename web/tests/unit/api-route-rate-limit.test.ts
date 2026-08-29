@@ -28,4 +28,23 @@ describe("operational API route rate limit", () => {
     expect(response?.headers.get("Retry-After")).toBeTruthy();
     expect(response?.headers.get("Cache-Control")).toBe("no-store");
   });
+
+  it("short-circuits over-limit PDF report requests before upstream generation", async () => {
+    const fetchSpy = vi.fn(async () => new Response("%PDF", { status: 200 }));
+    vi.stubGlobal("fetch", fetchSpy);
+    resetApiRateLimiterForTests();
+
+    const context = {
+      params: Promise.resolve({ path: ["health-regions", "12001", "report.pdf"] }),
+    };
+    const url = "http://127.0.0.1:3000/api/v1/health-regions/12001/report.pdf";
+    let response: Response | undefined;
+
+    for (let i = 0; i < RATE_LIMIT_POLICIES.D_GEOMETRY_DETAIL.limit + 1; i += 1) {
+      response = await GET(new NextRequest(url), context);
+    }
+
+    expect(response?.status).toBe(429);
+    expect(fetchSpy).toHaveBeenCalledTimes(RATE_LIMIT_POLICIES.D_GEOMETRY_DETAIL.limit);
+  });
 });

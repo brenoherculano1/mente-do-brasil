@@ -1,10 +1,46 @@
+[WebServer] (node:66128) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
 
-Running 4 tests using 2 workers
+Running 34 tests using 1 worker
 
-  -  1 [mobile] › tests/e2e/territorial-intelligence.spec.ts:12:5 › desktop Radar shows territorial signals, filters, and region intelligence
-  ✓  2 [desktop] › tests/e2e/territorial-intelligence.spec.ts:12:5 › desktop Radar shows territorial signals, filters, and region intelligence (10.5s)
-  -  4 [desktop] › tests/e2e/territorial-intelligence.spec.ts:62:5 › mobile Radar and region intelligence remain usable
-  ✓  3 [mobile] › tests/e2e/territorial-intelligence.spec.ts:62:5 › mobile Radar and region intelligence remain usable (12.1s)
+(node:66132) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [desktop] › tests/e2e/frontend-v1.spec.ts:19:5 › home loads map, metric selector, search, and navigates to region profile (6.4s)
+  ✓   2 [desktop] › tests/e2e/frontend-v1.spec.ts:52:5 › captures home screenshot and keeps mobile layout usable (1.8s)
+  ✓   3 [desktop] › tests/e2e/frontend-v1.spec.ts:76:5 › accessible list expands, filters rationally, and captures QA screenshot (2.0s)
+  ✓   4 [desktop] › tests/e2e/frontend-v1.spec.ts:94:5 › invalid region shows not found state (106ms)
+  ✓   5 [desktop] › tests/e2e/frontend-v1.spec.ts:100:5 › methodology desktop page loads, navigates sections, and opens details (4.8s)
+  -   6 [desktop] › tests/e2e/frontend-v1.spec.ts:146:5 › methodology mobile page has compact navigation and no global overflow
+  ✓   7 [desktop] › tests/e2e/frontend-v1.spec.ts:179:5 › data page exposes release inventory and filters dictionary on desktop (5.1s)
+  -   8 [desktop] › tests/e2e/frontend-v1.spec.ts:230:5 › data page remains usable on mobile
+  ✓   9 [desktop] › tests/e2e/frontend-v1.spec.ts:258:5 › about page states independence, scope, and links on desktop (4.3s)
+  -  10 [desktop] › tests/e2e/frontend-v1.spec.ts:316:5 › about page stays readable and responsive on mobile
+  ✓  11 [desktop] › tests/e2e/frontend-v1.spec.ts:345:5 › state page for AC shows three regions, overview map, distribution, and profile links (7.3s)
+  ✓  12 [desktop] › tests/e2e/frontend-v1.spec.ts:397:5 › state page handles a large state and DF without truncating regions (2.3s)
+  -  13 [desktop] › tests/e2e/frontend-v1.spec.ts:425:5 › state page normalizes lowercase, rejects invalid UF, and keeps mobile map early
+  ✓  14 [desktop] › tests/e2e/manager-workbench.spec.ts:12:5 › desktop Manager supports territorial, meeting, compare and PDF download (1.9s)
+  -  15 [desktop] › tests/e2e/manager-workbench.spec.ts:57:5 › mobile Manager keeps tabs and comparison usable
+  ✓  16 [desktop] › tests/e2e/territorial-intelligence.spec.ts:12:5 › desktop Radar shows territorial signals, filters, and region intelligence (12.3s)
+  -  17 [desktop] › tests/e2e/territorial-intelligence.spec.ts:62:5 › mobile Radar and region intelligence remain usable
+(node:66209) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  18 [mobile] › tests/e2e/frontend-v1.spec.ts:19:5 › home loads map, metric selector, search, and navigates to region profile (7.8s)
+  ✓  19 [mobile] › tests/e2e/frontend-v1.spec.ts:52:5 › captures home screenshot and keeps mobile layout usable (2.7s)
+  ✓  20 [mobile] › tests/e2e/frontend-v1.spec.ts:76:5 › accessible list expands, filters rationally, and captures QA screenshot (3.5s)
+  ✓  21 [mobile] › tests/e2e/frontend-v1.spec.ts:94:5 › invalid region shows not found state (213ms)
+  -  22 [mobile] › tests/e2e/frontend-v1.spec.ts:100:5 › methodology desktop page loads, navigates sections, and opens details
+  ✓  23 [mobile] › tests/e2e/frontend-v1.spec.ts:146:5 › methodology mobile page has compact navigation and no global overflow (10.6s)
+  -  24 [mobile] › tests/e2e/frontend-v1.spec.ts:179:5 › data page exposes release inventory and filters dictionary on desktop
+  ✓  25 [mobile] › tests/e2e/frontend-v1.spec.ts:230:5 › data page remains usable on mobile (9.6s)
+  -  26 [mobile] › tests/e2e/frontend-v1.spec.ts:258:5 › about page states independence, scope, and links on desktop
+  ✓  27 [mobile] › tests/e2e/frontend-v1.spec.ts:316:5 › about page stays readable and responsive on mobile (5.0s)
+  -  28 [mobile] › tests/e2e/frontend-v1.spec.ts:345:5 › state page for AC shows three regions, overview map, distribution, and profile links
+  -  29 [mobile] › tests/e2e/frontend-v1.spec.ts:397:5 › state page handles a large state and DF without truncating regions
+  ✓  30 [mobile] › tests/e2e/frontend-v1.spec.ts:425:5 › state page normalizes lowercase, rejects invalid UF, and keeps mobile map early (13.6s)
+  -  31 [mobile] › tests/e2e/manager-workbench.spec.ts:12:5 › desktop Manager supports territorial, meeting, compare and PDF download
+  ✓  32 [mobile] › tests/e2e/manager-workbench.spec.ts:57:5 › mobile Manager keeps tabs and comparison usable (2.9s)
+  -  33 [mobile] › tests/e2e/territorial-intelligence.spec.ts:12:5 › desktop Radar shows territorial signals, filters, and region intelligence
+  ✓  34 [mobile] › tests/e2e/territorial-intelligence.spec.ts:62:5 › mobile Radar and region intelligence remain usable (14.0s)
 
-  2 skipped
-  2 passed (16.9s)
+  13 skipped
+  21 passed (2.1m)

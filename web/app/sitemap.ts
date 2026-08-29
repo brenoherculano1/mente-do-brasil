@@ -4,7 +4,16 @@ import { PUBLIC_ROUTE_HEALTH_REGION_CODES, PUBLIC_ROUTE_UFS } from "@/lib/public
 
 export const dynamic = "force-dynamic";
 
-const STATIC_PATHS = ["/", "/radar", "/metodologia", "/dados", "/sobre", "/privacidade", "/contato"];
+const STATIC_PATHS = [
+  "/",
+  "/radar",
+  "/gestor",
+  "/metodologia",
+  "/dados",
+  "/sobre",
+  "/privacidade",
+  "/contato",
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const config = publicSiteConfig();

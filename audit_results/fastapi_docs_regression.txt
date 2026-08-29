@@ -1,2 +1,2 @@
-status=PASS
-Prelaunch docs policy remains fail-closed; validation passed.
+status: PASS
+checks: {'/docs': 404, '/openapi.json': 404, '/api/v1/map/health-regions?include_geometry=true&geometry_profile=full': 403}

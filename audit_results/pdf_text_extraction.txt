@@ -1,0 +1,68 @@
+status: PASS
+[
+  {
+    "file": "sample_report_12001.pdf",
+    "pages": 5,
+    "rendered": [
+      "sample_report_12001-1.png",
+      "sample_report_12001-2.png",
+      "sample_report_12001-3.png",
+      "sample_report_12001-4.png",
+      "sample_report_12001-5.png"
+    ],
+    "text_len": 3937,
+    "missing_required": []
+  },
+  {
+    "file": "sample_report_df.pdf",
+    "pages": 5,
+    "rendered": [
+      "sample_report_df-1.png",
+      "sample_report_df-2.png",
+      "sample_report_df-3.png",
+      "sample_report_df-4.png",
+      "sample_report_df-5.png"
+    ],
+    "text_len": 3444,
+    "missing_required": []
+  },
+  {
+    "file": "sample_report_high_radar.pdf",
+    "pages": 5,
+    "rendered": [
+      "sample_report_high_radar-1.png",
+      "sample_report_high_radar-2.png",
+      "sample_report_high_radar-3.png",
+      "sample_report_high_radar-4.png",
+      "sample_report_high_radar-5.png"
+    ],
+    "text_len": 4868,
+    "missing_required": []
+  },
+  {
+    "file": "sample_report_quality_caution.pdf",
+    "pages": 5,
+    "rendered": [
+      "sample_report_quality_caution-1.png",
+      "sample_report_quality_caution-2.png",
+      "sample_report_quality_caution-3.png",
+      "sample_report_quality_caution-4.png",
+      "sample_report_quality_caution-5.png"
+    ],
+    "text_len": 3494,
+    "missing_required": []
+  },
+  {
+    "file": "sample_report_zero_radar.pdf",
+    "pages": 5,
+    "rendered": [
+      "sample_report_zero_radar-1.png",
+      "sample_report_zero_radar-2.png",
+      "sample_report_zero_radar-3.png",
+      "sample_report_zero_radar-4.png",
+      "sample_report_zero_radar-5.png"
+    ],
+    "text_len": 3610,
+    "missing_required": []
+  }
+]

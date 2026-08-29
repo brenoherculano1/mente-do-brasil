@@ -1,0 +1,6 @@
+status: PASS
+reportlab_version: 4.2.5
+reportlab_license: BSD license (see license.txt for details), Copyright (c) 2000-2022, ReportLab Inc.
+pillow_version: 12.3.0
+chardet_version: 7.6.0
+external_binary_dependency: none_for_pdf_generation

@@ -1,0 +1,4 @@
+status: PASS
+rendered_pages: 25
+sample_pages: 5 PDFs x 5 pages
+text_legible_and_no_clipping_on_reviewed_pages: true

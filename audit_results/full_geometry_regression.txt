@@ -1,4 +1,2 @@
-status=PASS
-map_full_geometry=403 via validate_api.py
-radar_full_geometry_exposure=NO
-radar_uses_overview_only=YES
+status: PASS
+full_geometry_status: 403

@@ -1,0 +1,8 @@
+{
+  "regions": 439,
+  "question_count_min": 3,
+  "question_count_max": 8,
+  "duplicate_questions": 0,
+  "unknown_rule_ids": 0,
+  "status": "PASS"
+}

@@ -312,6 +312,10 @@ function classifyByPath(pathname: string, searchParams: URLSearchParams): ApiRat
       : "B_NORMAL_READ";
   }
 
+  if (first === "health-regions" && third === "report.pdf") {
+    return "D_GEOMETRY_DETAIL";
+  }
+
   if (
     first === "health-regions" ||
     first === "states" ||

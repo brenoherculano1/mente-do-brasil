@@ -1,0 +1,30 @@
+docs/manager_mode_qc_2026-08-28/sample_report_12001.pdf
+Pages:           5
+Encrypted:       no
+Page size:       595.276 x 841.89 pts (A4)
+PDF version:     1.4
+qpdf:PASS
+docs/manager_mode_qc_2026-08-28/sample_report_df.pdf
+Pages:           5
+Encrypted:       no
+Page size:       595.276 x 841.89 pts (A4)
+PDF version:     1.4
+qpdf:PASS
+docs/manager_mode_qc_2026-08-28/sample_report_high_radar.pdf
+Pages:           5
+Encrypted:       no
+Page size:       595.276 x 841.89 pts (A4)
+PDF version:     1.4
+qpdf:PASS
+docs/manager_mode_qc_2026-08-28/sample_report_quality_caution.pdf
+Pages:           5
+Encrypted:       no
+Page size:       595.276 x 841.89 pts (A4)
+PDF version:     1.4
+qpdf:PASS
+docs/manager_mode_qc_2026-08-28/sample_report_zero_radar.pdf
+Pages:           5
+Encrypted:       no
+Page size:       595.276 x 841.89 pts (A4)
+PDF version:     1.4
+qpdf:PASS

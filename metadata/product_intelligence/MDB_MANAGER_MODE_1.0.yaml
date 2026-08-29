@@ -1,0 +1,22 @@
+version: MDB_MANAGER_MODE_1.0
+status: VALIDATED_LOCAL
+scope: Manager Workbench composition layer for territorial reading, comparison, and meeting preparation.
+source_releases:
+  analytical_release: MDB_ANALYTICAL_2024_1
+  intelligence_version: MDB_TERRITORIAL_INTELLIGENCE_1.0
+  radar_ruleset_version: MDB_RADAR_RULESET_1.0
+  decomposition_version: MDB_MISMATCH_DECOMPOSITION_1.0
+  peer_method_version: MDB_PEER_METHOD_1.0
+manager_brief_version: MDB_MANAGER_BRIEF_1.0
+features:
+  - territorial_reading
+  - multiregion_comparison
+  - meeting_preparation
+  - deterministic_report_download
+limitations:
+  - does not create a manager score
+  - does not create rankings
+  - does not prescribe resources
+  - does not store user selections
+  - does not use LLM-generated content
+claim_statement: Manager Mode is a descriptive decision-support composition layer over locked public indicators.

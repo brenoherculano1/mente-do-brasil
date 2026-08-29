@@ -1,0 +1,8 @@
+status: PASS
+command: uv run python scripts/validate_foundation.py
+returncode: 0
+......................................................
+----------------------------------------------------------------------
+Ran 54 tests in 2.396s
+
+OK

@@ -8,6 +8,10 @@ export const METHOD_IDENTIFIERS = {
   radarRuleset: "MDB_RADAR_RULESET_1.0",
   decomposition: "MDB_MISMATCH_DECOMPOSITION_1.0",
   peerMethod: "MDB_PEER_METHOD_1.0",
+  managerMode: "MDB_MANAGER_MODE_1.0",
+  territorialReport: "MDB_TERRITORIAL_REPORT_1.0",
+  investigationGuide: "MDB_INVESTIGATION_GUIDE_1.0",
+  managerBrief: "MDB_MANAGER_BRIEF_1.0",
 };
 
 export const SCIENTIFIC_SOURCES = {
@@ -102,6 +106,7 @@ export const METHODOLOGY_NAV = [
   ["radar", "Radar Territorial"],
   ["decomposition", "Decomposição"],
   ["peers", "Peers estruturais"],
+  ["manager", "Modo Gestor"],
   ["spatial", "Análise espacial"],
   ["quality", "Qualidade dos dados"],
   ["limitations", "Limitações"],

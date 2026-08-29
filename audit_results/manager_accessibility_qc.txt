@@ -1,0 +1,4 @@
+status: PASS
+tabs_use_role_tab_and_aria_selected: true
+interactive_controls_have_text_or_aria_labels: true
+keyboard_baseline: covered by native buttons/inputs

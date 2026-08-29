@@ -1,0 +1,17 @@
+MENTE DO BRASIL API VALIDATION
+health PASS
+ready PASS
+releases PASS
+indicators PASS
+health regions PASS
+state profiles PASS
+profile PASS
+municipality lookup PASS
+map metadata PASS
+map geometry PASS {'overview_bytes': 756156, 'detail_bytes': 2763517, 'full_blocked_status': 403, 'full_blocked_bytes': 112, 'full_blocked_elapsed_ms': 3.46, 'overview_gzip_bytes': 200382}
+scientific regression PASS
+flags PASS
+errors PASS
+read-only PASS
+latency_ms {'health': 301.9, 'ready': 46.63, 'map_geometry_overview': 327.81, 'map_geometry_detail': 568.64, 'map_geometry_full_blocked': 3.46}
+PASS

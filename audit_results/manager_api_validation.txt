@@ -1,0 +1,8 @@
+status: PASS
+brief_status: 200
+compare_status: 200
+methods_status: 200
+compare_order: ['12001', '31001', '41006', '53001']
+invalid_compare_statuses: [('one_code', 422), ('duplicate', 422), ('five_codes', 422), ('bad_code', 422)]
+manager_mode_version: MDB_MANAGER_MODE_1.0
+brief_versions: {'intelligence_version': 'MDB_TERRITORIAL_INTELLIGENCE_1.0', 'radar_ruleset_version': 'MDB_RADAR_RULESET_1.0', 'decomposition_version': 'MDB_MISMATCH_DECOMPOSITION_1.0', 'peer_method_version': 'MDB_PEER_METHOD_1.0', 'manager_mode_version': 'MDB_MANAGER_MODE_1.0', 'report_version': 'MDB_TERRITORIAL_REPORT_1.0', 'investigation_guide_version': 'MDB_INVESTIGATION_GUIDE_1.0', 'manager_brief_version': 'MDB_MANAGER_BRIEF_1.0'}

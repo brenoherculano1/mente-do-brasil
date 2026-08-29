@@ -77,6 +77,17 @@ export default async function RegionProfilePage({ params }: RegionPageProps) {
           Dados: 2022-2024 / dezembro de 2024 conforme indicador. Release:{" "}
           {profile.release.release_id}.
         </p>
+        <div className="nav-links">
+          <Link className="text-button" href={`/gestor?regiao=${territory.health_region_code}`}>
+            Abrir no Modo Gestor
+          </Link>
+          <a
+            className="text-button"
+            href={`/api/v1/health-regions/${territory.health_region_code}/report.pdf`}
+          >
+            Baixar relatório
+          </a>
+        </div>
       </section>
 
       <section className="profile-grid">

@@ -1,2 +1,2 @@
-status=PASS
-Existing security header/CSP foundation preserved; production E2E passed.
+status: PASS
+PDF adds X-Robots-Tag: noindex; existing request-id middleware preserved.

@@ -75,7 +75,7 @@ describe("state page", () => {
     expect(screen.getByText("Como as regiões se distribuem")).toBeInTheDocument();
     expect(screen.getByLabelText("Alto Acre, Mismatch: +0,20")).toBeInTheDocument();
     expect(screen.getByText(/Sinal de desalinhamento territorial relativo/i)).toBeInTheDocument();
-    expect(screen.getByText(/Não é uma medida direta de déficit, acesso, qualidade/i)).toBeInTheDocument();
+    expect(screen.getByText(/Não é uma medida direta de acesso, qualidade/i)).toBeInTheDocument();
     fireEvent.change(screen.getByLabelText("Indicador"), { target: { value: "need_score" } });
     expect(screen.getByText(/posição relativa nacional/i)).toBeInTheDocument();
     expect(screen.getByLabelText("Alto Acre, Need: 70/100")).toBeInTheDocument();

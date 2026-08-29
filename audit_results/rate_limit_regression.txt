@@ -1,2 +1,2 @@
-status=PASS
-Radar geometry classified as overview class C; non-geometry Radar/explanation/peers class B; methods class A.
+status: PASS
+report.pdf classified as D_GEOMETRY_DETAIL in web ingress policy and covered by unit tests.

@@ -247,8 +247,8 @@ function SelectedRadarRegion({ region }: { region: RadarRegion | null }) {
         <Link className="text-button" href={`/regiao/${region.health_region_code}#inteligencia`}>
           Ver análise completa
         </Link>
-        <Link className="text-button" href={`/regiao/${region.health_region_code}#peers`}>
-          Comparar com regiões semelhantes
+        <Link className="text-button" href={`/gestor?regiao=${region.health_region_code}`}>
+          Modo Gestor
         </Link>
       </div>
     </div>

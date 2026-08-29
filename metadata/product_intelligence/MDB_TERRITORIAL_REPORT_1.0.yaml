@@ -1,0 +1,27 @@
+version: MDB_TERRITORIAL_REPORT_1.0
+status: VALIDATED_LOCAL
+source_releases:
+  analytical_release: MDB_ANALYTICAL_2024_1
+  intelligence_version: MDB_TERRITORIAL_INTELLIGENCE_1.0
+manager_brief_source: MDB_MANAGER_BRIEF_1.0
+output_type: application/pdf
+generator:
+  id: MDB_REPORTLAB_GENERATOR_1.0
+  engine: ReportLab
+  pinned_dependency: reportlab==4.2.5
+  external_runtime_dependency: NONE
+font_policy: Built-in Helvetica family; no runtime font download.
+sections:
+  - cover_quick_read
+  - radar_and_decomposition
+  - need_capacity_details
+  - peers_and_spatial_context
+  - investigation_questions_sources_limitations
+claim_constraints:
+  - no causal interpretation
+  - no automatic resource recommendation
+  - no internal URL
+  - no raw SQL or server path
+limitations:
+  - PDF accessibility baseline does not claim formal PDF/UA conformance.
+  - Content fingerprint is deterministic; byte-level PDF identity is not required.

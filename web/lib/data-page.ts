@@ -8,6 +8,9 @@ export const DATA_PAGE_SOURCES = {
   rawProvenance: "metadata/provenance/phase2_raw_data_manifest_2026-08-23.csv",
   webGeometry: "metadata/web_geometry/MDB_WEB_GEOMETRY_V1.yaml",
   productIntelligence: "metadata/product_intelligence/MDB_TERRITORIAL_INTELLIGENCE_1.0.yaml",
+  managerMode: "metadata/product_intelligence/MDB_MANAGER_MODE_1.0.yaml",
+  territorialReport: "metadata/product_intelligence/MDB_TERRITORIAL_REPORT_1.0.yaml",
+  investigationGuide: "metadata/product_intelligence/MDB_INVESTIGATION_GUIDE_1.0.yaml",
 };
 
 export const DATA_RELEASE = {
@@ -21,6 +24,10 @@ export const DATA_RELEASE = {
   radarRulesetVersion: "MDB_RADAR_RULESET_1.0",
   decompositionVersion: "MDB_MISMATCH_DECOMPOSITION_1.0",
   peerMethodVersion: "MDB_PEER_METHOD_1.0",
+  managerModeVersion: "MDB_MANAGER_MODE_1.0",
+  territorialReportVersion: "MDB_TERRITORIAL_REPORT_1.0",
+  investigationGuideVersion: "MDB_INVESTIGATION_GUIDE_1.0",
+  managerBriefVersion: "MDB_MANAGER_BRIEF_1.0",
   releaseStatus: "VALIDATING",
   qualityStatus: "VALIDATED",
   releaseGate: "PASS",

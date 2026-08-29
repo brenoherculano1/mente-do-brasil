@@ -1,0 +1,2 @@
+status: PASS
+FastAPI lifespan checks default_transaction_read_only=on before serving.

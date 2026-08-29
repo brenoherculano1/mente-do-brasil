@@ -74,6 +74,17 @@ def main() -> int:
             "privacy_notice": file_exists("metadata/legal/privacy_notice.yaml"),
             "robots": file_exists("web/app/robots.ts"),
             "sitemap": file_exists("web/app/sitemap.ts"),
+            "manager_route": file_exists("web/app/gestor/page.tsx"),
+            "manager_mode_metadata": file_exists(
+                "metadata/product_intelligence/MDB_MANAGER_MODE_1.0.yaml"
+            ),
+            "territorial_report_metadata": file_exists(
+                "metadata/product_intelligence/MDB_TERRITORIAL_REPORT_1.0.yaml"
+            ),
+            "investigation_guide_metadata": file_exists(
+                "metadata/product_intelligence/MDB_INVESTIGATION_GUIDE_1.0.yaml"
+            ),
+            "manager_api_router": file_exists("api/routers/manager.py"),
             "healthz": file_exists("web/app/healthz/route.ts"),
             "readyz": file_exists("web/app/readyz/route.ts"),
             "security_txt": file_exists("web/app/.well-known/security.txt/route.ts"),

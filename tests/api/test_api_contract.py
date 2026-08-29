@@ -464,6 +464,70 @@ def test_territorial_intelligence_explanation_and_peers_contract():
     assert methods["release"]["radar_ruleset_version"] == "MDB_RADAR_RULESET_1.0"
 
 
+def test_manager_brief_compare_and_pdf_contracts():
+    status, brief = api_get("/api/v1/manager/health-regions/12001")
+    assert status == 200
+    assert brief["versions"]["manager_mode_version"] == "MDB_MANAGER_MODE_1.0"
+    assert brief["versions"]["report_version"] == "MDB_TERRITORIAL_REPORT_1.0"
+    assert brief["versions"]["investigation_guide_version"] == "MDB_INVESTIGATION_GUIDE_1.0"
+    assert brief["versions"]["manager_brief_version"] == "MDB_MANAGER_BRIEF_1.0"
+    assert brief["region"]["health_region_code"] == "12001"
+    assert len(brief["decomposition"]) == 5
+    assert len(brief["investigation_questions"]) <= 8
+    assert len(brief["peer_summary"]["selected_benchmarks"]) == 3
+    assert len(brief["report_content_sha256"]) == 64
+    assert "ranking" not in json.dumps(brief, ensure_ascii=False).lower()
+
+    status, brief_again = api_get("/api/v1/manager/health-regions/12001")
+    assert status == 200
+    assert brief_again["report_content_sha256"] == brief["report_content_sha256"]
+
+    status, compare = api_get("/api/v1/manager/compare?codes=12001,31001,41006,53001")
+    assert status == 200
+    assert compare["requested_codes"] == ["12001", "31001", "41006", "53001"]
+    assert [row["identity"]["health_region_code"] for row in compare["regions"]] == [
+        "12001",
+        "31001",
+        "41006",
+        "53001",
+    ]
+    assert compare["ranking_introduced"] is False
+    assert api_get("/api/v1/manager/compare?codes=12001")[0] == 422
+    assert api_get("/api/v1/manager/compare?codes=12001,31001,41006,53001,11001")[0] == 422
+    assert api_get("/api/v1/manager/compare?codes=12001,12001")[0] == 422
+    injection = urllib.parse.quote("12001,../../etc/passwd", safe="")
+    assert api_get(f"/api/v1/manager/compare?codes={injection}")[0] == 422
+
+    status, pdf, encoding = api_get_raw("/api/v1/health-regions/12001/report.pdf")
+    assert status == 200
+    assert encoding is None
+    assert pdf.startswith(b"%PDF")
+    assert len(pdf) > 5000
+
+
+def test_manager_brief_diverse_region_cases():
+    rows = db_fetchone(
+        """
+        SELECT
+          min(health_region_code) FILTER (WHERE matched_signal_families = 5),
+          min(health_region_code) FILTER (WHERE matched_signal_families = 0),
+          min(health_region_code) FILTER (WHERE 'SMALL_SUICIDE_COUNT' = ANY(data_quality_flags)),
+          min(health_region_code) FILTER (WHERE zero_registered_beds),
+          '53001'
+        FROM analytics.health_region_intelligence
+        WHERE release_id = %s
+        """,
+        (RELEASE_ID,),
+    )
+    for code in {item for item in rows if item}:
+        status, brief = api_get(f"/api/v1/manager/health-regions/{code}")
+        assert status == 200
+        assert brief["region"]["health_region_code"] == code
+        assert len(brief["investigation_questions"]) <= 8
+        assert "undefined" not in json.dumps(brief, ensure_ascii=False).lower()
+        assert "nan" not in json.dumps(brief, ensure_ascii=False).lower()
+
+
 def test_no_unrequested_product_surfaces_exist():
     assert api_get("/api/v1/rankings")[0] == 404
     assert api_get("/api/v1/dashboard")[0] == 404

@@ -33,6 +33,9 @@ describe("operational API ingress policy", () => {
         new URLSearchParams("include_geometry=true&geometry_profile=detail"),
       ),
     ).toBe("D_GEOMETRY_DETAIL");
+    expect(
+      classifyApiRateLimit("/api/v1/health-regions/12001/report.pdf", new URLSearchParams()),
+    ).toBe("D_GEOMETRY_DETAIL");
   });
 
   it("uses no-store for operational errors and cacheable policies for 2xx responses", () => {
@@ -53,6 +56,13 @@ describe("operational API ingress policy", () => {
       classifyApiCachePolicy(
         "/api/v1/map/health-regions",
         new URLSearchParams("include_geometry=true&geometry_profile=detail"),
+        200,
+      ),
+    ).toBe(CACHE_CONTROL_POLICIES.D_GEOMETRY_DETAIL);
+    expect(
+      classifyApiCachePolicy(
+        "/api/v1/health-regions/12001/report.pdf",
+        new URLSearchParams(),
         200,
       ),
     ).toBe(CACHE_CONTROL_POLICIES.D_GEOMETRY_DETAIL);

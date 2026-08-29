@@ -259,6 +259,10 @@ export function DataPage() {
             <Row label="Radar" value={DATA_RELEASE.radarRulesetVersion} />
             <Row label="Decomposição" value={DATA_RELEASE.decompositionVersion} />
             <Row label="Peers" value={DATA_RELEASE.peerMethodVersion} />
+            <Row label="Modo Gestor" value={DATA_RELEASE.managerModeVersion} />
+            <Row label="Relatório territorial" value={DATA_RELEASE.territorialReportVersion} />
+            <Row label="Perguntas investigativas" value={DATA_RELEASE.investigationGuideVersion} />
+            <Row label="ManagerBrief" value={DATA_RELEASE.managerBriefVersion} />
           </dl>
           <p>
             Um release do Mente do Brasil representa uma combinação versionada de

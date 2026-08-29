@@ -1,0 +1,124 @@
+version: MDB_INVESTIGATION_GUIDE_1.0
+status: VALIDATED_LOCAL
+scope: Deterministic investigative questions for Manager Workbench and Territorial Reports.
+source_releases:
+  analytical_release: MDB_ANALYTICAL_2024_1
+  intelligence_version: MDB_TERRITORIAL_INTELLIGENCE_1.0
+claim_limits:
+  - questions do not assume causality
+  - questions do not prescribe resource allocation
+  - questions do not create a ranking
+max_display_questions: 8
+rules:
+  - id: BASE_LOCAL_CONFIRMATION
+    version: MDB_INVESTIGATION_GUIDE_1.0
+    condition: always
+    question_pt_br: Qual aspecto deste retrato territorial é confirmado pela experiência local?
+    category: Base
+    rationale: Toda leitura territorial exige confronto com conhecimento local.
+    priority: 900
+    claim_limit: Investigative only; no causal or prescriptive claim.
+  - id: BASE_FLOWS_REGISTRY
+    version: MDB_INVESTIGATION_GUIDE_1.0
+    condition: always
+    question_pt_br: Qual aspecto pode estar sendo influenciado por fluxo entre regiões, cadastro ou organização da rede?
+    category: Base
+    rationale: Indicadores regionais podem refletir organização territorial e registros.
+    priority: 910
+    claim_limit: Investigative only; no causal or prescriptive claim.
+  - id: BASE_LOCAL_DATA
+    version: MDB_INVESTIGATION_GUIDE_1.0
+    condition: always
+    question_pt_br: Quais dados locais seriam necessários para interpretar estes sinais com mais segurança?
+    category: Base
+    rationale: O produto organiza sinais públicos e não substitui investigação local.
+    priority: 920
+    claim_limit: Investigative only; no causal or prescriptive claim.
+  - id: NEED_HIGH_COMPONENTS
+    version: MDB_INVESTIGATION_GUIDE_1.0
+    condition: need_high
+    question_pt_br: Os dois componentes do Need estão em faixas relativamente altas ou o sinal está concentrado em apenas um deles?
+    category: Radar
+    rationale: NEED_HIGH acionado no Radar.
+    priority: 100
+    claim_limit: Investigative only; no causal or prescriptive claim.
+  - id: NEED_HIGH_RECORDS
+    version: MDB_INVESTIGATION_GUIDE_1.0
+    condition: need_high
+    question_pt_br: Esse padrão se mantém quando a equipe local compara os períodos e registros que originam os indicadores?
+    category: Radar
+    rationale: NEED_HIGH requer leitura cautelosa da origem dos registros.
+    priority: 110
+    claim_limit: Investigative only; no causal or prescriptive claim.
+  - id: CAPACITY_LOW_COMPONENTS
+    version: MDB_INVESTIGATION_GUIDE_1.0
+    condition: capacity_low
+    question_pt_br: Quais componentes da capacidade registrada estão mais distantes da posição relativa nacional?
+    category: Capacity
+    rationale: CAPACITY_LOW acionado no Radar.
+    priority: 120
+    claim_limit: Investigative only; no causal or prescriptive claim.
+  - id: CAPACITY_LOW_ORGANIZATION
+    version: MDB_INVESTIGATION_GUIDE_1.0
+    condition: capacity_low
+    question_pt_br: Existe organização regional, referência intermunicipal ou característica de cadastro que ajude a interpretar essa capacidade registrada?
+    category: Capacity
+    rationale: Capacidade registrada pode depender de organização regional.
+    priority: 130
+    claim_limit: Investigative only; no causal or prescriptive claim.
+  - id: MISMATCH_POSITIVE_DECOMPOSITION
+    version: MDB_INVESTIGATION_GUIDE_1.0
+    condition: mismatch_marked_positive
+    question_pt_br: O desalinhamento é formado principalmente por posições de Need acima do P50, Capacity abaixo do P50 ou pela combinação dos dois?
+    category: Radar
+    rationale: MISMATCH_MARKED_POSITIVE acionado e decomposto no ManagerBrief.
+    priority: 140
+    claim_limit: Investigative only; no causal or prescriptive claim.
+  - id: CAPS_LOW_DISTRIBUTION
+    version: MDB_INVESTIGATION_GUIDE_1.0
+    condition: caps_low
+    question_pt_br: Como a oferta registrada de CAPS se distribui dentro da Região de Saúde?
+    category: Capacity
+    rationale: CAPS em faixa relativamente baixa.
+    priority: 150
+    claim_limit: Investigative only; no causal or prescriptive claim.
+  - id: BEDS_LOW_FLOWS
+    version: MDB_INVESTIGATION_GUIDE_1.0
+    condition: beds_low
+    question_pt_br: Como a rede organiza internações de saúde mental em hospital geral dentro e fora da região?
+    category: Capacity
+    rationale: Leitos SUS em faixa relativamente baixa.
+    priority: 160
+    claim_limit: Investigative only; no causal or prescriptive claim.
+  - id: ZERO_BEDS_REGISTRY
+    version: MDB_INVESTIGATION_GUIDE_1.0
+    condition: zero_registered_beds
+    question_pt_br: Zero leitos registrados neste recorte reflete ausência de cadastro local, referenciamento para outras regiões ou outra organização assistencial?
+    category: Quality
+    rationale: O release registra zero leitos SUS de saúde mental.
+    priority: 80
+    claim_limit: Investigative only; no causal or prescriptive claim.
+  - id: PSYCHIATRIST_FTE_LOW_DISTRIBUTION
+    version: MDB_INVESTIGATION_GUIDE_1.0
+    condition: psychiatrist_fte_low
+    question_pt_br: Como a carga horária de psiquiatria registrada no SUS está distribuída entre os serviços e municípios da região?
+    category: Capacity
+    rationale: Psiquiatras FTE no SUS em faixa relativamente baixa.
+    priority: 170
+    claim_limit: Investigative only; no causal or prescriptive claim.
+  - id: SPATIAL_HH_CONTEXT
+    version: MDB_INVESTIGATION_GUIDE_1.0
+    condition: spatial_hh_mismatch
+    question_pt_br: Que fatores territoriais ou de organização regional podem ajudar a entender por que valores relativamente altos de Mismatch também aparecem em regiões vizinhas?
+    category: Spatial
+    rationale: SPATIAL_HH_MISMATCH acionado.
+    priority: 180
+    claim_limit: Investigative only; no causal or prescriptive claim.
+  - id: SMALL_SUICIDE_COUNT_STABILITY
+    version: MDB_INVESTIGATION_GUIDE_1.0
+    condition: small_suicide_count
+    question_pt_br: Esse componente é estável o suficiente para sustentar interpretações locais mais detalhadas?
+    category: Quality
+    rationale: SMALL_SUICIDE_COUNT exige cautela na leitura do componente de suicídio.
+    priority: 90
+    claim_limit: Investigative only; no causal or prescriptive claim.

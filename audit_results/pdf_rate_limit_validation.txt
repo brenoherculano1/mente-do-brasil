@@ -1,0 +1,4 @@
+status: PASS
+unit_test: api-route-rate-limit confirms blocked report request does not call upstream
+generator_calls_when_limited: 0
+invalid_pdf_status: 404

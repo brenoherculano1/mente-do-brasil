@@ -1,2 +1,2 @@
-status=PASS
-CORS wildcard not introduced; existing API regression passed.
+status: PASS
+CORS remains GET-only with configured allowed origins; no wildcard credentialed origin added.

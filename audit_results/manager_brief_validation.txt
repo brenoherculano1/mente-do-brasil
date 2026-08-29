@@ -1,0 +1,14 @@
+{
+  "regions": 439,
+  "time_ms_median": 9.22,
+  "time_ms_max": 597.58,
+  "payload_bytes_median": 6729,
+  "payload_bytes_max": 9005,
+  "question_count_min": 3,
+  "question_count_max": 8,
+  "duplicate_questions": 0,
+  "hash_mismatches": [],
+  "forbidden_hits": [],
+  "broken_narratives": [],
+  "status": "PASS"
+}

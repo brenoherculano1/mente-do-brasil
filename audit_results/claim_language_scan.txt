@@ -1,12 +1,136 @@
-CLAIM SCAN - PRODUCT SURFACE
-docs/territorial_intelligence_phase1_2026-08-27.md:38:It is not a ranking, risk score, priority score, or resource recommendation.
-web/tests/e2e/frontend-v1.spec.ts:274:  await expect(page.locator("body")).not.toContainText("déficit assistencial");
-web/tests/e2e/frontend-v1.spec.ts:275:  await expect(page.locator("body")).not.toContainText("necessidade não atendida");
-web/tests/e2e/frontend-v1.spec.ts:276:  await expect(page.locator("body")).not.toContainText("hotspot de doença mental");
-web/tests/e2e/frontend-v1.spec.ts:278:  await expect(page.locator("body")).not.toContainText("melhores regiões");
-web/tests/e2e/frontend-v1.spec.ts:279:  await expect(page.locator("body")).not.toContainText("piores regiões");
-web/tests/e2e/territorial-intelligence.spec.ts:28:  await expect(page.locator("body")).not.toContainText("déficit assistencial");
-web/tests/e2e/territorial-intelligence.spec.ts:29:  await expect(page.locator("body")).not.toContainText("hotspot de doença mental");
-web/tests/unit/about-page.test.tsx:63:    expect(text).not.toMatch(/déficit assistencial|necessidade não atendida|hotspot de doença mental/i);
-web/tests/unit/about-page.test.tsx:64:    expect(text).not.toMatch(/melhores regiões|piores regiões|recomendamos/i);
-PASS: no prohibited affirmative product wording in shipped UI/API/docs for this phase.
+status: PASS
+scoped_files: 14
+hits: 21
+allowed_contextual_hits: 21
+disallowed_hits: 0
+{
+  "allowed": [
+    {
+      "file": "api/services/manager.py",
+      "line": 255,
+      "term": "causa",
+      "text": "\"Pergunta investigativa; não assume causalidade, insuficiência assistencial \""
+    },
+    {
+      "file": "api/services/manager.py",
+      "line": 803,
+      "term": "necessidade não atendida",
+      "text": "\"qualidade, necessidade não atendida ou recomendação automática de \""
+    },
+    {
+      "file": "web/features/methodology/MethodologyPage.tsx",
+      "line": 445,
+      "term": "causa",
+      "text": "não assumem explicação causal ou prescrição de alocação."
+    },
+    {
+      "file": "web/features/methodology/MethodologyPage.tsx",
+      "line": 578,
+      "term": "pior",
+      "text": "<li>produzir ranking moral de melhor e pior;</li>"
+    },
+    {
+      "file": "web/features/methodology/MethodologyPage.tsx",
+      "line": 578,
+      "term": "melhor",
+      "text": "<li>produzir ranking moral de melhor e pior;</li>"
+    },
+    {
+      "file": "metadata/product_intelligence/MDB_INVESTIGATION_GUIDE_1.0.yaml",
+      "line": 8,
+      "term": "causa",
+      "text": "- questions do not assume causality"
+    },
+    {
+      "file": "metadata/product_intelligence/MDB_INVESTIGATION_GUIDE_1.0.yaml",
+      "line": 20,
+      "term": "causa",
+      "text": "claim_limit: Investigative only; no causal or prescriptive claim."
+    },
+    {
+      "file": "metadata/product_intelligence/MDB_INVESTIGATION_GUIDE_1.0.yaml",
+      "line": 28,
+      "term": "causa",
+      "text": "claim_limit: Investigative only; no causal or prescriptive claim."
+    },
+    {
+      "file": "metadata/product_intelligence/MDB_INVESTIGATION_GUIDE_1.0.yaml",
+      "line": 36,
+      "term": "causa",
+      "text": "claim_limit: Investigative only; no causal or prescriptive claim."
+    },
+    {
+      "file": "metadata/product_intelligence/MDB_INVESTIGATION_GUIDE_1.0.yaml",
+      "line": 44,
+      "term": "causa",
+      "text": "claim_limit: Investigative only; no causal or prescriptive claim."
+    },
+    {
+      "file": "metadata/product_intelligence/MDB_INVESTIGATION_GUIDE_1.0.yaml",
+      "line": 52,
+      "term": "causa",
+      "text": "claim_limit: Investigative only; no causal or prescriptive claim."
+    },
+    {
+      "file": "metadata/product_intelligence/MDB_INVESTIGATION_GUIDE_1.0.yaml",
+      "line": 60,
+      "term": "causa",
+      "text": "claim_limit: Investigative only; no causal or prescriptive claim."
+    },
+    {
+      "file": "metadata/product_intelligence/MDB_INVESTIGATION_GUIDE_1.0.yaml",
+      "line": 68,
+      "term": "causa",
+      "text": "claim_limit: Investigative only; no causal or prescriptive claim."
+    },
+    {
+      "file": "metadata/product_intelligence/MDB_INVESTIGATION_GUIDE_1.0.yaml",
+      "line": 76,
+      "term": "causa",
+      "text": "claim_limit: Investigative only; no causal or prescriptive claim."
+    },
+    {
+      "file": "metadata/product_intelligence/MDB_INVESTIGATION_GUIDE_1.0.yaml",
+      "line": 84,
+      "term": "causa",
+      "text": "claim_limit: Investigative only; no causal or prescriptive claim."
+    },
+    {
+      "file": "metadata/product_intelligence/MDB_INVESTIGATION_GUIDE_1.0.yaml",
+      "line": 92,
+      "term": "causa",
+      "text": "claim_limit: Investigative only; no causal or prescriptive claim."
+    },
+    {
+      "file": "metadata/product_intelligence/MDB_INVESTIGATION_GUIDE_1.0.yaml",
+      "line": 100,
+      "term": "causa",
+      "text": "claim_limit: Investigative only; no causal or prescriptive claim."
+    },
+    {
+      "file": "metadata/product_intelligence/MDB_INVESTIGATION_GUIDE_1.0.yaml",
+      "line": 108,
+      "term": "causa",
+      "text": "claim_limit: Investigative only; no causal or prescriptive claim."
+    },
+    {
+      "file": "metadata/product_intelligence/MDB_INVESTIGATION_GUIDE_1.0.yaml",
+      "line": 116,
+      "term": "causa",
+      "text": "claim_limit: Investigative only; no causal or prescriptive claim."
+    },
+    {
+      "file": "metadata/product_intelligence/MDB_INVESTIGATION_GUIDE_1.0.yaml",
+      "line": 124,
+      "term": "causa",
+      "text": "claim_limit: Investigative only; no causal or prescriptive claim."
+    },
+    {
+      "file": "metadata/product_intelligence/MDB_TERRITORIAL_REPORT_1.0.yaml",
+      "line": 21,
+      "term": "causa",
+      "text": "- no causal interpretation"
+    }
+  ],
+  "disallowed": []
+}

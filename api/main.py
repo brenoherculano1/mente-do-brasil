@@ -19,6 +19,7 @@ from api.routers.health import router as health_router
 from api.routers.health_regions import router as health_regions_router
 from api.routers.indicators import router as indicators_router
 from api.routers.intelligence import router as intelligence_router
+from api.routers.manager import router as manager_router
 from api.routers.releases import router as releases_router
 from api.services.health_regions import ready_check
 
@@ -52,8 +53,7 @@ app = FastAPI(
     title="Mente do Brasil API",
     version="0.1.0",
     description=(
-        "Internal read-only API for the Mente do Brasil territorial mental-health "
-        "data platform."
+        "Internal read-only API for the Mente do Brasil territorial mental-health data platform."
     ),
     lifespan=lifespan,
     docs_url="/docs" if settings.enable_docs else None,
@@ -79,6 +79,7 @@ app.include_router(releases_router)
 app.include_router(indicators_router)
 app.include_router(health_regions_router)
 app.include_router(intelligence_router)
+app.include_router(manager_router)
 
 
 @app.middleware("http")

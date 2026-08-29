@@ -1,0 +1,23 @@
+status: PASS
+{
+  "health_regions": 439,
+  "municipalities": 5570,
+  "municipalities_source": "scripts/validate_serving_database.py",
+  "metrics": 439,
+  "serving_views": [
+    "serving.health_region_lookup",
+    "serving.health_region_map",
+    "serving.health_region_profile"
+  ],
+  "srid_4674": 439,
+  "valid_geom": 439,
+  "lisa": 135,
+  "lisa_clusters": {
+    "low-high": 5,
+    "high-high": 60,
+    "high-low": 4,
+    "low-low": 66
+  },
+  "small_suicide_count": 7,
+  "zero_registered_beds": 275
+}

@@ -4,6 +4,7 @@ import { MdbApiError } from "@/lib/api/errors";
 import type {
   ExplanationResponse,
   HealthRegionProfile,
+  ManagerBrief,
   PeersResponse,
   StateProfile,
 } from "@/types/api";
@@ -66,6 +67,12 @@ export function getHealthRegionExplanationServer(code: string) {
 
 export function getHealthRegionPeersServer(code: string) {
   return request<PeersResponse>(`/api/v1/health-regions/${code}/peers?metric=mismatch_score`, {
+    cache: "no-store",
+  });
+}
+
+export function getManagerBriefServer(code: string) {
+  return request<ManagerBrief>(`/api/v1/manager/health-regions/${code}`, {
     cache: "no-store",
   });
 }

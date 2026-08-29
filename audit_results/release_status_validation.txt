@@ -1,7 +1,4 @@
-status=PASS_PRE_RELEASE
-public_mode=False
-indexing_enabled=False
-site_url_valid=False
-contact_email_configured=False
-security_email_resolved=False
-failures=none
+status: PASS
+public_release_status: NOT_RELEASED
+private_config: status=PASS_PRE_RELEASE; public_mode=False; indexing_enabled=False; site_url_valid=False; contact_email_configured=False; security_email_resolved=False; failures=none; 
+public_simulation: status=APPLICATION_PUBLIC_CONFIG_READY; public_mode=True; indexing_enabled=True; site_url_valid=True; contact_email_configured=True; security_email_resolved=True; failures=none;

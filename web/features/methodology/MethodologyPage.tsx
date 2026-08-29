@@ -424,6 +424,34 @@ export function MethodologyPage() {
             <VersionPill label="Peers" value={METHOD_IDENTIFIERS.peerMethod} />
           </Section>
 
+          <Section id="manager" title="Modo Gestor e Relatórios">
+            <p>
+              O Modo Gestor e o Relatório Territorial são camadas de composição
+              sobre o release canônico e a inteligência territorial já validados.
+              Eles não criam novo score, ranking ou recomendação automática de
+              recursos.
+            </p>
+            <TechnicalBlock
+              title="Contratos de produto"
+              rows={[
+                ["ManagerBrief", "Payload único consumido pela interface e pelo PDF"],
+                ["Narrativa", "Template determinístico, sem LLM"],
+                ["Perguntas", "Ruleset determinístico versionado"],
+                ["PDF", "Relatório A4 gerado server-side a partir do ManagerBrief"],
+              ]}
+            />
+            <p className="small-text">
+              As perguntas são investigativas, acionadas por sinais medidos e
+              não assumem explicação causal ou prescrição de alocação.
+            </p>
+            <div className="version-grid">
+              <VersionPill label="Modo Gestor" value={METHOD_IDENTIFIERS.managerMode} />
+              <VersionPill label="Relatório" value={METHOD_IDENTIFIERS.territorialReport} />
+              <VersionPill label="Perguntas" value={METHOD_IDENTIFIERS.investigationGuide} />
+              <VersionPill label="Brief" value={METHOD_IDENTIFIERS.managerBrief} />
+            </div>
+          </Section>
+
           <Section id="spatial" title="Contexto espacial">
             <p>
               Regiões vizinhas podem apresentar padrões semelhantes. A análise

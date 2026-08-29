@@ -1,2 +1,6 @@
-expected_public_simulated_urls=473
-status=PASS via frontend unit public-foundation.test.ts and production build route /radar
+expected_public_simulated_urls=474
+static_routes=8
+state_routes=27
+health_region_routes=439
+report_pdf_urls=0
+status=PASS via frontend unit public-foundation.test.ts and production build route /gestor
