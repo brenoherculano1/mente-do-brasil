@@ -25,7 +25,7 @@ OUT = ROOT / "data/product_intelligence/MDB_ANALYTICAL_2024_2/health_region_fina
 def populations() -> pd.DataFrame:
     cross = pd.read_parquet(CROSSWALK)
     mapping = dict(
-        zip(cross.municipality_code_ibge.astype(str).str[:6], cross.health_region_code, strict=True)
+        zip(cross.municipality_code_ibge.astype(str), cross.health_region_code, strict=True)
     )
     manifest = list(csv.DictReader(LOCKED.open()))
     parts = []
@@ -42,11 +42,20 @@ def populations() -> pd.DataFrame:
                     next(name for name in member if name.lower().endswith(".dbf"))
                 )
             )
-            frame = selected_dbf(dbf, ["COD_MUN", "POP"])
+            frame = selected_dbf(dbf, ["COD_MUN", "ANO", "SEXO", "IDADE", "POP"])
+        if frame.duplicated(["COD_MUN", "ANO", "SEXO", "IDADE"]).any():
+            raise ValueError("Duplicate POPSVS population key")
+        if set(frame.ANO) != {str(year)}:
+            raise ValueError("Unexpected POPSVS reference year")
         frame["health_region_code"] = frame.COD_MUN.map(mapping)
+        if frame.health_region_code.isna().any():
+            raise ValueError("Unmapped POPSVS municipality; expected seven-digit IBGE codes")
         frame["population"] = frame.POP.astype("int64")
+        frame["municipality"] = frame.COD_MUN.str[:6]
         parts.append(
-            frame.groupby("health_region_code", as_index=False).population.sum().assign(year=year)
+            frame.groupby(["health_region_code", "municipality"], as_index=False)
+            .population.sum()
+            .assign(year=year)
         )
     return pd.concat(parts, ignore_index=True)
 
@@ -84,8 +93,26 @@ def main() -> None:
     out = out.merge(expected, on="health_region_code", how="left").merge(
         annual, on=["year", "health_region_code"], how="left"
     )
-    pop = populations().rename(columns={"population": "population_expected"})
+    municipal_pop = populations()
+    pop = municipal_pop.groupby(["year", "health_region_code"], as_index=False).population.sum()
+    pop = pop.rename(columns={"population": "population_expected"})
     out = out.merge(pop, on=["year", "health_region_code"], how="left")
+    if len(pop) != 1317 or not out.population_expected.gt(0).all():
+        raise ValueError("Incomplete or nonpositive regional population")
+    covered = (
+        municipal_pop.merge(
+            snap_ok[["year", "municipality"]], on=["year", "municipality"], validate="one_to_one"
+        )
+        .groupby(["year", "health_region_code"], as_index=False)
+        .population.sum()
+    )
+    out = out.merge(
+        covered.rename(columns={"population": "population_covered"}),
+        on=["year", "health_region_code"],
+        how="left",
+    )
+    # Zero here means no covered municipalities, never zero expenditure.
+    out["population_covered"] = out.population_covered.fillna(0).astype("int64")
     out["municipalities_observed"] = out.municipalities_observed.fillna(0).astype(int)
     out["coverage_share"] = out.municipalities_observed / out.municipalities_expected
     out["headline_available"] = out.coverage_share.eq(1) & out.total_health_expenditure_brl.notna()
@@ -98,7 +125,6 @@ def main() -> None:
     )
     out["financing_version"] = "MDB_FINANCING_CONTEXT_1.0"
     out["siops_snapshot_id"] = "MDB_SIOPS_SNAPSHOT_20260831_1"
-    out["population_covered"] = out.population_expected.where(out.headline_available)
     out["coverage_population_share"] = out.population_covered / out.population_expected
     out["source_period"] = "2"
     out["source_indicator"] = "grupo=17 Total; Indicator 2.1 validated in stratified sample"
@@ -123,8 +149,9 @@ def main() -> None:
         ]
     ].sort_values(["year", "health_region_code"])
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.unlink(missing_ok=True)
-    out.to_parquet(OUT, index=False)
+    temporary = OUT.with_suffix(".parquet.tmp")
+    out.to_parquet(temporary, index=False)
+    temporary.replace(OUT)
     result = {
         "rows": len(out),
         "full_coverage_rows": int(out.headline_available.sum()),
@@ -133,6 +160,14 @@ def main() -> None:
         "sha256": sha256(OUT),
         "source_snapshot_rows": len(snap),
         "source_snapshot_successes": int((snap.status == "ok").sum()),
+        "population_nulls": int(out.population_expected.isna().sum()),
+        "available_per_capita_values": int(out.health_expenditure_per_capita_brl.notna().sum()),
+        "annual_population": {
+            str(y): int(v) for y, v in out.groupby("year").population_expected.sum().items()
+        },
+        "superseded_output_sha256": (
+            "e0268253e318473824312ed3125a01ea73be8d795457ac6e09f568ab9b140985"
+        ),
         "missing_not_zero": bool(
             out.loc[~out.headline_available, "total_health_expenditure_brl"].isna().all()
         ),

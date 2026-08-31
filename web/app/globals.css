@@ -137,6 +137,35 @@ button {
   font-weight: 700;
 }
 
+.nav-more {
+  position: relative;
+}
+
+.nav-more summary {
+  color: var(--text-muted);
+  cursor: pointer;
+  list-style: none;
+}
+
+.nav-more summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-more-menu {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 8px;
+  min-width: 150px;
+  padding: 10px;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  z-index: 30;
+}
+
 .muted-link {
   opacity: 0.58;
 }

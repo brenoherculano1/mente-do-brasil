@@ -1,4 +1,4 @@
-serving_database_status: PENDING_LOCAL_VALIDATION
+serving_database_status: VALIDATED_LOCAL
 release_id: MDB_ANALYTICAL_2024_2
 canonical_version: MDB_CANONICAL_1.1
 method_version: MDB_METHOD_1.1
@@ -7,13 +7,18 @@ source_release_status: VALIDATING
 source_quality_status: VALIDATED
 source_release_gate: PASS
 public_release_status: NOT_RELEASED
-validated_at: null
+validated_at: 2026-08-31T17:41:32Z
 database:
   engine: PostgreSQL
   bind_host: 127.0.0.1
   read_only_runtime: true
 image:
   requested_tag: postgis/postgis:18-3.6
+  requested_digest_amd64: sha256:60f6ad1d21ea86a67d47780b9a0d1e1d200500f62b19293fa834d0dea80b8677
+  runtime_image: mente-do-brasil-postgis:18-3.6.4
+  runtime_digest: sha256:efbe9919290ea632ce1acb3145d984935d73c1976e882b14b806a6ee3e35dd4e
+  postgres_version: 18.6
+  postgis_version: 3.6.4
 counts:
   health_regions: 439
   municipalities: 5570
@@ -36,6 +41,6 @@ flags:
   ZERO_REGISTERED_BEDS: 275
 guardrails:
   historical_release_preserved: true
-  idempotent_reload: PENDING
-  immutability_guard: PENDING
-  constraint_tests: PENDING
+  idempotent_reload: PASS
+  immutability_guard: PASS
+  constraint_tests: PASS

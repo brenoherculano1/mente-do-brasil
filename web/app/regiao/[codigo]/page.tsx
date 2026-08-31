@@ -16,6 +16,7 @@ import { DataQualityNotice } from "@/features/profile/DataQualityNotice";
 import { IndicatorMetric } from "@/features/profile/IndicatorMetric";
 import { ScoreOverview } from "@/features/profile/ScoreOverview";
 import { SpatialContext } from "@/features/profile/SpatialContext";
+import { RegionAdvanced } from "@/features/advanced/RegionAdvanced";
 
 type RegionPageProps = {
   params: Promise<{ codigo: string }>;
@@ -90,6 +91,7 @@ export default async function RegionProfilePage({ params }: RegionPageProps) {
         </div>
       </section>
 
+      <RegionAdvanced code={codigo} />
       <section className="profile-grid">
         <div className="profile-section">
           <h2>Visão geral</h2>

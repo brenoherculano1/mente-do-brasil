@@ -8,6 +8,8 @@ class FinancingRecord(BaseModel):
     siops_snapshot_id: str
     year: int
     health_region_code: str
+    health_region_name: str
+    uf: str
     municipalities_expected: int
     municipalities_observed: int
     population_expected: int

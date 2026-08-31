@@ -53,7 +53,9 @@ class ManagerSpatialContext(BaseModel):
 class InvestigationQuestion(BaseModel):
     rule_id: str
     version: str = INVESTIGATION_GUIDE_VERSION
-    category: Literal["Base", "Radar", "Capacity", "Spatial", "Quality"]
+    category: Literal[
+        "Base", "Radar", "Capacity", "Spatial", "Quality", "Change", "Financing", "Flow"
+    ]
     question: str
     rationale: str
     priority: int
@@ -87,6 +89,10 @@ class ManagerBrief(BaseModel):
     investigation_questions: list[InvestigationQuestion]
     method_references: list[str]
     report_content_sha256: str
+    temporal_summary: dict | None = None
+    change_summary: dict | None = None
+    financing_context: dict | None = None
+    hospital_flow_summary: dict | None = None
 
 
 class CompareRegion(BaseModel):

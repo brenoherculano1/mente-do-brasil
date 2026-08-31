@@ -32,3 +32,25 @@ def test_financing_output_has_explicit_partial_coverage():
     assert frame.headline_available.sum() == 1310
     assert frame.loc[~frame.headline_available, "total_health_expenditure_brl"].isna().all()
     assert frame.loc[~frame.headline_available, "quality_flags"].eq("PARTIAL_SIOPS_COVERAGE").all()
+
+
+def test_financing_available_headlines_have_valid_denominators():
+    frame = pd.read_parquet(FINANCING)
+    assert frame.population_expected.notna().all()
+    assert frame.population_expected.gt(0).all()
+    assert frame.health_expenditure_per_capita_brl.notna().sum() == 1310
+    assert frame.groupby("year").population_expected.sum().to_dict() == {
+        2022: 210862983,
+        2023: 211695158,
+        2024: 212583750,
+    }
+    assert frame.population_covered.between(0, frame.population_expected).all()
+    partial = frame.loc[~frame.headline_available]
+    assert partial.coverage_population_share.lt(1).all()
+    assert partial.health_expenditure_per_capita_brl.isna().all()
+    full = frame.loc[frame.headline_available]
+    pd.testing.assert_series_equal(
+        full.health_expenditure_per_capita_brl,
+        full.total_health_expenditure_brl / full.population_expected,
+        check_names=False,
+    )

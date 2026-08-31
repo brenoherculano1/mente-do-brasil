@@ -262,6 +262,9 @@ def get_manager_brief(db: Database, release_id: str, code: str) -> ManagerBrief:
     row = manager_row(db, release_id, code)
     benchmarks = peer_benchmarks(db, release_id, code)
     brief_without_hash = build_manager_brief(row, benchmarks, report_content_sha256="")
+    from api.services.manager_advanced import enrich
+
+    brief_without_hash = enrich(db, brief_without_hash)
     content_hash = manager_brief_hash(brief_without_hash)
     return brief_without_hash.model_copy(update={"report_content_sha256": content_hash})
 
@@ -324,7 +327,13 @@ def manager_row(db: Database, release_id: str, code: str) -> dict:
          AND i.intelligence_version = %s
         WHERE p.release_id = %s AND p.health_region_code = %s
         """,
-        (INTELLIGENCE_VERSION, release_id, code),
+        (
+            "MDB_TERRITORIAL_INTELLIGENCE_1.1"
+            if release_id == "MDB_ANALYTICAL_2024_2"
+            else INTELLIGENCE_VERSION,
+            release_id,
+            code,
+        ),
     )
     if not row:
         raise api_error(404, "HEALTH_REGION_NOT_FOUND", "Health Region not found.")
@@ -605,6 +614,11 @@ def generate_report_pdf(brief: ManagerBrief) -> bytes:
     story.append(PageBreak())
     add_peers_spatial(story, styles, brief)
     story.append(PageBreak())
+    if brief.temporal_summary is not None:
+        from api.services.manager_advanced import add_sections
+
+        add_sections(story, styles, brief)
+        story.append(PageBreak())
     add_questions(story, styles, brief)
     doc.build(story, onFirstPage=footer(brief), onLaterPages=footer(brief))
     return buffer.getvalue()
@@ -622,7 +636,7 @@ def report_response(brief: ManagerBrief) -> Response:
         [
             brief.release.release_id,
             brief.region.health_region_code,
-            TERRITORIAL_REPORT_VERSION,
+            brief.versions.report_version,
             brief.report_content_sha256,
         ]
     )
@@ -809,8 +823,8 @@ def add_questions(story: list[Any], styles: dict[str, ParagraphStyle], brief: Ma
     story.append(
         Paragraph(
             "Fontes: SIM; SIH/SUS; CNES; IBGE/geografia. "
-            f"{brief.release.release_id}; {TERRITORIAL_REPORT_VERSION}; "
-            f"{INVESTIGATION_GUIDE_VERSION}; conteúdo {brief.report_content_sha256}.",
+            f"{brief.release.release_id}; {brief.versions.report_version}; "
+            f"{brief.versions.investigation_guide_version}; conteúdo {brief.report_content_sha256}.",
             styles["small"],
         )
     )
@@ -818,7 +832,7 @@ def add_questions(story: list[Any], styles: dict[str, ParagraphStyle], brief: Ma
         Paragraph(
             "Citação sugerida: Mente do Brasil. Relatório Territorial — "
             f"{brief.region.health_region_name}. Release {brief.release.release_id}. "
-            f"{TERRITORIAL_REPORT_VERSION}.",
+            f"{brief.versions.report_version}.",
             styles["small"],
         )
     )
@@ -873,9 +887,10 @@ def footer(brief: ManagerBrief):
         canvas.saveState()
         canvas.setFont("Helvetica", 7)
         canvas.setFillColor(colors.HexColor("#50635f"))
+        max_pages = 8 if brief.temporal_summary else 5
         text = (
             f"Mente do Brasil · {brief.release.release_id} · "
-            f"{TERRITORIAL_REPORT_VERSION} · página {doc.page}/5"
+            f"{brief.versions.report_version} · página {doc.page}/{max_pages}"
         )
         canvas.drawString(1.35 * cm, 0.75 * cm, text)
         canvas.restoreState()

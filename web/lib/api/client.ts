@@ -25,7 +25,7 @@ type ApiErrorBody = {
   };
 };
 
-async function request<T>(path: string, init?: RequestInit): Promise<T> {
+export async function request<T>(path: string, init?: RequestInit): Promise<T> {
   const response = await fetch(sameOriginApiPath(path), {
     ...init,
     headers: { Accept: "application/json", ...init?.headers },

@@ -63,16 +63,19 @@ def test_health_and_ready_contracts():
 def test_release_and_indicator_contracts():
     status, releases = api_get("/api/v1/releases")
     assert status == 200
-    assert len(releases) == 1
-    assert releases[0]["release_id"] == RELEASE_ID
-    assert releases[0]["release_status"] == "VALIDATING"
-    assert releases[0]["quality_status"] == "VALIDATED"
-    assert releases[0]["release_gate"] == "PASS"
-    assert releases[0]["public_release_status"] == "NOT_RELEASED"
+    assert {release["release_id"] for release in releases} == {
+        "MDB_ANALYTICAL_2024_1",
+        "MDB_ANALYTICAL_2024_2",
+    }
+    current = next(release for release in releases if release["release_id"] == RELEASE_ID)
+    assert current["release_status"] == "VALIDATING"
+    assert current["quality_status"] == "VALIDATED"
+    assert current["release_gate"] == "PASS"
+    assert current["public_release_status"] == "NOT_RELEASED"
 
     status, release = api_get(f"/api/v1/releases/{RELEASE_ID}")
     assert status == 200
-    assert release == releases[0]
+    assert release == current
 
     status, indicators = api_get("/api/v1/indicators")
     assert status == 200

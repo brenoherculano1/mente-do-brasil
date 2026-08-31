@@ -13,6 +13,8 @@ export type FinancingRecord = {
   siops_snapshot_id: string;
   year: number;
   health_region_code: string;
+  health_region_name: string;
+  uf: string;
   municipalities_expected: number;
   municipalities_observed: number;
   population_expected: number;

@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "rows": 1317,
+  "max_abs_diff": {
+    "suicide_deaths": 0.0,
+    "psychiatric_admissions": 0.0,
+    "caps_count": 0.0,
+    "mental_health_beds_sus_count": 0.0,
+    "psychiatrist_fte": 1.4210854715202004e-14,
+    "need_score": 5.551115123125783e-17,
+    "capacity_score": 1.1102230246251565e-16,
+    "mismatch_score": 1.1102230246251565e-16,
+    "suicide_asmr": 0.0,
+    "psychiatric_admission_rate": 5.684341886080802e-14,
+    "caps_rate": 1.7763568394002505e-15,
+    "mental_health_beds_sus_rate": 2.220446049250313e-16,
+    "psychiatrist_fte_rate": 8.881784197001252e-16,
+    "suicide_percentile": 0.0,
+    "psychiatric_admission_percentile": 5.551115123125783e-17,
+    "caps_percentile": 5.551115123125783e-17,
+    "beds_percentile": 0.0,
+    "psychiatrist_fte_percentile": 5.551115123125783e-17
+  }
+}

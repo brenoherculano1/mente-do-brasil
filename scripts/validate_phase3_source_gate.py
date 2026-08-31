@@ -73,7 +73,9 @@ def selected_dbf(path, columns):
         path, dtype=dtype, mode="r", offset=table.header.headerlen, shape=(table.header.numrecords,)
     )
     keep = records["_deleted"] != b"*"
-    data = pd.DataFrame({c: np.char.strip(records[c][keep].astype(str)) for c in columns})
+    data = pd.DataFrame(
+        {c: np.char.strip(np.char.decode(records[c][keep], "latin1")) for c in columns}
+    )
     # Cross-check against the independent DBF row reader, not just our offsets.
     for i, reference in enumerate(table):
         if i == min(25, len(data)):

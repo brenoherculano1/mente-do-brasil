@@ -16,20 +16,23 @@ def get_financing(
     filters = ["financing_version = 'MDB_FINANCING_CONTEXT_1.0'"]
     params: list[object] = []
     if code:
-        filters.append("health_region_code = %s")
+        filters.append("f.health_region_code = %s")
         params.append(code)
     if year:
         filters.append("year = %s")
         params.append(year)
     rows = db.rows(
-        "SELECT financing_version, siops_snapshot_id, year, health_region_code, "
+        "SELECT financing_version, siops_snapshot_id, year, f.health_region_code, "
+        "g.health_region_name, g.uf, "
         "municipalities_expected, municipalities_observed, population_expected, "
         "population_covered, coverage_share, coverage_population_share, "
         "total_health_expenditure_brl::float8 AS total_health_expenditure_brl, "
         "health_expenditure_per_capita_brl::float8 AS health_expenditure_per_capita_brl, "
         "headline_available, quality_flags, source_period, source_indicator "
-        f"FROM analytics.health_region_financing WHERE {' AND '.join(filters)} "
-        "ORDER BY year, health_region_code",
+        "FROM analytics.health_region_financing f JOIN geo.health_regions g "
+        "ON g.health_region_code=f.health_region_code "
+        "AND g.geography_version='BR_HEALTH_REGIONS_END2024_V1' "
+        f"WHERE {' AND '.join(filters)} ORDER BY year, f.health_region_code",
         tuple(params),
     )
     if not rows:

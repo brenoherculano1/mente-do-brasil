@@ -5,6 +5,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+from datetime import datetime, timezone
 from math import isclose
 from pathlib import Path
 from typing import Any
@@ -272,8 +273,11 @@ def insert_serving_status(connection, root: Path) -> None:
     status_manifest = load_yaml(root / SERVING_RELEASE)
     if status_manifest["release_id"] != RELEASE_ID:
         raise AssertionError("Serving status manifest release_id differs from current release.")
-    if status_manifest["serving_database_status"] != "VALIDATED_LOCAL":
-        raise AssertionError("Serving database status is not VALIDATED_LOCAL.")
+    if status_manifest["serving_database_status"] not in {
+        "VALIDATED_LOCAL",
+        "PENDING_LOCAL_VALIDATION",
+    }:
+        raise AssertionError("Serving database status is not eligible for local validation.")
     connection.execute(
         """
         INSERT INTO meta.serving_database_status (
@@ -286,8 +290,8 @@ def insert_serving_status(connection, root: Path) -> None:
         """,
         (
             status_manifest["release_id"],
-            status_manifest["serving_database_status"],
-            status_manifest["validated_at"],
+            "VALIDATED_LOCAL",
+            status_manifest["validated_at"] or datetime.now(timezone.utc),
         ),
     )
 
@@ -527,9 +531,13 @@ def read_product_intelligence(
     if int(intelligence["spatial_hh_mismatch"].sum()) != 60:
         raise AssertionError("SPATIAL_HH_MISMATCH must equal 60 in product intelligence.")
     max_error = (
-        intelligence["decomposition_sum"].astype(float)
-        - intelligence["mismatch_score"].astype(float)
-    ).abs().max()
+        (
+            intelligence["decomposition_sum"].astype(float)
+            - intelligence["mismatch_score"].astype(float)
+        )
+        .abs()
+        .max()
+    )
     if max_error > 1e-12:
         raise AssertionError(f"Product decomposition identity failed: {max_error}")
     return intelligence, peers, benchmarks, output_hashes
@@ -996,7 +1004,7 @@ def validate_database(connection, release: dict[str, Any]) -> dict[str, Any]:
         "lookup": 439,
         "srid_4674": 439,
         "valid_geom": 439,
-        "lisa_significant": 135,
+        "lisa_significant": EXPECTED_LISA["total"],
         "small_suicide": 7,
         "zero_beds": 275,
         "intelligence_versions": 1,
@@ -1018,7 +1026,7 @@ def validate_database(connection, release: dict[str, Any]) -> dict[str, Any]:
             (RELEASE_ID,),
         ).fetchall()
     )
-    expected_clusters = {"high-high": 60, "low-low": 66, "high-low": 4, "low-high": 5}
+    expected_clusters = {key: value for key, value in EXPECTED_LISA.items() if key != "total"}
     if clusters != expected_clusters:
         raise AssertionError(f"LISA cluster counts changed: {clusters}")
 
@@ -1110,7 +1118,6 @@ def load() -> dict[str, Any]:
             enforce_product_intelligence_immutability(connection, intelligence_hashes)
             geometry = None if database_has_geography(connection) else load_geometry(root)
             insert_release(connection, release)
-            insert_serving_status(connection, root)
             insert_indicators(connection, indicators)
             if geometry is not None:
                 insert_geography(connection, health_regions, geometry)
@@ -1120,6 +1127,8 @@ def load() -> dict[str, Any]:
             insert_product_intelligence_rows(connection, intelligence)
             insert_product_peers(connection, peers)
             insert_product_peer_benchmarks(connection, benchmarks)
+            # Visible only after every check succeeds and the transaction commits.
+            insert_serving_status(connection, root)
             checks = validate_database(connection, release)
             assert_database_matches_canonical(connection, health_regions, crosswalk, geometry)
     return {"status": mode, "checks": checks}

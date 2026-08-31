@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "contribution_rows": 20907,
+  "regional_pairs": 4292,
+  "summaries": 439,
+  "suppressed_contributions": 11987,
+  "eligible_admissions": 695320,
+  "max_origin_delta": 0,
+  "public_flow_policy": "Only sum disclosed contributions; flag regional pairs with suppressed contributions as partial. Never treat partial sums as complete counts."
+}

@@ -20,6 +20,8 @@ class ServingDatabaseStaticTests(unittest.TestCase):
                 "006_serving_status.sql",
                 "007_web_geometry.sql",
                 "008_product_intelligence.sql",
+                "009_financing_context.sql",
+                "010_advanced_territorial.sql",
             ],
         )
 
