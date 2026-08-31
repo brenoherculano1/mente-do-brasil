@@ -1,0 +1,41 @@
+serving_database_status: PENDING_LOCAL_VALIDATION
+release_id: MDB_ANALYTICAL_2024_2
+canonical_version: MDB_CANONICAL_1.1
+method_version: MDB_METHOD_1.1
+geography_version: BR_HEALTH_REGIONS_END2024_V1
+source_release_status: VALIDATING
+source_quality_status: VALIDATED
+source_release_gate: PASS
+public_release_status: NOT_RELEASED
+validated_at: null
+database:
+  engine: PostgreSQL
+  bind_host: 127.0.0.1
+  read_only_runtime: true
+image:
+  requested_tag: postgis/postgis:18-3.6
+counts:
+  health_regions: 439
+  municipalities: 5570
+  metrics: 439
+geometry:
+  expected_srid: 4674
+  expected_valid_features: 439
+scientific_locks:
+  global_moran_i: 0.5256454566660947
+  pseudo_p: 0.0001
+  permutations: 9999
+  seed: 20260823
+  lisa_significant: 136
+  hh: 60
+  ll: 65
+  hl: 5
+  lh: 6
+flags:
+  SMALL_SUICIDE_COUNT: 7
+  ZERO_REGISTERED_BEDS: 275
+guardrails:
+  historical_release_preserved: true
+  idempotent_reload: PENDING
+  immutability_guard: PENDING
+  constraint_tests: PENDING

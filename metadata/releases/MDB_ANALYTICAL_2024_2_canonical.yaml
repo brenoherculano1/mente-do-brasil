@@ -1,0 +1,30 @@
+canonical_version: MDB_CANONICAL_1.1
+release_id: MDB_ANALYTICAL_2024_2
+method_version: MDB_METHOD_1.1
+geography_version: BR_HEALTH_REGIONS_END2024_V1
+source_release_status: VALIDATING
+source_quality_status: VALIDATED
+source_release_gate: PASS
+generated_at: '2026-08-31T09:34:00+00:00'
+outputs:
+- path: data/canonical/MDB_ANALYTICAL_2024_2/health_regions.parquet
+  row_count: 439
+  column_count: 35
+  sha256: 1b8ad1a0e0e56ffc9ace172c34100ce3300b64f9adf212bf26b5d525453edb58
+  schema_reference: metadata/canonical/health_regions_v1.yaml
+  source_files:
+  - data/canonical/MDB_ANALYTICAL_2024_1/health_regions.parquet
+  - audit_results/scientific_correction/corrected_age_specific_inputs.csv
+  - audit_results/scientific_correction/corrected_lisa.csv
+- path: data/canonical/MDB_ANALYTICAL_2024_1/municipality_health_region_crosswalk.parquet
+  row_count: 5570
+  column_count: 9
+  sha256: acd7ab896566d5ea730719eb46a079b0571d73fec617ef1d39db93099bd06b15
+  schema_reference: metadata/canonical/municipality_health_region_crosswalk_v1.yaml
+  source_files:
+  - data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/geography/health_region_crosswalk_LOCKED.csv
+geometry_validation:
+  layer: health_regions
+  feature_count: 439
+  crs: EPSG:4674
+crosswalk_policy: Reference historical byte-preserved crosswalk; geography unchanged

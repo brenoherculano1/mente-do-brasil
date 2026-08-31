@@ -1,0 +1,22 @@
+{
+  "NEED_HIGH": {
+    "legacy": 71,
+    "corrected": 71
+  },
+  "CAPACITY_LOW": {
+    "legacy": 38,
+    "corrected": 38
+  },
+  "MISMATCH_MARKED_POSITIVE": {
+    "legacy": 68,
+    "corrected": 68
+  },
+  "CAPACITY_COMPONENT_LOW": {
+    "legacy": 184,
+    "corrected": 184
+  },
+  "SPATIAL_HH_MISMATCH": {
+    "legacy": 60,
+    "corrected": 60
+  }
+}

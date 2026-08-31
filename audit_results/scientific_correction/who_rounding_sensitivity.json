@@ -1,0 +1,13 @@
+{
+  "primary_terminal_raw": 1.545,
+  "sensitivity_terminal_raw": 1.54,
+  "max_abs": {
+    "suicide_asmr": 0.002771999163066141,
+    "suicide_percentile": 0.0045662100456621,
+    "need_score": 0.0022831050228310223,
+    "mismatch_score": 0.0022831050228310223
+  },
+  "moran_difference": 8.662839673534428e-05,
+  "lisa_membership_difference": 0,
+  "lisa_label_difference": 0
+}

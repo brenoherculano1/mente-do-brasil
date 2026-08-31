@@ -1,0 +1,305 @@
+{
+  "status": "CANDIDATE_SCIENTIFIC_OUTPUTS_COMPUTED_NOT_CURRENT",
+  "canonical_sha256": "1b8ad1a0e0e56ffc9ace172c34100ce3300b64f9adf212bf26b5d525453edb58",
+  "impact": {
+    "suicide_asmr": {
+      "changed_regions": 439,
+      "min_delta": 0.0006216111508203781,
+      "median_delta": 0.07235767969747631,
+      "max_delta": 0.7215003398359787,
+      "legacy_median": 8.702376645130828,
+      "corrected_median": 8.794678614973424
+    },
+    "suicide_percentile": {
+      "changed_regions": 366,
+      "min_delta": -0.02511415525114158,
+      "median_delta": -0.0022831050228309946,
+      "max_delta": 0.07305936073059366,
+      "legacy_median": 0.5,
+      "corrected_median": 0.5
+    },
+    "need_score": {
+      "changed_regions": 366,
+      "min_delta": -0.01255707762557079,
+      "median_delta": -0.0011415525114154557,
+      "max_delta": 0.0365296803652968,
+      "legacy_median": 0.5057077625570776,
+      "corrected_median": 0.5079908675799086
+    },
+    "mismatch_score": {
+      "changed_regions": 366,
+      "min_delta": -0.012557077625570734,
+      "median_delta": -0.0011415525114153724,
+      "max_delta": 0.03652968036529679,
+      "legacy_median": -0.0125570776255709,
+      "corrected_median": -0.00951293759512939
+    }
+  },
+  "spatial": {
+    "I": 0.5256454566660947,
+    "pseudo_p": 0.0001,
+    "manual_I": 0.5256454566660949,
+    "permutations": 9999,
+    "seed": 20260823,
+    "weights": "queen",
+    "islands": 0,
+    "FDR_q": 0.1,
+    "clusters": {
+      "high-high": 60,
+      "low-low": 65,
+      "high-low": 5,
+      "low-high": 6,
+      "not_significant": 303
+    }
+  },
+  "spatial_comparison": {
+    "significant": {
+      "legacy_n": 135,
+      "corrected_n": 136,
+      "gained": [
+        "51005"
+      ],
+      "lost": [],
+      "jaccard": 0.9926470588235294
+    },
+    "high-high": {
+      "legacy_n": 60,
+      "corrected_n": 60,
+      "gained": [],
+      "lost": [],
+      "jaccard": 1.0
+    },
+    "low-low": {
+      "legacy_n": 66,
+      "corrected_n": 65,
+      "gained": [],
+      "lost": [
+        "31047"
+      ],
+      "jaccard": 0.9848484848484849
+    },
+    "high-low": {
+      "legacy_n": 4,
+      "corrected_n": 5,
+      "gained": [
+        "31047"
+      ],
+      "lost": [],
+      "jaccard": 0.8
+    },
+    "low-high": {
+      "legacy_n": 5,
+      "corrected_n": 6,
+      "gained": [
+        "51005"
+      ],
+      "lost": [],
+      "jaccard": 0.8333333333333334
+    }
+  },
+  "radar": {
+    "NEED_HIGH": {
+      "legacy": 71,
+      "corrected": 71
+    },
+    "CAPACITY_LOW": {
+      "legacy": 38,
+      "corrected": 38
+    },
+    "MISMATCH_MARKED_POSITIVE": {
+      "legacy": 68,
+      "corrected": 68
+    },
+    "CAPACITY_COMPONENT_LOW": {
+      "legacy": 184,
+      "corrected": 184
+    },
+    "SPATIAL_HH_MISMATCH": {
+      "legacy": 60,
+      "corrected": 60
+    }
+  },
+  "intelligence_hashes": {
+    "health_region_intelligence.parquet": "3faa809bacc6b39da53eda6b752a85aff3f4f2aceaadd2bc9a97613effa30106",
+    "health_region_peers.parquet": "3f1828c6d34aba33fc84b7c2864268aab3e6841f3cf12a55c9d0b8ad35fe4dee",
+    "peer_benchmarks.parquet": "c75f30c1207238cea50764a99f7a68e1d9b5c3ace2d87902de0b0e1935e7ec82"
+  },
+  "peer_relationships_unchanged": true,
+  "capacity_changed_regions": 0,
+  "admissions_changed_regions": 0,
+  "crude_suicide_counts_unchanged": true,
+  "small_suicide_count": 7,
+  "zero_registered_beds": 275,
+  "who_terminal_normalized": 0.015444594391962814,
+  "rounding": {
+    "primary_terminal_raw": 1.545,
+    "sensitivity_terminal_raw": 1.54,
+    "max_abs": {
+      "suicide_asmr": 0.002771999163066141,
+      "suicide_percentile": 0.0045662100456621,
+      "need_score": 0.0022831050228310223,
+      "mismatch_score": 0.0022831050228310223
+    },
+    "moran_difference": 8.662839673534428e-05,
+    "lisa_membership_difference": 0,
+    "lisa_label_difference": 0
+  },
+  "source_qc": {
+    "restored_85plus_deaths": 495,
+    "unknown_age_excluded": 33,
+    "unmapped_deaths": 82,
+    "all_mapped_suicide_deaths": 50133,
+    "sources": [
+      {
+        "path": "/Users/brenoherculano/Desktop/Brazil Mental Health Spatial Inequality Project/phase2_analysis/data_raw/population_popsvs/POPSBR22.zip",
+        "sha256": "8619497c4adcb87133aab68666ed6604209b812047e9b51e3608db00a2c8e731"
+      },
+      {
+        "path": "/Users/brenoherculano/Desktop/Brazil Mental Health Spatial Inequality Project/phase2_analysis/data_raw/population_popsvs/POPSBR23.zip",
+        "sha256": "c49b35794dc235bad8a4a0dbc530a82aeae589e03a366a3c17a8325e6c24d5f4"
+      },
+      {
+        "path": "/Users/brenoherculano/Desktop/Brazil Mental Health Spatial Inequality Project/phase2_analysis/data_raw/population_popsvs/POPSBR24.zip",
+        "sha256": "cbf5549a5f9b37160e2fe3a5f97123a7747e371d4c433a8aa8a3276ad41dcc53"
+      },
+      {
+        "path": "data/staging/phase3/sim_locked_suicide_age.parquet",
+        "sha256": "59f6311d4e4e0e5db43466f668b3e3f7953a23329017212f310f5017ca19625e",
+        "derivation": "81 hash-verified SIM 2022-2024 sources; Phase 3 source audit"
+      }
+    ]
+  },
+  "sensitivities": [
+    {
+      "sensitivity": "S1",
+      "moran": 0.46742464888797786,
+      "pseudo_p": 0.0001,
+      "significant": 119,
+      "HH": 54,
+      "HH_overlap_primary": 51,
+      "spearman_primary": 0.9314744618518221,
+      "legacy_method_limitation": ""
+    },
+    {
+      "sensitivity": "S2",
+      "moran": 0.5216735985689102,
+      "pseudo_p": 0.0001,
+      "significant": 130,
+      "HH": 60,
+      "HH_overlap_primary": 56,
+      "spearman_primary": 0.9956554190565363,
+      "legacy_method_limitation": ""
+    },
+    {
+      "sensitivity": "S3",
+      "moran": 0.5346638303654061,
+      "pseudo_p": 0.0001,
+      "significant": 140,
+      "HH": 63,
+      "HH_overlap_primary": 60,
+      "spearman_primary": 0.9986564819948506,
+      "legacy_method_limitation": "prespecified count-weighted shrinkage; not a fitted EB model"
+    },
+    {
+      "sensitivity": "S4",
+      "moran": 0.5637691286604688,
+      "pseudo_p": 0.0001,
+      "significant": 151,
+      "HH": 62,
+      "HH_overlap_primary": 39,
+      "spearman_primary": 0.8233994679329878,
+      "legacy_method_limitation": ""
+    },
+    {
+      "sensitivity": "S5",
+      "moran": 0.5169755077294621,
+      "pseudo_p": 0.0001,
+      "significant": 142,
+      "HH": 58,
+      "HH_overlap_primary": 51,
+      "spearman_primary": 0.9745348607218787,
+      "legacy_method_limitation": ""
+    },
+    {
+      "sensitivity": "S6",
+      "moran": 0.5417181866030625,
+      "pseudo_p": 0.0001,
+      "significant": 171,
+      "HH": 74,
+      "HH_overlap_primary": 57,
+      "spearman_primary": 1.0,
+      "legacy_method_limitation": ""
+    },
+    {
+      "sensitivity": "S7",
+      "moran": 0.45428404222028906,
+      "pseudo_p": 0.0001,
+      "significant": 113,
+      "HH": 49,
+      "HH_overlap_primary": 45,
+      "spearman_primary": 0.9317410030554939,
+      "legacy_method_limitation": ""
+    },
+    {
+      "sensitivity": "S8",
+      "moran": 0.5256454566660947,
+      "pseudo_p": 0.0001,
+      "significant": 136,
+      "HH": 60,
+      "HH_overlap_primary": 60,
+      "spearman_primary": 0.9999993971918295,
+      "legacy_method_limitation": "average of three leave-one-out capacity means is algebraically original mean"
+    },
+    {
+      "sensitivity": "S9",
+      "moran": 0.5256454566660947,
+      "pseudo_p": 0.0001,
+      "significant": 136,
+      "HH": 60,
+      "HH_overlap_primary": 60,
+      "spearman_primary": 1.0,
+      "legacy_method_limitation": "flag-only; not an exclusion analysis"
+    }
+  ],
+  "historical_spatial_runtime_difference": {
+    "lisa_local_i": {
+      "max_abs": 4.440892098500626e-16,
+      "rows": 0
+    },
+    "lisa_p": {
+      "max_abs": 0.00020000000000000573,
+      "rows": 16
+    },
+    "lisa_q": {
+      "max_abs": 0.00031811594202896254,
+      "rows": 22
+    }
+  },
+  "historical_hashes": [
+    {
+      "path": "data/canonical/MDB_ANALYTICAL_2024_1/health_regions.parquet",
+      "expected": "a3cc8f3aefc9d556d1bacc636dc72cabf04155052dd63c426dda9bec58ada515",
+      "observed": "a3cc8f3aefc9d556d1bacc636dc72cabf04155052dd63c426dda9bec58ada515"
+    },
+    {
+      "path": "data/canonical/MDB_ANALYTICAL_2024_1/municipality_health_region_crosswalk.parquet",
+      "expected": "acd7ab896566d5ea730719eb46a079b0571d73fec617ef1d39db93099bd06b15",
+      "observed": "acd7ab896566d5ea730719eb46a079b0571d73fec617ef1d39db93099bd06b15"
+    },
+    {
+      "path": "data/product_intelligence/MDB_ANALYTICAL_2024_1/health_region_intelligence.parquet",
+      "expected": "130480cb4423bbe5bd0999293dd2310e8d5860f4847ccb3622988c864a27ed1d",
+      "observed": "130480cb4423bbe5bd0999293dd2310e8d5860f4847ccb3622988c864a27ed1d"
+    },
+    {
+      "path": "data/product_intelligence/MDB_ANALYTICAL_2024_1/health_region_peers.parquet",
+      "expected": "e084f8e775b8788afdd9a57c09154d0cb829bae061a6fcb9a3b7fc60ebad7d00",
+      "observed": "e084f8e775b8788afdd9a57c09154d0cb829bae061a6fcb9a3b7fc60ebad7d00"
+    },
+    {
+      "path": "data/product_intelligence/MDB_ANALYTICAL_2024_1/peer_benchmarks.parquet",
+      "expected": "aab4ae0ae5dce321d847195b52272e0a3f715c52348e2a7463a750472005712f",
+      "observed": "aab4ae0ae5dce321d847195b52272e0a3f715c52348e2a7463a750472005712f"
+    }
+  ]
+}

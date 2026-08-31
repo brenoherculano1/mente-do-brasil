@@ -1,0 +1,25 @@
+{
+  "restored_85plus_deaths": 495,
+  "unknown_age_excluded": 33,
+  "unmapped_deaths": 82,
+  "all_mapped_suicide_deaths": 50133,
+  "sources": [
+    {
+      "path": "/Users/brenoherculano/Desktop/Brazil Mental Health Spatial Inequality Project/phase2_analysis/data_raw/population_popsvs/POPSBR22.zip",
+      "sha256": "8619497c4adcb87133aab68666ed6604209b812047e9b51e3608db00a2c8e731"
+    },
+    {
+      "path": "/Users/brenoherculano/Desktop/Brazil Mental Health Spatial Inequality Project/phase2_analysis/data_raw/population_popsvs/POPSBR23.zip",
+      "sha256": "c49b35794dc235bad8a4a0dbc530a82aeae589e03a366a3c17a8325e6c24d5f4"
+    },
+    {
+      "path": "/Users/brenoherculano/Desktop/Brazil Mental Health Spatial Inequality Project/phase2_analysis/data_raw/population_popsvs/POPSBR24.zip",
+      "sha256": "cbf5549a5f9b37160e2fe3a5f97123a7747e371d4c433a8aa8a3276ad41dcc53"
+    },
+    {
+      "path": "data/staging/phase3/sim_locked_suicide_age.parquet",
+      "sha256": "59f6311d4e4e0e5db43466f668b3e3f7953a23329017212f310f5017ca19625e",
+      "derivation": "81 hash-verified SIM 2022-2024 sources; Phase 3 source audit"
+    }
+  ]
+}

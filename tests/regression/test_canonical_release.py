@@ -1,5 +1,8 @@
 import importlib.util
+import shutil
 import subprocess
+import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -20,10 +23,7 @@ else:
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 BUILDER_PATH = REPO_ROOT / "scripts/build_canonical_release.py"
-RAW_ROOT = (
-    REPO_ROOT
-    / "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle"
-)
+RAW_ROOT = REPO_ROOT / "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle"
 CANONICAL_ROOT = REPO_ROOT / "data/canonical/MDB_ANALYTICAL_2024_1"
 HEALTH_REGIONS = CANONICAL_ROOT / "health_regions.parquet"
 CROSSWALK = CANONICAL_ROOT / "municipality_health_region_crosswalk.parquet"
@@ -37,6 +37,17 @@ def load_builder():
     return module
 
 
+def isolated_builder_root(path):
+    (path / "scripts").mkdir()
+    shutil.copyfile(BUILDER_PATH, path / "scripts/build_canonical_release.py")
+    (path / "data").mkdir()
+    (path / "data/raw").symlink_to(REPO_ROOT / "data/raw", target_is_directory=True)
+    (path / "metadata/releases").mkdir(parents=True)
+    source = REPO_ROOT / "metadata/releases/MDB_ANALYTICAL_2024_1_outputs.yaml"
+    shutil.copyfile(source, path / "metadata/releases" / source.name)
+    return path
+
+
 @unittest.skipIf(MISSING_DEPENDENCY is not None, f"missing dependency: {MISSING_DEPENDENCY}")
 class CanonicalReleaseTests(unittest.TestCase):
     @classmethod
@@ -44,7 +55,6 @@ class CanonicalReleaseTests(unittest.TestCase):
         if not RAW_ROOT.exists():
             raise unittest.SkipTest(f"Raw import bundle not present: {RAW_ROOT}")
         cls.builder = load_builder()
-        cls.builder.build()
         cls.health_table = pq.read_table(HEALTH_REGIONS)
         cls.crosswalk_table = pq.read_table(CROSSWALK)
         cls.health_rows = cls.health_table.to_pylist()
@@ -169,7 +179,24 @@ class CanonicalReleaseTests(unittest.TestCase):
             "health_regions": self.builder.sha256_file(HEALTH_REGIONS),
             "crosswalk": self.builder.sha256_file(CROSSWALK),
         }
-        self.builder.build()
+        with tempfile.TemporaryDirectory(prefix="mdb-historical-builder-test-") as directory:
+            root = isolated_builder_root(Path(directory))
+            hashes = []
+            for _ in range(2):
+                result = subprocess.run(
+                    [sys.executable, "scripts/build_canonical_release.py"],
+                    cwd=root,
+                    capture_output=True,
+                    text=True,
+                )
+                self.assertEqual(result.returncode, 0, result.stderr)
+                hashes.append(
+                    {
+                        p.name: self.builder.sha256_file(p)
+                        for p in (root / "data/canonical/MDB_ANALYTICAL_2024_1").glob("*.parquet")
+                    }
+                )
+            self.assertEqual(hashes[0], hashes[1])
         after = {
             "health_regions": self.builder.sha256_file(HEALTH_REGIONS),
             "crosswalk": self.builder.sha256_file(CROSSWALK),
@@ -177,13 +204,14 @@ class CanonicalReleaseTests(unittest.TestCase):
         self.assertEqual(before, after)
 
     def test_builder_executable(self):
-        result = subprocess.run(
-            ["python", "scripts/build_canonical_release.py"],
-            cwd=REPO_ROOT,
-            check=False,
-            capture_output=True,
-            text=True,
-        )
+        with tempfile.TemporaryDirectory(prefix="mdb-builder-cli-test-") as directory:
+            result = subprocess.run(
+                [sys.executable, "scripts/build_canonical_release.py"],
+                cwd=isolated_builder_root(Path(directory)),
+                check=False,
+                capture_output=True,
+                text=True,
+            )
         self.assertEqual(result.returncode, 0, result.stderr)
 
 

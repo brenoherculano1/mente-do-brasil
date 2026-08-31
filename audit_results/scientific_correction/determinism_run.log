@@ -1,0 +1,12 @@
+Reproducing historical spatial baseline
+{"historical": {"I": 0.5254943888435958, "pseudo_p": 0.0001, "manual_I": 0.5254943888435957, "permutations": 9999, "seed": 20260823, "weights": "queen", "islands": 0, "FDR_q": 0.1, "clusters": {"high-high": 60, "low-low": 66, "high-low": 4, "low-high": 5, "not_significant": 304}}, "agreement": {"lisa_local_i": true, "lisa_p": false, "lisa_q": false, "lisa_significant": true}, "differences": {"lisa_local_i": {"max_abs": 4.440892098500626e-16, "rows": 0}, "lisa_p": {"max_abs": 0.00020000000000000573, "rows": 16}, "lisa_q": {"max_abs": 0.00031811594202896254, "rows": 22}}}
+Sensitivity S1: Moran=0.467424649, HH=54
+Sensitivity S2: Moran=0.521673599, HH=60
+Sensitivity S3: Moran=0.534663830, HH=63
+Sensitivity S4: Moran=0.563769129, HH=62
+Sensitivity S5: Moran=0.516975508, HH=58
+Sensitivity S6: Moran=0.541718187, HH=74
+Sensitivity S7: Moran=0.454284042, HH=49
+Sensitivity S8: Moran=0.525645457, HH=60
+Sensitivity S9: Moran=0.525645457, HH=60
+{"I": 0.5256454566660947, "pseudo_p": 0.0001, "manual_I": 0.5256454566660949, "permutations": 9999, "seed": 20260823, "weights": "queen", "islands": 0, "FDR_q": 0.1, "clusters": {"high-high": 60, "low-low": 65, "high-low": 5, "low-high": 6, "not_significant": 303}}

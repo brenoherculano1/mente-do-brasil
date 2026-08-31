@@ -80,7 +80,11 @@ def has_flag(value: Any, flag: str) -> bool:
     return flag in list(value)
 
 
-def build_intelligence(df: pd.DataFrame) -> pd.DataFrame:
+def build_intelligence(
+    df: pd.DataFrame,
+    intelligence_version: str = INTELLIGENCE_VERSION,
+    expected_hh: int | None = 60,
+) -> pd.DataFrame:
     out = df[
         [
             "release_id",
@@ -102,7 +106,7 @@ def build_intelligence(df: pd.DataFrame) -> pd.DataFrame:
             "data_quality_flags",
         ]
     ].copy()
-    out["intelligence_version"] = INTELLIGENCE_VERSION
+    out["intelligence_version"] = intelligence_version
     out["radar_ruleset_version"] = RADAR_RULESET_VERSION
     out["decomposition_version"] = DECOMPOSITION_VERSION
     out["peer_method_version"] = PEER_METHOD_VERSION
@@ -140,8 +144,8 @@ def build_intelligence(df: pd.DataFrame) -> pd.DataFrame:
     max_error = (out["decomposition_sum"] - out["mismatch_score"]).abs().max()
     if max_error > 1e-12:
         raise AssertionError(f"Decomposition identity failed: max_error={max_error}")
-    if out["spatial_hh_mismatch"].sum() != 60:
-        raise AssertionError("SPATIAL_HH_MISMATCH must equal 60.")
+    if expected_hh is not None and out["spatial_hh_mismatch"].sum() != expected_hh:
+        raise AssertionError(f"SPATIAL_HH_MISMATCH must equal {expected_hh}.")
     if out["matched_signal_families"].min() < 0 or out["matched_signal_families"].max() > 5:
         raise AssertionError("matched_signal_families must be 0-5.")
     return out
@@ -186,7 +190,7 @@ def build_peers(df: pd.DataFrame) -> tuple[pd.DataFrame, dict[str, Any]]:
         for rank, (distance, peer_code) in enumerate(distances[:10], start=1):
             rows.append(
                 {
-                    "release_id": RELEASE_ID,
+                    "release_id": df.iloc[i]["release_id"],
                     "peer_method_version": PEER_METHOD_VERSION,
                     "health_region_code": code,
                     "peer_health_region_code": peer_code,
@@ -241,7 +245,7 @@ def build_peer_benchmarks(df: pd.DataFrame, peers: pd.DataFrame) -> pd.DataFrame
             if observed < MIN_OBSERVED_PEERS:
                 rows.append(
                     {
-                        "release_id": RELEASE_ID,
+                        "release_id": by_code.loc[target_code, "release_id"],
                         "peer_method_version": PEER_METHOD_VERSION,
                         "health_region_code": target_code,
                         "metric_id": metric_id,
@@ -261,7 +265,7 @@ def build_peer_benchmarks(df: pd.DataFrame, peers: pd.DataFrame) -> pd.DataFrame
             q3 = quantile(peer_values, 0.75)
             rows.append(
                 {
-                    "release_id": RELEASE_ID,
+                    "release_id": by_code.loc[target_code, "release_id"],
                     "peer_method_version": PEER_METHOD_VERSION,
                     "health_region_code": target_code,
                     "metric_id": metric_id,

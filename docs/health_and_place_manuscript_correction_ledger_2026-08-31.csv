@@ -1,0 +1,34 @@
+section,legacy_text_or_claim,legacy_value,corrected_value,change_required,materiality,notes
+Methods Need,five-year age bands with a 90-plus terminal category,90+,80+,YES,MODERATE_RESULT_SET_CHANGE,Observable terminal denominator and all 80+ deaths
+Methods Need,WHO age weights,historical normalized approximation,Table 4 collapsed 1.545 normalized by 100.035,YES,MODERATE_RESULT_SET_CHANGE,Add primary WHO 2001 citation
+Abstract Results,Moran I,0.525,0.526,YES,MINOR_NUMERICAL,Exact 0.5256454566660947
+Abstract Results,Global pseudo-p,0.0001,0.0001,NO,MINOR_NUMERICAL,Recomputed
+Abstract Results,Significant regions,135,136,YES,MODERATE_RESULT_SET_CHANGE,Garcas Araguaia enters LH
+Abstract Results,HH regions,60,60,NO,MINOR_NUMERICAL,Exact membership unchanged
+Abstract Results,Highest within-UF IQR set,AM PE RO MT SP,AM PE MT MG SP,YES,MODERATE_RESULT_SET_CHANGE,Heterogeneity not performance
+Results Indicators,Median ASMR,8.70,8.79,YES,MINOR_NUMERICAL,Same per-100000 person-year unit
+Results Indicators,ASMR IQR,4.37,4.35,YES,MINOR_NUMERICAL,Exact 4.353897453200618
+Results Indicators,Admissions and Capacity distributions,Historical,Unchanged,NO,MINOR_NUMERICAL,Exact input equality
+Results Global,Moran I,0.525,0.526,YES,MINOR_NUMERICAL,Manual matrix check agrees
+Results Local,Significant regions,135,136,YES,MODERATE_RESULT_SET_CHANGE,No significant regions lost
+Results Local,HH LL HL LH,60/66/4/5,60/65/5/6,YES,MODERATE_RESULT_SET_CHANGE,31047 changes LL to HL
+Results HH,60-region set and UF distribution,Historical,Unchanged,NO,MINOR_NUMERICAL,ASMR and derived values in HH table change
+Results Heterogeneity,Highest five UFs,AM PE RO MT SP,AM PE MT MG SP,YES,MODERATE_RESULT_SET_CHANGE,All 27 exact IQRs in evidence CSV
+Results Heterogeneity,SP IQR rounded,0.277,0.277,NO,MINOR_NUMERICAL,Exact value changes to 0.27711187214611865
+Discussion Heterogeneity,Highest IQR states,AM PE RO MT SP,AM PE MT MG SP,YES,MODERATE_RESULT_SET_CHANGE,Replace corresponding sentence
+Methods Sensitivity,empirical-Bayes-smoothed,EB label,Prespecified count-weighted shrinkage,YES,MODERATE_RESULT_SET_CHANGE,Existing algorithm retained; no fitted EB model
+Methods Sensitivity,leave-one-capacity-indicator-out composites,Distinct robustness check,Averaged variants equal original mean,YES,MODERATE_RESULT_SET_CHANGE,Disclose existing degeneracy
+Methods Sensitivity,small-number handling,Potential exclusion interpretation,Flag-only implementation,YES,MODERATE_RESULT_SET_CHANGE,No claim of robustness to exclusion
+Results Sensitivity,Global spatial pattern supported,YES,YES,NO,MINOR_NUMERICAL,All nine algorithms recomputed
+Figure 1,Need map,Historical,Corrected Need,YES,MODERATE_RESULT_SET_CHANGE,Regenerate
+Figure 2,Capacity map,Historical,Unchanged,NO,MINOR_NUMERICAL,Verify release caption
+Figure 3,Mismatch map,Historical,Corrected Mismatch,YES,MODERATE_RESULT_SET_CHANGE,Regenerate
+Figure 4,LISA map,135 significant,136 significant,YES,MODERATE_RESULT_SET_CHANGE,Regenerate
+Figure 5,Within-UF IQR plot,Historical,Corrected IQR,YES,MODERATE_RESULT_SET_CHANGE,Regenerate
+Supplement,Spatial summary and QC,Historical,Corrected statistics and runtime disclosure,YES,MODERATE_RESULT_SET_CHANGE,Do not overwrite submitted file
+Supplement,Sensitivity summary,Historical,Recomputed S1-S9,YES,MODERATE_RESULT_SET_CHANGE,Preserve limitations in labels
+Supplement,HH table,Historical derived values,Corrected derived values,YES,MINOR_NUMERICAL,Same members
+Supplement,Small-number audit,Historical counts and HH membership,Unchanged counts and membership,VERIFY,MINOR_NUMERICAL,Check derived columns before reuse
+Supplement,State-masking summary,Historical IQR,Corrected IQR,YES,MODERATE_RESULT_SET_CHANGE,All 27 UFs
+Supplement CSV,Complete 439-region output,Historical,Corrected release,YES,MODERATE_RESULT_SET_CHANGE,Prepare separate replacement
+Conclusion,Positive spatial clustering with 60 HH,Supported,Supported,NO,MINOR_NUMERICAL,Do not infer access quality or unmet need

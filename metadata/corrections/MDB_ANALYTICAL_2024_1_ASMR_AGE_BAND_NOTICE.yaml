@@ -1,0 +1,15 @@
+affected_release: MDB_ANALYTICAL_2024_1
+status: SUPERSEDED_INTERNAL_BY_SCIENTIFIC_CORRECTION
+identified_date: '2026-08-31'
+affected_indicator: suicide_asmr
+issue: 495 mapped deaths age 85+ omitted from age-standardized contributions
+root_cause: Population-supported terminal 80+ assigned to narrower 80-84 join key
+population_source_definition: 80+
+historical_implementation: 80+ denominator treated as 80-84
+excluded_85plus_deaths_from_asmr: 495
+replacement_release: MDB_ANALYTICAL_2024_2
+public_exposure: NONE / NOT_RELEASED
+manuscript_impact: MODERATE_RESULT_SET_CHANGE
+journal_action_required: true
+journal_action_executed: false
+history_preserved: true

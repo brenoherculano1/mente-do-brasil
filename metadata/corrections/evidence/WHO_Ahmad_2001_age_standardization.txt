@@ -1,0 +1,564 @@
+AGE STANDARDIZATION OF RATES:
+
+     A NEW WHO STANDARD
+
+
+          Omar B. Ahmad
+         Cynthia Boschi-Pinto
+            Alan D. Lopez
+        Christopher JL Murray
+            Rafael Lozano
+              Mie Inoue
+
+
+ GPE Discussion Paper Series: No.31
+
+          EIP/GPE/EBD
+     World Health Organization 2001
+
+
+
+
+                                      1
+Summary
+
+
+A recent WHO analysis has revealed the need for a new world standard population (see
+attached table). This has become particularly pertinent given the rapid and continued
+declines in age-specific mortality rates among the oldest old, and the increasing
+availability of epidemiological data for higher age groups. There is clearly no conceptual
+justification for choosing one standard over another, hence the choice is arbitrary.
+However, choosing a standard population with higher proportions in the younger age
+groups tends to weight events at these ages disproportionately. Similarly, choosing an
+older standard does the opposite. Hence, rather than selecting a standard to match the
+current age-structure of some population(s), the WHO adopted a standard based on the
+average age-structure of those populations to be compared (the world) over the likely
+period of time that a new standard will be used (some 25-30 years), using the latest UN
+assessment for 1998 (UN Population Division, 1998). From these estimates, an average
+world population age-structure was constructed for the period 2000-2025. The use of an
+average world population, as well as a time series of observations, removes the effects of
+historical events such as wars and famine on population age composition. The terminal
+age group in the new WHO standard population has been extended out to 100 years and
+over, rather than the 85 and over as is the current practice. The WHO World Standard
+population has fewer children and notably more adults aged 70 and above than the world
+standard. It is also notably younger than the European standard.
+
+It is important to note, however, that the age standardized death rates based on the new
+standard are not comparable to previous estimates that are based on some earlier
+standard(s). However, to facilitate comparative analyses, WHO will disseminate trend
+analyses of the “complete” historical mortality data using on the new WHO World
+Standard Population in future editions of the World Health Statistics Annual.
+
+
+
+
+                                                                                        2
+Introduction
+
+In epidemiology and demography, most rates, such as incidence, prevalence, mortality,
+are strongly age-dependent, with risks rising (e.g. chronic diseases) or declining (e.g.
+measles) with age. In part this is biological (e.g. immunity acquisition), and in part it
+reflects the hazards of cumulative exposure, as is the case for many forms of cancer. For
+many purposes, age-specific comparisons may be the most useful. However,
+comparisons of crude age-specific rates over time and between populations may be very
+misleading if the underlying age composition differs in the populations being compared.
+Hence, for a variety of purposes, a single age-independent index, representing a set of
+age-specific rates, may be more appropriate. This is achieved by a process of age
+standardization or age adjustment.
+
+There are several techniques for adjusting age-specific rates. Among them are direct and
+indirect standardization (Wolfenden, 1923), the geometric mean (Schoen, 1970),
+equivalent average death rates (Hill, 1977), life table rates, Yerushalmy’s index
+(Yerushalmy, 1951), cumulative death rates (Breslow and Day, 1981), absolute
+probabilities of death and the comparative mortality index ((Peto et al, 1994, Breslow &
+Day, 1980, 1981; 1987; Esteve et al, 1994). However, with the increasing availability of
+age-specific rates, the use of direct age standardization has become the predominant
+technique in most applications of demography and epidemiology.
+
+Direct standardization yields a standardized or age-adjusted death rate, which is a
+weighted average of the age-specific rates, for each of the populations to be compared.
+The weights applied represent the relative age distribution of the arbitrary external
+population (the standard). This provides, for each population, a single summary rate that
+reflects the number of events that would have been expected if the populations being
+compared had had identical age distribution. Symbolically, the directly standardized
+mortality rate for populations A and B are given by the following equations:
+
+                                                     nis
+                                   DSRa = ∑ ria (         )
+                                                    ∑ nis
+                                                     i
+
+                                                     nis
+                                   DSRb = ∑ rib (         )
+                                                    ∑ nis
+                                                     i
+
+
+
+
+where nis is the mid-year population in the ith age group of the standard population, ria
+and rib are the death rates in age group i in populations A and B, respectively. The ratio of
+two such standardized rates is referred to as the Comparative Mortality Ratio (CMR), a
+very useful measure. If the age-specific rates in the populations being compared have a
+roughly consistent relationship from one age group to the next, the selection of a standard
+population will not substantially affect comparisons among groups or time periods. In
+reality, however, the relative differences are usually not constant from one age group to
+another. As such, both the comparison as well as the conclusions drawn are influenced
+by the chosen standard.
+
+
+
+                                                                                           3
+In this paper, we review the existing standard populations currently in use for
+international comparison, the Segi (“world”) and the Scandinavian (“European”) standard
+populations. Based on this review, a new WHO World Standard age-structure is
+presented for epidemiological comparisons using the direct approach. The age
+composition of the new standard has been chosen to better reflect the future age structure
+of the world’s population for which comparative rates will be needed.
+
+
+
+History of Direct standardization
+
+By the middle of the nineteenth century, public health practitioners in England had began
+to recognize that simple crude rates were inappropriate summary measures for comparing
+population health when the age distribution of the geographic areas were markedly
+different. Discussions centered around the development of a summary mortality index
+free from the effect of age differences. In a paper he read to the Statistical Society of
+London, Sir Edwin Chadwick, one of the early public health reformers in England,
+proposed the use of “the mean age at death” as a summary measure for comparing the
+health condition of the various “sanitary districts” around London (Finer, 1952; Lewis,
+1991). This index, he argued, represented a true summary of the age-specific risks of
+dying. In response, Neison, a practicing actuary, disagreed with Chadwick’s underlying
+logic. He argued that since mortality increased with age, Chadwick’s mean age at death
+for geographic areas with a relatively older population would tend to overstate excess
+mortality. In a subsequent article, Neison demonstrated the fallacy in Chadwick’s
+argument by comparing the crude mean age at death with the mean age computed by a
+method of direct standardization (Neison 1844). Neison was, thus, the first to introduced
+both the concepts of direct and indirect standardization, as well as the term standard
+population.
+
+The Registrar General’s report of 1883 was the first reported use of Neison’s direct
+standardization method, using the 1881 population census of England and Wales as the
+standard (most current at the time). In subsequent reports, the standard was changed each
+time there was a new census, i.e., every ten years (Woolsey, et al., 1959; Benjamin, et al.,
+1980). These frequent changes of the standard were cumbersome since historical rates
+had to be recalculated each time in order to assess current trends. As a solution, the 1901
+population census was eventually adopted as a general standard in England and Wales,
+and remained unchanged even when a new census became available.
+
+In order to facilitate comparison with mortality rates in England and Wales, the United
+States adopted the 1901 British standard. This practice continued until the early 1940s
+when it was decided that the difference between the US population at the time and the
+1901 English population was significant enough to warrant a change in standard. As a
+result, the US adopted its 1940 census population (the most current at the time) as the
+new standard. Recently, however, there has been growing concern that the 1940 standard
+no longer reflects the increasingly older US age structure. In response, the National
+Center for Health Statistics sponsored two national workshops in 1991 and 1997 on the
+issue of a new US standard. The final report of these workshops recommended the
+adoption of a new standard based on the projected 2000 population age distribution
+(NCHS, 1998).
+
+
+
+                                                                                          4
+An International Standard Population
+
+The idea of a truly international standard was first suggested by Ogle in 1892. His
+proposed standard was an amalgam based on the experience of seven European countries
+(Ogle, 1892). There is, however, no evidence of its subsequent adoption for international
+comparison by any country. Various standards have been proposed since then but none
+adopted widely. The debate has centered largely around the question of whether any one
+standard is more suitable than others. This question was discussed at a May 1965
+subcommittee meeting of the International Union Against Cancer (IUAC) Conference in
+London. Three standard populations were suggested. Each was deemed appropriate for
+particular population types. One standard had a high proportion of young people and was
+considered appropriate for making comparisons with populations in Africa (Knowelden
+and Oettlé, 1962). The second (“European”) standard was based on the experience of
+Scandinavian populations, which contained a relatively high proportion of old people and
+was judged particularly suitable for comparison within Western Europe (Doll and Cook,
+1967). The third was proposed by Segi (1960) as an intermediate “world” standard based
+on the experience of 46 countries. The “European” and “world” standards were
+subsequently adopted by WHO for use in calculating age-standardized death rates. These
+standards are shown in Table 1 together with the new WHO World Standard (shown in
+abbreviated form for purposes of comparison).
+
+As discussed earlier, the choice of a standard can markedly alter comparisons between
+populations. Table 2 shows a time series of circulatory disease mortality among US
+males for the period 1970-1995 using the three standards (Segi, Scandinavian and the
+WHO World Standard). Even though the overall percentage decline from 1970 to 1995
+is almost the same for all three standards (48-49%), the relative differences in the
+standardized rates, using the WHO standard as baseline, varies from –20% in one
+standard to +24% in the other. Table 3 compares twenty countries on the standardized
+death rates for respiratory infections as well as the ranking of countries according to
+rates. In general, the Scandinavian standard tends to yield rankings that are closer to
+those obtained with the WHO World Standard. In about half the cases, there are only
+minor differences in ranking between the three standards. In other cases, however,
+substantial shifts in ranking occur when the standard is changed. For instance, the
+Russian Federation ranks 9th on the Segi but 13th on the Scandinavian and WHO
+standards. Similarly, Cuba ranks 10th on the Scandinavian, 11th on the WHO and 14th on
+the Segi. The differences in the actual rates are even more dramatic. The age-
+standardized mortality rate for respiratory infections for Hong Kong ranges from 44.9
+using the Segi standard to 76.9 using the Scandinavian (“European”). Much larger
+differences are evident in some of the other countries. If the choice of a population
+standard for direct age-standardization can have such marked influence on comparisons
+over time and between populations, how should a world standard be selected?
+
+
+A New WHO World Standard Population
+
+Age-structure varies tremendously across populations of the world at different levels of
+the demographic transition. Should one, therefore, choose a standard population with
+higher proportions in the younger age groups (thereby weighting events at these ages
+disproportionately), or choose an older standard, or rather something in-between? There
+
+
+                                                                                       5
+is clearly no conceptual justification for choosing one standard over another, hence the
+choice will eventually be arbitrary. Whatever standard is chosen should ideally be
+maintained for a number of years, during which time the age-structure of populations will
+alter. For this reason, attempting to match a particular standard to current population age
+structures is insufficient justification for choosing one standard over another. Hence,
+rather than selecting a standard to match the current age-structure of some population(s),
+the standard must be chosen to reflect the average age-structure of all populations to be
+compared over the period of use.
+
+The approach proposed by WHO is to base the standard on the average age-structure of
+those populations to be compared (the world) over the likely period of time that a new
+standard will be used (some 25-30 years). The United Nations Population Division
+carries out two-yearly comprehensive assessment of population age-structure for each
+country by age and sex (the latest assessment is for 1998 - UN Population Division,
+1998). Estimates are prepared for countries for each quinquinnial year from 1950 and
+projected to 2025, based on population censuses and other demographic sources, adjusted
+for enumeration errors. From these estimates, an average world population age-structure
+is constructed for the period 2000-2025. Figure 1 shows the expected evolution of the
+world’s population age-structure over the first quarter of the 21st century, and the average
+composition which defines the new WHO World Standard.
+
+The use of an average world population, as well as a time series of observations removes
+the effects of historical events such as wars and famine on population age composition.
+Table 4 gives the percentage of the population in each 5-year age group in the new WHO
+World Standard population. Given the rapid and continued declines in age-specific
+mortality rates among the oldest old, and the increasing availability of epidemiological
+data for higher age groups, the terminal age group in the new standard population has
+been extended out to 100 years and over, rather than the 85 and over as is the current
+practice. The difference with respect to the Segi and Scandinavian standards can be seen
+in Figure 2. The WHO World Standard population has fewer children and notably more
+adults aged 70 and above than the Segi standard. It is also notably younger than the
+Scandinavian standard. Implementation of this new standard will facilitate international
+comparative analysis and reduce confusion among data users.
+
+
+Discussion
+
+To facilitate comparisons of sets of age-specific epidemiological and demographic rates
+across populations with different age composition, it is useful to calculate summary
+health statistics which remove the effects of variation in age structure. The dominant
+method currently in use is the direct age-standardization of rates using an arbitrary
+standard population. National (as exemplified by the United Kingdom and the United
+States) and international experience suggest that population standards have been adopted
+for arbitrary reasons and once adopted have been used for many decades. Given current
+WHO initiatives, which involve comparisons of vastly different populations, existing
+standards appear too extreme. We present a new WHO World Population Standard which
+is especially defined to reflect the average age structure of the world’s population
+expected over the next generation, from the year 2000 to 2025. Comparisons across
+populations of the world should preferably be based on an average world population age
+
+
+
+                                                                                          6
+structure and that average age structure should correspond to the period of likely use of a
+standard (20-30 years).
+
+To facilitate comparisons globally, all age-standardized rates produced by WHO will be
+made according to the new WHO World Standard Population. Hopefully, this single
+standard will be widely adopted for global comparisons.
+
+
+
+
+                                                                                         7
+REFERENCES
+
+Breslow NE, Day NE. Fundamental Measures of Disease Occurrence and Association.
+In: Statistical Methods in Cancer Research, Vol. I, The Analysis of Case-Control Studies
+(IARC Scientific Publications No. 32), Lyon, International Agency for Research on
+Cancer, 1980. pp.42-81.
+
+Breslow NE, Day NE. Rates and Rate Standardization. In: Statistical Methods in Cancer
+Research, Vol. II, The Design and Analysis of Cohort Studies (IARC Scientific
+Publications No. 82), Lyon, International Agency for Research on Cancer, 1987. pp.48-
+79.
+
+Day NE . A New Measure of Age Standardized Incidence, the Cumulative Rate. In:
+Waterhouse JAH, Muir CS, Correa P, Powell J (eds.). Cancer incidence in Five
+Continents, Vol. III (IARC Scientific Publications No. 15), Lyon, International Agency
+for Research on Cancer, 1976. pp.443-52.
+
+Day NE . Cumulative Rate and Cumulative Risk. In: Waterhouse JAH, Muir CS,
+Shanmugaratnam K, Powell J (eds.). Cancer incidence in Five Continents, Vol. IV
+(IARC Scientific Publications No. 42), Lyon, International Agency for Research on
+Cancer, 1982. pp.668-70.
+
+Doll R, & Cook P. Summarizing indices for comparison of cancer incidence data. Int J
+Cancer 2:269-79, 1967.
+
+Doll R. Comparison between Registries . Age-Standardized Rates. In: Waterhouse JAH,
+Muir CS, Correa P, Powell J (eds.). Cancer incidence in Five Continents, Vol. III (IARC
+Scientific Publications No. 15), Lyon, International Agency for Research on Cancer,
+1976. pp.453-59.
+
+Esteve J, Benhamou E, Raymond L . Techniques for the Analysis of Cancer Risk. In:
+Statistical Methods in Cancer Research, Vol. IV, Descriptive Epidemiology (IARC
+Scientific Publications No. 128), Lyon, International Agency for Research on Cancer,
+1994. pp.49-105.
+
+Kleinbaum DG, Kupper LL, Mor genstern H. Measures of Disease Frequency:
+Incidence. In: Epidemiologic Research. Principles and Quantitative Methods. New York,
+Van Nostrand Reinhold, 1982. pp.96-116.
+
+Miettinen OS. Estimability and estimation in case-referent studies. Am J Epidemiol 103:
+226-35, 1976.
+
+Morgenstern H, Kleinbaum DG, Kupper LL . Measures of disease incidence used in
+epidemiologic research. Int J Epidemiol 9:97-104, 1980.
+
+Peto R, Lopez A, Boreham J, Thun M, Heath Jr. C . Mortality from Smoking in
+Developed Countries. 1950-2000. Oxford, Oxford University Press, 1994. pp.A.30.
+
+
+
+
+                                                                                      8
+UICC. Cancer incidence in Five Continents, Vol. I. A Technical Report. Eds. Doll R,
+Payne P, Waterhouse J. Berlin, Springer-Verlag, 1966.
+standardization/wpd
+
+
+Wolfenden HH . On the methods of comparing the mortalities of two or more
+communities and the standardization of death rates. Journal of the Royal Statistical
+Society. 1923. 86:399-411.
+
+Yerushalmy J. A mortality index for use in place of the age adjusted death rate. Am. J
+Public Health. 1951. 41:907-22.
+
+Neison FGP . On a method recently proposed for conducting inquiries into the
+comparative sanitary conditions of various districts. London J Royal Stat Soc. 1844.
+7:40-68.
+
+National Center for Health Statistics . Report of the workshop on age adjustment.
+Vital and Health Statistics. Series 4. No. 30. December 1998.
+
+Ogle MW. Proposal for the establishment and international use of a standard population,
+Bulletin de l’Institut International de Statistique, tome VI, livre 1:83-5. Rome. 1892.
+
+Knowelden J, Oettlé AG. Cancer incidence of the African population of Kyadondo
+(Uganda). Lancet, ii, 328-330. 1962.
+
+Segi M. Cancer mortality for selected sites in 24 countries (1950-57). Department of
+Public Health, Tohoku University of Medicine, Sendai, Japan. 1960.
+
+Schöen R (1970). The geometric mean of the age-specific death rate as a summary index
+of mortality. Demography. 7:317-24. 1970.
+
+Hill AB. A short textbook of medical statistics. 9th ed. London: Hodder and Stoughton.
+1977.
+
+United Nations Population Division. World Population Prospects. 1998 Revision. Vol.
+I. ESA/WP.150. 24 November, 1998.
+
+Doll R, Payne PM, Waterhouse JAH. Cancer incidence in five countries. International
+Union Against Cancer, Springer-Verlag. Berlin. 1966.
+
+Woolsey TD. Adjusted death rates and other indices of mortality. In: Linder, F.E, R.D.
+Grove, eds. Vital Statistics in the United States, 1900-40. Washington: U.S. Government
+Printing Office. 1959
+
+Benjamin B, Pollard JH . The analysis of mortality and other actuarial statistics.
+London: Heineman. 1980
+
+Lewis J (1991). The origins and development of public health in the United Kingdom.
+ In: The Oxford textbook of public health, 2nd ed. Vol I. Influences of Public Health
+23-33, New York: Oxford University Press.
+Finn, SE. 1952. The life and times of Sir Edwin Chadwick. London: Methuen. 1952.
+
+
+                                                                                     9
+                                     Table 1. Standard Population Distribution (percent)
+  Age group        Segi (“world”) standard          Scandinavian (“European”) standard           WHO World Standard*
+
+     0-4                    12.00                                  8.00                                 8.86
+     5-9                    10.00                                  7.00                                 8.69
+    10-14                     9.00                                 7.00                                 8.60
+    15-19                     9.00                                 7.00                                 8.47
+    20-24                     8.00                                 7.00                                 8.22
+    25-29                     8.00                                 7.00                                 7.93
+    30-34                     6.00                                 7.00                                 7.61
+    35-39                     6.00                                 7.00                                 7.15
+    40-44                     6.00                                 7.00                                 6.59
+    45-49                     6.00                                 7.00                                 6.04
+    50-54                     5.00                                 7.00                                 5.37
+    55-59                     4.00                                 6.00                                 4.55
+    60-64                     4.00                                 5.00                                 3.72
+    65-69                     3.00                                 4.00                                 2.96
+    70-74                     2.00                                 3.00                                 2.21
+    75-79                     1.00                                 2.00                                 1.52
+    80-84                     0.50                                 1.00                                 0.91
+     85+                      0.50                                 1.00                                 0.63
+     Total                 100.00                             100.00                                 100.00
+   * For purposes of comparison, the WHO Standard age group 85+ is an aggregate of the age groups 85-89, 90-94, 95-99
+                                                      and 100+.
+
+
+
+
+   Table 2. Trend in Age-adjusted Circulatory Disease Mortality Rates Based on the Segi, Scandinavian and WHO
+               World Standard Populations and the Cumulative Death Rates - US Males (1970-1995)
+                                                 Rates per 100,000
+Standard              1970         1975        1980         1985       1990       1995       % Change 1970-1995
+
+
+Segi                  459.5             399.0       350.3       305.8      256.8         232.3             -49.4
+WHO World             550.9             482.2       426.7       373.7      315.0         285.4             -48.2
+Scandinavian          720.1             630.4       557.8       488.4      411.6         372.4             -48.3
+
+                           Percent Difference in Rates Relative to WHO World Standard
+Segi                  -20%         -21%         -22%       -22%       -23%      -23%
+Scandinavian           23%          24%          24%        23%        23%       23%
+
+
+
+
+                                                                                                               10
+                              Table 3. Directly standardized male death rates from respiratory infections
+                      and ranking of twenty countries using three different standard populations - (Around 1995)
+                                             Rates Per 100,000         Ranking of Countries ( by age-adjusted death rates)
+                                     Segi      Scandinavian WHO World     Segi      Scandinavian         WHO world
+Australia                                  6.3           10.1      7.9          23               23                     23
+Barbados                                  28.8           41.9     33.8          12               12                     12
+Bulgaria                                  34.2           43.5     36.7            8              11                     10
+Canada                                    14.5           25.6     19.7          18               18                     18
+Cuba                                      27.2           44.2     34.6          14               10                     11
+Estonia                                   27.5           36.2     29.6          13               15                     15
+Germany                                   11.0           19.0     14.7          19               19                     19
+Hong Kong                                 44.9           76.9     59.1            5               3                       4
+Hungary                                    9.6           13.1     10.7          21               22                     22
+Iceland                                   26.9           49.1     37.9          15                8                       8
+Ireland                                   37.0           65.6     50.4            7               6                       7
+Japan                                     37.8           67.5     51.8            6               5                       6
+Latvia                                    29.5           38.1     31.7          11               14                     14
+Luxembourg                                 8.4           15.1     11.7          22               21                     21
+Mauritius                                 45.2           72.6     56.6            4               4                       5
+New Zealand                               15.3           27.7     21.5          17               17                     17
+Portugal                                  21.0           35.1     27.4          16               16                     16
+Russian Federation                        32.7           38.3     33.1            9              13                     13
+Singapore                                 71.9          120.8     93.3            3               1                       1
+Spain                                     10.9           18.6     14.5          20               20                     20
+Trinidad and Tobago                       30.2           46.7     37.2          10                9                       9
+Turkmenistan                             114.2           87.9     91.2            1               2                       2
+Uzbekistan                                80.6           63.6     65.1            2               7                       3
+
+
+
+
+                                                                                                                   11
+Table 4. WHO World Standard Population Distribution (%),
+  based on world average population between 2000-2025
+
+         Age group              World Average 2000-2025
+            0-4                          8.86
+            5-9                          8.69
+           10-14                         8.60
+           15-19                         8.47
+           20-24                         8.22
+           25-29                         7.93
+           30-34                         7.61
+           35-39                         7.15
+           40-44                         6.59
+           45-49                         6.04
+           50-54                         5.37
+           55-59                         4.55
+           60-64                         3.72
+           65-69                         2.96
+           70-74                         2.21
+           75-79                         1.52
+           80-84                         0.91
+           85-89                         0.44
+           90-94                         0.15
+           95-99                         0.04
+           100+                          0.005
+           Total                         100
+
+
+
+
+                                                           12
+                                                      Figure 1. World population by age group in percent of total p
+                                                                    2000 to 2025 and average of 2000 to 2025
+
+                                                           2000
+
+                              10
+
+
+
+
+                               8
+
+
+
+
+percent of total population
+                               6
+
+
+
+                                               2025
+                               4
+
+
+
+
+                               2
+
+
+
+
+                               0
+                                   0-4   5-9   10-14 15-19 20-24 25-29 30-34 35-39 40-44 45-49 50-54 55-59 60-64 65-69 70-74
+                                                                                             age group
+                                                                         Figure 2. Comparison of "Segi" and "Scandinavian" standards with wor
+                                                                                                                population
+                                                             80
+
+
+
+
+percent difference with world 2000-2025 average population
+                                                             60
+                                                                                        Segi standard population
+                                                                                        Scandinavian standard population
+                                                             40
+
+
+
+                                                             20
+
+
+
+                                                              0
+
+
+
+                                                             -20
+
+
+
+                                                             -40
+
+
+
+                                                             -60
+                                                                   0-4      5-9   10-14 15-19 20-24 25-29 30-34 35-39 40-44 45-49 50-54 55-59 60-64
+                                                                                                                           Age group
+

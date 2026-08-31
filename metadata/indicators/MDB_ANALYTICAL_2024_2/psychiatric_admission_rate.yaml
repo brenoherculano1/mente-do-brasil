@@ -1,0 +1,53 @@
+indicator_id: psychiatric_admission_rate
+indicator_name_pt: Taxa de internacoes psiquiatricas nao relacionadas a substancias
+indicator_name_en: Non-substance psychiatric admission rate
+domain: need
+description: Pooled 2022-2024 SIH/SUS AIH psychiatric admission records excluding
+  substance-related diagnoses.
+interpretation: Utilization-related need indicator.
+what_it_does_not_measure:
+- unique patients
+- disorder prevalence
+- disorder incidence
+- unmet need
+- access to care
+source_organization: DATASUS
+source_system: SIH/SUS
+source_dataset: AIH hospital admission records
+source_file_pattern: RD{UF}{YY}{MM}.dbc
+source_url_status: preserved_in_detailed_manifest
+source_access_date: '2026-08-23'
+detailed_manifest_path: metadata/provenance/phase2_raw_data_manifest_2026-08-23.csv
+observation_start: '2022-01-01'
+observation_end: '2024-12-31'
+reference_date: null
+extracted_at: null
+geography_version: BR_HEALTH_REGIONS_END2024_V1
+aggregation_geography: Health Region
+numerator_definition: Residence-based AIH records with primary diagnoses F00-F09 and
+  F20-F99.
+denominator_definition: Population person-years from locked DATASUS/IBGE denominators.
+unit: admissions per 100,000 person-years
+filters:
+  include_icd10:
+  - F00-F09
+  - F20-F99
+  exclude_icd10:
+  - F10-F19
+  residence_field: MUNIC_RES
+transformation: national Health Region percentile rank for composite construction
+standardization_method: not age-standardized in locked method
+missing_value_rule: missing values remain explicit and are not converted to zero
+small_number_rule: none prespecified; AIH admission records retained without small-number
+  suppression
+deduplication_rule: AIH records are admissions, not unique patients
+method_version: MDB_METHOD_1.1
+code_version:
+  script: run_phase2_full_analysis.py
+  sha256: 8612690ed9e6dfb70be526c307d1696a04c7550e3c27a3bda57f1a1bb6a44e4e
+release_id: MDB_ANALYTICAL_2024_2
+quality_status: VALIDATED
+limitations:
+- Admissions are supply-sensitive.
+- Counts represent AIH records, not unique patients.
+citation: DATASUS. Sistema de Informações Hospitalares do SUS (SIH/SUS).

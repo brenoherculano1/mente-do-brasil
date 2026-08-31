@@ -1,0 +1,99 @@
+method_version: MDB_METHOD_1.1
+release_id: MDB_ANALYTICAL_2024_2
+status: VALIDATED_SCIENTIFIC
+supersedes_method_for_current_use: MDB_METHOD_1.0
+change_scope: ASMR observable terminal age group and official WHO weight representation
+  only
+age_bands:
+- 0-4
+- 5-9
+- 10-14
+- 15-19
+- 20-24
+- 25-29
+- 30-34
+- 35-39
+- 40-44
+- 45-49
+- 50-54
+- 55-59
+- 60-64
+- 65-69
+- 70-74
+- 75-79
+- 80+
+popsvs_terminal_code: 080
+popsvs_terminal_definition: 80 years and over
+who_source_url: https://cdn.who.int/media/docs/default-source/gho-documents/global-health-estimates/gpe_discussion_paper_series_paper31_2001_age_standardization_rates.pdf
+who_source_table: 4
+who_source_printed_page: 12
+published_detailed_weights:
+- '8.86'
+- '8.69'
+- '8.60'
+- '8.47'
+- '8.22'
+- '7.93'
+- '7.61'
+- '7.15'
+- '6.59'
+- '6.04'
+- '5.37'
+- '4.55'
+- '3.72'
+- '2.96'
+- '2.21'
+- '1.52'
+- '0.91'
+- '0.44'
+- '0.15'
+- '0.04'
+- '0.005'
+published_weight_sum: '100.035'
+raw_terminal_weight: '1.545'
+normalized_weights:
+- 0.08856900084970261
+- 0.08686959564152547
+- 0.08596991053131404
+- 0.08467036537211976
+- 0.08217124006597691
+- 0.0792722547108512
+- 0.07607337431898835
+- 0.0714749837556855
+- 0.06587694306992553
+- 0.060378867396411254
+- 0.05368121157594842
+- 0.04548408057179987
+- 0.03718698455540561
+- 0.029589643624731345
+- 0.022092267706302793
+- 0.015194681861348529
+- 0.015444594391962814
+unknown_age: exclude from age-specific numerator; preserve crude counts and QC
+percentile: (less + (equal - 1) / 2) / max(n_observed - 1, 1)
+unchanged:
+- SIM years/ICD/residence
+- admissions
+- capacity
+- geography
+- spatial algorithm
+provenance:
+  who_pdf_sha256: 9eccbc24e4771e2b161233ca3a190f0fb3400437eaa0b19b98371de037b2caa7
+  population_technical_note:
+    pdf_sha256: 1dcf9810f2d46d7879905c1394b9d048131df1c5e1244c05a1dca8dca94a2735
+    text_sha256: 280d8e7ffcb2f5e5f11290e31b5959f4bbbc66ecbaed7814e7e529c403de1e05
+    extractor: pdftotext -layout
+    source_pdf: data/raw/phase3/population_documentation/NT-POPULACAO-RESIDENTE-2000-2024.pdf
+  source_manifest: metadata/provenance/phase2_raw_data_manifest_2026-08-23.csv
+  correction_script_sha256: acf37bd858ef59770b9bc1d6292bf47ad5f4956804fe1c653bce75646524e03e
+historical_runtime_local_p_limitation:
+  lisa_local_i:
+    max_abs: 4.440892098500626e-16
+    rows: 0
+  lisa_p:
+    max_abs: 0.00020000000000000573
+    rows: 16
+  lisa_q:
+    max_abs: 0.00031811594202896254
+    rows: 22
+scientific_gate_evidence: audit_results/scientific_correction/determinism.json

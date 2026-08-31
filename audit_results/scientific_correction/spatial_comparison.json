@@ -1,0 +1,45 @@
+{
+  "significant": {
+    "legacy_n": 135,
+    "corrected_n": 136,
+    "gained": [
+      "51005"
+    ],
+    "lost": [],
+    "jaccard": 0.9926470588235294
+  },
+  "high-high": {
+    "legacy_n": 60,
+    "corrected_n": 60,
+    "gained": [],
+    "lost": [],
+    "jaccard": 1.0
+  },
+  "low-low": {
+    "legacy_n": 66,
+    "corrected_n": 65,
+    "gained": [],
+    "lost": [
+      "31047"
+    ],
+    "jaccard": 0.9848484848484849
+  },
+  "high-low": {
+    "legacy_n": 4,
+    "corrected_n": 5,
+    "gained": [
+      "31047"
+    ],
+    "lost": [],
+    "jaccard": 0.8
+  },
+  "low-high": {
+    "legacy_n": 5,
+    "corrected_n": 6,
+    "gained": [
+      "51005"
+    ],
+    "lost": [],
+    "jaccard": 0.8333333333333334
+  }
+}

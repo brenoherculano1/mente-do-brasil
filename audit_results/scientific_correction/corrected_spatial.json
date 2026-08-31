@@ -1,0 +1,17 @@
+{
+  "I": 0.5256454566660947,
+  "pseudo_p": 0.0001,
+  "manual_I": 0.5256454566660949,
+  "permutations": 9999,
+  "seed": 20260823,
+  "weights": "queen",
+  "islands": 0,
+  "FDR_q": 0.1,
+  "clusters": {
+    "high-high": 60,
+    "low-low": 65,
+    "high-low": 5,
+    "low-high": 6,
+    "not_significant": 303
+  }
+}
