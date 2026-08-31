@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { RegionAdvanced } from "@/features/advanced/RegionAdvanced";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   getManagerBrief,
@@ -303,6 +304,9 @@ function TerritorialMode({
         </article>
       </section>
       <Questions brief={brief} />
+      {brief.release.release_id === "MDB_ANALYTICAL_2024_2" && (
+        <RegionAdvanced code={brief.region.health_region_code} />
+      )}
       <ReportActions brief={brief} />
     </>
   );
@@ -505,6 +509,7 @@ function CompareMode({
               );
             })}
           </div>
+          <div className="table-wrap" tabIndex={0} role="region" aria-label="Tabela de comparação">
           <table className="manager-table">
             <caption>Tabela acessível de comparação, na ordem escolhida.</caption>
             <thead>
@@ -529,6 +534,7 @@ function CompareMode({
               ))}
             </tbody>
           </table>
+          </div>
         </>
       )}
     </section>

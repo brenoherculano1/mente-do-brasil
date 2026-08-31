@@ -1,0 +1,107 @@
+[
+  {
+    "code": "12001",
+    "status": "PASS",
+    "sha256": "4a18c9d8fdb7fc4da8f9a05c3fa4e096edab7f0aa1db1291b03fdc3e3870dbd6",
+    "rendered_pages": 8,
+    "selectable_text": true,
+    "repeat_same_sha": true,
+    "headers": {
+      "date": "Mon, 31 Aug 2026 20:03:04 GMT",
+      "server": "uvicorn",
+      "content-disposition": "attachment; filename=\"mente-do-brasil_relatorio_12001_alto-acre_MDB_ANALYTICAL_2024_2.pdf\"",
+      "cache-control": "public, max-age=60, s-maxage=900, stale-while-revalidate=3600",
+      "etag": "\"8d578726e316073182eec39898eeb775-MDB_REPORTLAB_GENERATOR_1.0\"",
+      "x-robots-tag": "noindex",
+      "content-length": "12757",
+      "content-type": "application/pdf",
+      "vary": "Accept-Encoding",
+      "x-request-id": "beec865a-afd8-46f3-be55-b715e96ad4b4",
+      "Connection": "close"
+    }
+  },
+  {
+    "code": "53001",
+    "status": "PASS",
+    "sha256": "fa3cdb9e88fdc324d2fbc0ee6758291abc962d4cd3a3a77b404d0c62e3bec89d",
+    "rendered_pages": 8,
+    "selectable_text": true,
+    "repeat_same_sha": true,
+    "headers": {
+      "date": "Mon, 31 Aug 2026 20:03:06 GMT",
+      "server": "uvicorn",
+      "content-disposition": "attachment; filename=\"mente-do-brasil_relatorio_53001_distrito-federal_MDB_ANALYTICAL_2024_2.pdf\"",
+      "cache-control": "public, max-age=60, s-maxage=900, stale-while-revalidate=3600",
+      "etag": "\"6031acea856ec6bdf811c0f43c3cf5bb-MDB_REPORTLAB_GENERATOR_1.0\"",
+      "x-robots-tag": "noindex",
+      "content-length": "12157",
+      "content-type": "application/pdf",
+      "vary": "Accept-Encoding",
+      "x-request-id": "35aeb7d3-730e-4b65-926e-f9cf2b0319f9",
+      "Connection": "close"
+    }
+  },
+  {
+    "code": "35011",
+    "status": "PASS",
+    "sha256": "7599d70116df4010ed1b771a24805598ab17a53bd91fe61aa67df3869ca82240",
+    "rendered_pages": 8,
+    "selectable_text": true,
+    "repeat_same_sha": true,
+    "headers": {
+      "date": "Mon, 31 Aug 2026 20:03:07 GMT",
+      "server": "uvicorn",
+      "content-disposition": "attachment; filename=\"mente-do-brasil_relatorio_35011_alto-do-tiete_MDB_ANALYTICAL_2024_2.pdf\"",
+      "cache-control": "public, max-age=60, s-maxage=900, stale-while-revalidate=3600",
+      "etag": "\"0e8b73bbe8d26e04828388013bb05606-MDB_REPORTLAB_GENERATOR_1.0\"",
+      "x-robots-tag": "noindex",
+      "content-length": "12227",
+      "content-type": "application/pdf",
+      "vary": "Accept-Encoding",
+      "x-request-id": "65c83b1e-69bf-46fd-b6f1-9a9ce9678d8f",
+      "Connection": "close"
+    }
+  },
+  {
+    "code": "29001",
+    "status": "PASS",
+    "sha256": "cfd3b2919d0283714dc26fffc57f6cd63b25e326ba8f11a7a3057b5df468d681",
+    "rendered_pages": 8,
+    "selectable_text": true,
+    "repeat_same_sha": true,
+    "headers": {
+      "date": "Mon, 31 Aug 2026 20:03:08 GMT",
+      "server": "uvicorn",
+      "content-disposition": "attachment; filename=\"mente-do-brasil_relatorio_29001_alagoinhas_MDB_ANALYTICAL_2024_2.pdf\"",
+      "cache-control": "public, max-age=60, s-maxage=900, stale-while-revalidate=3600",
+      "etag": "\"7c8eed878007ce5c2194c4813c39fa66-MDB_REPORTLAB_GENERATOR_1.0\"",
+      "x-robots-tag": "noindex",
+      "content-length": "12541",
+      "content-type": "application/pdf",
+      "vary": "Accept-Encoding",
+      "x-request-id": "8bdea0d0-b363-4f24-a8f7-32dc18e9731f",
+      "Connection": "close"
+    }
+  },
+  {
+    "code": "41001",
+    "status": "PASS",
+    "sha256": "d5423ed7c241b2ac74e4f963cafc08212ef66de6ca6ef585001a3b57ad9ed947",
+    "rendered_pages": 8,
+    "selectable_text": true,
+    "repeat_same_sha": true,
+    "headers": {
+      "date": "Mon, 31 Aug 2026 20:03:09 GMT",
+      "server": "uvicorn",
+      "content-disposition": "attachment; filename=\"mente-do-brasil_relatorio_41001_1a-rs-paranagua_MDB_ANALYTICAL_2024_2.pdf\"",
+      "cache-control": "public, max-age=60, s-maxage=900, stale-while-revalidate=3600",
+      "etag": "\"0de4d3a7e29c6dd62c090f75d965f9a3-MDB_REPORTLAB_GENERATOR_1.0\"",
+      "x-robots-tag": "noindex",
+      "content-length": "13011",
+      "content-type": "application/pdf",
+      "vary": "Accept-Encoding",
+      "x-request-id": "8e1cd180-2f54-4d4b-a3ed-b19167a0daba",
+      "Connection": "close"
+    }
+  }
+]

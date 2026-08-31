@@ -1,0 +1,107 @@
+[
+  {
+    "code": "12001",
+    "pages": 8,
+    "sha256": "3d726c8d157fea5e0a5d2d053a79ab5824ddccbee3f4a09b75e579739bb9b4d7",
+    "repeat_same_sha": true,
+    "words_outside_safe_page_bounds": [],
+    "headers": {
+      "date": "Mon, 31 Aug 2026 20:15:33 GMT",
+      "server": "uvicorn",
+      "content-disposition": "attachment; filename=\"mente-do-brasil_relatorio_12001_alto-acre_MDB_ANALYTICAL_2024_2.pdf\"",
+      "cache-control": "public, max-age=60, s-maxage=900, stale-while-revalidate=3600",
+      "etag": "\"8d578726e316073182eec39898eeb775-MDB_REPORTLAB_GENERATOR_1.1\"",
+      "x-robots-tag": "noindex",
+      "content-length": "12745",
+      "content-type": "application/pdf",
+      "vary": "Accept-Encoding",
+      "x-request-id": "afaaca06-60c6-4580-bd0f-b24d262ab9ec",
+      "Connection": "close"
+    },
+    "visual_status": "REQUIRES_INSPECTION"
+  },
+  {
+    "code": "53001",
+    "pages": 8,
+    "sha256": "8480fd681b81f2e52c144cd26d61ea3aaed7b582008c4651dd484e54f7229bb5",
+    "repeat_same_sha": true,
+    "words_outside_safe_page_bounds": [],
+    "headers": {
+      "date": "Mon, 31 Aug 2026 20:15:35 GMT",
+      "server": "uvicorn",
+      "content-disposition": "attachment; filename=\"mente-do-brasil_relatorio_53001_distrito-federal_MDB_ANALYTICAL_2024_2.pdf\"",
+      "cache-control": "public, max-age=60, s-maxage=900, stale-while-revalidate=3600",
+      "etag": "\"6031acea856ec6bdf811c0f43c3cf5bb-MDB_REPORTLAB_GENERATOR_1.1\"",
+      "x-robots-tag": "noindex",
+      "content-length": "12150",
+      "content-type": "application/pdf",
+      "vary": "Accept-Encoding",
+      "x-request-id": "665fbedf-65ac-4c36-a1a9-ff57b08d105a",
+      "Connection": "close"
+    },
+    "visual_status": "REQUIRES_INSPECTION"
+  },
+  {
+    "code": "35011",
+    "pages": 8,
+    "sha256": "a29bbf1cac9d72fd38e13b51961cef49d1ef27def892af0c985e8968a1a5e7d8",
+    "repeat_same_sha": true,
+    "words_outside_safe_page_bounds": [],
+    "headers": {
+      "date": "Mon, 31 Aug 2026 20:15:36 GMT",
+      "server": "uvicorn",
+      "content-disposition": "attachment; filename=\"mente-do-brasil_relatorio_35011_alto-do-tiete_MDB_ANALYTICAL_2024_2.pdf\"",
+      "cache-control": "public, max-age=60, s-maxage=900, stale-while-revalidate=3600",
+      "etag": "\"0e8b73bbe8d26e04828388013bb05606-MDB_REPORTLAB_GENERATOR_1.1\"",
+      "x-robots-tag": "noindex",
+      "content-length": "12218",
+      "content-type": "application/pdf",
+      "vary": "Accept-Encoding",
+      "x-request-id": "3141c744-c9ca-440c-8d94-fa4615bdb165",
+      "Connection": "close"
+    },
+    "visual_status": "REQUIRES_INSPECTION"
+  },
+  {
+    "code": "29001",
+    "pages": 8,
+    "sha256": "56f2e055ab1238285375963446cfc191d2a8c0871ec53d076939333a0062529b",
+    "repeat_same_sha": true,
+    "words_outside_safe_page_bounds": [],
+    "headers": {
+      "date": "Mon, 31 Aug 2026 20:15:38 GMT",
+      "server": "uvicorn",
+      "content-disposition": "attachment; filename=\"mente-do-brasil_relatorio_29001_alagoinhas_MDB_ANALYTICAL_2024_2.pdf\"",
+      "cache-control": "public, max-age=60, s-maxage=900, stale-while-revalidate=3600",
+      "etag": "\"7c8eed878007ce5c2194c4813c39fa66-MDB_REPORTLAB_GENERATOR_1.1\"",
+      "x-robots-tag": "noindex",
+      "content-length": "12532",
+      "content-type": "application/pdf",
+      "vary": "Accept-Encoding",
+      "x-request-id": "02c42fe2-9498-45c2-b131-e70ed351bff5",
+      "Connection": "close"
+    },
+    "visual_status": "REQUIRES_INSPECTION"
+  },
+  {
+    "code": "41001",
+    "pages": 8,
+    "sha256": "906a123c8e7bb963d8cb3fcb274f0e443b3e12bcac08165cfc1566ad8d728745",
+    "repeat_same_sha": true,
+    "words_outside_safe_page_bounds": [],
+    "headers": {
+      "date": "Mon, 31 Aug 2026 20:15:39 GMT",
+      "server": "uvicorn",
+      "content-disposition": "attachment; filename=\"mente-do-brasil_relatorio_41001_1a-rs-paranagua_MDB_ANALYTICAL_2024_2.pdf\"",
+      "cache-control": "public, max-age=60, s-maxage=900, stale-while-revalidate=3600",
+      "etag": "\"0de4d3a7e29c6dd62c090f75d965f9a3-MDB_REPORTLAB_GENERATOR_1.1\"",
+      "x-robots-tag": "noindex",
+      "content-length": "12999",
+      "content-type": "application/pdf",
+      "vary": "Accept-Encoding",
+      "x-request-id": "34fda1a3-64db-44a5-8227-234f21d6f704",
+      "Connection": "close"
+    },
+    "visual_status": "REQUIRES_INSPECTION"
+  }
+]

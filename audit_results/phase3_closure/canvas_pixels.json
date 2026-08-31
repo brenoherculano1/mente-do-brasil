@@ -1,0 +1,50 @@
+[
+  {
+    "file": "docs/phase3_closure_qc_2026-08-31/verified_ui/desktop_changes_brazil_canvas.png",
+    "distinct_colors": 302,
+    "non_background_pixels": 13671,
+    "status": "PASS"
+  },
+  {
+    "file": "docs/phase3_closure_qc_2026-08-31/verified_ui/desktop_financing_brazil_canvas.png",
+    "distinct_colors": 191,
+    "non_background_pixels": 66784,
+    "status": "PASS"
+  },
+  {
+    "file": "docs/phase3_closure_qc_2026-08-31/verified_ui/mobile_financing_brazil_canvas.png",
+    "distinct_colors": 174,
+    "non_background_pixels": 34538,
+    "status": "PASS"
+  },
+  {
+    "file": "docs/phase3_closure_qc_2026-08-31/verified_ui/desktop_flows_destination_canvas.png",
+    "distinct_colors": 6,
+    "non_background_pixels": 80,
+    "status": "PASS"
+  },
+  {
+    "file": "docs/phase3_closure_qc_2026-08-31/verified_ui/mobile_flows_destination_canvas.png",
+    "distinct_colors": 6,
+    "non_background_pixels": 80,
+    "status": "PASS"
+  },
+  {
+    "file": "docs/phase3_closure_qc_2026-08-31/verified_ui/desktop_flows_origin_canvas.png",
+    "distinct_colors": 247,
+    "non_background_pixels": 744,
+    "status": "PASS"
+  },
+  {
+    "file": "docs/phase3_closure_qc_2026-08-31/verified_ui/mobile_flows_origin_canvas.png",
+    "distinct_colors": 247,
+    "non_background_pixels": 744,
+    "status": "PASS"
+  },
+  {
+    "file": "docs/phase3_closure_qc_2026-08-31/verified_ui/mobile_changes_brazil_canvas.png",
+    "distinct_colors": 261,
+    "non_background_pixels": 7839,
+    "status": "PASS"
+  }
+]

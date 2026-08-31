@@ -1,0 +1,22 @@
+{
+  "status": "FAIL",
+  "workspace": "/var/folders/zt/3kqhjx4x1h305tyvlwfmn44m0000gn/T/mdb-phase3-operational-closure-ehto45nq/source",
+  "base_commit": "3b1bfa7ca5b5bac9df547b0a0e3d81f5bd4055a2",
+  "database": "mdb_rebuild_closure_20260831",
+  "exit_code": 1,
+  "stdout": "SERVING DATABASE LOAD\nFAIL\nCanonical output missing: data/canonical/MDB_ANALYTICAL_2024_1/municipality_health_region_crosswalk.parquet\n",
+  "stderr": "",
+  "seconds": 1.4520234169976902,
+  "missing_approved_inputs": [
+    "data/canonical/MDB_ANALYTICAL_2024_1/health_regions.parquet",
+    "data/canonical/MDB_ANALYTICAL_2024_1/municipality_health_region_crosswalk.parquet",
+    "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/geography/health_regions_LOCKED.gpkg",
+    "data/product_intelligence/MDB_ANALYTICAL_2024_2/health_region_temporal.parquet",
+    "data/product_intelligence/MDB_ANALYTICAL_2024_2/health_region_changes.parquet",
+    "data/product_intelligence/MDB_ANALYTICAL_2024_2/hospitalization_flows.parquet",
+    "data/product_intelligence/MDB_ANALYTICAL_2024_2/health_region_flow_summary.parquet"
+  ],
+  "cleanup": "database dropped",
+  "used_existing_serving_rows": false,
+  "fileprovider_blocker": "RESOLVED"
+}

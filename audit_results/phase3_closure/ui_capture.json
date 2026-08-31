@@ -1,0 +1,90 @@
+[
+  {
+    "name": "desktop_changes_brazil",
+    "overflow": 0
+  },
+  {
+    "name": "desktop_changes_selected",
+    "overflow": 0
+  },
+  {
+    "name": "desktop_financing_brazil",
+    "overflow": 0
+  },
+  {
+    "name": "desktop_financing_region",
+    "overflow": 0
+  },
+  {
+    "name": "desktop_flows_origin",
+    "overflow": 0
+  },
+  {
+    "name": "desktop_flows_destination",
+    "overflow": 0
+  },
+  {
+    "name": "desktop_profile_temporal",
+    "overflow": 0
+  },
+  {
+    "name": "desktop_profile_financing",
+    "overflow": 0
+  },
+  {
+    "name": "desktop_profile_flows",
+    "overflow": 0
+  },
+  {
+    "name": "desktop_manager_v2",
+    "overflow": 0
+  },
+  {
+    "name": "desktop_manager_v2_advanced",
+    "overflow": 0
+  },
+  {
+    "name": "mobile_changes_brazil",
+    "overflow": 0
+  },
+  {
+    "name": "mobile_changes_selected",
+    "overflow": 0
+  },
+  {
+    "name": "mobile_financing_brazil",
+    "overflow": 0
+  },
+  {
+    "name": "mobile_financing_region",
+    "overflow": 0
+  },
+  {
+    "name": "mobile_flows_origin",
+    "overflow": 0
+  },
+  {
+    "name": "mobile_flows_destination",
+    "overflow": 0
+  },
+  {
+    "name": "mobile_profile_temporal",
+    "overflow": 0
+  },
+  {
+    "name": "mobile_profile_financing",
+    "overflow": 0
+  },
+  {
+    "name": "mobile_profile_flows",
+    "overflow": 0
+  },
+  {
+    "name": "mobile_manager_v2",
+    "overflow": 0
+  },
+  {
+    "name": "mobile_manager_v2_advanced",
+    "overflow": 0
+  }
+]

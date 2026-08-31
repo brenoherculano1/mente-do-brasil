@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import robots from "@/app/robots";
 import sitemap from "@/app/sitemap";
 import { GET as securityTxt } from "@/app/.well-known/security.txt/route";
@@ -12,6 +12,8 @@ import { requestIdFromHeaders, sanitizeLogFields } from "@/lib/observability";
 import { PUBLIC_ROUTE_HEALTH_REGION_CODES, PUBLIC_ROUTE_UFS } from "@/lib/public-route-inventory";
 
 describe("public production foundation config", () => {
+  afterEach(() => vi.unstubAllEnvs());
+
   it("parses indexing fail-closed", () => {
     expect(parsePublicFlag(undefined)).toBe(false);
     expect(parsePublicFlag("false")).toBe(false);
@@ -52,7 +54,10 @@ describe("public production foundation config", () => {
 
     expect(PUBLIC_ROUTE_UFS).toHaveLength(27);
     expect(PUBLIC_ROUTE_HEALTH_REGION_CODES).toHaveLength(439);
-    expect(urls).toHaveLength(8 + 27 + 439);
+    expect(urls).toHaveLength(11 + 27 + 439);
+    for (const path of ["/mudancas", "/financiamento", "/fluxos"]) {
+      expect(urls.some((entry) => entry.url.endsWith(path))).toBe(true);
+    }
     expect(urls.some((entry) => entry.url.endsWith("/gestor"))).toBe(true);
     expect(urls.some((entry) => entry.url.endsWith("/estado/AC"))).toBe(true);
     expect(urls.some((entry) => entry.url.endsWith("/estado/ac"))).toBe(false);

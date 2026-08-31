@@ -1,0 +1,3 @@
+# Preserve captured evidence byte-for-byte, including tool-emitted whitespace.
+audit_results/phase3_closure/*.log -whitespace
+docs/phase3_closure_qc_2026-08-31/**/*.pdf binary

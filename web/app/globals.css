@@ -507,6 +507,7 @@ button {
 
 .profile-shell {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 18px;
   padding: 26px 28px 48px;
 }
@@ -2026,7 +2027,14 @@ th {
 
 .manager-shell {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 24px;
+}
+
+.profile-shell > *,
+.manager-shell > *,
+.advanced-region {
+  min-width: 0;
 }
 
 .manager-selector {

@@ -18,6 +18,23 @@ RELEASE_ID = "MDB_ANALYTICAL_2024_1"
 WEB_GEOMETRY_VERSION = "MDB_WEB_GEOMETRY_V1"
 
 
+@pytest.mark.parametrize(
+    "release,suffix", [("MDB_ANALYTICAL_2024_1", "1.0"), ("MDB_ANALYTICAL_2024_2", "1.1")]
+)
+def test_intelligence_routes_select_release_version(release, suffix):
+    status, radar = api_get(
+        f"/api/v1/radar/health-regions?release_id={release}&min_signal_families=2"
+    )
+    assert status == 200
+    assert radar["total_matching"] == 113
+    assert radar["release"]["intelligence_version"] == f"MDB_TERRITORIAL_INTELLIGENCE_{suffix}"
+    for endpoint in ["explanation", "peers"]:
+        status, body = api_get(f"/api/v1/health-regions/12001/{endpoint}?release_id={release}")
+        assert status == 200
+        assert body["release"]["release_id"] == release
+        assert body["release"]["intelligence_version"] == f"MDB_TERRITORIAL_INTELLIGENCE_{suffix}"
+
+
 def api_get(path: str) -> tuple[int, object]:
     settings = get_settings()
     base = f"http://{settings.api_host}:{settings.api_port}"
@@ -151,8 +168,7 @@ def test_web_geometry_profiles_and_full_geometry_policy():
     assert db_row == (439, 439, 4326, 4326, 0)
 
     paths = {
-        "overview": "/api/v1/map/health-regions?include_geometry=true"
-        "&geometry_profile=overview",
+        "overview": "/api/v1/map/health-regions?include_geometry=true&geometry_profile=overview",
         "detail": "/api/v1/map/health-regions?include_geometry=true&geometry_profile=detail",
     }
     payloads = {}
@@ -528,7 +544,8 @@ def test_manager_brief_diverse_region_cases():
         assert brief["region"]["health_region_code"] == code
         assert len(brief["investigation_questions"]) <= 8
         assert "undefined" not in json.dumps(brief, ensure_ascii=False).lower()
-        assert "nan" not in json.dumps(brief, ensure_ascii=False).lower()
+        # Reject non-finite numeric values, not the substring in "financing".
+        json.dumps(brief, ensure_ascii=False, allow_nan=False)
 
 
 def test_no_unrequested_product_surfaces_exist():

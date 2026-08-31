@@ -1,0 +1,46 @@
+{
+  "old_commit": "87cb7e5008a76b857fad16a5e68e6a4bc7b49ee6",
+  "new_commit": "21886098d9f5967db38cc6145be57d1751468a87",
+  "old_sha256": "e0268253e318473824312ed3125a01ea73be8d795457ac6e09f568ab9b140985",
+  "accepted_sha256": "09e6182fa527a73e53691c97d65e30e2fc6f2740fffdd36b0d09baa59e680860",
+  "worktree_matches_accepted": true,
+  "old_rows": 1317,
+  "new_rows": 1317,
+  "rows_changed": 1317,
+  "schema_columns_unchanged": true,
+  "row_key_order_unchanged": true,
+  "changed_columns": {
+    "population_expected": {
+      "rows_changed": 1317,
+      "old_nulls": 1317,
+      "new_nulls": 0,
+      "old_dtype": "float64",
+      "new_dtype": "int64"
+    },
+    "population_covered": {
+      "rows_changed": 1317,
+      "old_nulls": 1317,
+      "new_nulls": 0,
+      "old_dtype": "float64",
+      "new_dtype": "int64"
+    },
+    "coverage_population_share": {
+      "rows_changed": 1317,
+      "old_nulls": 1317,
+      "new_nulls": 0,
+      "old_dtype": "float64",
+      "new_dtype": "float64"
+    },
+    "health_expenditure_per_capita_brl": {
+      "rows_changed": 1310,
+      "old_nulls": 1317,
+      "new_nulls": 7,
+      "old_dtype": "float64",
+      "new_dtype": "float64"
+    }
+  },
+  "total_expenditure_unchanged": true,
+  "municipal_coverage_unchanged": true,
+  "reason": "Repair of POPSVS seven-digit municipality mapping. Population denominators and covered population became available; per-capita values became available for complete SIOPS rows. Expenditure totals and SIOPS municipal coverage did not change. This is a data-processing correction, not a new financing methodology.",
+  "serialization": "Not serialization-only: logical values and population dtypes changed. Key order and columns compared explicitly."
+}

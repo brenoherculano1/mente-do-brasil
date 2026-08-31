@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 import { mkdirSync, writeFileSync } from "node:fs";
 
-const PHASE_QA_DIR = "../docs/territorial_intelligence_qc_2026-08-27";
+const PHASE_QA_DIR = "../docs/phase3_closure_qc_2026-08-31/frontend";
 const QA_DIR = `${PHASE_QA_DIR}/frontend_v1`;
 const METHODOLOGY_QA_DIR = `${PHASE_QA_DIR}/methodology`;
 const DATA_QA_DIR = `${PHASE_QA_DIR}/data`;

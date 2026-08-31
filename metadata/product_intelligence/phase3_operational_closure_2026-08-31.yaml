@@ -1,0 +1,14 @@
+phase: ADVANCED_TERRITORIAL_PHASE_3
+status: BLOCKED_MISSING_MIGRATED_SOURCE_ARTIFACTS
+locked_local: false
+fileprovider_repository_blocker: RESOLVED
+current_release: MDB_ANALYTICAL_2024_2
+historical_release: MDB_ANALYTICAL_2024_1
+public_release_status: NOT_RELEASED
+open_platform: NOT_STARTED
+clean_rebuild: FAIL_MISSING_SOURCE_FILES
+fresh_backup_restore: PASS
+scientific_recomputation: BLOCKED_MISSING_SOURCE_FILES
+evidence: docs/phase3_operational_closure_2026-08-31.md
+source_inventory: audit_results/phase3_closure/source_inventory.json
+prior_source_gate_note: Earlier dated acquisition and ASMR gate files are historical evidence, not this operational closure state.

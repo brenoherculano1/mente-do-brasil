@@ -839,7 +839,9 @@ def add_questions(story: list[Any], styles: dict[str, ParagraphStyle], brief: Ma
 
 
 def simple_table(rows: list[list[Any]]) -> Table:
-    table = Table(rows, hAlign="LEFT", colWidths=[5.2 * cm, 11.0 * cm])
+    columns = len(rows[0])
+    widths = [5.2 * cm] + [11.0 * cm / (columns - 1)] * (columns - 1)
+    table = Table(rows, hAlign="LEFT", colWidths=widths)
     table.setStyle(
         TableStyle(
             [

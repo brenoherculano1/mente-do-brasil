@@ -36,8 +36,7 @@ SIGNAL_DEFINITIONS = SignalDefinitions(
     CAPACITY_LOW="capacity_score <= 0.25",
     MISMATCH_MARKED_POSITIVE="mismatch_score >= 0.25",
     CAPACITY_COMPONENT_LOW=(
-        "caps_percentile <= 0.25 OR beds_percentile <= 0.25 OR "
-        "psychiatrist_fte_percentile <= 0.25"
+        "caps_percentile <= 0.25 OR beds_percentile <= 0.25 OR psychiatrist_fte_percentile <= 0.25"
     ),
     SPATIAL_HH_MISMATCH="lisa_significant = true AND lisa_cluster = high-high",
 )
@@ -80,10 +79,21 @@ DECOMPOSITION_FIELDS = [
 ]
 
 
+def intelligence_version(release_id: str) -> str:
+    return (
+        "MDB_TERRITORIAL_INTELLIGENCE_1.1"
+        if release_id == "MDB_ANALYTICAL_2024_2"
+        else INTELLIGENCE_VERSION
+    )
+
+
 def intelligence_release(row: dict | None = None) -> IntelligenceRelease:
+    release_id = (row or {}).get("release_id", "MDB_ANALYTICAL_2024_1")
     return IntelligenceRelease(
-        release_id=(row or {}).get("release_id", "MDB_ANALYTICAL_2024_1"),
-        intelligence_version=(row or {}).get("intelligence_version", INTELLIGENCE_VERSION),
+        release_id=release_id,
+        intelligence_version=(row or {}).get(
+            "intelligence_version", intelligence_version(release_id)
+        ),
         radar_ruleset_version=(row or {}).get("radar_ruleset_version", RADAR_RULESET_VERSION),
         decomposition_version=(row or {}).get("decomposition_version", DECOMPOSITION_VERSION),
         peer_method_version=(row or {}).get("peer_method_version", PEER_METHOD_VERSION),
@@ -133,7 +143,7 @@ def list_radar_regions(
         "i.intelligence_version = %s",
         "i.matched_signal_families >= %s",
     ]
-    params: list[Any] = [release_id, INTELLIGENCE_VERSION, min_signal_families]
+    params: list[Any] = [release_id, intelligence_version(release_id), min_signal_families]
     if uf:
         normalized = uf.upper()
         if normalized not in STATE_NAMES:
@@ -219,7 +229,7 @@ def get_explanation(db: Database, release_id: str, code: str) -> ExplanationResp
         FROM analytics.health_region_intelligence
         WHERE release_id = %s AND intelligence_version = %s AND health_region_code = %s
         """,
-        (release_id, INTELLIGENCE_VERSION, code),
+        (release_id, intelligence_version(release_id), code),
     )
     if not row:
         raise api_error(404, "HEALTH_REGION_NOT_FOUND", "Health Region not found.")
@@ -296,9 +306,7 @@ def deterministic_interpretation(
     )
 
 
-def get_peers(
-    db: Database, release_id: str, code: str, metric: Metric
-) -> PeersResponse:
+def get_peers(db: Database, release_id: str, code: str, metric: Metric) -> PeersResponse:
     ensure_release_exists(db, release_id)
     target = db.row(
         """
@@ -306,7 +314,7 @@ def get_peers(
         FROM analytics.health_region_intelligence
         WHERE release_id = %s AND intelligence_version = %s AND health_region_code = %s
         """,
-        (release_id, INTELLIGENCE_VERSION, code),
+        (release_id, intelligence_version(release_id), code),
     )
     if not target:
         raise api_error(404, "HEALTH_REGION_NOT_FOUND", "Health Region not found.")

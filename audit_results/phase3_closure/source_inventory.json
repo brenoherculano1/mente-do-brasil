@@ -1,0 +1,70 @@
+[
+  {
+    "path": "data/canonical/MDB_ANALYTICAL_2024_1/health_regions.parquet",
+    "expected_sha256": "a3cc8f3aefc9d556d1bacc636dc72cabf04155052dd63c426dda9bec58ada515",
+    "observed_sha256": null,
+    "status": "MISSING_OR_MISMATCH"
+  },
+  {
+    "path": "data/canonical/MDB_ANALYTICAL_2024_1/municipality_health_region_crosswalk.parquet",
+    "expected_sha256": "acd7ab896566d5ea730719eb46a079b0571d73fec617ef1d39db93099bd06b15",
+    "observed_sha256": null,
+    "status": "MISSING_OR_MISMATCH"
+  },
+  {
+    "path": "data/product_intelligence/MDB_ANALYTICAL_2024_1/health_region_intelligence.parquet",
+    "expected_sha256": "130480cb4423bbe5bd0999293dd2310e8d5860f4847ccb3622988c864a27ed1d",
+    "observed_sha256": "130480cb4423bbe5bd0999293dd2310e8d5860f4847ccb3622988c864a27ed1d",
+    "status": "PASS"
+  },
+  {
+    "path": "data/product_intelligence/MDB_ANALYTICAL_2024_1/health_region_peers.parquet",
+    "expected_sha256": "e084f8e775b8788afdd9a57c09154d0cb829bae061a6fcb9a3b7fc60ebad7d00",
+    "observed_sha256": "e084f8e775b8788afdd9a57c09154d0cb829bae061a6fcb9a3b7fc60ebad7d00",
+    "status": "PASS"
+  },
+  {
+    "path": "data/product_intelligence/MDB_ANALYTICAL_2024_1/peer_benchmarks.parquet",
+    "expected_sha256": "aab4ae0ae5dce321d847195b52272e0a3f715c52348e2a7463a750472005712f",
+    "observed_sha256": "aab4ae0ae5dce321d847195b52272e0a3f715c52348e2a7463a750472005712f",
+    "status": "PASS"
+  },
+  {
+    "path": "data/product_intelligence/MDB_ANALYTICAL_2024_2/health_region_changes.parquet",
+    "expected_sha256": "dca6e4c778977745e9287ccc93717c081d853f30778a6afd31afe7610b672e68",
+    "observed_sha256": null,
+    "status": "MISSING_OR_MISMATCH"
+  },
+  {
+    "path": "data/product_intelligence/MDB_ANALYTICAL_2024_2/health_region_financing.parquet",
+    "expected_sha256": "09e6182fa527a73e53691c97d65e30e2fc6f2740fffdd36b0d09baa59e680860",
+    "observed_sha256": "09e6182fa527a73e53691c97d65e30e2fc6f2740fffdd36b0d09baa59e680860",
+    "status": "PASS"
+  },
+  {
+    "path": "data/product_intelligence/MDB_ANALYTICAL_2024_2/hospitalization_flows.parquet",
+    "expected_sha256": "04eb3d4a967b9050c701b62026c4959c437ab8bf52e799c67546ff74c066ed27",
+    "observed_sha256": null,
+    "status": "MISSING_OR_MISMATCH"
+  },
+  {
+    "path": "data/product_intelligence/MDB_ANALYTICAL_2024_2/health_region_flow_summary.parquet",
+    "expected_sha256": "d2f66800f16f715e068cf60e01e1743d7cb64152268ced63b8b3ade2649134bf",
+    "observed_sha256": null,
+    "status": "MISSING_OR_MISMATCH"
+  },
+  {
+    "path": "data/product_intelligence/MDB_ANALYTICAL_2024_2/health_region_temporal.parquet",
+    "expected_sha256": "cb617db011ce192b22f2d0ae33315ca7ff59a6da16dbef8b5b0c03abc855a25a",
+    "observed_sha256": null,
+    "status": "MISSING_OR_MISMATCH"
+  },
+  {
+    "path": "data/raw/siops_official/MDB_SIOPS_SNAPSHOT_20260831_1.jsonl",
+    "exists": false
+  },
+  {
+    "path": "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/geography/health_regions_LOCKED.gpkg",
+    "exists": false
+  }
+]

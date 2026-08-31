@@ -1,0 +1,5 @@
+{
+  "disposable_databases": [],
+  "temporary_api_roles": [],
+  "validation_servers": "stopped; main Docker database left running"
+}

@@ -3,7 +3,7 @@ import { mkdirSync } from "node:fs";
 
 const QA_DIR =
   process.env.MDB_MANAGER_QA_DIR ??
-  "/Users/brenoherculano/Documents/New project/mente-do-brasil/docs/manager_mode_qc_2026-08-28";
+  "../docs/phase3_closure_qc_2026-08-31/manager";
 
 test.beforeAll(() => {
   mkdirSync(QA_DIR, { recursive: true });
@@ -50,7 +50,7 @@ test("desktop Manager supports territorial, meeting, compare and PDF download", 
   await page.screenshot({ path: `${QA_DIR}/desktop_manager_compare_2.png`, fullPage: true });
 
   await page.goto("/gestor?compare=12001,31001,41006,53001");
-  await expect(page.getByText("53001")).toBeVisible();
+  await expect(page.getByRole("columnheader", { name: "53001", exact: true })).toBeVisible();
   await page.screenshot({ path: `${QA_DIR}/desktop_manager_compare_4.png`, fullPage: true });
 });
 
@@ -77,7 +77,7 @@ test("mobile Manager keeps tabs and comparison usable", async ({ page }, testInf
     "aria-selected",
     "true",
   );
-  await expect(page.getByText("41006")).toBeVisible();
+  await expect(page.getByRole("columnheader", { name: "41006", exact: true })).toBeVisible();
   await expectNoGlobalHorizontalOverflow(page);
   await page.screenshot({ path: `${QA_DIR}/mobile_manager_compare.png`, fullPage: true });
 });

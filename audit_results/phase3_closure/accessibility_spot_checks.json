@@ -1,0 +1,10 @@
+{
+  "keyboard_period": "2022,2024",
+  "comparison_table": {
+    "focused": true,
+    "scrollLeft": 40,
+    "outline": "rgb(180, 95, 6) solid 3px"
+  },
+  "status": "PARTIAL",
+  "limitations": "Not WCAG certification; no screen reader or exhaustive contrast audit."
+}

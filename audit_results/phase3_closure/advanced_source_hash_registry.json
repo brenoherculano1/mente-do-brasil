@@ -1,0 +1,27 @@
+[
+  [
+    "MDB_CHANGE_RADAR_RULESET_1.0",
+    {
+      "health_region_changes": "dca6e4c778977745e9287ccc93717c081d853f30778a6afd31afe7610b672e68"
+    }
+  ],
+  [
+    "MDB_FINANCING_CONTEXT_1.0",
+    {
+      "health_region_financing": "09e6182fa527a73e53691c97d65e30e2fc6f2740fffdd36b0d09baa59e680860"
+    }
+  ],
+  [
+    "MDB_HOSPITAL_FLOW_METHOD_1.0",
+    {
+      "hospitalization_flows": "04eb3d4a967b9050c701b62026c4959c437ab8bf52e799c67546ff74c066ed27",
+      "health_region_flow_summary": "d2f66800f16f715e068cf60e01e1743d7cb64152268ced63b8b3ade2649134bf"
+    }
+  ],
+  [
+    "MDB_TEMPORAL_2022_2024_1",
+    {
+      "health_region_temporal": "cb617db011ce192b22f2d0ae33315ca7ff59a6da16dbef8b5b0c03abc855a25a"
+    }
+  ]
+]

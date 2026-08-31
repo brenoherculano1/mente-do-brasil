@@ -2,6 +2,9 @@ import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import { ManagerWorkbench } from "@/features/manager/ManagerWorkbench";
 
+// WebGL and the advanced network panels are covered by production E2E.
+vi.mock("@/features/advanced/RegionAdvanced", () => ({ RegionAdvanced: () => null }));
+
 vi.mock("@/lib/api/client", () => ({
   getManagerBrief: vi.fn(),
   getManagerCompare: vi.fn(() => new Promise(() => {})),

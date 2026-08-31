@@ -1,0 +1,51 @@
+{
+  "health_region_temporal": 1317,
+  "health_region_changes": 1317,
+  "health_region_financing": 1317,
+  "hospitalization_flows": 20907,
+  "health_region_flow_summary": 439,
+  "health_regions": 439,
+  "municipalities": 5570,
+  "metrics": 439,
+  "geometry": [
+    439,
+    439
+  ],
+  "releases": [
+    "MDB_ANALYTICAL_2024_1",
+    "MDB_ANALYTICAL_2024_2"
+  ],
+  "lisa": {
+    "low-high": 6,
+    "high-high": 60,
+    "high-low": 5,
+    "low-low": 65
+  },
+  "flags": [
+    7,
+    275
+  ],
+  "views": {
+    "health_region_profile": 439,
+    "health_region_map": 439,
+    "health_region_lookup": 439
+  },
+  "lookup_1100015": "11005",
+  "known_regions": [
+    [
+      "12001",
+      "Alto Acre"
+    ],
+    [
+      "53001",
+      "Distrito Federal"
+    ]
+  ],
+  "content_hashes": {
+    "health_region_temporal": "c6881e7ab9628491434da9b6cc26d3356d29f1d8b5eee4e0c9963ad184230c67",
+    "health_region_changes": "d2046eeeaa26ee82e64edce7b9f968a9f4ea6272a06ecc661c33d095ef65b482",
+    "health_region_financing": "881ce9c550e34262e6ea4f76765611f3542f0b1cf5f5119133afe6c10aa983f0",
+    "hospitalization_flows": "d7319791a88b8745ff41fb5fda327b140c2f5c2d65101dc4197441d00ae4d499",
+    "health_region_flow_summary": "c602ea38980b84b31d7898003d6ffbfba1072b08bab1c783742403c4c31f6ccb"
+  }
+}

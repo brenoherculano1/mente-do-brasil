@@ -1,0 +1,82 @@
+
+> mente-do-brasil-web@0.1.0 test
+> vitest run
+
+
+ RUN  v3.2.7 /Users/brenoherculano/Projects/mente-do-brasil/web
+
+stdout | tests/unit/api-route-rate-limit.test.ts > operational API route rate limit > short-circuits over-limit requests before calling the upstream FastAPI service
+{"timestamp":"2026-08-31T19:56:00.520Z","level":"info","service":"mente-do-brasil-next","event":"rate_limited","request_id":"8eb900f3-e5fd-42a3-9e8f-711efe0d3217","route_class":"D_GEOMETRY_DETAIL","route":"/api/v1/map/health-regions","status":429}
+
+ ✓ tests/unit/public-foundation.test.ts (7 tests) 1524ms
+   ✓ public production foundation config > builds deterministic public sitemap counts from generated canonical inventory  663ms
+   ✓ public production foundation config > prepares security.txt only when contact and site URL are configured  564ms
+stdout | tests/unit/api-route-rate-limit.test.ts > operational API route rate limit > short-circuits over-limit PDF report requests before upstream generation
+{"timestamp":"2026-08-31T19:56:01.478Z","level":"info","service":"mente-do-brasil-next","event":"rate_limited","request_id":"19d0ed8e-27f6-430b-8a1c-8aab94f0e517","route_class":"D_GEOMETRY_DETAIL","route":"/api/v1/health-regions/12001/report.pdf","status":429}
+
+ ✓ tests/unit/api-route-rate-limit.test.ts (2 tests) 1814ms
+   ✓ operational API route rate limit > short-circuits over-limit requests before calling the upstream FastAPI service  1277ms
+   ✓ operational API route rate limit > short-circuits over-limit PDF report requests before upstream generation  521ms
+ ✓ tests/unit/manager-workbench.test.tsx (2 tests) 1593ms
+   ✓ ManagerWorkbench > renders empty state without selecting a random region  1332ms
+ ✓ tests/unit/about-page.test.tsx (6 tests) 7145ms
+   ✓ about page > renders the institutional positioning and current scope  2640ms
+   ✓ about page > states independence, public-data use, and government disclaimer  413ms
+   ✓ about page > keeps release and manuscript status conservative  471ms
+   ✓ about page > renders required links and what-it-is-not section  534ms
+   ✓ about page > renders six principles without commercial or invented-governance claims  2303ms
+   ✓ about page > avoids problematic scientific and publication claims outside explicit limitations  780ms
+stderr | tests/unit/state-page.test.tsx > state page > uses locked regional values in the distribution and preserves mismatch copy
+An update to StatePage inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to StatePage inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+ ✓ tests/unit/state-page.test.tsx (5 tests) 7554ms
+   ✓ state page > renders AC with three Health Regions and no state score or ranking  2296ms
+   ✓ state page > keeps alphabetical ordering and filters within the state  2507ms
+   ✓ state page > uses locked regional values in the distribution and preserves mismatch copy  1640ms
+   ✓ state page > counts locked LISA categories and data quality flags without creating indicators  354ms
+   ✓ state page > links from state regions to profiles  725ms
+ ✓ tests/unit/methodology-page.test.tsx (7 tests) 10694ms
+   ✓ methodology page > renders locked metadata identifiers and standard population  3700ms
+   ✓ methodology page > renders Need, Capacity, and Mismatch formulas  613ms
+   ✓ methodology page > preserves claim discipline and limitations  3583ms
+   ✓ methodology page > documents territorial intelligence product methods without recalculating science  797ms
+   ✓ methodology page > renders LISA counts and warning without disease concentration claim  605ms
+   ✓ methodology page > renders the conservative manuscript submission status  1292ms
+ ✓ tests/unit/data-page.test.tsx (7 tests) 14516ms
+   ✓ data page > renders release identifiers, counts, and locked hashes  4687ms
+   ✓ data page > translates NOT_RELEASED without exposing downloads or localhost  3163ms
+   ✓ data page > renders the complete 35-field dictionary and filters locally  1395ms
+   ✓ data page > keeps public dictionary copy in Portuguese while preserving technical names  1276ms
+   ✓ data page > renders public dataset and provenance labels in Portuguese  706ms
+   ✓ data page > documents null semantics, license uncertainty, and citation state  1459ms
+   ✓ data page > keeps the methodology link available  1825ms
+ ✓ tests/unit/api-ingress-policy.test.ts (9 tests) 215ms
+ ✓ tests/unit/color-scale.test.ts (5 tests) 14ms
+ ✓ tests/unit/profile-components.test.tsx (4 tests) 824ms
+   ✓ profile components > shows known data quality flags  763ms
+ ✓ tests/unit/format.test.ts (3 tests) 7ms
+
+ Test Files  11 passed (11)
+      Tests  57 passed (57)
+   Start at  16:55:40
+   Duration  37.98s (transform 13.14s, setup 24.68s, collect 33.39s, tests 45.90s, environment 74.75s, prepare 23.69s)
+

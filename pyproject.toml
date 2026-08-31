@@ -7,7 +7,7 @@ name = "mente-do-brasil"
 version = "0.1.0"
 description = "Scientific data foundation for Mente do Brasil territorial mental-health intelligence."
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 dependencies = [
   "fastapi>=0.116",
   "pandas>=2.0",
@@ -24,6 +24,8 @@ dependencies = [
 dev = [
   "pytest>=8",
   "ruff>=0.5",
+  "esda==2.7.1",
+  "libpysal==4.13.0",
 ]
 geo = [
   "geopandas>=0.14",
@@ -45,4 +47,4 @@ select = ["E", "F", "I", "UP", "B"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-pythonpath = [".", "src"]
+pythonpath = [".", "src", "scripts"]

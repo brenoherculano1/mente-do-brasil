@@ -1,0 +1,316 @@
+
+> mente-do-brasil-web@0.1.0 test:e2e
+> playwright test --workers=1 --reporter=line
+
+
+Running 44 tests using 1 worker
+
+(node:48067) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/44] [desktop] › tests/e2e/advanced-closure.spec.ts:12:5 › changes period, region selection, and accessible table
+  1) [desktop] › tests/e2e/advanced-closure.spec.ts:12:5 › changes period, region selection, and accessible table 
+
+    Test timeout of 60000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 60000ms exceeded.
+    Call log:
+      - waiting for getByLabel('UF', { exact: true })
+
+
+      16 |   await capture(page, `${info.project.name}_changes_brazil`);
+      17 |   await page.getByLabel("Mínimo de famílias").selectOption("0");
+    > 18 |   await page.getByLabel("UF", { exact: true }).selectOption("AC");
+         |                                                ^
+      19 |   await expect(page.locator("tbody tr")).toHaveCount(3);
+      20 |   await page.locator("tbody button").first().click();
+      21 |   await expect(page.getByRole("link", { name: "Ver evolução da região" })).toBeVisible();
+        at /Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/advanced-closure.spec.ts:18:48
+
+    Error Context: test-results/advanced-closure-changes-p-4847b-ection-and-accessible-table-desktop/error-context.md
+
+
+(node:48180) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[2/44] [desktop] › tests/e2e/advanced-closure.spec.ts:29:5 › financing coverage, annual series, and missing values
+  2) [desktop] › tests/e2e/advanced-closure.spec.ts:29:5 › financing coverage, annual series, and missing values 
+
+    Test timeout of 60000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 60000ms exceeded.
+    Call log:
+      - waiting for getByLabel('UF', { exact: true })
+
+
+      32 |   await expect(page.getByText("Esta camada descreve o contexto geral de financiamento da saúde e não mede gasto específico em saúde mental.")).toBeVisible();
+      33 |   await capture(page, `${info.project.name}_financing_brazil`);
+    > 34 |   await page.getByLabel("UF", { exact: true }).selectOption("DF");
+         |                                                ^
+      35 |   await expect(page.locator("tbody tr")).toHaveCount(1);
+      36 |   await expect(page.locator("tbody")).toContainText("Indisponível");
+      37 |   await page.locator("tbody button").click();
+        at /Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/advanced-closure.spec.ts:34:48
+
+    Error Context: test-results/advanced-closure-financing-65e3e-l-series-and-missing-values-desktop/error-context.md
+
+
+(node:48296) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[3/44] [desktop] › tests/e2e/advanced-closure.spec.ts:46:5 › flows origin and destination preserve suppressed counts
+[4/44] [desktop] › tests/e2e/advanced-closure.spec.ts:56:5 › profile advanced sections and Manager V2 are present
+  3) [desktop] › tests/e2e/advanced-closure.spec.ts:56:5 › profile advanced sections and Manager V2 are present 
+
+    Test timeout of 60000ms exceeded.
+
+    Error: locator.scrollIntoViewIfNeeded: Test timeout of 60000ms exceeded.
+    Call log:
+      - waiting for locator('#evolucao')
+
+
+      57 |   await page.goto("/regiao/12001");
+      58 |   for (const [id, label] of [["evolucao", "temporal"], ["financiamento", "financing"], ["fluxos", "flows"]]) {
+    > 59 |     await page.locator(`#${id}`).scrollIntoViewIfNeeded();
+         |                                  ^
+      60 |     await expect(page.locator(`#${id} tbody tr`).first()).toBeVisible();
+      61 |     await capture(page, `${info.project.name}_profile_${label}`);
+      62 |   }
+        at /Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/advanced-closure.spec.ts:59:34
+
+    Error Context: test-results/advanced-closure-profile-a-fc876--and-Manager-V2-are-present-desktop/error-context.md
+
+
+(node:48369) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[5/44] [desktop] › tests/e2e/advanced-closure.spec.ts:69:5 › mobile widths preserve document bounds
+[6/44] [desktop] › tests/e2e/frontend-v1.spec.ts:19:5 › home loads map, metric selector, search, and navigates to region profile
+  4) [desktop] › tests/e2e/frontend-v1.spec.ts:19:5 › home loads map, metric selector, search, and navigates to region profile 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Alto Acre' })
+    Expected: visible
+    Timeout: 15000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 15000ms
+      - waiting for getByRole('heading', { name: 'Alto Acre' })
+
+
+      39 |   await page.getByRole("link", { name: "Ver perfil da região" }).click();
+      40 |   await expect(page).toHaveURL(/\/regiao\/12001/);
+    > 41 |   await expect(page.getByRole("heading", { name: "Alto Acre" })).toBeVisible();
+         |                                                                  ^
+      42 |   await expect(page.getByText("Need Score")).toBeVisible();
+      43 |   await expect(page.getByText("Capacity Score")).toBeVisible();
+      44 |   await expect(page.getByText("Mismatch compara")).toBeVisible();
+        at /Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/frontend-v1.spec.ts:41:66
+
+    Error Context: test-results/frontend-v1-home-loads-map-a939a-navigates-to-region-profile-desktop/error-context.md
+
+
+(node:48389) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[7/44] [desktop] › tests/e2e/frontend-v1.spec.ts:52:5 › captures home screenshot and keeps mobile layout usable
+[8/44] [desktop] › tests/e2e/frontend-v1.spec.ts:76:5 › accessible list expands, filters rationally, and captures QA screenshot
+[9/44] [desktop] › tests/e2e/frontend-v1.spec.ts:94:5 › invalid region shows not found state
+[10/44] [desktop] › tests/e2e/frontend-v1.spec.ts:100:5 › methodology desktop page loads, navigates sections, and opens details
+[11/44] [desktop] › tests/e2e/frontend-v1.spec.ts:146:5 › methodology mobile page has compact navigation and no global overflow
+[12/44] [desktop] › tests/e2e/frontend-v1.spec.ts:179:5 › data page exposes release inventory and filters dictionary on desktop
+[13/44] [desktop] › tests/e2e/frontend-v1.spec.ts:230:5 › data page remains usable on mobile
+[14/44] [desktop] › tests/e2e/frontend-v1.spec.ts:258:5 › about page states independence, scope, and links on desktop
+[15/44] [desktop] › tests/e2e/frontend-v1.spec.ts:316:5 › about page stays readable and responsive on mobile
+[16/44] [desktop] › tests/e2e/frontend-v1.spec.ts:345:5 › state page for AC shows three regions, overview map, distribution, and profile links
+  5) [desktop] › tests/e2e/frontend-v1.spec.ts:345:5 › state page for AC shows three regions, overview map, distribution, and profile links 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Alto Acre' })
+    Expected: visible
+    Timeout: 15000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 15000ms
+      - waiting for getByRole('heading', { name: 'Alto Acre' })
+
+
+      377 |   await page.getByRole("link", { name: "Ver perfil da região" }).click();
+      378 |   await expect(page).toHaveURL(/\/regiao\/12001/);
+    > 379 |   await expect(page.getByRole("heading", { name: "Alto Acre" })).toBeVisible();
+          |                                                                  ^
+      380 |   await expect(page.getByRole("link", { name: "Ver estado: Acre" })).toHaveAttribute("href", "/estado/AC");
+      381 |   await page.getByRole("link", { name: "Ver estado: Acre" }).click();
+      382 |   await expect(page).toHaveURL(/\/estado\/AC/);
+        at /Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/frontend-v1.spec.ts:379:66
+
+    Error Context: test-results/frontend-v1-state-page-for-4b207-tribution-and-profile-links-desktop/error-context.md
+
+
+(node:48450) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[17/44] [desktop] › tests/e2e/frontend-v1.spec.ts:397:5 › state page handles a large state and DF without truncating regions
+[18/44] [desktop] › tests/e2e/frontend-v1.spec.ts:425:5 › state page normalizes lowercase, rejects invalid UF, and keeps mobile map early
+[19/44] [desktop] › tests/e2e/manager-workbench.spec.ts:12:5 › desktop Manager supports territorial, meeting, compare and PDF download
+  6) [desktop] › tests/e2e/manager-workbench.spec.ts:12:5 › desktop Manager supports territorial, meeting, compare and PDF download 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('53001')
+    Expected: visible
+    Error: strict mode violation: getByText('53001') resolved to 2 elements:
+        1) <button type="button">…</button> aka getByRole('button', { name: '53001 ×' })
+        2) <th>53001</th> aka getByRole('columnheader', { name: '53001' })
+
+    Call log:
+      - Expect "toBeVisible" with timeout 15000ms
+      - waiting for getByText('53001')
+
+
+      51 |
+      52 |   await page.goto("/gestor?compare=12001,31001,41006,53001");
+    > 53 |   await expect(page.getByText("53001")).toBeVisible();
+         |                                         ^
+      54 |   await page.screenshot({ path: `${QA_DIR}/desktop_manager_compare_4.png`, fullPage: true });
+      55 | });
+      56 |
+        at /Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/manager-workbench.spec.ts:53:41
+
+    Error Context: test-results/manager-workbench-desktop--c1948-ng-compare-and-PDF-download-desktop/error-context.md
+
+
+(node:48461) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[20/44] [desktop] › tests/e2e/manager-workbench.spec.ts:57:5 › mobile Manager keeps tabs and comparison usable
+[21/44] [desktop] › tests/e2e/territorial-intelligence.spec.ts:12:5 › desktop Radar shows territorial signals, filters, and region intelligence
+  7) [desktop] › tests/e2e/territorial-intelligence.spec.ts:12:5 › desktop Radar shows territorial signals, filters, and region intelligence 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 113
+    Received: 0
+
+      21 |   await page.goto("/radar");
+      22 |   const radar = await (await radarResponse).json();
+    > 23 |   expect(radar.total_matching).toBe(113);
+         |                                ^
+      24 |   expect(radar.geometry.features.length).toBe(113);
+      25 |   await waitForMapPixels(page);
+      26 |   await expect(page.getByRole("heading", { level: 1, name: "Radar Territorial" })).toBeVisible();
+        at /Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/territorial-intelligence.spec.ts:23:32
+
+    Error Context: test-results/territorial-intelligence-d-10938-ers-and-region-intelligence-desktop/error-context.md
+
+
+(node:48470) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[22/44] [desktop] › tests/e2e/territorial-intelligence.spec.ts:62:5 › mobile Radar and region intelligence remain usable
+(node:48478) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[23/44] [mobile] › tests/e2e/advanced-closure.spec.ts:12:5 › changes period, region selection, and accessible table
+  8) [mobile] › tests/e2e/advanced-closure.spec.ts:12:5 › changes period, region selection, and accessible table 
+
+    Test timeout of 60000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 60000ms exceeded.
+    Call log:
+      - waiting for getByLabel('UF', { exact: true })
+
+
+      16 |   await capture(page, `${info.project.name}_changes_brazil`);
+      17 |   await page.getByLabel("Mínimo de famílias").selectOption("0");
+    > 18 |   await page.getByLabel("UF", { exact: true }).selectOption("AC");
+         |                                                ^
+      19 |   await expect(page.locator("tbody tr")).toHaveCount(3);
+      20 |   await page.locator("tbody button").first().click();
+      21 |   await expect(page.getByRole("link", { name: "Ver evolução da região" })).toBeVisible();
+        at /Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/advanced-closure.spec.ts:18:48
+
+    Error Context: test-results/advanced-closure-changes-p-4847b-ection-and-accessible-table-mobile/error-context.md
+
+
+(node:48599) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[24/44] [mobile] › tests/e2e/advanced-closure.spec.ts:29:5 › financing coverage, annual series, and missing values
+  9) [mobile] › tests/e2e/advanced-closure.spec.ts:29:5 › financing coverage, annual series, and missing values 
+
+    Test timeout of 60000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 60000ms exceeded.
+    Call log:
+      - waiting for getByLabel('UF', { exact: true })
+
+
+      32 |   await expect(page.getByText("Esta camada descreve o contexto geral de financiamento da saúde e não mede gasto específico em saúde mental.")).toBeVisible();
+      33 |   await capture(page, `${info.project.name}_financing_brazil`);
+    > 34 |   await page.getByLabel("UF", { exact: true }).selectOption("DF");
+         |                                                ^
+      35 |   await expect(page.locator("tbody tr")).toHaveCount(1);
+      36 |   await expect(page.locator("tbody")).toContainText("Indisponível");
+      37 |   await page.locator("tbody button").click();
+        at /Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/advanced-closure.spec.ts:34:48
+
+    Error Context: test-results/advanced-closure-financing-65e3e-l-series-and-missing-values-mobile/error-context.md
+
+
+(node:48792) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[25/44] [mobile] › tests/e2e/advanced-closure.spec.ts:46:5 › flows origin and destination preserve suppressed counts
+[26/44] [mobile] › tests/e2e/advanced-closure.spec.ts:56:5 › profile advanced sections and Manager V2 are present
+  10) [mobile] › tests/e2e/advanced-closure.spec.ts:56:5 › profile advanced sections and Manager V2 are present 
+
+    Test was interrupted.
+
+    Error: locator.scrollIntoViewIfNeeded: Test ended.
+    Call log:
+      - waiting for locator('#evolucao')
+
+
+      57 |   await page.goto("/regiao/12001");
+      58 |   for (const [id, label] of [["evolucao", "temporal"], ["financiamento", "financing"], ["fluxos", "flows"]]) {
+    > 59 |     await page.locator(`#${id}`).scrollIntoViewIfNeeded();
+         |                                  ^
+      60 |     await expect(page.locator(`#${id} tbody tr`).first()).toBeVisible();
+      61 |     await capture(page, `${info.project.name}_profile_${label}`);
+      62 |   }
+        at /Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/advanced-closure.spec.ts:59:34
+
+    Error Context: test-results/advanced-closure-profile-a-fc876--and-Manager-V2-are-present-mobile/error-context.md
+
+
+  9 failed
+    [desktop] › tests/e2e/advanced-closure.spec.ts:12:5 › changes period, region selection, and accessible table 
+    [desktop] › tests/e2e/advanced-closure.spec.ts:29:5 › financing coverage, annual series, and missing values 
+    [desktop] › tests/e2e/advanced-closure.spec.ts:56:5 › profile advanced sections and Manager V2 are present 
+    [desktop] › tests/e2e/frontend-v1.spec.ts:19:5 › home loads map, metric selector, search, and navigates to region profile 
+    [desktop] › tests/e2e/frontend-v1.spec.ts:345:5 › state page for AC shows three regions, overview map, distribution, and profile links 
+    [desktop] › tests/e2e/manager-workbench.spec.ts:12:5 › desktop Manager supports territorial, meeting, compare and PDF download 
+    [desktop] › tests/e2e/territorial-intelligence.spec.ts:12:5 › desktop Radar shows territorial signals, filters, and region intelligence 
+    [mobile] › tests/e2e/advanced-closure.spec.ts:12:5 › changes period, region selection, and accessible table 
+    [mobile] › tests/e2e/advanced-closure.spec.ts:29:5 › financing coverage, annual series, and missing values 
+  1 interrupted
+    [mobile] › tests/e2e/advanced-closure.spec.ts:56:5 › profile advanced sections and Manager V2 are present 
+  7 skipped
+  18 did not run
+  9 passed (7.0m)

@@ -3,7 +3,7 @@ import { mkdirSync } from "node:fs";
 
 const QA_DIR =
   process.env.MDB_TERRITORIAL_QA_DIR ??
-  "/Users/brenoherculano/Documents/New project/mente-do-brasil/docs/territorial_intelligence_qc_2026-08-27";
+  "../docs/phase3_closure_qc_2026-08-31/intelligence";
 
 test.beforeAll(() => {
   mkdirSync(QA_DIR, { recursive: true });

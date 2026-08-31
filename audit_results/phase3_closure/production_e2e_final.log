@@ -1,0 +1,142 @@
+
+> mente-do-brasil-web@0.1.0 test:e2e
+> playwright test --workers=1 --reporter=line
+
+
+Running 44 tests using 1 worker
+
+(node:49260) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/44] [desktop] › tests/e2e/advanced-closure.spec.ts:12:5 › changes period, region selection, and accessible table
+  1) [desktop] › tests/e2e/advanced-closure.spec.ts:12:5 › changes period, region selection, and accessible table 
+
+    Error: locator.selectOption: Error: strict mode violation: getByLabel('Família') resolved to 3 elements:
+        1) <select class="input">…</select> aka getByLabel('FamíliaTodasAumento da posiçã')
+        2) <select class="input">…</select> aka getByLabel('Mínimo de famílias012345')
+        3) <select class="input">…</select> aka getByLabel('OrdenarMais famílias')
+
+    Call log:
+      - waiting for getByLabel('Família')
+
+
+      23 |   await page.getByLabel("Período").selectOption("2022,2023");
+      24 |   await expect(page.locator("tbody tr").first()).toBeVisible();
+    > 25 |   await page.getByLabel("Família").selectOption("NEED_POSITION_UP");
+         |                                    ^
+      26 |   await expect(page.getByLabel("Família")).toHaveValue("NEED_POSITION_UP");
+      27 | });
+      28 |
+        at /Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/advanced-closure.spec.ts:25:36
+
+    Error Context: test-results/advanced-closure-changes-p-4847b-ection-and-accessible-table-desktop/error-context.md
+
+
+(node:49364) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[2/44] [desktop] › tests/e2e/advanced-closure.spec.ts:29:5 › financing coverage, annual series, and missing values
+[3/44] [desktop] › tests/e2e/advanced-closure.spec.ts:46:5 › flows origin and destination preserve suppressed counts
+[4/44] [desktop] › tests/e2e/advanced-closure.spec.ts:56:5 › profile advanced sections and Manager V2 are present
+[5/44] [desktop] › tests/e2e/advanced-closure.spec.ts:69:5 › mobile widths preserve document bounds
+[6/44] [desktop] › tests/e2e/frontend-v1.spec.ts:19:5 › home loads map, metric selector, search, and navigates to region profile
+[7/44] [desktop] › tests/e2e/frontend-v1.spec.ts:52:5 › captures home screenshot and keeps mobile layout usable
+[8/44] [desktop] › tests/e2e/frontend-v1.spec.ts:76:5 › accessible list expands, filters rationally, and captures QA screenshot
+[9/44] [desktop] › tests/e2e/frontend-v1.spec.ts:94:5 › invalid region shows not found state
+[10/44] [desktop] › tests/e2e/frontend-v1.spec.ts:100:5 › methodology desktop page loads, navigates sections, and opens details
+[11/44] [desktop] › tests/e2e/frontend-v1.spec.ts:146:5 › methodology mobile page has compact navigation and no global overflow
+[12/44] [desktop] › tests/e2e/frontend-v1.spec.ts:179:5 › data page exposes release inventory and filters dictionary on desktop
+[13/44] [desktop] › tests/e2e/frontend-v1.spec.ts:230:5 › data page remains usable on mobile
+[14/44] [desktop] › tests/e2e/frontend-v1.spec.ts:258:5 › about page states independence, scope, and links on desktop
+[15/44] [desktop] › tests/e2e/frontend-v1.spec.ts:316:5 › about page stays readable and responsive on mobile
+[16/44] [desktop] › tests/e2e/frontend-v1.spec.ts:345:5 › state page for AC shows three regions, overview map, distribution, and profile links
+[17/44] [desktop] › tests/e2e/frontend-v1.spec.ts:397:5 › state page handles a large state and DF without truncating regions
+[18/44] [desktop] › tests/e2e/frontend-v1.spec.ts:425:5 › state page normalizes lowercase, rejects invalid UF, and keeps mobile map early
+[19/44] [desktop] › tests/e2e/manager-workbench.spec.ts:12:5 › desktop Manager supports territorial, meeting, compare and PDF download
+[20/44] [desktop] › tests/e2e/manager-workbench.spec.ts:57:5 › mobile Manager keeps tabs and comparison usable
+[21/44] [desktop] › tests/e2e/territorial-intelligence.spec.ts:12:5 › desktop Radar shows territorial signals, filters, and region intelligence
+[22/44] [desktop] › tests/e2e/territorial-intelligence.spec.ts:62:5 › mobile Radar and region intelligence remain usable
+(node:49478) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[23/44] [mobile] › tests/e2e/advanced-closure.spec.ts:12:5 › changes period, region selection, and accessible table
+  2) [mobile] › tests/e2e/advanced-closure.spec.ts:12:5 › changes period, region selection, and accessible table 
+
+    Error: locator.selectOption: Error: strict mode violation: getByLabel('Família') resolved to 3 elements:
+        1) <select class="input">…</select> aka getByLabel('FamíliaTodasAumento da posiçã')
+        2) <select class="input">…</select> aka getByLabel('Mínimo de famílias012345')
+        3) <select class="input">…</select> aka getByLabel('OrdenarMais famílias')
+
+    Call log:
+      - waiting for getByLabel('Família')
+
+
+      23 |   await page.getByLabel("Período").selectOption("2022,2023");
+      24 |   await expect(page.locator("tbody tr").first()).toBeVisible();
+    > 25 |   await page.getByLabel("Família").selectOption("NEED_POSITION_UP");
+         |                                    ^
+      26 |   await expect(page.getByLabel("Família")).toHaveValue("NEED_POSITION_UP");
+      27 | });
+      28 |
+        at /Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/advanced-closure.spec.ts:25:36
+
+    Error Context: test-results/advanced-closure-changes-p-4847b-ection-and-accessible-table-mobile/error-context.md
+
+
+(node:49486) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[24/44] [mobile] › tests/e2e/advanced-closure.spec.ts:29:5 › financing coverage, annual series, and missing values
+[25/44] [mobile] › tests/e2e/advanced-closure.spec.ts:46:5 › flows origin and destination preserve suppressed counts
+[26/44] [mobile] › tests/e2e/advanced-closure.spec.ts:56:5 › profile advanced sections and Manager V2 are present
+[27/44] [mobile] › tests/e2e/advanced-closure.spec.ts:69:5 › mobile widths preserve document bounds
+[28/44] [mobile] › tests/e2e/frontend-v1.spec.ts:19:5 › home loads map, metric selector, search, and navigates to region profile
+[29/44] [mobile] › tests/e2e/frontend-v1.spec.ts:52:5 › captures home screenshot and keeps mobile layout usable
+[30/44] [mobile] › tests/e2e/frontend-v1.spec.ts:76:5 › accessible list expands, filters rationally, and captures QA screenshot
+[31/44] [mobile] › tests/e2e/frontend-v1.spec.ts:94:5 › invalid region shows not found state
+[32/44] [mobile] › tests/e2e/frontend-v1.spec.ts:100:5 › methodology desktop page loads, navigates sections, and opens details
+[33/44] [mobile] › tests/e2e/frontend-v1.spec.ts:146:5 › methodology mobile page has compact navigation and no global overflow
+[34/44] [mobile] › tests/e2e/frontend-v1.spec.ts:179:5 › data page exposes release inventory and filters dictionary on desktop
+[35/44] [mobile] › tests/e2e/frontend-v1.spec.ts:230:5 › data page remains usable on mobile
+[36/44] [mobile] › tests/e2e/frontend-v1.spec.ts:258:5 › about page states independence, scope, and links on desktop
+[37/44] [mobile] › tests/e2e/frontend-v1.spec.ts:316:5 › about page stays readable and responsive on mobile
+[38/44] [mobile] › tests/e2e/frontend-v1.spec.ts:345:5 › state page for AC shows three regions, overview map, distribution, and profile links
+[39/44] [mobile] › tests/e2e/frontend-v1.spec.ts:397:5 › state page handles a large state and DF without truncating regions
+[40/44] [mobile] › tests/e2e/frontend-v1.spec.ts:425:5 › state page normalizes lowercase, rejects invalid UF, and keeps mobile map early
+[41/44] [mobile] › tests/e2e/manager-workbench.spec.ts:12:5 › desktop Manager supports territorial, meeting, compare and PDF download
+[42/44] [mobile] › tests/e2e/manager-workbench.spec.ts:57:5 › mobile Manager keeps tabs and comparison usable
+  3) [mobile] › tests/e2e/manager-workbench.spec.ts:57:5 › mobile Manager keeps tabs and comparison usable 
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 1
+    Received:    306
+
+      88 |     return documentElement.scrollWidth - documentElement.clientWidth;
+      89 |   });
+    > 90 |   expect(overflow).toBeLessThanOrEqual(1);
+         |                    ^
+      91 | }
+      92 |
+        at expectNoGlobalHorizontalOverflow (/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/manager-workbench.spec.ts:90:20)
+        at /Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/manager-workbench.spec.ts:65:3
+
+    Error Context: test-results/manager-workbench-mobile-M-ec042--tabs-and-comparison-usable-mobile/error-context.md
+
+
+(node:49626) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[43/44] [mobile] › tests/e2e/territorial-intelligence.spec.ts:12:5 › desktop Radar shows territorial signals, filters, and region intelligence
+[44/44] [mobile] › tests/e2e/territorial-intelligence.spec.ts:62:5 › mobile Radar and region intelligence remain usable
+  3 failed
+    [desktop] › tests/e2e/advanced-closure.spec.ts:12:5 › changes period, region selection, and accessible table 
+    [mobile] › tests/e2e/advanced-closure.spec.ts:12:5 › changes period, region selection, and accessible table 
+    [mobile] › tests/e2e/manager-workbench.spec.ts:57:5 › mobile Manager keeps tabs and comparison usable 
+  14 skipped
+  27 passed (2.2m)

@@ -1,0 +1,18 @@
+{
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "mapTop": 702.328125,
+  "mapHeight": 520,
+  "pageFullHeight": 2397,
+  "mapAppearsBeforeAccessibleListExpanded": true,
+  "elementsBeforeMap": [
+    "header",
+    "intro",
+    "territory search",
+    "metric selector"
+  ],
+  "controlsPanelHeight": 285.375,
+  "supportPanelTop": 1240.328125
+}
