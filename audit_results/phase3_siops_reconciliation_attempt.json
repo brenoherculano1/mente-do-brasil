@@ -1,0 +1,30 @@
+{
+  "status": "BLOCKED_FINANCING_AFTER_SCIENTIFIC_CORRECTION",
+  "source": "SIOPS municipal 6th-bimestre 2022-2024 official CSV releases",
+  "official_download_catalog": "https://portalfns.saude.gov.br/siops/siops-downloads/",
+  "official_indicator_endpoint": "http://siops.datasus.gov.br/relindicadoresmun2.php?escmun=3",
+  "official_api_attempt": "https://siops-consulta-publica-api.saude.gov.br/v2/api-docs",
+  "official_api_result": "connection reset during acquisition; HTML indicator form reachable",
+  "source_inventory": {
+    "2022_rows": 6212593,
+    "2023_rows": 6501866,
+    "2024_rows": 6539095,
+    "municipalities": {"2022": 5567, "2023": 5568, "2024": 5567},
+    "columns": 14,
+    "money_parse": "exact integer cents; all observed values syntactically valid"
+  },
+  "required_reconciliation_sample": "five capitals, five non-capitals, extreme-value municipalities, and national comparable benchmark",
+  "observed_extreme_rows": [
+    {"year": 2024, "municipality": "316620", "stage": "liquidated", "nature_code": "3.0.00.00.00.00", "value_brl": "382587171024568.00"},
+    {"year": 2024, "municipality": "250760", "stage": "paid", "nature_code": "4.0.00.00.00.00", "value_brl": "4719547615230.72"}
+  ],
+  "why_not_pass": [
+    "Nature codes are hierarchical and contain parents and children; adding rows double counts.",
+    "Seven Fase values are not interchangeable and no stage has been externally reconciled to a comparable official total.",
+    "The raw extreme rows are material and cannot be capped, deleted, imputed, or bypassed by selecting a prettier stage.",
+    "The reachable HTML form exposes selection controls but did not provide a machine-readable benchmark for the required municipal/national numerical reconciliation."
+  ],
+  "decision": "Do not create a financing metric, 439x3 output, or Phase 3 PASS until SIOPS hierarchy, stage semantics, extreme-row explanation, and external reconciliation are completed.",
+  "not_claimed": ["mental-health expenditure", "mental-health financing", "SIOPS impossible"],
+  "next_action": "Obtain the official SIOPS methodological/indicator benchmark or a documented authoritative reconciliation route, then resolve the two extreme rows and select one justified stage."
+}

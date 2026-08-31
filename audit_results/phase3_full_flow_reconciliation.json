@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "source_files": 972,
+  "origin_regions": 439,
+  "eligible_psychiatric_admissions": 695320,
+  "pooled_edges_before_suppression": 20907,
+  "suppressed_edges_lt5": 11987,
+  "exact_lt5_leaks": 0,
+  "origin_reconciliation_439_439": true,
+  "max_origin_delta": 0,
+  "unmapped_municipalities": 0,
+  "patient_fields_exposed": [],
+  "diagnosis_rule": "F00-F09 or F20-F99; F10-F19 excluded",
+  "destination": "MUNIC_MOV mapped to Health Region via official crosswalk",
+  "source_hash_manifest": "metadata/provenance/phase2_raw_data_manifest_2026-08-23.csv"
+}
