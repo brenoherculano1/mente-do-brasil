@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+Content-Length: 1224461
+Content-Type: application/pdf
+Last-Modified: Thu, 15 Jan 2026 12:28:29 GMT
+Accept-Ranges: bytes
+ETag: "801423741a86dc1:0"
+Date: Mon, 31 Aug 2026 08:49:17 GMT
+Set-Cookie: TS014879da=01e046ca4c7fc77b3013ca516a38142e823cbdec009d2cae5f3148ac357d70d2bef200635ecc2d18493cdaee08bd7bf2eed12278a7; Path=/; Domain=.tabnet.datasus.gov.br
+

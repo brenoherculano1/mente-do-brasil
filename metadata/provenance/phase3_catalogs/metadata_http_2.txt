@@ -1,0 +1,17 @@
+HTTP/2 200 
+date: Mon, 31 Aug 2026 08:49:18 GMT
+content-type: application/zip
+content-length: 61814539
+server: nginx
+last-modified: Tue, 21 Jul 2026 19:03:12 GMT
+etag: "6a5fc270-3af370b"
+x-frame-options: SAMEORIGIN
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+referrer-policy: strict-origin-when-cross-origin
+permissions-policy: geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), fullscreen=(self)
+cross-origin-opener-policy: same-origin
+cross-origin-resource-policy: same-site
+content-security-policy: default-src 'self'; connect-src 'self' https:; img-src 'self' data: blob: https:; media-src 'self' blob: https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; font-src 'self' data: https:; frame-src 'self' blob: https:; child-src 'self' blob:; worker-src 'self' blob:; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none';
+accept-ranges: bytes
+

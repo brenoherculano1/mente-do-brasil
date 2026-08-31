@@ -1,0 +1,71 @@
+phase: ADVANCED_TERRITORIAL_PHASE_3_SOURCE_ACQUISITION_AND_VALIDATION
+status: BLOCKED_SCIENTIFIC_AGE_BAND_INCOMPATIBILITY
+implementation_started: false
+public_release_status: NOT_RELEASED
+
+SOURCE ACQUISITION
+Primary raw files acquired: 869
+Official technical PDFs: 3
+Extracted SIOPS CSVs: 3
+Hash-exact locked cloud-cache recovery files: 105
+Consolidated manifest entries: 980
+Final raw hash mismatches: 0
+Original primary sources plus documentation: 2727840023 bytes
+All manifest files including extracted CSVs and recovery copies: 8527646918 bytes
+
+SCIENTIFIC GATE
+Population vintage: revised official 2000-2024 series; historical extension available.
+Population terminal age: 80+ in actual files and official notes.
+Locked method: five-year bands through 90+, but input contains no 85-89/90+ denominators.
+Legacy ASMR independent reproduction, max absolute difference: 3.552713678800501e-15
+Age 85+ suicide deaths excluded from locked ASMR: 495
+Diagnostic coherent 80+ ASMR changes 327/439 regions.
+Diagnostic coherent 80+ Need changes 367/439 regions.
+Diagnostic results were NOT installed as a scientific or product release.
+
+FLOW SOURCE CHECK
+Official SIH dictionary acquired from DATASUS FTP: MUNIC_MOV = establishment municipality.
+December 2024 all-UF RD/CNES comparison: 1111437/1111437 agreement.
+Psychiatric subset: 19671/19671 agreement.
+Pooled 2022-2024 origin reconciliation: NOT COMPLETED AFTER TEMPORAL STOP.
+
+SIOPS CHECK
+Full CSV inventories: 6212593 / 6501866 / 6539095 rows.
+14 columns; UTF-8 BOM; semicolon; dot decimal; amounts parsed in exact cents.
+Observed-row missing values and malformed decimal amounts: 0.
+Municipality coverage: 5567 / 5568 / 5567.
+Hierarchical expenditure categories and separate phases must not be summed together.
+2024 extreme source liquidated/paid values documented, not capped or removed.
+External numerical reconciliation and expenditure-stage choice: NOT COMPLETED.
+SIOPS is not declared impossible or proven non-reconcilable.
+
+TESTS
+New source unit tests: 5 passed (final run 0.89 seconds).
+Selected existing regression/source tests: initial run 22 passed, 1 failed because
+the legacy executable test invokes bare 'python', absent from the shell PATH.
+That single executable test passed after providing the isolated runtime on PATH.
+Thus all 23 selected tests eventually passed, not in one uninterrupted run.
+Ruff for the three new scripts and new test file: PASS (final check recorded in task).
+Full product/API/E2E/visual/PDF/backup suites: NOT RUN; Phase 3 implementation was stopped.
+ReportLab warning investigation: NOT REACHED; no report-layer changes.
+
+LEGACY TEST SIDE EFFECT AND RESTORATION
+The existing canonical tests call the builder in the real repository, including
+their setup/determinism checks. The audit runtime (pandas 2.2.3, Arrow 21.0.0)
+temporarily produced different Parquet serialization hashes without changing the
+locked analytical values. Original pandas 3.0.5, numpy 2.5.2 and Arrow 25.0.1 were
+then used to restore BOTH exact original Parquet hashes. The generated_at field
+was restored to its pre-task value. No unrelated user change was reverted.
+Final canonical metadata diff: empty.
+Five canonical/Territorial Intelligence protected hashes: PASS, exact baseline matches.
+
+RUNTIME
+Source audit: Python 3.12.13; pandas 2.2.3; numpy 2.3.5; pyarrow 21.0.0;
+dbfread 2.0.7; pyreaddbc 1.2.0; pytest 8.4.2; ruff 0.12.10.
+The temporary audit environments are not committed or included in the audit ZIP.
+
+NEXT ACTION
+Authorize a versioned scientific ASMR correction with a supported terminal age
+group, preserve the old release, and explicitly change the Phase 3 reproduction
+target to a validated corrected release. Then finish SIOPS/flow reconciliation
+and resume Phase 3. Do not start Open Platform.

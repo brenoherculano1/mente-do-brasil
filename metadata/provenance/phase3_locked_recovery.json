@@ -1,0 +1,632 @@
+[
+  {
+    "filename": "DOAP2022.dbc",
+    "sha256": "46af11f2a5349d1d8e7e22493be680fe8f69084f9c94e40ec980294e5e4858c7",
+    "expected_sha256": "46af11f2a5349d1d8e7e22493be680fe8f69084f9c94e40ec980294e5e4858c7",
+    "match": true
+  },
+  {
+    "filename": "DOAC2022.dbc",
+    "sha256": "04a015b690068baeb42e7e83165e3b9de43f2881bebdf46f0eea5ad0b9984a51",
+    "expected_sha256": "04a015b690068baeb42e7e83165e3b9de43f2881bebdf46f0eea5ad0b9984a51",
+    "match": true
+  },
+  {
+    "filename": "DOAM2022.dbc",
+    "sha256": "402aa8a2351b3cd7b181e169bee786d9b76d892961111eec80c531c461fd95d0",
+    "expected_sha256": "402aa8a2351b3cd7b181e169bee786d9b76d892961111eec80c531c461fd95d0",
+    "match": true
+  },
+  {
+    "filename": "DOAL2022.dbc",
+    "sha256": "04a27f9a8b57378706463206dbd04c0a321229937f488ff8241795ddb8b96373",
+    "expected_sha256": "04a27f9a8b57378706463206dbd04c0a321229937f488ff8241795ddb8b96373",
+    "match": true
+  },
+  {
+    "filename": "DODF2022.dbc",
+    "sha256": "dfbc68a7ea414a19181dccfb947b6f6baf3343d80ff30a06eb9595be9e074305",
+    "expected_sha256": "dfbc68a7ea414a19181dccfb947b6f6baf3343d80ff30a06eb9595be9e074305",
+    "match": true
+  },
+  {
+    "filename": "DOES2022.dbc",
+    "sha256": "c6bbb70387e99609e2564d0069b960e03ca8fc4984c6c628010556f6de866fae",
+    "expected_sha256": "c6bbb70387e99609e2564d0069b960e03ca8fc4984c6c628010556f6de866fae",
+    "match": true
+  },
+  {
+    "filename": "DOCE2022.dbc",
+    "sha256": "b32b4f636e1ec6b9d192b521ae8953ade00b56172f3fe6b0f4e2ee74115c49b5",
+    "expected_sha256": "b32b4f636e1ec6b9d192b521ae8953ade00b56172f3fe6b0f4e2ee74115c49b5",
+    "match": true
+  },
+  {
+    "filename": "DOBA2022.dbc",
+    "sha256": "fd15f9bee578224d57d5d38a01870ea20d574a0095b00bbe673536b0a904ef8f",
+    "expected_sha256": "fd15f9bee578224d57d5d38a01870ea20d574a0095b00bbe673536b0a904ef8f",
+    "match": true
+  },
+  {
+    "filename": "DOGO2022.dbc",
+    "sha256": "53c98dcfbd72fb467316c2711680bf02f44f1211d4889461bee6ec2489af4bbc",
+    "expected_sha256": "53c98dcfbd72fb467316c2711680bf02f44f1211d4889461bee6ec2489af4bbc",
+    "match": true
+  },
+  {
+    "filename": "DOMA2022.dbc",
+    "sha256": "6f44af36318f25134d0ed9f9672377713833f9636ebbe7155b70d3b0e3625957",
+    "expected_sha256": "6f44af36318f25134d0ed9f9672377713833f9636ebbe7155b70d3b0e3625957",
+    "match": true
+  },
+  {
+    "filename": "DOMS2022.dbc",
+    "sha256": "85688dbfdf4e04c9eaf95d933e24a10d8392e149ecf06b80d953055f73076bb2",
+    "expected_sha256": "85688dbfdf4e04c9eaf95d933e24a10d8392e149ecf06b80d953055f73076bb2",
+    "match": true
+  },
+  {
+    "filename": "DOMT2022.dbc",
+    "sha256": "2028b97346224a7ac578f322301fae5ac1a52003b1f1ae62f894222b15ca0e6a",
+    "expected_sha256": "2028b97346224a7ac578f322301fae5ac1a52003b1f1ae62f894222b15ca0e6a",
+    "match": true
+  },
+  {
+    "filename": "DOPA2022.dbc",
+    "sha256": "d82ecbc07d56748ea9b963189d7e28b7650aa7a0fcf5364fd3899e71f7fcddf2",
+    "expected_sha256": "d82ecbc07d56748ea9b963189d7e28b7650aa7a0fcf5364fd3899e71f7fcddf2",
+    "match": true
+  },
+  {
+    "filename": "DOPB2022.dbc",
+    "sha256": "5055059626db01ee64e5b515f64ca01494f821a3329cc399a4251c8f0fbfccd6",
+    "expected_sha256": "5055059626db01ee64e5b515f64ca01494f821a3329cc399a4251c8f0fbfccd6",
+    "match": true
+  },
+  {
+    "filename": "DOMG2022.dbc",
+    "sha256": "b2f6eb185b62b4b69d530ca3445a3c4fcceae1aa014824125dfba0c110a8fdfc",
+    "expected_sha256": "b2f6eb185b62b4b69d530ca3445a3c4fcceae1aa014824125dfba0c110a8fdfc",
+    "match": true
+  },
+  {
+    "filename": "DOPI2022.dbc",
+    "sha256": "b5d614215b1e18086fe72c2d0e74731923aefb39862ad1e011fc4efc2b6cb4b2",
+    "expected_sha256": "b5d614215b1e18086fe72c2d0e74731923aefb39862ad1e011fc4efc2b6cb4b2",
+    "match": true
+  },
+  {
+    "filename": "DOPE2022.dbc",
+    "sha256": "785cf9b4076addf6f2e47f7859b7308a4d8254b3910624228f9c16ef6b0c1468",
+    "expected_sha256": "785cf9b4076addf6f2e47f7859b7308a4d8254b3910624228f9c16ef6b0c1468",
+    "match": true
+  },
+  {
+    "filename": "DORN2022.dbc",
+    "sha256": "860d409074c3a34b65c9d3205fc39c3f36664451b9ec43698106235a582de64c",
+    "expected_sha256": "860d409074c3a34b65c9d3205fc39c3f36664451b9ec43698106235a582de64c",
+    "match": true
+  },
+  {
+    "filename": "DORO2022.dbc",
+    "sha256": "502098fa10876901cfa6bb514f0d1a9fd5413faff968d9bbe413bb4ab8700ab2",
+    "expected_sha256": "502098fa10876901cfa6bb514f0d1a9fd5413faff968d9bbe413bb4ab8700ab2",
+    "match": true
+  },
+  {
+    "filename": "DOPR2022.dbc",
+    "sha256": "fddf7189051fbab254f4276272eab95704bc3e5006f634c13e0164432d6d3e4c",
+    "expected_sha256": "fddf7189051fbab254f4276272eab95704bc3e5006f634c13e0164432d6d3e4c",
+    "match": true
+  },
+  {
+    "filename": "DORR2022.dbc",
+    "sha256": "6643344fe1ab587d648e5e0ea8cf7e3ef9e5b5b7021a12dcbbc54f5724d2ec65",
+    "expected_sha256": "6643344fe1ab587d648e5e0ea8cf7e3ef9e5b5b7021a12dcbbc54f5724d2ec65",
+    "match": true
+  },
+  {
+    "filename": "DOSE2022.dbc",
+    "sha256": "4fa8cd3667966cf957fa6387c247c7a40fa75ed9e65ed7eceae734aa36c9413c",
+    "expected_sha256": "4fa8cd3667966cf957fa6387c247c7a40fa75ed9e65ed7eceae734aa36c9413c",
+    "match": true
+  },
+  {
+    "filename": "DORJ2022.dbc",
+    "sha256": "13b942e57ee0cb132c96bc9179cba7c3240f77e67fe117d3ebb4eb061280efa3",
+    "expected_sha256": "13b942e57ee0cb132c96bc9179cba7c3240f77e67fe117d3ebb4eb061280efa3",
+    "match": true
+  },
+  {
+    "filename": "DORS2022.dbc",
+    "sha256": "10a9df31ba332d7645d5cb7c7500d52046574a5232296a141f13c552b328e0cb",
+    "expected_sha256": "10a9df31ba332d7645d5cb7c7500d52046574a5232296a141f13c552b328e0cb",
+    "match": true
+  },
+  {
+    "filename": "DOTO2022.dbc",
+    "sha256": "76e71d061b43ab1db4882ae802154d5ba45e8467c0646b7750955c526f9b7c46",
+    "expected_sha256": "76e71d061b43ab1db4882ae802154d5ba45e8467c0646b7750955c526f9b7c46",
+    "match": true
+  },
+  {
+    "filename": "DOAP2023.dbc",
+    "sha256": "4c4971dbb5d824b02289cdba7770a9df7a534964df6d96a8573c76cf614c659a",
+    "expected_sha256": "4c4971dbb5d824b02289cdba7770a9df7a534964df6d96a8573c76cf614c659a",
+    "match": true
+  },
+  {
+    "filename": "DOSC2022.dbc",
+    "sha256": "ccb410b0ff5f20b31910f3493510fb5e610f4297e084d88928d6ea7970f4fb75",
+    "expected_sha256": "ccb410b0ff5f20b31910f3493510fb5e610f4297e084d88928d6ea7970f4fb75",
+    "match": true
+  },
+  {
+    "filename": "DODF2023.dbc",
+    "sha256": "0756e0cdd95c573f4683d7efbfc30ef18b68e0efa8b483721f6e0ff8d05d22f3",
+    "expected_sha256": "0756e0cdd95c573f4683d7efbfc30ef18b68e0efa8b483721f6e0ff8d05d22f3",
+    "match": true
+  },
+  {
+    "filename": "DOCE2023.dbc",
+    "sha256": "46de0e893c9131ba00d085eb28763704e36b5e5a3146a31aa0d501a689d2e411",
+    "expected_sha256": "46de0e893c9131ba00d085eb28763704e36b5e5a3146a31aa0d501a689d2e411",
+    "match": true
+  },
+  {
+    "filename": "DOBA2023.dbc",
+    "sha256": "8d5df8bd7813d61ef6fc38bec700a763598f437b57f064246e7460c4641e7286",
+    "expected_sha256": "8d5df8bd7813d61ef6fc38bec700a763598f437b57f064246e7460c4641e7286",
+    "match": true
+  },
+  {
+    "filename": "DOES2023.dbc",
+    "sha256": "bfc52857f2efc3e2d8aec46248fce6c9ea58ccf8fa85aad8d117bc5a31d49acd",
+    "expected_sha256": "bfc52857f2efc3e2d8aec46248fce6c9ea58ccf8fa85aad8d117bc5a31d49acd",
+    "match": true
+  },
+  {
+    "filename": "DOGO2023.dbc",
+    "sha256": "79dde91da58c0e280f04d84d33417270d9dda911542e64a8e1dd249c9930090e",
+    "expected_sha256": "79dde91da58c0e280f04d84d33417270d9dda911542e64a8e1dd249c9930090e",
+    "match": true
+  },
+  {
+    "filename": "DOMA2023.dbc",
+    "sha256": "1150385e8d0897f24f1657791168a9386c709f4de4883ce36c2b23d794652000",
+    "expected_sha256": "1150385e8d0897f24f1657791168a9386c709f4de4883ce36c2b23d794652000",
+    "match": true
+  },
+  {
+    "filename": "DOMS2023.dbc",
+    "sha256": "a4d98e948408988914be4fbdf70f6891494e13525d29685d60a8eaa68d4bb09a",
+    "expected_sha256": "a4d98e948408988914be4fbdf70f6891494e13525d29685d60a8eaa68d4bb09a",
+    "match": true
+  },
+  {
+    "filename": "DOMT2023.dbc",
+    "sha256": "31bcd4fd9355b851bcf31afb31b21c3b48921d58adc28324c4761e2ef0f95e62",
+    "expected_sha256": "31bcd4fd9355b851bcf31afb31b21c3b48921d58adc28324c4761e2ef0f95e62",
+    "match": true
+  },
+  {
+    "filename": "DOSP2022.dbc",
+    "sha256": "34f6f7aef94545b88748982d0891a2b014c21dd43db8fd3b656643e0d6c17540",
+    "expected_sha256": "34f6f7aef94545b88748982d0891a2b014c21dd43db8fd3b656643e0d6c17540",
+    "match": true
+  },
+  {
+    "filename": "DOPB2023.dbc",
+    "sha256": "73a0ad67a764ccfbd8155f58f5d190b9ee56f3b07a672493425e0fe383862545",
+    "expected_sha256": "73a0ad67a764ccfbd8155f58f5d190b9ee56f3b07a672493425e0fe383862545",
+    "match": true
+  },
+  {
+    "filename": "DOMG2023.dbc",
+    "sha256": "fb4c338c2b782054de30eb3989e5be2746db91dbd4ca4849fe4b8749f41aab89",
+    "expected_sha256": "fb4c338c2b782054de30eb3989e5be2746db91dbd4ca4849fe4b8749f41aab89",
+    "match": true
+  },
+  {
+    "filename": "DOPA2023.dbc",
+    "sha256": "96af0c3be4dce9586069442b9d63bc4c1a69d6718241c2253b483bb96cca0a1e",
+    "expected_sha256": "96af0c3be4dce9586069442b9d63bc4c1a69d6718241c2253b483bb96cca0a1e",
+    "match": true
+  },
+  {
+    "filename": "DOPI2023.dbc",
+    "sha256": "410d966af8e339313e08cbfdb5a7713226ad255bdce35b1a735dc219444d197d",
+    "expected_sha256": "410d966af8e339313e08cbfdb5a7713226ad255bdce35b1a735dc219444d197d",
+    "match": true
+  },
+  {
+    "filename": "DOPE2023.dbc",
+    "sha256": "d5b5600d544cd82a7dfb13663b21c68ccfc004680d50c8dec72a26f97d219451",
+    "expected_sha256": "d5b5600d544cd82a7dfb13663b21c68ccfc004680d50c8dec72a26f97d219451",
+    "match": true
+  },
+  {
+    "filename": "DORN2023.dbc",
+    "sha256": "a744a9e73f6cbda359ff9f429cd8292ea1ca19f5f03800cdf36cd21598bb0906",
+    "expected_sha256": "a744a9e73f6cbda359ff9f429cd8292ea1ca19f5f03800cdf36cd21598bb0906",
+    "match": true
+  },
+  {
+    "filename": "DORO2023.dbc",
+    "sha256": "87b36fa745305589d15b47857202ff9422bc35ec089ded4591e10a21e39fccc1",
+    "expected_sha256": "87b36fa745305589d15b47857202ff9422bc35ec089ded4591e10a21e39fccc1",
+    "match": true
+  },
+  {
+    "filename": "DOPR2023.dbc",
+    "sha256": "c2332170cec3ebba6acab9f918f962433c1369354f76eacafbbdc0adeacf36c1",
+    "expected_sha256": "c2332170cec3ebba6acab9f918f962433c1369354f76eacafbbdc0adeacf36c1",
+    "match": true
+  },
+  {
+    "filename": "DORR2023.dbc",
+    "sha256": "15b5203507161b7c35f9c69a52c955bdac133629549099b85a88e03a9a45baf0",
+    "expected_sha256": "15b5203507161b7c35f9c69a52c955bdac133629549099b85a88e03a9a45baf0",
+    "match": true
+  },
+  {
+    "filename": "DORJ2023.dbc",
+    "sha256": "c988dd824c5c1be7cb7d6266fb828c289a4806b069feaed1c84133069fa20d07",
+    "expected_sha256": "c988dd824c5c1be7cb7d6266fb828c289a4806b069feaed1c84133069fa20d07",
+    "match": true
+  },
+  {
+    "filename": "DOSE2023.dbc",
+    "sha256": "97f198889b3d0143e2bd819f3dcb112a9ea62d0fb5586dd4a77c812527ffe157",
+    "expected_sha256": "97f198889b3d0143e2bd819f3dcb112a9ea62d0fb5586dd4a77c812527ffe157",
+    "match": true
+  },
+  {
+    "filename": "DOSC2023.dbc",
+    "sha256": "1be70f99d8f8ec656b35ab4ddeac65a0b588806fe47db6c07e398b79d0a989fa",
+    "expected_sha256": "1be70f99d8f8ec656b35ab4ddeac65a0b588806fe47db6c07e398b79d0a989fa",
+    "match": true
+  },
+  {
+    "filename": "DORS2023.dbc",
+    "sha256": "3dae23288087e5fa2c17e0370311ad9cb8132b89efff1a5f36cd9b6e7801b150",
+    "expected_sha256": "3dae23288087e5fa2c17e0370311ad9cb8132b89efff1a5f36cd9b6e7801b150",
+    "match": true
+  },
+  {
+    "filename": "DOTO2023.dbc",
+    "sha256": "242ccc486d8e831348747d9f19635afdea9a47f2b7b8189bcf8fc2362627409a",
+    "expected_sha256": "242ccc486d8e831348747d9f19635afdea9a47f2b7b8189bcf8fc2362627409a",
+    "match": true
+  },
+  {
+    "filename": "RDAC2212.dbc",
+    "sha256": "958db20e740c3e089d1bd0561e02b8a1d14c721e77ce161c37d147690cb409fd",
+    "expected_sha256": "958db20e740c3e089d1bd0561e02b8a1d14c721e77ce161c37d147690cb409fd",
+    "match": true
+  },
+  {
+    "filename": "RDAP2212.dbc",
+    "sha256": "00353578450f93a298974d4d5634949398c91203329fd7fbb6ddb482b2f31251",
+    "expected_sha256": "00353578450f93a298974d4d5634949398c91203329fd7fbb6ddb482b2f31251",
+    "match": true
+  },
+  {
+    "filename": "RDAL2212.dbc",
+    "sha256": "91a530c59d28a1396043e9d4ee474168943b3656efbfa9f1ca405b62dd1957c1",
+    "expected_sha256": "91a530c59d28a1396043e9d4ee474168943b3656efbfa9f1ca405b62dd1957c1",
+    "match": true
+  },
+  {
+    "filename": "RDAM2212.dbc",
+    "sha256": "7cbda73d70280f9e32e97585312ac9f798f68bde288faf329aa9cc0f3cd4939c",
+    "expected_sha256": "7cbda73d70280f9e32e97585312ac9f798f68bde288faf329aa9cc0f3cd4939c",
+    "match": true
+  },
+  {
+    "filename": "RDDF2212.dbc",
+    "sha256": "0bb38d176af38b2896d73d6f1621d62469e4a3ef5b0bd5b2628efdcf45c535e1",
+    "expected_sha256": "0bb38d176af38b2896d73d6f1621d62469e4a3ef5b0bd5b2628efdcf45c535e1",
+    "match": true
+  },
+  {
+    "filename": "RDCE2212.dbc",
+    "sha256": "e04bb3faee1927ade37bb26cac705e03be2d4796759aa31a7caff8f01183cb0c",
+    "expected_sha256": "e04bb3faee1927ade37bb26cac705e03be2d4796759aa31a7caff8f01183cb0c",
+    "match": true
+  },
+  {
+    "filename": "RDBA2212.dbc",
+    "sha256": "a3dc4854430141f4a10421f12d060bf3a416cb2b2be3364dd9cdbb5f7ec42651",
+    "expected_sha256": "a3dc4854430141f4a10421f12d060bf3a416cb2b2be3364dd9cdbb5f7ec42651",
+    "match": true
+  },
+  {
+    "filename": "RDES2212.dbc",
+    "sha256": "fff5981c43c463a418374cae81d18310f192ad4dd3f51a084f57f9d2e70dcf28",
+    "expected_sha256": "fff5981c43c463a418374cae81d18310f192ad4dd3f51a084f57f9d2e70dcf28",
+    "match": true
+  },
+  {
+    "filename": "RDGO2212.dbc",
+    "sha256": "f2ffe8325d1090bacad003e48acb3f2e5e55af72f844b3ab0f16edd6d60a05da",
+    "expected_sha256": "f2ffe8325d1090bacad003e48acb3f2e5e55af72f844b3ab0f16edd6d60a05da",
+    "match": true
+  },
+  {
+    "filename": "RDMA2212.dbc",
+    "sha256": "2a160569e5aa85312ff4bbb0657cdd430ca60c0fa1e9b2f98641477a48a96fac",
+    "expected_sha256": "2a160569e5aa85312ff4bbb0657cdd430ca60c0fa1e9b2f98641477a48a96fac",
+    "match": true
+  },
+  {
+    "filename": "RDMS2212.dbc",
+    "sha256": "13f84832b232edb2150d6f68d38e67e06766ef3562e1433a32e698fdfe895ef1",
+    "expected_sha256": "13f84832b232edb2150d6f68d38e67e06766ef3562e1433a32e698fdfe895ef1",
+    "match": true
+  },
+  {
+    "filename": "RDMT2212.dbc",
+    "sha256": "8e8c53428a621287b299d3bfd3271bf7c8daa73486ede5a12e1b5787f948fcb5",
+    "expected_sha256": "8e8c53428a621287b299d3bfd3271bf7c8daa73486ede5a12e1b5787f948fcb5",
+    "match": true
+  },
+  {
+    "filename": "DOSP2023.dbc",
+    "sha256": "7743903b55efa96c3da9457fdfd300e2081051a3dc01afe0685544d51cf823e2",
+    "expected_sha256": "7743903b55efa96c3da9457fdfd300e2081051a3dc01afe0685544d51cf823e2",
+    "match": true
+  },
+  {
+    "filename": "RDMG2212.dbc",
+    "sha256": "5b0d1de5b4ef4724899e0112c99680b5b3d9992bb8fe7eac7ce8a798430bdaf0",
+    "expected_sha256": "5b0d1de5b4ef4724899e0112c99680b5b3d9992bb8fe7eac7ce8a798430bdaf0",
+    "match": true
+  },
+  {
+    "filename": "RDPA2212.dbc",
+    "sha256": "268d1e6c377907ba8117c788902ef9451664d2a549894f202bcc3f329f8d7603",
+    "expected_sha256": "268d1e6c377907ba8117c788902ef9451664d2a549894f202bcc3f329f8d7603",
+    "match": true
+  },
+  {
+    "filename": "RDPB2212.dbc",
+    "sha256": "f9c91f0f84b50d2bc3405aac9fd0ee3d9c3bd525a7c45a05215a374b432ea80b",
+    "expected_sha256": "f9c91f0f84b50d2bc3405aac9fd0ee3d9c3bd525a7c45a05215a374b432ea80b",
+    "match": true
+  },
+  {
+    "filename": "RDPI2212.dbc",
+    "sha256": "67fd7a442a4280174788295af2c169ca6caaefff422a67530d5f233b36291f72",
+    "expected_sha256": "67fd7a442a4280174788295af2c169ca6caaefff422a67530d5f233b36291f72",
+    "match": true
+  },
+  {
+    "filename": "RDPE2212.dbc",
+    "sha256": "4434b95311393994555987f862434fd348c18ed8b16de89a6998d8b862f4911c",
+    "expected_sha256": "4434b95311393994555987f862434fd348c18ed8b16de89a6998d8b862f4911c",
+    "match": true
+  },
+  {
+    "filename": "RDRN2212.dbc",
+    "sha256": "e3769ef381eddd7f1de29ce36b42ab185dc7df2a560f4b1cd5f1230e4d53bbd8",
+    "expected_sha256": "e3769ef381eddd7f1de29ce36b42ab185dc7df2a560f4b1cd5f1230e4d53bbd8",
+    "match": true
+  },
+  {
+    "filename": "RDPR2212.dbc",
+    "sha256": "a48670f86408dc5439ef9d2caff40494e46ee0be05729742e47422908acce8fb",
+    "expected_sha256": "a48670f86408dc5439ef9d2caff40494e46ee0be05729742e47422908acce8fb",
+    "match": true
+  },
+  {
+    "filename": "RDRJ2212.dbc",
+    "sha256": "7ce4ec06cbf63a655aea24577a9c202d842fcec61c5e14fbbb5b70cf806686ad",
+    "expected_sha256": "7ce4ec06cbf63a655aea24577a9c202d842fcec61c5e14fbbb5b70cf806686ad",
+    "match": true
+  },
+  {
+    "filename": "RDRO2212.dbc",
+    "sha256": "db2d7ef2b0e5efa367cca36f9d1eedc40bd16339feac65fd089f38228988be44",
+    "expected_sha256": "db2d7ef2b0e5efa367cca36f9d1eedc40bd16339feac65fd089f38228988be44",
+    "match": true
+  },
+  {
+    "filename": "RDRR2212.dbc",
+    "sha256": "4a665f136f34c2a8a4eccc317af4593a4999e624d24ccce2b359b42b6e8582e9",
+    "expected_sha256": "4a665f136f34c2a8a4eccc317af4593a4999e624d24ccce2b359b42b6e8582e9",
+    "match": true
+  },
+  {
+    "filename": "RDSE2212.dbc",
+    "sha256": "a29e3dd272659f1ee1bfbcf5db9c13c6fb4920b836a519afc89a6b8aaf56e09b",
+    "expected_sha256": "a29e3dd272659f1ee1bfbcf5db9c13c6fb4920b836a519afc89a6b8aaf56e09b",
+    "match": true
+  },
+  {
+    "filename": "RDSC2212.dbc",
+    "sha256": "729b8a1e1066531a409565c6de2ec13bba635d421ad0d3a34d804ad9c37ac76f",
+    "expected_sha256": "729b8a1e1066531a409565c6de2ec13bba635d421ad0d3a34d804ad9c37ac76f",
+    "match": true
+  },
+  {
+    "filename": "RDRS2212.dbc",
+    "sha256": "46df4df6bd22558adbe24b18b3bdea57e29680a3c36b6c02f6e360ac1ab8c7b3",
+    "expected_sha256": "46df4df6bd22558adbe24b18b3bdea57e29680a3c36b6c02f6e360ac1ab8c7b3",
+    "match": true
+  },
+  {
+    "filename": "RDTO2212.dbc",
+    "sha256": "19c5c8ea6ac6b53a06703391e69fc17679d554abf361829cb8023b57b9d5a4a4",
+    "expected_sha256": "19c5c8ea6ac6b53a06703391e69fc17679d554abf361829cb8023b57b9d5a4a4",
+    "match": true
+  },
+  {
+    "filename": "RDAC2312.dbc",
+    "sha256": "134257a8f2cfa009af9ded70108aecbcd177cfccecc744195abd402ff77efd6e",
+    "expected_sha256": "134257a8f2cfa009af9ded70108aecbcd177cfccecc744195abd402ff77efd6e",
+    "match": true
+  },
+  {
+    "filename": "RDAL2312.dbc",
+    "sha256": "0fe202232434db5d0696394ca601513af74a73a1a378717a3c93731d1fc10961",
+    "expected_sha256": "0fe202232434db5d0696394ca601513af74a73a1a378717a3c93731d1fc10961",
+    "match": true
+  },
+  {
+    "filename": "RDAM2312.dbc",
+    "sha256": "4a1af36b957150426fdae5730ba21423ad975555d1f33eb355d9ccd86bfa044f",
+    "expected_sha256": "4a1af36b957150426fdae5730ba21423ad975555d1f33eb355d9ccd86bfa044f",
+    "match": true
+  },
+  {
+    "filename": "RDAP2312.dbc",
+    "sha256": "b0c8ec665edf136f31ba3161650130047afa6d48151c483b88579194fe567f68",
+    "expected_sha256": "b0c8ec665edf136f31ba3161650130047afa6d48151c483b88579194fe567f68",
+    "match": true
+  },
+  {
+    "filename": "RDDF2312.dbc",
+    "sha256": "62cd2af871453303eb2202ebe8cfdbf4d7ac61b61404c882b9b5d91844572069",
+    "expected_sha256": "62cd2af871453303eb2202ebe8cfdbf4d7ac61b61404c882b9b5d91844572069",
+    "match": true
+  },
+  {
+    "filename": "RDCE2312.dbc",
+    "sha256": "a30c535558d196c03dc12fa11eb1f1a9dddfc7b54e168f3aea4cf4b1d0828023",
+    "expected_sha256": "a30c535558d196c03dc12fa11eb1f1a9dddfc7b54e168f3aea4cf4b1d0828023",
+    "match": true
+  },
+  {
+    "filename": "RDBA2312.dbc",
+    "sha256": "c103212b6239ac42dfaee49f608a3e51eaeb2078586e5b71321816c6aed23abf",
+    "expected_sha256": "c103212b6239ac42dfaee49f608a3e51eaeb2078586e5b71321816c6aed23abf",
+    "match": true
+  },
+  {
+    "filename": "RDSP2212.dbc",
+    "sha256": "dc05eda6f495d749f4e38e12f19d01488528f1276ce6d6e292b0215573fb01d2",
+    "expected_sha256": "dc05eda6f495d749f4e38e12f19d01488528f1276ce6d6e292b0215573fb01d2",
+    "match": true
+  },
+  {
+    "filename": "RDES2312.dbc",
+    "sha256": "ba4ea2c6b1849c8eb9d4b24190893747a7f1640b5ad78eb97bc0299b28d248ef",
+    "expected_sha256": "ba4ea2c6b1849c8eb9d4b24190893747a7f1640b5ad78eb97bc0299b28d248ef",
+    "match": true
+  },
+  {
+    "filename": "RDGO2312.dbc",
+    "sha256": "61fbb71a6054620b648690d52070acdc9e9805b842c057b41905ccc1501b008b",
+    "expected_sha256": "61fbb71a6054620b648690d52070acdc9e9805b842c057b41905ccc1501b008b",
+    "match": true
+  },
+  {
+    "filename": "RDMA2312.dbc",
+    "sha256": "442d0f23c597712b529f746c5d3282ab402c9f87756131ad94ab1c1a7b63bfcb",
+    "expected_sha256": "442d0f23c597712b529f746c5d3282ab402c9f87756131ad94ab1c1a7b63bfcb",
+    "match": true
+  },
+  {
+    "filename": "RDMT2312.dbc",
+    "sha256": "009f38d61bb2c0ba929a85cc15e984cd8730571ae15a6bf5117b172095a9cb30",
+    "expected_sha256": "009f38d61bb2c0ba929a85cc15e984cd8730571ae15a6bf5117b172095a9cb30",
+    "match": true
+  },
+  {
+    "filename": "RDMS2312.dbc",
+    "sha256": "a3d96b0c6e78b18cd9464a862d895ffb5ca1eb658f3aa25511be02b7f6a30f8c",
+    "expected_sha256": "a3d96b0c6e78b18cd9464a862d895ffb5ca1eb658f3aa25511be02b7f6a30f8c",
+    "match": true
+  },
+  {
+    "filename": "RDPA2312.dbc",
+    "sha256": "0433a1c6d4ea4bc45b115d4d2d25ddffe946481f883305504935ac504bd57018",
+    "expected_sha256": "0433a1c6d4ea4bc45b115d4d2d25ddffe946481f883305504935ac504bd57018",
+    "match": true
+  },
+  {
+    "filename": "RDPB2312.dbc",
+    "sha256": "79d09e28b2ef148cd3d7a944e820e110f2d916817cf1431d0b8738da333e1f46",
+    "expected_sha256": "79d09e28b2ef148cd3d7a944e820e110f2d916817cf1431d0b8738da333e1f46",
+    "match": true
+  },
+  {
+    "filename": "RDMG2312.dbc",
+    "sha256": "998f67f357b18c79d2df4092126b078ca50deb2832b4c6c75718afc33c1c7712",
+    "expected_sha256": "998f67f357b18c79d2df4092126b078ca50deb2832b4c6c75718afc33c1c7712",
+    "match": true
+  },
+  {
+    "filename": "RDPE2312.dbc",
+    "sha256": "c4bebc43118a3958f1c12094bd3147c597ad1b716e7e4c1a92dc7f478dbd9c38",
+    "expected_sha256": "c4bebc43118a3958f1c12094bd3147c597ad1b716e7e4c1a92dc7f478dbd9c38",
+    "match": true
+  },
+  {
+    "filename": "RDPI2312.dbc",
+    "sha256": "dd58bdf6e81c3f5c379c0170bc2399b91e59807ec4d8a1f7a0cfd999141fe2a9",
+    "expected_sha256": "dd58bdf6e81c3f5c379c0170bc2399b91e59807ec4d8a1f7a0cfd999141fe2a9",
+    "match": true
+  },
+  {
+    "filename": "RDRO2312.dbc",
+    "sha256": "c76b1899b686cee00f67b64e8c3f4f4781abeead5a55dd543390ed45280c35f9",
+    "expected_sha256": "c76b1899b686cee00f67b64e8c3f4f4781abeead5a55dd543390ed45280c35f9",
+    "match": true
+  },
+  {
+    "filename": "RDRN2312.dbc",
+    "sha256": "a649fc5f741ea2b86deccb0cfba0f89eb4a26cef6ae169305ecd35506e8f1d98",
+    "expected_sha256": "a649fc5f741ea2b86deccb0cfba0f89eb4a26cef6ae169305ecd35506e8f1d98",
+    "match": true
+  },
+  {
+    "filename": "RDPR2312.dbc",
+    "sha256": "4c6f22f90688b6139f01e203bf74d345904508f391a95c97e7a2221759a47a3f",
+    "expected_sha256": "4c6f22f90688b6139f01e203bf74d345904508f391a95c97e7a2221759a47a3f",
+    "match": true
+  },
+  {
+    "filename": "RDRJ2312.dbc",
+    "sha256": "587efe1064a4cdb1fb513f9a902bca3b4be006a3e2c7c42a7c775a8913baf00d",
+    "expected_sha256": "587efe1064a4cdb1fb513f9a902bca3b4be006a3e2c7c42a7c775a8913baf00d",
+    "match": true
+  },
+  {
+    "filename": "RDRR2312.dbc",
+    "sha256": "89aa6c94bf266f3952c4dee9a16f0181602c533f8d6426a7f95f6a0fd0a16e1b",
+    "expected_sha256": "89aa6c94bf266f3952c4dee9a16f0181602c533f8d6426a7f95f6a0fd0a16e1b",
+    "match": true
+  },
+  {
+    "filename": "RDSE2312.dbc",
+    "sha256": "ba537979a867120924082af34b90713adec2194c0ca2b458a9617184faec0d1c",
+    "expected_sha256": "ba537979a867120924082af34b90713adec2194c0ca2b458a9617184faec0d1c",
+    "match": true
+  },
+  {
+    "filename": "RDSC2312.dbc",
+    "sha256": "1758d348c6728e24374227a7419d6ced6738fd9c43eb045812ec90a951ebc6e8",
+    "expected_sha256": "1758d348c6728e24374227a7419d6ced6738fd9c43eb045812ec90a951ebc6e8",
+    "match": true
+  },
+  {
+    "filename": "RDRS2312.dbc",
+    "sha256": "61b98b1fc9570c82da28f23716664b0edd5d29b8b0d21175bd9fe3699b1a0b0d",
+    "expected_sha256": "61b98b1fc9570c82da28f23716664b0edd5d29b8b0d21175bd9fe3699b1a0b0d",
+    "match": true
+  },
+  {
+    "filename": "RDTO2312.dbc",
+    "sha256": "ef16727bc793f428e94510c08aac7dc7cd93fa3ca4fbc9871ac87dd2eae8b0ae",
+    "expected_sha256": "ef16727bc793f428e94510c08aac7dc7cd93fa3ca4fbc9871ac87dd2eae8b0ae",
+    "match": true
+  },
+  {
+    "filename": "RDSP2312.dbc",
+    "sha256": "ad9a723ac673f5d9b1e6362c407dcbc3faf83645798e1315106ff6da01801488",
+    "expected_sha256": "ad9a723ac673f5d9b1e6362c407dcbc3faf83645798e1315106ff6da01801488",
+    "match": true
+  }
+]

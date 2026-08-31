@@ -1,0 +1,6 @@
+{
+  "pdf_sha256": "1dcf9810f2d46d7879905c1394b9d048131df1c5e1244c05a1dca8dca94a2735",
+  "text_sha256": "280d8e7ffcb2f5e5f11290e31b5959f4bbbc66ecbaed7814e7e529c403de1e05",
+  "extractor": "pdftotext -layout",
+  "source_pdf": "data/raw/phase3/population_documentation/NT-POPULACAO-RESIDENTE-2000-2024.pdf"
+}

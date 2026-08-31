@@ -1,0 +1,7 @@
+{
+  "url": "http://tabnet.datasus.gov.br/cgi/deftohtm.exe?ibge/cnv/popsvs2024br.def",
+  "retrieved_at": "2026-08-31T08:13:23.371841+00:00",
+  "returncode": 0,
+  "stderr": "",
+  "sha256": "b7199f4db8567141ae0dd063e26a624237eea56a5d62a1f94da496e19fbeb599"
+}

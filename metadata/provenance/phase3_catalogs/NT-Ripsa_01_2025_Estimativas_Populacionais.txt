@@ -1,0 +1,406 @@
+https://www.ripsa.org.br/notas-tecnicas
+                                          NOTA TÉCNICA
+                                            DOI: 10.5281/zenodo.17990183
+
+
+
+                                          Nº 01| 2025
+
+
+
+
+  POPULAÇÃO RESIDENTE: ESTUDO DE
+ ESTIMATIVAS POPULACIONAIS PARA OS
+MUNICÍPIOS BRASILEIROS, DESAGREGADAS
+          POR SEXO E IDADE
+
+
+
+
+                                                Nota Técnica Ripsa nº 01/2025   1
+https://www.ripsa.org.br/notas-tecnicas                                                             DOI: 10.5281/zenodo.17990183
+
+
+
+
+2025 Rede Interagencial de Informações para a Saúde.
+
+                             Esta obra é disponibilizada nos termos da Licença Creative Commons – Atribuição – Não
+                             Comercial – Compartilhamento pela mesma licença 4.0 Internacional. É permitida a reprodução
+                             parcial ou total desta obra, desde que citada a fonte.
+
+As publicações da Rede Interagencial de Informações para a Saúde podem ser acessadas, na íntegra, no site:
+https://www.ripsa.org.br.
+
+
+
+
+Elaboração, distribuição e informações:                           Jarvis Campos (UFRN)
+Rede Interagencial de Informações para a Saúde                    Laura Wong (Cedeplar)
+Tels.: (61) 3315-3511 / 3315-2220                                 Leandro Tavares Correia (UnB)
+Site: http://www.ripsa.org.br                                     Leonildo Pereira de Souza (Ipardes)
+E-mail: ripsa@saude.gov.br                                        Márcio Mitsuo Minamiguchi (IBGE)
+                                                                  Marcos Roberto Gonzaga (UFRN e Abep)
+Secretaria técnica da Ripsa:                                      Reinaldo Santos (Cedeplar)
+Ana Estela Haddad (Seidigi/MS)
+Paulo Eduardo Guedes Sellera (Seidigi/MS)                         Realização:
+Luci Fabiane Scheffer Moraes (Seidigi/MS)                         Coordenação-Geral de Informações e Análises Epidemiológicas
+Alexander Rosewell (Opas)                                         (CGIAE/Daent/SVSA/MS)
+Felipe Ferré (Conass)                                             Coordenação:
+Marizelia Leão Moreira (Conasems)                                 Dácio de Lyra Rabello Neto
+                                                                  Cálculos e Nota metodológica:
+Concepção e coordenação do trabalho:                              Antonio Tadeu Ribeiro de Oliveira
+Comitê de Gestão de Indicadores Demográficos (Ripsa)              Eduardo Santiago Rosseti
+Coordenação:                                                      Denise Helena França Marques Maia
+Izabel Guimarães Marri (IBGE)                                     Denise Lopes Porto
+Relatoria:
+Claudia Júlia Guimarães Horta (FJP)                               Dados Básicos:
+Integrantes:                                                      Instituto Brasileiro de Geografia e Estatística (IBGE)
+Ana Maria Nogales Vasconcelos (Abep e UnB)
+Antônio Tadeu Ribeiro de Oliveira (CGIAE/Daent/SVSA/MS)           Equipe editorial:
+Bernadette Cunha Waldvogel (Seade)                                Projeto editorial:
+Bernardo Lanza (Cedeplar)                                         Adla Marques de Almeida Lacerda
+Caio César Soares Golçalves (FJP)                                 Luci Fabiane Scheffer Moraes
+Dália Elena Montilha (Ensp-Fiocruz/RJ e Abrasco)                  Normalização:
+Denise Helena França Marques Maia (FJP)                           Adla Marques de Almeida Lacerda
+Denise Lopes Porto (CGIAE/Daent/SVSA/MS)                          Organização e revisão textual:
+Eduardo Santiago Rosseti (CGIAE/Daent/SVSA/MS)                    Gláucia Talita Possoli
+Everton Emanuel Campos de Lima (Unicamp)                          Luci Fabiane Scheffer Moraes
+Flávio Freire (UFRN)                                              Diagramação:
+Gabriel Mendes Borges (IBGE)                                      Adla Marques de Almeida Lacerda
+Iuri da Costa Leite (Ensp-Fiocruz/RJ)
+
+
+
+
+                                                          Como citar:
+
+Rede Interagencial de Informações para a Saúde (Ripsa). População residente: estudo de estimativas populacionais para
+os municípios brasileiros, desagregadas por sexo e idade [Internet]. Brasília: Ripsa; 2025. 8 p. Disponível em: https://www.
+ripsa.org.br/notas-tecnicas/. doi:10.5281/zenodo.17990183.
+
+
+
+
+                                                                                                      Nota Técnica Ripsa nº 01/2025   2
+https://www.ripsa.org.br/notas-tecnicas                                                                DOI: 10.5281/zenodo.17990183
+
+
+
+
+INTRODUÇÃO _______________________________________________________________________________________________________________________
+Em 2022, foi realizado o último Censo Demográfico brasileiro, a maior operação censitária do país que
+abrangeu os 5.570 municípios brasileiros com o objetivo de quantificar e qualificar seus residentes, além de
+compreender suas condições de vida.
+
+A atualização dessas informações forneceu subsídios essenciais para a compreensão da dinâmica demográfica
+recente, incluindo os impactos da mortalidade causada pela pandemia de Covid-19 na estrutura etária da
+população. Esses dados são fundamentais para o cálculo de indicadores demográficos e socioeconômicos
+utilizados por ministérios e secretarias no planejamento e monitoramento de políticas públicas em níveis
+nacional, regional e local.
+
+Após a divulgação do Censo Demográfico 2022, o Instituto Brasileiro de Geografia e Estatística (IBGE) atualizou
+as Projeções da População das Unidades da Federação e Brasil, com estimativas e projeções, desagregadas
+por idade e sexo, que abrangem o período de 2000 a 2070. Os dados do Censo Demográfico 2022, bem como
+as estimativas das populações das Unidades da Federação, permitiram a revisão das estimativas populacionais
+municipais por sexo e idade. Estas que em sua primeira versão compreenderam o período entre os anos de
+2000 e 2024.
+
+O cálculo das estimativas populacionais municipais seguiu o método definido pelo Comitê Temático
+Interdisciplinar (CTI) das Estimativas Municipais, da Rede Interagencial de Informações para a Saúde (Ripsa).
+Esse processo contou com a parceria do IBGE, que forneceu os mapas e informações sobre alterações
+populacionais decorrentes de mudanças nos limites territoriais entre municípios.
+
+Em um segundo momento, a metodologia definida pelo CTI de Estimativas Municipais da Ripsa foi
+operacionalizada e aplicada para gerar os resultados de população disponibilizados pela Coordenação-Geral
+de Informações e Análises Epidemiológicas vinculada à Secretaria de Vigilância em Saúde e Ambiente do
+Ministério da Saúde (CGIEA/SVSA/MS).
+
+Por fim, é importante informar que as Estimativas Municipais da Ripsa serão revisadas e atualizadas
+anualmente de acordo com o calendário de disponibilização de novas informações da dinâmica demográfica
+e populacional do IBGE, especialmente aquelas relativas aos totais de população municipais disponibilizados
+pelo Instituto a cada mês de agosto e publicadas no Diário Oficial da União (DOU).
+
+
+MÉTODO ________________________________________________________________________________________________________________________________
+a) Dados básicos
+Para o desenvolvimento das etapas metodológicas para o cálculo das estimativas populacionais municipais,
+foi utilizado um amplo conjunto de dados secundários provenientes dos censos demográficos brasileiros e das
+projeções populacionais, ambos do IBGE (Quadro1).
+
+  Quadro 1 – Dados básicos e fontes utilizados no cálculo das estimativas populacionais municipais. Brasil, 2000-2024*
+
+                             DADOS                                                               FONTE
+
+ Agregados de setores censitários, segundo municípios,               IBGE. Censos Demográficos de 2000, 2010 e 2022 (IBGE,
+ sexo e idade de 2000, 2010 e 2022                                   2001; 2011; 2023)
+
+                                                                     IBGE. Estimativas populacionais municipais de 2024 (IBGE,
+ Fatores de ajuste
+                                                                     2024b)
+
+                                                                     IBGE. Projeções Populacionais, revisão de 2024 (IBGE,
+ Populações estaduais por sexo e idade de 2000-2024
+                                                                     2024a)
+
+
+
+
+                                                                                                         Nota Técnica Ripsa nº 01/2025    3
+https://www.ripsa.org.br/notas-tecnicas                                                   DOI: 10.5281/zenodo.17990183
+
+
+
+
+                            DADOS                                                    FONTE
+
+                                                            IBGE. Estimativas populacionais municipais de 2024 (IBGE,
+ Estimativas populacionais totais municipais 2024
+                                                            2024b)
+
+ Taxas específicas de fecundidade das Unidades da           IBGE. Indicadores implícitos das Projeções Populacionais
+ Federação 2000-2024                                        de 2024 (IBGE, 2024a)
+
+ Tábuas de Mortalidade por sexo das Unidades da             IBGE. Tábuas de Mortalidade das Projeções Populacionais
+ Federação 2000-2024                                        de 2024 (IBGE, 2024a)
+
+Nota:
+
+* O quadro apresenta as informações referentes a última aplicação da metodologia das Estimativas Municipais da Ripsa.
+Para cada nova atualização, posterior ao ano de 2024, os dados básicos e as fontes serão atualizadas com a última
+informação disponível. Por exemplo, na atualização referente ao ano de 2025 foram utilizadas as estimativas de total de
+população municipal de 2025 informadas pelo IBGE no Diário Oficial da União, bem como, a extensão das informações das
+Projeções Populacionais Estaduais para o período entre 2000 e 2025.
+
+b) Pressupostos
+O método aplicado incorpora alguns pressupostos básicos:
+
+    •   Compatibilização territorial (período de 2000 até o último ano de informação divulgada pelo IBGE);
+
+    •   Igualdade com as estatísticas oficiais do IBGE de população por sexo e grupos etários das Unidades da
+        Federação (UF), para o período de 2000 até o último ano de informação divulgada pelo IBGE; e
+
+    •   Igualdade com as estatísticas oficiais do IBGE de população total estimadas para 1º de julho até o último
+        ano de informação divulgada pelo IBGE e publicadas no DOU.
+
+c) Etapas da análise
+Em virtude da atualização da divisão político-administrativa dos municípios brasileiros, a primeira etapa de
+análise no processo de estimação populacional consiste na realização de compatibilização territorial da malha
+municipal entre o período de 2000 até o último ano de informação disponível. Essa compatibilização é
+necessária para garantir a comparabilidade temporal das estimativas.
+
+Muitos trabalhos de elaboração de estimativas populacionais não incorporam em seus procedimentos
+metodológicos as alterações territoriais oriundas da divisão política administrativa (DPA) dos municípios ao
+longo do tempo. Neste trabalho, a inclusão das alterações de território entre municipalidades e da criação de
+novos municípios são possibilitadas por meio de acordos de cooperação conjunta entre o Ministério da Saúde
+e o IBGE para se ter acesso as informações necessárias.
+
+A segunda etapa refere-se aos ajustes das populações municipais, desagregadas por sexo e idade, obtidas
+nos Censos Demográficos de 2000, 2010 e 2022. Estes ajustes são necessários para que as estruturas por sexo
+e idade da população recenseada dos municípios em cada ano base sejam compatíveis com as estruturas por
+sexo e idade das populações dos Estados (IBGE, 2024a) e com os totais de população municipal divulgadas no
+DOU (IBGE, 2024b). Aqui é importante mencionar que para os totais de população municipal estimados pelo
+IBGE e publicados no DOU, é considerada a metodologia utilizada na última publicação disponível para
+reconstruir toda a série passada das estimativas totais e garantir que estas estimativas de totais sejam
+compatíveis ao longo do tempo.
+
+Na terceira etapa é aplicado o método de Relação de Coortes (Duchesne, 1987; Freire; Gonzaga; Gomes, 2020)
+para se estimar a evolução das estruturas de população por sexo e idade dos municípios ao longo do período
+considerado. Com o objetivo de suavizar as relações de crescimento das coortes de nascimento ao longo do
+tempo, a aplicação do método de Relação de Coortes foi dividida em duas fases, a saber: (i) cálculo dos fatores
+
+
+
+
+                                                                                             Nota Técnica Ripsa nº 01/2025   4
+https://www.ripsa.org.br/notas-tecnicas                                                      DOI: 10.5281/zenodo.17990183
+
+
+
+
+diferenciais de crescimento das Regiões Geográficas Intermediárias (RGInts) em relação a suas respectivas UF,
+e; (ii) cálculo dos fatores diferenciais de crescimento dos municípios em relação a suas RGInts. Em ambas as
+fases são consideradas as aplicações para os períodos de 2000-2010 e 2012-2022.
+
+Por fim, na quarta etapa são estimadas as populações para o meio do período entre os censos demográficos
+e na quinta etapa são interpoladas as populações municipais estimadas para os anos intermediários.
+
+Ressalta-se que durante todo o processo, é assegurada a igualdade entre os somatórios das populações
+municipais por sexo e idade e os totais estaduais projetados pelo IBGE do período considerado. Esse
+alinhamento é fundamental, pois as projeções populacionais estaduais são elaboradas pelo método das
+componentes demográficas, que considera diretamente os padrões históricos e atuais de fecundidade,
+mortalidade e migração para projetar tendências. As hipóteses utilizadas são cuidadosamente formuladas pela
+equipe técnica do IBGE, com o apoio de instituições parceiras, conferindo robustez ao método graças à
+expertise dos pesquisadores sobre a realidade demográfica brasileira. Além disso, essas projeções servem
+como base para o planejamento de políticas públicas em níveis nacional e estadual, para a ampliação das
+amostras das pesquisas domiciliares do IBGE e para a distribuição de recursos do Fundo de Participação dos
+Estados e Municípios, gerenciada pelo Tribunal de Contas da União.
+
+Esse mesmo cuidado é aplicado às estimativas municipais do último ano do período considerado, que,
+conforme acordado nas reuniões do CTI das Estimativas Populacionais, devem se igualar aos totais
+populacionais de 1º de julho do último ano estimado pelo IBGE e publicado no DOU. Para os demais anos
+anteriores, os totais são calculados pelo método Relação de Coortes garantindo igualdade com as estruturas
+etárias e de sexo dos respectivos estados.
+
+Por fim, merece destaque a compatibilidade metodológica, ou seja, necessidade de que as estimativas
+produzidas sejam consistentes ao longo do tempo. A construção de uma série histórica permite aos usuários
+analisar o comportamento passado e presente da população, além de realizar projeções mais precisas para o
+futuro. A Figura 1 apresenta de maneira resumida o caminho metodológico para o cálculo das estimativas
+municipais.
+
+                         Figura 1 – Etapas metodológicas para o cálculo das estimativas municipais
+
+
+
+
+                                                                                              Nota Técnica Ripsa nº 01/2025   5
+https://www.ripsa.org.br/notas-tecnicas                                                               DOI: 10.5281/zenodo.17990183
+
+
+
+
+VARIÁVEIS E CATEGORIAS DE ANÁLISE ___________________________________________________________________________
+Estão disponibilizadas as seguintes informações das estimativas municipais para tabulação:
+
+a) População residente:
+    •    População residente estimada em 1º de julho do ano de referência.
+
+b) Sexo:
+    •    Masculino;
+    •    Feminino.
+
+c) Idade:
+
+   c.1) Idade simples:
+    •    De 0 até 79 anos, ano a ano;
+    •    80 anos ou mais.
+
+   c.2) Faixa etária 1:
+    •    0 a 19 anos, de 5 em 5 anos.
+    •    20 a 80 anos, de 10 em 10 anos.
+    •    80 anos ou mais.
+
+   c.3) Faixa etária 2:
+    •    0 a 80 anos, de 5 em 5 anos.
+    •    80 anos ou mais.
+
+d) Ano:
+    •    Anos de referência das estimativas populacionais, de 2000 a 2024.
+
+
+LIMITAÇÕES __________________________________________________________________________________________________________________________
+O cálculo das estimativas de população em pequenas áreas, como é o caso deste documento, possui algumas
+limitações diante de variabilidades conjunturais e heterogeneidades regionais que os dados agregados não
+captam, como:
+
+1. Crescimento intercensitário e coortes: o crescimento calculado entre censos reflete médias entre pontos
+   no tempo que se distanciam por 10 anos ou mais, o que pode mascarar variações específicas nas coortes,
+   particularmente em áreas menores. Essa abordagem limita a capacidade de capturar a verdadeira
+   dinâmica populacional intercensitária.
+
+2. Dinâmicas demográficas previstas com base em dados intercensitários em pequenas áreas podem ser
+   diferentes da realidade na presença de, por exemplo:
+
+    •    Choques econômicos: Crises econômicas podem impactar fortemente a migração, natalidade e
+         mortalidade, alterando rapidamente os padrões populacionais;
+
+    •    Mudanças sociais: Fenômenos como urbanização ou mudanças culturais influenciam diretamente os
+         comportamentos demográficos;
+
+    •    Choques ambientais: Desastres naturais ou alterações climáticas locais podem causar deslocamentos
+         populacionais ou variações na mortalidade. Quando ocorrem em áreas de pequena escala e não são
+
+
+
+
+                                                                                                        Nota Técnica Ripsa nº 01/2025   6
+https://www.ripsa.org.br/notas-tecnicas                                                              DOI: 10.5281/zenodo.17990183
+
+
+
+
+         captados no período inicial da projeção, esses fenômenos podem modificar a dinâmica demográfica
+         observada; e
+
+     •   Grandes investimentos no bem-estar da população não-previstos no momento inicial do período da
+         projeção e que modificam indicadores socioeconômicos, inclusive de saúde.
+
+3. Variações na qualidade da informação entre municípios (como diferenças nos processos de coleta e/ou
+   registro) podem afetar diretamente e de forma distinta a consistência dos dados e a precisão das
+   estimativas demográficas.
+
+
+CONSIDERAÇÕES FINAIS ____________________________________________________________________________________________________
+Os resultados apresentados são estimativas demográficas que possuem caráter indicativo e estão sujeitos a
+margens de erro, reforçando que não substituem a precisão de contagens populacionais diretas ou de censos
+demográficos.
+
+O objetivo principal dessas estimativas é fornecer uma visão abrangente sobre a evolução populacional
+segmentada por sexo e idade em um período considerado, que geralmente compreende os anos entre 2000
+até o último ano de informações disponibilizadas pelo IBGE. Com isso, busca-se:
+
+     •   Auxiliar pesquisadores e gestores públicos no desenvolvimento de indicadores estratégicos; e
+
+     •   Oferecer suporte à tomada de decisão, tanto em níveis governamentais quanto em setores privados.
+
+Além disso, destaca-se que o trabalho está inserido em um processo de avaliação contínuo, permitindo a
+revisão e o aprimoramento das estimativas à medida que novas informações ou métodos se tornem
+disponíveis.
+
+
+REFERÊNCIAS ________________________________________________________________________________________________________________________
+1.   DUCHESNE, Louis. Proyecciones de población por sexo y edad para áreas intermedias y menores.
+     Centro Latinoamericano de Demografia, 1987. Disponível em: https://repositorio.cepal.org/bitstream/
+     handle/11362/9036/S8891235_es.pdf. Acesso em: 13 out. 2025.
+
+2.   FREIRE, Flávio Henrique Miranda de Araújo; GONZAGA, Marcos Roberto; GOMES, Marília Miranda Forte.
+     Projeções populacionais por sexo e idade para pequenas áreas no Brasil. Revista Latinoamericana de
+     Población, v. 13, n. 26, p. 124-149, 2020. Disponível em: https://www.redalyc.org/journal/3238/
+     323861646007/323861646007.pdf. Acesso em: 13 out. 2025.
+
+3.   IBGE, Instituto Brasileiro de Geografia e Estatística. Censo demográfico 2000: resultados do universo.
+     Rio de Janeiro: IBGE, 2001. Disponível em: https://www.ibge.gov.br/estatisticas/sociais/populacao/9663-
+     censo-demografico-2000.html?edicao=9773&t=destaques. Acesso em: 13 out. 2025.
+
+4.   IBGE, Instituto Brasileiro de Geografia e Estatística. Censo demográfico 2010: características da
+     população e dos domicílios: resultados do universo. Rio de Janeiro: IBGE, 2011. Disponível em:
+     https://www.ibge.gov.br/estatisticas/sociais/populacao/9662-censo-demografico-
+     2010.html?edicao=10503. Acesso em: 13 out. 2025.
+
+5.   IBGE, Instituto Brasileiro de Geografia e Estatística. Censo demográfico 2022: resultados preliminares e
+     definitivos. Rio de Janeiro: IBGE, 2023. Disponível em: https://www.ibge.gov.br/estatisticas/sociais/
+     populacao/22827-censo-demografico-2022.html?edicao=44665&t=destaques. Acesso em: 13 out.
+
+
+
+
+                                                                                                       Nota Técnica Ripsa nº 01/2025   7
+https://www.ripsa.org.br/notas-tecnicas                                                            DOI: 10.5281/zenodo.17990183
+
+
+
+
+6.   IBGE, Instituto Brasileiro de Geografia e Estatística. Projeções da população do Brasil por sexo e idade:
+     2000–2070 – revisão 2024. Rio de Janeiro: IBGE, 2024a. Disponível em: https://www.ibge.gov.br/
+     estatisticas/sociais/populacao/9109-projecao-da-populacao.html. Acesso em: 13 out.
+
+7.   IBGE, Instituto Brasileiro de Geografia e Estatística. Projeções da população: notas metodológicas
+     01/2024: Brasil e unidades da Federação: estimativas e projeções, revisão 2024. Rio de Janeiro: IBGE,
+     2024b. 46p. (Coleção Ibgeana). Disponível em: https://biblioteca.ibge.gov.br/index.php/biblioteca-
+     catalogo?view=detalhes&id=2102111. Acesso em: 13 out.
+
+
+INFORMAÇÕES _____________________________________________________________________________________________________________________
+Coordenação de Estatísticas Vitais e Morbidades, da Coordenação-Geral de Informações e Análise
+Epidemiológicas, do Departamento de Análise Epidemiológica e Vigilância de Doenças não Transmissíveis, da
+Secretaria de Vigilância em Saúde e Ambiente, do Ministério da Saúde (COESV/CGIAE/Daent/SVSA/MS).
+
+Telefones: (61) 3315-7708 / 7710 / 7712
+
+E-mail: cgiae@saude.gov.br
+
+
+
+
+                                                                                                     Nota Técnica Ripsa nº 01/2025   8
+

@@ -1,0 +1,231 @@
+ POPULAÇÃO RESIDENTE - ESTUDO DE ESTIMATIVAS POPULACIONAIS
+ PARA OS MUNICÍPIOS BRASILEIROS, DESAGREGADAS POR SEXO E
+ IDADE, 2000-2024
+
+INTRODUÇÃO
+
+Em 2022, foi realizado o último Censo Demográfico brasileiro, a maior operação
+censitária do país. A pesquisa abrangeu os 5.570 municípios brasileiros com o
+objetivo de quantificar e qualificar seus residentes, além de compreender suas
+condições de vida.
+
+A atualização dessas informações forneceu subsídios essenciais para a
+compreensão da dinâmica demográfica recente, incluindo os impactos da
+mortalidade causada pela pandemia de Covid-19 na estrutura etária da população.
+Esses dados são fundamentais para o cálculo de indicadores demográficos e
+socioeconômicos utilizados por ministérios e secretarias no planejamento e
+monitoramento de políticas públicas em níveis nacional, regional e local.
+
+Após a divulgação do Censo Demográfico 2022, o IBGE atualizou as Projeções da
+População das Unidades da Federação e Brasil, com estimativas e projeções,
+desagregadas por idade e sexo, que abrangem o período de 2000 a 2070. Os dados
+do Censo Demográfico 2022, bem como as estimativas das populações das
+Unidades da Federação de 2000 a 2024, permitiram a revisão das estimativas
+populacionais municipais para o período de 2000 a 2024, objeto desse estudo.
+
+Primeiramente, é importante mencionar que o cálculo das estimativas populacionais
+municipais seguiu o método definido pelo Comitê Temático Interdisciplinar (CTI)
+das Estimativas Municipais, da Rede Interagencial de Informações para a Saúde
+(Ripsa). Esse processo contou com a parceria do Instituto Brasileiro de Geografia e
+Estatística (IBGE), que forneceu os mapas e informações sobre alterações
+populacionais decorrentes de mudanças nos limites territoriais entre municípios.
+
+Em um segundo momento, a metodologia definida pelo CTI de Estimativas
+Municipais da RIPSA foi operacionalizada e aplicada para gerar os resultados de
+população disponibilizados pela Coordenação-Geral de Informações e Análises
+Epidemiológicas (CGIAE) vinculada à Secretaria de Vigilância em Saúde e Ambiente
+(SVSA) do Ministério da Saúde.
+MÉTODO
+
+Dados básicos
+
+Para o desenvolvimento das etapas metodológicas para o cálculo das estimativas
+populacionais municipais, foi utilizado um amplo conjunto de dados secundários
+provenientes dos censos demográficos brasileiros e das projeções populacionais,
+ambos do IBGE (Quadro1).
+
+
+
+       Quadro 1. Dados básicos e fontes utilizados no cálculo das estimativas
+                     populacionais municipais – 2000-2024
+
+                   Dados                                          Fonte
+ Agregados de setores censitários, segundo       IBGE. Censos Demográficos de 2000, 2010 e
+ municípios, sexo e idade de 2000, 2010 e        2022
+ 2022
+ Fatores de ajuste                               IBGE. Estimativas populacionais municipais de
+                                                 2024
+ Populações estaduais por sexo e idade de        IBGE. Projeções Populacionais de 2024
+ 2000-2024
+ Estimativas populacionais totais municipais     IBGE. Estimativas populacionais municipais de
+ 2024                                            2024
+ Taxas específicas de fecundidade das            IBGE. Indicadores implícitos das Projeções
+ Unidades da Federação 2000-2024                 Populacionais de 2024
+ Risco de sobrevivência ao nascimento (L0) por   IBGE. Tábuas de Mortalidade das Projeções
+ sexo das Unidades da Federação 2000-2024        Populacionais de 2024
+
+Pressupostos
+
+ O método aplicado incorpora alguns pressupostos básicos:
+
+        Compatibilização territorial (período de 2000 a 2022);
+        Convergência com as estatísticas oficiais do IBGE de população por sexo e
+         grupos etários das Unidades da Federação (UFs), para o período de 2000 a
+         2024;
+        Convergência com as estatísticas oficiais do IBGE de população total
+         estimadas para 1º de julho de 2024 e publicadas no Diário Oficial da União
+         (DOU);
+
+
+Etapas da análise
+
+A primeira etapa do processo de estimação populacional consistiu na realização
+de uma compatibilização territorial da malha municipal de 2022 para o período de
+2000 a 2024, em virtude da atualização da divisão político-administrativa dos
+municípios brasileiros. Essa compatibilização é necessária para garantir a
+comparabilidade temporal das estimativas. Muitos trabalhos de elaboração de
+estimativas populacionais não incorporam em seus procedimentos metodológicos
+as alterações territoriais oriundas da divisão política administrativa dos municípios
+ao longo do tempo. Com isso, alterações de território entre municipalidades e a
+criação de novos municípios foram consideradas neste trabalho, por meio de um
+esforço conjunto entre o Ministério da Saúde e o IBGE para obter informações que
+possibilitassem tal inclusão.
+Na segunda etapa, foram realizados ajustes nas populações municipais,
+desagregadas por sexo e idade, recenseadas pelos Censos Demográficos brasileiros
+de 2000, 2010 e 2022. Os ajustes fizeram-se necessarios para que os totais
+populacionais dos municípios fossem iguais aos totais populacionais dos estados,
+apresentados nas Projeções da Populaçao, Revisão 2024. Na terceira fase foi
+aplicado o método Rcoortes em duas etapas, com o objetivo de suavizar as relações
+de crescimento das coortes ao longo do tempo: cálculo dos fatores diferenciais de
+crescimento das Regiões Geográficas Intermediárias (RGInts) em relação a suas
+respectivas UFs, e dos municípios em relação a suas RGInts, por sexo e grupos
+etários, para os períodos de 2000-2010 e 2012-2022. Em seguida, quarto passo,
+foram estimadas as populações para o meio do período entre os censos
+demográficos e, posteriormente, na quinta etapa, interpoladas as populações
+municipais para os anos intermediários.
+
+Durante todo o processo, foi assegurada a convergência entre os somatórios das
+populações municipais por sexo e idade e os totais estaduais projetados pelo IBGE
+e disponibilizados em 2024. Esse alinhamento é fundamental, pois as projeções
+populacionais estaduais são elaboradas pelo método das componentes
+demográficas, que considera diretamente os padrões históricos e atuais de
+fecundidade, mortalidade e migração para projetar tendências. As hipóteses
+utilizadas são cuidadosamente formuladas pela equipe técnica do IBGE, com o
+apoio de instituições parceiras, conferindo robustez ao método graças à expertise
+dos pesquisadores sobre a realidade demográfica brasileira. Além disso, essas
+projeções servem como base para o planejamento de políticas públicas em níveis
+nacional e estadual, para a ampliação das amostras das pesquisas domiciliares do
+IBGE e para a distribuição de recursos do Fundo de Participação dos Estados e
+Municípios, gerenciada pelo Tribunal de Contas da União.
+
+Esse mesmo cuidado foi aplicado às estimativas municipais de 2024, que, conforme
+acordado nas reuniões do CTI das Estimativas Populacionais, deveriam convergir
+para os totais populacionais estimados pelo IBGE para 1º de julho de 2024,
+publicados no Diário Oficial da União (DOU). Para os demais anos anteriores, os
+totais foram calculados pelo método RCoortes, garantindo convergência com as
+estruturas etárias e de sexo dos respectivos estados.
+
+Por fim, merece destaque a compatibilidade metodológica, ou seja, a necessidade
+de que as estimativas produzidas fossem consistentes ao longo do tempo, sem
+descontinuidades. A construção de uma série histórica permite aos usuários analisar
+o comportamento passado e presente da população, além de realizar projeções
+mais precisas para o futuro.
+
+A Figura 1 apresenta de maneira resumida o caminho metodológico para o cálculo
+das estimativas municipais.
+Fonte: elaboração própria.
+ 1
+  Esta etapa consiste em aplicar a mesma metodologia de cálculo dos totais de população municipal,
+ método AiBi, em todo o período de tempo, entre 2000 e 2021.
+Descrição das variáveis disponíveis para tabulação
+
+Estão disponibilizadas as seguintes informações das estimativas municipais:
+
+   ▪   População residente (População residente estimada em 1º de julho do
+       ano de referência).
+
+   ▪   Sexo
+          ● Masculino ou feminino.
+
+   ▪ Idade e Faixa etária
+Os dados podem ser consultados de acordo com as seguintes faixas etárias:
+
+   ▪   Idade simples
+          ● 0 a 79 anos, ano a ano
+          ● 80 anos e mais
+
+   ▪   Faixa Etária 1
+          ● 0 a 4 anos
+          ● 5 a 9 anos
+          ● 10 a 14 anos
+          ● 15 a 19 anos
+          ● 20 a 80 anos, de 10 em 10 anos
+          ● 80 anos e mais
+
+   ▪   Faixa etária 2
+          ● 0 a 80 anos, de 5 em 5 anos
+          ● 80 anos e mais
+
+   ▪   Ano
+          ● Ano de referência da estimativa populacional, de 2000 a 2024.
+
+
+LIMITAÇÕES
+
+O cálculo das estimativas populacionais possui algumas limitações que estão
+relacionadas à análise demográfica em pequenas áreas, especialmente diante de
+variabilidades conjunturais e heterogeneidades regionais:
+
+1. Crescimento intercensitário e coortes: O crescimento calculado entre censos
+   reflete médias gerais que podem mascarar variações específicas nas coortes,
+   particularmente em áreas menores. Essa abordagem limita a capacidade de
+   capturar a verdadeira dinâmica populacional.
+2. Dinâmica demográfica em pequenas áreas podem não ser captadas:
+     Choques econômicos: Crises econômicas podem impactar fortemente a
+       migração, natalidade e mortalidade, alterando rapidamente os padrões
+       populacionais.
+     Mudanças sociais: Fenômenos como urbanização ou mudanças culturais
+       influenciam diretamente os comportamentos demográficos.
+     Choques ambientais: Desastres naturais ou alterações climáticas locais
+       podem causar deslocamentos populacionais ou variações na mortalidade.
+
+3. Heterogeneidade dos municípios pode afetar a qualidade dos dados:
+     Qualidade da informação: Diferenças na coleta e registro de dados
+       impactam a precisão das estimativas demográficas.
+     Dinâmica demográfica: Municípios apresentam variações significativas em
+       taxas de natalidade, mortalidade e, principalmente, na migração.
+     Porte e infraestrutura: Municípios menores podem ter infraestruturas
+       precárias, o que dificulta tanto a coleta de dados quanto a oferta de
+       serviços básicos, afetando diretamente indicadores sociais e de saúde.
+
+
+CONSIDERAÇÕES FINAIS
+
+Os resultados apresentados são estimativas demográficas que possuem caráter
+indicativo e estão sujeitos a margens de erro, reforçando que não substituem a
+precisão de contagens populacionais diretas ou de censos demográficos.
+
+O objetivo principal dessas estimativas é fornecer uma visão abrangente sobre a
+evolução populacional segmentada por sexo e idade, no período de 2000 a 2024.
+Com isso, busca-se:
+
+      Auxiliar pesquisadores e gestores públicos no desenvolvimento de
+       indicadores estratégicos;
+      Oferecer suporte à tomada de decisão, tanto em níveis governamentais
+       quanto em setores privados.
+
+Além disso, destaca-se que o trabalho está inserido em um processo de avaliação
+contínuo, permitindo a revisão e o aprimoramento das estimativas à medida que
+novas informações ou métodos se tornem disponíveis.
+Formas de contato com a Coesv/CGIAE/Daent/SVSA/MS
+Ministério da Saúde - MS
+Secretaria de Vigilância em Saúde e Ambiente – SVSA
+Departamento de Análise em Saúde e Vigilância de Doenças Não Transmissíveis – Daent
+Coordenação Geral de Informações e Análise Epidemiológica – CGIAE
+Coordenação de Estatísticas Vitais e Morbidades - Coesv
+SRTVN 701, Via W5 Norte, Ed. PO700, 6º andar CEP: 70719-040 Brasília-DF
+
+Por telefone: (061)3315-7708/7710/7712
+
+Por e-mail: cgiae@saude.gov.br
+

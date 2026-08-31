@@ -28,6 +28,10 @@ dev = [
 geo = [
   "geopandas>=0.14",
 ]
+sources = [
+  "dbfread==2.0.7",
+  "pyreaddbc==1.2.0",
+]
 
 [tool.setuptools.packages.find]
 where = ["src"]

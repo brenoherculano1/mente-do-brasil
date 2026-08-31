@@ -1,0 +1,21 @@
+phase: ADVANCED_TERRITORIAL_PHASE_3
+base_commit: ead5ec6c217e885efcb8bc691d6ec1eb21493afe
+status: BLOCKED_SCIENTIFIC_AGE_BAND_INCOMPATIBILITY
+source_acquisition: COMPLETED
+primary_raw_files: 869
+source_manifest: metadata/provenance/phase3_source_manifest.csv
+source_manifest_rows: 980
+source_hash_validation: audit_results/phase3_raw_hash_validation.json
+temporal_gate: BLOCKED_LOCKED_ASMR_INCOMPATIBLE_WITH_OBSERVED_80_PLUS_DENOMINATOR
+financing_gate: ACQUIRED_AND_INVENTORIED_RECONCILIATION_PENDING
+flow_gate: DOCUMENTATION_AND_NATIONAL_SAMPLE_VALIDATED_POOLED_RECONCILIATION_PENDING
+implementation_started: false
+advanced_release_created: false
+canonical_overwritten_with_corrected_science: false
+canonical_final_hashes_equal_baseline: true
+manager_phase2_status: LOCKED
+phase2_audit_repair_repeated: false
+public_release_status: NOT_RELEASED
+raps_specific_transfer_layer: NOT_IMPLEMENTED_SOURCE_NOT_DEFENSIBLE
+required_next_action: Versioned ASMR correction and explicitly revised 2024 reproduction target.
+evidence: docs/phase3_source_acquisition_validation_2026-08-31.md

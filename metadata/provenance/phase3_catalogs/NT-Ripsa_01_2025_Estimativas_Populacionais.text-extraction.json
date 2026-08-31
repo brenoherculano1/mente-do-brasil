@@ -1,0 +1,6 @@
+{
+  "pdf_sha256": "0c004471affed05889a763d7df6b8c850be5c4ae6119c57accc1c97935df58ca",
+  "text_sha256": "d41d893673e3462f6f74ebb8b5f1415be4d979bc447e3db0a110c3cc592454c6",
+  "extractor": "pdftotext -layout",
+  "source_pdf": "data/raw/phase3/population_documentation/NT-Ripsa_01_2025_Estimativas_Populacionais.pdf"
+}

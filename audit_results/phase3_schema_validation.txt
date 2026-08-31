@@ -1,0 +1,19 @@
+{
+  "status": "PASS_INSPECTED_FILES",
+  "files": 1998,
+  "missing_required_fields_files": 0,
+  "scope": "Currently materialized DBC headers. All new DBC headers also checked during acquisition. Record-level validation reported separately.",
+  "cloud_placeholders_not_read": 594,
+  "counts": {
+    "SIH_locked": 972,
+    "SIH_new": 648,
+    "ST_new": 54,
+    "LT_new": 54,
+    "PF_new": 54,
+    "SIM_new": 54,
+    "SIM_locked": 81,
+    "ST_locked": 27,
+    "LT_locked": 27,
+    "PF_locked": 27
+  }
+}

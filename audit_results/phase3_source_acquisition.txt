@@ -1,0 +1,32 @@
+{
+  "status": "ACQUIRED_SCIENTIFIC_GATE_BLOCKED",
+  "files_requested_primary": 869,
+  "files_found_primary": 869,
+  "files_downloaded_primary": 869,
+  "official_documentation_pdfs": 3,
+  "extracted_csvs": 3,
+  "hash_exact_locked_recovery_files": 105,
+  "source_manifest_rows": 980,
+  "primary_plus_documentation_bytes": 2727840023,
+  "all_manifest_file_bytes": 8527646918,
+  "hash_count": 980,
+  "final_hash_failures": 0,
+  "initial_acquisition_network_retries": 0,
+  "by_dataset": {
+    "CNES": 162,
+    "SIH": 648,
+    "SIH_documentation": 1,
+    "SIM": 54,
+    "SIOPS": 3,
+    "population": 2,
+    "population_documentation": 2,
+    "locked_recovery": 105,
+    "SIOPS_extracted": 3
+  },
+  "operational_issues_resolved": [
+    "macOS cloud eviction Errno 60; official hash-exact reacquisition",
+    "Interrupted non-atomic cloud-cache copy; replaced with hash-checked atomic restore"
+  ],
+  "scientific_gate": "BLOCKED: POPSVS 80+ is incompatible with locked 90+ ASMR handling",
+  "schema_validation": "Full initial new DBC headers and ZIP CRC; full SIOPS inventory; all 81 locked SIM records for diagnostic; national December 2024 flow sample. See separate reports for uncompleted checks."
+}

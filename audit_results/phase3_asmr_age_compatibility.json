@@ -1,0 +1,19 @@
+{
+  "status": "BLOCKED_SCIENTIFIC_AGE_BAND_INCOMPATIBILITY",
+  "source_definition": "POPSVS IDADE=080 means 80 years and over; no 85-89 or 90+ denominators.",
+  "locked_implementation": "Assigns IDADE=080 to 80-84; joins from population, omitting 85+ deaths from ASMR.",
+  "regions": 439,
+  "source_files_processed": 81,
+  "deaths_age_80_84": 650,
+  "deaths_age_85_89": 352,
+  "deaths_age_90_plus": 143,
+  "regions_with_age_85_plus_deaths": 223,
+  "legacy_reproduction_max_abs_difference": 3.552713678800501e-15,
+  "diagnostic_80_plus_max_abs_difference_from_canonical": 0.7407065930032477,
+  "diagnostic_80_plus_median_difference_from_canonical": 0.07226412874361365,
+  "diagnostic_regions_different_gt_1e_minus12": 327,
+  "diagnostic_need_regions_different_gt_1e_minus12": 367,
+  "diagnostic_need_max_abs_difference": 0.0365296803652968,
+  "diagnostic_only": true,
+  "decision": "Cannot both preserve locked scientific definition/exact reproduction and apply valid 80+ age standardization. No canonical changes authorized or made."
+}

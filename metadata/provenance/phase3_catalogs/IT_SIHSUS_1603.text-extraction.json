@@ -1,0 +1,6 @@
+{
+  "pdf_sha256": "1e89d5f2cc41420385d7e30ba5541a387912ab3a0efb167d39def74502076220",
+  "text_sha256": "af36b187133c0e062fdc27b7c11430639f1ad76045a2a7a7e19d7640a917b854",
+  "extractor": "pdftotext -layout",
+  "source_pdf": "data/raw/phase3/SIH_documentation/IT_SIHSUS_1603.pdf"
+}
