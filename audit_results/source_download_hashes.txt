@@ -1,0 +1,2 @@
+status: NOT_CREATED_BLOCKED
+reason: No new raw source downloads were performed because the Phase 3 source-viability gate failed before acquisition. Existing Phase 2 source hashes remain in metadata/provenance/phase2_raw_data_manifest_2026-08-23.csv.

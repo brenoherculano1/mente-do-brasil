@@ -1,0 +1,8 @@
+status: FAIL
+module: FLOWS
+source_system: SIH/SUS RD
+validated_origin_field: MUNIC_RES
+destination_field_validated: NO
+patient_identifiers_in_product_outputs: 0
+exact_under_5_counts_exposed: 0
+blocked_reason: Flow implementation requires a validated hospital/destination municipality field. Current local provenance validates only residence-based processing for the locked psychiatric admission indicator.

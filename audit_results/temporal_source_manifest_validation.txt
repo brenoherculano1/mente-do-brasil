@@ -1,0 +1,11 @@
+status: FAIL
+module: TEMPORAL
+required_sim_years: 2020,2021,2022,2023,2024
+available_validated_sim_years: 2022,2023,2024
+required_sih_years: 2020,2021,2022,2023,2024
+available_validated_sih_years: 2022,2023,2024
+required_population_years: 2020,2021,2022,2023,2024
+available_validated_population_years: 2022,2023,2024
+required_cnes_competences: 2022-12,2023-12,2024-12
+available_validated_cnes_competences: 2024-12
+blocked_reason: Missing required validated, hash-preserved historical source files for 2020-2021 need windows and Dec 2022-Dec 2023 capacity snapshots.

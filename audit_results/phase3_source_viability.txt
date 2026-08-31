@@ -1,0 +1,15 @@
+status: BLOCKED
+phase: TEMPORAL_INTELLIGENCE_CHANGE_RADAR_FINANCING_CONTEXT_HOSPITAL_FLOWS_PHASE_3
+decision: SOURCE_VIABILITY_HARD_STOP
+temporal_source_viability: FAIL
+financing_source_viability: FAIL
+flow_source_viability: FAIL
+reason: Validated local evidence is incomplete for the requested Phase 3 build. Temporal anchors need 2020-2024 SIM/SIH/population and Dec 2022-Dec 2024 CNES; current manifest has SIM/SIH/population 2022-2024 and CNES Dec 2024 only. SIOPS files and reconciliation are not validated locally. SIH destination field for hospital flows is not validated.
+product_changes_made: NO
+canonical_unchanged: YES
+public_release_status_changed: NO
+source_docs:
+  - docs/phase3_source_viability_2026-08-29.md
+  - docs/advanced_territorial_phase3_2026-08-29.md
+  - docs/financing_field_ledger_2026-08-29.md
+  - docs/hospital_flow_field_ledger_2026-08-29.md

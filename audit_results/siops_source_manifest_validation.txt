@@ -1,0 +1,10 @@
+status: FAIL
+module: FINANCING
+required_source_system: SIOPS
+required_periods: 2022,2023,2024
+available_validated_raw_files: 0
+field_ledger_available: NO
+national_reconciliation_available: NO
+mental_health_expenditure_claim_allowed: NO
+raps_specific_transfer_layer: NOT_IMPLEMENTED_SOURCE_NOT_DEFENSIBLE
+blocked_reason: SIOPS official source exists, but no local validated raw manifest, selected-field ledger, or reconciliation evidence is available.

@@ -1,0 +1,11 @@
+status: PASS
+filename: mente-do-brasil_manager_reports_phase2_audit_v2_251bc57_20260829.zip
+size_bytes: 5255152
+sha256: 9d169dc8e664d34c56fe316ff5c5a0ffa24231e18894f828fa9287248a570df0
+manifest_entries: 270
+files_in_zip_excluding_manifest: 270
+manifest_missing: 0
+manifest_extra: 0
+manifest_size_mismatches: 0
+manifest_hash_mismatches: 0
+drive_file_id: 10mTQrewrGOTZmTImMN_bfpKY4KDqnLDF

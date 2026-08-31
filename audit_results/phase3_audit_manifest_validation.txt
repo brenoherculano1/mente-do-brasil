@@ -1,0 +1,11 @@
+status: PASS
+audit_zip: /Users/brenoherculano/Documents/New project/mente-do-brasil/audit_packages/mente-do-brasil_advanced_territorial_phase3_BLOCKED_source_viability_251bc57_20260829.zip
+audit_zip_size: 72626
+audit_zip_sha256: 3fe506f1c70e023b57c1ec8e392ed633df29aceb5652dbb94b0132fc0b2f9556
+manifest_entries: 15
+manifest_missing: 0
+manifest_extra: 0
+manifest_size_mismatches: 0
+manifest_sha256_mismatches: 0
+drive_file_id: 10uO6dSpB7dEd0IgSrMOIhqNOPQ4XR4Ze
+drive_parent_id: 1AumkNzL0dz3tsQqTw7nLoOn4tJiFr3l5
