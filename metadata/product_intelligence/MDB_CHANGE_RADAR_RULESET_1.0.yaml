@@ -1,0 +1,8 @@
+version: MDB_CHANGE_RADAR_RULESET_1.0
+rules:
+  need_position_up: "delta Need >= +0.15"
+  capacity_position_down: "delta Capacity <= -0.15"
+  mismatch_position_up: "delta Mismatch >= +0.20"
+  need_component_position_up: "suicide percentile delta >= +0.20 OR admissions percentile delta >= +0.20"
+  capacity_component_position_down: "any capacity component percentile delta <= -0.20"
+score: false

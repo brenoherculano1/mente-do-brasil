@@ -1,0 +1,10 @@
+{
+  "rows": 1317,
+  "full_coverage_rows": 1310,
+  "partial_rows": 7,
+  "output": "data/product_intelligence/MDB_ANALYTICAL_2024_2/health_region_financing.parquet",
+  "sha256": "e0268253e318473824312ed3125a01ea73be8d795457ac6e09f568ab9b140985",
+  "source_snapshot_rows": 16710,
+  "source_snapshot_successes": 16703,
+  "missing_not_zero": true
+}

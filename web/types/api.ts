@@ -8,6 +8,31 @@ export type MetricId =
   | "mental_health_beds_sus_rate"
   | "psychiatrist_fte_rate";
 
+export type FinancingRecord = {
+  financing_version: string;
+  siops_snapshot_id: string;
+  year: number;
+  health_region_code: string;
+  municipalities_expected: number;
+  municipalities_observed: number;
+  population_expected: number;
+  population_covered: number | null;
+  coverage_share: number;
+  coverage_population_share: number | null;
+  total_health_expenditure_brl: number | null;
+  health_expenditure_per_capita_brl: number | null;
+  headline_available: boolean;
+  quality_flags: string[];
+  source_period: string;
+  source_indicator: string;
+  scope: "GENERAL_HEALTH_FINANCING_CONTEXT";
+};
+
+export type FinancingResponse = {
+  records: FinancingRecord[];
+  disclaimer: string;
+};
+
 export type GeometryProfile = "overview" | "detail" | "full";
 
 export type ReleasePublic = {

@@ -1,0 +1,9 @@
+version: MDB_HOSPITAL_FLOW_METHOD_1.0
+source: SIH/SUS RD
+periods: 2022-2024
+diagnosis_rule: F00-F09 or F20-F99; F10-F19 excluded
+origin: MUNIC_RES
+destination: MUNIC_MOV
+aggregation: pooled psychiatric admissions by municipality origin and destination, then Health Region crosswalk
+suppression: pooled edge counts below 5 are suppressed in distributed output
+pii: none

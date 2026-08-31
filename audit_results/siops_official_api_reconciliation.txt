@@ -1,0 +1,71 @@
+SIOPS OFFICIAL RESOLUTION AUDIT
+Date: 2026-08-31
+
+Metadata
+- Source: SIOPS/MS
+- Metadata version: 1.4.3-prd.17318
+- Metadata snapshot: metadata/provenance/siops_api_metadata.pdf
+- Metadata SHA256: 243fb63337bc207322b2fdbe90de32d72c528f1dd28037ab18f2c532d547c098
+
+API discovery and fallback
+- Documented API base: https://siops-consulta-publica-api.saude.gov.br/
+- Documented conceptual endpoint: Indicador/municipal
+- Documented conceptual endpoint: despesas-por-subfuncao
+- Live v2/api-docs and endpoint probes reset the connection before JSON response.
+- Official legacy report fallback used: http://siops.datasus.gov.br/consdetalhereenvio2.php
+  and http://siops.datasus.gov.br/rel_ges_dt_municipal.php
+- Actual fallback method: POST with cmbAno, cmbUF, cmbPeriodo=2,
+  cmbMunicipio[], and BtConsultar=Consultar.
+
+Official method
+- Period requested: 2, sixth bimestre / annual.
+- Headline concept: Indicator 2.1, total health expenditure per inhabitant under
+  municipal responsibility.
+- Annual stage: empenhada, per official SIOPS methodology.
+- National coverage source: official report group 17, Total; no Natureza hierarchy
+  was independently summed.
+
+Acquisition
+- Municipality-year combinations requested: 16,710 (5,570 x 3).
+- Successful official report records: 16,703.
+- Missing records: 7; these are retained as missing, never treated as zero.
+- Missing municipality-years: 220045/2022, 260545/2022-2024,
+  530010/2022-2023.
+- Snapshot: data/raw/siops_official/MDB_SIOPS_SNAPSHOT_20260831_1.jsonl
+- Snapshot rows: 16,710.
+- Response hashes: recorded per municipality-year in the snapshot and source manifest.
+
+Indicator and total validation
+- Indicator 2.1 report records validated in stratified sample: 606 (202 municipalities per year, plus the two extreme municipalities when applicable).
+- Indicator description matched the official meaning in all validated records.
+- Group 17 Total records: 16,703.
+- The legacy report does not expose the API JSON numerador/denominador fields;
+  therefore no unsupported claim is made that those fields were observed.
+- The displayed Indicator 2.1 and official group 17 Total were jointly retrieved
+  for the validation sample; totals are used nationally because the official
+  report layer supplies the non-hierarchical total.
+
+Extreme-row trace
+- 316620, 2024: raw liquidated parent 3.0.00.00.00.00 =
+  R$ 382,587,171,024,568.00; official group 17 Total = R$ 120,518,766.48;
+  Indicator 2.1 = R$ 632.85 per inhabitant.
+- 250760, 2024: raw paid parent 4.0.00.00.00.00 =
+  R$ 4,719,547,615,230.72; official group 17 Total = R$ 3,557,245.93;
+  Indicator 2.1 = R$ 459.34 per inhabitant.
+- Disposition: RAW_HIERARCHICAL_SOURCE_ANOMALY_NOT_PROPAGATED_TO_OFFICIAL_HEADLINE_OUTPUT.
+- No raw value was capped, deleted, imputed, winsorized, or manually corrected.
+
+Regional output
+- Rows: 1,317 (439 Health Regions x 3 years).
+- Full-coverage rows: 1,310.
+- Partial-coverage rows: 7.
+- Output SHA256: e0268253e318473824312ed3125a01ea73be8d795457ac6e09f568ab9b140985
+- Missing != zero: PASS.
+- Financing scope: GENERAL_HEALTH_FINANCING_CONTEXT.
+- Mental-health-specific expenditure claims: 0.
+
+Decision
+- FINANCING_SOURCE_VIABILITY=PASS_WITH_LIMITATIONS.
+- Limitation: the API JSON layer was unavailable during retrieval, so the official
+  legacy report output is frozen as the documented fallback; the seven missing
+  municipality-year records generate explicit partial-coverage flags.

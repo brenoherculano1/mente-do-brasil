@@ -7,6 +7,7 @@ export const dynamic = "force-dynamic";
 const STATIC_PATHS = [
   "/",
   "/radar",
+  "/financiamento",
   "/gestor",
   "/metodologia",
   "/dados",

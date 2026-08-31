@@ -1,0 +1,11 @@
+version: MDB_ADVANCED_TERRITORIAL_1.0
+status: INTEGRATION_IN_PROGRESS
+base_release: MDB_ANALYTICAL_2024_2
+method_version: MDB_METHOD_1.1
+components:
+  financing: MDB_FINANCING_CONTEXT_1.0
+  hospital_flows: MDB_HOSPITAL_FLOW_METHOD_1.0
+  temporal: MDB_TEMPORAL_2022_2024_1
+  change_radar: MDB_CHANGE_RADAR_RULESET_1.0
+  manager_mode: MDB_MANAGER_MODE_2.0
+  territorial_report: MDB_TERRITORIAL_REPORT_2.0

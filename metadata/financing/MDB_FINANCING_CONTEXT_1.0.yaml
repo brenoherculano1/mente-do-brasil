@@ -1,0 +1,20 @@
+version: MDB_FINANCING_CONTEXT_1.0
+scope: General health financing context; not mental-health-specific expenditure.
+source: SIOPS/MS official Consulta Pública report layer
+snapshot_id: MDB_SIOPS_SNAPSHOT_20260831_1
+period:
+  value: "2"
+  definition: Sexto Bimestre / Anual
+stage: empenhada
+headline_indicator: "2.1"
+headline_label: Despesa total com Saúde, sob a responsabilidade do Município, por habitante
+primary_report_total: grupo 17 Total from despesas-por-subfuncao official report
+currency: BRL current nominal reais
+regional_denominator: Validated project annual population by Health Region
+runtime_policy: Frozen local snapshot; no live SIOPS dependency
+coverage_policy: Missing municipalities remain missing and produce PARTIAL_SIOPS_COVERAGE; never zero-filled.
+raw_csv_role: Tertiary audit/provenance only; hierarchical Natureza rows are not summed.
+disclaimer: Esta camada descreve o contexto geral de financiamento da saúde e não mede gasto específico em saúde mental.
+year_comparison_disclaimer: Valores em reais correntes do respectivo exercício; comparações entre anos não representam variação real descontada da inflação.
+source_metadata: metadata/provenance/siops_api_metadata.yaml
+output: data/product_intelligence/MDB_ANALYTICAL_2024_2/health_region_financing.parquet

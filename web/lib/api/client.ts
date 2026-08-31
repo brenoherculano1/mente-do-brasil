@@ -8,6 +8,7 @@ import type {
   MapItem,
   ManagerBrief,
   ManagerCompareResponse,
+  FinancingResponse,
   MetricId,
   MunicipalityHealthRegion,
   PaginatedResponse,
@@ -121,6 +122,13 @@ export function getManagerBrief(code: string) {
 export function getManagerCompare(codes: string[]) {
   const params = new URLSearchParams({ codes: codes.join(",") });
   return request<ManagerCompareResponse>(`/api/v1/manager/compare?${params}`, {
+    cache: "no-store",
+  });
+}
+
+export function getFinancing(year?: number) {
+  const params = year ? `?year=${year}` : "";
+  return request<FinancingResponse>(`/api/v1/financing/health-regions${params}`, {
     cache: "no-store",
   });
 }
