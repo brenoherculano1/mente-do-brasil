@@ -1,0 +1,23 @@
+phase: ADVANCED_TERRITORIAL_PHASE_3
+status: BLOCKED_MISSING_AUTHORIZED_POPSVS_INPUTS
+lock: NOT_LOCKED
+fileprovider_workspace: RESOLVED
+starting_commit: de9754440c5a9eff56272ff2a5198a182cc044e2
+branch: phase3-local-closure
+allowlisted_parquet_hashes: PASS
+full_import_bundle_manifest: PASS
+siops_snapshot_semantics: PASS
+siops_snapshot_derived_reproduction: NOT_RUN_MISSING_INPUTS
+siops_snapshot_acceptance: PENDING
+artifact_preflight: BLOCKED
+empty_rebuild: NOT_RUN
+database_operations: 0
+previously_failing_tests: 4_PASS_0_FAIL_0_SKIP
+recovery_preflight_tests: 6_PASS_0_FAIL_0_SKIP
+full_backend: NOT_RUN
+accessibility_followup: NOT_RUN
+public_release_status: NOT_RELEASED
+open_platform: NOT_STARTED
+reportlab: DOCUMENTED_UPSTREAM
+prior_evidence_preserved: true
+next_action: Authorize recovery of hash-locked POPSBR22.zip, POPSBR23.zip and POPSBR24.zip.

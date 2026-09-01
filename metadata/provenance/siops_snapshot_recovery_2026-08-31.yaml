@@ -1,0 +1,66 @@
+status: BLOCKED_MISSING_AUTHORIZED_POPSVS_INPUTS
+recovered_snapshot_sha256: null
+observed_candidate_sha256: 60def3ab60e036d0c7e05f2feb56a9eb5c3cfee68c602f74123c445f4cd79d73
+bytes: 11138074
+rows: 16710
+successes: 16703
+missing: 7
+missing_keys:
+- - '220045'
+  - 2022
+- - '260545'
+  - 2022
+- - '260545'
+  - 2023
+- - '260545'
+  - 2024
+- - '530010'
+  - 2022
+- - '530010'
+  - 2023
+- - '530010'
+  - 2024
+missing_not_zero: true
+semantic_validation: PASS
+derived_reproduction: PENDING
+derived_output_sha256: null
+accepted_existing_financing_sha256: 09e6182fa527a73e53691c97d65e30e2fc6f2740fffdd36b0d09baa59e680860
+builder: scripts/build_financing_context.py
+builder_executed: false
+automatic_source_download_executed: false
+reason: Builder populations() requires three absent POPSVS archives outside authorized
+  recovery allowlist.
+missing_inputs:
+- relative_path: data/raw/scientific_correction_recovery/POPSBR22.zip
+  artifact_type: locked_population_source
+  version: POPSVS_2022
+  bytes: 3378657
+  sha256: 8619497c4adcb87133aab68666ed6604209b812047e9b51e3608db00a2c8e731
+  provenance: metadata/provenance/phase2_raw_data_manifest_2026-08-23.csv
+  source_location_class: locked_source_backup_recovery_not_yet_authorized
+  required_for:
+  - siops_reproduction_gate
+  redistributable_status: NOT_ASSESSED
+  acceptance_status: ACCEPTED
+- relative_path: data/raw/scientific_correction_recovery/POPSBR23.zip
+  artifact_type: locked_population_source
+  version: POPSVS_2023
+  bytes: 3360669
+  sha256: c49b35794dc235bad8a4a0dbc530a82aeae589e03a366a3c17a8325e6c24d5f4
+  provenance: metadata/provenance/phase2_raw_data_manifest_2026-08-23.csv
+  source_location_class: locked_source_backup_recovery_not_yet_authorized
+  required_for:
+  - siops_reproduction_gate
+  redistributable_status: NOT_ASSESSED
+  acceptance_status: ACCEPTED
+- relative_path: data/raw/scientific_correction_recovery/POPSBR24.zip
+  artifact_type: locked_population_source
+  version: POPSVS_2024
+  bytes: 3342323
+  sha256: cbf5549a5f9b37160e2fe3a5f97123a7747e371d4c433a8aa8a3276ad41dcc53
+  provenance: metadata/provenance/phase2_raw_data_manifest_2026-08-23.csv
+  source_location_class: locked_source_backup_recovery_not_yet_authorized
+  required_for:
+  - siops_reproduction_gate
+  redistributable_status: NOT_ASSESSED
+  acceptance_status: ACCEPTED

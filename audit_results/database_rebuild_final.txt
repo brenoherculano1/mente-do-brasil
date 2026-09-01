@@ -1,0 +1,7 @@
+{
+  "status": "BLOCKED_BEFORE_DATABASE_CREATION",
+  "database_operations": 0,
+  "reason": "Builder populations() requires three absent POPSVS archives outside authorized recovery allowlist.",
+  "preflight": "audit_results/phase3_artifact_preflight.json",
+  "complete_loader_orchestration": "NOT_IMPLEMENTED_PENDING_SOURCE_GATE"
+}

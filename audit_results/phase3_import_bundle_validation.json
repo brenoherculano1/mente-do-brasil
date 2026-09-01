@@ -1,0 +1,104 @@
+{
+  "status": "PASS",
+  "files_validated": 19,
+  "source": "allowlisted_donor_directory",
+  "zip_sha256_locked_reference": "3658182b92a90466bc27d6ce3252e796fd25b54f2023d3ac1abe6eb356f7c6cc",
+  "zip_read_this_run": false,
+  "files": [
+    {
+      "path": "analytical_release/CORRECTED_RESULT_LOCK.md",
+      "bytes": 2346,
+      "sha256": "939c034e659ba42c56dc20acef4a607a1408b2c82c3e9f54cd84178037df328f"
+    },
+    {
+      "path": "analytical_release/LISA_primary_corrected.csv",
+      "bytes": 61232,
+      "sha256": "8cc338aefd7e95c8699ea89c8e663cf99e1ee2c4f8329c53d773e99e58fa82b4"
+    },
+    {
+      "path": "analytical_release/corrected_Supplement_All_439_Health_Regions.csv",
+      "bytes": 200700,
+      "sha256": "8c7db70d8230c6f85cfc82249234fc0b450bb1b6aaafd89ecfed1226dcc423f7"
+    },
+    {
+      "path": "analytical_release/corrected_result_freeze_hashes.txt",
+      "bytes": 1277,
+      "sha256": "bfad57c64cf7e22274659b1b2465e4f84088454c4c16990951a935a01804bbd5"
+    },
+    {
+      "path": "analytical_release/global_moran_primary_corrected.json",
+      "bytes": 338,
+      "sha256": "fedb3cfce1e8b9a0d3528b2b74aaa2f7232436a581e5aaa8498d43a63bc7a69a"
+    },
+    {
+      "path": "analytical_release/health_region_analysis_dataset_corrected.csv",
+      "bytes": 174292,
+      "sha256": "9a820a543a28ac35eba9797ba3597aa5c8efec5e593fd80b4c60f02f94f40e48"
+    },
+    {
+      "path": "analytical_release/mismatch_scores_corrected.csv",
+      "bytes": 39133,
+      "sha256": "b69a343e9d2bbd8902359f3086594ebb4d54c7db205426561dc1ca4e493241b1"
+    },
+    {
+      "path": "analytical_release/phase2c_summary.json",
+      "bytes": 3129,
+      "sha256": "b1f5edb261f40b9caa96c553d7ed19708a46951d8ff89c2c49e304121a449d8f"
+    },
+    {
+      "path": "geography/GEOGRAPHY_LOCK_DECISION.md",
+      "bytes": 1303,
+      "sha256": "b27c04f17828bbb2b3265c4a8670761fc67342015fafb2fe3619a8c3e4487f38"
+    },
+    {
+      "path": "geography/geography_reference_date_LOCK.md",
+      "bytes": 637,
+      "sha256": "41861d979815935c0a80a6082bc54d751ee549c129cd31ed2cd982623799fa82"
+    },
+    {
+      "path": "geography/health_region_crosswalk_LOCKED.csv",
+      "bytes": 1074733,
+      "sha256": "71239b3c9ec6d08422273e950b1227e31fca856fa8ee7aedb69ac0f8157377cb"
+    },
+    {
+      "path": "geography/health_regions_LOCKED.gpkg",
+      "bytes": 93306880,
+      "sha256": "657355adb0df88dfcfff2400751eff6ae97b367effe8e90223d0267e0437ba48"
+    },
+    {
+      "path": "qc/FDR_corrected_verification.csv",
+      "bytes": 51483,
+      "sha256": "2abcb5de1436a720290547054aa5b27736193a6eecbec4504b87fb71eed092a9"
+    },
+    {
+      "path": "qc/INVALIDATED_PHASE2_SPATIAL_OUTPUTS.md",
+      "bytes": 987,
+      "sha256": "af0e009258217b56cb6b1c9373540f81df02f86ea7936b1d8b0e70e0f25ecfef"
+    },
+    {
+      "path": "qc/corrected_reproducibility_run.md",
+      "bytes": 548,
+      "sha256": "12a49755fcac6fc490ac48409b07e608b91a179dc1f47fc8c770efee47de091f"
+    },
+    {
+      "path": "qc/geometry_QC_FINAL.md",
+      "bytes": 719,
+      "sha256": "d5f2cbcd531db7018d5e6bda9f422594578e7d22ab81bd57f0ccb15791a80d34"
+    },
+    {
+      "path": "qc/independent_moran_alignment_verification.md",
+      "bytes": 257,
+      "sha256": "59c3f174f51d363dce660edfb3d69e92f2f3882cfd2ea14b256dbeb911828778"
+    },
+    {
+      "path": "qc/municipality_crosswalk_QC.md",
+      "bytes": 444,
+      "sha256": "6b445d34f5c15d08074d1909133fe26b58d94c35336792187980e49aa5715e7a"
+    },
+    {
+      "path": "qc/spatial_alignment_QC.md",
+      "bytes": 105,
+      "sha256": "268523bb92446d76f980062f8ffcf14e2282d800440d65e93b49ff7930623b79"
+    }
+  ]
+}

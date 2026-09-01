@@ -1,0 +1,384 @@
+{
+  "exit_code": 1,
+  "result": {
+    "status": "BLOCKED",
+    "checked": [
+      {
+        "relative_path": "audit_results/scientific_correction/corrected_spatial.json",
+        "status": "PASS",
+        "bytes": 310,
+        "sha256": "0981b2b377723f8dca3fc3ca751d76f32272c7d24d1d04b679386873e4af39d9"
+      },
+      {
+        "relative_path": "data/canonical/MDB_ANALYTICAL_2024_1/health_regions.parquet",
+        "status": "PASS",
+        "bytes": 78308,
+        "sha256": "a3cc8f3aefc9d556d1bacc636dc72cabf04155052dd63c426dda9bec58ada515"
+      },
+      {
+        "relative_path": "data/canonical/MDB_ANALYTICAL_2024_1/municipality_health_region_crosswalk.parquet",
+        "status": "PASS",
+        "bytes": 109508,
+        "sha256": "acd7ab896566d5ea730719eb46a079b0571d73fec617ef1d39db93099bd06b15"
+      },
+      {
+        "relative_path": "data/canonical/MDB_ANALYTICAL_2024_2/health_regions.parquet",
+        "status": "PASS",
+        "bytes": 90060,
+        "sha256": "1b8ad1a0e0e56ffc9ace172c34100ce3300b64f9adf212bf26b5d525453edb58"
+      },
+      {
+        "relative_path": "data/product_intelligence/MDB_ANALYTICAL_2024_1/health_region_intelligence.parquet",
+        "status": "PASS",
+        "bytes": 71875,
+        "sha256": "130480cb4423bbe5bd0999293dd2310e8d5860f4847ccb3622988c864a27ed1d"
+      },
+      {
+        "relative_path": "data/product_intelligence/MDB_ANALYTICAL_2024_1/health_region_peers.parquet",
+        "status": "PASS",
+        "bytes": 39491,
+        "sha256": "e084f8e775b8788afdd9a57c09154d0cb829bae061a6fcb9a3b7fc60ebad7d00"
+      },
+      {
+        "relative_path": "data/product_intelligence/MDB_ANALYTICAL_2024_1/peer_benchmarks.parquet",
+        "status": "PASS",
+        "bytes": 126386,
+        "sha256": "aab4ae0ae5dce321d847195b52272e0a3f715c52348e2a7463a750472005712f"
+      },
+      {
+        "relative_path": "data/product_intelligence/MDB_ANALYTICAL_2024_2/health_region_changes.parquet",
+        "status": "PASS",
+        "bytes": 51238,
+        "sha256": "dca6e4c778977745e9287ccc93717c081d853f30778a6afd31afe7610b672e68"
+      },
+      {
+        "relative_path": "data/product_intelligence/MDB_ANALYTICAL_2024_2/health_region_financing.parquet",
+        "status": "PASS",
+        "bytes": 57621,
+        "sha256": "09e6182fa527a73e53691c97d65e30e2fc6f2740fffdd36b0d09baa59e680860"
+      },
+      {
+        "relative_path": "data/product_intelligence/MDB_ANALYTICAL_2024_2/health_region_flow_summary.parquet",
+        "status": "PASS",
+        "bytes": 19948,
+        "sha256": "d2f66800f16f715e068cf60e01e1743d7cb64152268ced63b8b3ade2649134bf"
+      },
+      {
+        "relative_path": "data/product_intelligence/MDB_ANALYTICAL_2024_2/health_region_intelligence.parquet",
+        "status": "PASS",
+        "bytes": 71732,
+        "sha256": "3faa809bacc6b39da53eda6b752a85aff3f4f2aceaadd2bc9a97613effa30106"
+      },
+      {
+        "relative_path": "data/product_intelligence/MDB_ANALYTICAL_2024_2/health_region_peers.parquet",
+        "status": "PASS",
+        "bytes": 39429,
+        "sha256": "3f1828c6d34aba33fc84b7c2864268aab3e6841f3cf12a55c9d0b8ad35fe4dee"
+      },
+      {
+        "relative_path": "data/product_intelligence/MDB_ANALYTICAL_2024_2/health_region_temporal.parquet",
+        "status": "PASS",
+        "bytes": 159579,
+        "sha256": "cb617db011ce192b22f2d0ae33315ca7ff59a6da16dbef8b5b0c03abc855a25a"
+      },
+      {
+        "relative_path": "data/product_intelligence/MDB_ANALYTICAL_2024_2/hospitalization_flows.parquet",
+        "status": "PASS",
+        "bytes": 188300,
+        "sha256": "04eb3d4a967b9050c701b62026c4959c437ab8bf52e799c67546ff74c066ed27"
+      },
+      {
+        "relative_path": "data/product_intelligence/MDB_ANALYTICAL_2024_2/peer_benchmarks.parquet",
+        "status": "PASS",
+        "bytes": 127289,
+        "sha256": "c75f30c1207238cea50764a99f7a68e1d9b5c3ace2d87902de0b0e1935e7ec82"
+      },
+      {
+        "relative_path": "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/IMPORT_MANIFEST.json",
+        "status": "PASS",
+        "bytes": 4135,
+        "sha256": "6df353ed7de49dd3c5c8ebf702e27ba1d83c2fd4565e949692e5097499b07f78"
+      },
+      {
+        "relative_path": "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/analytical_release/CORRECTED_RESULT_LOCK.md",
+        "status": "PASS",
+        "bytes": 2346,
+        "sha256": "939c034e659ba42c56dc20acef4a607a1408b2c82c3e9f54cd84178037df328f"
+      },
+      {
+        "relative_path": "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/analytical_release/LISA_primary_corrected.csv",
+        "status": "PASS",
+        "bytes": 61232,
+        "sha256": "8cc338aefd7e95c8699ea89c8e663cf99e1ee2c4f8329c53d773e99e58fa82b4"
+      },
+      {
+        "relative_path": "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/analytical_release/corrected_Supplement_All_439_Health_Regions.csv",
+        "status": "PASS",
+        "bytes": 200700,
+        "sha256": "8c7db70d8230c6f85cfc82249234fc0b450bb1b6aaafd89ecfed1226dcc423f7"
+      },
+      {
+        "relative_path": "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/analytical_release/corrected_result_freeze_hashes.txt",
+        "status": "PASS",
+        "bytes": 1277,
+        "sha256": "bfad57c64cf7e22274659b1b2465e4f84088454c4c16990951a935a01804bbd5"
+      },
+      {
+        "relative_path": "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/analytical_release/global_moran_primary_corrected.json",
+        "status": "PASS",
+        "bytes": 338,
+        "sha256": "fedb3cfce1e8b9a0d3528b2b74aaa2f7232436a581e5aaa8498d43a63bc7a69a"
+      },
+      {
+        "relative_path": "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/analytical_release/health_region_analysis_dataset_corrected.csv",
+        "status": "PASS",
+        "bytes": 174292,
+        "sha256": "9a820a543a28ac35eba9797ba3597aa5c8efec5e593fd80b4c60f02f94f40e48"
+      },
+      {
+        "relative_path": "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/analytical_release/mismatch_scores_corrected.csv",
+        "status": "PASS",
+        "bytes": 39133,
+        "sha256": "b69a343e9d2bbd8902359f3086594ebb4d54c7db205426561dc1ca4e493241b1"
+      },
+      {
+        "relative_path": "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/analytical_release/phase2c_summary.json",
+        "status": "PASS",
+        "bytes": 3129,
+        "sha256": "b1f5edb261f40b9caa96c553d7ed19708a46951d8ff89c2c49e304121a449d8f"
+      },
+      {
+        "relative_path": "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/geography/GEOGRAPHY_LOCK_DECISION.md",
+        "status": "PASS",
+        "bytes": 1303,
+        "sha256": "b27c04f17828bbb2b3265c4a8670761fc67342015fafb2fe3619a8c3e4487f38"
+      },
+      {
+        "relative_path": "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/geography/geography_reference_date_LOCK.md",
+        "status": "PASS",
+        "bytes": 637,
+        "sha256": "41861d979815935c0a80a6082bc54d751ee549c129cd31ed2cd982623799fa82"
+      },
+      {
+        "relative_path": "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/geography/health_region_crosswalk_LOCKED.csv",
+        "status": "PASS",
+        "bytes": 1074733,
+        "sha256": "71239b3c9ec6d08422273e950b1227e31fca856fa8ee7aedb69ac0f8157377cb"
+      },
+      {
+        "relative_path": "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/geography/health_regions_LOCKED.gpkg",
+        "status": "PASS",
+        "bytes": 93306880,
+        "sha256": "657355adb0df88dfcfff2400751eff6ae97b367effe8e90223d0267e0437ba48"
+      },
+      {
+        "relative_path": "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/qc/FDR_corrected_verification.csv",
+        "status": "PASS",
+        "bytes": 51483,
+        "sha256": "2abcb5de1436a720290547054aa5b27736193a6eecbec4504b87fb71eed092a9"
+      },
+      {
+        "relative_path": "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/qc/INVALIDATED_PHASE2_SPATIAL_OUTPUTS.md",
+        "status": "PASS",
+        "bytes": 987,
+        "sha256": "af0e009258217b56cb6b1c9373540f81df02f86ea7936b1d8b0e70e0f25ecfef"
+      },
+      {
+        "relative_path": "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/qc/corrected_reproducibility_run.md",
+        "status": "PASS",
+        "bytes": 548,
+        "sha256": "12a49755fcac6fc490ac48409b07e608b91a179dc1f47fc8c770efee47de091f"
+      },
+      {
+        "relative_path": "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/qc/geometry_QC_FINAL.md",
+        "status": "PASS",
+        "bytes": 719,
+        "sha256": "d5f2cbcd531db7018d5e6bda9f422594578e7d22ab81bd57f0ccb15791a80d34"
+      },
+      {
+        "relative_path": "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/qc/independent_moran_alignment_verification.md",
+        "status": "PASS",
+        "bytes": 257,
+        "sha256": "59c3f174f51d363dce660edfb3d69e92f2f3882cfd2ea14b256dbeb911828778"
+      },
+      {
+        "relative_path": "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/qc/municipality_crosswalk_QC.md",
+        "status": "PASS",
+        "bytes": 444,
+        "sha256": "6b445d34f5c15d08074d1909133fe26b58d94c35336792187980e49aa5715e7a"
+      },
+      {
+        "relative_path": "data/raw/imported/MDB_VALIDATED_IMPORT_BUNDLE_2026-08-24/mdb_import_bundle/qc/spatial_alignment_QC.md",
+        "status": "PASS",
+        "bytes": 105,
+        "sha256": "268523bb92446d76f980062f8ffcf14e2282d800440d65e93b49ff7930623b79"
+      },
+      {
+        "relative_path": "data/raw/scientific_correction_recovery/POPSBR22.zip",
+        "status": "MISSING"
+      },
+      {
+        "relative_path": "data/raw/scientific_correction_recovery/POPSBR23.zip",
+        "status": "MISSING"
+      },
+      {
+        "relative_path": "data/raw/scientific_correction_recovery/POPSBR24.zip",
+        "status": "MISSING"
+      },
+      {
+        "relative_path": "data/raw/siops_official/MDB_SIOPS_SNAPSHOT_20260831_1.jsonl",
+        "status": "PENDING_ACCEPTANCE",
+        "bytes": 11138074,
+        "sha256": "60def3ab60e036d0c7e05f2feb56a9eb5c3cfee68c602f74123c445f4cd79d73"
+      },
+      {
+        "relative_path": "db/migrations/001_extensions.sql",
+        "status": "PASS",
+        "bytes": 40,
+        "sha256": "a6f930447ac37ac87795cfa0652ad6d44f6cf683422cb0226f00b181e33fb1bd"
+      },
+      {
+        "relative_path": "db/migrations/002_schemas.sql",
+        "status": "PASS",
+        "bytes": 143,
+        "sha256": "d7bacfcd90f529a62b34341a34f6e87811e8f1b79dc31049d342516981ad658a"
+      },
+      {
+        "relative_path": "db/migrations/003_tables.sql",
+        "status": "PASS",
+        "bytes": 3650,
+        "sha256": "6fa6ab249875a710a7c497962bee0ad54e79116c4a24943cd6d1b173c22cbbe8"
+      },
+      {
+        "relative_path": "db/migrations/004_constraints_indexes.sql",
+        "status": "PASS",
+        "bytes": 5051,
+        "sha256": "ff236e03e416b2e2f1e450feb6e73afd5fb8609946d9057e90e470824b4d7c81"
+      },
+      {
+        "relative_path": "db/migrations/005_serving_views.sql",
+        "status": "PASS",
+        "bytes": 2354,
+        "sha256": "e4c1639afee350385c88ac4bbe834963c85fa4d73a10daab83eb010265caac70"
+      },
+      {
+        "relative_path": "db/migrations/006_serving_status.sql",
+        "status": "PASS",
+        "bytes": 324,
+        "sha256": "928ed50314fbc80bad13dd5b2fc973fc61ef0677a01b6274ddafdfff05f51be0"
+      },
+      {
+        "relative_path": "db/migrations/007_web_geometry.sql",
+        "status": "PASS",
+        "bytes": 1412,
+        "sha256": "7f8a085c648c4571af73960150e39b47205236207b1117a1600c9e45524de812"
+      },
+      {
+        "relative_path": "db/migrations/008_product_intelligence.sql",
+        "status": "PASS",
+        "bytes": 5573,
+        "sha256": "c5cd88e23c2fa9fdcd1f65d71aaaca0b2ceef1cb758d2a07ecead03a547a6623"
+      },
+      {
+        "relative_path": "db/migrations/009_financing_context.sql",
+        "status": "PASS",
+        "bytes": 1387,
+        "sha256": "f7921cbdfb401d658c3d870255e5d3ee605dad1dffd0ce2db16fb4d73f483d7c"
+      },
+      {
+        "relative_path": "db/migrations/010_advanced_territorial.sql",
+        "status": "PASS",
+        "bytes": 4016,
+        "sha256": "09f0a15dd1ab3acfa1711d54a209de08ecd2000f317596e4ce3ff94e50ae136c"
+      },
+      {
+        "relative_path": "metadata/indicators/caps_rate.yaml",
+        "status": "PASS",
+        "bytes": 1704,
+        "sha256": "6b45217ddec393429356a5d73bb5491692ece79b2f366e0a3ec3eaff05bb2d20"
+      },
+      {
+        "relative_path": "metadata/indicators/mental_health_beds_sus_rate.yaml",
+        "status": "PASS",
+        "bytes": 1921,
+        "sha256": "b30a2bf91374e869b1017c3972ac14333a53f70a9a349ccd82bf73cfdd7cd458"
+      },
+      {
+        "relative_path": "metadata/indicators/psychiatric_admission_rate.yaml",
+        "status": "PASS",
+        "bytes": 2098,
+        "sha256": "c96dfbdd4264c533fd1578d8bd34f0de55144780e0a5fae3cb77cb4fc4bad2bb"
+      },
+      {
+        "relative_path": "metadata/indicators/psychiatrist_fte_rate.yaml",
+        "status": "PASS",
+        "bytes": 2021,
+        "sha256": "eedeed1297253fb4fbf468354837da02bec2a56297309739d314b366b710b47e"
+      },
+      {
+        "relative_path": "metadata/indicators/suicide_asmr.yaml",
+        "status": "PASS",
+        "bytes": 2190,
+        "sha256": "276a9c21989e12c9d4e7cc0309d588c8e722e425cd92e1763985086176244380"
+      },
+      {
+        "relative_path": "metadata/releases/MDB_ANALYTICAL_2024_1.yaml",
+        "status": "PASS",
+        "bytes": 2743,
+        "sha256": "28a1ee3902b25ee51ac5e3788c95ff9ea702600117ba063c9529e0ffd7e43cc6"
+      },
+      {
+        "relative_path": "metadata/releases/MDB_ANALYTICAL_2024_1_canonical.yaml",
+        "status": "PASS",
+        "bytes": 1327,
+        "sha256": "8906d86df7703694082cb39e9571322ca7879b4578193fc5a0e85a9986bcfe3f"
+      },
+      {
+        "relative_path": "metadata/releases/MDB_ANALYTICAL_2024_1_serving.yaml",
+        "status": "PASS",
+        "bytes": 1671,
+        "sha256": "83f21e55d0f0ce4f3ff0d4c7f5d3d83aedbc2350ff5843a31d08d79b3be42bf4"
+      },
+      {
+        "relative_path": "metadata/releases/MDB_ANALYTICAL_2024_2.yaml",
+        "status": "PASS",
+        "bytes": 2828,
+        "sha256": "8ab54e139f5e0dc8679f68497edd3e58e15d713be58be892ee52d963ebc7cc5c"
+      },
+      {
+        "relative_path": "metadata/releases/MDB_ANALYTICAL_2024_2_canonical.yaml",
+        "status": "PASS",
+        "bytes": 1341,
+        "sha256": "5da6041604325b51f4f465d761bcb7d7cdb97862298d82e7fe4282c4faa3dd49"
+      },
+      {
+        "relative_path": "metadata/releases/MDB_ANALYTICAL_2024_2_serving.yaml",
+        "status": "PASS",
+        "bytes": 1258,
+        "sha256": "8ad49e9e1e33d881d69c600830b5aaf7537b3137c674b2a25c8249898ede1b99"
+      }
+    ],
+    "failures": [
+      {
+        "relative_path": "data/raw/scientific_correction_recovery/POPSBR22.zip",
+        "status": "MISSING"
+      },
+      {
+        "relative_path": "data/raw/scientific_correction_recovery/POPSBR23.zip",
+        "status": "MISSING"
+      },
+      {
+        "relative_path": "data/raw/scientific_correction_recovery/POPSBR24.zip",
+        "status": "MISSING"
+      },
+      {
+        "relative_path": "data/raw/siops_official/MDB_SIOPS_SNAPSHOT_20260831_1.jsonl",
+        "status": "PENDING_ACCEPTANCE",
+        "bytes": 11138074,
+        "sha256": "60def3ab60e036d0c7e05f2feb56a9eb5c3cfee68c602f74123c445f4cd79d73"
+      }
+    ],
+    "database_operations": 0
+  },
+  "stderr": ""
+}
