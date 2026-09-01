@@ -1,0 +1,18 @@
+{
+  "unit": {
+    "exit_code": 0,
+    "tail": "n the distribution and preserves mismatch copy\nAn update to StatePage inside a test was not wrapped in act(...).\n\nWhen testing, code that causes React state updates should be wrapped into act(...):\n\nact(() => {\n  /* fire events that update state */\n});\n/* assert on the output */\n\nThis ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act\nAn update to StatePage inside a test was not wrapped in act(...).\n\nWhen testing, code that causes React state updates should be wrapped into act(...):\n\nact(() => {\n  /* fire events that update state */\n});\n/* assert on the output */\n\nThis ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act\n\nnpm notice\nnpm notice New major version of npm available! 10.9.2 -> 12.0.2\nnpm notice Changelog: https://github.com/npm/cli/releases/tag/v12.0.2\nnpm notice To update run: npm install -g npm@12.0.2\nnpm notice\n"
+  },
+  "lint": {
+    "exit_code": 0,
+    "tail": "\n> mente-do-brasil-web@0.1.0 lint\n> eslint .\n\n"
+  },
+  "typecheck": {
+    "exit_code": 0,
+    "tail": "\n> mente-do-brasil-web@0.1.0 typecheck\n> tsc --noEmit\n\n"
+  },
+  "build": {
+    "exit_code": 0,
+    "tail": "eb@0.1.0 build\n> next build\n\n\u25b2 Next.js 16.3.2 (Turbopack)\n\u2713 Running next.config.ts took 84ms\n\n  Creating an optimized production build ...\n\u2713 Compiled successfully in 629ms\n  Running TypeScript ...\n  Finished TypeScript in 2.2s ...\n  Collecting page data using 7 workers ...\n  Generating static pages using 7 workers (0/13) ...\n  Generating static pages using 7 workers (3/13) \n  Generating static pages using 7 workers (6/13) \n  Generating static pages using 7 workers (9/13) \n\u2713 Generating static pages using 7 workers (13/13) in 475ms\n  Finalizing page optimization ...\n\nRoute (app)\n\u250c \u0192 /\n\u251c \u25cb /_not-found\n\u251c \u0192 /.well-known/security.txt\n\u251c \u0192 /api/v1/[...path]\n\u251c \u25cb /contato\n\u251c \u25cb /dados\n\u251c \u0192 /estado/[uf]\n\u251c \u25cb /financiamento\n\u251c \u0192 /fluxos\n\u251c \u0192 /gestor\n\u251c \u0192 /healthz\n\u251c \u25cb /metodologia\n\u251c \u25cb /mudancas\n\u251c \u25cb /privacidade\n\u251c \u0192 /radar\n\u251c \u0192 /readyz\n\u251c \u0192 /regiao/[codigo]\n\u251c \u0192 /robots.txt\n\u251c \u0192 /sitemap.xml\n\u2514 \u25cb /sobre\n\n\n\u0192 Proxy (Middleware)\n\n\u25cb  (Static)   prerendered as static content\n\u0192  (Dynamic)  server-rendered on demand\n\n"
+  }
+}

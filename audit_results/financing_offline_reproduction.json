@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "mode": "STRICTLY_OFFLINE_TEMPORARY_OUTPUT",
+  "network_source_calls": 0,
+  "serving_database_reads": 0,
+  "old_repository_reads": 0,
+  "writer_pyarrow_version": "21.0.0",
+  "accepted_sha256": "09e6182fa527a73e53691c97d65e30e2fc6f2740fffdd36b0d09baa59e680860",
+  "reproduced_sha256": "09e6182fa527a73e53691c97d65e30e2fc6f2740fffdd36b0d09baa59e680860",
+  "exact_sha256_match": true,
+  "accepted_bytes": 57621,
+  "reproduced_bytes": 57621,
+  "rows": 1317,
+  "full_coverage": 1310,
+  "partial": 7,
+  "row_values_equal": true,
+  "schema_with_metadata_equal": true,
+  "temporary_output": "/tmp/mdb-financing-reproduction-pyarrow21.0q6Th6/health_region_financing.parquet",
+  "accepted_output_unchanged": true,
+  "snapshot_sha256": "60def3ab60e036d0c7e05f2feb56a9eb5c3cfee68c602f74123c445f4cd79d73",
+  "initial_pyarrow25_diagnostic": "audit_results/financing_offline_reproduction_pyarrow25_mismatch.json"
+}

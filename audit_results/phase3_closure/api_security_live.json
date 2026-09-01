@@ -15,11 +15,11 @@
         "vary": "Accept-Encoding",
         "cache-control": "public, max-age=60, s-maxage=900, stale-while-revalidate=3600",
         "content-type": "application/json",
-        "date": "Mon, 31 Aug 2026 20:26:43 GMT",
+        "date": "Tue, 01 Sep 2026 16:53:41 GMT",
         "ratelimit-limit": "120",
         "ratelimit-remaining": "119",
         "ratelimit-reset": "60",
-        "x-request-id": "56da5d0b-7a43-425f-ae59-49080c0319e9",
+        "x-request-id": "1503227e-3678-4d5b-a4de-418d3b99e605",
         "connection": "close",
         "transfer-encoding": "chunked"
       }
@@ -39,11 +39,11 @@
         "vary": "Accept-Encoding",
         "cache-control": "public, max-age=60, s-maxage=900, stale-while-revalidate=3600",
         "content-type": "application/json",
-        "date": "Mon, 31 Aug 2026 20:26:43 GMT",
+        "date": "Tue, 01 Sep 2026 16:53:41 GMT",
         "ratelimit-limit": "120",
         "ratelimit-remaining": "118",
         "ratelimit-reset": "60",
-        "x-request-id": "0e46b862-6c8c-4837-bb0b-fc8a3d67d2eb",
+        "x-request-id": "1ae1167f-c492-42dd-8729-4632fda86129",
         "connection": "close",
         "transfer-encoding": "chunked"
       }
@@ -63,11 +63,11 @@
         "vary": "Accept-Encoding",
         "cache-control": "public, max-age=60, s-maxage=900, stale-while-revalidate=3600",
         "content-type": "application/json",
-        "date": "Mon, 31 Aug 2026 20:26:43 GMT",
+        "date": "Tue, 01 Sep 2026 16:53:41 GMT",
         "ratelimit-limit": "120",
         "ratelimit-remaining": "117",
         "ratelimit-reset": "60",
-        "x-request-id": "38a68259-6b3f-4729-bf4f-b71526e0c7d9",
+        "x-request-id": "a5e9ccef-e3d0-4eff-8fea-1ee732d5a40c",
         "connection": "close",
         "transfer-encoding": "chunked"
       }
@@ -87,11 +87,11 @@
         "vary": "Accept-Encoding",
         "cache-control": "public, max-age=60, s-maxage=900, stale-while-revalidate=3600",
         "content-type": "application/json",
-        "date": "Mon, 31 Aug 2026 20:26:43 GMT",
+        "date": "Tue, 01 Sep 2026 16:53:41 GMT",
         "ratelimit-limit": "120",
         "ratelimit-remaining": "116",
         "ratelimit-reset": "60",
-        "x-request-id": "b399f135-4587-432d-ac4f-6f8241c5513e",
+        "x-request-id": "af90ad88-f1f0-4fa2-92da-e22708f9332d",
         "connection": "close",
         "transfer-encoding": "chunked"
       }
@@ -111,11 +111,11 @@
         "vary": "Accept-Encoding",
         "cache-control": "public, max-age=60, s-maxage=900, stale-while-revalidate=3600",
         "content-type": "application/json",
-        "date": "Mon, 31 Aug 2026 20:26:43 GMT",
+        "date": "Tue, 01 Sep 2026 16:53:41 GMT",
         "ratelimit-limit": "120",
         "ratelimit-remaining": "115",
         "ratelimit-reset": "60",
-        "x-request-id": "409ea7b4-cce3-47cb-be41-f8a46634d849",
+        "x-request-id": "5edca2ce-496e-4b8c-8024-ac1a0321b6ca",
         "connection": "close",
         "transfer-encoding": "chunked"
       }
@@ -135,11 +135,11 @@
         "vary": "Accept-Encoding",
         "cache-control": "public, max-age=60, s-maxage=900, stale-while-revalidate=3600",
         "content-type": "application/json",
-        "date": "Mon, 31 Aug 2026 20:26:43 GMT",
+        "date": "Tue, 01 Sep 2026 16:53:41 GMT",
         "ratelimit-limit": "120",
         "ratelimit-remaining": "114",
         "ratelimit-reset": "60",
-        "x-request-id": "b9d19e04-45b2-4e2a-9d2c-62080234cca3",
+        "x-request-id": "69ce5df6-12f7-4c62-8a0e-c7a052162153",
         "connection": "close",
         "transfer-encoding": "chunked"
       }
@@ -160,12 +160,12 @@
         "cache-control": "public, max-age=60, s-maxage=900, stale-while-revalidate=3600",
         "content-disposition": "attachment; filename=\"mente-do-brasil_relatorio_12001_alto-acre_MDB_ANALYTICAL_2024_2.pdf\"",
         "content-type": "application/pdf",
-        "date": "Mon, 31 Aug 2026 20:26:43 GMT",
+        "date": "Tue, 01 Sep 2026 16:53:41 GMT",
         "etag": "\"8d578726e316073182eec39898eeb775-MDB_REPORTLAB_GENERATOR_1.1\"",
         "ratelimit-limit": "6",
         "ratelimit-remaining": "5",
         "ratelimit-reset": "60",
-        "x-request-id": "f219147a-7cfc-4048-b8f1-f1ceec2b1d8c",
+        "x-request-id": "9347aa16-fc3e-48e1-baa0-71f4807fa4a5",
         "x-robots-tag": "noindex",
         "connection": "close",
         "transfer-encoding": "chunked"
@@ -192,7 +192,7 @@
         "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
         "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
         "content-type": "text/html; charset=utf-8",
-        "date": "Mon, 31 Aug 2026 20:26:44 GMT",
+        "date": "Tue, 01 Sep 2026 16:53:41 GMT",
         "connection": "close",
         "transfer-encoding": "chunked"
       },

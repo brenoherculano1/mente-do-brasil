@@ -1,0 +1,94 @@
+INFO:     Started server process [65222]
+INFO:     Waiting for application startup.
+{"event": "startup", "level": "info", "release_id": "MDB_ANALYTICAL_2024_1", "service": "mente-do-brasil-api", "status": "starting", "timestamp": "2026-09-01T08:30:40.412268+00:00"}
+{"event": "startup", "level": "info", "release_id": "MDB_ANALYTICAL_2024_1", "service": "mente-do-brasil-api", "status": "ready", "timestamp": "2026-09-01T08:30:40.431403+00:00"}
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8101 (Press CTRL+C to quit)
+INFO:     127.0.0.1:58787 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58790 - "GET /api/v1/radar/health-regions?release_id=MDB_ANALYTICAL_2024_1&min_signal_families=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58791 - "GET /api/v1/health-regions/12001/explanation?release_id=MDB_ANALYTICAL_2024_1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58792 - "GET /api/v1/health-regions/12001/peers?release_id=MDB_ANALYTICAL_2024_1 HTTP/1.1" 200 OK
+.INFO:     127.0.0.1:58793 - "GET /api/v1/radar/health-regions?release_id=MDB_ANALYTICAL_2024_2&min_signal_families=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58794 - "GET /api/v1/health-regions/12001/explanation?release_id=MDB_ANALYTICAL_2024_2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58795 - "GET /api/v1/health-regions/12001/peers?release_id=MDB_ANALYTICAL_2024_2 HTTP/1.1" 200 OK
+.INFO:     127.0.0.1:58796 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58797 - "GET /ready HTTP/1.1" 200 OK
+.INFO:     127.0.0.1:58798 - "GET /api/v1/releases HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58799 - "GET /api/v1/releases/MDB_ANALYTICAL_2024_1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58800 - "GET /api/v1/indicators HTTP/1.1" 200 OK
+.INFO:     127.0.0.1:58801 - "GET /api/v1/health-regions?limit=100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58802 - "GET /api/v1/health-regions?uf=AC HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58803 - "GET /api/v1/health-regions/12001 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58805 - "GET /api/v1/map/health-regions?include_geometry=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58806 - "GET /api/v1/map/health-regions?include_geometry=true HTTP/1.1" 200 OK
+.INFO:     127.0.0.1:58808 - "GET /api/v1/map/health-regions?include_geometry=true&geometry_profile=overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58809 - "GET /api/v1/map/health-regions?include_geometry=true&geometry_profile=detail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58810 - "GET /api/v1/map/health-regions?include_geometry=true&geometry_profile=full HTTP/1.1" 403 Forbidden
+......INFO:     127.0.0.1:58811 - "GET /api/v1/map/health-regions?include_geometry=true&geometry_profile=overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58812 - "GET /api/v1/map/health-regions?include_geometry=true&geometry_profile=overview HTTP/1.1" 200 OK
+.INFO:     127.0.0.1:58813 - "GET /api/v1/municipalities/1100015/health-region HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58814 - "GET /api/v1/ufs HTTP/1.1" 200 OK
+.INFO:     127.0.0.1:58815 - "GET /api/v1/states/AC HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58816 - "GET /api/v1/states/ac HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58817 - "GET /api/v1/map/health-regions?uf=AC&include_geometry=true&geometry_profile=overview HTTP/1.1" 200 OK
+.INFO:     127.0.0.1:58818 - "GET /api/v1/states/SP HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58819 - "GET /api/v1/states/DF HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58820 - "GET /api/v1/states/XX HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58821 - "GET /api/v1/states/AC%27%20OR%20%271%27%3D%271 HTTP/1.1" 422 Unprocessable Content
+.INFO:     127.0.0.1:58822 - "GET /api/v1/health-regions/99999 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58823 - "GET /api/v1/municipalities/9999999/health-region HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58824 - "GET /api/v1/map/health-regions?metric=not_a_metric HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:58825 - "GET /api/v1/map/health-regions?geometry_profile=unknown HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:58826 - "GET /api/v1/health-regions?uf=ABCDE HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:58827 - "GET /api/v1/health-regions?limit=101 HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:58828 - "GET /api/v1/health-regions?offset=-1 HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:58829 - "GET /api/v1/releases/NOT_A_RELEASE HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58830 - "GET /api/v1/health-regions?release_id=NOT_A_RELEASE HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58831 - "GET /api/v1/map/health-regions?release_id=NOT_A_RELEASE HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58832 - "GET /api/v1/states/AC?release_id=NOT_A_RELEASE HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58833 - "GET /api/v1/health-regions?q=12001%27%20OR%20%271%27%3D%271&limit=10 HTTP/1.1" 200 OK
+.INFO:     127.0.0.1:58834 - "GET /api/v1/radar/health-regions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58835 - "GET /api/v1/radar/health-regions?min_signal_families=0&include_geometry=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58836 - "GET /api/v1/radar/health-regions?uf=AC&min_signal_families=0 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58837 - "GET /api/v1/radar/health-regions?signal=SPATIAL_HH_MISMATCH&min_signal_families=0 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58838 - "GET /api/v1/radar/health-regions?signal=UNKNOWN HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:58839 - "GET /api/v1/radar/health-regions?min_signal_families=6 HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:58840 - "GET /api/v1/radar/health-regions?uf=XX HTTP/1.1" 404 Not Found
+.INFO:     127.0.0.1:58841 - "GET /api/v1/health-regions/12001/explanation HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58842 - "GET /api/v1/health-regions/12001/peers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58843 - "GET /api/v1/intelligence/methods HTTP/1.1" 200 OK
+.INFO:     127.0.0.1:58844 - "GET /api/v1/manager/health-regions/12001 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58845 - "GET /api/v1/manager/health-regions/12001 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58846 - "GET /api/v1/manager/compare?codes=12001,31001,41006,53001 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58847 - "GET /api/v1/manager/compare?codes=12001 HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:58848 - "GET /api/v1/manager/compare?codes=12001,31001,41006,53001,11001 HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:58849 - "GET /api/v1/manager/compare?codes=12001,12001 HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:58850 - "GET /api/v1/manager/compare?codes=12001%2C..%2F..%2Fetc%2Fpasswd HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:58851 - "GET /api/v1/health-regions/12001/report.pdf HTTP/1.1" 200 OK
+.INFO:     127.0.0.1:58853 - "GET /api/v1/manager/health-regions/11002 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58854 - "GET /api/v1/manager/health-regions/53001 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58855 - "GET /api/v1/manager/health-regions/31062 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58856 - "GET /api/v1/manager/health-regions/11001 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58857 - "GET /api/v1/manager/health-regions/41006 HTTP/1.1" 200 OK
+.INFO:     127.0.0.1:58858 - "GET /api/v1/rankings HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58859 - "GET /api/v1/dashboard HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58860 - "GET /api/v1/chat HTTP/1.1" 404 Not Found
+.................................................... [ 58%]
+..................INFO:     127.0.0.1:58864 - "GET /api/v1/map/health-regions?include_geometry=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58865 - "GET /api/v1/map/health-regions?include_geometry=true&geometry_profile=overview HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58866 - "GET /api/v1/map/health-regions?include_geometry=true&geometry_profile=detail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58867 - "GET /api/v1/map/health-regions?include_geometry=true&geometry_profile=full HTTP/1.1" 403 Forbidden
+INFO:     127.0.0.1:58868 - "GET /api/v1/map/health-regions?include_geometry=true&geometry_profile=unknown HTTP/1.1" 422 Unprocessable Content
+.................................                      [100%]
+=============================== warnings summary ===============================
+.venv/lib/python3.13/site-packages/reportlab/lib/rl_safe_eval.py:12
+  /Users/brenoherculano/Projects/mente-do-brasil/.venv/lib/python3.13/site-packages/reportlab/lib/rl_safe_eval.py:12: DeprecationWarning: ast.NameConstant is deprecated and will be removed in Python 3.14; use ast.Constant instead
+    haveNameConstant = hasattr(ast,'NameConstant')
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+123 passed, 1 warning in 20.08s
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+{"event": "shutdown", "level": "info", "release_id": "MDB_ANALYTICAL_2024_1", "service": "mente-do-brasil-api", "status": "complete", "timestamp": "2026-09-01T08:31:01.548739+00:00"}
+INFO:     Application shutdown complete.
+INFO:     Finished server process [65222]

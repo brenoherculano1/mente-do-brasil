@@ -112,13 +112,20 @@ def main():
         ["scientific_regression"],
         source_class="allowlisted_read_only_donor",
     )
+    reproduction_path = ROOT / "audit_results/financing_offline_reproduction.json"
+    reproduction = json.loads(reproduction_path.read_text()) if reproduction_path.is_file() else {}
+    reproduction_pass = (
+        reproduction.get("status") == "PASS"
+        and reproduction.get("reproduced_sha256") == FINANCING_HASH
+    )
     add(
         SNAPSHOT,
-        "siops_snapshot_candidate",
+        "siops_snapshot",
         "MDB_SIOPS_SNAPSHOT_20260831_1",
         "metadata/provenance/siops_snapshot_recovery_2026-08-31.yaml",
         ["siops_reproduction_gate"],
-        acceptance="PENDING_DERIVED_REPRODUCTION",
+        expected=fingerprint(ROOT / SNAPSHOT) if reproduction_pass else None,
+        acceptance="ACCEPTED" if reproduction_pass else "PENDING_DERIVED_REPRODUCTION",
         source_class="allowlisted_read_only_donor",
     )
     source_manifest = "metadata/provenance/phase2_raw_data_manifest_2026-08-23.csv"
@@ -129,14 +136,20 @@ def main():
     ]
     assert len(pops) == 3
     for item in pops:
+        relative = f"data/raw/scientific_correction_recovery/{Path(item['filename']).name}"
         add(
-            f"data/raw/scientific_correction_recovery/{Path(item['filename']).name}",
+            relative,
             "locked_population_source",
             f"POPSVS_{item['period']}",
             source_manifest,
             ["siops_reproduction_gate"],
             {"bytes": int(item["size"]), "sha256": item["sha256"]},
-            source_class="locked_source_backup_recovery_not_yet_authorized",
+            source_class="authorized_hash_locked_recovery",
+        )
+        artifacts[relative].update(
+            presence_status="PRESENT",
+            hash_validation_status="HASH_VALIDATED",
+            recovery_status="AUTHORIZED_RECOVERY_COMPLETE",
         )
     # Include the exact versioned files consumed by the loaders, not just their data.
     dependencies = set((ROOT / "db/migrations").glob("*.sql"))
@@ -175,20 +188,19 @@ def main():
     candidate = fingerprint(ROOT / SNAPSHOT)
     semantics = snapshot_semantics(ROOT / SNAPSHOT)
     siops = {
-        "status": "BLOCKED_MISSING_AUTHORIZED_POPSVS_INPUTS",
-        "recovered_snapshot_sha256": None,
+        "status": "PASS" if reproduction_pass else "BLOCKED_DERIVED_REPRODUCTION",
+        "recovered_snapshot_sha256": candidate["sha256"] if reproduction_pass else None,
         "observed_candidate_sha256": candidate["sha256"],
         "bytes": candidate["bytes"],
         **semantics,
-        "derived_output_sha256": None,
+        "derived_reproduction": "PASS" if reproduction_pass else "NOT_RUN",
+        "derived_output_sha256": reproduction.get("reproduced_sha256"),
         "accepted_existing_financing_sha256": FINANCING_HASH,
         "builder": "scripts/build_financing_context.py",
-        "builder_executed": False,
+        "builder_executed": bool(reproduction),
         "automatic_source_download_executed": False,
-        "reason": (
-            "Builder populations() requires three absent POPSVS archives "
-            "outside authorized recovery allowlist."
-        ),
+        "writer_pyarrow_version": reproduction.get("writer_pyarrow_version"),
+        "reason": None if reproduction_pass else "Exact derived reproduction not accepted.",
         "missing_inputs": [
             e for e in inventory["artifacts"] if e["artifact_type"] == "locked_population_source"
         ],
@@ -200,11 +212,13 @@ def main():
         json.dumps(siops, indent=2) + "\n"
     )
     rebuild = {
-        "status": "BLOCKED_BEFORE_DATABASE_CREATION",
+        "status": (
+            "READY_FOR_EMPTY_REBUILD" if reproduction_pass else "BLOCKED_BEFORE_DATABASE_CREATION"
+        ),
         "database_operations": 0,
         "reason": siops["reason"],
         "preflight": "audit_results/phase3_artifact_preflight.json",
-        "complete_loader_orchestration": "NOT_IMPLEMENTED_PENDING_SOURCE_GATE",
+        "complete_loader_orchestration": "PENDING",
     }
     (ROOT / "audit_results/database_rebuild_final.txt").write_text(
         json.dumps(rebuild, indent=2) + "\n"

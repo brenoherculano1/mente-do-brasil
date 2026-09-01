@@ -1,0 +1,42 @@
+{
+  "status": "PASS_WITH_SCOPE",
+  "scope": "Automated native-semantics and keyboard-focus spot check; not a WCAG certification.",
+  "period_selector": {
+    "before": "2022,2024",
+    "after": "2022,2023",
+    "change_observed": true,
+    "focused": true,
+    "semantics": {
+      "tag": "SELECT",
+      "role": "implicit combobox",
+      "labels": [
+        "Período2022 → 20232023 → 20242022 → 2024"
+      ],
+      "options": [
+        {
+          "label": "2022 → 2023",
+          "value": "2022,2023"
+        },
+        {
+          "label": "2023 → 2024",
+          "value": "2023,2024"
+        },
+        {
+          "label": "2022 → 2024",
+          "value": "2022,2024"
+        }
+      ]
+    },
+    "aria_snapshot": "- combobox \"Período\":\n  - option \"2022 → 2023\"\n  - option \"2023 → 2024\"\n  - option \"2022 → 2024\" [selected]",
+    "native_control": true
+  },
+  "comparison_table": {
+    "region_focused": true,
+    "focus_outline": {
+      "outlineStyle": "solid",
+      "outlineWidth": "3px"
+    },
+    "visible_focus_indicator": true
+  },
+  "pending_item": "RESOLVED"
+}

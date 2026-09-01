@@ -520,12 +520,15 @@
       "bytes": 3378657,
       "sha256": "8619497c4adcb87133aab68666ed6604209b812047e9b51e3608db00a2c8e731",
       "provenance": "metadata/provenance/phase2_raw_data_manifest_2026-08-23.csv",
-      "source_location_class": "locked_source_backup_recovery_not_yet_authorized",
+      "source_location_class": "authorized_hash_locked_recovery",
       "required_for": [
         "siops_reproduction_gate"
       ],
       "redistributable_status": "NOT_ASSESSED",
-      "acceptance_status": "ACCEPTED"
+      "acceptance_status": "ACCEPTED",
+      "presence_status": "PRESENT",
+      "hash_validation_status": "HASH_VALIDATED",
+      "recovery_status": "AUTHORIZED_RECOVERY_COMPLETE"
     },
     {
       "relative_path": "data/raw/scientific_correction_recovery/POPSBR23.zip",
@@ -534,12 +537,15 @@
       "bytes": 3360669,
       "sha256": "c49b35794dc235bad8a4a0dbc530a82aeae589e03a366a3c17a8325e6c24d5f4",
       "provenance": "metadata/provenance/phase2_raw_data_manifest_2026-08-23.csv",
-      "source_location_class": "locked_source_backup_recovery_not_yet_authorized",
+      "source_location_class": "authorized_hash_locked_recovery",
       "required_for": [
         "siops_reproduction_gate"
       ],
       "redistributable_status": "NOT_ASSESSED",
-      "acceptance_status": "ACCEPTED"
+      "acceptance_status": "ACCEPTED",
+      "presence_status": "PRESENT",
+      "hash_validation_status": "HASH_VALIDATED",
+      "recovery_status": "AUTHORIZED_RECOVERY_COMPLETE"
     },
     {
       "relative_path": "data/raw/scientific_correction_recovery/POPSBR24.zip",
@@ -548,26 +554,29 @@
       "bytes": 3342323,
       "sha256": "cbf5549a5f9b37160e2fe3a5f97123a7747e371d4c433a8aa8a3276ad41dcc53",
       "provenance": "metadata/provenance/phase2_raw_data_manifest_2026-08-23.csv",
-      "source_location_class": "locked_source_backup_recovery_not_yet_authorized",
+      "source_location_class": "authorized_hash_locked_recovery",
       "required_for": [
         "siops_reproduction_gate"
       ],
       "redistributable_status": "NOT_ASSESSED",
-      "acceptance_status": "ACCEPTED"
+      "acceptance_status": "ACCEPTED",
+      "presence_status": "PRESENT",
+      "hash_validation_status": "HASH_VALIDATED",
+      "recovery_status": "AUTHORIZED_RECOVERY_COMPLETE"
     },
     {
       "relative_path": "data/raw/siops_official/MDB_SIOPS_SNAPSHOT_20260831_1.jsonl",
-      "artifact_type": "siops_snapshot_candidate",
+      "artifact_type": "siops_snapshot",
       "version": "MDB_SIOPS_SNAPSHOT_20260831_1",
       "bytes": 11138074,
-      "sha256": null,
+      "sha256": "60def3ab60e036d0c7e05f2feb56a9eb5c3cfee68c602f74123c445f4cd79d73",
       "provenance": "metadata/provenance/siops_snapshot_recovery_2026-08-31.yaml",
       "source_location_class": "allowlisted_read_only_donor",
       "required_for": [
         "siops_reproduction_gate"
       ],
       "redistributable_status": "NOT_ASSESSED",
-      "acceptance_status": "PENDING_DERIVED_REPRODUCTION"
+      "acceptance_status": "ACCEPTED"
     },
     {
       "relative_path": "db/migrations/001_extensions.sql",

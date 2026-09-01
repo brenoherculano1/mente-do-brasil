@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "source_database": "mdb_rebuild_phase3_final_1788250411",
+  "backup_path_private_not_packaged": "/var/folders/zt/3kqhjx4x1h305tyvlwfmn44m0000gn/T/mdb-phase3-final-backup-io8wkz_m/phase3.dump",
+  "size_bytes": 83631182,
+  "sha256": "34e7137c3fe38be17cb531492a496a79ba90eb16331e03b10a778d1dd68717c0",
+  "format": "pg_dump custom compressed",
+  "pg_dump_version": "pg_dump (PostgreSQL) 18.6 (Debian 18.6-1.pgdg13+2)"
+}

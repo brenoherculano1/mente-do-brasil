@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import argparse
 import csv
 import json
 import tempfile
@@ -22,7 +23,7 @@ CANONICAL = ROOT / "data/canonical/MDB_ANALYTICAL_2024_2/health_regions.parquet"
 OUT = ROOT / "data/product_intelligence/MDB_ANALYTICAL_2024_2/health_region_financing.parquet"
 
 
-def populations() -> pd.DataFrame:
+def populations(*, offline: bool = False) -> pd.DataFrame:
     cross = pd.read_parquet(CROSSWALK)
     mapping = dict(
         zip(cross.municipality_code_ibge.astype(str), cross.health_region_code, strict=True)
@@ -33,7 +34,12 @@ def populations() -> pd.DataFrame:
         item = next(
             r for r in manifest if r["source"] == "DATASUS IBGE POPSVS" and r["period"] == str(year)
         )
-        path = materialized_source(Path(item["filename"]), item["url"], item["sha256"])
+        if offline:
+            path = ROOT / "data/raw/scientific_correction_recovery" / Path(item["filename"]).name
+            if not path.is_file() or sha256(path) != item["sha256"]:
+                raise ValueError(f"Offline POPSVS source missing or hash mismatch: {path.name}")
+        else:
+            path = materialized_source(Path(item["filename"]), item["url"], item["sha256"])
         with tempfile.TemporaryDirectory(prefix="mdb-financing-pop-") as directory:
             member = zipfile.ZipFile(path).namelist()
             dbf = Path(directory) / "population.dbf"
@@ -60,7 +66,7 @@ def populations() -> pd.DataFrame:
     return pd.concat(parts, ignore_index=True)
 
 
-def main() -> None:
+def build(*, output: Path = OUT, offline: bool = False) -> dict:
     cross = pd.read_parquet(CROSSWALK)
     expected = (
         cross.groupby("health_region_code")
@@ -93,7 +99,7 @@ def main() -> None:
     out = out.merge(expected, on="health_region_code", how="left").merge(
         annual, on=["year", "health_region_code"], how="left"
     )
-    municipal_pop = populations()
+    municipal_pop = populations(offline=offline)
     pop = municipal_pop.groupby(["year", "health_region_code"], as_index=False).population.sum()
     pop = pop.rename(columns={"population": "population_expected"})
     out = out.merge(pop, on=["year", "health_region_code"], how="left")
@@ -148,16 +154,16 @@ def main() -> None:
             "source_indicator",
         ]
     ].sort_values(["year", "health_region_code"])
-    OUT.parent.mkdir(parents=True, exist_ok=True)
-    temporary = OUT.with_suffix(".parquet.tmp")
+    output.parent.mkdir(parents=True, exist_ok=True)
+    temporary = output.with_suffix(".parquet.tmp")
     out.to_parquet(temporary, index=False)
-    temporary.replace(OUT)
+    temporary.replace(output)
     result = {
         "rows": len(out),
         "full_coverage_rows": int(out.headline_available.sum()),
         "partial_rows": int((~out.headline_available).sum()),
-        "output": str(OUT.relative_to(ROOT)),
-        "sha256": sha256(OUT),
+        "output": str(output),
+        "sha256": sha256(output),
         "source_snapshot_rows": len(snap),
         "source_snapshot_successes": int((snap.status == "ok").sum()),
         "population_nulls": int(out.population_expected.isna().sum()),
@@ -172,9 +178,19 @@ def main() -> None:
             out.loc[~out.headline_available, "total_health_expenditure_brl"].isna().all()
         ),
     }
-    (ROOT / "audit_results/siops_financing_build.json").write_text(
-        json.dumps(result, indent=2) + "\n"
-    )
+    return result
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--offline", action="store_true")
+    parser.add_argument("--output", type=Path, default=OUT)
+    args = parser.parse_args()
+    result = build(output=args.output, offline=args.offline)
+    if args.output.resolve() == OUT.resolve():
+        (ROOT / "audit_results/siops_financing_build.json").write_text(
+            json.dumps(result, indent=2) + "\n"
+        )
     print(json.dumps(result, indent=2))
 
 

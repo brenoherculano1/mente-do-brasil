@@ -1,0 +1,23 @@
+{
+  "status": "PASS_WITH_REGRESSION_SCOPE",
+  "qualification": "Live deterministic PDF and production E2E screenshot inventory; prior editorial PDF QA remains authoritative because no report layout or visual code changed.",
+  "pdf": {
+    "status": "PASS",
+    "content_types": [
+      "application/pdf",
+      "application/pdf"
+    ],
+    "bytes": 12745,
+    "pages": 8,
+    "sha256": "45d882d5eb518e32925f2df0d4882350eaa72466c4cfe580560b7e076b49e498",
+    "repeat_sha256": "45d882d5eb518e32925f2df0d4882350eaa72466c4cfe580560b7e076b49e498",
+    "deterministic": true,
+    "valid_header": true
+  },
+  "ui": {
+    "status": "PASS",
+    "production_e2e_evidence": "audit_results/phase3_production_e2e_final.txt",
+    "screenshot_count": 32,
+    "screenshots_nonempty": true
+  }
+}

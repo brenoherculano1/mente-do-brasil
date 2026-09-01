@@ -1,0 +1,63 @@
+
+> mente-do-brasil-web@0.1.0 test
+> vitest run
+
+
+ RUN  v3.2.7 /Users/brenoherculano/Projects/mente-do-brasil/web
+
+ ✓ tests/unit/public-foundation.test.ts (7 tests) 171ms
+ ✓ tests/unit/profile-components.test.tsx (4 tests) 85ms
+ ✓ tests/unit/manager-workbench.test.tsx (2 tests) 369ms
+   ✓ ManagerWorkbench > renders empty state without selecting a random region  331ms
+ ✓ tests/unit/about-page.test.tsx (6 tests) 774ms
+   ✓ about page > renders the institutional positioning and current scope  301ms
+ ✓ tests/unit/methodology-page.test.tsx (7 tests) 1350ms
+   ✓ methodology page > renders locked metadata identifiers and standard population  334ms
+ ✓ tests/unit/state-page.test.tsx (5 tests) 1131ms
+   ✓ state page > renders AC with three Health Regions and no state score or ranking  456ms
+ ✓ tests/unit/api-ingress-policy.test.ts (9 tests) 21ms
+ ✓ tests/unit/data-page.test.tsx (7 tests) 1769ms
+   ✓ data page > renders release identifiers, counts, and locked hashes  652ms
+   ✓ data page > renders the complete 35-field dictionary and filters locally  320ms
+ ✓ tests/unit/color-scale.test.ts (5 tests) 6ms
+stdout | tests/unit/api-route-rate-limit.test.ts > operational API route rate limit > short-circuits over-limit requests before calling the upstream FastAPI service
+{"timestamp":"2026-09-01T08:32:14.974Z","level":"info","service":"mente-do-brasil-next","event":"rate_limited","request_id":"d0e86a6f-3a13-4c5d-9a97-a92e26811cd1","route_class":"D_GEOMETRY_DETAIL","route":"/api/v1/map/health-regions","status":429}
+
+stdout | tests/unit/api-route-rate-limit.test.ts > operational API route rate limit > short-circuits over-limit PDF report requests before upstream generation
+{"timestamp":"2026-09-01T08:32:14.996Z","level":"info","service":"mente-do-brasil-next","event":"rate_limited","request_id":"5fc11160-6f6d-4370-a427-dabdf852a464","route_class":"D_GEOMETRY_DETAIL","route":"/api/v1/health-regions/12001/report.pdf","status":429}
+
+ ✓ tests/unit/api-route-rate-limit.test.ts (2 tests) 62ms
+ ✓ tests/unit/format.test.ts (3 tests) 4ms
+
+ Test Files  11 passed (11)
+      Tests  57 passed (57)
+   Start at  05:32:09
+   Duration  5.10s (transform 1.79s, setup 2.15s, collect 5.47s, tests 5.74s, environment 12.57s, prepare 2.80s)
+
+stderr | tests/unit/state-page.test.tsx > state page > uses locked regional values in the distribution and preserves mismatch copy
+An update to StatePage inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to StatePage inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+npm notice
+npm notice New major version of npm available! 10.9.2 -> 12.0.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.0.2
+npm notice To update run: npm install -g npm@12.0.2
+npm notice

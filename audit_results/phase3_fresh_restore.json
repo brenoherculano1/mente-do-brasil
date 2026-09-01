@@ -1,15 +1,6 @@
 {
   "status": "PASS",
-  "target_database": "mdb_rebuild_phase3_final_1788250411",
-  "origin": "NEW_EMPTY_DATABASE",
-  "source_existing_serving_rows": 0,
-  "loaders": {
-    "historical": "PASS",
-    "corrected": "PASS",
-    "web_geometry": "PASS",
-    "advanced": "PASS",
-    "runtime_access": "PASS"
-  },
+  "target_database": "mdb_restore_phase3_final_1788251239",
   "validation": {
     "status": "PASS",
     "checks": {
@@ -30,9 +21,9 @@
         "MDB_ANALYTICAL_2024_2"
       ],
       "lisa": {
-        "low-high": 6,
         "high-high": 60,
         "high-low": 5,
+        "low-high": 6,
         "low-low": 65
       },
       "flags": [
@@ -100,7 +91,5 @@
         "status": "PASS"
       }
     }
-  },
-  "failed_attempt_evidence": "audit_results/database_rebuild_attempt_validator_bug.txt",
-  "failure_class": "audit validator normalization fixed; loaders had all passed"
+  }
 }

@@ -1,23 +1,41 @@
 phase: ADVANCED_TERRITORIAL_PHASE_3
-status: BLOCKED_MISSING_AUTHORIZED_POPSVS_INPUTS
-lock: NOT_LOCKED
+status: PASS
+lock: LOCKED_LOCAL
 fileprovider_workspace: RESOLVED
-starting_commit: de9754440c5a9eff56272ff2a5198a182cc044e2
+starting_commit: 063dafba60c03a410911eb8177d67df70d81aaed
 branch: phase3-local-closure
-allowlisted_parquet_hashes: PASS
-full_import_bundle_manifest: PASS
+popsvs_recovery: 3_PASS_0_FAIL
+artifact_inventory: metadata/provenance/required_local_artifacts_v1.json
+artifact_preflight: PASS_60_OF_60
 siops_snapshot_semantics: PASS
-siops_snapshot_derived_reproduction: NOT_RUN_MISSING_INPUTS
-siops_snapshot_acceptance: PENDING
-artifact_preflight: BLOCKED
-empty_rebuild: NOT_RUN
-database_operations: 0
+siops_snapshot_derived_reproduction: PASS
+siops_snapshot_acceptance: PASS
+financing_offline_reproduction: PASS_EXACT_BYTES
+empty_rebuild: PASS
+advanced_content_identity: PASS
+idempotence: PASS
+immutability: PASS
+constraints: PASS
+fresh_backup: PASS
+fresh_restore: PASS
 previously_failing_tests: 4_PASS_0_FAIL_0_SKIP
-recovery_preflight_tests: 6_PASS_0_FAIL_0_SKIP
-full_backend: NOT_RUN
-accessibility_followup: NOT_RUN
+full_backend: 123_PASS_0_FAIL_0_SKIP
+frontend_unit: 57_PASS_0_FAIL
+frontend_lint: PASS
+frontend_typecheck: PASS
+frontend_build: PASS
+production_e2e: 30_PASS_0_FAIL_14_VIEWPORT_SPECIFIC_SKIP
+api_security: PASS
+accessibility_followup: PASS_WITH_SCOPE
+pdf_ui_regression: PASS
+reportlab: DOCUMENTED_UPSTREAM
+artifact_distribution_finding: >-
+  The local Git repository alone is insufficient for a complete rebuild. A separately
+  validated, hash-locked data and artifact bundle is required. This is an artifact-governance
+  requirement, not a Phase 3 scientific failure.
 public_release_status: NOT_RELEASED
 open_platform: NOT_STARTED
-reportlab: DOCUMENTED_UPSTREAM
 prior_evidence_preserved: true
-next_action: Authorize recovery of hash-locked POPSBR22.zip, POPSBR23.zip and POPSBR24.zip.
+next_action: >-
+  Build the complete Open Platform in one phase: public API, downloads,
+  licensing/attribution, documentation, and open-data governance.

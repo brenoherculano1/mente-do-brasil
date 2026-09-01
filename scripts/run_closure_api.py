@@ -5,6 +5,8 @@ import os
 import secrets
 import subprocess
 import sys
+import time
+import urllib.request
 import uuid
 
 from psycopg import sql
@@ -37,28 +39,47 @@ def main():
         )
         env = os.environ.copy()
         env.update(
-            MDB_DB_NAME=settings["POSTGRES_DB"],
+            MDB_DB_NAME=os.environ.get("MDB_DB_NAME", settings["POSTGRES_DB"]),
             MDB_API_DB_USER=role,
             MDB_API_DB_PASSWORD=password,
             MDB_DEFAULT_RELEASE_ID=args.release,
             MDB_API_PORT=str(args.port),
         )
         try:
-            command = (
-                [sys.executable, "-m", "pytest", "-q"]
-                if args.backend_tests
-                else [
-                    sys.executable,
-                    "-m",
-                    "uvicorn",
-                    "api.main:app",
-                    "--host",
-                    "127.0.0.1",
-                    "--port",
-                    str(args.port),
-                ]
-            )
-            result = subprocess.run(command, cwd=ROOT, env=env)
+            server_command = [
+                sys.executable,
+                "-m",
+                "uvicorn",
+                "api.main:app",
+                "--host",
+                "127.0.0.1",
+                "--port",
+                str(args.port),
+            ]
+            if args.backend_tests:
+                server = subprocess.Popen(server_command, cwd=ROOT, env=env)
+                try:
+                    for _ in range(60):
+                        try:
+                            with urllib.request.urlopen(
+                                f"http://127.0.0.1:{args.port}/health", timeout=1
+                            ) as response:
+                                if response.status == 200:
+                                    break
+                        except OSError:
+                            time.sleep(0.25)
+                    else:
+                        raise RuntimeError("Temporary API did not become healthy")
+                    result = subprocess.run(
+                        [sys.executable, "-m", "pytest", "-q", "-rs"],
+                        cwd=ROOT,
+                        env=env,
+                    )
+                finally:
+                    server.terminate()
+                    server.wait(timeout=30)
+            else:
+                result = subprocess.run(server_command, cwd=ROOT, env=env)
             if result.returncode:
                 raise SystemExit(result.returncode)
         except KeyboardInterrupt:

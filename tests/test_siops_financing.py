@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 
 import pandas as pd
+import pytest
 
 from scripts.fetch_siops_official_api import parse_brl
 
@@ -13,6 +14,25 @@ FINANCING = ROOT / "data/product_intelligence/MDB_ANALYTICAL_2024_2/health_regio
 def test_locale_safe_currency_parser():
     assert parse_brl("R$ 1.477,32") == 1477.32
     assert parse_brl("31.753.563,38") == 31753563.38
+
+
+def test_offline_builder_rejects_missing_locked_population(tmp_path, monkeypatch):
+    from scripts import build_financing_context as builder
+
+    monkeypatch.setattr(builder, "ROOT", tmp_path)
+    with pytest.raises(ValueError, match="Offline POPSVS source missing"):
+        builder.populations(offline=True)
+
+
+def test_offline_builder_has_no_network_fallback(monkeypatch):
+    from scripts import build_financing_context as builder
+
+    def forbidden(*args, **kwargs):
+        raise AssertionError("network/source fallback invoked")
+
+    monkeypatch.setattr(builder, "materialized_source", forbidden)
+    result = builder.populations(offline=True)
+    assert len(result) == 5570 * 3
 
 
 def test_snapshot_is_unique_and_missing_is_not_zero():

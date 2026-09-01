@@ -1,0 +1,98 @@
+{
+  "status": "PASS",
+  "scientific": {
+    "moran": 0.5256454566660947,
+    "pseudo_p": 0.0001,
+    "lisa_total": 136,
+    "clusters": {
+      "high-high": 60,
+      "low-low": 65,
+      "high-low": 5,
+      "low-high": 6,
+      "not_significant": 303
+    },
+    "flags": {
+      "SMALL_SUICIDE_COUNT": 7,
+      "ZERO_REGISTERED_BEDS": 275
+    }
+  },
+  "temporal": {
+    "rows": 1317,
+    "years": {
+      "2022": 439,
+      "2023": 439,
+      "2024": 439
+    },
+    "release_2024": [
+      "MDB_ANALYTICAL_2024_2"
+    ],
+    "reproduction": {
+      "status": "PASS",
+      "rows": 1317,
+      "max_abs_diff": {
+        "suicide_deaths": 0.0,
+        "psychiatric_admissions": 0.0,
+        "caps_count": 0.0,
+        "mental_health_beds_sus_count": 0.0,
+        "psychiatrist_fte": 1.4210854715202004e-14,
+        "need_score": 5.551115123125783e-17,
+        "capacity_score": 1.1102230246251565e-16,
+        "mismatch_score": 1.1102230246251565e-16,
+        "suicide_asmr": 0.0,
+        "psychiatric_admission_rate": 5.684341886080802e-14,
+        "caps_rate": 1.7763568394002505e-15,
+        "mental_health_beds_sus_rate": 2.220446049250313e-16,
+        "psychiatrist_fte_rate": 8.881784197001252e-16,
+        "suicide_percentile": 0.0,
+        "psychiatric_admission_percentile": 5.551115123125783e-17,
+        "caps_percentile": 5.551115123125783e-17,
+        "beds_percentile": 0.0,
+        "psychiatrist_fte_percentile": 5.551115123125783e-17
+      }
+    },
+    "threshold_pass": true
+  },
+  "changes": {
+    "rows": 1317,
+    "distribution_2022_2024": {
+      "0": 362,
+      "1": 47,
+      "2": 11,
+      "3": 17,
+      "4": 2,
+      "5": 0
+    },
+    "family_counts_2022_2024": {
+      "NEED_POSITION_UP": 23,
+      "CAPACITY_POSITION_DOWN": 3,
+      "MISMATCH_POSITION_UP": 20,
+      "NEED_COMPONENT_POSITION_UP": 51,
+      "CAPACITY_COMPONENT_POSITION_DOWN": 31
+    }
+  },
+  "financing": {
+    "rows": 1317,
+    "full": 1310,
+    "partial": 7,
+    "sha256": "09e6182fa527a73e53691c97d65e30e2fc6f2740fffdd36b0d09baa59e680860",
+    "missing_not_zero": true
+  },
+  "flows": {
+    "status": "PASS",
+    "source_files": 972,
+    "origin_regions": 439,
+    "eligible_psychiatric_admissions": 695320,
+    "pooled_edges_before_suppression": 20907,
+    "suppressed_edges_lt5": 11987,
+    "exact_lt5_leaks": 0,
+    "origin_reconciliation_439_439": true,
+    "max_origin_delta": 0,
+    "unmapped_municipalities": 0,
+    "patient_fields_exposed": [],
+    "diagnosis_rule": "F00-F09 or F20-F99; F10-F19 excluded",
+    "destination": "MUNIC_MOV mapped to Health Region via official crosswalk",
+    "source_hash_manifest": "metadata/provenance/phase2_raw_data_manifest_2026-08-23.csv",
+    "contributions": 20907,
+    "summaries": 439
+  }
+}
