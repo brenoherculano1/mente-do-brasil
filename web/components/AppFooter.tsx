@@ -10,6 +10,9 @@ export function AppFooter() {
           <div>Release: MDB_ANALYTICAL_2024_1</div>
           <div>Infraestrutura independente baseada em dados públicos.</div>
           <div className="footer-links">
+            <a href="/dados-abertos">Dados abertos</a>
+            <a href="/desenvolvedores">Desenvolvedores</a>
+            <a href="/governanca">Governança</a>
             <a href="/privacidade">Privacidade</a>
             <a href="/contato">Contato</a>
           </div>

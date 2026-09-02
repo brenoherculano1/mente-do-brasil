@@ -1,0 +1,33 @@
+{
+  "status": "PASS_WITH_SCOPE",
+  "scope": "Automated landmark, heading, keyboard-entry, empty-link, and 390px overflow checks; not a substitute for a full WCAG audit.",
+  "results": [
+    {
+      "path": "/dados-abertos",
+      "h1": 1,
+      "main": 1,
+      "emptyLinks": 0,
+      "horizontalOverflow": 0,
+      "firstTabTag": "A",
+      "firstTabText": "Mente do Brasil"
+    },
+    {
+      "path": "/desenvolvedores",
+      "h1": 1,
+      "main": 1,
+      "emptyLinks": 0,
+      "horizontalOverflow": 0,
+      "firstTabTag": "A",
+      "firstTabText": "Mente do Brasil"
+    },
+    {
+      "path": "/governanca",
+      "h1": 1,
+      "main": 1,
+      "emptyLinks": 0,
+      "horizontalOverflow": 0,
+      "firstTabTag": "A",
+      "firstTabText": "Mente do Brasil"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "files_compared": 33,
+  "file_hash_differences": [],
+  "zip_sha256_a": "2b3b1fc749bfd71181115c2cd9467bf26cb1572bd0c0e9687dabccffab3775bc",
+  "zip_sha256_b": "2b3b1fc749bfd71181115c2cd9467bf26cb1572bd0c0e9687dabccffab3775bc"
+}

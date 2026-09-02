@@ -1,0 +1,2016 @@
+version: MDB_PUBLIC_FIELD_REGISTRY_1.0
+fields:
+- field_name: release_id
+  dataset: health_regions_current
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Release id.
+  description_en: Release id.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: release_id
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: method_version
+  dataset: health_regions_current
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Method version.
+  description_en: Method version.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: method_version
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: geography_version
+  dataset: health_regions_current
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Geography version.
+  description_en: Geography version.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: geography_version
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: health_region_code
+  dataset: health_regions_current
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Health region code.
+  description_en: Health region code.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: health_region_code
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: health_region_name
+  dataset: health_regions_current
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Health region name.
+  description_en: Health region name.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: health_region_name
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: uf
+  dataset: health_regions_current
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Uf.
+  description_en: Uf.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: uf
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: municipality_count
+  dataset: health_regions_current
+  type: int64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Municipality count.
+  description_en: Municipality count.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: municipality_count
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: population
+  dataset: health_regions_current
+  type: int64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Population.
+  description_en: Population.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: population
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: area_km2
+  dataset: health_regions_current
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Area km2.
+  description_en: Area km2.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: area_km2
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: population_density
+  dataset: health_regions_current
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Population density.
+  description_en: Population density.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: population_density
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: suicide_asmr
+  dataset: health_regions_current
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Taxa de mortalidade por suicídio padronizada por idade.
+  description_en: Age-standardized suicide mortality rate.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: suicide_asmr
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: suicide_percentile
+  dataset: health_regions_current
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Suicide percentile.
+  description_en: Suicide percentile.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: suicide_percentile
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: psychiatric_admission_rate
+  dataset: health_regions_current
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Taxa de AIHs/internações psiquiátricas; não representa pacientes
+    únicos.
+  description_en: Psychiatric AIH/admission rate; it does not represent unique patients.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: psychiatric_admission_rate
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: psychiatric_admission_percentile
+  dataset: health_regions_current
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Psychiatric admission percentile.
+  description_en: Psychiatric admission percentile.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: psychiatric_admission_percentile
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: caps_count
+  dataset: health_regions_current
+  type: int64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Caps count.
+  description_en: Caps count.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: caps_count
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: caps_rate
+  dataset: health_regions_current
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Caps rate.
+  description_en: Caps rate.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: caps_rate
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: caps_percentile
+  dataset: health_regions_current
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Caps percentile.
+  description_en: Caps percentile.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: caps_percentile
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: mental_health_beds_sus_count
+  dataset: health_regions_current
+  type: int64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Leitos SUS registrados sob a definição travada; zero não prova ausência
+    de oferta.
+  description_en: SUS beds registered under the locked definition; zero does not prove
+    no supply.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: mental_health_beds_sus_count
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: mental_health_beds_sus_rate
+  dataset: health_regions_current
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Mental health beds sus rate.
+  description_en: Mental health beds sus rate.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: mental_health_beds_sus_rate
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: beds_percentile
+  dataset: health_regions_current
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Beds percentile.
+  description_en: Beds percentile.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: beds_percentile
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: psychiatrist_fte
+  dataset: health_regions_current
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Psychiatrist fte.
+  description_en: Psychiatrist fte.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: psychiatrist_fte
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: psychiatrist_fte_rate
+  dataset: health_regions_current
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Psychiatrist fte rate.
+  description_en: Psychiatrist fte rate.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: psychiatrist_fte_rate
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: psychiatrist_fte_percentile
+  dataset: health_regions_current
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Psychiatrist fte percentile.
+  description_en: Psychiatrist fte percentile.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: psychiatrist_fte_percentile
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: need_score
+  dataset: health_regions_current
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Escore relativo de necessidade medida; não representa prevalência.
+  description_en: Relative measured-need score; it is not prevalence.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: need_score
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: capacity_score
+  dataset: health_regions_current
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Escore relativo de capacidade registrada no setor público.
+  description_en: Relative registered public-sector capacity score.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: capacity_score
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: mismatch_score
+  dataset: health_regions_current
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Sinal de desalinhamento territorial relativo entre necessidade medida
+    e capacidade registrada.
+  description_en: Relative territorial misalignment signal between measured need and
+    registered capacity.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: mismatch_score
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: lisa_local_i
+  dataset: health_regions_current
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Lisa local i.
+  description_en: Lisa local i.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: lisa_local_i
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: lisa_p
+  dataset: health_regions_current
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Lisa p.
+  description_en: Lisa p.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: lisa_p
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: lisa_q
+  dataset: health_regions_current
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Lisa q.
+  description_en: Lisa q.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: lisa_q
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: lisa_significant
+  dataset: health_regions_current
+  type: bool
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Lisa significant.
+  description_en: Lisa significant.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: lisa_significant
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: lisa_cluster
+  dataset: health_regions_current
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Classe LISA local; HH não equivale a hotspot de doença.
+  description_en: Local LISA class; HH is not equivalent to a disease hotspot.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: lisa_cluster
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: data_quality_flags
+  dataset: health_regions_current
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Data quality flags.
+  description_en: Data quality flags.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: data_quality_flags
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: health_region_code
+  dataset: health_region_temporal
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Health region code.
+  description_en: Health region code.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: health_region_code
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: health_region_name
+  dataset: health_region_temporal
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Health region name.
+  description_en: Health region name.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: health_region_name
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: uf
+  dataset: health_region_temporal
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Uf.
+  description_en: Uf.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: uf
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: geography_version
+  dataset: health_region_temporal
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Geography version.
+  description_en: Geography version.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: geography_version
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: population
+  dataset: health_region_temporal
+  type: int64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Population.
+  description_en: Population.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: population
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: person_years
+  dataset: health_region_temporal
+  type: int64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Person years.
+  description_en: Person years.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: person_years
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: suicide_asmr
+  dataset: health_region_temporal
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Taxa de mortalidade por suicídio padronizada por idade.
+  description_en: Age-standardized suicide mortality rate.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: suicide_asmr
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: psychiatric_admissions
+  dataset: health_region_temporal
+  type: int64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Psychiatric admissions.
+  description_en: Psychiatric admissions.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: psychiatric_admissions
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: psychiatric_admission_rate
+  dataset: health_region_temporal
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Taxa de AIHs/internações psiquiátricas; não representa pacientes
+    únicos.
+  description_en: Psychiatric AIH/admission rate; it does not represent unique patients.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: psychiatric_admission_rate
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: caps_count
+  dataset: health_region_temporal
+  type: int64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Caps count.
+  description_en: Caps count.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: caps_count
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: mental_health_beds_sus_count
+  dataset: health_region_temporal
+  type: int64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Leitos SUS registrados sob a definição travada; zero não prova ausência
+    de oferta.
+  description_en: SUS beds registered under the locked definition; zero does not prove
+    no supply.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: mental_health_beds_sus_count
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: psychiatrist_fte
+  dataset: health_region_temporal
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Psychiatrist fte.
+  description_en: Psychiatrist fte.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: psychiatrist_fte
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: caps_rate
+  dataset: health_region_temporal
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Caps rate.
+  description_en: Caps rate.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: caps_rate
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: mental_health_beds_sus_rate
+  dataset: health_region_temporal
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Mental health beds sus rate.
+  description_en: Mental health beds sus rate.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: mental_health_beds_sus_rate
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: psychiatrist_fte_rate
+  dataset: health_region_temporal
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Psychiatrist fte rate.
+  description_en: Psychiatrist fte rate.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: psychiatrist_fte_rate
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: suicide_percentile
+  dataset: health_region_temporal
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Suicide percentile.
+  description_en: Suicide percentile.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: suicide_percentile
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: psychiatric_admission_percentile
+  dataset: health_region_temporal
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Psychiatric admission percentile.
+  description_en: Psychiatric admission percentile.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: psychiatric_admission_percentile
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: caps_percentile
+  dataset: health_region_temporal
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Caps percentile.
+  description_en: Caps percentile.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: caps_percentile
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: beds_percentile
+  dataset: health_region_temporal
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Beds percentile.
+  description_en: Beds percentile.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: beds_percentile
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: psychiatrist_fte_percentile
+  dataset: health_region_temporal
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Psychiatrist fte percentile.
+  description_en: Psychiatrist fte percentile.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: psychiatrist_fte_percentile
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: need_score
+  dataset: health_region_temporal
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Escore relativo de necessidade medida; não representa prevalência.
+  description_en: Relative measured-need score; it is not prevalence.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: need_score
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: capacity_score
+  dataset: health_region_temporal
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Escore relativo de capacidade registrada no setor público.
+  description_en: Relative registered public-sector capacity score.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: capacity_score
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: mismatch_score
+  dataset: health_region_temporal
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Sinal de desalinhamento territorial relativo entre necessidade medida
+    e capacidade registrada.
+  description_en: Relative territorial misalignment signal between measured need and
+    registered capacity.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: mismatch_score
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: year
+  dataset: health_region_temporal
+  type: int64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Year.
+  description_en: Year.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: year
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: need_window_start
+  dataset: health_region_temporal
+  type: int64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Need window start.
+  description_en: Need window start.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: need_window_start
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: need_window_end
+  dataset: health_region_temporal
+  type: int64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Need window end.
+  description_en: Need window end.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: need_window_end
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: capacity_competence
+  dataset: health_region_temporal
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Capacity competence.
+  description_en: Capacity competence.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: capacity_competence
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: temporal_version
+  dataset: health_region_temporal
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Temporal version.
+  description_en: Temporal version.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: temporal_version
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: release_id
+  dataset: health_region_temporal
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Release id.
+  description_en: Release id.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: release_id
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: quality_flags
+  dataset: health_region_temporal
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Quality flags.
+  description_en: Quality flags.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: quality_flags
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: health_region_code
+  dataset: health_region_changes
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Health region code.
+  description_en: Health region code.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: health_region_code
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: delta_need_score
+  dataset: health_region_changes
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Delta need score.
+  description_en: Delta need score.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: delta_need_score
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: delta_capacity_score
+  dataset: health_region_changes
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Delta capacity score.
+  description_en: Delta capacity score.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: delta_capacity_score
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: delta_mismatch_score
+  dataset: health_region_changes
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Delta mismatch score.
+  description_en: Delta mismatch score.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: delta_mismatch_score
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: delta_suicide_percentile
+  dataset: health_region_changes
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Delta suicide percentile.
+  description_en: Delta suicide percentile.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: delta_suicide_percentile
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: delta_psychiatric_admission_percentile
+  dataset: health_region_changes
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Delta psychiatric admission percentile.
+  description_en: Delta psychiatric admission percentile.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: delta_psychiatric_admission_percentile
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: delta_caps_percentile
+  dataset: health_region_changes
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Delta caps percentile.
+  description_en: Delta caps percentile.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: delta_caps_percentile
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: delta_beds_percentile
+  dataset: health_region_changes
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Delta beds percentile.
+  description_en: Delta beds percentile.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: delta_beds_percentile
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: delta_psychiatrist_fte_percentile
+  dataset: health_region_changes
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Delta psychiatrist fte percentile.
+  description_en: Delta psychiatrist fte percentile.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: delta_psychiatrist_fte_percentile
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: NEED_POSITION_UP
+  dataset: health_region_changes
+  type: bool
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Need position up.
+  description_en: Need position up.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: NEED_POSITION_UP
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: CAPACITY_POSITION_DOWN
+  dataset: health_region_changes
+  type: bool
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Capacity position down.
+  description_en: Capacity position down.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: CAPACITY_POSITION_DOWN
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: MISMATCH_POSITION_UP
+  dataset: health_region_changes
+  type: bool
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Mismatch position up.
+  description_en: Mismatch position up.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: MISMATCH_POSITION_UP
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: NEED_COMPONENT_POSITION_UP
+  dataset: health_region_changes
+  type: bool
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Need component position up.
+  description_en: Need component position up.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: NEED_COMPONENT_POSITION_UP
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: CAPACITY_COMPONENT_POSITION_DOWN
+  dataset: health_region_changes
+  type: bool
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Capacity component position down.
+  description_en: Capacity component position down.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: CAPACITY_COMPONENT_POSITION_DOWN
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: matched_change_families
+  dataset: health_region_changes
+  type: int64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Matched change families.
+  description_en: Matched change families.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: matched_change_families
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: from_year
+  dataset: health_region_changes
+  type: int64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: From year.
+  description_en: From year.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: from_year
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: to_year
+  dataset: health_region_changes
+  type: int64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: To year.
+  description_en: To year.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: to_year
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: change_version
+  dataset: health_region_changes
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Change version.
+  description_en: Change version.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: change_version
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: financing_version
+  dataset: health_region_financing
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Financing version.
+  description_en: Financing version.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: financing_version
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: siops_snapshot_id
+  dataset: health_region_financing
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Siops snapshot id.
+  description_en: Siops snapshot id.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: siops_snapshot_id
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: year
+  dataset: health_region_financing
+  type: int64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Year.
+  description_en: Year.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: year
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: health_region_code
+  dataset: health_region_financing
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Health region code.
+  description_en: Health region code.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: health_region_code
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: municipalities_expected
+  dataset: health_region_financing
+  type: int64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Municipalities expected.
+  description_en: Municipalities expected.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: municipalities_expected
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: municipalities_observed
+  dataset: health_region_financing
+  type: int64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Municipalities observed.
+  description_en: Municipalities observed.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: municipalities_observed
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: population_expected
+  dataset: health_region_financing
+  type: int64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Population expected.
+  description_en: Population expected.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: population_expected
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: population_covered
+  dataset: health_region_financing
+  type: int64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Population covered.
+  description_en: Population covered.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: population_covered
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: coverage_share
+  dataset: health_region_financing
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Coverage share.
+  description_en: Coverage share.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: coverage_share
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: coverage_population_share
+  dataset: health_region_financing
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Coverage population share.
+  description_en: Coverage population share.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: coverage_population_share
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: total_health_expenditure_brl
+  dataset: health_region_financing
+  type: float64
+  nullable: true
+  unit: documented_in_data_dictionary
+  description_pt: Total health expenditure brl.
+  description_en: Total health expenditure brl.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: total_health_expenditure_brl
+  transformation: allowlisted projection; BRL value rounded to database NUMERIC(20,2)
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: health_expenditure_per_capita_brl
+  dataset: health_region_financing
+  type: float64
+  nullable: true
+  unit: documented_in_data_dictionary
+  description_pt: Health expenditure per capita brl.
+  description_en: Health expenditure per capita brl.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: health_expenditure_per_capita_brl
+  transformation: allowlisted projection; BRL value rounded to database NUMERIC(20,2)
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: headline_available
+  dataset: health_region_financing
+  type: bool
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Headline available.
+  description_en: Headline available.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: headline_available
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: quality_flags
+  dataset: health_region_financing
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Quality flags.
+  description_en: Quality flags.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: quality_flags
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: source_period
+  dataset: health_region_financing
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Source period.
+  description_en: Source period.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: source_period
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: source_indicator
+  dataset: health_region_financing
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Source indicator.
+  description_en: Source indicator.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: source_indicator
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: flow_version
+  dataset: health_region_flow_summary
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Flow version.
+  description_en: Flow version.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: flow_version
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: health_region_code
+  dataset: health_region_flow_summary
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Health region code.
+  description_en: Health region code.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: health_region_code
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: total_admissions
+  dataset: health_region_flow_summary
+  type: int64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Total admissions.
+  description_en: Total admissions.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: total_admissions
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: within_region_share
+  dataset: health_region_flow_summary
+  type: float64
+  nullable: true
+  unit: documented_in_data_dictionary
+  description_pt: Within region share.
+  description_en: Within region share.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: within_region_share
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: outflow_share
+  dataset: health_region_flow_summary
+  type: float64
+  nullable: true
+  unit: documented_in_data_dictionary
+  description_pt: Outflow share.
+  description_en: Outflow share.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: outflow_share
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: cross_state_outflow_share
+  dataset: health_region_flow_summary
+  type: float64
+  nullable: true
+  unit: documented_in_data_dictionary
+  description_pt: Cross state outflow share.
+  description_en: Cross state outflow share.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: cross_state_outflow_share
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: nonsuppressed_destinations
+  dataset: health_region_flow_summary
+  type: int64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Nonsuppressed destinations.
+  description_en: Nonsuppressed destinations.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: nonsuppressed_destinations
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: unit
+  dataset: health_region_flow_summary
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Unit.
+  description_en: Unit.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: unit
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: origin_region
+  dataset: hospitalization_flows_public
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Origin region.
+  description_en: Origin region.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: origin_region
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: AGGREGATED_SMALL_CELL_PROTECTED
+  small_cell_rule: exact values below five excluded
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: destination_region
+  dataset: hospitalization_flows_public
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Destination region.
+  description_en: Destination region.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: destination_region
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: AGGREGATED_SMALL_CELL_PROTECTED
+  small_cell_rule: exact values below five excluded
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: admissions
+  dataset: hospitalization_flows_public
+  type: int64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: AIHs/internações agregadas, com células menores que cinco excluídas.
+  description_en: Aggregated AIHs/admissions, with cells below five excluded.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: admissions
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: AGGREGATED_SMALL_CELL_PROTECTED
+  small_cell_rule: exact values below five excluded
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: flow_version
+  dataset: hospitalization_flows_public
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Flow version.
+  description_en: Flow version.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: flow_version
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: AGGREGATED_SMALL_CELL_PROTECTED
+  small_cell_rule: exact values below five excluded
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: contribution_id
+  dataset: hospitalization_flows_public
+  type: int64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Contribution id.
+  description_en: Contribution id.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: contribution_id
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: AGGREGATED_SMALL_CELL_PROTECTED
+  small_cell_rule: exact values below five excluded
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: municipality_code_ibge
+  dataset: municipality_health_region_crosswalk
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Municipality code ibge.
+  description_en: Municipality code ibge.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: municipality_code_ibge
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: municipality_name
+  dataset: municipality_health_region_crosswalk
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Municipality name.
+  description_en: Municipality name.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: municipality_name
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: uf
+  dataset: municipality_health_region_crosswalk
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Uf.
+  description_en: Uf.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: uf
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: health_region_code
+  dataset: municipality_health_region_crosswalk
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Health region code.
+  description_en: Health region code.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: health_region_code
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: health_region_name
+  dataset: municipality_health_region_crosswalk
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Health region name.
+  description_en: Health region name.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: health_region_name
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: release_id
+  dataset: territorial_intelligence
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Release id.
+  description_en: Release id.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: release_id
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: geography_version
+  dataset: territorial_intelligence
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Geography version.
+  description_en: Geography version.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: geography_version
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: intelligence_version
+  dataset: territorial_intelligence
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Intelligence version.
+  description_en: Intelligence version.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: intelligence_version
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: radar_ruleset_version
+  dataset: territorial_intelligence
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Radar ruleset version.
+  description_en: Radar ruleset version.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: radar_ruleset_version
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: decomposition_version
+  dataset: territorial_intelligence
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Decomposition version.
+  description_en: Decomposition version.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: decomposition_version
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: peer_method_version
+  dataset: territorial_intelligence
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Peer method version.
+  description_en: Peer method version.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: peer_method_version
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: health_region_code
+  dataset: territorial_intelligence
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Health region code.
+  description_en: Health region code.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: health_region_code
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: health_region_name
+  dataset: territorial_intelligence
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Health region name.
+  description_en: Health region name.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: health_region_name
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: uf
+  dataset: territorial_intelligence
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Uf.
+  description_en: Uf.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: uf
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: need_high
+  dataset: territorial_intelligence
+  type: bool
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Need high.
+  description_en: Need high.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: need_high
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: capacity_low
+  dataset: territorial_intelligence
+  type: bool
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Capacity low.
+  description_en: Capacity low.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: capacity_low
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: mismatch_marked_positive
+  dataset: territorial_intelligence
+  type: bool
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Mismatch marked positive.
+  description_en: Mismatch marked positive.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: mismatch_marked_positive
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: capacity_component_low
+  dataset: territorial_intelligence
+  type: bool
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Capacity component low.
+  description_en: Capacity component low.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: capacity_component_low
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: spatial_hh_mismatch
+  dataset: territorial_intelligence
+  type: bool
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Spatial hh mismatch.
+  description_en: Spatial hh mismatch.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: spatial_hh_mismatch
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: zero_registered_beds
+  dataset: territorial_intelligence
+  type: bool
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Zero registered beds.
+  description_en: Zero registered beds.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: zero_registered_beds
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: small_suicide_count
+  dataset: territorial_intelligence
+  type: bool
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Small suicide count.
+  description_en: Small suicide count.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: small_suicide_count
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: matched_signal_families
+  dataset: territorial_intelligence
+  type: int16
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Matched signal families.
+  description_en: Matched signal families.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: matched_signal_families
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: suicide_contribution
+  dataset: territorial_intelligence
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Suicide contribution.
+  description_en: Suicide contribution.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: suicide_contribution
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: admissions_contribution
+  dataset: territorial_intelligence
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Admissions contribution.
+  description_en: Admissions contribution.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: admissions_contribution
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: caps_contribution
+  dataset: territorial_intelligence
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Caps contribution.
+  description_en: Caps contribution.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: caps_contribution
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: beds_contribution
+  dataset: territorial_intelligence
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Beds contribution.
+  description_en: Beds contribution.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: beds_contribution
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: psychiatrist_contribution
+  dataset: territorial_intelligence
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Psychiatrist contribution.
+  description_en: Psychiatrist contribution.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: psychiatrist_contribution
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: decomposition_sum
+  dataset: territorial_intelligence
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Decomposition sum.
+  description_en: Decomposition sum.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: decomposition_sum
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: release_id
+  dataset: health_region_peers
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Release id.
+  description_en: Release id.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: release_id
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: peer_method_version
+  dataset: health_region_peers
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Peer method version.
+  description_en: Peer method version.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: peer_method_version
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: health_region_code
+  dataset: health_region_peers
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Health region code.
+  description_en: Health region code.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: health_region_code
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: peer_health_region_code
+  dataset: health_region_peers
+  type: str
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Peer health region code.
+  description_en: Peer health region code.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: peer_health_region_code
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: peer_rank
+  dataset: health_region_peers
+  type: int64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Peer rank.
+  description_en: Peer rank.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: peer_rank
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.
+- field_name: structural_distance
+  dataset: health_region_peers
+  type: float64
+  nullable: false
+  unit: documented_in_data_dictionary
+  description_pt: Distância entre comparadores estruturais baseada apenas nas variáveis
+    estruturais travadas.
+  description_en: Distance between structural comparators using only locked structural
+    features.
+  scientific_source: MDB_ANALYTICAL_2024_2
+  source_field: structural_distance
+  transformation: allowlisted projection; no scientific recalculation
+  privacy_class: PUBLIC_AGGREGATED
+  small_cell_rule: not_applicable
+  public_status: PUBLIC
+  reason: Approved derived aggregate field.

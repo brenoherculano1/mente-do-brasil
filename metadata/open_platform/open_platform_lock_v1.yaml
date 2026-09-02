@@ -1,0 +1,16 @@
+open_platform: MDB_OPEN_PLATFORM_1.0
+status: LOCKED_LOCAL
+open_data_release: MDB_OPEN_DATA_2024_1
+open_data_status: LOCKED_LOCAL
+public_api: MDB_PUBLIC_API_V1
+public_api_status: LOCKED_LOCAL
+data_governance: MDB_DATA_GOVERNANCE_1.0
+data_governance_status: LOCKED_LOCAL
+analytical_source: MDB_ANALYTICAL_2024_2
+geography: BR_HEALTH_REGIONS_END2024_V1
+geometry_publication: NOT_PUBLISHED_PENDING_EXACT_SOURCE_RIGHTS
+public_release_status: NOT_RELEASED
+deployment_status: NOT_DEPLOYED
+domain_status: NOT_CONFIGURED
+indexing_status: DISABLED
+locked_at: '2026-09-01T00:00:00Z'

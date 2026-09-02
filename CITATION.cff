@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: Cite this dataset using the citation below.
+title: Mente do Brasil - Inteligencia territorial em saude mental no Brasil
+type: dataset
+version: MDB_OPEN_DATA_2024_1
+date-released: '2026-09-01'
+url: https://mentedobrasil.com.br
+abstract: Open Data Release MDB_OPEN_DATA_2024_1, based on MDB_ANALYTICAL_2024_2. Target URL; public release status is NOT_RELEASED.
+preferred-citation:
+  type: dataset
+  title: Mente do Brasil - Inteligencia territorial em saude mental no Brasil
+  version: MDB_OPEN_DATA_2024_1
+  year: 2026

@@ -22,6 +22,9 @@ class ServingDatabaseStaticTests(unittest.TestCase):
                 "008_product_intelligence.sql",
                 "009_financing_context.sql",
                 "010_advanced_territorial.sql",
+                "011_public_open_platform.sql",
+                "012_public_role_hardening.sql",
+                "013_public_temporal_type_alignment.sql",
             ],
         )
 
@@ -48,6 +51,8 @@ class ServingDatabaseStaticTests(unittest.TestCase):
             "CREATE OR REPLACE VIEW serving.health_region_profile",
             "CREATE OR REPLACE VIEW serving.health_region_map",
             "CREATE OR REPLACE VIEW serving.health_region_lookup",
+            "CREATE OR REPLACE VIEW serving.v_public_health_regions_current",
+            "CREATE OR REPLACE VIEW serving.v_public_flow_edges",
         ]:
             self.assertIn(fragment, sql)
 

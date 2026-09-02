@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "checks": {
+    "release_get": true,
+    "cors_origin": true,
+    "cors_credentials_denied": true,
+    "release_headers": true,
+    "options": true,
+    "head": true,
+    "conditional_304": true,
+    "post_405": true,
+    "huge_limit_safe": true,
+    "invalid_cursor_safe": true,
+    "sql_injection_safe": true,
+    "internal_cors_preserved": true,
+    "download_traversal": true,
+    "download_valid": true,
+    "download_hash": true,
+    "api_download_identity": true
+  },
+  "performance": {
+    "n": 50,
+    "median_ms": 6.296,
+    "p95_ms": 8.859,
+    "max_ms": 15.013
+  }
+}

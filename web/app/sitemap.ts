@@ -16,6 +16,9 @@ const STATIC_PATHS = [
   "/contato",
   "/mudancas",
   "/fluxos",
+  "/dados-abertos",
+  "/desenvolvedores",
+  "/governanca",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

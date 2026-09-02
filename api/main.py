@@ -22,6 +22,7 @@ from api.routers.health_regions import router as health_regions_router
 from api.routers.indicators import router as indicators_router
 from api.routers.intelligence import router as intelligence_router
 from api.routers.manager import router as manager_router
+from api.routers.public import router as public_router
 from api.routers.releases import router as releases_router
 from api.services.health_regions import ready_check
 
@@ -84,6 +85,7 @@ app.include_router(financing_router)
 app.include_router(advanced_router)
 app.include_router(intelligence_router)
 app.include_router(manager_router)
+app.include_router(public_router)
 
 
 @app.middleware("http")

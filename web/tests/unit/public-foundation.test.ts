@@ -54,8 +54,15 @@ describe("public production foundation config", () => {
 
     expect(PUBLIC_ROUTE_UFS).toHaveLength(27);
     expect(PUBLIC_ROUTE_HEALTH_REGION_CODES).toHaveLength(439);
-    expect(urls).toHaveLength(11 + 27 + 439);
-    for (const path of ["/mudancas", "/financiamento", "/fluxos"]) {
+    expect(urls).toHaveLength(14 + 27 + 439);
+    for (const path of [
+      "/mudancas",
+      "/financiamento",
+      "/fluxos",
+      "/dados-abertos",
+      "/desenvolvedores",
+      "/governanca",
+    ]) {
       expect(urls.some((entry) => entry.url.endsWith(path))).toBe(true);
     }
     expect(urls.some((entry) => entry.url.endsWith("/gestor"))).toBe(true);

@@ -36,6 +36,12 @@ export function AppHeader() {
           <details className="nav-more">
             <summary>Mais</summary>
             <div className="nav-more-menu">
+              <Link aria-current={pathname === "/dados-abertos" ? "page" : undefined} href="/dados-abertos">
+                Dados abertos
+              </Link>
+              <Link aria-current={pathname === "/desenvolvedores" ? "page" : undefined} href="/desenvolvedores">
+                Desenvolvedores
+              </Link>
               <Link aria-current={pathname === "/mudancas" ? "page" : undefined} href="/mudancas">
                 Mudanças
               </Link>

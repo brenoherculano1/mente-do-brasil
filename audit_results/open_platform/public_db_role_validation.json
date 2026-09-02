@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "select_all_views": true,
+  "write_any_view": false,
+  "create_public": false,
+  "temporary_objects": false
+}

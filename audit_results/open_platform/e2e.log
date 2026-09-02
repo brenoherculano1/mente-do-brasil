@@ -1,0 +1,122 @@
+
+> mente-do-brasil-web@0.1.0 test:e2e
+> playwright test --reporter=line
+
+[WebServer] (node:99858) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 52 tests using 4 workers
+
+(node:99860) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+(node:99862) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+(node:99861) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+(node:99859) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/52] [desktop] › tests/e2e/open-platform.spec.ts:11:5 › open data catalog exposes real release downloads and checksums
+[2/52] [desktop] › tests/e2e/advanced-closure.spec.ts:12:5 › changes period, region selection, and accessible table
+[3/52] [desktop] › tests/e2e/manager-workbench.spec.ts:12:5 › desktop Manager supports territorial, meeting, compare and PDF download
+[4/52] [desktop] › tests/e2e/frontend-v1.spec.ts:19:5 › home loads map, metric selector, search, and navigates to region profile
+[5/52] [desktop] › tests/e2e/open-platform.spec.ts:30:5 › developer reference uses live public API examples
+[6/52] [desktop] › tests/e2e/open-platform.spec.ts:47:5 › governance states immutable and pre-release boundaries
+[7/52] [desktop] › tests/e2e/open-platform.spec.ts:59:5 › open data mobile viewport matrix stays inside document bounds
+[8/52] [desktop] › tests/e2e/territorial-intelligence.spec.ts:12:5 › desktop Radar shows territorial signals, filters, and region intelligence
+[9/52] [desktop] › tests/e2e/manager-workbench.spec.ts:57:5 › mobile Manager keeps tabs and comparison usable
+(node:99900) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[10/52] [mobile] › tests/e2e/advanced-closure.spec.ts:12:5 › changes period, region selection, and accessible table
+[11/52] [desktop] › tests/e2e/advanced-closure.spec.ts:29:5 › financing coverage, annual series, and missing values
+[12/52] [desktop] › tests/e2e/territorial-intelligence.spec.ts:62:5 › mobile Radar and region intelligence remain usable
+[WebServer] ⨯ Error: The destination stream closed early.
+[WebServer]     at ignore-listed frames {
+[WebServer]   digest: '3832628489'
+[WebServer] }
+
+[WebServer] ⨯ Error: The destination stream closed early.
+[WebServer]     at ignore-listed frames {
+[WebServer]   digest: '3832628489'
+[WebServer] }
+
+[WebServer] ⨯ Error: The destination stream closed early.
+[WebServer]     at ignore-listed frames {
+[WebServer]   digest: '3832628489'
+[WebServer] }
+
+[WebServer] ⨯ Error: The destination stream closed early.
+[WebServer]     at ignore-listed frames {
+[WebServer]   digest: '3832628489'
+[WebServer] }
+
+[13/52] [desktop] › tests/e2e/frontend-v1.spec.ts:52:5 › captures home screenshot and keeps mobile layout usable
+[14/52] [desktop] › tests/e2e/advanced-closure.spec.ts:46:5 › flows origin and destination preserve suppressed counts
+(node:99940) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[15/52] [mobile] › tests/e2e/frontend-v1.spec.ts:19:5 › home loads map, metric selector, search, and navigates to region profile
+[16/52] [mobile] › tests/e2e/advanced-closure.spec.ts:29:5 › financing coverage, annual series, and missing values
+[17/52] [desktop] › tests/e2e/frontend-v1.spec.ts:76:5 › accessible list expands, filters rationally, and captures QA screenshot
+[18/52] [desktop] › tests/e2e/advanced-closure.spec.ts:56:5 › profile advanced sections and Manager V2 are present
+[19/52] [desktop] › tests/e2e/advanced-closure.spec.ts:69:5 › mobile widths preserve document bounds
+[20/52] [desktop] › tests/e2e/frontend-v1.spec.ts:94:5 › invalid region shows not found state
+[21/52] [mobile] › tests/e2e/advanced-closure.spec.ts:46:5 › flows origin and destination preserve suppressed counts
+[22/52] [desktop] › tests/e2e/frontend-v1.spec.ts:100:5 › methodology desktop page loads, navigates sections, and opens details
+(node:99971) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[23/52] [mobile] › tests/e2e/manager-workbench.spec.ts:12:5 › desktop Manager supports territorial, meeting, compare and PDF download
+[24/52] [mobile] › tests/e2e/manager-workbench.spec.ts:57:5 › mobile Manager keeps tabs and comparison usable
+[25/52] [mobile] › tests/e2e/advanced-closure.spec.ts:56:5 › profile advanced sections and Manager V2 are present
+[26/52] [desktop] › tests/e2e/frontend-v1.spec.ts:146:5 › methodology mobile page has compact navigation and no global overflow
+[27/52] [desktop] › tests/e2e/frontend-v1.spec.ts:179:5 › data page exposes release inventory and filters dictionary on desktop
+[28/52] [mobile] › tests/e2e/frontend-v1.spec.ts:52:5 › captures home screenshot and keeps mobile layout usable
+[29/52] [mobile] › tests/e2e/open-platform.spec.ts:11:5 › open data catalog exposes real release downloads and checksums
+[30/52] [mobile] › tests/e2e/open-platform.spec.ts:30:5 › developer reference uses live public API examples
+[31/52] [mobile] › tests/e2e/advanced-closure.spec.ts:69:5 › mobile widths preserve document bounds
+[32/52] [mobile] › tests/e2e/open-platform.spec.ts:47:5 › governance states immutable and pre-release boundaries
+[33/52] [mobile] › tests/e2e/open-platform.spec.ts:59:5 › open data mobile viewport matrix stays inside document bounds
+[34/52] [desktop] › tests/e2e/frontend-v1.spec.ts:230:5 › data page remains usable on mobile
+[35/52] [mobile] › tests/e2e/frontend-v1.spec.ts:76:5 › accessible list expands, filters rationally, and captures QA screenshot
+[36/52] [desktop] › tests/e2e/frontend-v1.spec.ts:258:5 › about page states independence, scope, and links on desktop
+[37/52] [mobile] › tests/e2e/territorial-intelligence.spec.ts:12:5 › desktop Radar shows territorial signals, filters, and region intelligence
+[38/52] [mobile] › tests/e2e/territorial-intelligence.spec.ts:62:5 › mobile Radar and region intelligence remain usable
+[39/52] [mobile] › tests/e2e/frontend-v1.spec.ts:94:5 › invalid region shows not found state
+[40/52] [mobile] › tests/e2e/frontend-v1.spec.ts:100:5 › methodology desktop page loads, navigates sections, and opens details
+[41/52] [mobile] › tests/e2e/frontend-v1.spec.ts:146:5 › methodology mobile page has compact navigation and no global overflow
+[42/52] [desktop] › tests/e2e/frontend-v1.spec.ts:316:5 › about page stays readable and responsive on mobile
+[43/52] [desktop] › tests/e2e/frontend-v1.spec.ts:345:5 › state page for AC shows three regions, overview map, distribution, and profile links
+[44/52] [mobile] › tests/e2e/frontend-v1.spec.ts:179:5 › data page exposes release inventory and filters dictionary on desktop
+[45/52] [mobile] › tests/e2e/frontend-v1.spec.ts:230:5 › data page remains usable on mobile
+[46/52] [desktop] › tests/e2e/frontend-v1.spec.ts:397:5 › state page handles a large state and DF without truncating regions
+[WebServer] ⨯ Error: The destination stream closed early.
+[WebServer]     at ignore-listed frames {
+[WebServer]   digest: '3832628489'
+[WebServer] }
+
+[WebServer] ⨯ Error: The destination stream closed early.
+[WebServer]     at ignore-listed frames {
+[WebServer]   digest: '3832628489'
+[WebServer] }
+
+[47/52] [mobile] › tests/e2e/frontend-v1.spec.ts:258:5 › about page states independence, scope, and links on desktop
+[48/52] [mobile] › tests/e2e/frontend-v1.spec.ts:316:5 › about page stays readable and responsive on mobile
+[49/52] [desktop] › tests/e2e/frontend-v1.spec.ts:425:5 › state page normalizes lowercase, rejects invalid UF, and keeps mobile map early
+[50/52] [mobile] › tests/e2e/frontend-v1.spec.ts:345:5 › state page for AC shows three regions, overview map, distribution, and profile links
+[51/52] [mobile] › tests/e2e/frontend-v1.spec.ts:397:5 › state page handles a large state and DF without truncating regions
+[52/52] [mobile] › tests/e2e/frontend-v1.spec.ts:425:5 › state page normalizes lowercase, rejects invalid UF, and keeps mobile map early
+  15 skipped
+  37 passed (1.5m)

@@ -1,0 +1,264 @@
+version: MDB_SOURCE_RIGHTS_MATRIX_1.0
+checked_at: '2026-09-01'
+review_type: licensing_and_attribution_review_not_formal_legal_opinion
+sources:
+- source_id: SIM
+  source_name: Sistema de Informações sobre Mortalidade
+  source_owner: Ministério da Saúde / DATASUS
+  data_used: Aggregated suicide mortality inputs
+  official_url: https://www.gov.br/saude/pt-br/acesso-a-informacao/sic/dados-em-transparencia-ativa/svsa/mortalidade
+  terms_url: https://www.gov.br/saude/pt-br/acesso-a-informacao/dados-abertos/dados-abertos
+  checked_at: '2026-09-01'
+  stated_license: Dataset-specific license not located; federal open-data policy applies generally
+  license_scope: Official policy supports reuse with source credit; it does not prove a dataset-specific blanket license
+  license_confidence: MEDIUM
+  raw_redistribution: 'NO'
+  derived_redistribution: 'YES'
+  public_api_use: 'YES'
+  public_download_use: 'YES'
+  required_attribution: Ministério da Saúde / DATASUS / SIM
+  commercial_reuse_status: Derived aggregate use defensible with attribution; raw not redistributed
+  modification_status: Derived aggregation and age standardization disclosed
+  third_party_terms: None identified for distributed derived result
+  notes: No raw SIM record is distributed
+  evidence_reference: docs/legal_research_2026-09-01.md
+- source_id: SIH
+  source_name: Sistema de Informações Hospitalares do SUS
+  source_owner: Ministério da Saúde / DATASUS
+  data_used: Aggregated psychiatric admissions and inter-region flows
+  official_url: https://www.gov.br/saude/pt-br/acesso-a-informacao/sic/dados-em-transparencia-ativa/saes
+  terms_url: https://www.gov.br/saude/pt-br/acesso-a-informacao/dados-abertos/dados-abertos
+  checked_at: '2026-09-01'
+  stated_license: Dataset-specific license not located; federal open-data policy applies generally
+  license_scope: Derived regional aggregates only
+  license_confidence: MEDIUM
+  raw_redistribution: 'NO'
+  derived_redistribution: 'YES'
+  public_api_use: 'YES'
+  public_download_use: 'YES'
+  required_attribution: Ministério da Saúde / DATASUS / SIH-SUS
+  commercial_reuse_status: Derived aggregate use defensible with attribution
+  modification_status: Aggregated; cells below five excluded from public flow edges
+  third_party_terms: None identified for distributed derived result
+  notes: AIHs/admissions are not unique patients
+  evidence_reference: docs/legal_research_2026-09-01.md
+- source_id: CNES_ST
+  source_name: CNES Establishments
+  source_owner: Ministério da Saúde / DATASUS
+  data_used: CAPS registered establishments
+  official_url: https://dadosabertos.saude.gov.br/
+  terms_url: https://www.gov.br/saude/pt-br/acesso-a-informacao/dados-abertos/dados-abertos
+  checked_at: '2026-09-01'
+  stated_license: Dataset-specific license not located
+  license_scope: Derived regional registered-capacity aggregates
+  license_confidence: MEDIUM
+  raw_redistribution: 'NO'
+  derived_redistribution: 'YES'
+  public_api_use: 'YES'
+  public_download_use: 'YES'
+  required_attribution: Ministério da Saúde / DATASUS / CNES
+  commercial_reuse_status: Derived aggregate use defensible with attribution
+  modification_status: Aggregated under locked definitions
+  third_party_terms: None identified
+  notes: Raw CNES ST is excluded
+  evidence_reference: docs/legal_research_2026-09-01.md
+- source_id: CNES_LT
+  source_name: CNES Beds
+  source_owner: Ministério da Saúde / DATASUS
+  data_used: Registered SUS mental-health beds
+  official_url: https://dadosabertos.saude.gov.br/
+  terms_url: https://www.gov.br/saude/pt-br/acesso-a-informacao/dados-abertos/dados-abertos
+  checked_at: '2026-09-01'
+  stated_license: Dataset-specific license not located
+  license_scope: Derived regional registered-capacity aggregates
+  license_confidence: MEDIUM
+  raw_redistribution: 'NO'
+  derived_redistribution: 'YES'
+  public_api_use: 'YES'
+  public_download_use: 'YES'
+  required_attribution: Ministério da Saúde / DATASUS / CNES
+  commercial_reuse_status: Derived aggregate use defensible with attribution
+  modification_status: Aggregated under locked definitions
+  third_party_terms: None identified
+  notes: Raw CNES LT is excluded
+  evidence_reference: docs/legal_research_2026-09-01.md
+- source_id: CNES_PF
+  source_name: CNES Health Professionals
+  source_owner: Ministério da Saúde / DATASUS
+  data_used: Psychiatrist FTE registered capacity
+  official_url: https://dadosabertos.saude.gov.br/
+  terms_url: https://www.gov.br/saude/pt-br/acesso-a-informacao/dados-abertos/dados-abertos
+  checked_at: '2026-09-01'
+  stated_license: Dataset-specific license not located
+  license_scope: Derived regional FTE aggregates only
+  license_confidence: MEDIUM
+  raw_redistribution: 'NO'
+  derived_redistribution: 'YES'
+  public_api_use: 'YES'
+  public_download_use: 'YES'
+  required_attribution: Ministério da Saúde / DATASUS / CNES
+  commercial_reuse_status: Derived aggregate use defensible with attribution
+  modification_status: Aggregated under locked FTE definition
+  third_party_terms: None identified
+  notes: Raw professional records are excluded
+  evidence_reference: docs/legal_research_2026-09-01.md
+- source_id: POPSVS
+  source_name: DATASUS/IBGE Population by sex and age
+  source_owner: Ministério da Saúde / DATASUS with IBGE inputs
+  data_used: Regional population denominators
+  official_url: ftp://ftp.datasus.gov.br/dissemin/publicos/IBGE/POPSVS/
+  terms_url: https://www.gov.br/saude/pt-br/acesso-a-informacao/dados-abertos/dados-abertos
+  checked_at: '2026-09-01'
+  stated_license: Dataset-specific license not located
+  license_scope: Derived regional denominators and rates only
+  license_confidence: MEDIUM
+  raw_redistribution: 'NO'
+  derived_redistribution: 'YES'
+  public_api_use: 'YES'
+  public_download_use: 'YES'
+  required_attribution: Ministério da Saúde / DATASUS and IBGE
+  commercial_reuse_status: Derived aggregate use defensible with attribution
+  modification_status: Aggregated under locked methodology
+  third_party_terms: IBGE source attribution retained
+  notes: POPSBR archives are excluded
+  evidence_reference: docs/legal_research_2026-09-01.md
+- source_id: DATASUS_HEALTH_REGION_CROSSWALK
+  source_name: DATASUS TAB_POP Health Region crosswalk
+  source_owner: Ministério da Saúde / DATASUS
+  data_used: End-2024 municipality-to-health-region membership
+  official_url: https://datasus.saude.gov.br/transferencia-de-arquivos/
+  terms_url: https://www.gov.br/saude/pt-br/acesso-a-informacao/dados-abertos/dados-abertos
+  checked_at: '2026-09-01'
+  stated_license: Dataset-specific license not located
+  license_scope: Derived membership table with source attribution
+  license_confidence: MEDIUM
+  raw_redistribution: 'NO'
+  derived_redistribution: 'YES'
+  public_api_use: 'YES'
+  public_download_use: 'YES'
+  required_attribution: Ministério da Saúde / DATASUS
+  commercial_reuse_status: Derived membership use defensible with attribution
+  modification_status: Filtered to the locked 2024 municipality universe
+  third_party_terms: Municipality names/codes attributed to official sources
+  notes: No synthetic DF municipality is added
+  evidence_reference: docs/legal_research_2026-09-01.md
+- source_id: SIOPS
+  source_name: Sistema de Informações sobre Orçamentos Públicos em Saúde
+  source_owner: Ministério da Saúde
+  data_used: Aggregated municipal total health expenditure context
+  official_url: https://dados.gov.br/dados/conjuntos-dados/siops
+  terms_url: https://dados.gov.br/dados/conjuntos-dados/siops
+  checked_at: '2026-09-01'
+  stated_license: Catalog license field not populated at verification
+  license_scope: No raw redistribution; derived regional aggregates only
+  license_confidence: LOW
+  raw_redistribution: 'NO'
+  derived_redistribution: 'YES'
+  public_api_use: 'YES'
+  public_download_use: 'YES'
+  required_attribution: Ministério da Saúde / SIOPS
+  commercial_reuse_status: Derived aggregate publication with conservative qualification
+  modification_status: Aggregated to Health Regions; missing is not zero
+  third_party_terms: Dataset-specific license remains undocumented in catalog
+  notes: SIOPS snapshot and municipal rows are excluded
+  evidence_reference: docs/legal_research_2026-09-01.md
+- source_id: IBGE_MUNICIPAL_MESH
+  source_name: IBGE Municipal Digital Mesh
+  source_owner: Instituto Brasileiro de Geografia e Estatística
+  data_used: Scientific geometry dissolved to Health Regions
+  official_url: https://www.ibge.gov.br/geociencias/organizacao-do-territorio/malhas-territoriais/
+  terms_url: https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102152.pdf
+  checked_at: '2026-09-01'
+  stated_license: 2023 technical/legal publication reports compatibility with CC BY 4.0
+  license_scope: Exact mesh version used by the locked project is not identified sufficiently for public redistribution
+  license_confidence: LOW
+  raw_redistribution: 'NO'
+  derived_redistribution: 'NO'
+  public_api_use: 'NO'
+  public_download_use: 'NO'
+  required_attribution: IBGE if a future exact-source gate passes
+  commercial_reuse_status: Not decided for this release
+  modification_status: Derived web geometry excluded
+  third_party_terms: Exact-version technical/legal documentation required
+  notes: Geometry is not published in MDB_OPEN_DATA_2024_1
+  evidence_reference: docs/legal_research_2026-09-01.md
+- source_id: WHO_STANDARD_POPULATION
+  source_name: WHO standard population reference
+  source_owner: World Health Organization
+  data_used: Reference population for derived ASMR methodology
+  official_url: https://data.who.int/
+  terms_url: https://data.who.int/about/data/terms-and-conditions
+  checked_at: '2026-09-01'
+  stated_license: CC BY 4.0 for data.who.int datasets unless otherwise indicated, with additional WHO terms
+  license_scope: Reference and derived ASMR only; no WHO publication or logo distributed
+  license_confidence: MEDIUM
+  raw_redistribution: 'NO'
+  derived_redistribution: 'YES'
+  public_api_use: 'YES'
+  public_download_use: 'YES'
+  required_attribution: WHO reference citation; no endorsement implied
+  commercial_reuse_status: Derived result use subject to applicable WHO terms
+  modification_status: Only derived ASMR and methodological identification published
+  third_party_terms: No WHO name/logo use; no endorsement; arbitration and attribution terms
+  notes: Numeric weight table and WHO publication are not redistributed
+  evidence_reference: docs/legal_research_2026-09-01.md
+- source_id: MDB_ANALYTICAL_DERIVED
+  source_name: Mente do Brasil derived analytical data
+  source_owner: Mente do Brasil project
+  data_used: Locked regional analytical outputs
+  official_url: https://mentedobrasil.com.br
+  terms_url: LICENSE_DATA.md
+  checked_at: '2026-09-01'
+  stated_license: CC BY 4.0 limited to licensable project rights
+  license_scope: Selection, organization, documentation, metadata, structure, and project-derived outputs
+  license_confidence: HIGH
+  raw_redistribution: 'NO'
+  derived_redistribution: 'YES'
+  public_api_use: 'YES'
+  public_download_use: 'YES'
+  required_attribution: Mente do Brasil and listed official sources
+  commercial_reuse_status: Allowed under CC BY 4.0 subject to source rights
+  modification_status: Allowed with attribution and indication of changes
+  third_party_terms: Third-party rights are not sublicensed
+  notes: Code, brand, logos, and raw sources excluded
+  evidence_reference: docs/licensing_and_attribution.md
+- source_id: MDB_TERRITORIAL_INTELLIGENCE
+  source_name: Mente do Brasil derived territorial intelligence
+  source_owner: Mente do Brasil project
+  data_used: Locked signals, decomposition, and structural peers
+  official_url: https://mentedobrasil.com.br
+  terms_url: LICENSE_DATA.md
+  checked_at: '2026-09-01'
+  stated_license: CC BY 4.0 limited to licensable project rights
+  license_scope: Project-derived territorial intelligence fields and documentation
+  license_confidence: HIGH
+  raw_redistribution: 'NO'
+  derived_redistribution: 'YES'
+  public_api_use: 'YES'
+  public_download_use: 'YES'
+  required_attribution: Mente do Brasil and listed official sources
+  commercial_reuse_status: Allowed under CC BY 4.0 subject to source rights
+  modification_status: Allowed with attribution and indication of changes
+  third_party_terms: Third-party rights are not sublicensed
+  notes: No automatic policy recommendations
+  evidence_reference: docs/licensing_and_attribution.md
+- source_id: MDB_WEB_GEOMETRY
+  source_name: Mente do Brasil web geometry
+  source_owner: Mente do Brasil project with IBGE source dependency
+  data_used: Simplified Health Region geometry
+  official_url: https://mentedobrasil.com.br
+  terms_url: docs/legal_research_2026-09-01.md
+  checked_at: '2026-09-01'
+  stated_license: Not offered in this release
+  license_scope: Excluded pending exact IBGE source-version rights confirmation
+  license_confidence: HIGH
+  raw_redistribution: 'NO'
+  derived_redistribution: 'NO'
+  public_api_use: 'NO'
+  public_download_use: 'NO'
+  required_attribution: Not applicable while excluded
+  commercial_reuse_status: Not decided
+  modification_status: Not distributed
+  third_party_terms: IBGE exact-version gate unresolved
+  notes: Existing internal map remains pre-release; full geometry remains restricted
+  evidence_reference: docs/legal_research_2026-09-01.md

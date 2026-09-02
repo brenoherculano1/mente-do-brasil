@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "requests_until_429": 58,
+  "last_status": 429,
+  "rate_limit": "120",
+  "remaining": "0",
+  "retry_after": "19"
+}

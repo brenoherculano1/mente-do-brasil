@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "datasets": {
+    "health_regions_current": {
+      "rows": 439,
+      "semantic_sha256": "454abc5ebe5daaaf4efe9a76c5a8aef7ed983e2850192ec096392090868ae457",
+      "status": "PASS"
+    },
+    "health_region_temporal": {
+      "rows": 1317,
+      "semantic_sha256": "beade4ea1f936c90ac421a603586e0e6764b844aea748956d77e5d0884499a8d",
+      "status": "PASS"
+    },
+    "health_region_changes": {
+      "rows": 1317,
+      "semantic_sha256": "53691ef403525499b8a6e841918c9853d10d1407d5975fc937ef5cf25ec1b2e8",
+      "status": "PASS"
+    },
+    "health_region_financing": {
+      "rows": 1317,
+      "semantic_sha256": "af10986b2fa123c3f709c5c876e5396943614c0024d11194088d49f255faf03c",
+      "status": "PASS"
+    },
+    "health_region_flow_summary": {
+      "rows": 439,
+      "semantic_sha256": "aebac00aab9afd461e13161b5d808d82e7ed447ddcf48bb19c250a9b0a64953f",
+      "status": "PASS"
+    },
+    "hospitalization_flows_public": {
+      "rows": 8920,
+      "semantic_sha256": "9c552aafdad4609da4ed4ba86da6b7da03118314bbbcb25a868cb7fcf48276c2",
+      "status": "PASS"
+    },
+    "municipality_health_region_crosswalk": {
+      "rows": 5570,
+      "semantic_sha256": "5d1b7112b025ccd5e1f9006484b0c784597eeeb43593b62534fd73be34311a45",
+      "status": "PASS"
+    },
+    "territorial_intelligence": {
+      "rows": 439,
+      "semantic_sha256": "d974b1a5a8dc7026c6cf239f9fe1c18710d612ea069e6eee18ef6875f9b95ed2",
+      "status": "PASS"
+    },
+    "health_region_peers": {
+      "rows": 4390,
+      "semantic_sha256": "56cbc80355a08ede84b7863053c82a6497d659650b4fadd55ab9862ac0b979da",
+      "status": "PASS"
+    }
+  },
+  "field_registry": "PASS",
+  "csv_parquet_identity": "PASS",
+  "pii_fields": [],
+  "forbidden_public_fields": [],
+  "public_exact_flow_below_5": 0,
+  "raw_source_leaks": 0,
+  "distributed_unknown_rights": [],
+  "manifest": {
+    "missing": 0,
+    "extra": 0,
+    "size_mismatches": 0,
+    "hash_mismatches": 0
+  },
+  "zip": {
+    "filename": "MDB_OPEN_DATA_2024_1.zip",
+    "bytes": 914294,
+    "sha256": "2b3b1fc749bfd71181115c2cd9467bf26cb1572bd0c0e9687dabccffab3775bc"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "release_dir": "/Users/brenoherculano/Projects/mente-do-brasil/artifacts/public_releases/MDB_OPEN_DATA_2024_1",
+  "zip": "/Users/brenoherculano/Projects/mente-do-brasil/artifacts/public_releases/MDB_OPEN_DATA_2024_1.zip",
+  "zip_bytes": 914294,
+  "zip_sha256": "2b3b1fc749bfd71181115c2cd9467bf26cb1572bd0c0e9687dabccffab3775bc",
+  "files": 33,
+  "built_at": "2026-09-01T00:00:00+00:00"
+}

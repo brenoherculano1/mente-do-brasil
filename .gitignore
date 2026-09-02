@@ -32,6 +32,7 @@ data/web/**
 
 # Common large analytical artifacts
 audit_packages/
+artifacts/public_releases/
 backups/
 *.parquet
 *.feather

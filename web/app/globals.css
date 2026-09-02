@@ -19,6 +19,56 @@
   --font-mono: "SF Mono", "Roboto Mono", ui-monospace, monospace;
 }
 
+.open-platform-page { padding-bottom: 64px; }
+.open-platform-page .open-platform-intro { border-bottom: 1px solid var(--border); padding-bottom: 30px; }
+.open-platform-page .release-strip { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 24px; color: var(--text-muted); font-size: .88rem; }
+.open-platform-page .open-platform-band { padding: 42px 0; border-bottom: 1px solid var(--border); }
+.open-platform-page .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 32px; margin-bottom: 24px; }
+.open-platform-page .section-heading h2, .open-platform-page .open-platform-columns h2, .open-platform-page .api-content h2 { font-size: 1.45rem; margin: 5px 0 0; letter-spacing: 0; }
+.open-platform-page .section-heading p { color: var(--text-muted); max-width: 580px; margin: 0; }
+.open-platform-page .download-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.open-platform-page .download-item { background: var(--surface); border-bottom: 1px solid var(--border); border-right: 1px solid var(--border); display: grid; gap: 12px; padding: 18px; min-width: 0; }
+.open-platform-page .download-item h3 { font-size: 1rem; margin: 8px 0 0; overflow-wrap: anywhere; }
+.open-platform-page .download-item p { color: var(--text-muted); margin: 0; }
+.open-platform-page .download-item code { font-size: .74rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.open-platform-page .download-item .button { justify-self: start; }
+.open-platform-page .file-format { color: var(--accent-strong); font-size: .72rem; font-weight: 760; }
+.open-platform-page .open-platform-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; padding: 42px 0; }
+.open-platform-page .open-platform-columns p, .open-platform-page .governance-grid p, .open-platform-page .api-content p { color: var(--text-muted); line-height: 1.65; }
+.open-platform-page .text-link { color: var(--accent-strong); text-decoration: underline; text-underline-offset: 3px; }
+.open-platform-page .api-layout { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 48px; padding-top: 34px; }
+.open-platform-page .api-index { align-self: start; display: grid; gap: 13px; position: sticky; top: 90px; font-size: .9rem; }
+.open-platform-page .api-index a { color: var(--text-muted); }
+.open-platform-page .api-content { display: grid; gap: 44px; min-width: 0; }
+.open-platform-page .api-content > section, .open-platform-page .code-pair > div { min-width: 0; }
+.open-platform-page .endpoint-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.open-platform-page .endpoint-list code { background: var(--surface); border-bottom: 1px solid var(--border); padding: 13px; overflow-wrap: anywhere; }
+.open-platform-page .code-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.open-platform-page .code-pair pre { background: #17221e; border-radius: var(--radius); color: #e8f1eb; max-width: 100%; overflow: auto; padding: 16px; }
+.open-platform-page .code-pair code { font-size: .78rem; line-height: 1.65; }
+.open-platform-page .governance-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--border); margin-top: 20px; }
+.open-platform-page .governance-grid article { border-bottom: 1px solid var(--border); padding: 28px 28px 28px 0; }
+.open-platform-page .governance-grid article:nth-child(even) { border-left: 1px solid var(--border); padding-left: 28px; }
+.open-platform-page .governance-grid article > span { color: var(--accent); font-family: var(--font-mono); }
+.open-platform-page .governance-grid h2 { font-size: 1.25rem; margin: 12px 0 0; }
+.open-platform-page .release-lifecycle { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; list-style-position: inside; padding: 0; border: 1px solid var(--border); background: var(--border); }
+.open-platform-page .release-lifecycle li { background: var(--surface); padding: 18px; line-height: 1.45; }
+.open-platform-page .notice-inline { background: var(--surface-muted); border-left: 4px solid var(--accent); padding: 14px 16px; }
+
+@media (max-width: 900px) {
+  .open-platform-page .download-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .open-platform-page .api-layout { grid-template-columns: 1fr; }
+  .open-platform-page .api-index { position: static; grid-template-columns: repeat(3, auto); }
+  .open-platform-page .release-lifecycle { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 620px) {
+  .open-platform-page .download-grid, .open-platform-page .endpoint-list, .open-platform-page .code-pair, .open-platform-page .open-platform-columns, .open-platform-page .governance-grid { grid-template-columns: 1fr; }
+  .open-platform-page .governance-grid article:nth-child(even) { border-left: 0; padding-left: 0; }
+  .open-platform-page .section-heading { align-items: start; flex-direction: column; }
+  .open-platform-page .api-index { grid-template-columns: repeat(2, auto); }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -287,6 +337,7 @@ button {
 
 .footer-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
   margin-top: 6px;
 }

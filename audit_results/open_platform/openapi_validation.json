@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "openapi": "3.1.0",
+  "public_paths": 13,
+  "path_parameter_errors": [],
+  "internal_paths_exposed": false
+}
