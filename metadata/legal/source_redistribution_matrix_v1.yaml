@@ -248,17 +248,17 @@ sources:
   data_used: Simplified Health Region geometry
   official_url: https://mentedobrasil.com.br
   terms_url: docs/legal_research_2026-09-01.md
-  checked_at: '2026-09-01'
-  stated_license: Not offered in this release
-  license_scope: Excluded pending exact IBGE source-version rights confirmation
+  checked_at: '2026-09-03'
+  stated_license: 2023 IBGE technical/legal publication reports compatibility with CC BY 4.0
+  license_scope: Existing derived browser display only; no geometry download or public Open Data API geometry
   license_confidence: HIGH
   raw_redistribution: 'NO'
-  derived_redistribution: 'NO'
+  derived_redistribution: DISPLAY_ONLY
   public_api_use: 'NO'
   public_download_use: 'NO'
-  required_attribution: Not applicable while excluded
-  commercial_reuse_status: Not decided
-  modification_status: Not distributed
-  third_party_terms: IBGE exact-version gate unresolved
-  notes: Existing internal map remains pre-release; full geometry remains restricted
-  evidence_reference: docs/legal_research_2026-09-01.md
+  required_attribution: Fonte da geometria municipal - IBGE, Malha Municipal Digital 2023; adaptação e agregação por Mente do Brasil
+  commercial_reuse_status: Allowed for the derived display with attribution under terms compatible with CC BY 4.0
+  modification_status: Municipal polygons filtered and dissolved to locked Health Regions; web copies simplified for display
+  third_party_terms: Attribution and indication of adaptation required
+  notes: Exact archived members were matched cryptographically; raw mesh, geometry download, and public Open Data API geometry remain excluded
+  evidence_reference: metadata/legal/ibge_geometry_publication_gate_v1.yaml

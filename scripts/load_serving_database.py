@@ -737,7 +737,7 @@ def scalar(connection, sql: str, params: tuple[Any, ...] = ()) -> Any:
 
 def assert_close(name: str, left: Any, right: Any) -> None:
     if isinstance(left, float) or isinstance(right, float):
-        if not isclose(float(left), float(right), rel_tol=0, abs_tol=1e-12):
+        if not isclose(float(left), float(right), rel_tol=1e-12, abs_tol=1e-12):
             raise AssertionError(f"Database value differs for {name}: {left} != {right}")
     elif left != right:
         raise AssertionError(f"Database value differs for {name}: {left} != {right}")

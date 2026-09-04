@@ -11,6 +11,19 @@ from pathlib import Path
 
 MAX_BLOB_BYTES = 8 * 1024 * 1024
 FORBIDDEN_SUFFIXES = {".dump", ".backup", ".pem", ".key", ".p12", ".pfx"}
+RAW_PRIVATE_SUFFIXES = {
+    ".bak",
+    ".dbc",
+    ".dbf",
+    ".dta",
+    ".gpkg",
+    ".sas7bdat",
+    ".sav",
+    ".shp",
+    ".shx",
+    ".sqlite",
+}
+RAW_PRIVATE_PATH_PARTS = {"audit_packages", "backups", "dumps"}
 SECRET_PATTERNS = {
     "private_key": re.compile(rb"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
     "github_token": re.compile(rb"\b(?:ghp|gho|ghu|ghs|github_pat)_[A-Za-z0-9_]{20,}\b"),
@@ -35,12 +48,17 @@ def git(root: Path, *args: str, input_bytes: bytes | None = None) -> bytes:
 def suspicious_path(path: str) -> str | None:
     normalized = path.lower()
     name = Path(normalized).name
+    parts = set(Path(normalized).parts)
     if name.startswith(".env") and name not in {".env.example", ".env.sample"}:
         return "tracked_env_file"
     if Path(normalized).suffix in FORBIDDEN_SUFFIXES:
         return "tracked_secret_or_dump_extension"
     if normalized.startswith("data/raw/") and name != ".gitkeep":
         return "tracked_raw_source"
+    if Path(normalized).suffix in RAW_PRIVATE_SUFFIXES:
+        return "tracked_raw_or_private_artifact"
+    if parts & RAW_PRIVATE_PATH_PARTS:
+        return "tracked_private_artifact_directory"
     return None
 
 
@@ -144,8 +162,22 @@ def scan(root: Path) -> dict:
                 findings.append({"scope": "worktree", "path": path, "kind": kind})
 
     unique = sorted({(item["scope"], item["path"], item["kind"]) for item in findings})
+    secret_kinds = {
+        "tracked_env_file",
+        "tracked_secret_or_dump_extension",
+        *SECRET_PATTERNS,
+    }
+    raw_private_kinds = {
+        "tracked_raw_source",
+        "tracked_raw_or_private_artifact",
+        "tracked_private_artifact_directory",
+    }
+    secret_findings = [item for item in unique if item[2] in secret_kinds]
+    raw_private_findings = [item for item in unique if item[2] in raw_private_kinds]
     return {
         "status": "PASS" if not unique else "FAIL",
+        "secret_scan_status": "PASS" if not secret_findings else "FAIL",
+        "raw_private_artifact_scan_status": "PASS" if not raw_private_findings else "FAIL",
         "findings": [{"scope": scope, "path": path, "kind": kind} for scope, path, kind in unique],
         "historical_blobs_scanned": len(blob_paths),
         "large_blobs_skipped_for_content": skipped_large,

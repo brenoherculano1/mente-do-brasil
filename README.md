@@ -1,177 +1,94 @@
 # Mente do Brasil
 
-Mente do Brasil is a Brazilian public data and territorial intelligence project for mental health.
+**Inteligência territorial em saúde mental no Brasil.**
 
-The repository is at local frontend V1 validation stage. It currently
-defines the technical structure, metadata contracts, release/version
-conventions, canonical analytical layer, PostgreSQL/PostGIS serving schema, and
-first public frontend vertical slice over the internal read-only FastAPI API. It
-does not yet contain a deployed service, authentication, cloud database, or the
-complete public website.
+Mente do Brasil é um projeto de dados públicos que organiza indicadores de necessidade,
+capacidade assistencial e desigualdade territorial nas 439 Regiões de Saúde brasileiras.
+O produto combina uma camada analítica reproduzível, PostgreSQL/PostGIS, uma API FastAPI
+somente leitura e uma aplicação Next.js orientada à exploração territorial.
 
-## Scientific Scope
+> **Status: cloud preview / pre-release.** O código e os artefatos locais estão validados,
+> mas o site ainda não constitui lançamento público oficial. `public_release_status` permanece
+> `NOT_RELEASED`, sem domínio de produção e sem garantia de disponibilidade.
 
-The initial analytical release is designed for Brazil's 439 Health Regions, using `health_region_code` as the canonical geographic key. Region names must never be used as primary keys.
+## Base científica
 
-Initial locked versions:
+A unidade de análise é a Região de Saúde. A matriz Need × Capacity é uma tipologia ecológica
+exploratória, não um ranking e não uma medida individual de acesso ou necessidade clínica.
+O release analítico corrente é `MDB_ANALYTICAL_2024_2`, com método `MDB_METHOD_1.1` e
+geografia `BR_HEALTH_REGIONS_END2024_V1`.
 
-- `geography_version`: `BR_HEALTH_REGIONS_END2024_V1`
-- `method_version`: `MDB_METHOD_1.0`
-- `release_id`: `MDB_ANALYTICAL_2024_1`
+Resultados espaciais bloqueados:
 
-The first analytical release is intended to be immutable once published. Corrections must create a new release rather than overwriting released outputs.
+- Moran global: `0.5256454566660947`;
+- pseudo-p: `0.0001`;
+- LISA significativo: `136` (`HH=60`, `LL=65`, `HL=5`, `LH=6`);
+- `SMALL_SUICIDE_COUNT=7` e `ZERO_REGISTERED_BEDS=275`.
 
-## Repository Structure
+As definições, pressupostos, validações e limitações estão em
+[`docs/methodology_page_2026-08-25.md`](docs/methodology_page_2026-08-25.md) e nos
+metadados versionados.
 
-```text
-data/
-  raw/          immutable source files, not tracked by Git
-  staging/      derived intermediate files
-  canonical/    cleaned canonical analytical tables
-  releases/     immutable public/final release artifacts
+## Fontes
 
-db/
-  migrations/   SQL migrations for the local PostgreSQL/PostGIS serving database
+Os indicadores derivados usam fontes oficiais do Ministério da Saúde/DATASUS (SIM,
+SIH/SUS, CNES e POPSVS), SIOPS, referências populacionais do IBGE e a população-padrão
+da OMS empregada na padronização por idade. Arquivos brutos, registros individuais,
+backups e dumps não fazem parte do repositório público.
 
-api/
-  routers/      internal read-only FastAPI route handlers
-  schemas/      Pydantic response and error contracts
-  services/     explicit SQL reads from serving views
+A geometria de exibição deriva da Malha Municipal Digital 2023 do IBGE, agregada para
+Regiões de Saúde. A autorização técnica cobre somente a exibição derivada com atribuição;
+a malha bruta e downloads de geometria permanecem excluídos.
 
-pipeline/
-  geography/    geographic crosswalk and geometry preparation
-  population/   population denominators
-  sim/          mortality source processing
-  sih/          hospital admissions source processing
-  cnes/         facilities, beds, and workforce source processing
-  metrics/      indicators, percentile ranks, composites
-  spatial/      spatial output storage interfaces
+## Open Data e API
 
-metadata/
-  indicators/   YAML indicator definitions
-  sources/      source manifests
-  releases/     release manifests
+`MDB_OPEN_DATA_2024_1` é o pacote imutável de agregados públicos. Seu ZIP possui
+`914294` bytes e SHA-256
+`2b3b1fc749bfd71181115c2cd9467bf26cb1572bd0c0e9687dabccffab3775bc`.
+O contrato da API pública está em [`docs/api_v1_contract.md`](docs/api_v1_contract.md).
+Durante o preview, os endpoints são técnicos e não representam um SLA de produção.
 
-tests/
-  geography/    geography structural tests
-  data_quality/ metric and missingness tests
-  regression/   locked result regression tests
+## Limitações
 
-web/
-  local Next.js frontend vertical slice for the explorer and region profile
-```
+- Desenho ecológico: não permite inferência individual ou causal.
+- Capacidade registrada não equivale automaticamente a acesso efetivo ou qualidade.
+- Internações refletem uso do sistema e oferta, além de necessidade.
+- Contagens pequenas e fluxos hospitalares recebem controles explícitos de divulgação.
+- O preview gratuito pode ser pausado pelos provedores e não possui SLA.
 
-Current product data flow:
-
-```text
-RAW
-  -> CANONICAL
-  -> POSTGRESQL/POSTGIS SERVING
-  -> WEB GEOMETRY DERIVATION
-  -> INTERNAL LOCAL READ-ONLY API
-  -> WEB FRONTEND V1
-```
-
-The frontend is local-only. The API is local-only and read-only.
-
-## Data Philosophy
-
-`data/raw/` is immutable. Raw files must be copied into the project exactly as obtained, with source provenance recorded separately. Do not edit, normalize, or overwrite raw files.
-
-Derived files should move through:
-
-1. `data/staging/`
-2. `data/canonical/`
-3. `data/releases/`
-
-Missingness must be explicit. The project distinguishes:
-
-- `0`
-- `NA`
-- `not_available`
-- `not_applicable`
-- `suppressed`
-
-Missing values must not be silently converted to zero.
-
-## Initial Indicators
-
-Need:
-
-- `suicide_asmr`
-- `psychiatric_admission_rate`
-
-Capacity:
-
-- `caps_rate`
-- `mental_health_beds_sus_rate`
-- `psychiatrist_fte_rate`
-
-Composite definitions are documented in `metadata/releases/MDB_ANALYTICAL_2024_1.yaml`.
-
-## Locked Spatial Result Placeholders
-
-This repository foundation does not recalculate spatial statistics. It records placeholders for the already validated results:
-
-- Global Moran I: `0.525494388844`
-- pseudo-p: `0.0001`
-- permutations: `9999`
-- seed: `20260823`
-- weights: queen contiguity, row-standardized
-- islands: `0`
-- FDR-significant LISA regions: `135`
-- HH: `60`
-- LL: `66`
-- HL: `4`
-- LH: `5`
-
-The invalid old Moran value `0.218740812099` must never be used.
-
-## Running Tests
-
-The scientific foundation tests can run with Python's standard library:
+## Execução local
 
 ```bash
-PYTHONPATH=src python3 -m unittest discover -s tests
-```
-
-After setting up the project environment:
-
-```bash
-uv run --extra geo pytest
-uv run ruff check api scripts tests
-```
-
-For the local API validation, start Docker and the API first:
-
-```bash
+uv sync --frozen --extra geo --extra dev
 docker compose up -d
-uv run --extra geo python scripts/load_serving_database.py
+uv run python scripts/load_serving_database_release.py --release MDB_ANALYTICAL_2024_2
 uv run python scripts/provision_api_db_role.py
 uv run uvicorn api.main:app --host 127.0.0.1 --port 8000
-uv run python scripts/validate_api.py
-uv run pytest tests/api/test_api_contract.py
 ```
 
-To rebuild the derived web geometry layer:
+Frontend:
 
 ```bash
-uv run python scripts/build_web_geometry.py
+cd web
+npm ci
+npm test
+npm run dev
 ```
 
-Derived GeoJSON assets are written under `data/web/` and are not tracked by
-Git; their hashes and sizes are recorded in metadata.
+## Citação
 
-## What Does Not Exist Yet
+Use [`CITATION.cff`](CITATION.cff) e a atribuição detalhada em
+[`docs/open_data_attribution.md`](docs/open_data_attribution.md). Cite também as fontes
+oficiais indicadas na documentação do release.
 
-This repository does not yet include:
+## Licenças
 
-- raw DATASUS/CNES/IBGE files;
-- public API or deployed API;
-- authentication;
-- cloud database;
-- deployment;
-- complete `/estado/[uf]`, `/metodologia`, `/dados`, or `/sobre` pages;
-- recalculated spatial analyses.
+O código-fonte não é disponibilizado sob licença open source: **todos os direitos
+reservados; nenhuma licença de uso do código é concedida**. A disponibilização pública
+do repositório não concede direitos de reutilização do software, marca ou identidade.
 
-Placeholders are explicit where source URLs, file hashes, extraction timestamps, or final generated artifacts are not yet available.
+A licença CC BY 4.0 aplica-se somente ao conteúdo derivado/licenciável identificado em
+[`LICENSE_DATA.md`](web/public/releases/MDB_OPEN_DATA_2024_1/LICENSE_DATA.md), sujeita aos
+direitos e termos das fontes terceiras.
+Ela não se estende automaticamente ao código, à marca, às fontes brutas ou à geometria
+fora do escopo expressamente documentado.
