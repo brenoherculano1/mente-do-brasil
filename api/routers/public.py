@@ -12,6 +12,7 @@ from fastapi import Path as ApiPath
 from fastapi.responses import JSONResponse
 
 from api.dependencies import DatabaseDep
+from api.release_metadata import RELEASE_JSON
 from api.services.public_api import (
     ANALYTICAL_RELEASE,
     API_VERSION,
@@ -22,7 +23,6 @@ from api.services.public_api import (
 )
 
 ROOT = Path(__file__).resolve().parents[2]
-RELEASE_FILE = ROOT / "web" / "public" / "releases" / OPEN_DATA_RELEASE / "release.json"
 REGISTRY_FILE = ROOT / "metadata/open_platform/public_field_registry_v1.yaml"
 router = APIRouter(prefix="/api/public/v1", tags=["public open data"])
 
@@ -51,14 +51,14 @@ def cursor_offset(cursor: str | None, request: Request) -> int | JSONResponse:
 
 @router.get("/releases")
 def releases() -> dict:
-    return envelope([json.loads(RELEASE_FILE.read_text())])
+    return envelope([json.loads(RELEASE_JSON)])
 
 
 @router.get("/releases/{release_id}")
 def release(release_id: str, request: Request):
     if release_id != OPEN_DATA_RELEASE:
         return problem(request, 404, "Release not found", "Unknown public release.", "NOT_FOUND")
-    return envelope(json.loads(RELEASE_FILE.read_text()))
+    return envelope(json.loads(RELEASE_JSON))
 
 
 @router.get("/health-regions")

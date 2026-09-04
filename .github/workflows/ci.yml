@@ -27,6 +27,7 @@ jobs:
           tests/regression/test_data_contract.py
           tests/regression/test_serving_database_static.py
           tests/regression/test_open_platform_static.py::test_public_flow_view_enforces_suppression_in_sql
+          tests/regression/test_open_platform_static.py::test_bundled_api_release_metadata_is_byte_identical
           tests/regression/test_open_platform_static.py::test_public_role_cannot_create_temporary_objects
           tests/regression/test_open_platform_static.py::test_public_router_is_parseable_and_has_no_select_star
           tests/regression/test_open_platform_static.py::test_release_status_remains_not_released
@@ -37,6 +38,8 @@ jobs:
           api/db.py
           api/main.py
           api/routers/public.py
+          api/release_metadata.py
+          app.py
           api/security.py
           scripts/load_serving_database.py
           scripts/provision_api_db_role.py

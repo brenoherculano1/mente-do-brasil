@@ -1,0 +1,50 @@
+inventory_id: MDB_DEPLOYMENT_ARCHITECTURE_1.0
+status: PREPARED_NOT_PROVISIONED
+github:
+  repository: brenoherculano1/mente-do-brasil
+  visibility: private
+  repository_id: R_kgDOUOE31Q
+  default_branch: production-launch-complete
+  branch_protection: HUMAN_ACTION_REQUIRED_GITHUB_PRO
+vercel:
+  team_name: Mente do Brasil
+  team_id: null
+  plan: Pro_required
+  region: gru1
+  web_project_name: mente-do-brasil-web
+  web_project_id: null
+  api_project_name: mente-do-brasil-api
+  api_project_id: null
+  staging_web_deployment_id: null
+  staging_api_deployment_id: null
+  production_web_deployment_id: null
+  production_api_deployment_id: null
+supabase:
+  organization_name: Mente do Brasil
+  organization_id: null
+  plan: Pro_required
+  production_project_name: mente-do-brasil-prod
+  production_project_ref: null
+  staging_project_name: mente-do-brasil-staging-temporary
+  staging_project_ref: null
+  region: sa-east-1
+  runtime_connection_mode: Supavisor_transaction_6543
+  ssl_enforcement: required
+  client_sslmode: verify-full_required
+domain:
+  canonical: mentedobrasil.com.br
+  registrar: Registro.br
+  ownership: not_owned
+  dns_provider: Cloudflare_planned
+monitoring:
+  - Vercel runtime and deployment logs
+  - Supabase database and platform logs
+  - GitHub Actions production synthetic monitor
+  - GitHub Actions release integrity monitor
+releases:
+  production: MDB_PRODUCTION_1.0
+  observability: MDB_OBSERVABILITY_1.0
+  public_release: MDB_PUBLIC_RELEASE_1.0
+  analytical: MDB_ANALYTICAL_2024_2
+  open_data: MDB_OPEN_DATA_2024_1
+  web_geometry: MDB_WEB_GEOMETRY_V1

@@ -1,0 +1,15 @@
+{
+  "api_url": "https://mente-do-brasil-api-preview-r440m815x-medjourneys-projects.vercel.app",
+  "checks": {
+    "open_data_zip": {
+      "bytes": 914294,
+      "etag": "\"2b3b1fc749bfd71181115c2cd9467bf26cb1572bd0c0e9687dabccffab3775bc\"",
+      "sha256": "2b3b1fc749bfd71181115c2cd9467bf26cb1572bd0c0e9687dabccffab3775bc",
+      "status": 200
+    }
+  },
+  "failures": [],
+  "request_profile": "sequential_low_volume",
+  "status": "PASS",
+  "web_url": "https://mente-do-brasil-web-preview-iy5h79w1i-medjourneys-projects.vercel.app"
+}

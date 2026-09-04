@@ -1,50 +1,54 @@
-inventory_id: MDB_DEPLOYMENT_ARCHITECTURE_1.0
-status: PREPARED_NOT_PROVISIONED
+inventory_id: MDB_CLOUD_PREVIEW_1.0
+environment: preview
+status: NOT_VALIDATED
+public_release_status: NOT_RELEASED
+monthly_project_infrastructure_target_usd: 0
+previous_plan: provider_inventory_pre_preview.yaml
 github:
   repository: brenoherculano1/mente-do-brasil
-  visibility: private
-  repository_id: R_kgDOUOE31Q
+  visibility: public
   default_branch: production-launch-complete
-  branch_protection: HUMAN_ACTION_REQUIRED_GITHUB_PRO
+  branch_protection: REQUIRED_CI_STRICT_ADMINS_INCLUDED
 vercel:
-  team_name: Mente do Brasil
-  team_id: null
-  plan: Pro_required
-  region: gru1
-  web_project_name: mente-do-brasil-web
-  web_project_id: null
-  api_project_name: mente-do-brasil-api
-  api_project_id: null
-  staging_web_deployment_id: null
-  staging_api_deployment_id: null
-  production_web_deployment_id: null
-  production_api_deployment_id: null
+  team_id: team_9chV5l2nOXeXr4DXtOkp6ETp
+  plan: Hobby
+  runtime_region: gru1
+  build_region: iad1
+  web_project_name: mente-do-brasil-web-preview
+  web_project_id: prj_ElUqohaXcvHgN4xv820JbHiLHtqL
+  api_project_name: mente-do-brasil-api-preview
+  api_project_id: prj_MTRglILQ0TDMe5aA763noFfYwenh
+  web_preview_url: https://mente-do-brasil-web-preview-iy5h79w1i-medjourneys-projects.vercel.app
+  api_preview_url: https://mente-do-brasil-api-preview-r440m815x-medjourneys-projects.vercel.app
+  web_deployment_id: dpl_GsBVUdL3Qz9HbszhTE8GaWwyLM3V
+  api_deployment_id: dpl_LqFUtwxkyKzrmg6pxBZYH1pQDGQf
+  deployment_protection: VERCEL_AUTHENTICATION
 supabase:
-  organization_name: Mente do Brasil
-  organization_id: null
-  plan: Pro_required
-  production_project_name: mente-do-brasil-prod
-  production_project_ref: null
-  staging_project_name: mente-do-brasil-staging-temporary
-  staging_project_ref: null
+  organization_id: ehuqosfbeigfmxwhvxzu
+  project_name: mente-do-brasil-preview
+  project_ref: mbmyynkepcehvkwqrmsh
+  plan: Free
   region: sa-east-1
+  postgres: '17.6'
+  postgis: '3.3.7'
   runtime_connection_mode: Supavisor_transaction_6543
-  ssl_enforcement: required
-  client_sslmode: verify-full_required
-domain:
-  canonical: mentedobrasil.com.br
-  registrar: Registro.br
-  ownership: not_owned
-  dns_provider: Cloudflare_planned
-monitoring:
-  - Vercel runtime and deployment logs
-  - Supabase database and platform logs
-  - GitHub Actions production synthetic monitor
-  - GitHub Actions release integrity monitor
+  runtime_role: mente_do_brasil_api
+  client_sslmode: verify-full
+  server_ssl_enforcement: HUMAN_ACTION_REQUIRED
+  loader_login: false
+  advisor_status: EXTENSION_OWNED_PUBLIC_ROUTINES_REMAIN_SCHEMA_USAGE_DENIED
 releases:
-  production: MDB_PRODUCTION_1.0
-  observability: MDB_OBSERVABILITY_1.0
-  public_release: MDB_PUBLIC_RELEASE_1.0
   analytical: MDB_ANALYTICAL_2024_2
   open_data: MDB_OPEN_DATA_2024_1
   web_geometry: MDB_WEB_GEOMETRY_V1
+  geometry_display_gate: PASS_EXACT_SOURCE_PROVENANCE
+deferred:
+  - Official production launch
+  - Paid production architecture
+  - Custom domain and DNS
+  - Custom-domain TLS and email
+monitoring:
+  - Vercel runtime and deployment logs
+  - Supabase logs
+  - GitHub Actions CI
+  - Scheduled preview checks not configured yet
