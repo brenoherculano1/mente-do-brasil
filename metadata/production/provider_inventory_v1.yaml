@@ -1,6 +1,6 @@
 inventory_id: MDB_CLOUD_PREVIEW_1.0
 environment: preview
-status: NOT_VALIDATED
+status: VALIDATED
 public_release_status: NOT_RELEASED
 monthly_project_infrastructure_target_usd: 0
 previous_plan: provider_inventory_pre_preview.yaml
@@ -18,9 +18,9 @@ vercel:
   web_project_id: prj_ElUqohaXcvHgN4xv820JbHiLHtqL
   api_project_name: mente-do-brasil-api-preview
   api_project_id: prj_MTRglILQ0TDMe5aA763noFfYwenh
-  web_preview_url: https://mente-do-brasil-web-preview-iy5h79w1i-medjourneys-projects.vercel.app
+  web_preview_url: https://mente-do-brasil-web-preview-oz1hpkpoa-medjourneys-projects.vercel.app
   api_preview_url: https://mente-do-brasil-api-preview-r440m815x-medjourneys-projects.vercel.app
-  web_deployment_id: dpl_GsBVUdL3Qz9HbszhTE8GaWwyLM3V
+  web_deployment_id: dpl_CeJSSC1B5TSb8kDp94d6m7tdiSy3
   api_deployment_id: dpl_LqFUtwxkyKzrmg6pxBZYH1pQDGQf
   deployment_protection: VERCEL_AUTHENTICATION
 supabase:
@@ -34,9 +34,9 @@ supabase:
   runtime_connection_mode: Supavisor_transaction_6543
   runtime_role: mente_do_brasil_api
   client_sslmode: verify-full
-  server_ssl_enforcement: HUMAN_ACTION_REQUIRED
+  server_ssl_enforcement: PASS_PLAINTEXT_DENIED_VERIFY_FULL
   loader_login: false
-  advisor_status: EXTENSION_OWNED_PUBLIC_ROUTINES_REMAIN_SCHEMA_USAGE_DENIED
+  advisor_status: ACCEPTED_PREVIEW_LIMITATION_SCHEMA_USAGE_DENIED
 releases:
   analytical: MDB_ANALYTICAL_2024_2
   open_data: MDB_OPEN_DATA_2024_1
@@ -51,4 +51,4 @@ monitoring:
   - Vercel runtime and deployment logs
   - Supabase logs
   - GitHub Actions CI
-  - Scheduled preview checks not configured yet
+  - GitHub Actions four-route synthetic check every six hours

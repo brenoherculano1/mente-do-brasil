@@ -60,5 +60,8 @@ def test_public_router_is_parseable_and_has_no_select_star():
 
 def test_release_status_remains_not_released():
     builder = (ROOT / "scripts/build_open_data_release.py").read_text()
+    footer = (ROOT / "web/components/AppFooter.tsx").read_text()
     assert '"public_release_status": "NOT_RELEASED"' in builder
     assert '"status": "LOCKED_LOCAL"' in builder
+    assert "Release: {ACTIVE_RELEASE_ID}" in footer
+    assert "Release: MDB_ANALYTICAL_2024_1" not in footer

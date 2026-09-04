@@ -1,13 +1,14 @@
 # Cloud Preview Validation
 
-Status: IN_PROGRESS. Public release: NOT_RELEASED. No official launch or validation tag.
+Status: VALIDATED. Public release: NOT_RELEASED. No official launch or validation tag.
 Date: 2026-09-04.
 
 ## Infrastructure
 
 - GitHub: https://github.com/brenoherculano1/mente-do-brasil (PUBLIC).
 - Starting commit: 76337d7f59e7b8501cf07dee48d07a284373e14e.
-- Last committed CI PASS: 2e1079a62d4205814e3466c4e3305fe6afed56fc, run 33863989592.
+- Last merged checkpoint: 3f023d3ef943f8056d89fa14083d9b26b48d44ab.
+- Required PR CI PASS: run 33887699035, backend-and-release and frontend.
 - Branch production-launch-complete requires backend-and-release and frontend checks,
   strict status checks, linear history and conversation resolution. Admins included;
   force pushes and deletions denied.
@@ -17,7 +18,7 @@ Date: 2026-09-04.
 - API project: prj_MTRglILQ0TDMe5aA763noFfYwenh.
 - Web project: prj_ElUqohaXcvHgN4xv820JbHiLHtqL.
 - API preview: https://mente-do-brasil-api-preview-r440m815x-medjourneys-projects.vercel.app
-- Web preview: https://mente-do-brasil-web-preview-iy5h79w1i-medjourneys-projects.vercel.app
+- Web preview: https://mente-do-brasil-web-preview-oz1hpkpoa-medjourneys-projects.vercel.app
 - Two projects preserve the existing Next.js web root and separate FastAPI runtime.
 - Both previews use Vercel Authentication and server-side automation bypass secrets.
 - First-deployment automatic production assignments were removed, including deployments
@@ -84,17 +85,38 @@ attribution. This technical/licensing gate is not a formal legal opinion. Displa
 remains enabled behind preview authentication. Open Data geometry downloads remain
 excluded; the immutable release metadata is not rewritten to change that boundary.
 
-Server-side SSL enforcement is still pending. Dashboard requires human login:
-https://supabase.com/dashboard/project/mbmyynkepcehvkwqrmsh/database/settings
-Enable "Enforce SSL on incoming connections" under SSL configuration. Do not change
-the password or purchase an upgrade. Afterwards prove plaintext connections are denied.
+Server-side SSL enforcement is enabled. A disposable role proved that plaintext is
+denied and verify-full succeeds with the pinned public CA; the role and its database
+grant were removed immediately after the test.
 
-Remaining: full external security/privacy evidence, final visual/accessibility review,
-extension-owned advisor disposition, server-side SSL enforcement, final CI/merge,
-free monitor configuration and final validated audit package. No claim of zero
-privacy leaks or full accessibility validation is made until those checks finish.
+The final low-volume security/privacy validator passed: 14 routes, 19 JS/CSS assets
+and 11 API contracts; direct backend and FastAPI docs denied; hostile SQL/traversal
+inputs sanitized; write methods denied; public CORS passed without credentials;
+PII fields, raw fields, secret patterns, exact flows below five and raw-source leaks
+all zero. Open Data privacy and identity passed. Rate-limit headers and deterministic
+logic passed with the documented per-warm-instance limitation; no burst probe was run.
+Evidence: audit_results/cloud_preview_security_privacy.json.
+
+Visual review covered home desktop/mobile, region, Radar, Gestor, Mudanças,
+Financiamento, Fluxos, Dados Abertos, Desenvolvedores and Governança. Financing and
+flows were recaptured after a five-second WebGL wait and rendered correctly. The
+global footer was corrected to use the active-release constant rather than stale
+MDB_ANALYTICAL_2024_1 copy. Accessibility remains PASS_WITH_SCOPE: semantic and
+keyboard-oriented E2E coverage passed, but this is not an exhaustive assistive-
+technology audit.
+
+A GitHub Actions synthetic monitor performs four protected-preview requests every
+six hours. It checks homepage, healthz, readyz and public releases with a repository
+secret. Vercel and Supabase logs plus CI are the only observability surfaces.
+
+The remaining Supabase PostGIS advisor notices are accepted preview limitations:
+anon/authenticated lack public and serving schema USAGE, and live REST/GraphQL access
+is denied. Relocating the provider-managed extension was rejected because it could
+break spatial contracts. Reassess this boundary for paid production architecture.
 
 Preview is disposable, without SLA; Supabase Free may pause. Scientific artifacts
 remain local/locked and are not dependent on preview availability. Rebuild from the
 same migrations, base release loader, advanced loader and exact local web geometry.
-Current selected infrastructure tiers target USD 0/month; paid production design is deferred.
+Current selected infrastructure tiers cost USD 0/month; paid production design is deferred.
+MDB_CLOUD_PREVIEW_1.0 = VALIDATED. cloud_preview_status = VALIDATED.
+public_release_status = NOT_RELEASED.
