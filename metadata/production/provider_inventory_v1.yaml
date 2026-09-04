@@ -2,8 +2,10 @@ inventory_id: MDB_DEPLOYMENT_ARCHITECTURE_1.0
 status: PREPARED_NOT_PROVISIONED
 github:
   repository: brenoherculano1/mente-do-brasil
-  visibility: private_required
-  repository_id: null
+  visibility: private
+  repository_id: R_kgDOUOE31Q
+  default_branch: production-launch-complete
+  branch_protection: HUMAN_ACTION_REQUIRED_GITHUB_PRO
 vercel:
   team_name: Mente do Brasil
   team_id: null
