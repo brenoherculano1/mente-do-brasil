@@ -27,6 +27,7 @@ class ServingDatabaseStaticTests(unittest.TestCase):
                 "013_public_temporal_type_alignment.sql",
                 "014_cloud_access_hardening.sql",
                 "015_data_api_hardening.sql",
+                "016_public_inherited_privileges.sql",
             ],
         )
 

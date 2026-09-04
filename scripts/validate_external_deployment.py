@@ -79,6 +79,8 @@ def main() -> int:
     api = args.api_url.rstrip("/")
     bypass = os.environ.get("MDB_STAGING_BYPASS_SECRET")
     web_headers = {"x-vercel-protection-bypass": bypass} if bypass else {}
+    api_bypass = os.environ.get("MDB_API_VERCEL_BYPASS_SECRET")
+    api_headers = {"x-vercel-protection-bypass": api_bypass} if api_bypass else {}
     failures: list[str] = []
     checks: dict[str, object] = {}
 
@@ -88,7 +90,7 @@ def main() -> int:
             failures.append(f"web {path}: HTTP {status}")
 
     for path in ["/health", "/ready", "/docs", "/redoc", "/openapi.json", "/api/v1/releases"]:
-        status, _, body, _ = request(api + path)
+        status, _, body, _ = request(api + path, headers=api_headers)
         if status not in {401, 403, 404}:
             failures.append(f"direct API {path}: HTTP {status}")
         if b"release_id" in body or b"database" in body:

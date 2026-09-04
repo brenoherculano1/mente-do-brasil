@@ -3,9 +3,16 @@ from pathlib import Path
 
 import pandas as pd
 
+from api.release_metadata import RELEASE_JSON
 from scripts.open_platform_spec import DATASETS, FORBIDDEN_PUBLIC_FIELDS
 
 ROOT = Path(__file__).resolve().parents[2]
+
+
+def test_bundled_api_release_metadata_is_byte_identical():
+    assert RELEASE_JSON.encode("utf-8") == (
+        ROOT / "web/public/releases/MDB_OPEN_DATA_2024_1/release.json"
+    ).read_bytes()
 
 
 def test_public_spec_has_locked_datasets_and_no_forbidden_fields():

@@ -124,4 +124,14 @@ describe("public production foundation config", () => {
     expect(headers.get("X-MDB-Internal-Token")).toBe("test-only-internal-token-value");
     expect(headers.get("Authorization")).toBeNull();
   });
+
+  it("uses only the configured upstream deployment protection secret", () => {
+    vi.stubEnv("MDB_API_VERCEL_BYPASS_SECRET", "test-only-upstream-bypass");
+    expect(internalApiHeaders({ "x-vercel-protection-bypass": "untrusted" })
+      .get("x-vercel-protection-bypass")).toBe("test-only-upstream-bypass");
+    vi.stubEnv("MDB_API_VERCEL_BYPASS_SECRET", "");
+    expect(internalApiHeaders({ "x-vercel-protection-bypass": "untrusted" })
+      .get("x-vercel-protection-bypass")).toBeNull();
+    vi.unstubAllEnvs();
+  });
 });

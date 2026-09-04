@@ -73,3 +73,4 @@ web/test-results/
 !metadata/**/*.yaml
 !metadata/**/*.yml
 !metadata/**/*.md
+.vercel

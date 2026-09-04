@@ -30,6 +30,9 @@ export function internalApiHeaders(headers: HeadersInit = {}): Headers {
     throw new Error("Internal API token is required for server-side data requests.");
   }
   if (token) result.set("X-MDB-Internal-Token", token);
+  const bypass = process.env.MDB_API_VERCEL_BYPASS_SECRET;
+  result.delete("x-vercel-protection-bypass");
+  if (bypass) result.set("x-vercel-protection-bypass", bypass);
   return result;
 }
 
