@@ -1,0 +1,33 @@
+name: Cloud preview monitor
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */6 * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cloud-preview-monitor
+  cancel-in-progress: true
+
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PREVIEW_URL: https://mente-do-brasil-web-preview-oz1hpkpoa-medjourneys-projects.vercel.app
+    steps:
+      - name: Check protected preview routes
+        env:
+          VERCEL_PROTECTION_BYPASS: ${{ secrets.MDB_PREVIEW_BYPASS_SECRET }}
+        run: |
+          set -euo pipefail
+          test -n "$VERCEL_PROTECTION_BYPASS"
+          for path in / /healthz /readyz /api/public/v1/releases; do
+            curl --fail --silent --show-error \
+              --retry 2 --retry-all-errors --max-time 30 \
+              -H "x-vercel-protection-bypass: $VERCEL_PROTECTION_BYPASS" \
+              "$PREVIEW_URL$path" >/dev/null
+          done

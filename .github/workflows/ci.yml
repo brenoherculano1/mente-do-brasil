@@ -44,6 +44,7 @@ jobs:
           scripts/load_serving_database.py
           scripts/provision_api_db_role.py
           scripts/scan_repository_secrets.py
+          scripts/validate_cloud_preview_security.py
           scripts/validate_committed_open_data_release.py
           scripts/validate_external_deployment.py
           scripts/validate_foundation.py
