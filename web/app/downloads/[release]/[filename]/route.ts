@@ -7,7 +7,12 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 const RELEASE_ID = "MDB_OPEN_DATA_2024_1";
-const DEFAULT_ROOT = path.resolve(process.cwd(), "..", "artifacts", "public_releases", RELEASE_ID);
+const RELEASE_ZIP = {
+  relative_path: "MDB_OPEN_DATA_2024_1.zip",
+  bytes: 914294,
+  sha256: "2b3b1fc749bfd71181115c2cd9467bf26cb1572bd0c0e9687dabccffab3775bc",
+};
+const DEFAULT_ROOT = path.resolve(process.cwd(), "public", "releases", RELEASE_ID);
 
 function releaseRoot() {
   return process.env.MDB_OPEN_DATA_DIR ?? DEFAULT_ROOT;
@@ -18,7 +23,7 @@ function allowedFiles() {
     files: { relative_path: string; bytes: number; sha256: string }[];
   };
   return new Map(
-    manifest.files
+    [...manifest.files, RELEASE_ZIP]
       .filter((entry) => !entry.relative_path.includes("/"))
       .map((entry) => [entry.relative_path, entry]),
   );

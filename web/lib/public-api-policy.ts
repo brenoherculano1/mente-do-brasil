@@ -1,5 +1,6 @@
 import { createHash } from "node:crypto";
 import { NextRequest } from "next/server";
+import { resolveClientKey } from "@/lib/api/ingress-policy";
 
 export const PUBLIC_RATE_LIMIT = 120;
 export const PUBLIC_RATE_WINDOW_SECONDS = 60;
@@ -7,11 +8,9 @@ export const PUBLIC_RATE_WINDOW_SECONDS = 60;
 type Bucket = { count: number; resetAt: number };
 const buckets = new Map<string, Bucket>();
 
-export function checkPublicRateLimit(_request: NextRequest) {
-  void _request;
+export function checkPublicRateLimit(request: NextRequest) {
   const now = Date.now();
-  // Until trusted-proxy provenance is configured, do not trust forwarded client-IP headers.
-  const key = "local-anonymous";
+  const key = resolveClientKey(request.headers).key;
   let bucket = buckets.get(key);
   if (!bucket || now >= bucket.resetAt) {
     bucket = { count: 0, resetAt: now + PUBLIC_RATE_WINDOW_SECONDS * 1000 };

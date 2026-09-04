@@ -1,0 +1,75 @@
+name: CI
+
+on:
+  push:
+    branches: [main, production-launch-complete]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  backend-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -e ".[dev]"
+      - name: Backend and static database tests
+        run: >-
+          pytest -q
+          tests/api/test_production_security_unit.py
+          tests/regression/test_data_contract.py
+          tests/regression/test_serving_database_static.py
+          tests/regression/test_open_platform_static.py::test_public_flow_view_enforces_suppression_in_sql
+          tests/regression/test_open_platform_static.py::test_public_role_cannot_create_temporary_objects
+          tests/regression/test_open_platform_static.py::test_public_router_is_parseable_and_has_no_select_star
+          tests/regression/test_open_platform_static.py::test_release_status_remains_not_released
+      - name: Python lint
+        run: >-
+          ruff check
+          api/config.py
+          api/db.py
+          api/main.py
+          api/routers/public.py
+          api/security.py
+          scripts/load_serving_database.py
+          scripts/provision_api_db_role.py
+          scripts/scan_repository_secrets.py
+          scripts/validate_committed_open_data_release.py
+          scripts/validate_external_deployment.py
+          scripts/validate_foundation.py
+          tests/api/test_api_contract.py
+          tests/api/test_production_security_unit.py
+          tests/regression/test_serving_database_static.py
+      - name: Immutable Open Data validation
+        run: python scripts/validate_committed_open_data_release.py
+      - name: Repository and history secret scan
+        run: python scripts/scan_repository_secrets.py
+
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    env:
+      MDB_INTERNAL_API_TOKEN: ci-only-token-value-with-more-than-32-characters
+      MDB_API_INTERNAL_BASE_URL: http://127.0.0.1:8000
+      MDB_PUBLIC_INDEXING_ENABLED: "false"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci
+      - run: npm test
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm run build

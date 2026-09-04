@@ -48,3 +48,6 @@ select = ["E", "F", "I", "UP", "B"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = [".", "src", "scripts"]
+
+[tool.vercel]
+entrypoint = "api.main:app"

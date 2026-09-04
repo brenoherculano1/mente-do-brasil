@@ -25,10 +25,8 @@ export const SCIENTIFIC_SOURCES = {
   psychiatrists: "metadata/indicators/psychiatrist_fte_rate.yaml",
   percentiles: "src/mente_do_brasil/quality.py",
   manuscriptStatus: "metadata/publication/manuscript_status.yaml",
-  lockedConfig:
-    "/Users/brenoherculano/Desktop/Brazil Mental Health Spatial Inequality Project/phase1_method_lock/analysis_config_LOCKED.yaml",
-  methodLedger:
-    "/Users/brenoherculano/Desktop/Brazil Mental Health Spatial Inequality Project/phase1_method_lock/method_decision_ledger.md",
+  lockedConfig: "external_locked_artifact/analysis_config_LOCKED.yaml",
+  methodLedger: "external_locked_artifact/method_decision_ledger.md",
 };
 
 export const METHODOLOGY_LOCKS = {

@@ -22,7 +22,7 @@ from api.services.public_api import (
 )
 
 ROOT = Path(__file__).resolve().parents[2]
-RELEASE_FILE = ROOT / "artifacts/public_releases" / OPEN_DATA_RELEASE / "release.json"
+RELEASE_FILE = ROOT / "web" / "public" / "releases" / OPEN_DATA_RELEASE / "release.json"
 REGISTRY_FILE = ROOT / "metadata/open_platform/public_field_registry_v1.yaml"
 router = APIRouter(prefix="/api/public/v1", tags=["public open data"])
 
@@ -346,9 +346,7 @@ def public_openapi():
                     },
                     "4XX": {
                         "description": "Problem Details error",
-                        "content": {
-                            "application/problem+json": {"schema": {"type": "object"}}
-                        },
+                        "content": {"application/problem+json": {"schema": {"type": "object"}}},
                     },
                 },
             }

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import maplibregl, { Map } from "maplibre-gl";
+import { IBGE_GEOMETRY_ATTRIBUTION } from "@/lib/map/attribution";
 
 export function OverviewMap({ data, selected, field, onSelect, money = false }: {
   data: GeoJSON.FeatureCollection | null; selected: string | null;
@@ -18,6 +19,7 @@ export function OverviewMap({ data, selected, field, onSelect, money = false }: 
       attributionControl: false, minZoom: 2, maxZoom: 10 });
     instance.current = map;
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right");
+    map.addControl(new maplibregl.AttributionControl({ compact: true, customAttribution: IBGE_GEOMETRY_ATTRIBUTION }), "bottom-right");
     return () => { map.remove(); instance.current = null; };
   }, []);
   useEffect(() => {

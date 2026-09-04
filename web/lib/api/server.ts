@@ -23,13 +23,23 @@ export function internalApiBaseUrl(): string {
   throw new Error("Internal API base URL is required for server-side data requests.");
 }
 
+export function internalApiHeaders(headers: HeadersInit = {}): Headers {
+  const result = new Headers(headers);
+  const token = process.env.MDB_INTERNAL_API_TOKEN;
+  if (!token && process.env.NODE_ENV === "production") {
+    throw new Error("Internal API token is required for server-side data requests.");
+  }
+  if (token) result.set("X-MDB-Internal-Token", token);
+  return result;
+}
+
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   if (!path.startsWith("/api/v1/")) {
     throw new Error("Server API requests must use /api/v1 paths.");
   }
   const response = await fetch(`${internalApiBaseUrl()}${path}`, {
     ...init,
-    headers: { Accept: "application/json", ...init?.headers },
+    headers: internalApiHeaders({ Accept: "application/json", ...init?.headers }),
   });
   if (!response.ok) {
     let body: ApiErrorBody = {};

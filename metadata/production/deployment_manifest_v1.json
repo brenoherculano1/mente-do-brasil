@@ -1,0 +1,19 @@
+{
+  "deployment_architecture": "MDB_DEPLOYMENT_ARCHITECTURE_1.0",
+  "production_version": "MDB_PRODUCTION_1.0",
+  "observability_version": "MDB_OBSERVABILITY_1.0",
+  "public_release_version": "MDB_PUBLIC_RELEASE_1.0",
+  "production_commit": null,
+  "analytical_release": "MDB_ANALYTICAL_2024_2",
+  "open_data_release": "MDB_OPEN_DATA_2024_1",
+  "open_data_zip_bytes": 914294,
+  "open_data_zip_sha256": "2b3b1fc749bfd71181115c2cd9467bf26cb1572bd0c0e9687dabccffab3775bc",
+  "web_geometry_version": "MDB_WEB_GEOMETRY_V1",
+  "geometry_publication_gate": "PASS_EXACT_SOURCE_PROVENANCE",
+  "web_deployment_id": null,
+  "api_deployment_id": null,
+  "database_project_ref": null,
+  "domain": "mentedobrasil.com.br",
+  "launch_timestamp": null,
+  "public_release_status": "NOT_RELEASED"
+}

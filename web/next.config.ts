@@ -24,7 +24,7 @@ const securityHeaders = [
   },
   {
     key: "Strict-Transport-Security",
-    value: "max-age=31536000",
+    value: "max-age=31536000; includeSubDomains",
   },
   {
     key: "X-Content-Type-Options",
@@ -47,6 +47,7 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  productionBrowserSourceMaps: false,
   async headers() {
     return [
       {

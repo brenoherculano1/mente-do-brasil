@@ -1,0 +1,699 @@
+{
+  "profile": "tabular-data-package",
+  "name": "mdb_open_data_2024_1",
+  "title": "Mente do Brasil Open Data 2024",
+  "version": "MDB_OPEN_DATA_2024_1",
+  "licenses": [
+    {
+      "name": "CC-BY-4.0",
+      "path": "LICENSE_DATA.md"
+    }
+  ],
+  "resources": [
+    {
+      "name": "health_regions_current",
+      "path": "health_regions_current.csv",
+      "format": "csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "release_id",
+            "type": "string"
+          },
+          {
+            "name": "method_version",
+            "type": "string"
+          },
+          {
+            "name": "geography_version",
+            "type": "string"
+          },
+          {
+            "name": "health_region_code",
+            "type": "string"
+          },
+          {
+            "name": "health_region_name",
+            "type": "string"
+          },
+          {
+            "name": "uf",
+            "type": "string"
+          },
+          {
+            "name": "municipality_count",
+            "type": "integer"
+          },
+          {
+            "name": "population",
+            "type": "integer"
+          },
+          {
+            "name": "area_km2",
+            "type": "number"
+          },
+          {
+            "name": "population_density",
+            "type": "number"
+          },
+          {
+            "name": "suicide_asmr",
+            "type": "number"
+          },
+          {
+            "name": "suicide_percentile",
+            "type": "number"
+          },
+          {
+            "name": "psychiatric_admission_rate",
+            "type": "number"
+          },
+          {
+            "name": "psychiatric_admission_percentile",
+            "type": "number"
+          },
+          {
+            "name": "caps_count",
+            "type": "integer"
+          },
+          {
+            "name": "caps_rate",
+            "type": "number"
+          },
+          {
+            "name": "caps_percentile",
+            "type": "number"
+          },
+          {
+            "name": "mental_health_beds_sus_count",
+            "type": "integer"
+          },
+          {
+            "name": "mental_health_beds_sus_rate",
+            "type": "number"
+          },
+          {
+            "name": "beds_percentile",
+            "type": "number"
+          },
+          {
+            "name": "psychiatrist_fte",
+            "type": "number"
+          },
+          {
+            "name": "psychiatrist_fte_rate",
+            "type": "number"
+          },
+          {
+            "name": "psychiatrist_fte_percentile",
+            "type": "number"
+          },
+          {
+            "name": "need_score",
+            "type": "number"
+          },
+          {
+            "name": "capacity_score",
+            "type": "number"
+          },
+          {
+            "name": "mismatch_score",
+            "type": "number"
+          },
+          {
+            "name": "lisa_local_i",
+            "type": "number"
+          },
+          {
+            "name": "lisa_p",
+            "type": "number"
+          },
+          {
+            "name": "lisa_q",
+            "type": "number"
+          },
+          {
+            "name": "lisa_significant",
+            "type": "boolean"
+          },
+          {
+            "name": "lisa_cluster",
+            "type": "string"
+          },
+          {
+            "name": "data_quality_flags",
+            "type": "string"
+          }
+        ],
+        "primaryKey": [
+          "health_region_code"
+        ]
+      }
+    },
+    {
+      "name": "health_region_temporal",
+      "path": "health_region_temporal.csv",
+      "format": "csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "health_region_code",
+            "type": "string"
+          },
+          {
+            "name": "health_region_name",
+            "type": "string"
+          },
+          {
+            "name": "uf",
+            "type": "string"
+          },
+          {
+            "name": "geography_version",
+            "type": "string"
+          },
+          {
+            "name": "population",
+            "type": "integer"
+          },
+          {
+            "name": "person_years",
+            "type": "integer"
+          },
+          {
+            "name": "suicide_asmr",
+            "type": "number"
+          },
+          {
+            "name": "psychiatric_admissions",
+            "type": "integer"
+          },
+          {
+            "name": "psychiatric_admission_rate",
+            "type": "number"
+          },
+          {
+            "name": "caps_count",
+            "type": "integer"
+          },
+          {
+            "name": "mental_health_beds_sus_count",
+            "type": "integer"
+          },
+          {
+            "name": "psychiatrist_fte",
+            "type": "number"
+          },
+          {
+            "name": "caps_rate",
+            "type": "number"
+          },
+          {
+            "name": "mental_health_beds_sus_rate",
+            "type": "number"
+          },
+          {
+            "name": "psychiatrist_fte_rate",
+            "type": "number"
+          },
+          {
+            "name": "suicide_percentile",
+            "type": "number"
+          },
+          {
+            "name": "psychiatric_admission_percentile",
+            "type": "number"
+          },
+          {
+            "name": "caps_percentile",
+            "type": "number"
+          },
+          {
+            "name": "beds_percentile",
+            "type": "number"
+          },
+          {
+            "name": "psychiatrist_fte_percentile",
+            "type": "number"
+          },
+          {
+            "name": "need_score",
+            "type": "number"
+          },
+          {
+            "name": "capacity_score",
+            "type": "number"
+          },
+          {
+            "name": "mismatch_score",
+            "type": "number"
+          },
+          {
+            "name": "year",
+            "type": "integer"
+          },
+          {
+            "name": "need_window_start",
+            "type": "integer"
+          },
+          {
+            "name": "need_window_end",
+            "type": "integer"
+          },
+          {
+            "name": "capacity_competence",
+            "type": "string"
+          },
+          {
+            "name": "temporal_version",
+            "type": "string"
+          },
+          {
+            "name": "release_id",
+            "type": "string"
+          },
+          {
+            "name": "quality_flags",
+            "type": "string"
+          }
+        ],
+        "primaryKey": [
+          "year",
+          "health_region_code"
+        ]
+      }
+    },
+    {
+      "name": "health_region_changes",
+      "path": "health_region_changes.csv",
+      "format": "csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "health_region_code",
+            "type": "string"
+          },
+          {
+            "name": "delta_need_score",
+            "type": "number"
+          },
+          {
+            "name": "delta_capacity_score",
+            "type": "number"
+          },
+          {
+            "name": "delta_mismatch_score",
+            "type": "number"
+          },
+          {
+            "name": "delta_suicide_percentile",
+            "type": "number"
+          },
+          {
+            "name": "delta_psychiatric_admission_percentile",
+            "type": "number"
+          },
+          {
+            "name": "delta_caps_percentile",
+            "type": "number"
+          },
+          {
+            "name": "delta_beds_percentile",
+            "type": "number"
+          },
+          {
+            "name": "delta_psychiatrist_fte_percentile",
+            "type": "number"
+          },
+          {
+            "name": "NEED_POSITION_UP",
+            "type": "boolean"
+          },
+          {
+            "name": "CAPACITY_POSITION_DOWN",
+            "type": "boolean"
+          },
+          {
+            "name": "MISMATCH_POSITION_UP",
+            "type": "boolean"
+          },
+          {
+            "name": "NEED_COMPONENT_POSITION_UP",
+            "type": "boolean"
+          },
+          {
+            "name": "CAPACITY_COMPONENT_POSITION_DOWN",
+            "type": "boolean"
+          },
+          {
+            "name": "matched_change_families",
+            "type": "integer"
+          },
+          {
+            "name": "from_year",
+            "type": "integer"
+          },
+          {
+            "name": "to_year",
+            "type": "integer"
+          },
+          {
+            "name": "change_version",
+            "type": "string"
+          }
+        ],
+        "primaryKey": [
+          "from_year",
+          "to_year",
+          "health_region_code"
+        ]
+      }
+    },
+    {
+      "name": "health_region_financing",
+      "path": "health_region_financing.csv",
+      "format": "csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "financing_version",
+            "type": "string"
+          },
+          {
+            "name": "siops_snapshot_id",
+            "type": "string"
+          },
+          {
+            "name": "year",
+            "type": "integer"
+          },
+          {
+            "name": "health_region_code",
+            "type": "string"
+          },
+          {
+            "name": "municipalities_expected",
+            "type": "integer"
+          },
+          {
+            "name": "municipalities_observed",
+            "type": "integer"
+          },
+          {
+            "name": "population_expected",
+            "type": "integer"
+          },
+          {
+            "name": "population_covered",
+            "type": "integer"
+          },
+          {
+            "name": "coverage_share",
+            "type": "number"
+          },
+          {
+            "name": "coverage_population_share",
+            "type": "number"
+          },
+          {
+            "name": "total_health_expenditure_brl",
+            "type": "number"
+          },
+          {
+            "name": "health_expenditure_per_capita_brl",
+            "type": "number"
+          },
+          {
+            "name": "headline_available",
+            "type": "boolean"
+          },
+          {
+            "name": "quality_flags",
+            "type": "string"
+          },
+          {
+            "name": "source_period",
+            "type": "string"
+          },
+          {
+            "name": "source_indicator",
+            "type": "string"
+          }
+        ],
+        "primaryKey": [
+          "year",
+          "health_region_code"
+        ]
+      }
+    },
+    {
+      "name": "health_region_flow_summary",
+      "path": "health_region_flow_summary.csv",
+      "format": "csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "flow_version",
+            "type": "string"
+          },
+          {
+            "name": "health_region_code",
+            "type": "string"
+          },
+          {
+            "name": "total_admissions",
+            "type": "integer"
+          },
+          {
+            "name": "within_region_share",
+            "type": "number"
+          },
+          {
+            "name": "outflow_share",
+            "type": "number"
+          },
+          {
+            "name": "cross_state_outflow_share",
+            "type": "number"
+          },
+          {
+            "name": "nonsuppressed_destinations",
+            "type": "integer"
+          },
+          {
+            "name": "unit",
+            "type": "string"
+          }
+        ],
+        "primaryKey": [
+          "health_region_code"
+        ]
+      }
+    },
+    {
+      "name": "hospitalization_flows_public",
+      "path": "hospitalization_flows_public.csv",
+      "format": "csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "origin_region",
+            "type": "string"
+          },
+          {
+            "name": "destination_region",
+            "type": "string"
+          },
+          {
+            "name": "admissions",
+            "type": "integer"
+          },
+          {
+            "name": "flow_version",
+            "type": "string"
+          },
+          {
+            "name": "contribution_id",
+            "type": "integer"
+          }
+        ],
+        "primaryKey": [
+          "contribution_id"
+        ]
+      }
+    },
+    {
+      "name": "municipality_health_region_crosswalk",
+      "path": "municipality_health_region_crosswalk.csv",
+      "format": "csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "municipality_code_ibge",
+            "type": "string"
+          },
+          {
+            "name": "municipality_name",
+            "type": "string"
+          },
+          {
+            "name": "uf",
+            "type": "string"
+          },
+          {
+            "name": "health_region_code",
+            "type": "string"
+          },
+          {
+            "name": "health_region_name",
+            "type": "string"
+          }
+        ],
+        "primaryKey": [
+          "municipality_code_ibge"
+        ]
+      }
+    },
+    {
+      "name": "territorial_intelligence",
+      "path": "territorial_intelligence.csv",
+      "format": "csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "release_id",
+            "type": "string"
+          },
+          {
+            "name": "geography_version",
+            "type": "string"
+          },
+          {
+            "name": "intelligence_version",
+            "type": "string"
+          },
+          {
+            "name": "radar_ruleset_version",
+            "type": "string"
+          },
+          {
+            "name": "decomposition_version",
+            "type": "string"
+          },
+          {
+            "name": "peer_method_version",
+            "type": "string"
+          },
+          {
+            "name": "health_region_code",
+            "type": "string"
+          },
+          {
+            "name": "health_region_name",
+            "type": "string"
+          },
+          {
+            "name": "uf",
+            "type": "string"
+          },
+          {
+            "name": "need_high",
+            "type": "boolean"
+          },
+          {
+            "name": "capacity_low",
+            "type": "boolean"
+          },
+          {
+            "name": "mismatch_marked_positive",
+            "type": "boolean"
+          },
+          {
+            "name": "capacity_component_low",
+            "type": "boolean"
+          },
+          {
+            "name": "spatial_hh_mismatch",
+            "type": "boolean"
+          },
+          {
+            "name": "zero_registered_beds",
+            "type": "boolean"
+          },
+          {
+            "name": "small_suicide_count",
+            "type": "boolean"
+          },
+          {
+            "name": "matched_signal_families",
+            "type": "integer"
+          },
+          {
+            "name": "suicide_contribution",
+            "type": "number"
+          },
+          {
+            "name": "admissions_contribution",
+            "type": "number"
+          },
+          {
+            "name": "caps_contribution",
+            "type": "number"
+          },
+          {
+            "name": "beds_contribution",
+            "type": "number"
+          },
+          {
+            "name": "psychiatrist_contribution",
+            "type": "number"
+          },
+          {
+            "name": "decomposition_sum",
+            "type": "number"
+          }
+        ],
+        "primaryKey": [
+          "health_region_code"
+        ]
+      }
+    },
+    {
+      "name": "health_region_peers",
+      "path": "health_region_peers.csv",
+      "format": "csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "release_id",
+            "type": "string"
+          },
+          {
+            "name": "peer_method_version",
+            "type": "string"
+          },
+          {
+            "name": "health_region_code",
+            "type": "string"
+          },
+          {
+            "name": "peer_health_region_code",
+            "type": "string"
+          },
+          {
+            "name": "peer_rank",
+            "type": "integer"
+          },
+          {
+            "name": "structural_distance",
+            "type": "number"
+          }
+        ],
+        "primaryKey": [
+          "health_region_code",
+          "peer_rank"
+        ]
+      }
+    }
+  ]
+}

@@ -168,20 +168,20 @@ sources:
   data_used: Scientific geometry dissolved to Health Regions
   official_url: https://www.ibge.gov.br/geociencias/organizacao-do-territorio/malhas-territoriais/
   terms_url: https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102152.pdf
-  checked_at: '2026-09-01'
+  checked_at: '2026-09-03'
   stated_license: 2023 technical/legal publication reports compatibility with CC BY 4.0
-  license_scope: Exact mesh version used by the locked project is not identified sufficiently for public redistribution
-  license_confidence: LOW
+  license_scope: Existing derived browser geometry only; raw mesh and geometry download remain excluded
+  license_confidence: HIGH
   raw_redistribution: 'NO'
-  derived_redistribution: 'NO'
+  derived_redistribution: 'YES'
   public_api_use: 'NO'
   public_download_use: 'NO'
-  required_attribution: IBGE if a future exact-source gate passes
-  commercial_reuse_status: Not decided for this release
-  modification_status: Derived web geometry excluded
-  third_party_terms: Exact-version technical/legal documentation required
-  notes: Geometry is not published in MDB_OPEN_DATA_2024_1
-  evidence_reference: docs/legal_research_2026-09-01.md
+  required_attribution: Fonte da geometria municipal - IBGE, Malha Municipal Digital 2023; adaptação e agregação por Mente do Brasil
+  commercial_reuse_status: Allowed for the derived display with attribution under terms compatible with CC BY 4.0
+  modification_status: Municipal polygons filtered and dissolved to locked Health Regions; web copies simplified for display
+  third_party_terms: Attribution and indication of adaptation required
+  notes: Existing MDB_WEB_GEOMETRY_V1 display is permitted; geometry remains outside MDB_OPEN_DATA_2024_1 downloads and public API
+  evidence_reference: metadata/legal/ibge_geometry_publication_gate_v1.yaml
 - source_id: WHO_STANDARD_POPULATION
   source_name: WHO standard population reference
   source_owner: World Health Organization

@@ -25,6 +25,7 @@ class ServingDatabaseStaticTests(unittest.TestCase):
                 "011_public_open_platform.sql",
                 "012_public_role_hardening.sql",
                 "013_public_temporal_type_alignment.sql",
+                "014_cloud_access_hardening.sql",
             ],
         )
 
@@ -124,7 +125,7 @@ class ServingDatabaseStaticTests(unittest.TestCase):
             "sha256_file",
             "health_regions.parquet",
             "municipality_health_region_crosswalk.parquet",
-            "release[\"geography_version\"]",
+            'release["geography_version"]',
             "WHERE geography_version = %s",
             "load_local_env",
             "MDB_DB_PASSWORD must be set",

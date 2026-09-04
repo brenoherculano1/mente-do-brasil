@@ -25,7 +25,7 @@ def ensure_api_env() -> None:
     keys = {line.split("=", 1)[0] for line in lines if line and "=" in line}
     changed = False
     if "MDB_DEFAULT_RELEASE_ID" not in keys:
-        lines.append("MDB_DEFAULT_RELEASE_ID=MDB_ANALYTICAL_2024_1")
+        lines.append("MDB_DEFAULT_RELEASE_ID=MDB_ANALYTICAL_2024_2")
         changed = True
     if "MDB_API_HOST" not in keys:
         lines.append("MDB_API_HOST=127.0.0.1")
@@ -80,12 +80,18 @@ def provision() -> None:
         connection.execute(
             sql.SQL("ALTER ROLE {} SET statement_timeout = '30s'").format(sql.Identifier(API_USER))
         )
+        database_name = connection.execute("SELECT current_database()").fetchone()[0]
         connection.execute(
             sql.SQL("GRANT CONNECT ON DATABASE {} TO {}").format(
-                sql.Identifier("mente_do_brasil"), sql.Identifier(API_USER)
+                sql.Identifier(database_name), sql.Identifier(API_USER)
             )
         )
         for schema_name in ["meta", "geo", "analytics", "serving", "web"]:
+            exists = connection.execute(
+                "SELECT 1 FROM pg_namespace WHERE nspname = %s", (schema_name,)
+            ).fetchone()
+            if not exists:
+                continue
             connection.execute(
                 sql.SQL("GRANT USAGE ON SCHEMA {} TO {}").format(
                     sql.Identifier(schema_name), sql.Identifier(API_USER)
@@ -98,6 +104,11 @@ def provision() -> None:
             )
         connection.execute(
             sql.SQL("REVOKE CREATE ON SCHEMA public FROM {}").format(sql.Identifier(API_USER))
+        )
+        connection.execute(
+            sql.SQL("REVOKE TEMPORARY ON DATABASE {} FROM {}").format(
+                sql.Identifier(database_name), sql.Identifier(API_USER)
+            )
         )
     print("API DB ROLE PROVISIONED")
     print("role=mente_do_brasil_api")

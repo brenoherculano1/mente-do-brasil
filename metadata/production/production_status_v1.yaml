@@ -1,0 +1,10 @@
+production_version: MDB_PRODUCTION_1.0
+observability_version: MDB_OBSERVABILITY_1.0
+public_release_version: MDB_PUBLIC_RELEASE_1.0
+deployment_architecture: MDB_DEPLOYMENT_ARCHITECTURE_1.0
+public_release_status: NOT_RELEASED
+staging_status: NOT_PROVISIONED
+production_database_status: NOT_PROVISIONED
+production_deployment_status: NOT_DEPLOYED
+domain_status: NOT_OWNED
+indexing_status: DISABLED

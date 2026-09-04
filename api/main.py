@@ -5,6 +5,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 from starlette.middleware.gzip import GZipMiddleware
 
 from api.config import get_settings
@@ -24,6 +25,7 @@ from api.routers.intelligence import router as intelligence_router
 from api.routers.manager import router as manager_router
 from api.routers.public import router as public_router
 from api.routers.releases import router as releases_router
+from api.security import has_valid_internal_token
 from api.services.health_regions import ready_check
 
 
@@ -69,7 +71,7 @@ app.add_middleware(
     allow_origins=list(settings.allowed_origins),
     allow_credentials=False,
     allow_methods=["GET"],
-    allow_headers=["*"],
+    allow_headers=["Accept", "X-Request-ID", "X-MDB-Internal-Token"],
 )
 app.add_middleware(GZipMiddleware, minimum_size=1024)
 
@@ -92,6 +94,16 @@ app.include_router(public_router)
 async def request_id_middleware(request, call_next):
     request_id = request_id_from_value(request.headers.get("x-request-id"))
     request.state.request_id = request_id
+    configured_token = settings.internal_api_token
+    supplied_token = request.headers.get("x-mdb-internal-token")
+    if not has_valid_internal_token(supplied_token, configured_token):
+        response = JSONResponse(
+            status_code=404,
+            content={"error": {"code": "NOT_FOUND", "message": "Not found."}},
+        )
+        response.headers["Cache-Control"] = "no-store"
+        response.headers["X-Request-ID"] = request_id
+        return response
     response = await call_next(request)
     response.headers["X-Request-ID"] = request_id
     return response

@@ -86,7 +86,7 @@ const CONTENT_SECURITY_POLICY = [
 
 export const OPERATIONAL_API_SECURITY_HEADERS: Record<string, string> = {
   "Content-Security-Policy": CONTENT_SECURITY_POLICY,
-  "Strict-Transport-Security": "max-age=31536000",
+  "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
   "X-Content-Type-Options": "nosniff",
   "Referrer-Policy": "strict-origin-when-cross-origin",
   "Permissions-Policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
@@ -263,7 +263,7 @@ export function resolveClientKey(
   headers: Headers,
   env: Partial<Record<string, string | undefined>> = process.env,
 ): { key: string; source: string } {
-  if (env[TRUST_PROXY_HEADERS_ENV] === "true") {
+  if (env.VERCEL === "1" && env[TRUST_PROXY_HEADERS_ENV] === "true") {
     const forwardedFor = firstForwardedFor(headers.get("x-forwarded-for"));
     if (forwardedFor) return hashedClientKey(forwardedFor, "x-forwarded-for");
     const realIp = headers.get("x-real-ip")?.trim();

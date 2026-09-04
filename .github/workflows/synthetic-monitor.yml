@@ -1,0 +1,25 @@
+name: Production synthetic monitor
+
+on:
+  schedule:
+    - cron: "7,37 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    if: ${{ vars.MDB_PUBLIC_SITE_URL != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe public routes
+        env:
+          BASE_URL: ${{ vars.MDB_PUBLIC_SITE_URL }}
+        run: |
+          set -euo pipefail
+          for path in / /healthz /readyz /api/public/v1/releases; do
+            curl --fail --silent --show-error --location --max-time 30 "${BASE_URL}${path}" >/dev/null
+          done
+          curl --fail --silent --show-error --location --head --max-time 30 \
+            "${BASE_URL}/downloads/MDB_OPEN_DATA_2024_1/MDB_OPEN_DATA_2024_1.zip" >/dev/null

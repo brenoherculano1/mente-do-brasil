@@ -5,6 +5,7 @@ import {
   publicApiHeaders,
   responseEtag,
 } from "@/lib/public-api-policy";
+import { internalApiHeaders } from "@/lib/api/server";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -40,7 +41,10 @@ async function proxy(
   url.search = request.nextUrl.search;
   let upstream: Response;
   try {
-    upstream = await fetch(url, { headers: { Accept: "application/json" }, cache: "no-store" });
+    upstream = await fetch(url, {
+      headers: internalApiHeaders({ Accept: "application/json" }),
+      cache: "no-store",
+    });
   } catch {
     headers.set("Content-Type", "application/problem+json");
     return new Response(problem(503, "Service unavailable", "The private data service is unavailable.", pathname), { status: 503, headers });

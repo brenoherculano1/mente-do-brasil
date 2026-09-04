@@ -120,7 +120,13 @@ describe("operational API ingress policy", () => {
     const headers = new Headers({ "x-forwarded-for": "203.0.113.10" });
 
     expect(resolveClientKey(headers, {}).source).toBe("anonymous-global");
-    const trusted = resolveClientKey(headers, { MDB_RATE_LIMIT_TRUST_PROXY_HEADERS: "true" });
+    expect(
+      resolveClientKey(headers, { MDB_RATE_LIMIT_TRUST_PROXY_HEADERS: "true" }).source,
+    ).toBe("anonymous-global");
+    const trusted = resolveClientKey(headers, {
+      VERCEL: "1",
+      MDB_RATE_LIMIT_TRUST_PROXY_HEADERS: "true",
+    });
     expect(trusted.source).toBe("x-forwarded-for");
     expect(trusted.key).not.toContain("203.0.113.10");
   });
@@ -151,7 +157,9 @@ describe("operational API ingress policy", () => {
     expect(response.headers.get("Retry-After")).toBe("10");
     expect(response.headers.get("Cache-Control")).toBe(NO_STORE_CACHE_CONTROL);
     expect(response.headers.get("Content-Security-Policy")).toContain("default-src 'self'");
-    expect(response.headers.get("Strict-Transport-Security")).toBe("max-age=31536000");
+    expect(response.headers.get("Strict-Transport-Security")).toBe(
+      "max-age=31536000; includeSubDomains",
+    );
     expect(response.headers.get("X-Content-Type-Options")).toBe("nosniff");
     expect(response.headers.get("X-Powered-By")).toBeNull();
     await expect(response.json()).resolves.toEqual({

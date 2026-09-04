@@ -1,0 +1,35 @@
+name: Production release integrity
+
+on:
+  schedule:
+    - cron: "23 9 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    if: ${{ vars.MDB_PUBLIC_SITE_URL != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify release identity and immutable ZIP
+        env:
+          BASE_URL: ${{ vars.MDB_PUBLIC_SITE_URL }}
+          EXPECTED_SHA: 2b3b1fc749bfd71181115c2cd9467bf26cb1572bd0c0e9687dabccffab3775bc
+          EXPECTED_BYTES: "914294"
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error --location --max-time 60 \
+            "${BASE_URL}/downloads/MDB_OPEN_DATA_2024_1/MDB_OPEN_DATA_2024_1.zip" -o release.zip
+          test "$(stat -c %s release.zip)" = "$EXPECTED_BYTES"
+          test "$(sha256sum release.zip | cut -d' ' -f1)" = "$EXPECTED_SHA"
+          curl --fail --silent --show-error --max-time 30 \
+            "${BASE_URL}/api/public/v1/releases" -o releases.json
+          python - <<'PY'
+          import json
+          payload = json.load(open("releases.json", encoding="utf-8"))
+          assert payload["meta"]["open_data_release"] == "MDB_OPEN_DATA_2024_1"
+          assert payload["meta"]["analytical_release"] == "MDB_ANALYTICAL_2024_2"
+          assert payload["data"][0]["release_id"] == "MDB_OPEN_DATA_2024_1"
+          PY

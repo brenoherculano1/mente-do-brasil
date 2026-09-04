@@ -1,0 +1,66 @@
+{
+  "status": "PASS_BEFORE_PROVIDER_PROVISIONING",
+  "validated_at_utc": "2026-09-04T09:07:20Z",
+  "public_release_status": "NOT_RELEASED",
+  "starting_commit": "e21fefe0e7806aa68c07c4d037f0004adbecb315",
+  "branch": "production-launch-complete",
+  "runtime": {
+    "docker_engine": "29.7.2",
+    "docker_compose": "v5.4.0",
+    "image": "postgis/postgis:18-3.6",
+    "image_digest": "sha256:60f6ad1d21ea86a67d47780b9a0d1e1d200500f62b19293fa834d0dea80b8677",
+    "postgresql": "18.6",
+    "postgis": "3.6.4",
+    "database_binding": "127.0.0.1:5432"
+  },
+  "database": {
+    "status": "PASS",
+    "releases": [
+      "MDB_ANALYTICAL_2024_1",
+      "MDB_ANALYTICAL_2024_2"
+    ],
+    "health_regions": 439,
+    "municipalities": 5570,
+    "current_metrics": 439,
+    "valid_geometries_srid_4674": 439,
+    "lisa": {
+      "total": 136,
+      "high_high": 60,
+      "low_low": 65,
+      "high_low": 5,
+      "low_high": 6
+    },
+    "small_suicide_count": 7,
+    "zero_registered_beds": 275,
+    "temporal_rows": 1317,
+    "change_rows": 1317,
+    "financing_rows": 1317,
+    "flow_contributions": 20907,
+    "flow_summaries": 439,
+    "public_flow_lt5_exact_leaks": 0,
+    "idempotent_reload": "PASS",
+    "immutability_copy_probe": "PASS",
+    "constraint_rollback_and_runtime_role": "PASS"
+  },
+  "tests": {
+    "python": "115 passed, 21 skipped",
+    "foundation": "54 passed",
+    "frontend": "61 passed",
+    "frontend_lint": "PASS",
+    "frontend_typecheck": "PASS",
+    "frontend_production_build": "PASS",
+    "local_live_integration": "PASS",
+    "committed_open_data_release": "PASS"
+  },
+  "open_data": {
+    "release": "MDB_OPEN_DATA_2024_1",
+    "zip_bytes": 914294,
+    "zip_sha256": "2b3b1fc749bfd71181115c2cd9467bf26cb1572bd0c0e9687dabccffab3775bc"
+  },
+  "geometry_publication_gate": "PASS_EXACT_SOURCE_PROVENANCE_DISPLAY_ONLY",
+  "known_historical_gate": {
+    "status": "DOCUMENTED_AND_SUPERSEDED_BY_VERSIONED_CORRECTION",
+    "detail": "The 2024_1 terminal-age incompatibility remains preserved as historical evidence; 2024_2 is the authorized corrected current release."
+  },
+  "cloud_checks": "NOT_RUN_PROVIDER_RESOURCES_NOT_PROVISIONED"
+}

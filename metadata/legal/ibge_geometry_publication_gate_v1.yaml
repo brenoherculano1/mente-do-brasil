@@ -1,0 +1,57 @@
+gate_id: MDB_IBGE_GEOMETRY_PUBLICATION_GATE_1.0
+status: PASS_EXACT_SOURCE_PROVENANCE
+reviewed_at: '2026-09-03'
+review_type: technical_and_licensing_review_not_formal_legal_opinion
+publication_scope: derived_browser_display_only
+scientific_geometry_changed: false
+public_web_geometry_version: MDB_WEB_GEOMETRY_V1
+source:
+  owner: Instituto Brasileiro de Geografia e Estatística
+  product: Malha Municipal Digital do Brasil
+  year: 2023
+  filename: BR_Municipios_2023.zip
+  frozen_source_sha256: bb78a8dc60a8320231f6eda79a8c89f68f0e22f0d81608dc051ee505fc72a1e5
+  frozen_source_bytes: 200049791
+  official_url: https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2023/Brasil/BR_Municipios_2023.zip
+  official_product_url: https://www.ibge.gov.br/geociencias/organizacao-do-territorio/malhas-territoriais/15774-malhas.html?edicao=42093&t=acesso-ao-produto
+  official_download_observed_at: '2026-09-02'
+  official_download_sha256: 290c847d7e9c55e82913a9e5534ebdb09c149fee14f7270d387b12ed63c0c8e3
+  official_download_bytes: 200049791
+  official_last_modified: '2024-12-15T21:17:54Z'
+  official_etag: '"bec847f-6295598eab06b"'
+license:
+  terms_document_url: https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102152.pdf
+  terms_document_sha256: 544fcb146c859b403a8e5e9bb10a9bdbdab0fada20437c30e356a34453654aec
+  stated_compatibility: CC BY 4.0
+  permissions_summary: Public distribution, adaptation, and commercial reuse are allowed with attribution.
+  required_attribution: Fonte da geometria municipal - IBGE, Malha Municipal Digital 2023; adaptação e agregação por Mente do Brasil.
+match:
+  method: cryptographic_member_identity_plus_reproducible_generation_provenance
+  zip_container_identity: false
+  zip_container_difference_interpretation: Container metadata differs; every archived member is byte-identical.
+  archived_member_count: 7
+  byte_identical_member_count: 7
+  member_hashes:
+    BR_Municipios_2023.cpg: 3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824
+    BR_Municipios_2023.dbf: 6fc0dd0b781e5e8d425622f96d7417da7b78036093189154445c33c147489f8c
+    BR_Municipios_2023.prj: b7fe68a2eb827ea974a1a995a73676e095a366b383a10a66c7498300d1c58153
+    BR_Municipios_2023.qix: 3811162b3d1e6c2cf48031ace814074a4528cdae2117a08ff31670858b4c3ac9
+    BR_Municipios_2023.shp: 8200cae58ace1bb65a241c0240c0f96e355a338275fa313e6a11496a7e2053a8
+    BR_Municipios_2023.shx: 0c639f65866edb2099c823622e028259751ecccf4d79284eb2a77c258b9ed963
+    technical_legal_pdf: 544fcb146c859b403a8e5e9bb10a9bdbdab0fada20437c30e356a34453654aec
+  generation_evidence:
+    input_filter: 5570 municipality codes in the locked 2024 population universe
+    join: locked end-2024 municipality-to-Health-Region crosswalk
+    operation: dissolve municipal polygons by locked Health Region
+    output_health_regions: 439
+    output_srid: 4674
+    locked_gpkg_sha256: 657355adb0df88dfcfff2400751eff6ae97b367effe8e90223d0267e0437ba48
+limitations:
+  - The exact ZIP container bytes currently served by IBGE differ from the frozen container bytes.
+  - All seven uncompressed members are byte-identical, so the source data and legal document are identical.
+  - This gate does not add geometry to MDB_OPEN_DATA_2024_1 or its public API contract.
+decision:
+  existing_web_geometry_public_display: ALLOWED_WITH_ATTRIBUTION
+  raw_mesh_redistribution: NOT_INCLUDED
+  geometry_download: NOT_INCLUDED
+  public_open_data_api_geometry: NOT_INCLUDED

@@ -162,7 +162,7 @@ export const PRIMARY_SOURCES = [
   ["SIH/SUS", "Internações psiquiátricas", "2022–2024 agrupado"],
   ["CNES", "CAPS, leitos e psiquiatras FTE", "dezembro de 2024"],
   ["DATASUS", "População e crosswalk de Regiões de Saúde conforme metodologia", "referência 2024"],
-  ["IBGE", "Geometria municipal utilizada para composição territorial", "referência 2024"],
+  ["IBGE", "Malha municipal usada para composição territorial", "Malha Municipal Digital 2023"],
 ] as const;
 
 export const DATA_DICTIONARY_CATEGORIES = [

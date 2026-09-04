@@ -1,0 +1,160 @@
+{
+  "release": "MDB_OPEN_DATA_2024_1",
+  "files": [
+    {
+      "relative_path": "ATTRIBUTION.md",
+      "bytes": 822,
+      "sha256": "40db79bfb0331982bb5040bdbd9c07a1eeb3ea6ebab5b6e1a6842fdbdc06ddd3"
+    },
+    {
+      "relative_path": "CHANGELOG.md",
+      "bytes": 111,
+      "sha256": "1d711bdd823ba4e394294877fc374c787dc5cb0eec19ead770a79bc6f35d4d7f"
+    },
+    {
+      "relative_path": "CITATION.cff",
+      "bytes": 546,
+      "sha256": "8587f748d6810a893df0effa5d236b94e0309b696a65ed1750431a38e9ccfdb1"
+    },
+    {
+      "relative_path": "DATA_DICTIONARY.csv",
+      "bytes": 42936,
+      "sha256": "19ab39ada66ff0514ddd0187a307f42d43fc911ec9a1d30cfd4fe4e389c8587d"
+    },
+    {
+      "relative_path": "DATA_DICTIONARY.json",
+      "bytes": 70657,
+      "sha256": "f3a15cf49de7b600ab61674a676add63ed88e4c5dd61197de8fb37a544b8fe44"
+    },
+    {
+      "relative_path": "LICENSE_DATA.md",
+      "bytes": 878,
+      "sha256": "671d7d5499b496ba00a9ad50f35fd0404a253a3ded01b77311d93a60d201b5fa"
+    },
+    {
+      "relative_path": "README.en.md",
+      "bytes": 1473,
+      "sha256": "4f171e1e98841333f916a6631aecd71c0012219b226bee30441116e0961b39bd"
+    },
+    {
+      "relative_path": "README.pt-BR.md",
+      "bytes": 1565,
+      "sha256": "88c1c10bfc7d0ead2063f1a6f8a965bd19d954777e438754f2f262e4e4306b03"
+    },
+    {
+      "relative_path": "SOURCES.md",
+      "bytes": 519,
+      "sha256": "3f0f8a28b50226ac21c925612e628d29c4b207e34bc290ea26f92ea4fbf483f9"
+    },
+    {
+      "relative_path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 546,
+      "sha256": "aa573e4ad3c33d34ee8398e54afacd26246cfbe5edab9afbd13d42649b337fe5"
+    },
+    {
+      "relative_path": "datapackage.json",
+      "bytes": 16234,
+      "sha256": "0234e012080606d7851e12e11783031a3c1f7b2d62877f78fa2f4ce20e767c01"
+    },
+    {
+      "relative_path": "dataset.jsonld",
+      "bytes": 746,
+      "sha256": "6d076775e9732f054a91bfb1266072460fa4af6233c2b25c3a3d8c6d621f647b"
+    },
+    {
+      "relative_path": "health_region_changes.csv",
+      "bytes": 325373,
+      "sha256": "de2b800328b35313247b40d208306b1315360debdc01b38e523e800c933761a7"
+    },
+    {
+      "relative_path": "health_region_changes.parquet",
+      "bytes": 40986,
+      "sha256": "88d771a92cc345a5977c0adef7931749a1dcaaf66734c8b494393a39da46091d"
+    },
+    {
+      "relative_path": "health_region_financing.csv",
+      "bytes": 252165,
+      "sha256": "ca3e2cd63fd0f9ae37238b1115ade43a8c407e0bccea3e93bf8b4f9317152d45"
+    },
+    {
+      "relative_path": "health_region_financing.parquet",
+      "bytes": 32951,
+      "sha256": "678172af5615c88287b6db3376749a04505e1260866445ba7ebefe6a70e1ddb3"
+    },
+    {
+      "relative_path": "health_region_flow_summary.csv",
+      "bytes": 55627,
+      "sha256": "6dacc88e1199a26a4ea3e1663034409a8f3f7f6fe8111e50b799c1bcacf58453"
+    },
+    {
+      "relative_path": "health_region_flow_summary.parquet",
+      "bytes": 15339,
+      "sha256": "e4e77d80018feded092ae48a278f2395657b959a40408ed79b8fbf716396666f"
+    },
+    {
+      "relative_path": "health_region_peers.csv",
+      "bytes": 333589,
+      "sha256": "05bcfe2b0a3bd46be3b6041f93a6ac30afb099b20b398fe28d67c01476795e9e"
+    },
+    {
+      "relative_path": "health_region_peers.parquet",
+      "bytes": 37320,
+      "sha256": "a8f11081fc8991b51cf6c607a17d74f3ee36792c0bae9824a36ef8a746ba91c2"
+    },
+    {
+      "relative_path": "health_region_temporal.csv",
+      "bytes": 553931,
+      "sha256": "3da99c96d42867a649eace6d53b79adaab56d5ef7ae0b68ce5a100e61463722e"
+    },
+    {
+      "relative_path": "health_region_temporal.parquet",
+      "bytes": 115634,
+      "sha256": "5fe8ab0dcdd2b1aa22eecafa3465bda931d4de60787cb79e7034369cf3bee282"
+    },
+    {
+      "relative_path": "health_regions_current.csv",
+      "bytes": 216846,
+      "sha256": "16f59cb2a57a113c2904b45f1f30396cefd243e4c77f341eb9b244858fa1930a"
+    },
+    {
+      "relative_path": "health_regions_current.parquet",
+      "bytes": 73957,
+      "sha256": "936ac3fb4d5ce4a4714a9648fb1c7abdab7195188a69c3461ae30bca5d47a826"
+    },
+    {
+      "relative_path": "hospitalization_flows_public.csv",
+      "bytes": 439251,
+      "sha256": "1c103e6792699885d51c139f5cfb44c295f7413433045a8685a119f4a9cd89aa"
+    },
+    {
+      "relative_path": "hospitalization_flows_public.parquet",
+      "bytes": 38967,
+      "sha256": "7636088e96aef78a95dbf10a38e97c0560cee05eeb0dd55a63a9c609607c6d6b"
+    },
+    {
+      "relative_path": "municipality_health_region_crosswalk.csv",
+      "bytes": 261464,
+      "sha256": "b3662535162b771559688b92f9b95caee32ab31e6fef874df709fe1b356eab00"
+    },
+    {
+      "relative_path": "municipality_health_region_crosswalk.parquet",
+      "bytes": 66594,
+      "sha256": "352ee94d914dcda52965bc019f43f3a9bfb222502f85e66b826fa78dabfcb024"
+    },
+    {
+      "relative_path": "release.json",
+      "bytes": 11696,
+      "sha256": "45206d6d961b48d00d4e2b2261c2fc318f21544e8b0d39facae204d306c8ffa6"
+    },
+    {
+      "relative_path": "territorial_intelligence.csv",
+      "bytes": 153959,
+      "sha256": "de620b76c167683d2102b4ca3541dd9f4ba23d8c6c20534270e561466f03c089"
+    },
+    {
+      "relative_path": "territorial_intelligence.parquet",
+      "bytes": 30632,
+      "sha256": "516f538227940280f711d784da3b7e41a87e8e54202eb7515fcadce74aed61e1"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "api_url": "http://127.0.0.1:8011",
+  "checks": {
+    "latency_ms": {
+      "max": 39.68,
+      "median": 5.63,
+      "p95": 22.11,
+      "requests": 30
+    },
+    "open_data_zip": {
+      "bytes": 914294,
+      "etag": "\"2b3b1fc749bfd71181115c2cd9467bf26cb1572bd0c0e9687dabccffab3775bc\"",
+      "sha256": "2b3b1fc749bfd71181115c2cd9467bf26cb1572bd0c0e9687dabccffab3775bc",
+      "status": 200
+    }
+  },
+  "failures": [],
+  "request_profile": "sequential_low_volume",
+  "status": "PASS",
+  "web_url": "http://127.0.0.1:3011"
+}

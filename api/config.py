@@ -36,13 +36,22 @@ class Settings:
     allowed_origins: tuple[str, ...]
     allow_full_geometry: bool
     enable_docs: bool
+    production_mode: bool
+    internal_api_token: str | None
+    db_sslmode: str
+    db_sslrootcert: str | None
+    pool_min_size: int
+    pool_max_size: int
 
     @property
     def dsn(self) -> str:
-        return (
+        dsn = (
             f"host={self.db_host} port={self.db_port} dbname={self.db_name} "
-            f"user={self.db_user} password={self.db_password}"
+            f"user={self.db_user} password={self.db_password} sslmode={self.db_sslmode}"
         )
+        if self.db_sslrootcert:
+            dsn += f" sslrootcert={self.db_sslrootcert}"
+        return dsn
 
 
 def env_flag(name: str) -> bool:
@@ -67,8 +76,21 @@ def get_settings() -> Settings:
     api_host = os.environ.get("MDB_API_HOST", "127.0.0.1")
     if api_host == "0.0.0.0":
         raise RuntimeError("The local API must not bind to 0.0.0.0 by default.")
+    production_mode = env_flag("MDB_PRODUCTION_MODE")
+    internal_api_token = os.environ.get("MDB_INTERNAL_API_TOKEN") or None
+    if production_mode and (internal_api_token is None or len(internal_api_token) < 32):
+        raise RuntimeError(
+            "MDB_INTERNAL_API_TOKEN must contain at least 32 characters in production."
+        )
+    sslmode = os.environ.get("MDB_DB_SSLMODE", "prefer").strip().lower()
+    if production_mode and sslmode not in {"verify-ca", "verify-full"}:
+        raise RuntimeError("Production database SSL mode must be verify-ca or verify-full.")
+    pool_min_size = int(os.environ.get("MDB_DB_POOL_MIN_SIZE", "0" if production_mode else "1"))
+    pool_max_size = int(os.environ.get("MDB_DB_POOL_MAX_SIZE", "4"))
+    if not 0 <= pool_min_size <= pool_max_size <= 10:
+        raise RuntimeError("Database pool sizes must satisfy 0 <= min <= max <= 10.")
     return Settings(
-        default_release_id=os.environ.get("MDB_DEFAULT_RELEASE_ID", "MDB_ANALYTICAL_2024_1"),
+        default_release_id=os.environ.get("MDB_DEFAULT_RELEASE_ID", "MDB_ANALYTICAL_2024_2"),
         db_host=os.environ.get("MDB_DB_HOST", "127.0.0.1"),
         db_port=int(os.environ.get("MDB_DB_PORT", "5432")),
         db_name=os.environ.get("MDB_DB_NAME", "mente_do_brasil"),
@@ -79,4 +101,10 @@ def get_settings() -> Settings:
         allowed_origins=origins,
         allow_full_geometry=env_flag("MDB_API_ALLOW_FULL_GEOMETRY"),
         enable_docs=env_flag("MDB_API_ENABLE_DOCS"),
+        production_mode=production_mode,
+        internal_api_token=internal_api_token,
+        db_sslmode=sslmode,
+        db_sslrootcert=os.environ.get("MDB_DB_SSLROOTCERT") or None,
+        pool_min_size=pool_min_size,
+        pool_max_size=pool_max_size,
     )

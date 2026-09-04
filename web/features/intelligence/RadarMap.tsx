@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import maplibregl, { Map } from "maplibre-gl";
+import { IBGE_GEOMETRY_ATTRIBUTION } from "@/lib/map/attribution";
 import type { RadarResponse } from "@/types/api";
 
 const SOURCE_ID = "radar-regions";
@@ -38,6 +39,10 @@ export function RadarMap({
       maxZoom: 9,
       attributionControl: false,
     });
+    map.addControl(
+      new maplibregl.AttributionControl({ compact: true, customAttribution: IBGE_GEOMETRY_ATTRIBUTION }),
+      "bottom-right",
+    );
     mapRef.current = map;
     return () => {
       map.remove();

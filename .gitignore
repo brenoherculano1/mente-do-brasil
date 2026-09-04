@@ -49,6 +49,26 @@ backups/
 *.7z
 *.gz
 
+# Explicitly version the immutable public release used by the Vercel web bundle.
+!web/public/releases/
+!web/public/releases/MDB_OPEN_DATA_2024_1/
+!web/public/releases/MDB_OPEN_DATA_2024_1/**
+
+# Provider state, credentials, certificates, dumps, and browser outputs.
+.vercel/
+.supabase/
+supabase/.temp/
+*.dump
+*.backup
+*.pem
+*.key
+*.p12
+*.pfx
+playwright-report/
+test-results/
+web/playwright-report/
+web/test-results/
+
 # Keep source and release metadata versioned
 !metadata/**/*.yaml
 !metadata/**/*.yml

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { applyOperationalSecurityHeaders } from "@/lib/api/ingress-policy";
-import { internalApiBaseUrl } from "@/lib/api/server";
+import { internalApiBaseUrl, internalApiHeaders } from "@/lib/api/server";
 import { operationalLog, requestIdFromHeaders } from "@/lib/observability";
 
 export const dynamic = "force-dynamic";
@@ -10,7 +10,7 @@ export async function GET(request: Request) {
   try {
     const response = await fetch(`${internalApiBaseUrl()}/ready`, {
       cache: "no-store",
-      headers: { Accept: "application/json", "X-Request-ID": requestId },
+      headers: internalApiHeaders({ Accept: "application/json", "X-Request-ID": requestId }),
     });
     if (!response.ok) {
       operationalLog("readyz_failed", { request_id: requestId, status: response.status });

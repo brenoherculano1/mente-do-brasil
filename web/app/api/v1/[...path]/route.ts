@@ -6,6 +6,7 @@ import {
   rateLimitExceededResponse,
 } from "@/lib/api/ingress-policy";
 import { operationalLog, requestIdFromHeaders } from "@/lib/observability";
+import { internalApiHeaders } from "@/lib/api/server";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -58,10 +59,10 @@ export async function GET(
   let response: Response;
   try {
     response = await fetch(upstreamUrl(request, path), {
-      headers: {
+      headers: internalApiHeaders({
         Accept: request.headers.get("accept") ?? "application/json",
         "X-Request-ID": requestId,
-      },
+      }),
       cache: "no-store",
     });
   } catch {

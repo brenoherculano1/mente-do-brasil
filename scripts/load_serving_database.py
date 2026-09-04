@@ -203,8 +203,21 @@ def apply_migrations(connection, root: Path) -> None:
             if applied[name] != digest:
                 raise AssertionError(f"Migration checksum changed after apply: {name}")
             continue
-        sql = path.read_text(encoding="utf-8")
-        connection.execute(sql)
+        migration_sql = path.read_text(encoding="utf-8")
+        if name == "012_public_role_hardening.sql":
+            database_name = connection.execute("SELECT current_database()").fetchone()[0]
+            if database_name != "mente_do_brasil":
+                from psycopg import sql as pg_sql
+
+                connection.execute(
+                    pg_sql.SQL("REVOKE TEMPORARY ON DATABASE {} FROM PUBLIC").format(
+                        pg_sql.Identifier(database_name)
+                    )
+                )
+            else:
+                connection.execute(migration_sql)
+        else:
+            connection.execute(migration_sql)
         connection.execute(
             "INSERT INTO public.schema_migrations (filename, sha256) VALUES (%s, %s)",
             (name, digest),

@@ -11,7 +11,9 @@ from pathlib import Path
 def main() -> int:
     repo = Path(__file__).resolve().parents[1]
     env = os.environ.copy()
-    env["PYTHONPATH"] = str(repo / "src")
+    env["PYTHONPATH"] = os.pathsep.join(
+        [str(repo / "src"), str(repo), str(repo / "scripts")]
+    )
     result = subprocess.run(
         [sys.executable, "-m", "unittest", "discover", "-s", "tests"],
         cwd=repo,

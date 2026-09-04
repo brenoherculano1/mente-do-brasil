@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import maplibregl, { Map, Popup } from "maplibre-gl";
 import { formatMetricValue } from "@/lib/format";
 import { getScaleDomain, mapLibreFillExpression } from "@/lib/map/color-scale";
+import { IBGE_GEOMETRY_ATTRIBUTION } from "@/lib/map/attribution";
 import { createTooltipNode } from "@/lib/map/tooltip";
 import type { MetricConfig } from "@/lib/metrics";
 import type { HealthRegionFeatureCollection } from "@/types/api";
@@ -43,6 +44,10 @@ export function HealthRegionMap({
       maxZoom: 9,
       attributionControl: false,
     });
+    map.addControl(
+      new maplibregl.AttributionControl({ compact: true, customAttribution: IBGE_GEOMETRY_ATTRIBUTION }),
+      "bottom-right",
+    );
     popupRef.current = new maplibregl.Popup({
       closeButton: false,
       closeOnClick: false,

@@ -9,6 +9,7 @@ import {
   robotsPolicy,
 } from "@/lib/public-config";
 import { requestIdFromHeaders, sanitizeLogFields } from "@/lib/observability";
+import { internalApiHeaders } from "@/lib/api/server";
 import { PUBLIC_ROUTE_HEALTH_REGION_CODES, PUBLIC_ROUTE_UFS } from "@/lib/public-route-inventory";
 
 describe("public production foundation config", () => {
@@ -115,5 +116,12 @@ describe("public production foundation config", () => {
     expect(sanitized.authorization).toBe("[REDACTED]");
     expect(sanitized.forwarded_for).toBe("[REDACTED]");
     expect(sanitized.route).toBe("/api/v1/releases");
+  });
+
+  it("keeps the internal API token server-side and fails closed in production", () => {
+    vi.stubEnv("MDB_INTERNAL_API_TOKEN", "test-only-internal-token-value");
+    const headers = internalApiHeaders({ Accept: "application/json" });
+    expect(headers.get("X-MDB-Internal-Token")).toBe("test-only-internal-token-value");
+    expect(headers.get("Authorization")).toBeNull();
   });
 });

@@ -1,0 +1,23 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Mente do Brasil Open Data 2024",
+  "description": "Derived regional mental-health territorial intelligence for Brazil.",
+  "creator": {
+    "@type": "Project",
+    "name": "Mente do Brasil"
+  },
+  "version": "MDB_OPEN_DATA_2024_1",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "temporalCoverage": "2022/2024",
+  "spatialCoverage": "Brazil",
+  "url": "https://mentedobrasil.com.br",
+  "isAccessibleForFree": true,
+  "keywords": [
+    "mental health",
+    "Brazil",
+    "health regions",
+    "territorial intelligence"
+  ],
+  "citation": "Mente do Brasil. Inteligência territorial em saúde mental no Brasil. Open Data Release MDB_OPEN_DATA_2024_1. 2026."
+}

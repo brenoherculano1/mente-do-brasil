@@ -231,6 +231,35 @@ def test_fastapi_docs_policy_is_server_side_and_fail_closed(monkeypatch):
     assert get_settings().enable_docs is True
 
 
+def test_production_settings_require_strong_internal_token_and_verified_tls(monkeypatch):
+    monkeypatch.setenv("MDB_PRODUCTION_MODE", "true")
+    monkeypatch.setenv("MDB_DB_SSLMODE", "verify-full")
+    monkeypatch.delenv("MDB_INTERNAL_API_TOKEN", raising=False)
+    with pytest.raises(RuntimeError, match="MDB_INTERNAL_API_TOKEN"):
+        get_settings()
+
+    monkeypatch.setenv("MDB_INTERNAL_API_TOKEN", "x" * 32)
+    settings = get_settings()
+    assert settings.production_mode is True
+    assert settings.pool_min_size == 0
+    assert settings.pool_max_size == 4
+    assert settings.db_sslmode == "verify-full"
+
+    monkeypatch.setenv("MDB_DB_SSLMODE", "require")
+    with pytest.raises(RuntimeError, match="SSL mode"):
+        get_settings()
+
+
+def test_internal_api_token_validation_is_fail_closed():
+    from api.security import has_valid_internal_token
+
+    token = "a" * 32
+    assert has_valid_internal_token(token, token) is True
+    assert has_valid_internal_token(None, token) is False
+    assert has_valid_internal_token("b" * 32, token) is False
+    assert has_valid_internal_token(None, None) is True
+
+
 def test_programmatic_openapi_remains_available_when_docs_http_is_disabled():
     from api.main import app
 

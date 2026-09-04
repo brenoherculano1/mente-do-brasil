@@ -19,12 +19,14 @@ def configure_read_only(connection) -> None:
 def create_pool(settings: Settings) -> ConnectionPool:
     return ConnectionPool(
         conninfo=settings.dsn,
-        min_size=1,
-        max_size=4,
+        min_size=settings.pool_min_size,
+        max_size=settings.pool_max_size,
         kwargs={
             "autocommit": True,
             "row_factory": dict_row,
             "application_name": "mente-do-brasil-api",
+            # Supavisor transaction mode does not support session-level prepared statements.
+            "prepare_threshold": None,
         },
         configure=configure_read_only,
         open=False,
