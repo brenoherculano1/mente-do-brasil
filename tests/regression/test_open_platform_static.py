@@ -27,7 +27,8 @@ def test_public_flow_view_enforces_suppression_in_sql():
 
 def test_public_role_cannot_create_temporary_objects():
     sql = (ROOT / "db/migrations/012_public_role_hardening.sql").read_text()
-    assert "REVOKE TEMPORARY ON DATABASE mente_do_brasil FROM PUBLIC" in sql
+    assert "REVOKE TEMPORARY ON DATABASE %I FROM PUBLIC" in sql
+    assert "current_database()" in sql
 
 
 def test_public_router_is_parseable_and_has_no_select_star():
