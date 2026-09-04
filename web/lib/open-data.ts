@@ -9,7 +9,7 @@ export type Dataset = { rows: number; semantic_sha256: string; caveat: string };
 
 function root() {
   return process.env.MDB_OPEN_DATA_DIR ??
-    path.resolve(process.cwd(), "..", "artifacts", "public_releases", OPEN_DATA_RELEASE);
+    path.resolve(process.cwd(), "public", "releases", OPEN_DATA_RELEASE);
 }
 
 export function openDataCatalog() {
