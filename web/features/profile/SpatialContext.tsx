@@ -11,29 +11,17 @@ const CLUSTER_COPY: Record<string, string> = {
   "low-high": "valor baixo cercado por valores altos",
 };
 
-const CLUSTER_LABEL: Record<string, string> = {
-  HH: "HH",
-  LL: "LL",
-  HL: "HL",
-  LH: "LH",
-  "high-high": "HH",
-  "low-low": "LL",
-  "high-low": "HL",
-  "low-high": "LH",
-};
-
 export function SpatialContext({ spatial }: { spatial: HealthRegionProfile["spatial"] }) {
   const text = spatial.lisa_significant
     ? CLUSTER_COPY[spatial.lisa_cluster ?? ""] ?? "associação espacial local significativa"
     : "Não apresentou associação espacial local estatisticamente significativa após correção utilizada no estudo.";
   return (
     <div className="profile-section">
-      <h2>Contexto espacial</h2>
-      {spatial.lisa_significant && spatial.lisa_cluster && (
-        <p className="eyebrow">{CLUSTER_LABEL[spatial.lisa_cluster]}</p>
-      )}
+      <h2>Padrão nas regiões vizinhas</h2>
       <p>{text}</p>
-      <p className="small-text">Este contexto se refere ao Mismatch.</p>
+      <p className="small-text">
+        Esta análise se refere à diferença entre necessidade e capacidade. O detalhe técnico está na metodologia.
+      </p>
     </div>
   );
 }

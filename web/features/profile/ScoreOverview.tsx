@@ -11,20 +11,20 @@ export function ScoreOverview({
 }) {
   return (
     <div>
-      <div className="score-track" aria-label="Need e Capacity em escala de 0 a 1">
-        <span className="score-marker" style={{ left: `${clampPercent(need)}%` }} title="Need" />
+      <div className="score-track" aria-label="Necessidade e estrutura em escala de 0 a 1">
+        <span className="score-marker" style={{ left: `${clampPercent(need)}%` }} title="Necessidade" />
         <span
           className="score-marker capacity"
           style={{ left: `${clampPercent(capacity)}%` }}
-          title="Capacity"
+          title="Estrutura"
         />
       </div>
       <div className="score-pair">
-        <span>Need {formatScore(need)}</span>
-        <span>Capacity {formatScore(capacity)}</span>
+        <span>Necessidade {formatScore(need)}</span>
+        <span>Estrutura {formatScore(capacity)}</span>
       </div>
       <div className="metric-chip" style={{ marginTop: 14 }}>
-        <span>Mismatch</span>
+        <span>Diferença necessidade-capacidade</span>
         <strong>{formatScore(mismatch, true)}</strong>
       </div>
     </div>

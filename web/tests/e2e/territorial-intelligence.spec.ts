@@ -23,15 +23,15 @@ test("desktop Radar shows territorial signals, filters, and region intelligence"
   expect(radar.total_matching).toBe(113);
   expect(radar.geometry.features.length).toBe(113);
   await waitForMapPixels(page);
-  await expect(page.getByRole("heading", { level: 1, name: "Radar Territorial" })).toBeVisible();
-  await expect(page.getByText("Confluência de sinais").first()).toBeVisible();
+  await expect(page.getByRole("heading", { level: 1, name: "Radar de atenção em saúde mental" })).toBeVisible();
+  await expect(page.getByText("Este radar não é um ranking.")).toBeVisible();
   await expect(page.locator("body")).not.toContainText("déficit assistencial");
   await expect(page.locator("body")).not.toContainText("hotspot de doença mental");
   await expectNoGlobalHorizontalOverflow(page);
   await page.screenshot({ path: `${QA_DIR}/desktop_radar_brazil.png`, fullPage: true });
 
-  await page.getByLabel("Mínimo de famílias").selectOption("1");
-  await page.getByLabel("Scope").selectOption("AC");
+  await page.getByLabel("Mínimo de grupos de atenção").selectOption("1");
+  await page.getByLabel("Área").selectOption("AC");
   await page.waitForResponse((response) =>
     response.url().includes("/api/v1/radar/health-regions") &&
     response.url().includes("uf=AC") &&
@@ -49,7 +49,7 @@ test("desktop Radar shows territorial signals, filters, and region intelligence"
 
   await page.getByRole("link", { name: "Ver análise completa" }).click();
   await expect(page).toHaveURL(/\/regiao\/12001#inteligencia/);
-  await expect(page.getByRole("heading", { name: "Como o Mismatch é formado" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "O que mais influencia esta leitura?" })).toBeVisible();
   await page.locator("#inteligencia").screenshot({
     path: `${QA_DIR}/desktop_profile_explanation.png`,
   });
@@ -63,11 +63,11 @@ test("mobile Radar and region intelligence remain usable", async ({ page }, test
   test.skip(testInfo.project.name !== "mobile", "mobile-only Radar QA");
   await page.goto("/radar");
   await waitForMapPixels(page);
-  await expect(page.getByRole("heading", { level: 1, name: "Radar Territorial" })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 1, name: "Radar de atenção em saúde mental" })).toBeVisible();
   await expectNoGlobalHorizontalOverflow(page);
   await page.screenshot({ path: `${QA_DIR}/mobile_radar_top.png` });
 
-  await page.getByLabel("Mínimo de famílias").selectOption("1");
+  await page.getByLabel("Mínimo de grupos de atenção").selectOption("1");
   await page.getByLabel("Buscar Região de Saúde").fill("Alto Acre");
   await expect(page.getByRole("button", { name: /Alto Acre/ })).toBeVisible();
   await page.getByRole("button", { name: /Alto Acre/ }).first().click();
@@ -75,7 +75,7 @@ test("mobile Radar and region intelligence remain usable", async ({ page }, test
 
   await page.getByRole("link", { name: "Ver análise completa" }).click();
   await expect(page).toHaveURL(/\/regiao\/12001#inteligencia/);
-  await expect(page.getByRole("heading", { name: "Como o Mismatch é formado" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "O que mais influencia esta leitura?" })).toBeVisible();
   await page.screenshot({ path: `${QA_DIR}/mobile_profile_explanation.png`, fullPage: true });
   await page.locator("#peers").scrollIntoViewIfNeeded();
   await expect(page.getByRole("heading", { name: "Regiões estruturalmente semelhantes" }))

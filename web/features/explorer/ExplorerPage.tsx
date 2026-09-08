@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { getHealthRegionProfile, getMapData } from "@/lib/api/client";
-import { ACTIVE_RELEASE_ID } from "@/lib/api/config";
 import { DEFAULT_METRIC, getMetricConfig, METRICS } from "@/lib/metrics";
 import type { HealthRegionFeatureCollection, HealthRegionProfile, MetricId } from "@/types/api";
 import { HealthRegionMap } from "./HealthRegionMap";
@@ -72,17 +71,32 @@ export function ExplorerPage({ initialMetric }: { initialMetric: MetricId }) {
 
   return (
     <div className="page-shell">
-      <section className="intro" aria-labelledby="home-title">
-        <p className="eyebrow">Explorar o Brasil</p>
+      <section className="intro public-home-intro" aria-labelledby="home-title">
+        <p className="eyebrow">Saúde mental no território brasileiro</p>
         <h1 id="home-title">Mente do Brasil</h1>
         <p>
-          Inteligência territorial em saúde mental no Brasil. Explore diferenças
-          territoriais entre indicadores de necessidade medida e capacidade registrada
-          nas 439 Regiões de Saúde do país.
+          Uma plataforma que mostra como está a saúde mental nas regiões brasileiras,
+          combinando dados públicos de mortalidade, atendimento, estrutura assistencial
+          e características territoriais.
         </p>
-        <Link className="text-button" href="/radar">
-          Abrir Radar Territorial
-        </Link>
+        <h2>Como está a saúde mental da minha região e quais são os principais desafios?</h2>
+        <div className="home-actions">
+          <a className="button" href="#mapa">Explore sua região</a>
+          <Link className="text-button" href="/comparar">Compare territórios</Link>
+          <Link className="text-button" href="/radar">Entenda os desafios</Link>
+        </div>
+        <dl className="home-facts" aria-label="Cobertura da plataforma">
+          <div><dt>439</dt><dd>Regiões de Saúde analisadas</dd></div>
+          <div><dt>5.570</dt><dd>Municípios considerados</dd></div>
+          <div><dt>27</dt><dd>Unidades da Federação</dd></div>
+          <div><dt>8</dt><dd>Indicadores para explorar</dd></div>
+        </dl>
+      </section>
+
+      <section className="map-section-heading" id="mapa" aria-labelledby="map-title">
+        <p className="eyebrow">Veja o mapa do Brasil</p>
+        <h2 id="map-title">Quais regiões apresentam maiores desafios em saúde mental?</h2>
+        <p>Escolha uma forma de observar o território e selecione uma região para abrir seu perfil.</p>
       </section>
 
       <section className="explorer-grid" aria-label="Explorador territorial">
@@ -129,8 +143,8 @@ export function ExplorerPage({ initialMetric }: { initialMetric: MetricId }) {
             values={mapData?.features.map((f) => f.properties.value) ?? []}
           />
           <p className="small-text">
-            Dados: 2022-2024 / dezembro de 2024 conforme indicador. Release:{" "}
-            {ACTIVE_RELEASE_ID}.
+            Dados de 2022 a 2024 e registros de dezembro de 2024, conforme o indicador.
+            Consulte a metodologia para conhecer fontes, períodos e limitações.
           </p>
           <AccessibleRegionList
             features={mapData?.features ?? []}
@@ -187,7 +201,7 @@ function AccessibleRegionList({
               className="input"
               value={filter}
               onChange={(event) => setFilter(event.target.value)}
-              placeholder="Nome, UF ou código da região"
+              placeholder="Nome da região ou UF"
               autoComplete="off"
             />
           </label>
@@ -203,9 +217,7 @@ function AccessibleRegionList({
                   aria-current={selectedCode === feature.properties.health_region_code}
                 >
                   <strong>{feature.properties.health_region_name}</strong>
-                  <span className="small-text">
-                    {feature.properties.uf} · {feature.properties.health_region_code}
-                  </span>
+                  <span className="small-text">{feature.properties.uf}</span>
                 </button>
               </li>
             ))}

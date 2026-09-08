@@ -13,15 +13,15 @@ const publicConfig = publicSiteConfig();
 assertPublicIndexingConfig(publicConfig);
 
 export const metadata: Metadata = {
-  title: "Mente do Brasil — Inteligência territorial em saúde mental",
-  description: "Explore indicadores territoriais de saúde mental nas Regiões de Saúde do Brasil.",
+  title: "Mente do Brasil — Saúde mental nas regiões brasileiras",
+  description: "Entenda a situação da saúde mental na sua região e os principais desafios territoriais.",
   metadataBase: new URL(publicConfig.siteUrl ?? DEFAULT_SITE_URL),
   robots: publicConfig.indexingEnabled
     ? { index: true, follow: true }
     : { index: false, follow: false },
   openGraph: {
     title: "Mente do Brasil",
-    description: "Inteligência territorial em saúde mental no Brasil.",
+    description: "Entenda a saúde mental nas regiões brasileiras com dados públicos.",
     siteName: "Mente do Brasil",
     locale: "pt_BR",
     type: "website",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary",
     title: "Mente do Brasil",
-    description: "Inteligência territorial em saúde mental no Brasil.",
+    description: "Entenda a saúde mental nas regiões brasileiras com dados públicos.",
   },
 };
 

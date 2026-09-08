@@ -32,8 +32,8 @@ export function MapLegend({ metric, values }: { metric: MetricConfig; values: Ar
       </div>
       <p className="small-text">
         {metric.scale === "diverging"
-          ? "Mismatch é um sinal relativo, não uma medida direta de acesso ou qualidade."
-          : "Escala visual calculada apenas para colorir os valores recebidos da API."}
+          ? "A diferença é um sinal relativo, não uma medida direta de acesso ou qualidade."
+          : "A escala de cores representa os valores observados no mapa."}
       </p>
       <p className="small-text">Sem dado: cinza.</p>
     </div>

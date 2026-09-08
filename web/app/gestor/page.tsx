@@ -8,7 +8,7 @@ type ManagerPageProps = {
 
 export const metadata: Metadata = pageMetadata(
   "/gestor",
-  "Modo Gestor | Mente do Brasil",
+  "Painel para gestores | Mente do Brasil",
   "Leitura territorial, comparação e preparação de reuniões por Região de Saúde.",
 );
 

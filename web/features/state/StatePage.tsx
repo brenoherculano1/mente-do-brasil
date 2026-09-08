@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { getMapData } from "@/lib/api/client";
-import { ACTIVE_RELEASE_ID } from "@/lib/api/config";
 import { formatInteger, formatMetricValue, formatPercentile, formatScore } from "@/lib/format";
 import { getScaleDomain } from "@/lib/map/color-scale";
 import { DEFAULT_METRIC, getMetricConfig, type MetricConfig } from "@/lib/metrics";
@@ -18,19 +17,19 @@ import { MapLegend } from "@/features/explorer/MapLegend";
 import { MetricSelector } from "@/features/explorer/MetricSelector";
 
 const CLUSTER_LABELS: Record<string, string> = {
-  HH: "HH",
-  LL: "LL",
-  HL: "HL",
-  LH: "LH",
-  "high-high": "HH",
-  "low-low": "LL",
-  "high-low": "HL",
-  "low-high": "LH",
+  HH: "Alto perto de alto",
+  LL: "Baixo perto de baixo",
+  HL: "Alto perto de baixo",
+  LH: "Baixo perto de alto",
+  "high-high": "Alto perto de alto",
+  "low-low": "Baixo perto de baixo",
+  "high-low": "Alto perto de baixo",
+  "low-high": "Baixo perto de alto",
 };
 
 const FLAG_LABELS: Record<string, string> = {
-  SMALL_SUICIDE_COUNT: "SMALL_SUICIDE_COUNT",
-  ZERO_REGISTERED_BEDS: "ZERO_REGISTERED_BEDS",
+  SMALL_SUICIDE_COUNT: "Poucos óbitos no período",
+  ZERO_REGISTERED_BEDS: "Nenhum leito registrado",
 };
 
 export function StatePage({ stateProfile }: { stateProfile: StateProfile }) {
@@ -93,7 +92,6 @@ export function StatePage({ stateProfile }: { stateProfile: StateProfile }) {
             label="Regiões de Saúde"
             value={String(stateProfile.state.health_region_count)}
           />
-          <VersionTag label="Release" value={stateProfile.release.release_id} />
         </div>
       </section>
 
@@ -155,7 +153,7 @@ export function StatePage({ stateProfile }: { stateProfile: StateProfile }) {
             </div>
             <p className="small-text">
               População e municípios são somas administrativas das Regiões de Saúde
-              retornadas para a UF no release. Não são score estadual.
+              disponíveis para o estado. Não formam um índice estadual.
             </p>
             <MapLegend
               metric={metricConfig}
@@ -166,7 +164,7 @@ export function StatePage({ stateProfile }: { stateProfile: StateProfile }) {
                 <p className="field-label">Região selecionada</p>
                 <strong>{selectedRegion.health_region_name}</strong>
                 <p className="small-text">
-                  {selectedRegion.uf} · {selectedRegion.health_region_code}
+                  {selectedRegion.uf}
                 </p>
                 <Link className="text-button" href={`/regiao/${selectedRegion.health_region_code}`}>
                   Ver perfil da região
@@ -185,9 +183,9 @@ export function StatePage({ stateProfile }: { stateProfile: StateProfile }) {
           </p>
           {metric === "mismatch_score" && (
             <p className="small-text">
-              Mismatch &gt; 0: Need ocupa posição relativa superior à Capacity.
-              Mismatch &lt; 0: Capacity ocupa posição relativa superior à Need. Zero:
-              posições relativas semelhantes.
+              Valores positivos indicam necessidade em posição relativa superior à
+              estrutura. Valores negativos indicam o sentido oposto. Próximo de zero,
+              as posições são semelhantes.
             </p>
           )}
           <StateDistribution
@@ -210,7 +208,7 @@ export function StatePage({ stateProfile }: { stateProfile: StateProfile }) {
               className="input"
               value={query}
               onChange={(event) => setQuery(event.target.value)}
-              placeholder="Nome ou código da Região de Saúde"
+              placeholder="Nome da Região de Saúde"
               autoComplete="off"
             />
           </label>
@@ -223,19 +221,19 @@ export function StatePage({ stateProfile }: { stateProfile: StateProfile }) {
                 <div>
                   <h3>{region.health_region_name}</h3>
                   <p className="small-text">
-                    {region.uf} · {region.health_region_code}
+                    {region.uf}
                   </p>
                 </div>
                 <dl className="state-region-metrics">
                   <MetricRow label="População" value={formatInteger(region.population)} />
                   <MetricRow label="Municípios" value={formatInteger(region.municipality_count)} />
-                  <MetricRow label="Need" value={formatScore(region.need_score)} />
-                  <MetricRow label="Capacity" value={formatScore(region.capacity_score)} />
-                  <MetricRow label="Mismatch" value={formatScore(region.mismatch_score, true)} />
+                  <MetricRow label="Necessidade" value={formatScore(region.need_score)} />
+                  <MetricRow label="Estrutura" value={formatScore(region.capacity_score)} />
+                  <MetricRow label="Diferença" value={formatScore(region.mismatch_score, true)} />
                 </dl>
                 <div className="state-region-secondary">
                   {region.lisa_significant && region.lisa_cluster && (
-                    <span>LISA {CLUSTER_LABELS[region.lisa_cluster] ?? region.lisa_cluster}</span>
+                    <span>Padrão territorial identificado</span>
                   )}
                   {region.data_quality_flags.length > 0 && <span>Dados com observação</span>}
                 </div>
@@ -252,9 +250,8 @@ export function StatePage({ stateProfile }: { stateProfile: StateProfile }) {
             <p className="eyebrow">Método e dados</p>
             <h2 id="state-method-title">Como interpretar</h2>
             <p>
-              Esta página organiza valores regionais já calculados no release{" "}
-              {ACTIVE_RELEASE_ID}. Need, Capacity, Mismatch, LISA e flags não são
-              recalculados aqui.
+              Esta página organiza indicadores regionais já calculados. Os valores de
+              necessidade, estrutura, diferença e contexto espacial não são recalculados aqui.
             </p>
           </div>
           <div className="about-link-grid">
@@ -265,7 +262,7 @@ export function StatePage({ stateProfile }: { stateProfile: StateProfile }) {
               Ver dados e versões
             </Link>
             <Link className="text-button" href={`/radar?uf=${stateProfile.state.uf}`}>
-              Abrir Radar deste estado
+              Ver regiões em atenção neste estado
             </Link>
           </div>
         </section>
@@ -347,11 +344,11 @@ function StateSignals({ stateProfile, regions }: { stateProfile: StateProfile; r
     <section className="state-section state-signal-grid" aria-label="Contexto espacial e qualidade">
       {hasLisa && (
         <div>
-          <p className="eyebrow">Contexto espacial</p>
-          <h2>Contexto espacial</h2>
+          <p className="eyebrow">Regiões vizinhas</p>
+          <h2>Padrões territoriais</h2>
           <p>
             {stateProfile.state.lisa_significant_count} de {stateProfile.state.health_region_count}{" "}
-            regiões com associação espacial local significativa no Mismatch.
+            regiões com padrão local identificado na diferença entre necessidade e estrutura.
           </p>
           <div className="state-chip-row">
             {Object.entries(stateProfile.state.lisa_cluster_counts).map(([cluster, count]) => (

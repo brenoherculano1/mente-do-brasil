@@ -1,4 +1,3 @@
-import { formatPercentile } from "@/lib/format";
 import type { CSSProperties } from "react";
 
 export function IndicatorMetric({
@@ -23,7 +22,7 @@ export function IndicatorMetric({
       </div>
       <div
         className="percentile"
-        aria-label={`Percentil nacional: ${Math.round(percentile * 100)}`}
+        aria-label={`Posição relativa nacional: ${Math.round(percentile * 100)} de 100`}
         style={
           {
             "--percentile-position": `${Math.max(0, Math.min(100, percentile * 100))}%`,
@@ -32,7 +31,7 @@ export function IndicatorMetric({
       >
         <span />
       </div>
-      <p className="small-text">Percentil nacional: {formatPercentile(percentile)}</p>
+      <p className="small-text">Posição relativa nacional: {Math.round(percentile * 100)} de 100</p>
     </article>
   );
 }

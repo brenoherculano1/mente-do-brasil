@@ -57,6 +57,7 @@ export default async function RegionProfilePage({ params }: RegionPageProps) {
   }
   const [profile, explanation, peers] = data;
   const territory = profile.territory;
+  const situation = describeSituation(profile.need.score, profile.capacity.score);
   return (
     <div className="profile-shell page-shell">
       <nav className="breadcrumbs" aria-label="Breadcrumb">
@@ -71,16 +72,20 @@ export default async function RegionProfilePage({ params }: RegionPageProps) {
         <p className="eyebrow">Perfil da Região de Saúde</p>
         <h1 id="region-title">{territory.health_region_name}</h1>
         <p>
-          {territory.uf} · {formatInteger(territory.municipality_count)} municípios ·
-          população {formatInteger(territory.population)}
+          {territory.uf} · População {formatInteger(territory.population)} ·
+          {" "}{formatInteger(territory.municipality_count)} municípios integrantes
         </p>
-        <p className="small-text">
-          Dados: 2022-2024 / dezembro de 2024 conforme indicador. Release:{" "}
-          {profile.release.release_id}.
-        </p>
+        <div className="region-situation">
+          <span>Situação geral</span>
+          <strong>{situation}</strong>
+          <p>Leitura relativa às 439 Regiões de Saúde, não diagnóstico ou avaliação da qualidade do cuidado.</p>
+        </div>
         <div className="nav-links">
           <Link className="text-button" href={`/gestor?regiao=${territory.health_region_code}`}>
-            Abrir no Modo Gestor
+            Abrir no painel para gestores
+          </Link>
+          <Link className="text-button" href={`/comparar?compare=${territory.health_region_code}`}>
+            Comparar com outra região
           </Link>
           <a
             className="text-button"
@@ -91,21 +96,20 @@ export default async function RegionProfilePage({ params }: RegionPageProps) {
         </div>
       </section>
 
-      <RegionAdvanced code={codigo} />
       <section className="profile-grid">
         <div className="profile-section">
-          <h2>Visão geral</h2>
+          <h2>Necessidade e estrutura</h2>
           <ScoreOverview
             need={profile.need.score}
             capacity={profile.capacity.score}
             mismatch={profile.mismatch.score}
           />
           <p>
-            O Mismatch compara a posição relativa da região em indicadores de
-            necessidade medida com sua posição em capacidade registrada.
+            A diferença compara a posição relativa da região em indicadores de
+            necessidade em saúde mental com sua estrutura de atendimento registrada.
           </p>
           <p className="small-text">
-            Ele funciona como um sinal para investigação territorial e não como uma
+            O índice técnico, chamado Mismatch, funciona como sinal para investigação territorial e não como uma
             medida direta de acesso, qualidade ou volume de recursos a adicionar.
           </p>
         </div>
@@ -121,26 +125,20 @@ export default async function RegionProfilePage({ params }: RegionPageProps) {
               <span>Densidade</span>
               <strong>{formatRate(territory.population_density)}</strong>
             </div>
-            <div className="metric-chip">
-              <span>Código</span>
-              <strong>{territory.health_region_code}</strong>
-            </div>
           </div>
         </div>
       </section>
 
-      <RegionIntelligence explanation={explanation} peers={peers} />
-
       <section className="profile-grid">
         <div className="profile-section">
-          <h2>Necessidade medida</h2>
+          <h2>Necessidade em saúde mental</h2>
           <div className="indicator-grid">
             <IndicatorMetric
               title="Suicídio"
               values={[
-                ["ASMR", formatRate(profile.need.suicide.asmr)],
+                ["Taxa padronizada", formatRate(profile.need.suicide.asmr)],
                 ["Óbitos", formatInteger(profile.need.suicide.deaths)],
-                ["Percentil", `${Math.round(profile.need.suicide.percentile * 100)}`],
+                ["Posição nacional", `${Math.round(profile.need.suicide.percentile * 100)}/100`],
               ]}
               percentile={profile.need.suicide.percentile}
             />
@@ -149,19 +147,19 @@ export default async function RegionProfilePage({ params }: RegionPageProps) {
               values={[
                 ["Contagem", formatInteger(profile.need.psychiatric_admissions.count)],
                 ["Taxa", formatRate(profile.need.psychiatric_admissions.rate)],
-                ["Percentil", `${Math.round(profile.need.psychiatric_admissions.percentile * 100)}`],
+                ["Posição nacional", `${Math.round(profile.need.psychiatric_admissions.percentile * 100)}/100`],
               ]}
               percentile={profile.need.psychiatric_admissions.percentile}
             />
             <div className="metric-chip">
-              <span>Need Score</span>
+              <span>Índice de necessidade</span>
               <strong>{formatScore(profile.need.score)}</strong>
             </div>
           </div>
         </div>
 
         <div className="profile-section">
-          <h2>Capacidade registrada</h2>
+          <h2>Estrutura disponível</h2>
           <p className="small-text">
             Capacidade registrada não equivale automaticamente a acesso efetivo,
             disponibilidade imediata ou qualidade assistencial.
@@ -172,7 +170,7 @@ export default async function RegionProfilePage({ params }: RegionPageProps) {
               values={[
                 ["Contagem", formatInteger(profile.capacity.caps.count)],
                 ["Taxa", formatRate(profile.capacity.caps.rate)],
-                ["Percentil", `${Math.round(profile.capacity.caps.percentile * 100)}`],
+                ["Posição nacional", `${Math.round(profile.capacity.caps.percentile * 100)}/100`],
               ]}
               percentile={profile.capacity.caps.percentile}
             />
@@ -181,26 +179,30 @@ export default async function RegionProfilePage({ params }: RegionPageProps) {
               values={[
                 ["Contagem", formatInteger(profile.capacity.mental_health_beds_sus.count)],
                 ["Taxa", formatRate(profile.capacity.mental_health_beds_sus.rate)],
-                ["Percentil", `${Math.round(profile.capacity.mental_health_beds_sus.percentile * 100)}`],
+                ["Posição nacional", `${Math.round(profile.capacity.mental_health_beds_sus.percentile * 100)}/100`],
               ]}
               percentile={profile.capacity.mental_health_beds_sus.percentile}
             />
             <IndicatorMetric
-              title="Psiquiatras FTE no SUS"
+              title="Psiquiatras no SUS"
               values={[
-                ["FTE", formatRate(profile.capacity.psychiatrist_fte.fte)],
+                ["Jornadas equivalentes", formatRate(profile.capacity.psychiatrist_fte.fte)],
                 ["Taxa", formatRate(profile.capacity.psychiatrist_fte.rate)],
-                ["Percentil", `${Math.round(profile.capacity.psychiatrist_fte.percentile * 100)}`],
+                ["Posição nacional", `${Math.round(profile.capacity.psychiatrist_fte.percentile * 100)}/100`],
               ]}
               percentile={profile.capacity.psychiatrist_fte.percentile}
             />
             <div className="metric-chip">
-              <span>Capacity Score</span>
+              <span>Índice de estrutura</span>
               <strong>{formatScore(profile.capacity.score)}</strong>
             </div>
           </div>
         </div>
       </section>
+
+      <RegionAdvanced code={codigo} />
+
+      <RegionIntelligence explanation={explanation} peers={peers} />
 
       <section className="profile-grid">
         <SpatialContext spatial={profile.spatial} />
@@ -226,4 +228,10 @@ export default async function RegionProfilePage({ params }: RegionPageProps) {
       </section>
     </div>
   );
+}
+
+function describeSituation(need: number, capacity: number) {
+  const needLevel = need >= 0.75 ? "alta" : need <= 0.25 ? "baixa" : "intermediária";
+  const capacityLevel = capacity >= 0.75 ? "alta" : capacity <= 0.25 ? "baixa" : "intermediária";
+  return `Necessidade relativa ${needLevel} e estrutura registrada ${capacityLevel}.`;
 }

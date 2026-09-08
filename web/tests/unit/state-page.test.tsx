@@ -69,24 +69,24 @@ describe("state page", () => {
     expect(screen.queryByRole("heading", { level: 3, name: "Alto Acre" })).not.toBeInTheDocument();
   });
 
-  it("uses locked regional values in the distribution and preserves mismatch copy", async () => {
+  it("uses locked regional values with public labels", async () => {
     render(<StatePage stateProfile={acState} />);
     await screen.findByTestId("mock-state-map");
     expect(screen.getByText("Como as regiões se distribuem")).toBeInTheDocument();
-    expect(screen.getByLabelText("Alto Acre, Mismatch: +0,20")).toBeInTheDocument();
-    expect(screen.getByText(/Sinal de desalinhamento territorial relativo/i)).toBeInTheDocument();
+    expect(screen.getByLabelText("Alto Acre, Diferença necessidade-capacidade: +0,20")).toBeInTheDocument();
+    expect(screen.getByText(/Compara a necessidade medida com a estrutura assistencial/i)).toBeInTheDocument();
     expect(screen.getByText(/Não é uma medida direta de acesso, qualidade/i)).toBeInTheDocument();
-    fireEvent.change(screen.getByLabelText("Indicador"), { target: { value: "need_score" } });
+    fireEvent.change(screen.getByLabelText("O que você quer observar?"), { target: { value: "need_score" } });
     expect(screen.getByText(/posição relativa nacional/i)).toBeInTheDocument();
-    expect(screen.getByLabelText("Alto Acre, Need: 70/100")).toBeInTheDocument();
+    expect(screen.getByLabelText("Alto Acre, Necessidade: 70/100")).toBeInTheDocument();
   });
 
   it("counts locked LISA categories and data quality flags without creating indicators", async () => {
     render(<StatePage stateProfile={acState} />);
     await screen.findByTestId("mock-state-map");
-    expect(screen.getByText("1 de 3 regiões com associação espacial local significativa no Mismatch.")).toBeInTheDocument();
-    expect(screen.getByText("HH 1")).toBeInTheDocument();
-    expect(screen.getByText("ZERO_REGISTERED_BEDS 1")).toBeInTheDocument();
+    expect(screen.getByText(/1 de 3 regiões com padrão local identificado/)).toBeInTheDocument();
+    expect(screen.getByText("Alto perto de alto 1")).toBeInTheDocument();
+    expect(screen.getByText("Nenhum leito registrado 1")).toBeInTheDocument();
     expect(screen.getByText(/Zero leitos registrados nesta medida não implica necessariamente ausência/i)).toBeInTheDocument();
   });
 

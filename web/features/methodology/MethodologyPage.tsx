@@ -20,6 +20,7 @@ const sourceRows = [
 
 export function MethodologyPage() {
   const [navOpen, setNavOpen] = useState(false);
+  const [detailLevel, setDetailLevel] = useState<"public" | "technical">("public");
   return (
     <div className="methodology-shell page-shell">
       <section className="intro methodology-hero" aria-labelledby="methodology-title">
@@ -29,19 +30,43 @@ export function MethodologyPage() {
           Como o Mente do Brasil transforma dados públicos de diferentes sistemas em
           indicadores comparáveis para as 439 Regiões de Saúde do país.
         </p>
-        <div className="metadata-strip" aria-label="Identificadores metodológicos">
-          <VersionPill label="Método" value={METHOD_IDENTIFIERS.method} />
-          <VersionPill label="Release analítico" value={METHOD_IDENTIFIERS.release} />
-          <VersionPill label="Geografia" value={METHOD_IDENTIFIERS.geography} />
+        <div className="method-level-tabs" role="tablist" aria-label="Nível de detalhe">
+          <button
+            type="button"
+            role="tab"
+            aria-selected={detailLevel === "public"}
+            className={detailLevel === "public" ? "active" : ""}
+            onClick={() => setDetailLevel("public")}
+          >
+            Como funciona
+          </button>
+          <button
+            type="button"
+            role="tab"
+            aria-selected={detailLevel === "technical"}
+            className={detailLevel === "technical" ? "active" : ""}
+            onClick={() => setDetailLevel("technical")}
+          >
+            Metodologia completa
+          </button>
         </div>
+        {detailLevel === "technical" && (
+          <div className="metadata-strip" aria-label="Identificadores metodológicos">
+            <VersionPill label="Método" value={METHOD_IDENTIFIERS.method} />
+            <VersionPill label="Release analítico" value={METHOD_IDENTIFIERS.release} />
+            <VersionPill label="Geografia" value={METHOD_IDENTIFIERS.geography} />
+          </div>
+        )}
       </section>
 
-      <div className="methodology-layout">
-        <aside className="methodology-sidebar" aria-label="Índice da metodologia">
-          <MethodologyNav />
-        </aside>
+      <div className={`methodology-layout ${detailLevel === "public" ? "public-methodology" : ""}`}>
+        {detailLevel === "technical" && (
+          <aside className="methodology-sidebar" aria-label="Índice da metodologia">
+            <MethodologyNav />
+          </aside>
+        )}
 
-        <div className="mobile-page-nav">
+        {detailLevel === "technical" && <div className="mobile-page-nav">
           <button
             className="text-button disclosure-button"
             type="button"
@@ -56,18 +81,18 @@ export function MethodologyPage() {
               <MethodologyNav onNavigate={() => setNavOpen(false)} />
             </div>
           )}
-        </div>
+        </div>}
 
         <article className="methodology-content">
           <Section id="overview" eyebrow="Visão geral" title="Entenda em 1 minuto">
             <div className="method-flow" aria-label="Fluxo metodológico resumido">
               {[
-                ["Dados públicos", "SIM + SIH/SUS + CNES + geografia"],
-                ["439 Regiões de Saúde", "Unidade territorial do release"],
-                ["Need", "2 itens"],
-                ["Capacity", "3 itens"],
-                ["Mismatch", "Need - Capacity"],
-                ["Contexto espacial", "Moran + LISA"],
+                ["Dados públicos", "Sistemas nacionais de saúde e geografia"],
+                ["439 Regiões de Saúde", "Unidade territorial da análise"],
+                ["Necessidade", "2 indicadores"],
+                ["Estrutura", "3 indicadores"],
+                ["Diferença", "Necessidade menos estrutura"],
+                ["Contexto territorial", "Padrões entre regiões vizinhas"],
               ].map(([title, text], index) => (
                 <div className="method-flow-step" key={title}>
                   <span>{index + 1}</span>
@@ -79,16 +104,16 @@ export function MethodologyPage() {
 
             <div className="method-card-grid">
               <MethodCard
-                title="Need"
+                title="Necessidade em saúde mental"
                 text="Posição relativa da região em dois indicadores de necessidade medida: mortalidade por suicídio e internações psiquiátricas registradas no SUS."
               />
               <MethodCard
-                title="Capacity"
-                text="Posição relativa da região em três componentes de capacidade pública registrada: CAPS, leitos SUS de saúde mental em hospital geral e psiquiatras FTE no SUS."
+                title="Estrutura de atendimento"
+                text="Posição relativa da região em três componentes de capacidade pública registrada: CAPS, leitos SUS de saúde mental em hospital geral e carga horária de psiquiatras no SUS."
               />
               <div className="method-card">
-                <h3>Mismatch</h3>
-                <Formula>Mismatch = Need - Capacity</Formula>
+                <h3>Diferença entre necessidade e capacidade</h3>
+                <Formula>Diferença = necessidade relativa - estrutura relativa</Formula>
                 <p>
                   Um valor positivo indica que a posição relativa da região nos
                   indicadores de necessidade medida é superior à sua posição relativa
@@ -102,6 +127,30 @@ export function MethodologyPage() {
               </div>
             </div>
           </Section>
+
+          {detailLevel === "public" && (
+            <Section id="public-reading" title="O que esta leitura permite entender">
+              <div className="use-grid">
+                <div>
+                  <h3>O que entra na análise</h3>
+                  <p>Mortalidade por suicídio, internações psiquiátricas, CAPS, leitos de saúde mental e carga horária de psiquiatras no SUS.</p>
+                  <p>Os dados vêm de sistemas públicos nacionais e são organizados por Região de Saúde.</p>
+                </div>
+                <div>
+                  <h3>Como interpretar</h3>
+                  <p>Os resultados mostram a posição de cada região em relação às demais. Eles ajudam a localizar diferenças e formular perguntas.</p>
+                  <p>Não são diagnóstico da população, ranking de qualidade nem recomendação automática de recursos.</p>
+                </div>
+              </div>
+              <div className="claim-box public-method-cta">
+                <h3>Precisa auditar o método?</h3>
+                <p>Fontes, períodos, fórmulas, análise espacial, limitações e versões estão preservados na camada técnica.</p>
+                <button className="text-button" type="button" onClick={() => setDetailLevel("technical")}>Abrir metodologia completa</button>
+              </div>
+            </Section>
+          )}
+
+          {detailLevel === "technical" && <>
 
           <Section id="geography" title="Regiões de Saúde">
             <p>
@@ -648,6 +697,7 @@ export function MethodologyPage() {
               <VersionPill label="Método" value={METHOD_IDENTIFIERS.method} />
             </div>
           </Section>
+          </>}
         </article>
       </div>
     </div>

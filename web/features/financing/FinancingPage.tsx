@@ -20,17 +20,19 @@ export function FinancingPage() {
     ...feature, properties: { health_region_code: feature.properties.health_region_code,
       health_expenditure_per_capita_brl: byCode.get(feature.properties.health_region_code)?.health_expenditure_per_capita_brl ?? null },
   })) } : null;
-  return <main className="page-shell"><section className="intro"><h1>Contexto de financiamento da saúde</h1>
-    <p>Esta camada descreve o contexto geral de financiamento da saúde e não mede gasto específico em saúde mental.</p></section>
+  return <main className="page-shell financing-page"><section className="intro"><p className="eyebrow">Contexto para interpretar a rede</p><h1>Recursos e estrutura de saúde</h1>
+    <p>Veja quanto os municípios de cada Região de Saúde registraram em despesas gerais de saúde e use esse contexto ao investigar a organização da atenção em saúde mental.</p>
+    <div className="notice financing-caution"><strong>Importante</strong><p>Os valores são de toda a saúde. Eles não medem gasto específico em saúde mental e, isoladamente, não indicam suficiência, eficiência ou qualidade.</p></div></section>
     <div className="advanced-controls"><label>Exercício<select className="input" value={year} onChange={(e) => setYear(Number(e.target.value))}>{[2022, 2023, 2024].map((value) => <option key={value}>{value}</option>)}</select></label>
       <label>UF<select className="input" value={uf} onChange={(e) => setUf(e.target.value)}><option value="">Brasil</option>{VALID_UFS.map((value) => <option key={value}>{value}</option>)}</select></label></div>
     <p className="small-text">Valores em reais correntes do respectivo exercício; comparações entre anos não representam variação real descontada da inflação.</p>
-    {loading && <p role="status">Carregando financiamento...</p>}{error && <p role="alert">{error}</p>}
+    {loading && <p role="status">Carregando recursos...</p>}{error && <p role="alert">{error}</p>}
     <OverviewMap data={geometry} selected={selected} onSelect={setSelected} field="health_expenditure_per_capita_brl" money />
     <p className="small-text">R$/habitante: menos de 1.000 · 1.000–2.000 · 2.000–4.000 · 4.000–8.000 · 8.000 ou mais. Cinza: dados parciais/indisponível.</p>
     {selected && <section><h2>{byCode.get(selected)?.health_region_name ?? selected}</h2>
       <Link href={`/regiao/${selected}`}>Abrir perfil regional</Link>
-      <div className="table-wrap"><table><caption>Série nominal</caption><thead><tr><th>Ano</th><th>Total em saúde</th><th>Por habitante</th><th>Cobertura municipal</th></tr></thead><tbody>
+      <p>Use a série para observar o contexto local ao longo do tempo. Valores correntes não permitem concluir crescimento real sem ajuste de inflação.</p>
+      <div className="table-wrap"><table><caption>Recursos gerais de saúde registrados</caption><thead><tr><th>Ano</th><th>Total em saúde</th><th>Por habitante</th><th>Cobertura municipal</th></tr></thead><tbody>
         {series.data?.records.map((row) => <tr key={row.year}><th scope="row">{row.year}</th><td>{currency(row.total_health_expenditure_brl)}</td><td>{currency(row.health_expenditure_per_capita_brl)}</td><td>{row.municipalities_observed}/{row.municipalities_expected}{!row.headline_available && " · Dados parciais"}</td></tr>)}
       </tbody></table></div></section>}
     <div className="table-wrap"><table><thead><tr><th>Região</th><th>UF</th><th>Total em saúde</th><th>R$/habitante</th><th>Cobertura</th></tr></thead><tbody>

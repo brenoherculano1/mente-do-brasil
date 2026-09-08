@@ -15,7 +15,7 @@ vi.mock("@/lib/api/client", () => ({
 describe("ManagerWorkbench", () => {
   it("renders empty state without selecting a random region", () => {
     render(<ManagerWorkbench />);
-    expect(screen.getAllByText("Modo Gestor")[0]).toBeInTheDocument();
+    expect(screen.getByRole("heading", { level: 1, name: "Painel para gestores" })).toBeInTheDocument();
     expect(screen.getByText("Escolha uma Região de Saúde para começar.")).toBeInTheDocument();
     expect(screen.getByRole("tab", { name: "Visão territorial" })).toHaveAttribute(
       "aria-selected",
@@ -29,6 +29,6 @@ describe("ManagerWorkbench", () => {
       "aria-selected",
       "true",
     );
-    expect(screen.getByText("2 a 4 Regiões de Saúde")).toBeInTheDocument();
+    expect(screen.getByText("Selecione de 2 a 4 Regiões de Saúde")).toBeInTheDocument();
   });
 });

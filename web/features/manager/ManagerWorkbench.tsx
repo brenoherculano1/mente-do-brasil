@@ -11,6 +11,7 @@ import {
 } from "@/lib/api/client";
 import { formatInteger, formatMetricValue, formatPercentile, formatScore } from "@/lib/format";
 import { getMetricConfig, METRICS } from "@/lib/metrics";
+import { publicLanguage } from "@/lib/public-language";
 import type {
   HealthRegionLookup,
   ManagerBrief,
@@ -32,11 +33,19 @@ const COMPARE_DEFAULTS = ["12001", "31001"];
 export function ManagerWorkbench({
   initialRegionCode,
   initialCompare,
+  title = "Painel para gestores",
+  eyebrow = "Decisões orientadas por dados",
+  description = "Entenda os principais desafios da sua região, compare contextos e prepare perguntas para investigação e reuniões de planejamento.",
+  comparisonOnly = false,
 }: {
   initialRegionCode?: string;
   initialCompare?: string;
+  title?: string;
+  eyebrow?: string;
+  description?: string;
+  comparisonOnly?: boolean;
 }) {
-  const [activeTab, setActiveTab] = useState<Tab>(initialCompare ? "compare" : "territorial");
+  const [activeTab, setActiveTab] = useState<Tab>(comparisonOnly || initialCompare ? "compare" : "territorial");
   const [query, setQuery] = useState(initialRegionCode ?? "");
   const [selectedCode, setSelectedCode] = useState(initialRegionCode);
   const [brief, setBrief] = useState<ManagerBrief | null>(null);
@@ -44,6 +53,7 @@ export function ManagerWorkbench({
   const [compareCodes, setCompareCodes] = useState(() => parseCompare(initialCompare));
   const [compareQuery, setCompareQuery] = useState("");
   const [compare, setCompare] = useState<ManagerCompareResponse | null>(null);
+  const [compareBriefs, setCompareBriefs] = useState<ManagerBrief[]>([]);
   const [metric, setMetric] = useState<MetricId>("mismatch_score");
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
@@ -59,7 +69,7 @@ export function ManagerWorkbench({
     void getManagerBrief(selectedCode)
       .then((data) => {
         setBrief(data);
-        setQuery(`${data.region.health_region_name} (${data.region.health_region_code})`);
+        setQuery(data.region.health_region_name);
       })
       .catch(() => setMessage("Não foi possível carregar esta Região de Saúde."))
       .finally(() => setLoading(false));
@@ -85,8 +95,14 @@ export function ManagerWorkbench({
         setCompare(null);
         return;
       }
-      void getManagerCompare(codes)
-        .then(setCompare)
+      void Promise.all([
+        getManagerCompare(codes),
+        Promise.all(codes.map((code) => getManagerBrief(code))),
+      ])
+        .then(([comparison, briefs]) => {
+          setCompare(comparison);
+          setCompareBriefs(briefs.filter(Boolean));
+        })
         .catch(() => setMessage("Não foi possível carregar a comparação."));
     },
     [setCompare],
@@ -158,22 +174,19 @@ export function ManagerWorkbench({
   return (
     <div className="page-shell manager-shell">
       <section className="intro manager-intro" aria-labelledby="manager-title">
-        <p className="eyebrow">Modo Gestor</p>
-        <h1 id="manager-title">Modo Gestor</h1>
-        <p>
-          Uma leitura territorial organizada para investigação, comparação e
-          preparação de reuniões.
-        </p>
+        <p className="eyebrow">{eyebrow}</p>
+        <h1 id="manager-title">{title}</h1>
+        <p>{description}</p>
       </section>
 
-      <section className="panel manager-selector" aria-label="Selecionar território">
+      {!comparisonOnly && <section className="panel manager-selector" aria-label="Selecionar território">
         <label className="control-group manager-search">
-          <span className="field-label">Região, código ou município IBGE</span>
+          <span className="field-label">Região ou município</span>
           <input
             className="input"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Ex.: 12001, Alto Acre ou 1200401"
+            placeholder="Ex.: Alto Acre ou Rio Branco"
             autoComplete="off"
           />
         </label>
@@ -192,14 +205,14 @@ export function ManagerWorkbench({
                   setSuggestions([]);
                 }}
               >
-                {item.health_region_name} · {item.uf} · {item.health_region_code}
+                {item.health_region_name} · {item.uf}
               </button>
             ))}
           </div>
         )}
-      </section>
+      </section>}
 
-      <div className="manager-tabs" role="tablist" aria-label="Modos do Gestor">
+      {!comparisonOnly && <div className="manager-tabs" role="tablist" aria-label="Seções do painel para gestores">
         {TAB_LABELS.map((tab) => (
           <button
             key={tab.id}
@@ -212,7 +225,7 @@ export function ManagerWorkbench({
             {tab.label}
           </button>
         ))}
-      </div>
+      </div>}
 
       {message && <p className="small-text" role="status">{message}</p>}
       {loading && <p className="small-text">Carregando leitura territorial...</p>}
@@ -223,6 +236,7 @@ export function ManagerWorkbench({
       {activeTab === "compare" && (
         <CompareMode
           compare={compare}
+          briefs={compareBriefs}
           compareCodes={compareCodes}
           compareQuery={compareQuery}
           metric={metric}
@@ -252,7 +266,7 @@ function TerritorialMode({
     return (
       <section className="panel manager-empty">
         <h2>Escolha uma Região de Saúde para começar.</h2>
-        <p>Use nome, código da Região de Saúde ou código IBGE de município.</p>
+        <p>Busque pelo nome da Região de Saúde ou de um município.</p>
       </section>
     );
   }
@@ -262,41 +276,41 @@ function TerritorialMode({
       <section className="manager-grid">
         <article className="panel manager-section">
           <p className="eyebrow">O que merece investigação?</p>
-          <h2>Famílias acionadas</h2>
+          <h2>Sinais prioritários</h2>
           {brief.radar_triggers.length > 0 ? (
             <ul className="signal-list">
-              {brief.radar_triggers.map((trigger) => <li key={trigger}>{trigger}</li>)}
+              {brief.radar_triggers.map((trigger) => <li key={trigger}>{publicLanguage(trigger)}</li>)}
             </ul>
           ) : (
-            <p>Nenhum dos cinco critérios predefinidos do Radar foi acionado neste release.</p>
+            <p>Nenhum dos cinco critérios predefinidos de atenção foi identificado.</p>
           )}
           {brief.radar_subsignals.length > 0 && (
             <ul className="signal-list compact">
-              {brief.radar_subsignals.map((item) => <li key={item}>{item}</li>)}
+              {brief.radar_subsignals.map((item) => <li key={item}>{publicLanguage(item)}</li>)}
             </ul>
           )}
         </article>
         <article className="panel manager-section">
-          <p className="eyebrow">Como o Mismatch é formado?</p>
-          <h2>Contribuições algébricas</h2>
+          <p className="eyebrow">O que explica a leitura?</p>
+          <h2>Contribuição dos indicadores</h2>
           <ContributionBars items={brief.decomposition} />
         </article>
       </section>
       <section className="manager-grid">
         <article className="panel manager-section">
-          <p className="eyebrow">Peers estruturais</p>
+          <p className="eyebrow">Regiões semelhantes</p>
           <h2>Comparação padrão: {selectedMetric}</h2>
           <p>
-            A referência usa 10 peers estruturais por população, densidade
+            A referência usa 10 regiões semelhantes por população, densidade
             populacional e número de municípios.
           </p>
           <Link className="text-button" href={`/regiao/${brief.region.health_region_code}#peers`}>
-            Ver peers no perfil
+            Ver comparação no perfil
           </Link>
         </article>
         <article className="panel manager-section">
           <p className="eyebrow">Contexto espacial</p>
-          <h2>LISA</h2>
+          <h2>Padrão nas regiões vizinhas</h2>
           <p>{brief.spatial_context.description}</p>
           {brief.quality_cautions.map((caution) => (
             <p className="quality-note" key={caution}>{caution}</p>
@@ -318,17 +332,17 @@ function QuickRead({ brief }: { brief: ManagerBrief }) {
       <div>
         <p className="eyebrow">Leitura em 60 segundos</p>
         <h2 id="quick-title">{brief.region.health_region_name}</h2>
-        <p>{brief.deterministic_summary}</p>
+        <p>{publicLanguage(brief.deterministic_summary)}</p>
         <p className="small-text">
-          {brief.region.uf} · {brief.region.health_region_code} · população{" "}
+          {brief.region.uf} · população{" "}
           {formatInteger(brief.region.population)} · {brief.region.municipality_count} municípios
         </p>
       </div>
       <div className="manager-metrics" aria-label="Indicadores sintéticos">
-        <MetricChip label="Need" value={formatScore(brief.need_score)} />
-        <MetricChip label="Capacity" value={formatScore(brief.capacity_score)} />
-        <MetricChip label="Mismatch" value={formatScore(brief.mismatch_score, true)} />
-        <MetricChip label="Radar" value={`${brief.matched_signal_families}/5`} />
+        <MetricChip label="Necessidade" value={formatScore(brief.need_score)} />
+        <MetricChip label="Estrutura" value={formatScore(brief.capacity_score)} />
+        <MetricChip label="Diferença" value={formatScore(brief.mismatch_score, true)} />
+        <MetricChip label="Grupos de atenção" value={`${brief.matched_signal_families}/5`} />
       </div>
       <div className="nav-links">
         <Link className="text-button" href={`/regiao/${brief.region.health_region_code}`}>
@@ -362,7 +376,7 @@ function ContributionBars({ items }: { items: ManagerBrief["decomposition"] }) {
           </div>
         );
       })}
-      <p className="small-text">Contribuições algébricas; sem leitura etiológica.</p>
+      <p className="small-text">Contribuições matemáticas; não indicam causa.</p>
     </div>
   );
 }
@@ -393,7 +407,7 @@ function ReportActions({ brief }: { brief: ManagerBrief }) {
       <div>
         <p className="eyebrow">Relatório territorial</p>
         <h2>Levar para reunião</h2>
-        <p className="small-text">Conteúdo-base: {brief.report_content_sha256.slice(0, 16)}</p>
+        <p className="small-text">Síntese baseada nos mesmos dados exibidos neste painel.</p>
       </div>
       <a
         className="primary-button"
@@ -406,7 +420,7 @@ function ReportActions({ brief }: { brief: ManagerBrief }) {
 }
 
 function MeetingMode({ brief, onCopy }: { brief: ManagerBrief | null; onCopy: () => void }) {
-  if (!brief) return <TerritorialMode brief={brief} selectedMetric="Mismatch" />;
+  if (!brief) return <TerritorialMode brief={brief} selectedMetric="Diferença necessidade-capacidade" />;
   return (
     <>
       <QuickRead brief={brief} />
@@ -414,10 +428,10 @@ function MeetingMode({ brief, onCopy }: { brief: ManagerBrief | null; onCopy: ()
         <article className="panel manager-section">
           <h2>Fatos para abrir a reunião</h2>
           <ul className="signal-list">
-            <li>Need {formatScore(brief.need_score)}.</li>
-            <li>Capacity {formatScore(brief.capacity_score)}.</li>
-            <li>Mismatch {formatScore(brief.mismatch_score, true)}.</li>
-            <li>Radar {brief.matched_signal_families}/5 famílias.</li>
+            <li>Necessidade {formatScore(brief.need_score)}.</li>
+            <li>Estrutura {formatScore(brief.capacity_score)}.</li>
+            <li>Diferença necessidade-capacidade {formatScore(brief.mismatch_score, true)}.</li>
+            <li>{brief.matched_signal_families}/5 grupos de atenção.</li>
           </ul>
         </article>
         <article className="panel manager-section">
@@ -425,7 +439,7 @@ function MeetingMode({ brief, onCopy }: { brief: ManagerBrief | null; onCopy: ()
           {brief.quality_cautions.length > 0 ? (
             brief.quality_cautions.map((item) => <p key={item}>{item}</p>)
           ) : (
-            <p>Sem cautela de qualidade adicional neste release.</p>
+            <p>Sem cautela de qualidade adicional para os dados exibidos.</p>
           )}
         </article>
       </section>
@@ -447,6 +461,7 @@ function MeetingMode({ brief, onCopy }: { brief: ManagerBrief | null; onCopy: ()
 
 function CompareMode({
   compare,
+  briefs,
   compareCodes,
   compareQuery,
   metric,
@@ -456,6 +471,7 @@ function CompareMode({
   onRemove,
 }: {
   compare: ManagerCompareResponse | null;
+  briefs: ManagerBrief[];
   compareCodes: string[];
   compareQuery: string;
   metric: MetricId;
@@ -467,8 +483,9 @@ function CompareMode({
   const config = getMetricConfig(metric);
   return (
     <section className="panel manager-section" aria-labelledby="compare-title">
-      <p className="eyebrow">Comparar territórios</p>
-      <h2 id="compare-title">2 a 4 Regiões de Saúde</h2>
+      <p className="eyebrow">Compare regiões</p>
+      <h2 id="compare-title">Selecione de 2 a 4 Regiões de Saúde</h2>
+      <p>Veja diferenças de população, necessidade, estrutura, evolução e recursos gerais de saúde sem criar um ranking.</p>
       <div className="manager-compare-controls">
         <label className="control-group">
           <span className="field-label">Indicador</span>
@@ -482,7 +499,7 @@ function CompareMode({
             className="input"
             value={compareQuery}
             onChange={(event) => onCompareQuery(event.target.value)}
-            placeholder="Nome, código ou município"
+            placeholder="Nome da região ou município"
           />
         </label>
         <button className="text-button" type="button" onClick={onAdd} disabled={compareCodes.length >= 4}>
@@ -491,7 +508,9 @@ function CompareMode({
       </div>
       <div className="selected-tags">
         {compareCodes.map((code) => (
-          <button key={code} type="button" onClick={() => onRemove(code)}>{code} ×</button>
+          <button key={code} type="button" onClick={() => onRemove(code)}>
+            {compare?.regions.find((region) => region.identity.health_region_code === code)?.identity.health_region_name ?? "Região selecionada"} ×
+          </button>
         ))}
       </div>
       {compare && (
@@ -501,10 +520,10 @@ function CompareMode({
               const item = metricValue(region.indicators, metric);
               return (
                 <div className="compare-row" key={region.identity.health_region_code}>
-                  <span>{region.identity.health_region_name}</span>
+                  <Link href={`/regiao/${region.identity.health_region_code}`}>{region.identity.health_region_name}</Link>
                   <strong>{formatMetricValue(item?.value, config.scale)}</strong>
                   <small>{item?.percentile == null ? "sem percentil" : formatPercentile(item.percentile)}</small>
-                  <em>Radar {region.matched_signal_families}/5</em>
+                  <em>{region.matched_signal_families}/5 grupos de atenção</em>
                 </div>
               );
             })}
@@ -514,11 +533,15 @@ function CompareMode({
             <caption>Tabela acessível de comparação, na ordem escolhida.</caption>
             <thead>
               <tr>
-                <th>Métrica</th>
-                {compare.regions.map((region) => <th key={region.identity.health_region_code}>{region.identity.health_region_code}</th>)}
+                <th>Indicador</th>
+                {compare.regions.map((region) => <th key={region.identity.health_region_code}>{region.identity.health_region_name}</th>)}
               </tr>
             </thead>
             <tbody>
+              <tr>
+                <th>População</th>
+                {compare.regions.map((region) => <td key={region.identity.health_region_code}>{formatInteger(region.identity.population)}</td>)}
+              </tr>
               {METRICS.map((item) => (
                 <tr key={item.id}>
                   <th>{item.shortLabel}</th>
@@ -535,9 +558,47 @@ function CompareMode({
             </tbody>
           </table>
           </div>
+          <ComparisonContext briefs={briefs} />
         </>
       )}
     </section>
+  );
+}
+
+function ComparisonContext({ briefs }: { briefs: ManagerBrief[] }) {
+  if (briefs.length === 0) return null;
+  return (
+    <div className="manager-grid comparison-context">
+      <div>
+        <h3>Evolução recente</h3>
+        {briefs.map((brief) => {
+          const change = brief.change_summary;
+          return (
+            <p key={brief.region.health_region_code}>
+              <strong>{brief.region.health_region_name}:</strong>{" "}
+              {change
+                ? `de 2022 a 2024, necessidade ${formatScore(change.delta_need_score, true)}, estrutura ${formatScore(change.delta_capacity_score, true)} e diferença ${formatScore(change.delta_mismatch_score, true)}.`
+                : "Série não disponível."}
+            </p>
+          );
+        })}
+      </div>
+      <div>
+        <h3>Recursos gerais de saúde</h3>
+        {briefs.map((brief) => {
+          const latest = brief.financing_context?.records.find((record) => record.year === 2024);
+          return (
+            <p key={brief.region.health_region_code}>
+              <strong>{brief.region.health_region_name}:</strong>{" "}
+              {latest?.health_expenditure_per_capita_brl == null
+                ? "Dado por habitante indisponível."
+                : `${new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(latest.health_expenditure_per_capita_brl)} por habitante em 2024.`}
+            </p>
+          );
+        })}
+        <p className="small-text">Contexto geral da saúde; não corresponde a gasto específico em saúde mental.</p>
+      </div>
+    </div>
   );
 }
 

@@ -1,4 +1,5 @@
 import { formatPercentile } from "@/lib/format";
+import { publicLanguage } from "@/lib/public-language";
 import type { ExplanationResponse } from "@/types/api";
 
 export function DecompositionChart({ explanation }: { explanation: ExplanationResponse }) {
@@ -7,18 +8,18 @@ export function DecompositionChart({ explanation }: { explanation: ExplanationRe
     ...explanation.decomposition.map((item) => Math.abs(item.contribution * 100)),
   );
   return (
-    <div className="decomposition-chart" aria-label="Contribuições algébricas do Mismatch">
+    <div className="decomposition-chart" aria-label="Contribuições para a diferença entre necessidade e estrutura">
       {explanation.decomposition.map((item) => {
         const points = item.contribution * 100;
         const width = `${Math.max(2, (Math.abs(points) / maxAbs) * 48)}%`;
         return (
           <div className="decomposition-row" key={item.component}>
             <div className="decomposition-label">
-              <strong>{item.label}</strong>
+              <strong>{publicLanguage(item.label)}</strong>
               <span>
                 {formatPercentile(item.source_percentile)} · {formatPoints(points)}
               </span>
-              {item.caution && <span className="quality-note">{item.caution}</span>}
+              {item.caution && <span className="quality-note">{publicLanguage(item.caution)}</span>}
             </div>
             <div className="decomposition-bar" aria-hidden="true">
               <span className="zero-line" />
@@ -31,8 +32,8 @@ export function DecompositionChart({ explanation }: { explanation: ExplanationRe
         );
       })}
       <p className="small-text">
-        Valores positivos empurram o Mismatch para cima; valores negativos atuam
-        no sentido oposto. Isso é uma contribuição algébrica, sem leitura etiológica.
+        Valores positivos aumentam a diferença entre necessidade e estrutura; valores
+        negativos atuam no sentido oposto. Esta composição matemática não identifica causas.
       </p>
     </div>
   );

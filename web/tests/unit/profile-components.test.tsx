@@ -28,7 +28,7 @@ describe("profile components", () => {
       />,
     );
     expect(screen.getByText("valor alto cercado por valores altos")).toBeInTheDocument();
-    expect(screen.getByText("Este contexto se refere ao Mismatch.")).toBeInTheDocument();
+    expect(screen.getByText(/diferença entre necessidade e capacidade/)).toBeInTheDocument();
   });
 
   it("renders tooltip API values as text, not HTML", () => {

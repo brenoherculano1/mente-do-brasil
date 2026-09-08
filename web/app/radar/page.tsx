@@ -8,8 +8,8 @@ type RadarRouteProps = {
 
 export const metadata: Metadata = pageMetadata(
   "/radar",
-  "Radar Territorial | Mente do Brasil",
-  "Explore sinais territoriais que merecem investigação mais cuidadosa no Mente do Brasil.",
+  "Radar de atenção em saúde mental | Mente do Brasil",
+  "Veja quais regiões acumulam sinais que merecem investigação mais cuidadosa.",
 );
 
 export default async function Page({ searchParams }: RadarRouteProps) {

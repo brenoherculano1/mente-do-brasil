@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 import { mkdirSync, writeFileSync } from "node:fs";
 
-const PHASE_QA_DIR = "../docs/phase3_closure_qc_2026-08-31/frontend";
+const PHASE_QA_DIR = process.env.MDB_FRONTEND_QA_DIR ?? "../docs/phase3_closure_qc_2026-08-31/frontend";
 const QA_DIR = `${PHASE_QA_DIR}/frontend_v1`;
 const METHODOLOGY_QA_DIR = `${PHASE_QA_DIR}/methodology`;
 const DATA_QA_DIR = `${PHASE_QA_DIR}/data`;
@@ -31,17 +31,17 @@ test("home loads map, metric selector, search, and navigates to region profile",
 
   await expect(page.getByRole("heading", { name: "Mente do Brasil" })).toBeVisible();
   await expect(page.getByTestId("health-region-map")).toBeVisible();
-  await page.getByLabel("Indicador").selectOption("caps_rate");
+  await page.getByLabel("O que você quer observar?").selectOption("caps_rate");
   await expect(page).toHaveURL(/indicador=caps_rate/);
-  await page.getByLabel("Busca territorial").fill("Alto Acre");
+  await page.getByLabel("Encontre sua região").fill("Alto Acre");
   await page.getByRole("button", { name: /Alto Acre/ }).first().click();
   await expect(page.getByText("Ver perfil da região")).toBeVisible();
   await page.getByRole("link", { name: "Ver perfil da região" }).click();
   await expect(page).toHaveURL(/\/regiao\/12001/);
   await expect(page.getByRole("heading", { name: "Alto Acre" })).toBeVisible();
-  await expect(page.getByText("Need Score")).toBeVisible();
-  await expect(page.getByText("Capacity Score")).toBeVisible();
-  await expect(page.getByText("Mismatch compara")).toBeVisible();
+  await expect(page.getByText("Índice de necessidade")).toBeVisible();
+  await expect(page.getByText("Índice de estrutura")).toBeVisible();
+  await expect(page.getByText(/A diferença compara/)).toBeVisible();
 
   await page.screenshot({
     path: `${QA_DIR}/${testInfo.project.name}_profile.png`,
@@ -58,7 +58,7 @@ test("captures home screenshot and keeps mobile layout usable", async ({ page },
   await page.goto("/");
   await mapResponse;
   await expect(page.getByTestId("health-region-map")).toBeVisible();
-  await expect(page.getByLabel("Busca territorial")).toBeVisible();
+  await expect(page.getByLabel("Encontre sua região")).toBeVisible();
   await waitForMapPixels(page);
   await expect(page.locator("[data-nextjs-dev-tools-button]")).toHaveCount(0);
   await expect(page.getByRole("button", { name: "Ver lista de Regiões de Saúde" })).toHaveAttribute(
@@ -80,7 +80,7 @@ test("accessible list expands, filters rationally, and captures QA screenshot", 
   await toggle.click();
   await expect(toggle).toHaveAttribute("aria-expanded", "true");
   await expect(page.getByText("439 de 439 Regiões de Saúde.")).toBeVisible();
-  await page.getByPlaceholder("Nome, UF ou código da região").fill("Alto Acre");
+  await page.getByPlaceholder("Nome da região ou UF").fill("Alto Acre");
   await expect(page.getByText("1 de 439 Regiões de Saúde.")).toBeVisible();
   await expect(page.getByRole("button", { name: /Alto Acre/ })).toBeVisible();
   await page.screenshot({
@@ -102,6 +102,7 @@ test("methodology desktop page loads, navigates sections, and opens details", as
   const mapRequests = trackMapRequests(page);
   await page.goto("/metodologia");
   await expect(page.getByRole("heading", { level: 1, name: "Metodologia" })).toBeVisible();
+  await page.getByRole("tab", { name: "Metodologia completa" }).click();
   await expect(page.getByLabel("Identificadores metodológicos").getByText("MDB_METHOD_1.0")).toBeVisible();
   await expect(page.getByText("Mismatch = Need Score - Capacity Score")).toBeVisible();
   await expect(page.getByRole("heading", { name: "Global Moran's I" })).toBeVisible();
@@ -155,6 +156,7 @@ test("methodology mobile page has compact navigation and no global overflow", as
     path: `${METHODOLOGY_QA_DIR}/mobile_methodology_full.png`,
     fullPage: true,
   });
+  await page.getByRole("tab", { name: "Metodologia completa" }).click();
   const mobileNav = page.getByRole("button", { name: "Nesta página" });
   await expect(mobileNav).toHaveAttribute("aria-expanded", "false");
   await mobileNav.click();
@@ -372,7 +374,7 @@ test("state page for AC shows three regions, overview map, distribution, and pro
   await expect(page.locator("body")).not.toContainText("pior região");
   await expectNoGlobalHorizontalOverflow(page);
 
-  await page.getByLabel(/Alto Acre, Mismatch/).click();
+  await page.getByLabel(/Alto Acre, Diferença/).click();
   await expect(page.getByRole("link", { name: "Ver perfil da região" })).toBeVisible();
   await page.getByRole("link", { name: "Ver perfil da região" }).click();
   await expect(page).toHaveURL(/\/regiao\/12001/);

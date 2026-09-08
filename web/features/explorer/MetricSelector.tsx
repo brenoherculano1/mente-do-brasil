@@ -10,7 +10,7 @@ export function MetricSelector({
 }) {
   return (
     <label className="control-group">
-      <span className="field-label">Indicador</span>
+      <span className="field-label">O que você quer observar?</span>
       <select
         className="select"
         value={value}

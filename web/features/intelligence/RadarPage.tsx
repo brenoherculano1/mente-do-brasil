@@ -4,24 +4,25 @@ import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { getRadarHealthRegions } from "@/lib/api/client";
 import { formatInteger, formatScore } from "@/lib/format";
+import { publicLanguage } from "@/lib/public-language";
 import { VALID_UFS } from "@/lib/states";
 import type { RadarRegion, RadarResponse, RadarSignalFamily } from "@/types/api";
 import { RadarMap } from "./RadarMap";
 
 const SIGNAL_OPTIONS: Array<{ value: RadarSignalFamily; label: string }> = [
-  { value: "NEED_HIGH", label: "Need alto" },
-  { value: "CAPACITY_LOW", label: "Capacity baixo" },
-  { value: "MISMATCH_MARKED_POSITIVE", label: "Mismatch marcado" },
-  { value: "CAPACITY_COMPONENT_LOW", label: "Componente baixo" },
-  { value: "SPATIAL_HH_MISMATCH", label: "Contexto HH" },
+  { value: "NEED_HIGH", label: "Necessidade relativamente alta" },
+  { value: "CAPACITY_LOW", label: "Estrutura relativamente baixa" },
+  { value: "MISMATCH_MARKED_POSITIVE", label: "Diferença acentuada" },
+  { value: "CAPACITY_COMPONENT_LOW", label: "Componente da estrutura em faixa baixa" },
+  { value: "SPATIAL_HH_MISMATCH", label: "Padrão semelhante entre regiões vizinhas" },
 ];
 
 const SIGNAL_LABELS: Array<[keyof RadarRegion["signals"], string]> = [
-  ["need_high", "Need em faixa relativamente alta"],
-  ["capacity_low", "Capacity em faixa relativamente baixa"],
-  ["mismatch_marked_positive", "Mismatch >= +0,25"],
-  ["capacity_component_low", "Componente de Capacity em faixa baixa"],
-  ["spatial_hh_mismatch", "Contexto espacial HH significativo"],
+  ["need_high", "Necessidade em faixa relativamente alta"],
+  ["capacity_low", "Estrutura de atendimento em faixa relativamente baixa"],
+  ["mismatch_marked_positive", "Necessidade acima da estrutura na comparação nacional"],
+  ["capacity_component_low", "Ao menos um componente da estrutura está em faixa baixa"],
+  ["spatial_hh_mismatch", "Regiões vizinhas também apresentam diferença elevada"],
 ];
 
 export function RadarPage({ initialUf }: { initialUf?: string }) {
@@ -54,7 +55,7 @@ export function RadarPage({ initialUf }: { initialUf?: string }) {
           : response.regions[0]?.health_region_code ?? null,
       );
     } catch {
-      setError("Não foi possível carregar o Radar agora.");
+      setError("Não foi possível carregar as regiões em atenção agora.");
     } finally {
       setLoading(false);
     }
@@ -75,29 +76,29 @@ export function RadarPage({ initialUf }: { initialUf?: string }) {
   return (
     <div className="page-shell radar-shell">
       <section className="intro radar-intro" aria-labelledby="radar-title">
-        <p className="eyebrow">Inteligência territorial</p>
-        <h1 id="radar-title">Radar Territorial</h1>
+        <p className="eyebrow">Regiões que merecem investigação</p>
+        <h1 id="radar-title">Radar de atenção em saúde mental</h1>
         <p>
-          Explore a confluência de sinais territoriais que podem ajudar a definir
-          onde investigar com mais atenção.
+          Identifique regiões onde diferentes sinais se acumulam e entenda por que
+          elas merecem uma análise mais cuidadosa.
         </p>
       </section>
 
-      <section className="radar-grid" aria-label="Radar Territorial">
+      <section className="radar-grid" aria-label="Radar de atenção em saúde mental">
         <aside className="panel radar-controls" aria-label="Controles do Radar">
           <div className="radar-method-note">
-            <strong>O Radar não é ranking.</strong>
+            <strong>Este radar não é um ranking.</strong>
             <p className="small-text">
-              Ele combina critérios transparentes e não produz recomendação
-              automática de recursos.
+              Ele reúne sinais para orientar perguntas. Não mede qualidade do cuidado
+              nem recomenda automaticamente onde aplicar recursos.
             </p>
             <Link href="/metodologia#radar" className="inline-link">
-              Como o Radar funciona
+              Como esta análise funciona
             </Link>
           </div>
 
           <label className="control-group">
-            <span className="field-label">Scope</span>
+            <span className="field-label">Área</span>
             <select className="input" value={uf} onChange={(event) => setUf(event.target.value)}>
               <option value="">Brasil</option>
               {VALID_UFS.map((option) => (
@@ -109,7 +110,7 @@ export function RadarPage({ initialUf }: { initialUf?: string }) {
           </label>
 
           <label className="control-group">
-            <span className="field-label">Mínimo de famílias</span>
+            <span className="field-label">Mínimo de grupos de atenção</span>
             <select
               className="input"
               value={minFamilies}
@@ -124,7 +125,7 @@ export function RadarPage({ initialUf }: { initialUf?: string }) {
           </label>
 
           <label className="control-group">
-            <span className="field-label">Família de sinal</span>
+            <span className="field-label">Motivo de atenção</span>
             <select
               className="input"
               value={signal}
@@ -145,7 +146,7 @@ export function RadarPage({ initialUf }: { initialUf?: string }) {
               className="input"
               value={query}
               onChange={(event) => setQuery(event.target.value)}
-              placeholder="Nome ou código"
+              placeholder="Nome da Região de Saúde"
               autoComplete="off"
             />
           </label>
@@ -158,7 +159,7 @@ export function RadarPage({ initialUf }: { initialUf?: string }) {
               onChange={(event) => setSort(event.target.value as "signals" | "mismatch" | "name")}
             >
               <option value="signals">Mais critérios atendidos</option>
-              <option value="mismatch">Maior Mismatch</option>
+              <option value="mismatch">Maior diferença necessidade-capacidade</option>
               <option value="name">Nome da região</option>
             </select>
           </label>
@@ -166,7 +167,7 @@ export function RadarPage({ initialUf }: { initialUf?: string }) {
 
         <div className="radar-main">
           <div className="map-frame radar-map-frame">
-            {loading && <div className="map-overlay"><div className="map-status">Carregando Radar...</div></div>}
+            {loading && <div className="map-overlay"><div className="map-status">Carregando regiões...</div></div>}
             {error && (
               <div className="map-overlay">
                 <div className="map-status" role="alert">{error}</div>
@@ -203,11 +204,9 @@ export function RadarPage({ initialUf }: { initialUf?: string }) {
             >
               <span>
                 <strong>{region.health_region_name}</strong>
-                <span className="small-text">
-                  {region.uf} · {region.health_region_code}
-                </span>
+                <span className="small-text">{region.uf}</span>
               </span>
-              <span className="radar-count">{region.matched_signal_families} de 5</span>
+              <span className="radar-count">{attentionLabel(region.matched_signal_families)}</span>
             </button>
           ))}
         </div>
@@ -226,14 +225,17 @@ function SelectedRadarRegion({ region }: { region: RadarRegion | null }) {
       <p className="eyebrow">Região selecionada</p>
       <h2>{region.health_region_name}</h2>
       <p className="small-text">
-        {region.uf} · {region.health_region_code} · população {formatInteger(region.population)}
+        {region.uf} · população {formatInteger(region.population)}
       </p>
       <div className="metric-row">
-        <Metric label="Need" value={formatScore(region.need_score)} />
-        <Metric label="Capacity" value={formatScore(region.capacity_score)} />
-        <Metric label="Mismatch" value={formatScore(region.mismatch_score, true)} />
+        <Metric label="Necessidade" value={formatScore(region.need_score)} />
+        <Metric label="Estrutura" value={formatScore(region.capacity_score)} />
+        <Metric label="Diferença" value={formatScore(region.mismatch_score, true)} />
       </div>
-      <div className="radar-count large">{region.matched_signal_families} de 5 famílias</div>
+      <div className="attention-summary">
+        <strong>{attentionLabel(region.matched_signal_families)}</strong>
+        <span>{region.matched_signal_families} de 5 grupos de atenção identificados</span>
+      </div>
       <h3>Por que apareceu?</h3>
       <ul className="signal-list">
         {activeSignals.map(([, label]) => (
@@ -241,14 +243,14 @@ function SelectedRadarRegion({ region }: { region: RadarRegion | null }) {
         ))}
       </ul>
       {region.data_quality_flags.length > 0 && (
-        <p className="small-text">Observações de qualidade: {region.data_quality_flags.join(", ")}</p>
+        <p className="small-text">Observações sobre os dados: {region.data_quality_flags.map(publicLanguage).join(" ")}</p>
       )}
       <div className="nav-links">
         <Link className="text-button" href={`/regiao/${region.health_region_code}#inteligencia`}>
           Ver análise completa
         </Link>
         <Link className="text-button" href={`/gestor?regiao=${region.health_region_code}`}>
-          Modo Gestor
+          Painel para gestores
         </Link>
       </div>
     </div>
@@ -266,8 +268,8 @@ function Metric({ label, value }: { label: string; value: string }) {
 
 function RadarLegend() {
   return (
-    <div className="radar-legend" aria-label="Famílias de sinais atendidas">
-      <span>Famílias de sinais atendidas</span>
+    <div className="radar-legend" aria-label="Grupos de atenção identificados">
+      <span>Quantidade de grupos de atenção identificados</span>
       {[0, 1, 2, 3, "4+"].map((label, index) => (
         <span className="radar-legend-item" key={label}>
           <span style={{ background: ["#eef1ed", "#d9ded4", "#bfc9bf", "#8da99f", "#446b68"][index] }} />
@@ -276,4 +278,10 @@ function RadarLegend() {
       ))}
     </div>
   );
+}
+
+function attentionLabel(count: number) {
+  if (count >= 4) return "Alta atenção";
+  if (count >= 2) return "Atenção moderada";
+  return "Menor atenção relativa";
 }

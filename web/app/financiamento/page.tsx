@@ -4,8 +4,8 @@ import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata(
   "/financiamento",
-  "Financiamento | Mente do Brasil",
-  "Contexto geral de financiamento da saúde por Região de Saúde.",
+  "Recursos e estrutura de saúde | Mente do Brasil",
+  "Contexto de recursos gerais da saúde por Região de Saúde, com limites de interpretação claros.",
 );
 
 export default function Page() {

@@ -14,12 +14,12 @@ test("desktop Manager supports territorial, meeting, compare and PDF download", 
 }, testInfo) => {
   test.skip(testInfo.project.name !== "desktop", "desktop-only Manager QA");
   await page.goto("/gestor");
-  await expect(page.getByRole("heading", { level: 1, name: "Modo Gestor" })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 1, name: "Painel para gestores" })).toBeVisible();
   await expect(page.getByText("Escolha uma Região de Saúde para começar.")).toBeVisible();
   await expectNoGlobalHorizontalOverflow(page);
   await page.screenshot({ path: `${QA_DIR}/desktop_manager_empty.png`, fullPage: true });
 
-  await page.getByLabel("Região, código ou município IBGE").fill("12001");
+  await page.getByLabel("Região ou município").fill("12001");
   await page.getByRole("button", { name: "Abrir leitura" }).click();
   await expect(page).toHaveURL(/regiao=12001/);
   await expect(page.getByRole("heading", { name: "Alto Acre" })).toBeVisible();
@@ -46,11 +46,11 @@ test("desktop Manager supports territorial, meeting, compare and PDF download", 
     "aria-selected",
     "true",
   );
-  await expect(page.getByText("2 a 4 Regiões de Saúde")).toBeVisible();
+  await expect(page.getByText("Selecione de 2 a 4 Regiões de Saúde")).toBeVisible();
   await page.screenshot({ path: `${QA_DIR}/desktop_manager_compare_2.png`, fullPage: true });
 
   await page.goto("/gestor?compare=12001,31001,41006,53001");
-  await expect(page.getByRole("columnheader", { name: "53001", exact: true })).toBeVisible();
+  await expect(page.locator(".manager-table thead th")).toHaveCount(5);
   await page.screenshot({ path: `${QA_DIR}/desktop_manager_compare_4.png`, fullPage: true });
 });
 
@@ -77,7 +77,7 @@ test("mobile Manager keeps tabs and comparison usable", async ({ page }, testInf
     "aria-selected",
     "true",
   );
-  await expect(page.getByRole("columnheader", { name: "41006", exact: true })).toBeVisible();
+  await expect(page.locator(".manager-table thead th")).toHaveCount(5);
   await expectNoGlobalHorizontalOverflow(page);
   await page.screenshot({ path: `${QA_DIR}/mobile_manager_compare.png`, fullPage: true });
 });

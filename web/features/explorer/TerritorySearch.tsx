@@ -47,19 +47,18 @@ export function TerritorySearch({ onSelectRegion }: { onSelectRegion: (code: str
   return (
     <div className="control-group">
       <label className="field-label" htmlFor="territory-search">
-        Busca territorial
+        Encontre sua região
       </label>
       <input
         className="input"
         id="territory-search"
         value={query}
         onChange={(event) => setQuery(event.target.value)}
-        placeholder="Região de Saúde ou código IBGE do município"
+        placeholder="Digite o nome da Região de Saúde"
         autoComplete="off"
       />
       <p className="small-text">
-        Região de Saúde pode ser localizada por nome ou código. Município, nesta
-        etapa, é resolvido pelo código IBGE de 7 dígitos.
+        Busque pelo nome da Região de Saúde para localizá-la no mapa.
       </p>
       {status === "loading" && <div className="skeleton" aria-label="Carregando busca" />}
       {status === "error" && (
@@ -78,7 +77,7 @@ export function TerritorySearch({ onSelectRegion }: { onSelectRegion: (code: str
               >
                 <strong>{result.health_region_name}</strong>
                 <span className="small-text">
-                  {result.uf} · {result.health_region_code}
+                  {result.uf}
                 </span>
               </button>
             </li>

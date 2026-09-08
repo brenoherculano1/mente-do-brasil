@@ -1,4 +1,5 @@
 import { formatScore } from "@/lib/format";
+import { publicLanguage } from "@/lib/public-language";
 import type { ExplanationResponse, PeersResponse } from "@/types/api";
 import { DecompositionChart } from "./DecompositionChart";
 import { PeerComparison } from "./PeerComparison";
@@ -13,26 +14,26 @@ export function RegionIntelligence({
   return (
     <section className="profile-grid intelligence-profile-grid" id="inteligencia">
       <div className="profile-section intelligence-section">
-        <p className="eyebrow">Radar Territorial</p>
+        <p className="eyebrow">O que investigar?</p>
         <h2>Por que esta região chama atenção?</h2>
         <p>
           {explanation.matched_signal_families > 0
-            ? `${explanation.matched_signal_families} de 5 famílias de sinais foram acionadas neste release.`
-            : "Nenhum dos critérios predefinidos do Radar foi acionado neste release."}
+            ? `${explanation.matched_signal_families} de 5 grupos de atenção foram identificados nos dados disponíveis.`
+            : "Nenhum dos cinco critérios predefinidos de atenção foi identificado nos dados disponíveis."}
         </p>
         {explanation.triggers.length > 0 && (
           <ul className="signal-list">
             {explanation.triggers.map((trigger) => (
-              <li key={trigger}>{trigger}</li>
+                <li key={trigger}>{publicLanguage(trigger)}</li>
             ))}
           </ul>
         )}
         {explanation.subsignals.length > 0 && (
           <>
-            <h3>Sub-sinais</h3>
+            <h3>Detalhes adicionais</h3>
             <ul className="signal-list compact">
               {explanation.subsignals.map((signal) => (
-                <li key={signal}>{signal}</li>
+                <li key={signal}>{publicLanguage(signal)}</li>
               ))}
             </ul>
           </>
@@ -41,7 +42,7 @@ export function RegionIntelligence({
           <div className="quality-caution">
             {explanation.quality_cautions.map((caution) => (
               <p className="small-text" key={caution}>
-                {caution}
+              {publicLanguage(caution)}
               </p>
             ))}
           </div>
@@ -49,21 +50,21 @@ export function RegionIntelligence({
       </div>
 
       <div className="profile-section intelligence-section">
-        <p className="eyebrow">Decomposição do Mismatch</p>
-        <h2>Como o Mismatch é formado</h2>
-        <p className="small-text">{explanation.interpretation}</p>
+        <p className="eyebrow">Entenda a diferença</p>
+        <h2>O que mais influencia esta leitura?</h2>
+        <p className="small-text">{publicLanguage(explanation.interpretation)}</p>
         <p className="small-text">
           Soma das contribuições: {formatScore(explanation.decomposition_sum, true)}.
-          Mismatch: {formatScore(explanation.mismatch_score, true)}.
+          Diferença: {formatScore(explanation.mismatch_score, true)}.
         </p>
         <DecompositionChart explanation={explanation} />
       </div>
 
       <div className="profile-section intelligence-section peer-section" id="peers">
-        <p className="eyebrow">Peers estruturais</p>
+        <p className="eyebrow">Comparação</p>
         <h2>Regiões estruturalmente semelhantes</h2>
         <p>
-          Comparação com 10 Regiões de Saúde estruturalmente mais semelhantes
+          Comparação com 10 Regiões de Saúde de perfil territorial mais semelhante
           segundo população, densidade populacional e número de municípios.
         </p>
         <PeerComparison initialPeers={peers} />

@@ -13,16 +13,19 @@ export function AppHeader() {
         </Link>
         <nav aria-label="Navegação principal" className="nav-links">
           <Link aria-current={pathname === "/" ? "page" : undefined} href="/">
-            Explorar
+            Início
           </Link>
           <Link aria-current={pathname === "/radar" ? "page" : undefined} href="/radar">
-            Radar
+            Regiões em atenção
+          </Link>
+          <Link aria-current={pathname === "/comparar" ? "page" : undefined} href="/comparar">
+            Comparar
           </Link>
           <Link aria-current={pathname === "/financiamento" ? "page" : undefined} href="/financiamento">
-            Financiamento
+            Recursos
           </Link>
           <Link aria-current={pathname === "/gestor" ? "page" : undefined} href="/gestor">
-            Gestor
+            Painel para gestores
           </Link>
           <Link aria-current={pathname === "/metodologia" ? "page" : undefined} href="/metodologia">
             Metodologia
@@ -47,6 +50,9 @@ export function AppHeader() {
               </Link>
               <Link aria-current={pathname === "/fluxos" ? "page" : undefined} href="/fluxos">
                 Fluxos
+              </Link>
+              <Link aria-current={pathname === "/governanca" ? "page" : undefined} href="/governanca">
+                Governança
               </Link>
             </div>
           </details>

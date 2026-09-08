@@ -1,7 +1,7 @@
 import { expect, test, type Page } from "@playwright/test";
 import { mkdirSync } from "node:fs";
 
-const QA = "../docs/phase3_closure_qc_2026-08-31";
+const QA = process.env.MDB_ADVANCED_QA_DIR ?? "../docs/phase3_closure_qc_2026-08-31";
 test.beforeAll(() => mkdirSync(QA, { recursive: true }));
 
 async function capture(page: Page, name: string) {
@@ -29,13 +29,13 @@ test("changes period, region selection, and accessible table", async ({ page }, 
 test("financing coverage, annual series, and missing values", async ({ page }, info) => {
   await page.goto("/financiamento");
   await expect(page.locator("tbody tr")).toHaveCount(439);
-  await expect(page.getByText("Esta camada descreve o contexto geral de financiamento da saúde e não mede gasto específico em saúde mental.")).toBeVisible();
+  await expect(page.getByText(/Os valores são de toda a saúde/)).toBeVisible();
   await capture(page, `${info.project.name}_financing_brazil`);
   await page.getByRole("combobox", { name: "UF", exact: true }).selectOption("DF");
   await expect(page.locator("tbody tr")).toHaveCount(1);
   await expect(page.locator("tbody")).toContainText("Indisponível");
   await page.locator("tbody button").click();
-  await expect(page.getByRole("table", { name: "Série nominal" }).locator("tbody tr")).toHaveCount(3);
+  await expect(page.getByRole("table", { name: "Recursos gerais de saúde registrados" }).locator("tbody tr")).toHaveCount(3);
   await capture(page, `${info.project.name}_financing_region`);
   for (const year of ["2022", "2023", "2024"]) {
     await page.getByLabel("Exercício").selectOption(year);
@@ -63,7 +63,7 @@ test("profile advanced sections and Manager V2 are present", async ({ page }, in
   await page.goto("/gestor?regiao=12001");
   await expect(page.getByRole("heading", { name: "Alto Acre", exact: true })).toBeVisible();
   await capture(page, `${info.project.name}_manager_v2`);
-  await expect(page.getByRole("heading", { name: "Contexto de financiamento da saúde", exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Recursos gerais da saúde", exact: true })).toBeVisible();
 });
 
 test("mobile widths preserve document bounds", async ({ page }, info) => {

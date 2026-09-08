@@ -400,6 +400,16 @@ export type ManagerBrief = {
   investigation_questions: InvestigationQuestion[];
   method_references: string[];
   report_content_sha256: string;
+  temporal_summary?: {
+    anchors: Array<Record<MetricId, number> & { year: number }>;
+  } | null;
+  change_summary?: {
+    matched_change_families: number;
+    delta_need_score: number;
+    delta_capacity_score: number;
+    delta_mismatch_score: number;
+  } | null;
+  financing_context?: FinancingResponse | null;
 };
 
 export type ManagerCompareRegion = {

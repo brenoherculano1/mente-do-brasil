@@ -51,7 +51,9 @@ export function PeerComparison({ initialPeers }: { initialPeers: PeersResponse }
           metricLabel={metricConfig.shortLabel}
         />
       )}
-      <p className="small-text">{loading ? "Atualizando comparação..." : peers.method.selection}</p>
+      <p className="small-text">
+        {loading ? "Atualizando comparação..." : "As regiões são selecionadas por semelhança de população, densidade e número de municípios."}
+      </p>
       <div className="peer-why">
         <h3>Comparabilidade usada</h3>
         <div className="metric-row">
@@ -60,11 +62,11 @@ export function PeerComparison({ initialPeers }: { initialPeers: PeersResponse }
           <span>Municípios</span>
         </div>
         <p className="small-text">
-          Peers V1 não incorpora renda, urbanização formal, perfil etário,
+          Esta comparação não incorpora renda, urbanização formal, perfil etário,
           vulnerabilidade social ou financiamento.
         </p>
       </div>
-      <ul className="peer-list" aria-label="Lista de peers estruturais">
+      <ul className="peer-list" aria-label="Lista de regiões semelhantes">
         {peers.peers.map((peer) => (
           <li key={peer.health_region_code}>
             <div>
@@ -143,7 +145,7 @@ function PeerDotPlot({
       </div>
       <p className="small-text">
         {metricLabel}: região {formatMetricValue(benchmark.target_value, metricConfig.scale)};
-        mediana dos peers {formatMetricValue(benchmark.peer_median, metricConfig.scale)};{" "}
+        mediana das regiões semelhantes {formatMetricValue(benchmark.peer_median, metricConfig.scale)};{" "}
         {describePeerPosition(benchmark.relative_to_peer_iqr)}.
       </p>
     </div>
@@ -151,8 +153,8 @@ function PeerDotPlot({
 }
 
 function describePeerPosition(value: PeerBenchmark["relative_to_peer_iqr"]) {
-  if (value === "BELOW_PEER_IQR") return "abaixo do intervalo interquartil dos peers";
-  if (value === "ABOVE_PEER_IQR") return "acima do intervalo interquartil dos peers";
-  if (value === "WITHIN_PEER_IQR") return "dentro do intervalo interquartil dos peers";
+  if (value === "BELOW_PEER_IQR") return "abaixo da faixa central das regiões semelhantes";
+  if (value === "ABOVE_PEER_IQR") return "acima da faixa central das regiões semelhantes";
+  if (value === "WITHIN_PEER_IQR") return "dentro da faixa central das regiões semelhantes";
   return "comparação indisponível por dados insuficientes";
 }

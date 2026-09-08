@@ -30,17 +30,17 @@ export function SelectedRegionPanel({
       </div>
       {loading && <div className="skeleton" aria-label="Carregando perfil selecionado" />}
       {profile && (
-        <div className="metric-row" aria-label="Resumo Need Capacity Mismatch">
+        <div className="metric-row" aria-label="Resumo de necessidade e estrutura">
           <div className="metric-chip">
-            <span>Need</span>
+            <span>Necessidade</span>
             <strong>{formatScore(profile.need.score)}</strong>
           </div>
           <div className="metric-chip">
-            <span>Capacity</span>
+            <span>Estrutura</span>
             <strong>{formatScore(profile.capacity.score)}</strong>
           </div>
           <div className="metric-chip">
-            <span>Mismatch</span>
+            <span>Diferença</span>
             <strong>{formatScore(profile.mismatch.score, true)}</strong>
           </div>
         </div>

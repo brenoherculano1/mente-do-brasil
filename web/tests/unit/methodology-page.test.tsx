@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { MethodologyPage } from "@/features/methodology/MethodologyPage";
 import {
@@ -9,8 +9,20 @@ import {
 } from "@/lib/methodology";
 
 describe("methodology page", () => {
-  it("renders locked metadata identifiers and standard population", () => {
+  function renderTechnicalMethodology() {
     render(<MethodologyPage />);
+    fireEvent.click(screen.getByRole("tab", { name: "Metodologia completa" }));
+  }
+
+  it("opens in public language without technical identifiers", () => {
+    render(<MethodologyPage />);
+    expect(screen.getByRole("tab", { name: "Como funciona" })).toHaveAttribute("aria-selected", "true");
+    expect(screen.queryByText(METHOD_IDENTIFIERS.release)).not.toBeInTheDocument();
+    expect(screen.getByText("O que esta leitura permite entender")).toBeInTheDocument();
+  });
+
+  it("renders locked metadata identifiers and standard population", () => {
+    renderTechnicalMethodology();
     expect(screen.getByRole("heading", { level: 1, name: "Metodologia" })).toBeInTheDocument();
     expect(screen.getAllByText(METHOD_IDENTIFIERS.method).length).toBeGreaterThan(0);
     expect(screen.getAllByText(METHOD_IDENTIFIERS.release).length).toBeGreaterThan(0);
@@ -19,7 +31,7 @@ describe("methodology page", () => {
   });
 
   it("renders Need, Capacity, and Mismatch formulas", () => {
-    render(<MethodologyPage />);
+    renderTechnicalMethodology();
     expect(screen.getByText(/Need Score =/)).toBeInTheDocument();
     expect(screen.getByText(/Capacity Score =/)).toBeInTheDocument();
     expect(screen.getByText("Mismatch = Need Score - Capacity Score")).toBeInTheDocument();
@@ -44,7 +56,7 @@ describe("methodology page", () => {
   });
 
   it("preserves claim discipline and limitations", () => {
-    render(<MethodologyPage />);
+    renderTechnicalMethodology();
     expect(
       screen.getByText(/não uma medida direta de acesso efetivo, qualidade assistencial/i),
     ).toBeInTheDocument();
@@ -54,7 +66,7 @@ describe("methodology page", () => {
   });
 
   it("documents territorial intelligence product methods without recalculating science", () => {
-    render(<MethodologyPage />);
+    renderTechnicalMethodology();
     expect(screen.getByText(METHOD_IDENTIFIERS.intelligence)).toBeInTheDocument();
     expect(screen.getByText(METHOD_IDENTIFIERS.radarRuleset)).toBeInTheDocument();
     expect(screen.getByText(METHOD_IDENTIFIERS.decomposition)).toBeInTheDocument();
@@ -64,7 +76,7 @@ describe("methodology page", () => {
   });
 
   it("renders LISA counts and warning without disease concentration claim", () => {
-    render(<MethodologyPage />);
+    renderTechnicalMethodology();
     expect(screen.getByText(String(METHODOLOGY_LOCKS.lisaSignificant))).toBeInTheDocument();
     expect(screen.getByText("60 / 66 / 4 / 5")).toBeInTheDocument();
     expect(
@@ -73,7 +85,7 @@ describe("methodology page", () => {
   });
 
   it("renders the conservative manuscript submission status", () => {
-    render(<MethodologyPage />);
+    renderTechnicalMethodology();
     expect(screen.getByText(new RegExp(MANUSCRIPT_PUBLIC_STATUS.title))).toBeInTheDocument();
     expect(screen.getByText(/Status: manuscrito submetido ao Health & Place\./)).toBeInTheDocument();
   });
