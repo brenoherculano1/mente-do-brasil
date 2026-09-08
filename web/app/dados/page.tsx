@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { DataPage } from "@/features/data/DataPage";
 
 export const metadata: Metadata = {
-  title: "Dados e versões | Mente do Brasil",
+  title: "Fontes e cobertura | Mente do Brasil",
   description:
-    "Consulte os datasets, fontes, versões, metadados e critérios de publicação que sustentam o Mente do Brasil.",
+    "Conheça as fontes, os períodos e a cobertura territorial dos indicadores do Mente do Brasil.",
 };
 
 export default function DadosPage() {

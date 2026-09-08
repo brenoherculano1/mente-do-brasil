@@ -25,11 +25,9 @@ describe("about page", () => {
     expect(screen.getByText(/não implica vínculo institucional, endosso ou participação/i)).toBeInTheDocument();
   });
 
-  it("keeps release and manuscript status conservative", () => {
+  it("keeps the manuscript status conservative and explains the update horizon", () => {
     render(<AboutPage />);
-    expect(screen.getByText("NOT_RELEASED")).toBeInTheDocument();
-    expect(screen.getByText(ABOUT_PAGE.publicReleaseCopy)).toBeInTheDocument();
-    expect(screen.getByText(/ainda não foi publicado publicamente/i)).toBeInTheDocument();
+    expect(screen.getByText(/A cobertura atual vai até 2024/)).toBeInTheDocument();
     expect(screen.getByText(ABOUT_PAGE.manuscriptStatus)).toBeInTheDocument();
     expect(screen.getByText(new RegExp(ABOUT_PAGE.manuscriptTitle))).toBeInTheDocument();
   });
@@ -41,7 +39,7 @@ describe("about page", () => {
       "href",
       "/metodologia",
     );
-    expect(screen.getByRole("link", { name: "Ver dados e versões" })).toHaveAttribute("href", "/dados");
+    expect(screen.getByRole("link", { name: "Ver fontes e cobertura" })).toHaveAttribute("href", "/dados");
     expect(
       screen.getByRole("heading", { level: 2, name: "O que o Mente do Brasil não é" }),
     ).toBeInTheDocument();
@@ -53,7 +51,8 @@ describe("about page", () => {
     for (const [title] of ABOUT_PRINCIPLES) {
       expect(screen.getByRole("heading", { level: 3, name: title })).toBeInTheDocument();
     }
-    expect(container.textContent).not.toMatch(/MedLegacy|fundador|conselho científico|parceiros|patrocinadores/i);
+    expect(screen.getByRole("heading", { name: /Breno Herculano/ })).toBeInTheDocument();
+    expect(container.textContent).not.toMatch(/MedLegacy|conselho científico|parceiros|patrocinadores/i);
     expect(container.textContent).not.toMatch(/revolucionando|transformando vidas|dados que salvam vidas/i);
   });
 

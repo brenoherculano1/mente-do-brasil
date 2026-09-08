@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 export function AppHeader() {
@@ -9,7 +10,8 @@ export function AppHeader() {
     <header className="app-header">
       <div className="header-inner">
         <Link className="brand" href="/">
-          Mente do Brasil
+          <Image src="/brand/mente-do-brasil-mark.png" alt="" width={38} height={38} priority />
+          <span>Mente do Brasil</span>
         </Link>
         <nav aria-label="Navegação principal" className="nav-links">
           <Link aria-current={pathname === "/" ? "page" : undefined} href="/">
@@ -31,31 +33,11 @@ export function AppHeader() {
             Metodologia
           </Link>
           <Link aria-current={pathname === "/dados" ? "page" : undefined} href="/dados">
-            Dados
+            Fontes
           </Link>
           <Link aria-current={pathname === "/sobre" ? "page" : undefined} href="/sobre">
             Sobre
           </Link>
-          <details className="nav-more">
-            <summary>Mais</summary>
-            <div className="nav-more-menu">
-              <Link aria-current={pathname === "/dados-abertos" ? "page" : undefined} href="/dados-abertos">
-                Dados abertos
-              </Link>
-              <Link aria-current={pathname === "/desenvolvedores" ? "page" : undefined} href="/desenvolvedores">
-                Desenvolvedores
-              </Link>
-              <Link aria-current={pathname === "/mudancas" ? "page" : undefined} href="/mudancas">
-                Mudanças
-              </Link>
-              <Link aria-current={pathname === "/fluxos" ? "page" : undefined} href="/fluxos">
-                Fluxos
-              </Link>
-              <Link aria-current={pathname === "/governanca" ? "page" : undefined} href="/governanca">
-                Governança
-              </Link>
-            </div>
-          </details>
         </nav>
       </div>
     </header>

@@ -334,6 +334,17 @@ def test_municipality_and_uf_lookup_contracts():
     assert lookup["health_region_code"] == "11005"
     assert lookup["health_region_name"] == "Zona da Mata"
 
+    status, search = api_get("/api/v1/municipalities?q=Joao%20Pessoa&limit=5")
+    assert status == 200
+    assert any(row["municipality_name"] == "João Pessoa" for row in search)
+
+    status, municipalities = api_get(
+        f"/api/v1/health-regions/{search[0]['health_region_code']}/municipalities"
+    )
+    assert status == 200
+    assert municipalities["municipality_count"] == len(municipalities["municipalities"])
+    assert all(row["municipality_name"] for row in municipalities["municipalities"])
+
     status, ufs = api_get("/api/v1/ufs")
     assert status == 200
     assert len(ufs) == 27

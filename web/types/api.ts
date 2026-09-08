@@ -166,6 +166,14 @@ export type MunicipalityHealthRegion = {
   geography_version: string;
 };
 
+export type HealthRegionMunicipalities = {
+  health_region_code: string;
+  health_region_name: string;
+  uf: string;
+  municipality_count: number;
+  municipalities: MunicipalityHealthRegion[];
+};
+
 export type StateRegion = {
   health_region_code: string;
   health_region_name: string;

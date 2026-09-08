@@ -21,12 +21,12 @@ describe("methodology page", () => {
     expect(screen.getByText("O que esta leitura permite entender")).toBeInTheDocument();
   });
 
-  it("renders locked metadata identifiers and standard population", () => {
+  it("keeps technical identifiers out while retaining methodological detail", () => {
     renderTechnicalMethodology();
     expect(screen.getByRole("heading", { level: 1, name: "Metodologia" })).toBeInTheDocument();
-    expect(screen.getAllByText(METHOD_IDENTIFIERS.method).length).toBeGreaterThan(0);
-    expect(screen.getAllByText(METHOD_IDENTIFIERS.release).length).toBeGreaterThan(0);
-    expect(screen.getAllByText(METHOD_IDENTIFIERS.geography).length).toBeGreaterThan(0);
+    expect(screen.queryByText(METHOD_IDENTIFIERS.method)).not.toBeInTheDocument();
+    expect(screen.queryByText(METHOD_IDENTIFIERS.release)).not.toBeInTheDocument();
+    expect(screen.queryByText(METHOD_IDENTIFIERS.geography)).not.toBeInTheDocument();
     expect(screen.getByText(METHODOLOGY_LOCKS.standardPopulationLabel)).toBeInTheDocument();
   });
 
@@ -67,10 +67,10 @@ describe("methodology page", () => {
 
   it("documents territorial intelligence product methods without recalculating science", () => {
     renderTechnicalMethodology();
-    expect(screen.getByText(METHOD_IDENTIFIERS.intelligence)).toBeInTheDocument();
-    expect(screen.getByText(METHOD_IDENTIFIERS.radarRuleset)).toBeInTheDocument();
-    expect(screen.getByText(METHOD_IDENTIFIERS.decomposition)).toBeInTheDocument();
-    expect(screen.getByText(METHOD_IDENTIFIERS.peerMethod)).toBeInTheDocument();
+    expect(screen.queryByText(METHOD_IDENTIFIERS.intelligence)).not.toBeInTheDocument();
+    expect(screen.queryByText(METHOD_IDENTIFIERS.radarRuleset)).not.toBeInTheDocument();
+    expect(screen.queryByText(METHOD_IDENTIFIERS.decomposition)).not.toBeInTheDocument();
+    expect(screen.queryByText(METHOD_IDENTIFIERS.peerMethod)).not.toBeInTheDocument();
     expect(screen.getByText(/Variáveis de outcome não entram na seleção dos peers/i))
       .toBeInTheDocument();
   });

@@ -15,6 +15,8 @@ assertPublicIndexingConfig(publicConfig);
 export const metadata: Metadata = {
   title: "Mente do Brasil — Saúde mental nas regiões brasileiras",
   description: "Entenda a situação da saúde mental na sua região e os principais desafios territoriais.",
+  authors: [{ name: "Breno Herculano" }],
+  creator: "Breno Herculano",
   metadataBase: new URL(publicConfig.siteUrl ?? DEFAULT_SITE_URL),
   robots: publicConfig.indexingEnabled
     ? { index: true, follow: true }

@@ -6,14 +6,17 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   getManagerBrief,
   getManagerCompare,
+  getHealthRegionProfile,
   lookupMunicipality,
   searchHealthRegions,
+  searchMunicipalities,
 } from "@/lib/api/client";
 import { formatInteger, formatMetricValue, formatPercentile, formatScore } from "@/lib/format";
 import { getMetricConfig, METRICS } from "@/lib/metrics";
 import { publicLanguage } from "@/lib/public-language";
 import type {
   HealthRegionLookup,
+  HealthRegionProfile,
   ManagerBrief,
   ManagerCompareResponse,
   ManagerMetricValue,
@@ -54,6 +57,7 @@ export function ManagerWorkbench({
   const [compareQuery, setCompareQuery] = useState("");
   const [compare, setCompare] = useState<ManagerCompareResponse | null>(null);
   const [compareBriefs, setCompareBriefs] = useState<ManagerBrief[]>([]);
+  const [compareProfiles, setCompareProfiles] = useState<HealthRegionProfile[]>([]);
   const [metric, setMetric] = useState<MetricId>("mismatch_score");
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
@@ -82,8 +86,24 @@ export function ManagerWorkbench({
       return;
     }
     const handle = window.setTimeout(() => {
-      void searchHealthRegions(term, 6)
-        .then((result) => setSuggestions(result.items))
+      void Promise.all([searchHealthRegions(term, 6), searchMunicipalities(term, 6)])
+        .then(([regions, municipalities]) => {
+          const municipalityRegions = municipalities.map((municipality) => ({
+            health_region_code: municipality.health_region_code,
+            health_region_name: municipality.health_region_name,
+            uf: municipality.uf,
+            geography_version: municipality.geography_version,
+            release_id: "",
+          }));
+          setSuggestions(
+            [...municipalityRegions, ...regions.items].filter(
+              (item, index, items) =>
+                items.findIndex(
+                  (candidate) => candidate.health_region_code === item.health_region_code,
+                ) === index,
+            ).slice(0, 6),
+          );
+        })
         .catch(() => setSuggestions([]));
     }, 180);
     return () => window.clearTimeout(handle);
@@ -98,10 +118,12 @@ export function ManagerWorkbench({
       void Promise.all([
         getManagerCompare(codes),
         Promise.all(codes.map((code) => getManagerBrief(code))),
+        Promise.all(codes.map((code) => getHealthRegionProfile(code))),
       ])
-        .then(([comparison, briefs]) => {
+        .then(([comparison, briefs, profiles]) => {
           setCompare(comparison);
           setCompareBriefs(briefs.filter(Boolean));
+          setCompareProfiles(profiles.filter(Boolean));
         })
         .catch(() => setMessage("Não foi possível carregar a comparação."));
     },
@@ -152,6 +174,10 @@ export function ManagerWorkbench({
     if (!code) {
       const result = await searchHealthRegions(term, 1);
       code = result.items[0]?.health_region_code ?? "";
+    }
+    if (!code) {
+      const municipalities = await searchMunicipalities(term, 1);
+      code = municipalities[0]?.health_region_code ?? "";
     }
     if (!code || compareCodes.includes(code) || compareCodes.length >= 4) return;
     const next = [...compareCodes, code];
@@ -237,6 +263,7 @@ export function ManagerWorkbench({
         <CompareMode
           compare={compare}
           briefs={compareBriefs}
+          profiles={compareProfiles}
           compareCodes={compareCodes}
           compareQuery={compareQuery}
           metric={metric}
@@ -462,6 +489,7 @@ function MeetingMode({ brief, onCopy }: { brief: ManagerBrief | null; onCopy: ()
 function CompareMode({
   compare,
   briefs,
+  profiles,
   compareCodes,
   compareQuery,
   metric,
@@ -472,6 +500,7 @@ function CompareMode({
 }: {
   compare: ManagerCompareResponse | null;
   briefs: ManagerBrief[];
+  profiles: HealthRegionProfile[];
   compareCodes: string[];
   compareQuery: string;
   metric: MetricId;
@@ -542,6 +571,21 @@ function CompareMode({
                 <th>População</th>
                 {compare.regions.map((region) => <td key={region.identity.health_region_code}>{formatInteger(region.identity.population)}</td>)}
               </tr>
+              {[
+                ["CAPS registrados", (profile: HealthRegionProfile) => formatInteger(profile.capacity.caps.count)],
+                ["Leitos SUS registrados", (profile: HealthRegionProfile) => formatInteger(profile.capacity.mental_health_beds_sus.count)],
+                ["Jornadas equivalentes de psiquiatras", (profile: HealthRegionProfile) => formatMetricValue(profile.capacity.psychiatrist_fte.fte, "rate")],
+                ["Internações psiquiátricas", (profile: HealthRegionProfile) => formatInteger(profile.need.psychiatric_admissions.count)],
+                ["Óbitos por suicídio", (profile: HealthRegionProfile) => formatInteger(profile.need.suicide.deaths)],
+              ].map(([label, formatter]) => (
+                <tr key={label as string}>
+                  <th>{label as string}</th>
+                  {compare.regions.map((region) => {
+                    const profile = profiles.find((item) => item.territory.health_region_code === region.identity.health_region_code);
+                    return <td key={region.identity.health_region_code}>{profile ? (formatter as (item: HealthRegionProfile) => string)(profile) : "Sem dado"}</td>;
+                  })}
+                </tr>
+              ))}
               {METRICS.map((item) => (
                 <tr key={item.id}>
                   <th>{item.shortLabel}</th>

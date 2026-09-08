@@ -1,365 +1,108 @@
-"use client";
-
 import Link from "next/link";
-import { useMemo, useState } from "react";
-import {
-  DATA_DICTIONARY,
-  DATA_DICTIONARY_CATEGORIES,
-  DATA_RELEASE,
-  DATASETS,
-  GEOMETRY_DATASETS,
-  PRIMARY_SOURCES,
-  PROVENANCE,
-} from "@/lib/data-page";
+
+const INDICATORS = [
+  ["Suicídio", "Óbitos e taxa padronizada por idade", "2022 a 2024"],
+  ["Internações psiquiátricas no SUS", "Contagem e taxa por 100 mil habitantes", "2022 a 2024"],
+  ["CAPS", "Quantidade e taxa por 100 mil habitantes", "Dezembro de 2024"],
+  ["Leitos SUS de saúde mental", "Quantidade e taxa por 100 mil habitantes", "Dezembro de 2024"],
+  ["Psiquiatras no SUS", "Jornadas equivalentes e taxa por 100 mil habitantes", "Dezembro de 2024"],
+] as const;
+
+const SOURCES = [
+  ["SIM", "Mortalidade por suicídio", "2022 a 2024, agrupado"],
+  ["SIH/SUS", "Internações psiquiátricas", "2022 a 2024, agrupado"],
+  ["CNES", "CAPS, leitos e jornadas equivalentes de psiquiatras", "Dezembro de 2024"],
+  ["DATASUS", "População e associação entre municípios e Regiões de Saúde", "Referência 2024"],
+  ["IBGE", "Malha municipal usada para composição territorial", "Malha Municipal Digital 2023"],
+] as const;
 
 export function DataPage() {
-  const [query, setQuery] = useState("");
-  const normalizedQuery = query.trim().toLowerCase();
-  const filteredFields = useMemo(() => {
-    if (!normalizedQuery) return DATA_DICTIONARY;
-    return DATA_DICTIONARY.filter((field) =>
-      [field.name, field.label, field.category, field.description, field.sourceField]
-        .join(" ")
-        .toLowerCase()
-        .includes(normalizedQuery),
-    );
-  }, [normalizedQuery]);
-
   return (
     <div className="data-shell page-shell">
       <section className="intro data-hero" aria-labelledby="data-title">
-        <p className="eyebrow">Dados</p>
-        <h1 id="data-title">Dados e versões</h1>
+        <p className="eyebrow">Fontes e cobertura</p>
+        <h1 id="data-title">De onde vêm os dados</h1>
         <p>
-          Conheça os datasets, fontes, versões e critérios de publicação que
-          sustentam o Mente do Brasil.
+          O Mente do Brasil reúne fontes públicas nacionais e apresenta resultados
+          para as 439 Regiões de Saúde, formadas pelos 5.570 municípios brasileiros.
         </p>
-        <div className="metadata-strip" aria-label="Identificadores do release">
-          <VersionTag label="Release analítico" value={DATA_RELEASE.releaseId} />
-          <VersionTag label="Método" value={DATA_RELEASE.methodVersion} />
-          <VersionTag label="Geografia" value={DATA_RELEASE.geographyVersion} />
-        </div>
       </section>
 
       <main className="data-content">
-        <section className="data-section availability-section" aria-labelledby="availability-title">
-          <div>
-            <p className="eyebrow">Disponibilidade do release</p>
-            <h2 id="availability-title">Validado localmente, ainda não publicado</h2>
-            <p>{DATA_RELEASE.publicAvailabilityText}</p>
-          </div>
-          <div className="status-grid">
-            <StatusItem label="Qualidade" value="Validada" />
-            <StatusItem label="Gate de release" value="Aprovado" />
-            <StatusItem label="Prontidão" value="Pronto para decisão de publicação" />
-            <StatusItem label="Disponibilidade pública" value={DATA_RELEASE.publicAvailabilityLabel} />
-          </div>
-          <details className="data-details">
-            <summary>Detalhes técnicos do release</summary>
-            <dl className="technical-rows">
-              <Row label="release_status" value={DATA_RELEASE.releaseStatus} />
-              <Row label="quality_status" value={DATA_RELEASE.qualityStatus} />
-              <Row label="release_gate" value={DATA_RELEASE.releaseGate} />
-              <Row label="release_readiness" value={DATA_RELEASE.releaseReadiness} />
-              <Row label="public_release_status" value={DATA_RELEASE.publicReleaseStatus} />
-            </dl>
-          </details>
-        </section>
-
-        <section className="data-section" aria-labelledby="release-inventory-title">
-          <p className="eyebrow">Inventário</p>
-          <h2 id="release-inventory-title">O que existe neste release</h2>
-          <div className="release-stat-grid">
-            <ReleaseStat value="439" label="Regiões de Saúde" />
-            <ReleaseStat value="5.570" label="municípios no crosswalk" />
-            <ReleaseStat value="35" label="campos no dataset analítico principal" />
-          </div>
-          <div className="two-column">
-            <InfoBlock label="Unidade analítica" value="Região de Saúde" />
-            <InfoBlock label="Referência geográfica" value="fim de 2024" />
-          </div>
-        </section>
-
-        <section className="data-section" aria-labelledby="datasets-title">
-          <p className="eyebrow">Inventário de datasets</p>
-          <h2 id="datasets-title">Datasets</h2>
-          <div className="dataset-list">
-            {DATASETS.map((dataset) => (
-              <article className="dataset-item" key={dataset.title}>
-                <div>
-                  <h3>{dataset.title}</h3>
-                  <p>{dataset.purpose}</p>
-                </div>
-                <dl className="dataset-meta">
-                  <Row label="artefato" value={dataset.path} />
-                  <Row label="unidade" value={dataset.unit} />
-                  <Row label="linhas" value={String(dataset.rows)} />
-                  <Row label="colunas" value={String(dataset.columns)} />
-                  <Row label="formato" value={dataset.format} />
-                  <Row label="canônico" value={dataset.canonical} />
-                  <Row label="release" value={dataset.release} />
-                  <Row label="método" value={dataset.method} />
-                  <Row label="geografia" value={dataset.geography} />
-                  <Row label="SHA256" value={dataset.sha256} />
-                </dl>
-              </article>
-            ))}
-            {GEOMETRY_DATASETS.map((geometry) => (
-              <article className="dataset-item" key={geometry.title}>
-                <div>
-                  <h3>{geometry.title}</h3>
-                  <p>{geometry.description}</p>
-                </div>
-                <dl className="dataset-meta">
-                  <Row label="versão" value={geometry.version} />
-                  <Row label="CRS" value={geometry.crs} />
-                </dl>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="data-section" aria-labelledby="dictionary-title">
-          <p className="eyebrow">Schema</p>
-          <h2 id="dictionary-title">Dicionário de dados</h2>
+        <section className="data-section" aria-labelledby="coverage-title">
+          <p className="eyebrow">Cobertura atual</p>
+          <h2 id="coverage-title">Dados validados até 2024</h2>
           <p>
-            O dicionário abaixo representa o schema canônico versionado do dataset
-            analítico. Valores ausentes são preservados como ausentes. Null não
-            equivale a zero.
+            A versão atual combina eventos registrados entre 2022 e 2024 com a
+            estrutura do SUS registrada em dezembro de 2024. Por isso, 2025 ainda não
+            aparece nos mapas e comparações.
           </p>
-          <div className="dictionary-search">
-            <label htmlFor="field-search">Buscar campo</label>
-            <input
-              id="field-search"
-              className="input"
-              type="search"
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-              placeholder="Nome técnico, nome amigável ou categoria"
-            />
+          <div className="notice-inline">
+            <strong>Por que não há 2025?</strong> Um novo ano só entra depois que todas
+            as fontes necessárias estão disponíveis, compatibilizadas e auditadas.
+            Incluir apenas parte de 2025 produziria uma comparação incompleta com a
+            série atual.
           </div>
-          <p className="small-text" aria-live="polite">
-            {filteredFields.length} de {DATA_DICTIONARY.length} campos.
+          <p>
+            Quando a atualização de 2025 for concluída e validada, ela será publicada
+            como uma nova edição, preservando os resultados anteriores.
           </p>
-          <div className="dictionary-groups">
-            {DATA_DICTIONARY_CATEGORIES.map((category) => {
-              const fields = filteredFields.filter((field) => field.category === category);
-              if (!fields.length) return null;
-              return (
-                <details className="dictionary-group" key={category} open>
-                  <summary>
-                    {category} <span>{fields.length}</span>
-                  </summary>
-                  <div className="dictionary-table-wrap">
-                    <table className="dictionary-table">
-                      <thead>
-                        <tr>
-                          <th>Campo</th>
-                          <th>Definição</th>
-                          <th>Tipo</th>
-                          <th>Unidade</th>
-                          <th>Nullable</th>
-                          <th>Origem</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {fields.map((field) => (
-                          <tr key={field.name}>
-                            <th scope="row">
-                              <span>{field.label}</span>
-                              <code>{field.name}</code>
-                            </th>
-                            <td>
-                              {field.description}
-                              <span className="field-note">{field.limitations}</span>
-                            </td>
-                            <td>{field.type}</td>
-                            <td>{field.unit || "não se aplica"}</td>
-                            <td>{field.nullable ? "sim" : "não"}</td>
-                            <td>{field.sourceField}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                </details>
-              );
-            })}
+        </section>
+
+        <section className="data-section" aria-labelledby="indicators-title">
+          <p className="eyebrow">O que é medido</p>
+          <h2 id="indicators-title">Indicadores e períodos</h2>
+          <div className="table-wrap">
+            <table>
+              <thead><tr><th>Indicador</th><th>Valores apresentados</th><th>Período</th></tr></thead>
+              <tbody>
+                {INDICATORS.map(([indicator, values, period]) => (
+                  <tr key={indicator}><th scope="row">{indicator}</th><td>{values}</td><td>{period}</td></tr>
+                ))}
+              </tbody>
+            </table>
           </div>
+          <p className="small-text">
+            Jornadas equivalentes de psiquiatras são calculadas a partir da carga
+            horária registrada. Elas não representam uma contagem de pessoas únicas.
+          </p>
         </section>
 
         <section className="data-section" aria-labelledby="sources-title">
-          <p className="eyebrow">Fontes primárias</p>
-          <h2 id="sources-title">Fontes</h2>
+          <p className="eyebrow">Fontes públicas</p>
+          <h2 id="sources-title">Bases utilizadas</h2>
           <div className="table-wrap">
             <table>
-              <thead>
-                <tr>
-                  <th>Fonte</th>
-                  <th>Uso no release</th>
-                  <th>Período</th>
-                </tr>
-              </thead>
+              <thead><tr><th>Fonte</th><th>Uso</th><th>Período</th></tr></thead>
               <tbody>
-                {PRIMARY_SOURCES.map(([source, use, period]) => (
-                  <tr key={source}>
-                    <th scope="row">{source}</th>
-                    <td>{use}</td>
-                    <td>{period}</td>
-                  </tr>
+                {SOURCES.map(([source, use, period]) => (
+                  <tr key={source}><th scope="row">{source}</th><td>{use}</td><td>{period}</td></tr>
                 ))}
               </tbody>
             </table>
           </div>
         </section>
 
-        <section className="data-section" aria-labelledby="provenance-title">
-          <p className="eyebrow">Auditoria</p>
-          <h2 id="provenance-title">Proveniência</h2>
+        <section className="data-section" aria-labelledby="geography-title">
+          <p className="eyebrow">Território</p>
+          <h2 id="geography-title">Todos os municípios estão identificados</h2>
           <p>
-            O Mente do Brasil preserva a origem dos principais arquivos utilizados
-            para que cada release possa ser auditado e reconstruído.
+            Cada um dos 5.570 municípios está associado nominalmente à sua Região de
+            Saúde. A busca do mapa aceita nomes de cidades, e cada perfil regional
+            informa todos os municípios que compõem o território.
           </p>
-          <div className="provenance-grid">
-            <InfoBlock label="data de acesso" value={PROVENANCE.accessDate} />
-            <InfoBlock label="registros de proveniência bruta" value="1.137" />
-          </div>
-          <div className="table-wrap compact-table">
-            <table>
-              <thead>
-                <tr>
-                  <th>Fonte</th>
-                  <th>Registros</th>
-                </tr>
-              </thead>
-              <tbody>
-                {PROVENANCE.breakdown.map(([source, count]) => (
-                  <tr key={source}>
-                    <th scope="row">{source}</th>
-                    <td>{count}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className="small-text">{PROVENANCE.cnesNote}</p>
-        </section>
-
-        <section className="data-section" aria-labelledby="versions-title">
-          <p className="eyebrow">Versionamento</p>
-          <h2 id="versions-title">Versões</h2>
-          <dl className="technical-rows">
-            <Row label="Contrato de dados" value={DATA_RELEASE.dataContract} />
-            <Row label="Método" value={DATA_RELEASE.methodVersion} />
-            <Row label="Release analítico" value={DATA_RELEASE.releaseId} />
-            <Row label="Canônico" value={DATA_RELEASE.canonicalVersion} />
-            <Row label="Geografia" value={DATA_RELEASE.geographyVersion} />
-            <Row label="Geometria web" value={DATA_RELEASE.webGeometryVersion} />
-            <Row label="Inteligência territorial" value={DATA_RELEASE.intelligenceVersion} />
-            <Row label="Radar" value={DATA_RELEASE.radarRulesetVersion} />
-            <Row label="Decomposição" value={DATA_RELEASE.decompositionVersion} />
-            <Row label="Peers" value={DATA_RELEASE.peerMethodVersion} />
-            <Row label="Modo Gestor" value={DATA_RELEASE.managerModeVersion} />
-            <Row label="Relatório territorial" value={DATA_RELEASE.territorialReportVersion} />
-            <Row label="Perguntas investigativas" value={DATA_RELEASE.investigationGuideVersion} />
-            <Row label="ManagerBrief" value={DATA_RELEASE.managerBriefVersion} />
-          </dl>
           <p>
-            Um release do Mente do Brasil representa uma combinação versionada de
-            dados, método e geografia. Correções ou mudanças metodológicas
-            relevantes não devem substituir silenciosamente resultados anteriores.
+            Os indicadores continuam sendo calculados para a Região de Saúde. A lista
+            municipal serve para localizar e compreender a composição da região, não
+            para atribuir resultados regionais a uma cidade isolada.
           </p>
-          <ul>
-            <li>Novo dado não implica necessariamente o mesmo release.</li>
-            <li>Mudança metodológica deve gerar versão identificável.</li>
-            <li>Mudança geográfica precisa ser explicitada.</li>
-            <li>Consumidores não devem assumir apenas um release para sempre.</li>
-          </ul>
-        </section>
-
-        <section className="data-section policy-grid" aria-label="Políticas de publicação">
-          <PolicyBlock
-            title="Downloads"
-            text="Os arquivos para reutilização pública serão disponibilizados quando o primeiro release público for aprovado. Os formatos públicos serão definidos no momento da publicação do release."
-          />
-          <PolicyBlock
-            title="API"
-            text="A infraestrutura de API já possui contrato versionado para uso interno e validação local. A documentação e o endpoint públicos serão disponibilizados apenas quando o release público for aprovado."
-          />
-          <PolicyBlock
-            title="Licença"
-            text="A licença de reutilização do primeiro release público ainda será definida antes da publicação."
-          />
-          <PolicyBlock
-            title="Como citar os dados"
-            text="A forma definitiva de citação será disponibilizada junto ao primeiro release público."
-          />
         </section>
 
         <section className="data-section methodology-cta" aria-labelledby="methodology-cta-title">
-          <div>
-            <p className="eyebrow">Método</p>
-            <h2 id="methodology-cta-title">Como os indicadores são calculados</h2>
-          </div>
-          <Link className="text-button" href="/metodologia">
-            Entender como os indicadores são calculados →
-          </Link>
+          <div><p className="eyebrow">Transparência</p><h2 id="methodology-cta-title">Como os indicadores são calculados</h2></div>
+          <Link className="text-button" href="/metodologia">Ver metodologia completa →</Link>
         </section>
       </main>
-    </div>
-  );
-}
-
-function VersionTag({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="version-pill">
-      <span>{label}</span>
-      <strong>{value}</strong>
-    </div>
-  );
-}
-
-function StatusItem({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="status-item">
-      <span>{label}</span>
-      <strong>{value}</strong>
-    </div>
-  );
-}
-
-function ReleaseStat({ value, label }: { value: string; label: string }) {
-  return (
-    <div className="release-stat">
-      <strong>{value}</strong>
-      <span>{label}</span>
-    </div>
-  );
-}
-
-function InfoBlock({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="info-block">
-      <span>{label}</span>
-      <strong>{value}</strong>
-    </div>
-  );
-}
-
-function PolicyBlock({ title, text }: { title: string; text: string }) {
-  return (
-    <article className="policy-block">
-      <h2>{title}</h2>
-      <p>{text}</p>
-    </article>
-  );
-}
-
-function Row({ label, value }: { label: string; value: string }) {
-  return (
-    <div>
-      <dt>{label}</dt>
-      <dd>{value}</dd>
     </div>
   );
 }

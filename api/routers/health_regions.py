@@ -11,6 +11,7 @@ from api.schemas.health_regions import (
     GeoJsonFeatureCollection,
     HealthRegionLookup,
     HealthRegionMapItem,
+    HealthRegionMunicipalities,
     HealthRegionProfile,
     MunicipalityHealthRegion,
     StateProfile,
@@ -19,9 +20,11 @@ from api.schemas.health_regions import (
 from api.services.health_regions import (
     get_health_region_profile,
     get_state_profile,
+    health_region_municipalities,
     list_health_regions,
     list_map_data,
     municipality_health_region,
+    search_municipalities,
     uf_options,
 )
 
@@ -45,6 +48,21 @@ def health_regions(
     return PaginatedResponse(
         items=items,
         pagination=Pagination(limit=limit, offset=offset, count=len(items), total=total),
+    )
+
+
+@router.get(
+    "/health-regions/{health_region_code}/municipalities",
+    response_model=HealthRegionMunicipalities,
+)
+def region_municipalities(
+    health_region_code: Annotated[str, Path(pattern=r"^\d{5}$")],
+    db: DatabaseDep,
+    settings: SettingsDep,
+    release_id: str | None = None,
+) -> HealthRegionMunicipalities:
+    return health_region_municipalities(
+        db, health_region_code, release_id or settings.default_release_id
     )
 
 
@@ -115,6 +133,16 @@ def municipality_lookup(
     settings: SettingsDep,
 ) -> MunicipalityHealthRegion:
     return municipality_health_region(db, municipality_code_ibge, settings.default_release_id)
+
+
+@router.get("/municipalities", response_model=list[MunicipalityHealthRegion])
+def municipality_search(
+    db: DatabaseDep,
+    settings: SettingsDep,
+    q: Annotated[str, Query(min_length=2, max_length=100)],
+    limit: Annotated[int, Query(ge=1, le=20)] = 8,
+) -> list[MunicipalityHealthRegion]:
+    return search_municipalities(db, q, settings.default_release_id, limit)
 
 
 @router.get("/ufs", response_model=list[UfOption])

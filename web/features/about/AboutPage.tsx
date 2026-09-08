@@ -15,14 +15,18 @@ export function AboutPage() {
         <p className="eyebrow">Sobre</p>
         <h1 id="about-title">Sobre o Mente do Brasil</h1>
         <p>{ABOUT_PAGE.heroDescription}</p>
-        <div className="metadata-strip" aria-label="Identificação do projeto">
-          <VersionTag label="Nome oficial" value="MENTE DO BRASIL" />
-          <VersionTag label="Subtítulo" value={ABOUT_PAGE.subtitle} />
-          <VersionTag label="Release" value={ABOUT_PAGE.versions.releaseId} />
-        </div>
       </section>
 
       <main className="about-content">
+        <section className="about-section creator-section" aria-labelledby="creator-title">
+          <p className="eyebrow">Criação</p>
+          <h2 id="creator-title">Idealizado e desenvolvido por Breno Herculano</h2>
+          <p>
+            O Mente do Brasil é um projeto independente criado por Breno Herculano
+            para tornar dados públicos de saúde mental mais compreensíveis e úteis na
+            leitura dos territórios brasileiros.
+          </p>
+        </section>
         <section className="about-section" aria-labelledby="what-title">
           <p className="eyebrow">Definição</p>
           <h2 id="what-title">O que é o Mente do Brasil</h2>
@@ -175,8 +179,8 @@ export function AboutPage() {
         </section>
 
         <section className="about-section" aria-labelledby="releases-title">
-          <p className="eyebrow">Versionamento</p>
-          <h2 id="releases-title">Um projeto construído por releases</h2>
+          <p className="eyebrow">Atualizações</p>
+          <h2 id="releases-title">Resultados preservados a cada atualização</h2>
           <p>
             O Mente do Brasil foi estruturado para evoluir por releases
             identificáveis.
@@ -187,13 +191,10 @@ export function AboutPage() {
             relevantes precisam ser documentadas e versionadas antes de chegar à
             interface pública.
           </p>
-          <p>{ABOUT_PAGE.publicReleaseCopy}</p>
-          <dl className="technical-rows">
-            <Row label="public_release_status" value={ABOUT_PAGE.releaseStatus} />
-            <Row label="Contrato de dados" value={ABOUT_PAGE.versions.dataContract} />
-            <Row label="Método" value={ABOUT_PAGE.versions.method} />
-            <Row label="Geografia" value={ABOUT_PAGE.versions.geography} />
-          </dl>
+          <p>
+            A cobertura atual vai até 2024. Dados de 2025 serão incorporados somente
+            após disponibilidade, compatibilização e validação completa das fontes.
+          </p>
         </section>
 
         <section className="about-section" aria-labelledby="science-title">
@@ -207,7 +208,6 @@ export function AboutPage() {
             Manuscrito de referência: <cite>{ABOUT_PAGE.manuscriptTitle}</cite>.
           </p>
           <p>{ABOUT_PAGE.manuscriptStatus}</p>
-          <p className="small-text">Fonte interna: {ABOUT_PAGE.versions.publicationSource}</p>
         </section>
 
         <section className="about-section about-explore" aria-labelledby="explore-title">
@@ -223,20 +223,11 @@ export function AboutPage() {
               Entender a metodologia
             </Link>
             <Link className="text-button" href="/dados">
-              Ver dados e versões
+              Ver fontes e cobertura
             </Link>
           </div>
         </section>
       </main>
-    </div>
-  );
-}
-
-function VersionTag({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="version-pill">
-      <span>{label}</span>
-      <strong>{value}</strong>
     </div>
   );
 }
@@ -246,15 +237,6 @@ function ScopeStat({ value, label }: { value: string; label: string }) {
     <div className="release-stat">
       <strong>{value}</strong>
       <span>{label}</span>
-    </div>
-  );
-}
-
-function Row({ label, value }: { label: string; value: string }) {
-  return (
-    <div>
-      <dt>{label}</dt>
-      <dd>{value}</dd>
     </div>
   );
 }

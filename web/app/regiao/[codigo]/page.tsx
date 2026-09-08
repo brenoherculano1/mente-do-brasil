@@ -4,13 +4,14 @@ import { notFound } from "next/navigation";
 import { isNotFound } from "@/lib/api/errors";
 import {
   getHealthRegionExplanationServer,
+  getHealthRegionMunicipalitiesServer,
   getHealthRegionPeersServer,
   getHealthRegionProfileServer,
 } from "@/lib/api/server";
 import { formatInteger, formatRate, formatScore } from "@/lib/format";
 import { pageMetadata } from "@/lib/seo";
 import { stateNameForUf } from "@/lib/states";
-import type { ExplanationResponse, HealthRegionProfile, PeersResponse } from "@/types/api";
+import type { ExplanationResponse, HealthRegionMunicipalities, HealthRegionProfile, PeersResponse } from "@/types/api";
 import { RegionIntelligence } from "@/features/intelligence/RegionIntelligence";
 import { DataQualityNotice } from "@/features/profile/DataQualityNotice";
 import { IndicatorMetric } from "@/features/profile/IndicatorMetric";
@@ -44,18 +45,19 @@ export async function generateMetadata({ params }: RegionPageProps): Promise<Met
 export default async function RegionProfilePage({ params }: RegionPageProps) {
   const { codigo } = await params;
   if (!/^\d{5}$/.test(codigo)) notFound();
-  let data: [HealthRegionProfile, ExplanationResponse, PeersResponse];
+  let data: [HealthRegionProfile, ExplanationResponse, PeersResponse, HealthRegionMunicipalities];
   try {
     data = await Promise.all([
       getHealthRegionProfileServer(codigo),
       getHealthRegionExplanationServer(codigo),
       getHealthRegionPeersServer(codigo),
+      getHealthRegionMunicipalitiesServer(codigo),
     ]);
   } catch (error) {
     if (isNotFound(error)) notFound();
     throw error;
   }
-  const [profile, explanation, peers] = data;
+  const [profile, explanation, peers, municipalities] = data;
   const territory = profile.territory;
   const situation = describeSituation(profile.need.score, profile.capacity.score);
   return (
@@ -127,6 +129,20 @@ export default async function RegionProfilePage({ params }: RegionPageProps) {
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="profile-section" aria-labelledby="municipalities-title">
+        <p className="eyebrow">Composição territorial</p>
+        <h2 id="municipalities-title">Municípios desta Região de Saúde</h2>
+        <p>
+          Os indicadores desta página representam o conjunto da Região de Saúde, não
+          resultados separados de cada município.
+        </p>
+        <ul className="municipality-list">
+          {municipalities.municipalities.map((municipality) => (
+            <li key={municipality.municipality_code_ibge}>{municipality.municipality_name}</li>
+          ))}
+        </ul>
       </section>
 
       <section className="profile-grid">

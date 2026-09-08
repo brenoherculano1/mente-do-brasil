@@ -166,8 +166,15 @@ button {
 }
 
 .brand {
+  align-items: center;
+  display: inline-flex;
+  gap: 9px;
   font-weight: 760;
   letter-spacing: 0;
+}
+
+.brand img {
+  flex: 0 0 auto;
 }
 
 .nav-links {
@@ -562,6 +569,49 @@ button {
   display: grid;
   gap: 10px;
   padding-top: 16px;
+}
+
+.absolute-metrics {
+  border-top: 1px solid var(--border);
+  display: grid;
+  gap: 8px;
+  padding-top: 12px;
+}
+
+.absolute-metrics dl {
+  display: grid;
+  gap: 5px;
+  margin: 0;
+}
+
+.absolute-metrics dl div {
+  align-items: baseline;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.absolute-metrics dt {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.absolute-metrics dd {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  margin: 0;
+}
+
+.municipality-list {
+  columns: 4 180px;
+  gap: 28px;
+  margin: 20px 0 0;
+  padding-left: 20px;
+}
+
+.municipality-list li {
+  break-inside: avoid;
+  margin-bottom: 7px;
 }
 
 .metric-row {
@@ -1836,9 +1886,15 @@ th {
   }
 
   .nav-links {
-    gap: 11px;
-    overflow-x: auto;
+    flex-wrap: wrap;
+    gap: 8px 13px;
+    overflow: visible;
     width: 100%;
+  }
+
+  .nav-links a {
+    flex: 0 0 auto;
+    white-space: nowrap;
   }
 
   .intro {
@@ -2464,19 +2520,22 @@ th {
   }
 
   .home-facts {
-    grid-auto-flow: column;
-    grid-template-columns: repeat(4, minmax(176px, 1fr));
-    overflow-x: auto;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: visible;
   }
 
   .home-actions {
-    flex-wrap: nowrap;
-    overflow-x: auto;
+    align-items: stretch;
+    flex-direction: column;
+    overflow: visible;
   }
 
   .home-actions .button,
   .home-actions .text-button {
     flex: 0 0 auto;
+    justify-content: center;
+    width: 100%;
   }
 
   .method-level-tabs {

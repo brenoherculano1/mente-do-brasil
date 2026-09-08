@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import unicodedata
 
 from api.db import Database
 from api.errors import api_error
@@ -16,6 +17,7 @@ from api.schemas.health_regions import (
     GeometryMetadata,
     HealthRegionLookup,
     HealthRegionMapItem,
+    HealthRegionMunicipalities,
     HealthRegionProfile,
     MismatchProfile,
     MunicipalityHealthRegion,
@@ -452,6 +454,70 @@ def municipality_health_region(
     if not row:
         raise api_error(404, "MUNICIPALITY_NOT_FOUND", "Municipality not found.")
     return MunicipalityHealthRegion(**row)
+
+
+def search_municipalities(
+    db: Database, query: str, release_id: str, limit: int
+) -> list[MunicipalityHealthRegion]:
+    ensure_release_exists(db, release_id)
+    normalized_query = "".join(
+        character
+        for character in unicodedata.normalize("NFKD", query.casefold())
+        if not unicodedata.combining(character)
+    )
+    rows = db.rows(
+        """
+        SELECT municipality_code_ibge, municipality_name, uf, health_region_code,
+               health_region_name, geography_version
+        FROM geo.municipality_health_region_crosswalk
+        WHERE geography_version = (
+                  SELECT geography_version FROM meta.releases WHERE release_id = %s
+              )
+          AND translate(
+                lower(municipality_name),
+                'áàâãäéèêëíìîïóòôõöúùûüç',
+                'aaaaaeeeeiiiiooooouuuuc'
+              ) ILIKE %s
+        ORDER BY municipality_name, uf, municipality_code_ibge
+        LIMIT %s
+        """,
+        (release_id, f"%{normalized_query}%", limit),
+    )
+    return [MunicipalityHealthRegion(**row) for row in rows]
+
+
+def health_region_municipalities(
+    db: Database, code: str, release_id: str
+) -> HealthRegionMunicipalities:
+    ensure_release_exists(db, release_id)
+    rows = db.rows(
+        """
+        SELECT municipality_code_ibge, municipality_name, uf, health_region_code,
+               health_region_name, geography_version
+        FROM geo.municipality_health_region_crosswalk
+        WHERE health_region_code = %s
+          AND geography_version = (
+              SELECT geography_version FROM meta.releases WHERE release_id = %s
+          )
+        ORDER BY municipality_name, municipality_code_ibge
+        """,
+        (code, release_id),
+    )
+    if not rows:
+        raise api_error(
+            404,
+            "HEALTH_REGION_NOT_FOUND",
+            "Health Region not found for the requested release.",
+        )
+    municipalities = [MunicipalityHealthRegion(**row) for row in rows]
+    first = municipalities[0]
+    return HealthRegionMunicipalities(
+        health_region_code=first.health_region_code,
+        health_region_name=first.health_region_name,
+        uf=first.uf,
+        municipality_count=len(municipalities),
+        municipalities=municipalities,
+    )
 
 
 def uf_options(db: Database, release_id: str) -> list[UfOption]:

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import {
   METHOD_IDENTIFIERS,
   MANUSCRIPT_PUBLIC_STATUS,
@@ -639,34 +640,21 @@ export function MethodologyPage() {
               metodológicas ou correções relevantes não devem substituir
               silenciosamente releases anteriores.
             </p>
-            <div className="version-grid">
-              <VersionPill label="Método" value={METHOD_IDENTIFIERS.method} />
-              <VersionPill label="Release analítico" value={METHOD_IDENTIFIERS.release} />
-              <VersionPill label="Canonical" value={METHOD_IDENTIFIERS.canonical} />
-              <VersionPill label="Geografia" value={METHOD_IDENTIFIERS.geography} />
-              <VersionPill label="Geometria web" value={METHOD_IDENTIFIERS.webGeometry} />
-            </div>
-            <p className="small-text">Ver dados e versões: rota futura.</p>
+            <p>
+              A edição pública atual utiliza eventos de 2022 a 2024 e estrutura do
+              SUS registrada em dezembro de 2024. Dados de 2025 só serão incluídos
+              depois da validação conjunta de todas as fontes necessárias.
+            </p>
+            <Link className="text-button" href="/dados">Ver fontes e cobertura</Link>
           </Section>
 
           <Section id="reproducibility" title="Reprodutibilidade">
-            <details className="method-details" open>
-              <summary>Detalhes de reprodutibilidade</summary>
-              <TechnicalRows
-                rows={[
-                  ["canonical", `${METHODOLOGY_LOCKS.canonicalRows} linhas`],
-                  ["crosswalk", `${METHODOLOGY_LOCKS.crosswalkRows} linhas`],
-                  ["LISA join", METHODOLOGY_LOCKS.lisaJoin],
-                  ["provenance bruta", `${METHODOLOGY_LOCKS.rawProvenanceRecords} registros`],
-                  ["canonical hash", "a3cc8f3aefc9d556d1bacc636dc72cabf04155052dd63c426dda9bec58ada515"],
-                  ["crosswalk hash", "acd7ab896566d5ea730719eb46a079b0571d73fec617ef1d39db93099bd06b15"],
-                  ["method version", METHOD_IDENTIFIERS.method],
-                  ["geography version", METHOD_IDENTIFIERS.geography],
-                  ["release ID", METHOD_IDENTIFIERS.release],
-                  ["data access date", METHODOLOGY_LOCKS.sourceAccessDate],
-                ]}
-              />
-            </details>
+            <p>
+              A análise cobre 439 Regiões de Saúde e todos os 5.570 municípios.
+              Resultados ausentes permanecem ausentes e nunca são convertidos em zero.
+              Cada atualização passa por verificações de integridade, geografia e
+              consistência antes de chegar à interface.
+            </p>
             <details className="method-details">
               <summary>Denominadores das taxas</summary>
               <TechnicalRows rows={RATE_DENOMINATORS.map((item) => [item.indicator, item.unit])} />
@@ -750,12 +738,9 @@ function Formula({ children }: { children: React.ReactNode }) {
 }
 
 function VersionPill({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="version-pill">
-      <span>{label}</span>
-      <strong>{value}</strong>
-    </div>
-  );
+  void label;
+  void value;
+  return null;
 }
 
 function TechnicalBlock({ title, rows }: { title: string; rows: [string, string][] }) {

@@ -4,6 +4,7 @@ import { MdbApiError } from "@/lib/api/errors";
 import type {
   ExplanationResponse,
   HealthRegionProfile,
+  HealthRegionMunicipalities,
   ManagerBrief,
   PeersResponse,
   StateProfile,
@@ -62,6 +63,12 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
 
 export function getHealthRegionProfileServer(code: string) {
   return request<HealthRegionProfile>(`/api/v1/health-regions/${code}`, {
+    cache: "no-store",
+  });
+}
+
+export function getHealthRegionMunicipalitiesServer(code: string) {
+  return request<HealthRegionMunicipalities>(`/api/v1/health-regions/${code}/municipalities`, {
     cache: "no-store",
   });
 }

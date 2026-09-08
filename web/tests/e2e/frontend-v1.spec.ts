@@ -103,7 +103,7 @@ test("methodology desktop page loads, navigates sections, and opens details", as
   await page.goto("/metodologia");
   await expect(page.getByRole("heading", { level: 1, name: "Metodologia" })).toBeVisible();
   await page.getByRole("tab", { name: "Metodologia completa" }).click();
-  await expect(page.getByLabel("Identificadores metodológicos").getByText("MDB_METHOD_1.0")).toBeVisible();
+  await expect(page.locator("body")).not.toContainText("MDB_METHOD_1.0");
   await expect(page.getByText("Mismatch = Need Score - Capacity Score")).toBeVisible();
   await expect(page.getByRole("heading", { name: "Global Moran's I" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "LISA" })).toBeVisible();
@@ -178,54 +178,31 @@ test("methodology mobile page has compact navigation and no global overflow", as
   });
 });
 
-test("data page exposes release inventory and filters dictionary on desktop", async ({ page }, testInfo) => {
+test("data page explains public coverage without internal identifiers on desktop", async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== "desktop", "desktop-only data page QA");
   const mapRequests = trackMapRequests(page);
   await page.goto("/dados");
-  await expect(page.getByRole("heading", { level: 1, name: "Dados e versões" })).toBeVisible();
-  await expect(page.getByText("Ainda não publicado", { exact: true })).toBeVisible();
-  await expect(page.getByText("MDB_ANALYTICAL_2024_1").first()).toBeVisible();
-  await expect(page.getByText("MDB_DATA_CONTRACT_V1.0")).toBeVisible();
-  await expect(page.getByText("439").first()).toBeVisible();
-  await expect(page.getByText("5.570")).toBeVisible();
-  await expect(page.getByText("35").first()).toBeVisible();
-  await expect(page.getByText("a3cc8f3aefc9d556d1bacc636dc72cabf04155052dd63c426dda9bec58ada515")).toBeVisible();
-  await expect(page.getByText("acd7ab896566d5ea730719eb46a079b0571d73fec617ef1d39db93099bd06b15")).toBeVisible();
-  await page.getByLabel("Buscar campo").fill("psychiatrist");
-  await expect(page.getByText("psychiatrist_fte_rate")).toBeVisible();
-  await expect(page.getByText("suicide_asmr")).toHaveCount(0);
-  await page.getByRole("link", { name: /Entender como os indicadores são calculados/ }).click();
+  await expect(page.getByRole("heading", { level: 1, name: "De onde vêm os dados" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Dados validados até 2024" })).toBeVisible();
+  await expect(page.getByText(/Por que não há 2025/)).toBeVisible();
+  await expect(page.getByText(/Cada um dos 5.570 municípios/)).toBeVisible();
+  await expect(page.locator("body")).not.toContainText("MDB_");
+  await expect(page.locator("body")).not.toContainText("SHA-256");
+  await expect(page.locator("body")).not.toContainText(".parquet");
+  await page.getByRole("link", { name: /Ver metodologia completa/ }).click();
   await expect(page).toHaveURL(/\/metodologia/);
   await page.goBack();
-  await expect(page.getByText("Os formatos públicos serão definidos")).toBeVisible();
-  await expect(page.getByText("A API pública ainda não foi publicada")).toHaveCount(0);
-  await expect(page.locator("body")).not.toContainText("Não versionado neste release");
-  await expect(page.locator("body")).not.toContainText("Locked analytical");
-  await expect(page.locator("body")).not.toContainText("Higher values");
-  await expect(page.locator("body")).not.toContainText("schema canonical");
-  await expect(page.locator("body")).not.toContainText("not_applicable");
-  await expect(page.locator("body")).not.toContainText("2022-2024 pooled");
-  await expect(page.locator("body")).not.toContainText("2022–2024 pooled");
-  await expect(page.locator("body")).not.toContainText("Parquet canonical");
-  await expect(page.locator("body")).not.toContainText("raw provenance records");
-  await expect(page.locator("body")).not.toContainText("access date");
-  await expect(page.locator("body")).toContainText("linhas");
-  await expect(page.locator("body")).toContainText("colunas");
-  await expect(page.locator("body")).toContainText("Parquet canônico");
-  await expect(page.getByRole("link", { name: /download/i })).toHaveCount(0);
-  await expect(page.locator("body")).not.toContainText("http://127.0.0.1");
   await expect(page.locator("[data-nextjs-dev-tools-button]")).toHaveCount(0);
   expect(mapRequests).toHaveLength(0);
   await expectNoGlobalHorizontalOverflow(page);
 
   await page.screenshot({ path: `${DATA_QA_DIR}/desktop_data_full.png`, fullPage: true });
   await page.locator(".data-hero").screenshot({ path: `${DATA_QA_DIR}/desktop_data_top.png` });
-  await page.locator(".dataset-list").screenshot({ path: `${DATA_QA_DIR}/desktop_data_datasets.png` });
-  await page.locator('[aria-labelledby="dictionary-title"]').screenshot({
-    path: `${DATA_QA_DIR}/desktop_data_dictionary.png`,
+  await page.locator('[aria-labelledby="indicators-title"]').screenshot({
+    path: `${DATA_QA_DIR}/desktop_data_indicators.png`,
   });
-  await page.locator('[aria-labelledby="versions-title"]').screenshot({
-    path: `${DATA_QA_DIR}/desktop_data_release_policy.png`,
+  await page.locator('[aria-labelledby="geography-title"]').screenshot({
+    path: `${DATA_QA_DIR}/desktop_data_geography.png`,
   });
 });
 
@@ -233,26 +210,15 @@ test("data page remains usable on mobile", async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== "mobile", "mobile-only data page QA");
   const mapRequests = trackMapRequests(page);
   await page.goto("/dados");
-  await expect(page.getByRole("heading", { level: 1, name: "Dados e versões" })).toBeVisible();
-  await expect(page.getByText("Ainda não publicado", { exact: true })).toBeVisible();
-  await expect(page.getByText("MDB_DATA_CONTRACT_V1.0")).toBeVisible();
-  await expect(page.locator("body")).not.toContainText("Não versionado neste release");
-  await expect(page.locator("body")).not.toContainText("schema canonical");
-  await expect(page.locator("body")).not.toContainText("not_applicable");
-  await expect(page.locator("body")).not.toContainText("Parquet canonical");
-  await expect(page.locator("body")).toContainText("não se aplica");
+  await expect(page.getByRole("heading", { level: 1, name: "De onde vêm os dados" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Dados validados até 2024" })).toBeVisible();
+  await expect(page.locator("body")).not.toContainText("MDB_");
   await expectNoGlobalHorizontalOverflow(page);
   await page.screenshot({ path: `${DATA_QA_DIR}/mobile_data_top.png` });
   await page.screenshot({ path: `${DATA_QA_DIR}/mobile_data_full.png`, fullPage: true });
-  await page.getByLabel("Buscar campo").fill("lisa");
-  await expect(page.getByText("lisa_local_i")).toBeVisible();
-  await expect(page.getByText("lisa_cluster")).toBeVisible();
-  await expectNoGlobalHorizontalOverflow(page);
-  await page.screenshot({ path: `${DATA_QA_DIR}/mobile_data_dictionary.png` });
-  await page.locator("#versions-title").scrollIntoViewIfNeeded();
+  await page.locator("#geography-title").scrollIntoViewIfNeeded();
   await page.screenshot({ path: `${DATA_QA_DIR}/mobile_data_bottom.png` });
   await expect(page.getByRole("link", { name: /download/i })).toHaveCount(0);
-  await expect(page.locator("body")).not.toContainText("localhost");
   await expect(page.locator("[data-nextjs-dev-tools-button]")).toHaveCount(0);
   expect(mapRequests).toHaveLength(0);
 });
@@ -269,8 +235,8 @@ test("about page states independence, scope, and links on desktop", async ({ pag
   await expect(page.getByText("5.570")).toBeVisible();
   await expect(page.getByText("2022–2024")).toBeVisible();
   await expect(page.getByText("Dezembro de 2024")).toBeVisible();
-  await expect(page.getByText("NOT_RELEASED")).toBeVisible();
-  await expect(page.getByText(/ainda não foi publicado publicamente/)).toBeVisible();
+  await expect(page.getByRole("heading", { name: /Breno Herculano/ })).toBeVisible();
+  await expect(page.getByText(/A cobertura atual vai até 2024/)).toBeVisible();
   await expect(page.getByText("Status: manuscrito submetido ao Health & Place.")).toBeVisible();
   await expect(page.getByRole("heading", { name: "O que o Mente do Brasil não é" })).toBeVisible();
   await expect(page.locator("body")).not.toContainText("déficit assistencial");
@@ -292,7 +258,7 @@ test("about page states independence, scope, and links on desktop", async ({ pag
   await page.getByRole("link", { name: "Entender a metodologia" }).click();
   await expect(page).toHaveURL(/\/metodologia/);
   await page.goBack();
-  await page.getByRole("link", { name: "Ver dados e versões" }).click();
+  await page.getByRole("link", { name: "Ver fontes e cobertura" }).click();
   await expect(page).toHaveURL(/\/dados/);
   await page.goBack();
   await page.getByRole("link", { name: "Explorar o Brasil" }).click();
@@ -325,7 +291,7 @@ test("about page stays readable and responsive on mobile", async ({ page }, test
   await expect(page.getByText("5.570")).toBeVisible();
   await expect(page.getByRole("link", { name: "Explorar o Brasil" })).toBeVisible();
   await expect(page.getByRole("link", { name: "Entender a metodologia" })).toBeVisible();
-  await expect(page.getByRole("link", { name: "Ver dados e versões" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Ver fontes e cobertura" })).toBeVisible();
   await expect(page.locator("canvas")).toHaveCount(0);
   expect(mapRequests).toHaveLength(0);
   await expectNoGlobalHorizontalOverflow(page);
@@ -340,7 +306,7 @@ test("about page stays readable and responsive on mobile", async ({ page }, test
   await page.getByRole("link", { name: "Entender a metodologia" }).click();
   await expect(page).toHaveURL(/\/metodologia/);
   await page.goBack();
-  await page.getByRole("link", { name: "Ver dados e versões" }).click();
+  await page.getByRole("link", { name: "Ver fontes e cobertura" }).click();
   await expect(page).toHaveURL(/\/dados/);
 });
 

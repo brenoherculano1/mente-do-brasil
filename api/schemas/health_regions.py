@@ -133,6 +133,14 @@ class MunicipalityHealthRegion(BaseModel):
     geography_version: str
 
 
+class HealthRegionMunicipalities(BaseModel):
+    health_region_code: str
+    health_region_name: str
+    uf: str
+    municipality_count: int
+    municipalities: list[MunicipalityHealthRegion]
+
+
 class UfOption(BaseModel):
     uf: str
     health_region_count: int

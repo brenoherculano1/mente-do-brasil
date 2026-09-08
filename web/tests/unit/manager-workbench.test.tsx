@@ -8,8 +8,10 @@ vi.mock("@/features/advanced/RegionAdvanced", () => ({ RegionAdvanced: () => nul
 vi.mock("@/lib/api/client", () => ({
   getManagerBrief: vi.fn(),
   getManagerCompare: vi.fn(() => new Promise(() => {})),
+  getHealthRegionProfile: vi.fn(() => new Promise(() => {})),
   lookupMunicipality: vi.fn(),
   searchHealthRegions: vi.fn(() => Promise.resolve({ items: [] })),
+  searchMunicipalities: vi.fn(() => Promise.resolve([])),
 }));
 
 describe("ManagerWorkbench", () => {

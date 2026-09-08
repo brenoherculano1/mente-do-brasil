@@ -3,6 +3,7 @@ import { MdbApiError } from "@/lib/api/errors";
 import type {
   HealthRegionFeatureCollection,
   HealthRegionLookup,
+  HealthRegionMunicipalities,
   HealthRegionProfile,
   IndicatorPublic,
   MapItem,
@@ -64,6 +65,18 @@ export function getHealthRegionProfile(code: string) {
 export function lookupMunicipality(code: string) {
   return request<MunicipalityHealthRegion>(
     `/api/v1/municipalities/${code}/health-region`,
+  );
+}
+
+export function searchMunicipalities(query: string, limit = 8) {
+  const params = new URLSearchParams({ q: query, limit: String(limit) });
+  return request<MunicipalityHealthRegion[]>(`/api/v1/municipalities?${params}`);
+}
+
+export function getHealthRegionMunicipalities(code: string) {
+  return request<HealthRegionMunicipalities>(
+    `/api/v1/health-regions/${code}/municipalities`,
+    { cache: "no-store" },
   );
 }
 

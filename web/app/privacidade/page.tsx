@@ -1,5 +1,4 @@
 import { pageMetadata } from "@/lib/seo";
-import { PRIVACY_NOTICE_STATUS, PRIVACY_NOTICE_VERSION } from "@/lib/public-config";
 
 export const metadata = pageMetadata(
   "/privacidade",
@@ -16,9 +15,6 @@ export default function PrivacyPage() {
         <p>
           Este aviso descreve a configuração atual do Mente do Brasil antes da
           publicação pública final.
-        </p>
-        <p className="small-text">
-          Versão: {PRIVACY_NOTICE_VERSION}. Status: {PRIVACY_NOTICE_STATUS}.
         </p>
       </section>
 
