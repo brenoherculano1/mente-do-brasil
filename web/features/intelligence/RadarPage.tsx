@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { getRadarHealthRegions } from "@/lib/api/client";
+import { SharePanel } from "@/features/share/SharePanel";
 import { formatInteger, formatScore } from "@/lib/format";
 import { describeMismatch, publicLanguage } from "@/lib/public-language";
 import { toneForDirection, toneForMismatch, toneLabel, type RelativeTone } from "@/lib/indicator-tone";
@@ -77,12 +78,17 @@ export function RadarPage({ initialUf }: { initialUf?: string }) {
   return (
     <div className="page-shell radar-shell">
       <section className="intro radar-intro" aria-labelledby="radar-title">
-        <p className="eyebrow">Regiões que merecem investigação</p>
-        <h1 id="radar-title">Radar de atenção em saúde mental</h1>
+        <p className="eyebrow">Sinais para investigação territorial</p>
+        <h1 id="radar-title">Onde os sinais de atenção se acumulam?</h1>
         <p>
-          Identifique regiões onde diferentes sinais se acumulam e entenda por que
-          elas merecem uma análise mais cuidadosa.
+          O Radar verifica cinco sinais predefinidos em cada Região de Saúde e mostra
+          onde vários deles aparecem juntos. Ele ajuda a escolher quais perfis investigar.
         </p>
+        <div className="radar-steps" aria-label="Como usar o Radar">
+          <p><strong>1. Verifique:</strong> o sistema procura cinco sinais nos dados.</p>
+          <p><strong>2. Filtre:</strong> escolha quantos sinais devem aparecer juntos.</p>
+          <p><strong>3. Investigue:</strong> abra o perfil da região para entender o contexto.</p>
+        </div>
       </section>
 
       <section className="radar-grid" aria-label="Radar de atenção em saúde mental">
@@ -110,7 +116,7 @@ export function RadarPage({ initialUf }: { initialUf?: string }) {
             </select>
           </label>
           <label className="control-group">
-            <span className="field-label">Mínimo de grupos de atenção</span>
+            <span className="field-label">Mínimo de sinais encontrados</span>
             <select
               className="input"
               value={minFamilies}
@@ -155,7 +161,7 @@ export function RadarPage({ initialUf }: { initialUf?: string }) {
               {data.total_matching === 0
                 ? "Nenhuma Região de Saúde encontrada com esse nome."
                 : data.regions.some((region) => region.matched_signal_families < minFamilies)
-                  ? `Busca encontrada. Para localizar o território, a busca ignora temporariamente o mínimo de ${minFamilies} grupos de atenção.`
+                  ? `Busca encontrada. Para localizar o território, a busca ignora temporariamente o mínimo de ${minFamilies} sinais.`
                   : `${data.total_matching} Região de Saúde encontrada.`}
             </p>
           )}
@@ -167,7 +173,7 @@ export function RadarPage({ initialUf }: { initialUf?: string }) {
               value={sort}
               onChange={(event) => setSort(event.target.value as "signals" | "mismatch" | "name")}
             >
-              <option value="signals">Mais critérios atendidos</option>
+              <option value="signals">Mais sinais encontrados</option>
               <option value="mismatch">Maior diferença necessidade-capacidade</option>
               <option value="name">Nome da região</option>
             </select>
@@ -195,6 +201,13 @@ export function RadarPage({ initialUf }: { initialUf?: string }) {
           <SelectedRadarRegion region={selected} />
         </aside>
       </section>
+
+      {selected && (
+        <SharePanel
+          title={`${selected.health_region_name} no Radar | Mente do Brasil`}
+          text={`${selected.health_region_name} apresenta ${selected.matched_signal_families} de 5 sinais de atenção no Radar do Mente do Brasil. A leitura é territorial, descritiva e não constitui ranking.`}
+        />
+      )}
 
       <section className="state-section" aria-labelledby="radar-list-title">
         <p className="eyebrow">Lista acessível</p>
@@ -244,14 +257,23 @@ function SelectedRadarRegion({ region }: { region: RadarRegion | null }) {
       <p className="metric-interpretation">{describeMismatch(region.mismatch_score)}</p>
       <div className="attention-summary">
         <strong>{attentionLabel(region.matched_signal_families)}</strong>
-        <span>{region.matched_signal_families} de 5 grupos de atenção identificados</span>
+        <span>{region.matched_signal_families} de 5 sinais encontrados</span>
       </div>
-      <h3>Por que apareceu?</h3>
-      <ul className="signal-list">
-        {activeSignals.map(([, label]) => (
-          <li key={label}>{label}</li>
-        ))}
-      </ul>
+      {activeSignals.length > 0 ? (
+        <>
+          <h3>Quais sinais foram encontrados?</h3>
+          <ul className="signal-list">
+            {activeSignals.map(([, label]) => (
+              <li key={label}>{label}</li>
+            ))}
+          </ul>
+        </>
+      ) : (
+        <p className="small-text">
+          Esta região foi localizada pela busca e não apresenta nenhum dos cinco sinais
+          com os filtros atuais.
+        </p>
+      )}
       {region.data_quality_flags.length > 0 && (
         <p className="small-text">Observações sobre os dados: {region.data_quality_flags.map(publicLanguage).join(" ")}</p>
       )}
@@ -279,8 +301,8 @@ function Metric({ label, value, tone }: { label: string; value: string; tone: Re
 
 function RadarLegend() {
   return (
-    <div className="radar-legend" aria-label="Grupos de atenção identificados">
-      <span>Quantidade de grupos de atenção identificados</span>
+    <div className="radar-legend" aria-label="Sinais encontrados">
+      <span>Quantidade de sinais encontrados</span>
       {[0, 1, 2, 3, "4+"].map((label, index) => (
         <span className="radar-legend-item" key={label}>
           <span style={{ background: ["#eef1ed", "#d9ded4", "#bfc9bf", "#8da99f", "#446b68"][index] }} />

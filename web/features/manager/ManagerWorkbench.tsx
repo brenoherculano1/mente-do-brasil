@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { RegionAdvanced } from "@/features/advanced/RegionAdvanced";
-import { ShareButton } from "@/features/share/ShareButton";
+import { SharePanel } from "@/features/share/SharePanel";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   getManagerBrief,
@@ -14,6 +14,7 @@ import {
 } from "@/lib/api/client";
 import { formatInteger, formatMetricValue, formatPercentile, formatScore } from "@/lib/format";
 import { getMetricConfig, METRICS } from "@/lib/metrics";
+import { buildComparisonConclusion } from "@/lib/comparison-conclusion";
 import {
   toneForDirection,
   toneForMetric,
@@ -476,7 +477,7 @@ function MeetingMode({ brief, onCopy }: { brief: ManagerBrief | null; onCopy: ()
             <li>{describeCompositeScore(brief.need_score, "need")}</li>
             <li>{describeCompositeScore(brief.capacity_score, "capacity")}</li>
             <li>{describeMismatch(brief.mismatch_score)}</li>
-            <li>{brief.matched_signal_families}/5 grupos de atenção.</li>
+            <li>{brief.matched_signal_families}/5 sinais de atenção.</li>
           </ul>
         </article>
         <article className="panel manager-section">
@@ -533,10 +534,6 @@ function CompareMode({
       <p className="eyebrow">Compare regiões</p>
       <h2 id="compare-title">Selecione de 2 a 4 Regiões de Saúde</h2>
       <p>Veja diferenças de população, necessidade, estrutura, evolução e recursos gerais de saúde sem criar um ranking.</p>
-      <ShareButton
-        title="Comparação de Regiões de Saúde | Mente do Brasil"
-        text="Veja esta comparação territorial no Mente do Brasil. Os indicadores são descritivos e não formam ranking de desempenho."
-      />
       <div className="manager-compare-controls">
         <label className="control-group">
           <span className="field-label">Indicador</span>
@@ -574,7 +571,7 @@ function CompareMode({
                   <Link href={`/regiao/${region.identity.health_region_code}`}>{region.identity.health_region_name}</Link>
                   <strong>{formatMetricValue(item?.value, config.scale)}</strong>
                   <small>{describeComparisonMetric(metric, item)}</small>
-                  <em>{region.matched_signal_families}/5 grupos de atenção</em>
+                  <em>{region.matched_signal_families}/5 sinais de atenção</em>
                 </div>
               );
             })}
@@ -624,7 +621,20 @@ function CompareMode({
             </tbody>
           </table>
           </div>
+          <section className="comparison-conclusion" aria-labelledby="comparison-conclusion-title">
+            <p className="eyebrow">Síntese da comparação</p>
+            <h3 id="comparison-conclusion-title">O que estes dados mostram</h3>
+            <p>{buildComparisonConclusion(compare.regions, metric)}</p>
+            <p className="small-text">
+              A síntese descreve apenas o indicador selecionado e não estabelece uma
+              classificação geral entre as regiões.
+            </p>
+          </section>
           <ComparisonContext briefs={briefs} />
+          <SharePanel
+            title="Comparação de Regiões de Saúde | Mente do Brasil"
+            text={`Compare ${compare.regions.map((region) => region.identity.health_region_name).join(", ")} no Mente do Brasil. ${buildComparisonConclusion(compare.regions, metric)}`}
+          />
         </>
       )}
     </section>

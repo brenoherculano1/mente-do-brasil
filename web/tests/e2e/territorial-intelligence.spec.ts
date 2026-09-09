@@ -23,14 +23,14 @@ test("desktop Radar shows territorial signals, filters, and region intelligence"
   expect(radar.total_matching).toBe(113);
   expect(radar.geometry.features.length).toBe(113);
   await waitForMapPixels(page);
-  await expect(page.getByRole("heading", { level: 1, name: "Radar de atenção em saúde mental" })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 1, name: "Onde os sinais de atenção se acumulam?" })).toBeVisible();
   await expect(page.getByText("Este radar não é um ranking.")).toBeVisible();
   await expect(page.locator("body")).not.toContainText("déficit assistencial");
   await expect(page.locator("body")).not.toContainText("hotspot de doença mental");
   await expectNoGlobalHorizontalOverflow(page);
   await page.screenshot({ path: `${QA_DIR}/desktop_radar_brazil.png`, fullPage: true });
 
-  await page.getByLabel("Mínimo de grupos de atenção").selectOption("1");
+  await page.getByLabel("Mínimo de sinais encontrados").selectOption("1");
   await page.getByLabel("Área").selectOption("AC");
   await page.waitForResponse((response) =>
     response.url().includes("/api/v1/radar/health-regions") &&
@@ -63,11 +63,11 @@ test("mobile Radar and region intelligence remain usable", async ({ page }, test
   test.skip(testInfo.project.name !== "mobile", "mobile-only Radar QA");
   await page.goto("/radar");
   await waitForMapPixels(page);
-  await expect(page.getByRole("heading", { level: 1, name: "Radar de atenção em saúde mental" })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 1, name: "Onde os sinais de atenção se acumulam?" })).toBeVisible();
   await expectNoGlobalHorizontalOverflow(page);
   await page.screenshot({ path: `${QA_DIR}/mobile_radar_top.png` });
 
-  await page.getByLabel("Mínimo de grupos de atenção").selectOption("1");
+  await page.getByLabel("Mínimo de sinais encontrados").selectOption("1");
   await page.getByLabel("Buscar Região de Saúde").fill("Alto Acre");
   await expect(page.getByRole("button", { name: /Alto Acre/ })).toBeVisible();
   await page.getByRole("button", { name: /Alto Acre/ }).first().click();

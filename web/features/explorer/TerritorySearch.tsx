@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { lookupMunicipality, searchHealthRegions, searchMunicipalities } from "@/lib/api/client";
-import type { HealthRegionLookup, MunicipalityHealthRegion } from "@/types/api";
+import { mergeTerritoryResults, type TerritorySearchResult } from "@/lib/territory-results";
+import type { MunicipalityHealthRegion } from "@/types/api";
 
-type SearchResult = HealthRegionLookup & { municipality_name?: string };
+type SearchResult = TerritorySearchResult;
 
 export function TerritorySearch({ onSelectRegion }: { onSelectRegion: (code: string) => void }) {
   const [query, setQuery] = useState("");
@@ -58,14 +59,7 @@ export function TerritorySearch({ onSelectRegion }: { onSelectRegion: (code: str
           }),
         );
         const regionResults: SearchResult[] = regions.items;
-        const combined = [...municipalityResults, ...regionResults].filter(
-          (item, index, items) =>
-            items.findIndex(
-              (candidate) =>
-                candidate.health_region_code === item.health_region_code &&
-                candidate.municipality_name === item.municipality_name,
-            ) === index,
-        );
+        const combined = mergeTerritoryResults(municipalityResults, regionResults);
         setResults(combined.slice(0, 10));
         setStatus(combined.length === 0 ? "empty" : "idle");
       } catch {
@@ -127,10 +121,10 @@ export function TerritorySearch({ onSelectRegion }: { onSelectRegion: (code: str
                 className="result-button"
                 onClick={() => selectResult(result)}
               >
-                <strong>{result.health_region_name}</strong>
+                <strong>{result.municipality_name ?? result.health_region_name}</strong>
                 <span className="small-text">
                   {result.municipality_name
-                    ? `${result.municipality_name} · ${result.uf}`
+                    ? `Região de Saúde ${result.health_region_name} · ${result.uf}`
                     : result.uf}
                 </span>
               </button>

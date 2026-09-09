@@ -28,6 +28,7 @@ describe("TerritorySearch", () => {
 
     fireEvent.change(screen.getByLabelText("Encontre sua região"), { target: { value: "garanhuns" } });
     const results = await screen.findByRole("list", { name: "Resultados da busca territorial" });
+    expect(results.querySelectorAll("button")).toHaveLength(1);
     fireEvent.click(results.querySelector("button")!);
 
     expect(onSelectRegion).toHaveBeenCalledWith("26005");

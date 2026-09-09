@@ -18,7 +18,7 @@ export function RegionIntelligence({
         <h2>Por que esta região chama atenção?</h2>
         <p>
           {explanation.matched_signal_families > 0
-            ? `${explanation.matched_signal_families} de 5 grupos de atenção foram identificados nos dados disponíveis.`
+            ? `${explanation.matched_signal_families} de 5 sinais de atenção foram identificados nos dados disponíveis.`
             : "Nenhum dos cinco critérios predefinidos de atenção foi identificado nos dados disponíveis."}
         </p>
         {explanation.triggers.length > 0 && (
