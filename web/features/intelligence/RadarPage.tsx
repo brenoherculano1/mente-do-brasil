@@ -5,6 +5,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { getRadarHealthRegions } from "@/lib/api/client";
 import { formatInteger, formatScore } from "@/lib/format";
 import { describeMismatch, publicLanguage } from "@/lib/public-language";
+import { toneForDirection, toneForMismatch, toneLabel, type RelativeTone } from "@/lib/indicator-tone";
 import { VALID_UFS } from "@/lib/states";
 import type { RadarRegion, RadarResponse, RadarSignalFamily } from "@/types/api";
 import { RadarMap } from "./RadarMap";
@@ -43,7 +44,7 @@ export function RadarPage({ initialUf }: { initialUf?: string }) {
       const response = await getRadarHealthRegions({
         uf: uf || undefined,
         signal: signal || undefined,
-        minSignalFamilies: minFamilies,
+        minSignalFamilies: query.trim() ? 0 : minFamilies,
         q: query.trim() || undefined,
         sort,
         includeGeometry: true,
@@ -108,7 +109,6 @@ export function RadarPage({ initialUf }: { initialUf?: string }) {
               ))}
             </select>
           </label>
-
           <label className="control-group">
             <span className="field-label">Mínimo de grupos de atenção</span>
             <select
@@ -150,6 +150,15 @@ export function RadarPage({ initialUf }: { initialUf?: string }) {
               autoComplete="off"
             />
           </label>
+          {query.trim() && data && (
+            <p className="search-selection" role="status">
+              {data.total_matching === 0
+                ? "Nenhuma Região de Saúde encontrada com esse nome."
+                : data.regions.some((region) => region.matched_signal_families < minFamilies)
+                  ? `Busca encontrada. Para localizar o território, a busca ignora temporariamente o mínimo de ${minFamilies} grupos de atenção.`
+                  : `${data.total_matching} Região de Saúde encontrada.`}
+            </p>
+          )}
 
           <label className="control-group">
             <span className="field-label">Ordenar por</span>
@@ -228,9 +237,9 @@ function SelectedRadarRegion({ region }: { region: RadarRegion | null }) {
         {region.uf} · população {formatInteger(region.population)}
       </p>
       <div className="metric-row">
-        <Metric label="Necessidade" value={formatScore(region.need_score)} />
-        <Metric label="Estrutura" value={formatScore(region.capacity_score)} />
-        <Metric label="Diferença" value={formatScore(region.mismatch_score, true)} />
+        <Metric label="Necessidade" value={formatScore(region.need_score)} tone={toneForDirection(region.need_score, "need")} />
+        <Metric label="Estrutura" value={formatScore(region.capacity_score)} tone={toneForDirection(region.capacity_score, "capacity")} />
+        <Metric label="Diferença" value={formatScore(region.mismatch_score, true)} tone={toneForMismatch(region.mismatch_score)} />
       </div>
       <p className="metric-interpretation">{describeMismatch(region.mismatch_score)}</p>
       <div className="attention-summary">
@@ -258,11 +267,12 @@ function SelectedRadarRegion({ region }: { region: RadarRegion | null }) {
   );
 }
 
-function Metric({ label, value }: { label: string; value: string }) {
+function Metric({ label, value, tone }: { label: string; value: string; tone: RelativeTone }) {
   return (
-    <div className="metric-chip">
+    <div className={`metric-chip metric-tone-${tone}`}>
       <span>{label}</span>
       <strong>{value}</strong>
+      <small>{toneLabel(tone)}</small>
     </div>
   );
 }

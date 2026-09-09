@@ -10,12 +10,19 @@ export function TerritorySearch({ onSelectRegion }: { onSelectRegion: (code: str
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
   const [status, setStatus] = useState<"idle" | "loading" | "empty" | "error">("idle");
+  const [selection, setSelection] = useState<SearchResult | null>(null);
 
   useEffect(() => {
     const trimmed = query.trim();
+    if (selection) {
+      setResults([]);
+      setStatus("idle");
+      return;
+    }
     if (trimmed.length < 2) {
       setResults([]);
       setStatus("idle");
+      setSelection(null);
       return;
     }
     const timeout = window.setTimeout(async () => {
@@ -67,7 +74,15 @@ export function TerritorySearch({ onSelectRegion }: { onSelectRegion: (code: str
       }
     }, 260);
     return () => window.clearTimeout(timeout);
-  }, [query]);
+  }, [query, selection]);
+
+  function selectResult(result: SearchResult) {
+    setSelection(result);
+    setQuery(result.municipality_name ?? result.health_region_name);
+    setResults([]);
+    setStatus("idle");
+    onSelectRegion(result.health_region_code);
+  }
 
   return (
     <div className="control-group">
@@ -78,10 +93,21 @@ export function TerritorySearch({ onSelectRegion }: { onSelectRegion: (code: str
         className="input"
         id="territory-search"
         value={query}
-        onChange={(event) => setQuery(event.target.value)}
+        onChange={(event) => {
+          setSelection(null);
+          setQuery(event.target.value);
+        }}
         placeholder="Digite uma cidade ou Região de Saúde"
         autoComplete="off"
       />
+      {selection && (
+        <p className="search-selection" role="status">
+          <strong>{selection.municipality_name ?? selection.health_region_name}</strong>
+          {selection.municipality_name
+            ? ` pertence à Região de Saúde ${selection.health_region_name} (${selection.uf}).`
+            : ` selecionada em ${selection.uf}.`}
+        </p>
+      )}
       <p className="small-text">
         Busque por qualquer município brasileiro ou pelo nome da Região de Saúde.
       </p>
@@ -95,10 +121,11 @@ export function TerritorySearch({ onSelectRegion }: { onSelectRegion: (code: str
       {results.length > 0 && (
         <ul className="result-list" aria-label="Resultados da busca territorial">
           {results.map((result) => (
-            <li key={result.health_region_code}>
+            <li key={`${result.health_region_code}-${result.municipality_name ?? "region"}`}>
               <button
+                type="button"
                 className="result-button"
-                onClick={() => onSelectRegion(result.health_region_code)}
+                onClick={() => selectResult(result)}
               >
                 <strong>{result.health_region_name}</strong>
                 <span className="small-text">

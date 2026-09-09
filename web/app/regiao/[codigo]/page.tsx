@@ -19,6 +19,7 @@ import { ScoreOverview } from "@/features/profile/ScoreOverview";
 import { SpatialContext } from "@/features/profile/SpatialContext";
 import { RegionAdvanced } from "@/features/advanced/RegionAdvanced";
 import { ShareButton } from "@/features/share/ShareButton";
+import { toneForDirection, toneLabel } from "@/lib/indicator-tone";
 
 type RegionPageProps = {
   params: Promise<{ codigo: string }>;
@@ -174,9 +175,10 @@ export default async function RegionProfilePage({ params }: RegionPageProps) {
               percentile={profile.need.psychiatric_admissions.percentile}
               direction="need"
             />
-            <div className="metric-chip">
+            <div className={`metric-chip metric-tone-${toneForDirection(profile.need.score, "need")}`}>
               <span>Índice de necessidade</span>
               <strong>{formatScore(profile.need.score)}</strong>
+              <small>{toneLabel(toneForDirection(profile.need.score, "need"))}</small>
             </div>
           </div>
         </div>
@@ -218,9 +220,10 @@ export default async function RegionProfilePage({ params }: RegionPageProps) {
               percentile={profile.capacity.psychiatrist_fte.percentile}
               direction="capacity"
             />
-            <div className="metric-chip">
+            <div className={`metric-chip metric-tone-${toneForDirection(profile.capacity.score, "capacity")}`}>
               <span>Índice de estrutura</span>
               <strong>{formatScore(profile.capacity.score)}</strong>
+              <small>{toneLabel(toneForDirection(profile.capacity.score, "capacity"))}</small>
             </div>
           </div>
         </div>

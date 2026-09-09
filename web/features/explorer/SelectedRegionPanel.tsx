@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { formatInteger, formatMetricValue, formatScore } from "@/lib/format";
 import { describeMismatch } from "@/lib/public-language";
+import { toneForDirection, toneForMismatch, toneLabel } from "@/lib/indicator-tone";
 import type { HealthRegionFeature, HealthRegionProfile } from "@/types/api";
 
 export function SelectedRegionPanel({
@@ -33,17 +34,20 @@ export function SelectedRegionPanel({
       {profile && (
         <>
           <div className="metric-row" aria-label="Resumo de necessidade e estrutura">
-            <div className="metric-chip">
+            <div className={`metric-chip metric-tone-${toneForDirection(profile.need.score, "need")}`}>
               <span>Necessidade</span>
               <strong>{formatScore(profile.need.score)}</strong>
+              <small>{toneLabel(toneForDirection(profile.need.score, "need"))}</small>
             </div>
-            <div className="metric-chip">
+            <div className={`metric-chip metric-tone-${toneForDirection(profile.capacity.score, "capacity")}`}>
               <span>Estrutura</span>
               <strong>{formatScore(profile.capacity.score)}</strong>
+              <small>{toneLabel(toneForDirection(profile.capacity.score, "capacity"))}</small>
             </div>
-            <div className="metric-chip">
+            <div className={`metric-chip metric-tone-${toneForMismatch(profile.mismatch.score)}`}>
               <span>Diferença</span>
               <strong>{formatScore(profile.mismatch.score, true)}</strong>
+              <small>{toneLabel(toneForMismatch(profile.mismatch.score))}</small>
             </div>
           </div>
           <p className="metric-interpretation">{describeMismatch(profile.mismatch.score)}</p>

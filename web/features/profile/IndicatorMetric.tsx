@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import { describePercentile, type IndicatorDirection } from "@/lib/public-language";
+import { toneForDirection, toneLabel } from "@/lib/indicator-tone";
 
 export function IndicatorMetric({
   title,
@@ -16,12 +17,14 @@ export function IndicatorMetric({
     <article className="indicator-card">
       <h3>{title}</h3>
       <div className="indicator-values">
-        {values.map(([label, value]) => (
-          <div className="metric-chip" key={label}>
+        {values.map(([label, value]) => {
+          const tone = label === "Posição nacional" ? toneForDirection(percentile, direction) : null;
+          return <div className={`metric-chip${tone ? ` metric-tone-${tone}` : ""}`} key={label}>
             <span>{label}</span>
             <strong>{value}</strong>
+            {tone && <small>{toneLabel(tone)}</small>}
           </div>
-        ))}
+        })}
       </div>
       <div
         className="percentile"

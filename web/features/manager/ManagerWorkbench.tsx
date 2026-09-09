@@ -15,6 +15,13 @@ import {
 import { formatInteger, formatMetricValue, formatPercentile, formatScore } from "@/lib/format";
 import { getMetricConfig, METRICS } from "@/lib/metrics";
 import {
+  toneForDirection,
+  toneForMetric,
+  toneForMismatch,
+  toneLabel,
+  type RelativeTone,
+} from "@/lib/indicator-tone";
+import {
   describeCompositeScore,
   describeMismatch,
   describePercentile,
@@ -372,9 +379,9 @@ function QuickRead({ brief }: { brief: ManagerBrief }) {
         </p>
       </div>
       <div className="manager-metrics" aria-label="Indicadores sintéticos">
-        <MetricChip label="Necessidade" value={formatScore(brief.need_score)} />
-        <MetricChip label="Estrutura" value={formatScore(brief.capacity_score)} />
-        <MetricChip label="Diferença" value={formatScore(brief.mismatch_score, true)} />
+        <MetricChip label="Necessidade" value={formatScore(brief.need_score)} tone={toneForDirection(brief.need_score, "need")} />
+        <MetricChip label="Estrutura" value={formatScore(brief.capacity_score)} tone={toneForDirection(brief.capacity_score, "capacity")} />
+        <MetricChip label="Diferença" value={formatScore(brief.mismatch_score, true)} tone={toneForMismatch(brief.mismatch_score)} />
         <MetricChip label="Grupos de atenção" value={`${brief.matched_signal_families}/5`} />
       </div>
       <div className="manager-plain-reading">
@@ -563,7 +570,7 @@ function CompareMode({
             {compare.regions.map((region) => {
               const item = metricValue(region.indicators, metric);
               return (
-                <div className="compare-row" key={region.identity.health_region_code}>
+                <div className={`compare-row metric-tone-${toneForMetric(metric, item?.value ?? null, item?.percentile ?? null)}`} key={region.identity.health_region_code}>
                   <Link href={`/regiao/${region.identity.health_region_code}`}>{region.identity.health_region_name}</Link>
                   <strong>{formatMetricValue(item?.value, config.scale)}</strong>
                   <small>{describeComparisonMetric(metric, item)}</small>
@@ -680,11 +687,12 @@ function describeComparisonMetric(metric: MetricId, item: ManagerMetricValue | u
   return describePercentile(item.percentile, metricDirection(metric));
 }
 
-function MetricChip({ label, value }: { label: string; value: string }) {
+function MetricChip({ label, value, tone }: { label: string; value: string; tone?: RelativeTone }) {
   return (
-    <div className="metric-chip">
+    <div className={`metric-chip${tone ? ` metric-tone-${tone}` : ""}`}>
       <span>{label}</span>
       <strong>{value}</strong>
+      {tone && <small>{toneLabel(tone)}</small>}
     </div>
   );
 }

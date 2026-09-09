@@ -1,5 +1,6 @@
 import { formatScore } from "@/lib/format";
 import { describeCompositeScore, describeMismatch } from "@/lib/public-language";
+import { toneForMismatch, toneLabel } from "@/lib/indicator-tone";
 
 export function ScoreOverview({
   need,
@@ -28,9 +29,10 @@ export function ScoreOverview({
         <p>{describeCompositeScore(need, "need")}</p>
         <p>{describeCompositeScore(capacity, "capacity")}</p>
       </div>
-      <div className="metric-chip" style={{ marginTop: 14 }}>
+      <div className={`metric-chip metric-tone-${toneForMismatch(mismatch)}`} style={{ marginTop: 14 }}>
         <span>Diferença necessidade-capacidade</span>
         <strong>{formatScore(mismatch, true)}</strong>
+        <small>{toneLabel(toneForMismatch(mismatch))}</small>
       </div>
       <p className="metric-interpretation">{describeMismatch(mismatch)}</p>
     </div>
