@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { getRadarHealthRegions } from "@/lib/api/client";
-import { SharePanel } from "@/features/share/SharePanel";
 import { formatInteger, formatScore } from "@/lib/format";
 import { describeMismatch, publicLanguage } from "@/lib/public-language";
 import { toneForDirection, toneForMismatch, toneLabel, type RelativeTone } from "@/lib/indicator-tone";
@@ -201,13 +200,6 @@ export function RadarPage({ initialUf }: { initialUf?: string }) {
           <SelectedRadarRegion region={selected} />
         </aside>
       </section>
-
-      {selected && (
-        <SharePanel
-          title={`${selected.health_region_name} no Radar | Mente do Brasil`}
-          text={`${selected.health_region_name} apresenta ${selected.matched_signal_families} de 5 sinais de atenção no Radar do Mente do Brasil. A leitura é territorial, descritiva e não constitui ranking.`}
-        />
-      )}
 
       <section className="state-section" aria-labelledby="radar-list-title">
         <p className="eyebrow">Lista acessível</p>

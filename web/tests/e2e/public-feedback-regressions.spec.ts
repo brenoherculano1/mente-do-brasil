@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-test("same-name municipality appears once and comparison explains and shares results", async ({
+test("same-name municipality appears once and comparison explains results", async ({
   page,
 }, testInfo) => {
   test.skip(testInfo.project.name !== "desktop", "desktop-only focused regression QA");
@@ -20,10 +20,4 @@ test("same-name municipality appears once and comparison explains and shares res
   await expect(page.locator(".comparison-conclusion")).toContainText(
     "estrutura registrada ocupa posição relativa igual ou superior",
   );
-  await expect(page.getByRole("heading", { name: "Compartilhe estes dados" })).toBeVisible();
-  await expect(page.getByRole("link", { name: "Enviar pelo WhatsApp" })).toHaveAttribute(
-    "href",
-    /^https:\/\/wa\.me\/\?text=/,
-  );
-  await expect(page.getByRole("button", { name: "Copiar texto e link" })).toBeVisible();
 });

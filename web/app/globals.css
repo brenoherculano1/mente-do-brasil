@@ -2488,33 +2488,6 @@ th {
   gap: 8px;
 }
 
-.share-panel {
-  align-items: center;
-  border-bottom: 1px solid var(--border);
-  border-top: 1px solid var(--border);
-  display: grid;
-  gap: 16px;
-  grid-template-columns: minmax(0, 1fr) auto;
-  margin-top: 24px;
-  padding: 22px 0;
-}
-
-.share-panel h2,
-.share-panel p {
-  margin-bottom: 4px;
-  margin-top: 0;
-}
-
-.share-panel-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.share-status {
-  grid-column: 1 / -1;
-}
-
 .financing-comparison {
   border-bottom: 1px solid var(--border);
   border-top: 1px solid var(--border);
@@ -2737,20 +2710,8 @@ th {
 }
 
 @media (max-width: 640px) {
-  .radar-steps,
-  .share-panel {
+  .radar-steps {
     grid-template-columns: 1fr;
-  }
-
-  .share-panel-actions {
-    align-items: stretch;
-    flex-direction: column;
-  }
-
-  .share-panel-actions .primary-button,
-  .share-panel-actions .text-button {
-    justify-content: center;
-    width: 100%;
   }
 
   .public-home-intro {

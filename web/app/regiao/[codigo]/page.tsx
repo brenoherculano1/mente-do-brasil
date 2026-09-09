@@ -18,7 +18,7 @@ import { IndicatorMetric } from "@/features/profile/IndicatorMetric";
 import { ScoreOverview } from "@/features/profile/ScoreOverview";
 import { SpatialContext } from "@/features/profile/SpatialContext";
 import { RegionAdvanced } from "@/features/advanced/RegionAdvanced";
-import { SharePanel } from "@/features/share/SharePanel";
+import { ShareButton } from "@/features/share/ShareButton";
 import { toneForDirection, toneLabel } from "@/lib/indicator-tone";
 
 type RegionPageProps = {
@@ -97,6 +97,10 @@ export default async function RegionProfilePage({ params }: RegionPageProps) {
           >
             Baixar relatório
           </a>
+          <ShareButton
+            title={`${territory.health_region_name} | Mente do Brasil`}
+            text={`Veja os dados públicos da Região de Saúde ${territory.health_region_name}. Indicadores territoriais descritivos, sem ranking de desempenho.`}
+          />
         </div>
       </section>
 
@@ -233,11 +237,6 @@ export default async function RegionProfilePage({ params }: RegionPageProps) {
         <SpatialContext spatial={profile.spatial} />
         <DataQualityNotice flags={profile.data_quality_flags} />
       </section>
-
-      <SharePanel
-        title={`${territory.health_region_name} | Mente do Brasil`}
-        text={`Veja os dados públicos da Região de Saúde ${territory.health_region_name}. Indicadores territoriais descritivos, sem ranking de desempenho.`}
-      />
 
       <section className="profile-section">
         <h2>Navegação</h2>

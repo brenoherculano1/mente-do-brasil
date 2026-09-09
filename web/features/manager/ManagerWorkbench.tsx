@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { RegionAdvanced } from "@/features/advanced/RegionAdvanced";
-import { SharePanel } from "@/features/share/SharePanel";
+import { ShareButton } from "@/features/share/ShareButton";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   getManagerBrief,
@@ -534,6 +534,10 @@ function CompareMode({
       <p className="eyebrow">Compare regiões</p>
       <h2 id="compare-title">Selecione de 2 a 4 Regiões de Saúde</h2>
       <p>Veja diferenças de população, necessidade, estrutura, evolução e recursos gerais de saúde sem criar um ranking.</p>
+      <ShareButton
+        title="Comparação de Regiões de Saúde | Mente do Brasil"
+        text="Veja esta comparação territorial no Mente do Brasil. Os indicadores são descritivos e não formam ranking de desempenho."
+      />
       <div className="manager-compare-controls">
         <label className="control-group">
           <span className="field-label">Indicador</span>
@@ -631,10 +635,6 @@ function CompareMode({
             </p>
           </section>
           <ComparisonContext briefs={briefs} />
-          <SharePanel
-            title="Comparação de Regiões de Saúde | Mente do Brasil"
-            text={`Compare ${compare.regions.map((region) => region.identity.health_region_name).join(", ")} no Mente do Brasil. ${buildComparisonConclusion(compare.regions, metric)}`}
-          />
         </>
       )}
     </section>
