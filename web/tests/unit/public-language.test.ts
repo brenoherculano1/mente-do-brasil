@@ -1,5 +1,10 @@
 import { describe, expect, it } from "vitest";
-import { publicLanguage } from "@/lib/public-language";
+import {
+  describeCompositeScore,
+  describeMismatch,
+  describePercentile,
+  publicLanguage,
+} from "@/lib/public-language";
 
 describe("publicLanguage", () => {
   it("translates technical analytical terms for public surfaces", () => {
@@ -14,5 +19,17 @@ describe("publicLanguage", () => {
   it("expands internal quality flags into plain-language cautions", () => {
     expect(publicLanguage("SMALL_SUICIDE_COUNT")).toContain("interpretar a taxa com cautela");
     expect(publicLanguage("ZERO_REGISTERED_BEDS")).toContain("Nenhum leito registrado");
+  });
+
+  it("explains percentiles without calling them performance rankings", () => {
+    expect(describePercentile(0.89, "capacity")).toContain("valores mais altos");
+    expect(describePercentile(0.89, "capacity")).toContain("não uma nota de qualidade");
+    expect(describePercentile(0.18, "need")).toContain("valores mais baixos");
+  });
+
+  it("explains composite scores and mismatch without inventing shortages", () => {
+    expect(describeCompositeScore(0.46, "capacity")).toContain("46 pontos");
+    expect(describeMismatch(-0.14)).toContain("estrutura registrada está 14 pontos acima");
+    expect(describeMismatch(-0.14)).toContain("não informa quantos CAPS");
   });
 });

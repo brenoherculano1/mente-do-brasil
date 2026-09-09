@@ -1,4 +1,5 @@
 import { formatScore } from "@/lib/format";
+import { describeCompositeScore, describeMismatch } from "@/lib/public-language";
 
 export function ScoreOverview({
   need,
@@ -23,10 +24,15 @@ export function ScoreOverview({
         <span>Necessidade {formatScore(need)}</span>
         <span>Estrutura {formatScore(capacity)}</span>
       </div>
+      <div className="score-explanations">
+        <p>{describeCompositeScore(need, "need")}</p>
+        <p>{describeCompositeScore(capacity, "capacity")}</p>
+      </div>
       <div className="metric-chip" style={{ marginTop: 14 }}>
         <span>Diferença necessidade-capacidade</span>
         <strong>{formatScore(mismatch, true)}</strong>
       </div>
+      <p className="metric-interpretation">{describeMismatch(mismatch)}</p>
     </div>
   );
 }

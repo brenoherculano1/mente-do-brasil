@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { formatInteger, formatMetricValue, formatScore } from "@/lib/format";
+import { describeMismatch } from "@/lib/public-language";
 import type { HealthRegionFeature, HealthRegionProfile } from "@/types/api";
 
 export function SelectedRegionPanel({
@@ -45,6 +46,7 @@ export function SelectedRegionPanel({
               <strong>{formatScore(profile.mismatch.score, true)}</strong>
             </div>
           </div>
+          <p className="metric-interpretation">{describeMismatch(profile.mismatch.score)}</p>
           <div className="absolute-metrics" aria-label="Quantidades registradas na região">
             <p className="field-label">Quantidades registradas</p>
             <dl>

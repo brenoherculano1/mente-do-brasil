@@ -1,13 +1,16 @@
 import type { CSSProperties } from "react";
+import { describePercentile, type IndicatorDirection } from "@/lib/public-language";
 
 export function IndicatorMetric({
   title,
   values,
   percentile,
+  direction,
 }: {
   title: string;
   values: Array<[string, string]>;
   percentile: number;
+  direction: IndicatorDirection;
 }) {
   return (
     <article className="indicator-card">
@@ -31,7 +34,7 @@ export function IndicatorMetric({
       >
         <span />
       </div>
-      <p className="small-text">Posição relativa nacional: {Math.round(percentile * 100)} de 100</p>
+      <p className="metric-interpretation">{describePercentile(percentile, direction)}</p>
     </article>
   );
 }

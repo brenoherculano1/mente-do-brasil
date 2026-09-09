@@ -1222,6 +1222,12 @@ th {
   line-height: 1;
 }
 
+.release-stat-compact strong {
+  font-size: 2rem;
+  line-height: 1.08;
+  overflow-wrap: anywhere;
+}
+
 .release-stat span {
   color: var(--text-muted);
   display: block;
@@ -2378,6 +2384,128 @@ th {
 .financing-caution p {
   font-size: 0.92rem;
   margin: 5px 0 0;
+}
+
+.metric-interpretation,
+.coverage-2025-note {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.metric-interpretation {
+  border-left: 3px solid var(--accent);
+  margin: 12px 0 0;
+  padding-left: 10px;
+}
+
+.score-explanations {
+  display: grid;
+  gap: 4px;
+  margin-top: 10px;
+}
+
+.score-explanations p {
+  color: var(--text-muted);
+  font-size: 0.84rem;
+  margin: 0;
+}
+
+.manager-plain-reading {
+  grid-column: 1 / -1;
+}
+
+.manager-plain-reading p {
+  color: var(--text-muted);
+  font-size: 0.86rem;
+  margin: 4px 0;
+}
+
+.share-control {
+  align-items: center;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.financing-comparison {
+  border-bottom: 1px solid var(--border);
+  border-top: 1px solid var(--border);
+  margin: 24px 0;
+  padding: 24px 0;
+}
+
+.section-heading-inline {
+  align-items: end;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.section-heading-inline h2 {
+  margin: 4px 0 0;
+}
+
+.year-comparison-controls,
+.financing-summary-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.year-comparison-controls {
+  grid-template-columns: repeat(2, minmax(0, 220px));
+  margin-top: 18px;
+}
+
+.year-comparison-controls label {
+  display: grid;
+  gap: 6px;
+}
+
+.financing-summary-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 14px;
+}
+
+.financing-summary {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  padding: 14px;
+}
+
+.financing-summary span,
+.financing-summary small {
+  color: var(--text-muted);
+}
+
+.financing-summary strong {
+  font-size: 1.15rem;
+  overflow-wrap: anywhere;
+}
+
+.financing-counter-limit {
+  margin: 18px 0;
+  max-width: none;
+}
+
+.financing-counter-limit p {
+  margin: 5px 0 0;
+}
+
+@media (max-width: 620px) {
+  .section-heading-inline {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .year-comparison-controls,
+  .financing-summary-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .question-list {

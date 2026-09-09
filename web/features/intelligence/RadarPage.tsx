@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { getRadarHealthRegions } from "@/lib/api/client";
 import { formatInteger, formatScore } from "@/lib/format";
-import { publicLanguage } from "@/lib/public-language";
+import { describeMismatch, publicLanguage } from "@/lib/public-language";
 import { VALID_UFS } from "@/lib/states";
 import type { RadarRegion, RadarResponse, RadarSignalFamily } from "@/types/api";
 import { RadarMap } from "./RadarMap";
@@ -232,6 +232,7 @@ function SelectedRadarRegion({ region }: { region: RadarRegion | null }) {
         <Metric label="Estrutura" value={formatScore(region.capacity_score)} />
         <Metric label="Diferença" value={formatScore(region.mismatch_score, true)} />
       </div>
+      <p className="metric-interpretation">{describeMismatch(region.mismatch_score)}</p>
       <div className="attention-summary">
         <strong>{attentionLabel(region.matched_signal_families)}</strong>
         <span>{region.matched_signal_families} de 5 grupos de atenção identificados</span>

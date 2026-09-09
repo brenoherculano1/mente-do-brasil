@@ -18,6 +18,7 @@ import { IndicatorMetric } from "@/features/profile/IndicatorMetric";
 import { ScoreOverview } from "@/features/profile/ScoreOverview";
 import { SpatialContext } from "@/features/profile/SpatialContext";
 import { RegionAdvanced } from "@/features/advanced/RegionAdvanced";
+import { ShareButton } from "@/features/share/ShareButton";
 
 type RegionPageProps = {
   params: Promise<{ codigo: string }>;
@@ -95,6 +96,10 @@ export default async function RegionProfilePage({ params }: RegionPageProps) {
           >
             Baixar relatório
           </a>
+          <ShareButton
+            title={`${territory.health_region_name} | Mente do Brasil`}
+            text={`Veja os dados públicos da Região de Saúde ${territory.health_region_name}. Indicadores territoriais descritivos, sem ranking de desempenho.`}
+          />
         </div>
       </section>
 
@@ -157,6 +162,7 @@ export default async function RegionProfilePage({ params }: RegionPageProps) {
                 ["Posição nacional", `${Math.round(profile.need.suicide.percentile * 100)}/100`],
               ]}
               percentile={profile.need.suicide.percentile}
+              direction="need"
             />
             <IndicatorMetric
               title="Internações psiquiátricas registradas no SUS"
@@ -166,6 +172,7 @@ export default async function RegionProfilePage({ params }: RegionPageProps) {
                 ["Posição nacional", `${Math.round(profile.need.psychiatric_admissions.percentile * 100)}/100`],
               ]}
               percentile={profile.need.psychiatric_admissions.percentile}
+              direction="need"
             />
             <div className="metric-chip">
               <span>Índice de necessidade</span>
@@ -189,6 +196,7 @@ export default async function RegionProfilePage({ params }: RegionPageProps) {
                 ["Posição nacional", `${Math.round(profile.capacity.caps.percentile * 100)}/100`],
               ]}
               percentile={profile.capacity.caps.percentile}
+              direction="capacity"
             />
             <IndicatorMetric
               title="Leitos de saúde mental no SUS"
@@ -198,6 +206,7 @@ export default async function RegionProfilePage({ params }: RegionPageProps) {
                 ["Posição nacional", `${Math.round(profile.capacity.mental_health_beds_sus.percentile * 100)}/100`],
               ]}
               percentile={profile.capacity.mental_health_beds_sus.percentile}
+              direction="capacity"
             />
             <IndicatorMetric
               title="Psiquiatras no SUS"
@@ -207,6 +216,7 @@ export default async function RegionProfilePage({ params }: RegionPageProps) {
                 ["Posição nacional", `${Math.round(profile.capacity.psychiatrist_fte.percentile * 100)}/100`],
               ]}
               percentile={profile.capacity.psychiatrist_fte.percentile}
+              direction="capacity"
             />
             <div className="metric-chip">
               <span>Índice de estrutura</span>

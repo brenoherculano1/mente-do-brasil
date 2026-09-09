@@ -128,6 +128,7 @@ export function AboutPage() {
             <ScopeStat
               value={ABOUT_PAGE.scope.capacityReference}
               label="referência para Capacity no CNES"
+              compact
             />
           </div>
           <div className="about-card-grid release-components">
@@ -192,8 +193,12 @@ export function AboutPage() {
             interface pública.
           </p>
           <p>
-            A cobertura atual vai até 2024. Dados de 2025 serão incorporados somente
-            após disponibilidade, compatibilização e validação completa das fontes.
+            A cobertura atual vai até 2024 porque esse é o último período em que todas
+            as fontes usadas passaram pelo mesmo ciclo de disponibilidade,
+            compatibilização territorial, checagem de completude e validação. A
+            existência de registros parciais de 2025 em uma fonte não torna o ano
+            comparável ao conjunto publicado. Dados de 2025 serão incorporados somente
+            depois de concluídas essas verificações para todas as medidas necessárias.
           </p>
         </section>
 
@@ -232,9 +237,9 @@ export function AboutPage() {
   );
 }
 
-function ScopeStat({ value, label }: { value: string; label: string }) {
+function ScopeStat({ value, label, compact = false }: { value: string; label: string; compact?: boolean }) {
   return (
-    <div className="release-stat">
+    <div className={`release-stat${compact ? " release-stat-compact" : ""}`}>
       <strong>{value}</strong>
       <span>{label}</span>
     </div>

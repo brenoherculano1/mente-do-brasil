@@ -1,5 +1,5 @@
 import { formatScore } from "@/lib/format";
-import { publicLanguage } from "@/lib/public-language";
+import { describeMismatch, publicLanguage } from "@/lib/public-language";
 import type { ExplanationResponse, PeersResponse } from "@/types/api";
 import { DecompositionChart } from "./DecompositionChart";
 import { PeerComparison } from "./PeerComparison";
@@ -57,6 +57,7 @@ export function RegionIntelligence({
           Soma das contribuições: {formatScore(explanation.decomposition_sum, true)}.
           Diferença: {formatScore(explanation.mismatch_score, true)}.
         </p>
+        <p className="metric-interpretation">{describeMismatch(explanation.mismatch_score)}</p>
         <DecompositionChart explanation={explanation} />
       </div>
 

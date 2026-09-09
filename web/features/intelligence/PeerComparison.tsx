@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 import { getHealthRegionPeers } from "@/lib/api/client";
 import { formatInteger, formatMetricValue, formatRate } from "@/lib/format";
 import { getMetricConfig, METRICS } from "@/lib/metrics";
+import { describeMismatch } from "@/lib/public-language";
 import type { MetricId, PeerBenchmark, PeersResponse } from "@/types/api";
 
 export function PeerComparison({ initialPeers }: { initialPeers: PeersResponse }) {
@@ -54,6 +55,9 @@ export function PeerComparison({ initialPeers }: { initialPeers: PeersResponse }
       <p className="small-text">
         {loading ? "Atualizando comparação..." : "As regiões são selecionadas por semelhança de população, densidade e número de municípios."}
       </p>
+      {metric === "mismatch_score" && benchmark.target_value !== null && (
+        <p className="metric-interpretation">{describeMismatch(benchmark.target_value)}</p>
+      )}
       <div className="peer-why">
         <h3>Comparabilidade usada</h3>
         <div className="metric-row">

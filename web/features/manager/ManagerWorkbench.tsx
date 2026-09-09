@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { RegionAdvanced } from "@/features/advanced/RegionAdvanced";
+import { ShareButton } from "@/features/share/ShareButton";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   getManagerBrief,
@@ -13,7 +14,12 @@ import {
 } from "@/lib/api/client";
 import { formatInteger, formatMetricValue, formatPercentile, formatScore } from "@/lib/format";
 import { getMetricConfig, METRICS } from "@/lib/metrics";
-import { publicLanguage } from "@/lib/public-language";
+import {
+  describeCompositeScore,
+  describeMismatch,
+  describePercentile,
+  publicLanguage,
+} from "@/lib/public-language";
 import type {
   HealthRegionLookup,
   HealthRegionProfile,
@@ -371,6 +377,11 @@ function QuickRead({ brief }: { brief: ManagerBrief }) {
         <MetricChip label="Diferença" value={formatScore(brief.mismatch_score, true)} />
         <MetricChip label="Grupos de atenção" value={`${brief.matched_signal_families}/5`} />
       </div>
+      <div className="manager-plain-reading">
+        <p>{describeCompositeScore(brief.need_score, "need")}</p>
+        <p>{describeCompositeScore(brief.capacity_score, "capacity")}</p>
+        <p>{describeMismatch(brief.mismatch_score)}</p>
+      </div>
       <div className="nav-links">
         <Link className="text-button" href={`/regiao/${brief.region.health_region_code}`}>
           Ver perfil completo
@@ -455,9 +466,9 @@ function MeetingMode({ brief, onCopy }: { brief: ManagerBrief | null; onCopy: ()
         <article className="panel manager-section">
           <h2>Fatos para abrir a reunião</h2>
           <ul className="signal-list">
-            <li>Necessidade {formatScore(brief.need_score)}.</li>
-            <li>Estrutura {formatScore(brief.capacity_score)}.</li>
-            <li>Diferença necessidade-capacidade {formatScore(brief.mismatch_score, true)}.</li>
+            <li>{describeCompositeScore(brief.need_score, "need")}</li>
+            <li>{describeCompositeScore(brief.capacity_score, "capacity")}</li>
+            <li>{describeMismatch(brief.mismatch_score)}</li>
             <li>{brief.matched_signal_families}/5 grupos de atenção.</li>
           </ul>
         </article>
@@ -515,6 +526,10 @@ function CompareMode({
       <p className="eyebrow">Compare regiões</p>
       <h2 id="compare-title">Selecione de 2 a 4 Regiões de Saúde</h2>
       <p>Veja diferenças de população, necessidade, estrutura, evolução e recursos gerais de saúde sem criar um ranking.</p>
+      <ShareButton
+        title="Comparação de Regiões de Saúde | Mente do Brasil"
+        text="Veja esta comparação territorial no Mente do Brasil. Os indicadores são descritivos e não formam ranking de desempenho."
+      />
       <div className="manager-compare-controls">
         <label className="control-group">
           <span className="field-label">Indicador</span>
@@ -551,7 +566,7 @@ function CompareMode({
                 <div className="compare-row" key={region.identity.health_region_code}>
                   <Link href={`/regiao/${region.identity.health_region_code}`}>{region.identity.health_region_name}</Link>
                   <strong>{formatMetricValue(item?.value, config.scale)}</strong>
-                  <small>{item?.percentile == null ? "sem percentil" : formatPercentile(item.percentile)}</small>
+                  <small>{describeComparisonMetric(metric, item)}</small>
                   <em>{region.matched_signal_families}/5 grupos de atenção</em>
                 </div>
               );
@@ -648,6 +663,21 @@ function ComparisonContext({ briefs }: { briefs: ManagerBrief[] }) {
 
 function metricValue(items: ManagerMetricValue[], metric: MetricId) {
   return items.find((item) => item.metric_id === metric);
+}
+
+function metricDirection(metric: MetricId) {
+  return metric === "need_score" || metric === "suicide_asmr" || metric === "psychiatric_admission_rate"
+    ? "need" as const
+    : "capacity" as const;
+}
+
+function describeComparisonMetric(metric: MetricId, item: ManagerMetricValue | undefined) {
+  if (!item) return "Dado indisponível.";
+  if (metric === "mismatch_score") {
+    return item.value === null ? "Diferença indisponível." : describeMismatch(item.value);
+  }
+  if (item.percentile === null) return "Posição relativa indisponível.";
+  return describePercentile(item.percentile, metricDirection(metric));
 }
 
 function MetricChip({ label, value }: { label: string; value: string }) {

@@ -6,6 +6,8 @@ import { getMapData } from "@/lib/api/client";
 import { formatInteger, formatMetricValue, formatPercentile, formatScore } from "@/lib/format";
 import { getScaleDomain } from "@/lib/map/color-scale";
 import { DEFAULT_METRIC, getMetricConfig, type MetricConfig } from "@/lib/metrics";
+import { describeMismatch } from "@/lib/public-language";
+import { ShareButton } from "@/features/share/ShareButton";
 import type {
   HealthRegionFeatureCollection,
   MetricId,
@@ -93,6 +95,10 @@ export function StatePage({ stateProfile }: { stateProfile: StateProfile }) {
             value={String(stateProfile.state.health_region_count)}
           />
         </div>
+        <ShareButton
+          title={`${stateProfile.state.state_name} | Mente do Brasil`}
+          text={`Veja os dados públicos das Regiões de Saúde de ${stateProfile.state.state_name}. A leitura é territorial e não constitui ranking de desempenho.`}
+        />
       </section>
 
       <main className="state-content">
@@ -231,6 +237,9 @@ export function StatePage({ stateProfile }: { stateProfile: StateProfile }) {
                   <MetricRow label="Estrutura" value={formatScore(region.capacity_score)} />
                   <MetricRow label="Diferença" value={formatScore(region.mismatch_score, true)} />
                 </dl>
+                {region.mismatch_score === null
+                  ? <p className="metric-interpretation">Diferença indisponível para esta região.</p>
+                  : <p className="metric-interpretation">{describeMismatch(region.mismatch_score)}</p>}
                 <div className="state-region-secondary">
                   {region.lisa_significant && region.lisa_cluster && (
                     <span>Padrão territorial identificado</span>
