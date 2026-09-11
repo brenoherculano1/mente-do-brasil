@@ -37,7 +37,7 @@ test("desktop Radar shows territorial signals, filters, and region intelligence"
     response.url().includes("uf=AC") &&
     response.status() === 200,
   );
-  await expect(page.getByText(/Regiões de Saúde atendem os filtros/)).toBeVisible();
+  await expect(page.getByText(/Regiões de Saúde atendem aos filtros/)).toBeVisible();
   await page.screenshot({ path: `${QA_DIR}/desktop_radar_state.png`, fullPage: true });
 
   await page.getByRole("button", { name: /Alto Acre/ }).first().click();

@@ -40,14 +40,25 @@ function region(name: string, metric: MetricId, value: number): ManagerCompareRe
 }
 
 describe("buildComparisonConclusion", () => {
-  it("explains a favorable mismatch comparison without creating a ranking", () => {
+  it("describes ties without selecting an extreme region", () => {
+    const text = buildComparisonConclusion([region("A", "mismatch_score", 0), region("B", "mismatch_score", 0)], "mismatch_score");
+    expect(text).toContain("mesmo valor");
+    expect(text).not.toMatch(/mais pronunciada|favorável/);
+  });
+
+  it("excludes non-finite values", () => {
+    expect(buildComparisonConclusion([region("A", "mismatch_score", NaN), region("B", "mismatch_score", 0)], "mismatch_score")).toContain("Não há dados suficientes");
+  });
+
+  it("describes negative mismatch without a normative ranking", () => {
     const conclusion = buildComparisonConclusion(
       [region("Garanhuns", "mismatch_score", -0.54), region("Caruaru", "mismatch_score", -0.37)],
       "mismatch_score",
     );
 
     expect(conclusion).toContain("estrutura registrada ocupa posição relativa igual ou superior");
-    expect(conclusion).toContain("Garanhuns apresenta a diferença mais favorável");
+    expect(conclusion).toContain("mais pronunciada em Garanhuns");
+    expect(conclusion).not.toMatch(/favorável|melhor|pior/);
   });
 
   it("states the access limitation for capacity comparisons", () => {

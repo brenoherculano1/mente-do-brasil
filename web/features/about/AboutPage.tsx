@@ -37,7 +37,7 @@ export function AboutPage() {
             documentada.
           </p>
           <p>
-            A unidade principal de análise do release atual é a Região de Saúde. Isso
+            A unidade principal de análise dos dados atuais é a Região de Saúde. Isso
             permite observar como indicadores de necessidade medida e capacidade
             pública registrada se distribuem entre diferentes partes do país sem
             reduzir a análise a limites municipais isolados.
@@ -115,33 +115,33 @@ export function AboutPage() {
         </section>
 
         <section className="about-section" aria-labelledby="scope-title">
-          <p className="eyebrow">Release atual</p>
+          <p className="eyebrow">Dados atuais</p>
           <h2 id="scope-title">Escopo atual</h2>
-          <p>Região de Saúde é a unidade principal de análise deste release.</p>
+          <p>Região de Saúde é a unidade principal desta análise.</p>
           <div className="about-scope-grid">
             <ScopeStat value={String(ABOUT_PAGE.scope.healthRegions)} label="Regiões de Saúde" />
             <ScopeStat
               value="5.570"
-              label="municípios associados à geografia do release"
+              label="municípios associados às regiões analisadas"
             />
-            <ScopeStat value={ABOUT_PAGE.scope.needPeriod} label="período agrupado para Need" />
+            <ScopeStat value={ABOUT_PAGE.scope.needPeriod} label="período agrupado para necessidade medida" />
             <ScopeStat
               value={ABOUT_PAGE.scope.capacityReference}
-              label="referência para Capacity no CNES"
+              label="referência para estrutura registrada no CNES"
               compact
             />
           </div>
           <div className="about-card-grid release-components">
             <article className="about-card">
-              <h3>Need</h3>
+              <h3>Necessidade medida</h3>
               <p>Mortalidade por suicídio + internações psiquiátricas registradas no SUS.</p>
             </article>
             <article className="about-card">
-              <h3>Capacity</h3>
-              <p>CAPS + leitos SUS de saúde mental em hospital geral + psiquiatras FTE no SUS.</p>
+              <h3>Estrutura registrada</h3>
+              <p>CAPS + leitos SUS de saúde mental em hospital geral + jornadas equivalentes de psiquiatras no SUS, calculadas pelas horas semanais registradas divididas por 40. Não é contagem de médicos.</p>
             </article>
             <article className="about-card">
-              <h3>Mismatch</h3>
+              <h3>Diferença relativa</h3>
               <p>
                 Sinal de desalinhamento territorial relativo entre necessidade medida
                 e capacidade registrada.
@@ -168,11 +168,11 @@ export function AboutPage() {
           <h2 id="independence-title">Independência e dados públicos</h2>
           <p>{ABOUT_PAGE.independenceStatement}</p>
           <p>
-            As fontes utilizadas no release atual incluem sistemas e bases do
+            As fontes utilizadas nos dados atuais incluem sistemas e bases do
             SUS/DATASUS e geografias do IBGE. {ABOUT_PAGE.governmentDisclaimer}
           </p>
           <p className="small-text">
-            Sistemas e bases mencionados neste release: {ABOUT_PAGE.sourceSystems.join(", ")}.
+            Sistemas e bases utilizados: {ABOUT_PAGE.sourceSystems.join(", ")}.
           </p>
           <Link className="text-button" href="/dados">
             Ver fontes e versões
@@ -183,7 +183,7 @@ export function AboutPage() {
           <p className="eyebrow">Atualizações</p>
           <h2 id="releases-title">Resultados preservados a cada atualização</h2>
           <p>
-            O Mente do Brasil foi estruturado para evoluir por releases
+            O Mente do Brasil foi estruturado para evoluir por versões
             identificáveis.
           </p>
           <p>

@@ -11,6 +11,9 @@ export function AppFooter() {
           <div>Plataforma independente baseada em dados públicos.</div>
           <div className="footer-links">
             <a href="/dados">Fontes</a>
+            <a href="/dados-abertos">Downloads</a>
+            <a href="/desenvolvedores">API</a>
+            <a href="/governanca">Governança</a>
             <a href="/sobre">Sobre</a>
             <a href="/privacidade">Privacidade</a>
             <a href="/contato">Contato</a>

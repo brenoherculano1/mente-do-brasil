@@ -13,6 +13,11 @@ function result(overrides: Partial<TerritorySearchResult>): TerritorySearchResul
 }
 
 describe("mergeTerritoryResults", () => {
+  it.each(["Caruaru", "Garanhuns", "Alfenas", "Itabuna"])("merges the homonymous result for %s", (name) => {
+    const merged = mergeTerritoryResults([result({ municipality_name: name, health_region_name: name })], [result({ health_region_name: name })]);
+    expect(merged).toHaveLength(1);
+    expect(merged[0].health_region_code).toBe("26003");
+  });
   it("shows a same-name municipality and health region only once", () => {
     const merged = mergeTerritoryResults(
       [result({ municipality_name: "Caruaru" })],

@@ -86,6 +86,7 @@ export function MethodologyPage() {
 
         <article className="methodology-content">
           <Section id="overview" eyebrow="Visão geral" title="Entenda em 1 minuto">
+            <p>Dados de referência: 2024. A análise abrange 439 Regiões de Saúde e 5.570 municípios. Índice global de Moran: 0,526 (pseudo-p: 0,0001). Na análise atual, 136 regiões apresentaram associação espacial local estatisticamente significativa. Trata-se de associação da diferença relativa entre necessidade e estrutura, não de concentração de doença.</p>
             <div className="method-flow" aria-label="Fluxo metodológico resumido">
               {[
                 ["Dados públicos", "Sistemas nacionais de saúde e geografia"],
@@ -530,7 +531,7 @@ export function MethodologyPage() {
                 ["HL", "Mismatch relativamente alto cercado por valores relativamente baixos."],
                 ["LH", "Mismatch relativamente baixo cercado por valores relativamente altos."],
                 ["Significativas", String(METHODOLOGY_LOCKS.lisaSignificant)],
-                ["HH / LL / HL / LH", "60 / 66 / 4 / 5"],
+                ["HH / LL / HL / LH", `${METHODOLOGY_LOCKS.lisaHH} / ${METHODOLOGY_LOCKS.lisaLL} / ${METHODOLOGY_LOCKS.lisaHL} / ${METHODOLOGY_LOCKS.lisaLH}`],
               ]}
             />
             <p className="small-text">

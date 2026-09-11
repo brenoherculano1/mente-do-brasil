@@ -9,8 +9,8 @@ describe("indicator tones", () => {
   });
 
   it("does not treat every positive number as favorable", () => {
-    expect(toneForMismatch(0.2)).toBe("attention");
-    expect(toneForMismatch(-0.2)).toBe("favorable");
+    expect(toneForMismatch(0.2)).toBe("neutral");
+    expect(toneForMismatch(-0.2)).toBe("neutral");
     expect(toneForMetric("suicide_asmr", 8, 0.9)).toBe("attention");
   });
 });

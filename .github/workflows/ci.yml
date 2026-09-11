@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [main, production-launch-complete]
+    branches: [main, production-launch-complete, phase4-public-product]
   pull_request:
 
 permissions:

@@ -205,7 +205,7 @@ export function RadarPage({ initialUf }: { initialUf?: string }) {
         <p className="eyebrow">Lista acessível</p>
         <h2 id="radar-list-title">Regiões exibidas</h2>
         <p className="small-text" aria-live="polite">
-          {data ? `${formatInteger(data.total_matching)} Regiões de Saúde atendem os filtros.` : "Carregando."}
+          {data ? (data.total_matching === 1 ? "1 Região de Saúde atende aos filtros." : `${formatInteger(data.total_matching)} Regiões de Saúde atendem aos filtros.`) : "Carregando."}
         </p>
         <div className="radar-list">
           {data?.regions.map((region) => (

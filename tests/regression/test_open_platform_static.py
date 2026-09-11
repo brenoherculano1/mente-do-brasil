@@ -1,4 +1,5 @@
 import ast
+import json
 from pathlib import Path
 
 import pandas as pd
@@ -63,5 +64,9 @@ def test_release_status_remains_not_released():
     footer = (ROOT / "web/components/AppFooter.tsx").read_text()
     assert '"public_release_status": "NOT_RELEASED"' in builder
     assert '"status": "LOCKED_LOCAL"' in builder
-    assert "Release: {ACTIVE_RELEASE_ID}" in footer
-    assert "Release: MDB_ANALYTICAL_2024_1" not in footer
+    release = json.loads(RELEASE_JSON)
+    assert release["public_release_status"] == "NOT_RELEASED"
+    assert release["status"] == "LOCKED_LOCAL"
+    assert release["analytical_release_id"] == "MDB_ANALYTICAL_2024_2"
+    assert "MDB_ANALYTICAL_" not in footer
+    assert 'href="/dados-abertos"' in footer

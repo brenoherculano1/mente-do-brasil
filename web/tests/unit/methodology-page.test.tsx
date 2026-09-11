@@ -9,6 +9,10 @@ import {
 } from "@/lib/methodology";
 
 describe("methodology page", () => {
+  it("uses the locked current scientific identity", () => {
+    expect(METHOD_IDENTIFIERS).toMatchObject({release: "MDB_ANALYTICAL_2024_2", method: "MDB_METHOD_1.1", canonical: "MDB_CANONICAL_1.1", intelligence: "MDB_TERRITORIAL_INTELLIGENCE_1.1"});
+    expect(METHODOLOGY_LOCKS).toMatchObject({moranI: "0.5256454566660947", moranPseudoP: "0.0001", lisaSignificant: 136, lisaHH: 60, lisaLL: 65, lisaHL: 5, lisaLH: 6, healthRegions: 439, municipalities: 5570});
+  });
   function renderTechnicalMethodology() {
     render(<MethodologyPage />);
     fireEvent.click(screen.getByRole("tab", { name: "Metodologia completa" }));
@@ -78,7 +82,7 @@ describe("methodology page", () => {
   it("renders LISA counts and warning without disease concentration claim", () => {
     renderTechnicalMethodology();
     expect(screen.getByText(String(METHODOLOGY_LOCKS.lisaSignificant))).toBeInTheDocument();
-    expect(screen.getByText("60 / 66 / 4 / 5")).toBeInTheDocument();
+    expect(screen.getByText("60 / 65 / 5 / 6")).toBeInTheDocument();
     expect(
       screen.getByText(/Um cluster HH não deve ser interpretado como concentração de doença mental/i),
     ).toBeInTheDocument();

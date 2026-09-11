@@ -1,5 +1,5 @@
 import { DATA_RELEASE, PRIMARY_SOURCES } from "@/lib/data-page";
-import { MANUSCRIPT_PUBLIC_STATUS, METHODOLOGY_LOCKS } from "@/lib/methodology";
+import { MANUSCRIPT_PUBLIC_STATUS, METHODOLOGY_LOCKS, METHOD_IDENTIFIERS } from "@/lib/methodology";
 
 export const ABOUT_PAGE = {
   subtitle: "Inteligência territorial em saúde mental no Brasil.",
@@ -24,15 +24,15 @@ export const ABOUT_PAGE = {
     capacityReference: "Dezembro de 2024",
   },
   versions: {
-    releaseId: DATA_RELEASE.releaseId,
-    method: DATA_RELEASE.methodVersion,
+    releaseId: METHOD_IDENTIFIERS.release,
+    method: METHOD_IDENTIFIERS.method,
     geography: DATA_RELEASE.geographyVersion,
     dataContract: DATA_RELEASE.dataContract,
     publicationSource: MANUSCRIPT_PUBLIC_STATUS.source,
   },
   sourceSystems: PRIMARY_SOURCES.map(([source]) => source),
   sourceFiles: [
-    "metadata/releases/MDB_ANALYTICAL_2024_1.yaml",
+    "metadata/releases/MDB_ANALYTICAL_2024_2.yaml",
     "metadata/canonical/health_regions_v1.yaml",
     "metadata/canonical/municipality_health_region_crosswalk_v1.yaml",
     "metadata/contracts/MDB_DATA_CONTRACT_V1.0.yaml",

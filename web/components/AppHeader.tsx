@@ -3,9 +3,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useState, useRef } from "react";
 
 export function AppHeader() {
   const pathname = usePathname();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuButton = useRef<HTMLButtonElement>(null);
   return (
     <header className="app-header">
       <div className="header-inner">
@@ -13,7 +16,8 @@ export function AppHeader() {
           <Image src="/brand/mente-do-brasil-mark.png" alt="" width={38} height={38} priority />
           <span>Mente do Brasil</span>
         </Link>
-        <nav aria-label="Navegação principal" className="nav-links">
+        <button ref={menuButton} type="button" className="mobile-menu-button" aria-expanded={menuOpen} aria-controls="main-navigation" onClick={() => setMenuOpen(!menuOpen)}>Menu</button>
+        <nav id="main-navigation" aria-label="Navegação principal" className={`nav-links${menuOpen ? " is-open" : ""}`} onClick={() => setMenuOpen(false)} onKeyDown={(event) => { if (event.key === "Escape") { setMenuOpen(false); menuButton.current?.focus(); } }}>
           <Link aria-current={pathname === "/" ? "page" : undefined} href="/">
             Início
           </Link>

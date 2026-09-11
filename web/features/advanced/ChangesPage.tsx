@@ -28,17 +28,17 @@ export function ChangesPage() {
       <label>Família<select className="input" value={family} onChange={(e) => setFamily(e.target.value)}><option value="">Todas</option>{Object.entries(FAMILIES).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label>
       <label>Mínimo de famílias<select className="input" value={minimum} onChange={(e) => setMinimum(e.target.value)}>{[0, 1, 2, 3, 4, 5].map((n) => <option key={n}>{n}</option>)}</select></label>
       <label>Buscar região<input className="input" value={q} onChange={(e) => setQ(e.target.value)} /></label>
-      <label>Ordenar<select className="input" value={sort} onChange={(e) => setSort(e.target.value)}><option value="families">Mais famílias atendidas</option><option value="mismatch">Maior mudança de Mismatch</option><option value="name">Alfabética</option></select></label>
+      <label>Ordenar<select className="input" value={sort} onChange={(e) => setSort(e.target.value)}><option value="families">Mais famílias atendidas</option><option value="mismatch">Maior mudança da diferença relativa</option><option value="name">Alfabética</option></select></label>
     </div>
     {loading && <p role="status">Carregando mudanças...</p>}{error && <p role="alert">{error}</p>}
     {data && <><OverviewMap data={data.geometry} field="matched_change_families" selected={selected} onSelect={setSelected} />
       <p>Famílias de mudança relativa atendidas: 0–5. {data.total_matching} regiões no filtro.</p>
       {region && <section><h2>{region.health_region_name} · {region.uf}</h2>
-        <p>Δ Need {fmt(region.delta_need_score)} · Δ Capacity {fmt(region.delta_capacity_score)} · Δ Mismatch {fmt(region.delta_mismatch_score)}</p>
+        <p>Variação da necessidade {fmt(region.delta_need_score)} · da estrutura {fmt(region.delta_capacity_score)} · da diferença relativa {fmt(region.delta_mismatch_score)}</p>
         <ul>{Object.entries(FAMILIES).filter(([key]) => region[key as keyof typeof FAMILIES]).map(([key, label]) => <li key={key}>{label}</li>)}</ul>
         <p><Link href={`/regiao/${selected}#evolucao`}>Ver evolução da região</Link> · <Link href={`/gestor?regiao=${selected}`}>Abrir no Modo Gestor</Link></p>
         <TimelinePanel code={region.health_region_code} /></section>}
-      <div className="table-wrap"><table><thead><tr><th>Região</th><th>UF</th><th>Famílias</th><th>Δ Mismatch</th></tr></thead><tbody>
+      <div className="table-wrap"><table><thead><tr><th>Região</th><th>UF</th><th>Famílias</th><th>Variação da diferença relativa</th></tr></thead><tbody>
         {data.records.map((row) => <tr key={row.health_region_code}><th scope="row"><button type="button" className="inline-link" onClick={() => setSelected(row.health_region_code)}>{row.health_region_name}</button></th><td>{row.uf}</td><td>{row.matched_change_families}</td><td>{fmt(row.delta_mismatch_score)}</td></tr>)}
       </tbody></table></div>{data.records.length === 0 && <p>Nenhuma região corresponde aos filtros.</p>}</>}
   </main>;

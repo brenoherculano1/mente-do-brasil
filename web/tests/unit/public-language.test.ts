@@ -7,6 +7,9 @@ import {
 } from "@/lib/public-language";
 
 describe("publicLanguage", () => {
+  it.each([[0.01, "1 ponto acima"], [-0.01, "1 ponto acima"], [0.02, "2 pontos acima"], [-0.02, "2 pontos acima"], [0, "0 pontos de diferença"]])("inflects points for %s", (value, expected) => {
+    expect(describeMismatch(Number(value))).toContain(expected);
+  });
   it("translates technical analytical terms for public surfaces", () => {
     expect(publicLanguage("Need Score acima dos peers no release atual")).toBe(
       "Índice de necessidade acima das regiões semelhantes no conjunto de dados atual",

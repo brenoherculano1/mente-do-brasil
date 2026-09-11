@@ -27,7 +27,7 @@ export default function PrivacyPage() {
         </p>
         <p>
           As informações são apresentadas por Região de Saúde, UF e indicadores
-          agregados do release analítico versionado.
+          agregados do conjunto de dados, com identificação da versão utilizada.
         </p>
       </section>
 

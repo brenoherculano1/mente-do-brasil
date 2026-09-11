@@ -7,7 +7,7 @@ import type { MetricId } from "@/types/api";
 
 const METRICS: [MetricId, string][] = [["need_score", "Necessidade"], ["capacity_score", "Estrutura"],
   ["mismatch_score", "Diferença necessidade-capacidade"], ["suicide_asmr", "Mortalidade por suicídio"], ["psychiatric_admission_rate", "Internações"],
-  ["caps_rate", "CAPS"], ["mental_health_beds_sus_rate", "Leitos"], ["psychiatrist_fte_rate", "Psiquiatras"]];
+  ["caps_rate", "CAPS"], ["mental_health_beds_sus_rate", "Leitos"], ["psychiatrist_fte_rate", "Jornadas equivalentes de psiquiatras"]];
 const number = (value: number) => new Intl.NumberFormat("pt-BR", { maximumFractionDigits: 4 }).format(value);
 
 export function TimelinePanel({ code }: { code: string }) {

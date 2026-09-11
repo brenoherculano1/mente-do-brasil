@@ -9,7 +9,7 @@ export function buildComparisonConclusion(regions: ManagerCompareRegion[], metri
   const values = regions
     .map((region): ComparedValue | null => {
       const item = region.indicators.find((indicator) => indicator.metric_id === metric);
-      return item?.value == null
+      return item?.value == null || !Number.isFinite(item.value)
         ? null
         : { name: region.identity.health_region_name, value: item.value };
     })
@@ -25,12 +25,16 @@ export function buildComparisonConclusion(regions: ManagerCompareRegion[], metri
   const highValue = formatMetricValue(highest.value, config.scale);
   const lowValue = formatMetricValue(lowest.value, config.scale);
 
+  if (highest.value === lowest.value) {
+    return `As regiões com dados disponíveis apresentam o mesmo valor no indicador selecionado (${highValue}). Isso não estabelece equivalência de acesso, qualidade ou adequação da rede.`;
+  }
+
   if (metric === "mismatch_score") {
     if (highest.value <= 0) {
-      return `Nas regiões comparadas, a estrutura registrada ocupa posição relativa igual ou superior à necessidade medida. ${lowest.name} apresenta a diferença mais favorável (${lowValue}) e ${highest.name}, a menos pronunciada (${highValue}).`;
+      return `Nas regiões com dados disponíveis, a estrutura registrada ocupa posição relativa igual ou superior à necessidade medida. A diferença é mais pronunciada em ${lowest.name} (${lowValue}) e mais próxima de zero em ${highest.name} (${highValue}). Isso não mede acesso, qualidade ou adequação da rede.`;
     }
     if (lowest.value >= 0) {
-      return `Nas regiões comparadas, a necessidade medida ocupa posição relativa superior à estrutura registrada. O sinal é mais acentuado em ${highest.name} (${highValue}) e menos acentuado em ${lowest.name} (${lowValue}).`;
+      return `Nas regiões com dados disponíveis, a necessidade medida ocupa posição relativa igual ou superior à estrutura registrada. O sinal é mais acentuado em ${highest.name} (${highValue}) e mais próximo de zero em ${lowest.name} (${lowValue}). Isso não quantifica déficit assistencial.`;
     }
     return `${highest.name} apresenta necessidade relativamente mais acima da estrutura registrada (${highValue}), enquanto ${lowest.name} apresenta estrutura relativamente acima da necessidade medida (${lowValue}).`;
   }

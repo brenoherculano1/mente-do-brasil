@@ -29,11 +29,11 @@ export function describeCompositeScore(value: number, direction: IndicatorDirect
 export function describeMismatch(value: number) {
   const points = Math.round(Math.abs(value) * 100);
   if (points === 0) {
-    return "0 ponto de diferença: necessidade medida e estrutura registrada ocupam posições nacionais semelhantes.";
+    return "0 pontos de diferença: necessidade medida e estrutura registrada ocupam posições nacionais semelhantes.";
   }
   const relation = value > 0
-    ? `a necessidade medida está ${points} pontos acima da estrutura registrada`
-    : `a estrutura registrada está ${points} pontos acima da necessidade medida`;
+    ? `a necessidade medida está ${points} ${points === 1 ? "ponto" : "pontos"} acima da estrutura registrada`
+    : `a estrutura registrada está ${points} ${points === 1 ? "ponto" : "pontos"} acima da necessidade medida`;
   return `${formatSignedPoints(value, true)} na escala relativa: ${relation}. O índice não informa quantos CAPS, leitos ou profissionais faltam.`;
 }
 

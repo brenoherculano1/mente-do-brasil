@@ -149,6 +149,8 @@ button {
   color: var(--text);
 }
 
+.mobile-menu-button { display: none; }
+
 .app-header {
   position: sticky;
   top: 0;
@@ -1783,6 +1785,15 @@ th {
 }
 
 @media (max-width: 940px) {
+  .header-inner { flex-wrap: wrap; gap: 12px; }
+  .mobile-menu-button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 8px 14px; margin-left: auto; background: white; color: inherit; border: 1px solid currentColor; border-radius: 6px; }
+  .app-header .nav-links { display: none; width: 100%; }
+  .app-header .nav-links.is-open { display: flex; flex-direction: column; align-items: stretch; gap: 0; }
+  .app-header .nav-links a { padding: 12px 0; }
+  main .nav-links { flex-wrap: wrap; }
+  main .nav-links > * { max-width: 100%; white-space: normal; }
+  .radar-selected .nav-links { flex-direction: column; align-items: stretch; }
+  .radar-selected .nav-links a { white-space: normal; min-height: 44px; }
   .explorer-grid {
     grid-template-areas:
       "controls"
@@ -1919,18 +1930,8 @@ th {
     padding-right: 16px;
   }
 
-  .header-inner {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .nav-links {
-    flex-wrap: wrap;
-    gap: 8px 13px;
-    overflow: visible;
-    width: 100%;
-  }
+  .state-hero .metadata-strip { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .state-hero .metadata-strip .version-pill { min-width: 0; }
 
   .nav-links a {
     flex: 0 0 auto;

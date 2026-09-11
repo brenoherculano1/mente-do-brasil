@@ -1,7 +1,7 @@
 import { mkdirSync } from "node:fs";
 import { expect, test, type Page } from "@playwright/test";
 
-const QA = "../audit_results/open_platform/screenshots";
+const QA = process.env.MDB_OPEN_PLATFORM_QA_DIR ?? "../audit_results/open_platform/screenshots";
 test.beforeAll(() => mkdirSync(QA, { recursive: true }));
 
 async function bounded(page: Page) {

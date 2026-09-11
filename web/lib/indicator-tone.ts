@@ -9,9 +9,9 @@ export function toneForDirection(value: number, direction: IndicatorDirection): 
   return "neutral";
 }
 
-export function toneForMismatch(value: number): RelativeTone {
-  if (value <= -0.1) return "favorable";
-  if (value >= 0.1) return "attention";
+export function toneForMismatch(_value: number): RelativeTone {
+  void _value;
+  // The sign of a relative difference does not establish quality or adequacy.
   return "neutral";
 }
 
@@ -31,5 +31,5 @@ export function toneForMetric(
 export function toneLabel(tone: RelativeTone) {
   if (tone === "favorable") return "Leitura relativamente favorável";
   if (tone === "attention") return "Sinal de atenção";
-  return "Faixa intermediária";
+  return "Comparação relativa, não nota de qualidade";
 }

@@ -17,7 +17,7 @@ export const METRICS: MetricConfig[] = [
     shortLabel: "Diferença necessidade-capacidade",
     description: "Compara a necessidade medida com a estrutura assistencial registrada em cada região.",
     secondary:
-      "Valores positivos indicam necessidade relativamente maior que capacidade na comparação nacional. Índice técnico: Mismatch.",
+      "Sinal de desalinhamento territorial relativo entre necessidade medida e capacidade registrada. Não mede acesso, qualidade ou déficit assistencial.",
     unit: "score relativo",
     scale: "diverging",
   },
@@ -77,11 +77,11 @@ export const METRICS: MetricConfig[] = [
   },
   {
     id: "psychiatrist_fte_rate",
-    label: "Psiquiatras no SUS",
-    shortLabel: "Psiquiatras",
+    label: "Jornadas equivalentes de psiquiatras no SUS",
+    shortLabel: "Jornadas de psiquiatras",
     description: "Carga horária registrada de psiquiatras no SUS, convertida em equivalentes de jornada integral.",
-    secondary: "Medida de capacidade registrada, não de acesso efetivo individual.",
-    unit: "FTE por população",
+    secondary: "Horas semanais registradas divididas por 40; não é contagem de médicos nem medida de acesso efetivo.",
+    unit: "jornadas equivalentes por 100 mil habitantes",
     scale: "rate",
   },
 ];

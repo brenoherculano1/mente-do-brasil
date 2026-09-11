@@ -6,11 +6,11 @@ export type Anchor = Record<MetricId, number> & {
 };
 export type Timeline = { release_id: string; temporal_version: string; anchors: Anchor[] };
 export const FAMILIES = {
-  NEED_POSITION_UP: "Aumento da posição relativa de Need",
-  CAPACITY_POSITION_DOWN: "Redução da posição relativa de Capacity",
-  MISMATCH_POSITION_UP: "Aumento da posição relativa de Mismatch",
-  NEED_COMPONENT_POSITION_UP: "Aumento em componente de Need",
-  CAPACITY_COMPONENT_POSITION_DOWN: "Redução em componente de Capacity",
+  NEED_POSITION_UP: "Aumento da posição relativa da necessidade medida",
+  CAPACITY_POSITION_DOWN: "Redução da posição relativa da estrutura registrada",
+  MISMATCH_POSITION_UP: "Aumento da diferença relativa entre necessidade e estrutura",
+  NEED_COMPONENT_POSITION_UP: "Aumento em componente de necessidade medida",
+  CAPACITY_COMPONENT_POSITION_DOWN: "Redução em componente de estrutura registrada",
 };
 export type Change = Record<keyof typeof FAMILIES, boolean> & {
   health_region_code: string; health_region_name: string; uf: string;

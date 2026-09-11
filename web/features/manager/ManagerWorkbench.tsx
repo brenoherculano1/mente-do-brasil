@@ -625,6 +625,7 @@ function CompareMode({
             </tbody>
           </table>
           </div>
+          <p className="small-text">Jornadas equivalentes de psiquiatras: horas semanais registradas divididas por 40, não número de médicos. As taxas de estrutura são apresentadas por 100 mil habitantes.</p>
           <section className="comparison-conclusion" aria-labelledby="comparison-conclusion-title">
             <p className="eyebrow">Síntese da comparação</p>
             <h3 id="comparison-conclusion-title">O que estes dados mostram</h3>
