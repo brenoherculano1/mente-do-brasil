@@ -92,23 +92,34 @@ def read_blobs(root: Path, object_ids: list[str]):
         cwd=root,
         stdin=subprocess.PIPE,
         stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
+        stderr=subprocess.DEVNULL,
     )
     assert process.stdin is not None
     assert process.stdout is not None
-    process.stdin.write(("\n".join(object_ids) + "\n").encode())
-    process.stdin.close()
-    for expected_sha in object_ids:
-        header = process.stdout.readline().decode().strip().split()
-        sha, object_type, size = header
-        if sha != expected_sha or object_type != "blob":
-            raise RuntimeError("Unexpected git cat-file batch response.")
-        data = process.stdout.read(int(size))
-        process.stdout.read(1)
-        yield sha, data
-    if process.wait() != 0:
-        assert process.stderr is not None
-        raise RuntimeError(process.stderr.read().decode(errors="replace"))
+    try:
+        for expected_sha in object_ids:
+            # Drain each response before sending more requests: both pipes are bounded.
+            process.stdin.write((expected_sha + "\n").encode())
+            process.stdin.flush()
+            header = process.stdout.readline().decode().strip().split()
+            if len(header) != 3:
+                raise RuntimeError("Unexpected git cat-file batch response.")
+            sha, object_type, size = header
+            if sha != expected_sha or object_type != "blob":
+                raise RuntimeError("Unexpected git cat-file batch response.")
+            data = process.stdout.read(int(size))
+            if len(data) != int(size) or process.stdout.read(1) != b"\n":
+                raise RuntimeError("Incomplete git cat-file batch response.")
+            yield sha, data
+        process.stdin.close()
+        if process.wait() != 0:
+            raise RuntimeError("git cat-file failed.")
+    finally:
+        if process.poll() is None:
+            process.kill()
+        process.wait()
+        process.stdin.close()
+        process.stdout.close()
 
 
 def scan(root: Path) -> dict:

@@ -25,6 +25,7 @@ jobs:
           pytest -q
           tests/api/test_production_security_unit.py
           tests/regression/test_data_contract.py
+          tests/regression/test_repository_secret_scan.py
           tests/regression/test_serving_database_static.py
           tests/regression/test_open_platform_static.py::test_public_flow_view_enforces_suppression_in_sql
           tests/regression/test_open_platform_static.py::test_bundled_api_release_metadata_is_byte_identical
