@@ -1,6 +1,9 @@
 const EXACT_LABELS: Record<string, string> = {
   SMALL_SUICIDE_COUNT: "Poucos óbitos no período; interpretar a taxa com cautela.",
   ZERO_REGISTERED_BEDS: "Nenhum leito registrado na medida utilizada.",
+  Financing: "Recursos de saúde",
+  Flow: "Fluxos de atendimento",
+  Base: "Contexto territorial",
 };
 
 export type IndicatorDirection = "need" | "capacity";
@@ -56,5 +59,9 @@ export function publicLanguage(text: string) {
     .replaceAll("release", "conjunto de dados")
     .replaceAll("dos peers", "das regiões semelhantes")
     .replaceAll("Peers", "Regiões semelhantes")
-    .replaceAll("peers", "regiões semelhantes");
+    .replaceAll("peers", "regiões semelhantes")
+    .replaceAll("high-high", "valores altos na região e nos vizinhos")
+    .replaceAll("low-low", "valores baixos na região e nos vizinhos")
+    .replaceAll("high-low", "valor alto na região e baixo nos vizinhos")
+    .replaceAll("low-high", "valor baixo na região e alto nos vizinhos");
 }

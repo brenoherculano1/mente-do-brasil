@@ -35,7 +35,7 @@ export default function OpenDataPage() {
       </section>
 
       <section className="open-platform-band" aria-labelledby="downloads-title">
-        <div className="section-heading"><div><span className="eyebrow">Arquivos imutáveis</span><h2 id="downloads-title">Downloads</h2></div><p>CSV para leitura ampla; Parquet para fluxos analíticos. Cada arquivo tem SHA-256 publicado.</p></div>
+        <div className="section-heading"><div><span className="eyebrow">Arquivos imutáveis</span><h2 id="downloads-title">Baixar dados</h2></div><p>CSV para leitura ampla; Parquet para fluxos analíticos. Cada arquivo tem SHA-256 publicado.</p></div>
         <div className="download-grid">
           {distributions.map((file) => {
             const dataset = file.relative_path.replace(/\.(csv|parquet)$/, "");

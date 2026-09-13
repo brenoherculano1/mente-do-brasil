@@ -75,9 +75,8 @@ export function ExplorerPage({ initialMetric }: { initialMetric: MetricId }) {
         <p className="eyebrow">Saúde mental no território brasileiro</p>
         <h1 id="home-title">Mente do Brasil</h1>
         <p>
-          Uma plataforma que mostra como está a saúde mental nas regiões brasileiras,
-          combinando dados públicos de mortalidade, atendimento, estrutura assistencial
-          e características territoriais.
+          Explore dados públicos de mortalidade, atendimento e estrutura assistencial
+          nas regiões brasileiras.
         </p>
         <h2>Como está a saúde mental da minha região e quais são os principais desafios?</h2>
         <div className="home-actions">

@@ -117,7 +117,7 @@ export default async function RegionProfilePage({ params }: RegionPageProps) {
             necessidade em saúde mental com sua estrutura de atendimento registrada.
           </p>
           <p className="small-text">
-            O índice técnico, chamado Mismatch, funciona como sinal para investigação territorial e não como uma
+            Esse indicador funciona como sinal para investigação territorial e não como uma
             medida direta de acesso, qualidade ou volume de recursos a adicionar.
           </p>
         </div>

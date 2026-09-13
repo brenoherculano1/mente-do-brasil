@@ -349,6 +349,22 @@ button {
   padding: 54px 0 36px;
 }
 
+.comparison-region-label { display: none; }
+
+@media (max-width: 600px) {
+  .comparison-table-wrap { overflow: visible; }
+  .manager-table.responsive-comparison, .responsive-comparison tbody { display: block; width: 100%; min-width: 0; overflow: visible; }
+  .responsive-comparison thead {
+    position: absolute; width: 1px; height: 1px; padding: 0;
+    overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+  }
+  .responsive-comparison caption { display: block; text-align: left; white-space: normal; }
+  .responsive-comparison tbody tr { display: block; margin: 0 0 16px; border-bottom: 1px solid var(--border); }
+  .responsive-comparison th[scope="row"] { display: block; width: auto; font-size: 0.9rem; }
+  .responsive-comparison td { display: flex; justify-content: space-between; gap: 16px; white-space: normal; }
+  .responsive-comparison .comparison-region-label { display: block; min-width: 0; overflow-wrap: anywhere; }
+}
+
 .public-home-intro h2 {
   font-size: 1.55rem;
   line-height: 1.25;
@@ -2717,8 +2733,19 @@ th {
 
   .public-home-intro {
     min-height: auto;
-    padding-bottom: 28px;
+    padding: 20px 0 12px;
+    gap: 8px;
   }
+
+  .public-home-intro h1 { font-size: 2rem; margin: 0; }
+  /* The same territorial question remains visible immediately above the map. */
+  .public-home-intro h2 { display: none; }
+  .public-home-intro p { margin: 0; }
+  .public-home-intro + .map-section-heading { padding-top: 16px; }
+  .public-home-intro + .map-section-heading h2 { font-size: 1.4rem; }
+  .home-facts div, .home-facts div + div { padding: 8px; }
+  .home-facts dt { font-size: 1.15rem; }
+  .home-facts dd { font-size: 0.8rem; margin-top: 2px; }
 
   .home-facts {
     grid-auto-flow: row;
@@ -2727,10 +2754,12 @@ th {
   }
 
   .home-actions {
-    align-items: stretch;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     overflow: visible;
   }
+  .home-actions .button { grid-column: 1 / -1; }
+  .home-actions .text-button { font-size: 0.85rem; padding: 10px 6px; text-align: center; }
 
   .home-actions .button,
   .home-actions .text-button {

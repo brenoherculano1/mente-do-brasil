@@ -218,7 +218,7 @@ test("data page remains usable on mobile", async ({ page }, testInfo) => {
   await page.screenshot({ path: `${DATA_QA_DIR}/mobile_data_full.png`, fullPage: true });
   await page.locator("#geography-title").scrollIntoViewIfNeeded();
   await page.screenshot({ path: `${DATA_QA_DIR}/mobile_data_bottom.png` });
-  await expect(page.getByRole("link", { name: "Downloads", exact: true })).toHaveAttribute("href", "/dados-abertos");
+  await expect(page.locator("footer").getByRole("link", { name: "Dados abertos", exact: true })).toHaveAttribute("href", "/dados-abertos");
   await expect(page.locator("[data-nextjs-dev-tools-button]")).toHaveCount(0);
   expect(mapRequests).toHaveLength(0);
 });

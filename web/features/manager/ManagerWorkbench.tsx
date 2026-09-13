@@ -20,6 +20,7 @@ import {
   toneForMetric,
   toneForMismatch,
   toneLabel,
+  relativeBandLabel,
   type RelativeTone,
 } from "@/lib/indicator-tone";
 import {
@@ -352,7 +353,7 @@ function TerritorialMode({
         <article className="panel manager-section">
           <p className="eyebrow">Contexto espacial</p>
           <h2>Padrão nas regiões vizinhas</h2>
-          <p>{brief.spatial_context.description}</p>
+          <p>{publicLanguage(brief.spatial_context.description)}</p>
           {brief.quality_cautions.map((caution) => (
             <p className="quality-note" key={caution}>{caution}</p>
           ))}
@@ -380,8 +381,8 @@ function QuickRead({ brief }: { brief: ManagerBrief }) {
         </p>
       </div>
       <div className="manager-metrics" aria-label="Indicadores sintéticos">
-        <MetricChip label="Necessidade" value={formatScore(brief.need_score)} tone={toneForDirection(brief.need_score, "need")} />
-        <MetricChip label="Estrutura" value={formatScore(brief.capacity_score)} tone={toneForDirection(brief.capacity_score, "capacity")} />
+        <MetricChip label="Necessidade" value={formatScore(brief.need_score)} tone={toneForDirection(brief.need_score, "need")} description={relativeBandLabel(brief.need_score)} />
+        <MetricChip label="Estrutura" value={formatScore(brief.capacity_score)} tone={toneForDirection(brief.capacity_score, "capacity")} description={relativeBandLabel(brief.capacity_score)} />
         <MetricChip label="Diferença" value={formatScore(brief.mismatch_score, true)} tone={toneForMismatch(brief.mismatch_score)} />
         <MetricChip label="Grupos de atenção" value={`${brief.matched_signal_families}/5`} />
       </div>
@@ -409,7 +410,7 @@ function ContributionBars({ items }: { items: ManagerBrief["decomposition"] }) {
         return (
           <div className="decomposition-row" key={item.component}>
             <div className="decomposition-label">
-              <strong>{item.label}</strong>
+              <strong>{publicLanguage(item.label)}</strong>
               <span>{formatPercentile(item.source_percentile)} · {formatScore(item.contribution, true)}</span>
             </div>
             <div className="decomposition-bar" aria-hidden="true">
@@ -437,7 +438,7 @@ function Questions({ brief }: { brief: ManagerBrief }) {
           <details key={item.rule_id} className="question-item">
             <summary>
               <span>{item.question}</span>
-              <strong>{item.category}</strong>
+              <strong>{publicLanguage(item.category)}</strong>
             </summary>
             <p>{item.rationale}</p>
           </details>
@@ -580,19 +581,19 @@ function CompareMode({
               );
             })}
           </div>
-          <div className="table-wrap" tabIndex={0} role="region" aria-label="Tabela de comparação">
-          <table className="manager-table">
+          <div className="table-wrap comparison-table-wrap" tabIndex={0} role="region" aria-label="Tabela de comparação">
+          <table className="manager-table responsive-comparison" role="table">
             <caption>Tabela acessível de comparação, na ordem escolhida.</caption>
-            <thead>
-              <tr>
-                <th>Indicador</th>
-                {compare.regions.map((region) => <th key={region.identity.health_region_code}>{region.identity.health_region_name}</th>)}
+            <thead role="rowgroup">
+              <tr role="row">
+                <th scope="col" role="columnheader">Indicador</th>
+                {compare.regions.map((region) => <th scope="col" role="columnheader" key={region.identity.health_region_code}>{region.identity.health_region_name}</th>)}
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <th>População</th>
-                {compare.regions.map((region) => <td key={region.identity.health_region_code}>{formatInteger(region.identity.population)}</td>)}
+            <tbody role="rowgroup">
+              <tr role="row">
+                <th scope="row" role="rowheader">População</th>
+                {compare.regions.map((region) => <td role="cell" key={region.identity.health_region_code}><span className="comparison-region-label" aria-hidden="true">{region.identity.health_region_name}</span>{formatInteger(region.identity.population)}</td>)}
               </tr>
               {[
                 ["CAPS registrados", (profile: HealthRegionProfile) => formatInteger(profile.capacity.caps.count)],
@@ -601,21 +602,22 @@ function CompareMode({
                 ["Internações psiquiátricas", (profile: HealthRegionProfile) => formatInteger(profile.need.psychiatric_admissions.count)],
                 ["Óbitos por suicídio", (profile: HealthRegionProfile) => formatInteger(profile.need.suicide.deaths)],
               ].map(([label, formatter]) => (
-                <tr key={label as string}>
-                  <th>{label as string}</th>
+                <tr role="row" key={label as string}>
+                  <th scope="row" role="rowheader">{label as string}</th>
                   {compare.regions.map((region) => {
                     const profile = profiles.find((item) => item.territory.health_region_code === region.identity.health_region_code);
-                    return <td key={region.identity.health_region_code}>{profile ? (formatter as (item: HealthRegionProfile) => string)(profile) : "Sem dado"}</td>;
+                    return <td role="cell" key={region.identity.health_region_code}><span className="comparison-region-label" aria-hidden="true">{region.identity.health_region_name}</span>{profile ? (formatter as (item: HealthRegionProfile) => string)(profile) : "Sem dado"}</td>;
                   })}
                 </tr>
               ))}
               {METRICS.map((item) => (
-                <tr key={item.id}>
-                  <th>{item.shortLabel}</th>
+                <tr role="row" key={item.id}>
+                  <th scope="row" role="rowheader">{item.shortLabel}</th>
                   {compare.regions.map((region) => {
                     const value = metricValue(region.indicators, item.id);
                     return (
-                      <td key={region.identity.health_region_code}>
+                      <td role="cell" key={region.identity.health_region_code}>
+                        <span className="comparison-region-label" aria-hidden="true">{region.identity.health_region_name}</span>
                         {formatMetricValue(value?.value, item.scale)}
                       </td>
                     );
@@ -698,12 +700,12 @@ function describeComparisonMetric(metric: MetricId, item: ManagerMetricValue | u
   return describePercentile(item.percentile, metricDirection(metric));
 }
 
-function MetricChip({ label, value, tone }: { label: string; value: string; tone?: RelativeTone }) {
+function MetricChip({ label, value, tone, description }: { label: string; value: string; tone?: RelativeTone; description?: string }) {
   return (
     <div className={`metric-chip${tone ? ` metric-tone-${tone}` : ""}`}>
       <span>{label}</span>
       <strong>{value}</strong>
-      {tone && <small>{toneLabel(tone)}</small>}
+      {(description || tone) && <small>{description ?? toneLabel(tone!)}</small>}
     </div>
   );
 }

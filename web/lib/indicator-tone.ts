@@ -28,8 +28,14 @@ export function toneForMetric(
   return toneForDirection(percentile, direction);
 }
 
+export function relativeBandLabel(value: number) {
+  if (value <= 0.25) return "Faixa relativa baixa";
+  if (value >= 0.75) return "Faixa relativa alta";
+  return "Faixa relativa intermediária";
+}
+
 export function toneLabel(tone: RelativeTone) {
-  if (tone === "favorable") return "Leitura relativamente favorável";
+  if (tone === "favorable") return "Posição relativa, não avaliação de qualidade";
   if (tone === "attention") return "Sinal de atenção";
   return "Comparação relativa, não nota de qualidade";
 }

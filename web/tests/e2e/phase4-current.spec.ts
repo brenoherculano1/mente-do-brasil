@@ -58,7 +58,20 @@ for (const width of [375, 390, 430]) {
       await expect(page.locator("h1").first()).toBeVisible();
       await page.waitForLoadState("networkidle");
       if (name === "manager") await expect(page.locator("#quick-title")).toContainText("Garanhuns");
-      if (name === "comparison") await expect(page.locator(".comparison-conclusion")).toBeVisible();
+      if (name === "comparison") {
+        await expect(page.locator(".comparison-conclusion")).toBeVisible();
+        const table = page.locator(".responsive-comparison");
+        await expect(table.locator("tbody tr")).toHaveCount(14);
+        for (const row of await table.locator("tbody tr").all()) {
+          await expect(row.locator("td")).toHaveCount(2);
+          await expect(row.locator(".comparison-region-label").first()).toBeVisible();
+        }
+        expect(await table.evaluate(e => e.scrollWidth)).toBeLessThanOrEqual(width);
+      }
+      await expect(page.locator("footer")).not.toContainText("Downloads");
+      if (name === "region" || name === "manager") {
+        await expect(page.locator("main")).not.toContainText(/Mismatch|Leitura relativamente favorável/);
+      }
       expect(await page.evaluate(() => document.documentElement.scrollWidth) - width).toBeLessThanOrEqual(1);
       await page.screenshot({ path: `${QA}/${name}-${width}.png`, fullPage: true });
     }
