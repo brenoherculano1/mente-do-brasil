@@ -1,0 +1,908 @@
+Portal de Dados Abertos do SUS
+Portal de Dados Abertos do SUS
+Redes Sociais
+Todo o conteúdo deste site está publicado sob a licença
+Creative Commons Atribuição-SemDerivações 3.0
+Sistema de Informação sobre Mortalidade – SIM
+Arquivos Totais
+Unidades
+|
+Adicionadas
+146
+Atualizado em Setembro/2026
+Arquivos Atualizados
+Unidades
+|
+Adicionadas
+3
+Última atualização em Agosto/2026
+Sistema de Informação sobre Mortalidade – SIM
+O Sistema de Informação sobre Mortalidade (SIM), desenvolvido pelo Ministério da Saúde em 1975, é produto da unificação de mais de quarenta modelos de Declaração de Óbito utilizados ao longo dos anos, para coletar dados sobre mortalidade no país.
+Com sua longa série temporal, o SIM é um patrimônio nacional, visto que possui informações fundamentais para que possamos conhecer os aspectos referentes à mortalidade no Brasil e às causas de adoecimento que levaram ao óbito. É, ainda, um dos principais instrumentos para apoiar a elaboração de políticas públicas de saúde e seguridade social mais efetivas visando à prevenção, promoção e cuidado em saúde.
+Esta página tem como objetivo disponibilizar os bancos de dados de disseminação de mortalidade (DO_BDD)
+Descrição das informações: disponibilizada.
+Os registros são oriundos do sistema SIM, contendo dados socioeconômicos, local de residência e ocorrência, óbitos fetais e não fetais, condições e causas do óbito, e informações de causas externas.
+Dados e Recursos
+Dicionário de dados
+Data de Atualização:
+09/06/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral
+Data de Atualização:
+18/02/2026
+Downloads:
+0
+Explorar
+Mortalidade Geral 1979
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 1980
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 1981
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 1982
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 1983
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 1984
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 1985
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 1986
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 1987
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 1988
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 1989
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 1990
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 1991
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 1992
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 1993
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 1994
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 1995
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 1996
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 1997
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 1998
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 1999
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 2000
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 2001
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 2002
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 2003
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 2004
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 2005
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 2006
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 2007
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 2008
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 2009
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 2010
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 2011
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 2012
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 2013
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 2014
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 2015
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 2016
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 2017
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 2018
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 2019
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 2020
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 2021
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 2022
+Data de Atualização:
+22/02/2024
+Downloads:
+0
+Explorar
+Mortalidade Geral 2023
+Data de Atualização:
+14/08/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 2024
+Data de Atualização:
+18/02/2026
+Downloads:
+0
+Explorar
+Mortalidade Geral 2025 - preliminar
+Data de Atualização:
+31/08/2026
+Downloads:
+0
+Explorar
+Mortalidade Geral 2026 1ª prévia
+Data de Atualização:
+27/07/2026
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1979
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1980
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1981
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1982
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1983
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1984
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1985
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1986
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1987
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1988
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1989
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1990
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1991
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1992
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1993
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1994
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1995
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1996
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1997
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1998
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1999
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2000
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2001
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2002
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2003
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2004
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2005
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2006
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2007
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2008
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2009
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2010
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2011
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2012
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2013
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2014
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2015
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2016
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2017
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2018
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2019
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2020
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2021
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2022
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2023
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 2024
+Data de Atualização:
+18/02/2026
+Downloads:
+0
+Explorar
+Mortalidade Geral 2025 - preliminar
+Data de Atualização:
+31/08/2026
+Downloads:
+0
+Explorar
+Mortalidade Geral 2026 1ª prévia
+Data de Atualização:
+27/07/2026
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1979
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1980
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1981
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1982
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1983
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1984
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1985
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1986
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1987
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1988
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1989
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1990
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1991
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1992
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1993
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1994
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1995
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1996
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1997
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1998
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_1999
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2000
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2001
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2002
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2003
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2004
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2005
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2006
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2007
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2008
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2009
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2010
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2011
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2012
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2013
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2014
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2015
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2016
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2017
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2018
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2019
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2020
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2021
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2022
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade_Geral_2023
+Data de Atualização:
+15/12/2025
+Downloads:
+0
+Explorar
+Mortalidade Geral 2024
+Data de Atualização:
+18/02/2026
+Downloads:
+0
+Explorar
+Mortalidade Geral 2025 - preliminar
+Data de Atualização:
+31/08/2026
+Downloads:
+0
+Explorar
+Mortalidade Geral 2026 1ª prévia
+Data de Atualização:
+27/07/2026
+Downloads:
+0
+Explorar
+Informações Adicionais
+Última Atualização
+31 de agosto de 2026, 16:23 (UTC-03:00)
+Criado
+26 de janeiro de 2022, 17:23 (UTC-03:00)
+Estado
+active

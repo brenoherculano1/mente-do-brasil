@@ -1,0 +1,31 @@
+Portal de Dados Abertos do SUS
+Portal de Dados Abertos do SUS
+Redes Sociais
+Todo o conteúdo deste site está publicado sob a licença
+Creative Commons Atribuição-SemDerivações 3.0
+Macrorregião e Região de Saúde
+URL:
+https://s3.sa-east-1.amazonaws.com/ckan.saude.gov.br/dbgeral/macroregiao_de_saude_csv.zip
+Dataset description:
+Macrorregião de Saúde
+Fonte:
+Macrorregião e Região de Saúde
+Não há visões para este recurso ainda.
+Baixar
+Informações Adicionais
+Dados atualizados pela última vez
+13 de setembro de 2026, 16:00 (UTC-03:00)
+Metadados atualizados pela última vez
+13 de setembro de 2026, 19:00 (UTC-03:00)
+Criado
+28 de junho de 2024, 11:51 (UTC-03:00)
+Formato
+CSV
+Id
+3bd28e64-0a82-44d9-8de1-4894634f2b6a
+Package Id
+1da3c5c8-8c3f-4752-9156-a8a6163c9066
+Position
+1
+Estado
+active

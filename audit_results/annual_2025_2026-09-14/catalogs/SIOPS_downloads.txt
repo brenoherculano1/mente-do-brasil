@@ -1,0 +1,27 @@
+SIOPS - Downloads - FNS
+SIOPS - Dados Abertos
+Consulta Publica Webservice
+SIOPS - Arquivos
+Os relatórios disponíveis para download, por questões de otimização de tamanho, alguns arquivos foram compactados no formato
+.ZIP
+.
+Para visualizar os dados, realize o download do arquivo, clique com o botão direito sobre ele e selecione a opção para extrair. O arquivo principal possui a extensão
+.CSV
+e está pronto para ser importado para o seu sistema ou aberto em seu editor de planilhas de preferência.
+Em caso de dúvidas, sinta-se à vontade para nos contatar.
+SIOPS – Despesas por Fonte, Subfunção, Natureza, DF, 2018-2025, 6º Bimestre
+SIOPS – Despesas por Fonte, Subfunção, Natureza, Estaduais, 2018-2025, 6º Bimestre
+SIOPS – Despesas por Fonte, Subfunção, Natureza, Municipais, 2018, 6º Bimestre
+SIOPS – Despesas por Fonte, Subfunção, Natureza, Municipais, 2019, 6º Bimestre
+SIOPS – Despesas por Fonte, Subfunção, Natureza, Municipais, 2020, 6º Bimestre
+SIOPS – Despesas por Fonte, Subfunção, Natureza, Municipais, 2021, 6º Bimestre
+SIOPS – Despesas por Fonte, Subfunção, Natureza, Municipais, 2022, 6º Bimestre
+SIOPS – Despesas por Fonte, Subfunção, Natureza, Municipais, 2023, 6º Bimestre
+SIOPS – Despesas por Fonte, Subfunção, Natureza, Municipais, 2024, 6º Bimestre
+SIOPS – Despesas por Fonte, Subfunção, Natureza, Municipais, 2025, 6º Bimestre
+SIOPS – Downloads
+Baixar Instalador 32bits (Versão 11.6.0)
+Baixar Instalador 64bits (Versão 11.6.0)
+Baixar Transmissor NET Municipal
+Baixar Transmissor NET Estadual
+Cartilha 2025

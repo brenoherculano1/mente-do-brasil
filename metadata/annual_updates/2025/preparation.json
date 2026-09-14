@@ -1,0 +1,23 @@
+{
+  "status": "BLOCKED_FOR_2025_OFFICIAL_RELEASE",
+  "target_release_id": "MDB_ANALYTICAL_2025_1",
+  "release_created": false,
+  "candidate_created": false,
+  "public_visible": false,
+  "current_release": "MDB_ANALYTICAL_2024_2",
+  "method_version": "MDB_METHOD_1.1",
+  "need_years": [2023, 2024, 2025],
+  "capacity_reference": "2025-12",
+  "expected_health_regions": null,
+  "expected_municipalities": null,
+  "geography_version": null,
+  "source_rights_review": "PENDING_VERSION_SPECIFIC_REVIEW",
+  "publication_authorized": false,
+  "pipeline_status": "PREFLIGHT_PREPARED; END_TO_END_2025_BUILD_NOT_IMPLEMENTED_OR_VALIDATED",
+  "blockers": [
+    "SIM_2025_OFFICIALLY_PRELIMINARY",
+    "2024_EXACT_REPRODUCTION_FAILED_LOCAL_P_AND_Q",
+    "2025_DATED_GEOGRAPHY_AND_LINEAGE_NOT_VALIDATED",
+    "NATIONAL_RECORD_LEVEL_SOURCE_QC_NOT_COMPLETED"
+  ]
+}

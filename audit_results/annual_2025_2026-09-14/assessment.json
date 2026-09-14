@@ -1,0 +1,56 @@
+{
+  "status": "BLOCKED_FOR_2025_OFFICIAL_RELEASE",
+  "checked_at": "2026-09-14",
+  "starting_commit": "f45529bdb6d4529ced710d465eb53eb689779fde",
+  "current_release": "MDB_ANALYTICAL_2024_2",
+  "new_release": null,
+  "2025_results": null,
+  "2025_public_visible": false,
+  "2024_changed": false,
+  "historical_reproduction": "FAIL_EXACT; 33 of 35 columns identical; local p/q differ; headline spatial and membership identical",
+  "source_audit_scope": "Official catalogue availability; not national record-level QC",
+  "essential_source_blocker": "Official SIM 2025 preliminary updated 2026-08-31; 27/27 2025 files absent from DORES consolidated catalogue",
+  "source_catalog_counts": {
+    "SIM_2023_2024": 54,
+    "SIM_2025_in_DORES": 0,
+    "SIH_2023_2025": 972,
+    "CNES_ST_Dec2025": 27,
+    "CNES_LT_Dec2025": 27,
+    "CNES_PF_Dec2025": 27,
+    "POPSVS_2023_2025": 3
+  },
+  "geography_diff": {
+    "status": "NOT_COMPUTED_NO_VALIDATED_2025_SNAPSHOT",
+    "added_municipalities": null,
+    "removed_municipalities": null,
+    "changed_health_region_assignment": null,
+    "renamed_regions": null,
+    "new_regions": null,
+    "removed_regions": null,
+    "code_changes": null
+  },
+  "tests": {
+    "command": ".venv/bin/python -m pytest tests/test_annual_preflight.py tests/test_scientific_correction.py -q",
+    "passed": 17,
+    "duration_seconds": 2.56,
+    "note": "9 existing invariant tests include archived evidence checks, not proof of fresh full reproducibility; 8 new preflight tests",
+    "fresh_reproduction": "FAIL; separately executed with 9999 permutations",
+    "preflight_cli": "EXIT_1_EXPECTED_BLOCK",
+    "ruff": "PASS four added Python files",
+    "git_diff_check": "PASS",
+    "backend_api": "NOT_RUN_NO_API_CHANGE",
+    "frontend_e2e_mobile_accessibility": "NOT_RUN_NO_UI_CHANGE"
+  },
+  "new_source_rights": "NOT_CLEARED_FOR_2025; catalogue review only; no raw records or new geometry acquired",
+  "pipeline": "PREFLIGHT_UTILITIES_AND_RUNBOOK; FULL_2025_BUILDER_NOT_READY",
+  "temporal_radar_financing_flows_peers_2025": "NOT_BUILT",
+  "api_frontend_opendata_2025": "NOT_BUILT",
+  "deploy": "NOT_REQUESTED_BY_BLOCKED_PREFLIGHT; no new deployment executed",
+  "human_actions": [],
+  "next_retry": [
+    "SIM 2025 officially suitable consolidated edition",
+    "Recover exact 2024 reproduction in isolated historical runtime without changing science",
+    "Validate dated 2025 crosswalk and full lineage",
+    "Complete national record QC and vintage-specific rights before analytical construction"
+  ]
+}
