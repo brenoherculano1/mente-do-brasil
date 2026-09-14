@@ -94,8 +94,8 @@ export function ExplorerPage({ initialMetric }: { initialMetric: MetricId }) {
 
       <section className="map-section-heading" id="mapa" aria-labelledby="map-title">
         <p className="eyebrow">Veja o mapa do Brasil</p>
-        <h2 id="map-title">Quais regiões apresentam maiores desafios em saúde mental?</h2>
-        <p>Escolha uma forma de observar o território e selecione uma região para abrir seu perfil.</p>
+        <h2 id="map-title">Explore as diferenças territoriais em saúde mental no Brasil</h2>
+        <p>Escolha o que você quer observar e veja como as 439 Regiões de Saúde se distribuem pelo país.</p>
       </section>
 
       <section className="explorer-grid" aria-label="Explorador territorial">

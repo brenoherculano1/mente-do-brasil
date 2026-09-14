@@ -305,8 +305,6 @@ function RadarLegend() {
   );
 }
 
-function attentionLabel(count: number) {
-  if (count >= 4) return "Alta atenção";
-  if (count >= 2) return "Atenção moderada";
-  return "Menor atenção relativa";
+export function attentionLabel(count: number) {
+  return `${count} ${count === 1 ? "sinal" : "sinais"}`;
 }

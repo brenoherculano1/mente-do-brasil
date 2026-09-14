@@ -902,7 +902,7 @@ button {
 }
 
 .methodology-layout.public-methodology {
-  grid-template-columns: minmax(0, 860px);
+  grid-template-columns: minmax(0, 1200px);
 }
 
 .public-method-cta {
@@ -2338,6 +2338,7 @@ th {
 
 .manager-shell {
   display: grid;
+  width: 100%;
   grid-template-columns: minmax(0, 1fr);
   gap: 24px;
 }
@@ -2738,7 +2739,7 @@ th {
   }
 
   .public-home-intro h1 { font-size: 2rem; margin: 0; }
-  /* The same territorial question remains visible immediately above the map. */
+  /* The exploration heading remains visible immediately above the map. */
   .public-home-intro h2 { display: none; }
   .public-home-intro p { margin: 0; }
   .public-home-intro + .map-section-heading { padding-top: 16px; }
@@ -2805,4 +2806,30 @@ th {
     display: block;
     overflow-x: auto;
   }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --public-body-size: 17px;
+    --public-note-size: 15px;
+    --public-label-size: 14px;
+  }
+
+  body { font-size: var(--public-body-size); }
+  p, li, td { line-height: 1.6; }
+  .small-text, .metric-interpretation, .coverage-2025-note,
+  .region-situation p, .score-explanations p, .manager-plain-reading p,
+  .manager-table, .footer-inner { font-size: var(--public-note-size); }
+  .eyebrow, .field-label, .metric-chip span, .metric-chip small,
+  .legend-labels, .state-search span { font-size: var(--public-label-size); }
+
+  .methodology-layout.public-methodology, .about-content {
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+  .methodology-hero, .about-hero {
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+  .method-section > p, .about-section > p { max-width: 78ch; }
 }

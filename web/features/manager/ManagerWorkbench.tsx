@@ -612,7 +612,7 @@ function CompareMode({
               ))}
               {METRICS.map((item) => (
                 <tr role="row" key={item.id}>
-                  <th scope="row" role="rowheader">{item.shortLabel}</th>
+                  <th scope="row" role="rowheader">{item.comparisonLabel ?? item.shortLabel}</th>
                   {compare.regions.map((region) => {
                     const value = metricValue(region.indicators, item.id);
                     return (

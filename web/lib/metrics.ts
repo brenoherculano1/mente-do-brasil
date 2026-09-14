@@ -4,6 +4,7 @@ export type MetricConfig = {
   id: MetricId;
   label: string;
   shortLabel: string;
+  comparisonLabel?: string;
   description: string;
   secondary: string;
   unit: string;
@@ -43,6 +44,7 @@ export const METRICS: MetricConfig[] = [
     id: "suicide_asmr",
     label: "Mortalidade por suicídio",
     shortLabel: "Mortalidade por suicídio",
+    comparisonLabel: "Mortalidade por suicídio padronizada por idade (por 100 mil hab.)",
     description: "Taxa padronizada de mortalidade por suicídio usada na dimensão de necessidade medida.",
     secondary: "A interpretação deve considerar as observações de qualidade quando presentes.",
     unit: "ASMR",
@@ -52,6 +54,7 @@ export const METRICS: MetricConfig[] = [
     id: "psychiatric_admission_rate",
     label: "Internações psiquiátricas no SUS",
     shortLabel: "Internações",
+    comparisonLabel: "Internações psiquiátricas no SUS (por 100 mil hab.)",
     description: "Taxa de internações psiquiátricas registradas no SUS.",
     secondary: "Não é medida de prevalência.",
     unit: "taxa",
@@ -61,6 +64,7 @@ export const METRICS: MetricConfig[] = [
     id: "caps_rate",
     label: "Centros de Atenção Psicossocial (CAPS)",
     shortLabel: "CAPS",
+    comparisonLabel: "CAPS (por 100 mil hab.)",
     description: "Taxa de CAPS registrada na dimensão de capacidade.",
     secondary: "Capacidade registrada não equivale automaticamente a acesso efetivo.",
     unit: "taxa",
@@ -70,6 +74,7 @@ export const METRICS: MetricConfig[] = [
     id: "mental_health_beds_sus_rate",
     label: "Leitos de saúde mental no SUS",
     shortLabel: "Leitos SUS",
+    comparisonLabel: "Leitos SUS de saúde mental (por 100 mil hab.)",
     description: "Taxa de leitos de saúde mental no SUS registrada na dimensão de capacidade.",
     secondary: "Não implica disponibilidade imediata para todos os territórios.",
     unit: "taxa",
@@ -79,6 +84,7 @@ export const METRICS: MetricConfig[] = [
     id: "psychiatrist_fte_rate",
     label: "Jornadas equivalentes de psiquiatras no SUS",
     shortLabel: "Jornadas de psiquiatras",
+    comparisonLabel: "Jornadas equivalentes de psiquiatras (por 100 mil hab.)",
     description: "Carga horária registrada de psiquiatras no SUS, convertida em equivalentes de jornada integral.",
     secondary: "Horas semanais registradas divididas por 40; não é contagem de médicos nem medida de acesso efetivo.",
     unit: "jornadas equivalentes por 100 mil habitantes",

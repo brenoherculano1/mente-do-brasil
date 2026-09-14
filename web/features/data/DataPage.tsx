@@ -52,7 +52,7 @@ export function DataPage() {
         <section className="data-section" aria-labelledby="indicators-title">
           <p className="eyebrow">O que é medido</p>
           <h2 id="indicators-title">Indicadores e períodos</h2>
-          <div className="table-wrap">
+          <div className="table-wrap" tabIndex={0} role="region" aria-labelledby="indicators-title">
             <table>
               <thead><tr><th>Indicador</th><th>Valores apresentados</th><th>Período</th></tr></thead>
               <tbody>
@@ -71,7 +71,7 @@ export function DataPage() {
         <section className="data-section" aria-labelledby="sources-title">
           <p className="eyebrow">Fontes públicas</p>
           <h2 id="sources-title">Bases utilizadas</h2>
-          <div className="table-wrap">
+          <div className="table-wrap" tabIndex={0} role="region" aria-labelledby="sources-title">
             <table>
               <thead><tr><th>Fonte</th><th>Uso</th><th>Período</th></tr></thead>
               <tbody>

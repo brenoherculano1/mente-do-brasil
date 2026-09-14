@@ -45,7 +45,7 @@ export function FinancingPage() {
     <p className="small-text">Valores em reais correntes do respectivo exercício; comparações entre anos não representam variação real descontada da inflação.</p>
     <section className="financing-comparison" aria-labelledby="financing-comparison-title">
       <div className="section-heading-inline">
-        <div><p className="eyebrow">Comparar exercícios</p><h2 id="financing-comparison-title">Despesa geral em saúde: ano X e ano Y</h2></div>
+        <div><p className="eyebrow">Comparar exercícios</p><h2 id="financing-comparison-title">Despesa geral em saúde: {startYear} e {endYear}</h2></div>
         <ShareButton title={`Despesa geral em saúde — ${scopeLabel} | Mente do Brasil`} text={`Compare a despesa geral em saúde registrada em ${scopeLabel}. Os valores são nominais e não representam gasto específico em saúde mental.`} />
       </div>
       <div className="year-comparison-controls">
