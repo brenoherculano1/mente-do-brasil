@@ -1,0 +1,111 @@
+{
+  "release": "MDB_ANALYTICAL_2024_2",
+  "status": "PASS",
+  "scope": "Current correction builder from frozen prior canonical, cached SIM age counts and original POPSVS; not a full raw SIM/SIH/CNES re-extraction",
+  "runtime": {
+    "numpy": "2.3.5",
+    "pandas": "3.0.5",
+    "esda": "2.7.1",
+    "libpysal": "4.13.0",
+    "numba": "0.63.1",
+    "geopandas": "1.1.4",
+    "pyarrow": "21.0.0"
+  },
+  "protected_before": {
+    "data/canonical/MDB_ANALYTICAL_2024_1/health_regions.parquet": "a3cc8f3aefc9d556d1bacc636dc72cabf04155052dd63c426dda9bec58ada515",
+    "data/canonical/MDB_ANALYTICAL_2024_1/municipality_health_region_crosswalk.parquet": "acd7ab896566d5ea730719eb46a079b0571d73fec617ef1d39db93099bd06b15",
+    "data/canonical/MDB_ANALYTICAL_2024_2/health_regions.parquet": "1b8ad1a0e0e56ffc9ace172c34100ce3300b64f9adf212bf26b5d525453edb58",
+    "metadata/methods/MDB_METHOD_1.1.yaml": "f70199980e24eb92367fa655aadd9cf28e9ae9983f102746fd57723bc2082406",
+    "metadata/releases/MDB_ANALYTICAL_2024_1.yaml": "28a1ee3902b25ee51ac5e3788c95ff9ea702600117ba063c9529e0ffd7e43cc6",
+    "metadata/releases/MDB_ANALYTICAL_2024_1_api.yaml": "98d13a313fc0213dcc7e163eaecbd8f66ebdc4b6d6099eaddb39461c8a7dadc9",
+    "metadata/releases/MDB_ANALYTICAL_2024_1_canonical.yaml": "8906d86df7703694082cb39e9571322ca7879b4578193fc5a0e85a9986bcfe3f",
+    "metadata/releases/MDB_ANALYTICAL_2024_1_outputs.yaml": "fd6d163155937c896929181f2af707904c2bf24381bf668d3e9bd47543678336",
+    "metadata/releases/MDB_ANALYTICAL_2024_1_serving.yaml": "83f21e55d0f0ce4f3ff0d4c7f5d3d83aedbc2350ff5843a31d08d79b3be42bf4",
+    "metadata/releases/MDB_ANALYTICAL_2024_2.yaml": "8ab54e139f5e0dc8679f68497edd3e58e15d713be58be892ee52d963ebc7cc5c",
+    "metadata/releases/MDB_ANALYTICAL_2024_2_canonical.yaml": "5da6041604325b51f4f465d761bcb7d7cdb97862298d82e7fe4282c4faa3dd49",
+    "metadata/releases/MDB_ANALYTICAL_2024_2_serving.yaml": "8ad49e9e1e33d881d69c600830b5aaf7537b3137c674b2a25c8249898ede1b99"
+  },
+  "spatial": {
+    "I": 0.5256454566660947,
+    "pseudo_p": 0.0001,
+    "manual_I": 0.5256454566660949,
+    "permutations": 9999,
+    "seed": 20260823,
+    "weights": "queen",
+    "islands": 0,
+    "FDR_q": 0.1,
+    "clusters": {
+      "high-high": 60,
+      "low-low": 65,
+      "high-low": 5,
+      "low-high": 6,
+      "not_significant": 303
+    }
+  },
+  "source_qc": {
+    "restored_85plus_deaths": 495,
+    "unknown_age_excluded": 33,
+    "unmapped_deaths": 82,
+    "all_mapped_suicide_deaths": 50133,
+    "sources": [
+      {
+        "path": "/Users/brenoherculano/Projects/mente-do-brasil/data/raw/scientific_correction_recovery/POPSBR22.zip",
+        "sha256": "8619497c4adcb87133aab68666ed6604209b812047e9b51e3608db00a2c8e731"
+      },
+      {
+        "path": "/Users/brenoherculano/Projects/mente-do-brasil/data/raw/scientific_correction_recovery/POPSBR23.zip",
+        "sha256": "c49b35794dc235bad8a4a0dbc530a82aeae589e03a366a3c17a8325e6c24d5f4"
+      },
+      {
+        "path": "/Users/brenoherculano/Projects/mente-do-brasil/data/raw/scientific_correction_recovery/POPSBR24.zip",
+        "sha256": "cbf5549a5f9b37160e2fe3a5f97123a7747e371d4c433a8aa8a3276ad41dcc53"
+      },
+      {
+        "path": "data/staging/phase3/sim_locked_suicide_age.parquet",
+        "sha256": "abccb184a0004649268ec7a04519894968c4836c6f224f1bfc2a30ec76f06a89",
+        "derivation": "81 hash-verified SIM 2022-2024 sources; Phase 3 source audit"
+      }
+    ]
+  },
+  "column_exact_match": {
+    "release_id": true,
+    "method_version": true,
+    "geography_version": true,
+    "health_region_code": true,
+    "health_region_name": true,
+    "uf_code": true,
+    "uf": true,
+    "municipality_count": true,
+    "population": true,
+    "area_km2": true,
+    "population_density": true,
+    "suicide_deaths": true,
+    "suicide_asmr": true,
+    "suicide_percentile": true,
+    "psychiatric_admissions": true,
+    "psychiatric_admission_rate": true,
+    "psychiatric_admission_percentile": true,
+    "caps_count": true,
+    "caps_rate": true,
+    "caps_percentile": true,
+    "mental_health_beds_sus_count": true,
+    "mental_health_beds_sus_rate": true,
+    "beds_percentile": true,
+    "psychiatrist_fte": true,
+    "psychiatrist_fte_rate": true,
+    "psychiatrist_fte_percentile": true,
+    "need_score": true,
+    "capacity_score": true,
+    "mismatch_score": true,
+    "lisa_local_i": true,
+    "lisa_p": true,
+    "lisa_q": true,
+    "lisa_significant": true,
+    "lisa_cluster": true,
+    "data_quality_flags": true
+  },
+  "reproduced_sha256": "1b8ad1a0e0e56ffc9ace172c34100ce3300b64f9adf212bf26b5d525453edb58",
+  "expected_sha256": "1b8ad1a0e0e56ffc9ace172c34100ce3300b64f9adf212bf26b5d525453edb58",
+  "byte_identical": true,
+  "protected_changed": []
+}

@@ -1,0 +1,191 @@
+{
+  "file": "LTMS2512.dbc",
+  "family": "LT",
+  "uf": "MS",
+  "input_sha256": "c6c5e2f78594fa7fe8fec9a011ab29fd107829c6f422e654ce7b835fc074431e",
+  "source": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/LT/LTMS2512.dbc",
+  "retrieved_at": "2026-09-14T20:32:43.162836+00:00",
+  "schema": {
+    "fields": [
+      {
+        "name": "CNES",
+        "type": "C",
+        "length": 7,
+        "decimal": 0
+      },
+      {
+        "name": "CODUFMUN",
+        "type": "C",
+        "length": 6,
+        "decimal": 0
+      },
+      {
+        "name": "REGSAUDE",
+        "type": "C",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "MICR_REG",
+        "type": "C",
+        "length": 6,
+        "decimal": 0
+      },
+      {
+        "name": "DISTRSAN",
+        "type": "C",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "DISTRADM",
+        "type": "C",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "TPGESTAO",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "PF_PJ",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "CPF_CNPJ",
+        "type": "C",
+        "length": 14,
+        "decimal": 0
+      },
+      {
+        "name": "NIV_DEP",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "CNPJ_MAN",
+        "type": "C",
+        "length": 14,
+        "decimal": 0
+      },
+      {
+        "name": "ESFERA_A",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "ATIVIDAD",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "RETENCAO",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "NATUREZA",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "CLIENTEL",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "TP_UNID",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "TURNO_AT",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "NIV_HIER",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "TERCEIRO",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "TP_LEITO",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "CODLEITO",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "QT_EXIST",
+        "type": "N",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "QT_CONTR",
+        "type": "N",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "QT_SUS",
+        "type": "N",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "QT_NSUS",
+        "type": "N",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "COMPETEN",
+        "type": "C",
+        "length": 6,
+        "decimal": 0
+      },
+      {
+        "name": "NAT_JUR",
+        "type": "C",
+        "length": 4,
+        "decimal": 0
+      }
+    ],
+    "records": 1036,
+    "record_length": 110,
+    "fingerprint": "2dbad68aca97d056d814401ef29c4eb58396c61b322ed6d0b861f36d848ca665"
+  },
+  "publication_status": "UNDER_VALIDATION",
+  "geography_validated": false,
+  "decoded_rows": 1036,
+  "selected_rows": 3,
+  "duplicate_selected_rows": 0,
+  "blank_beds": 0,
+  "municipalities": 3,
+  "output_sha256": "289abde3ec723790ac1ee24a84d3530221346100e579a0cf389e2d84ad97c73a"
+}

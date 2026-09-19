@@ -1,0 +1,19 @@
+{
+  "status": "PARTIAL_NOT_PUBLIC_READY",
+  "validated_on": "2026-09-19",
+  "source_snapshot_date": "2026-09-14",
+  "python_targeted_tests": {"passed": 18, "failed": 0},
+  "frontend_unit_tests": {"total": 95, "initial_passed": 93, "initial_failed": 2, "reason": "Old copy expectations updated for the explicitly requested modular policy", "targeted_rerun_passed": 9, "targeted_rerun_failed": 0},
+  "frontend_lint": "PASS",
+  "frontend_typecheck": "PASS",
+  "python_scoped_lint": "PASS",
+  "playwright_desktop": {"passed": 6, "failed": 0, "note": "Five passed initially; wrong expected row count corrected and remaining test passed on targeted rerun"},
+  "playwright_mobile": {"passed": 6, "failed": 0},
+  "viewport_widths_checked": [1440, 375, 390, 430],
+  "historical_reproduction": "PASS_BYTE_IDENTICAL_WITH_HISTORICAL_RUNTIME",
+  "protected_files_changed": [],
+  "regional_2025_values_published": false,
+  "partial_available_values_adapter": "NOT_IMPLEMENTED_PENDING_VALIDATED_OBSERVATIONS",
+  "full_2024_2025_metadata_registry": "PARTIAL_2025_REGISTRY_ONLY",
+  "public_release_status": "NOT_RELEASED"
+}

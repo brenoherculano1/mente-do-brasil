@@ -193,12 +193,11 @@ export function AboutPage() {
             interface pública.
           </p>
           <p>
-            A cobertura atual vai até 2024 porque esse é o último período em que todas
-            as fontes usadas passaram pelo mesmo ciclo de disponibilidade,
-            compatibilização territorial, checagem de completude e validação. A
-            existência de registros parciais de 2025 em uma fonte não torna o ano
-            comparável ao conjunto publicado. Dados de 2025 serão incorporados somente
-            depois de concluídas essas verificações para todas as medidas necessárias.
+            A edição analítica de referência é de 2024. As atualizações seguintes são
+            avaliadas por indicador: cada fonte tem seu calendário e precisa passar por
+            conferência de cobertura, compatibilidade territorial e validação.
+            Dados ausentes não são estimados. Os indicadores compostos aguardam todos
+            os seus componentes, sem impedir a validação de medidas independentes.
           </p>
         </section>
 

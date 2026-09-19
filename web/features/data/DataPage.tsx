@@ -34,18 +34,18 @@ export function DataPage() {
           <h2 id="coverage-title">Dados validados até 2024</h2>
           <p>
             A versão atual combina eventos registrados entre 2022 e 2024 com a
-            estrutura do SUS registrada em dezembro de 2024. Por isso, 2025 ainda não
-            aparece nos mapas e comparações.
+            estrutura do SUS registrada em dezembro de 2024. Essa edição permanece preservada.
           </p>
           <div className="notice-inline">
-            <strong>Por que não há 2025?</strong> Um novo ano só entra depois que todas
-            as fontes necessárias estão disponíveis, compatibilizadas e auditadas.
-            Incluir apenas parte de 2025 produziria uma comparação incompleta com a
-            série atual.
+            <strong>A disponibilidade varia por indicador.</strong> Cada fonte de 2025
+            passa por sua própria validação, incluindo cobertura, denominadores e vínculo
+            territorial. A estrutura pode ser atualizada independentemente da mortalidade.
+            Indicadores compostos só são apresentados quando todos os seus componentes estão válidos.
           </div>
           <p>
-            Quando a atualização de 2025 for concluída e validada, ela será publicada
-            como uma nova edição, preservando os resultados anteriores.
+            O SIM de 2025 ainda é uma prévia. Mortalidade consolidada, necessidade,
+            diferença e análise espacial aguardam consolidação. Os valores regionais
+            das outras fontes aguardam a validação do vínculo territorial de 2025 e de cada indicador.
           </p>
         </section>
 

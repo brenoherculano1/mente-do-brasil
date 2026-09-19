@@ -1,0 +1,19 @@
+.edition-bar { padding-top: 1rem; padding-bottom: 1rem; }
+.edition-selector { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; }
+.edition-selector select { width: 8rem; min-width: 8rem; }
+.edition-selector span { font-size: 0.875rem; color: #52615c; }
+.availability-page { max-width: 1160px; }
+.availability-page h1 { font-size: 2rem; line-height: 1.2; }
+.availability-page h2 { font-size: 1.15rem; line-height: 1.4; }
+.availability-summary { border-left: 3px solid #23756d; padding-left: 1.25rem; margin: 2rem 0; }
+.availability-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 2rem; padding: 1.5rem 0; border-top: 1px solid #cdd8d3; }
+.availability-row p { margin: 0.4rem 0; }
+.availability-row small { color: #52615c; }
+.availability-row strong { font-size: 1.5rem; }
+.availability-page select { width: 100%; }
+.availability-page > * { min-width: 0; overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+  .availability-page h1 { font-size: 1.6rem; }
+  .availability-row { grid-template-columns: minmax(0, 1fr); gap: 0.5rem; }
+  .edition-selector span { flex-basis: 100%; }
+}

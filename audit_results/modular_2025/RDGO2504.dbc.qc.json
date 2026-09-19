@@ -1,0 +1,708 @@
+{
+  "file": "RDGO2504.dbc",
+  "family": "SIH",
+  "uf": "GO",
+  "input_sha256": "5406696cfd8c82063aa3658bc466d929a5019df220fb57b05147575d2f9c3a08",
+  "source": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDGO2504.dbc",
+  "retrieved_at": "2026-09-14T20:35:35.810654+00:00",
+  "schema": {
+    "fields": [
+      {
+        "name": "UF_ZI",
+        "type": "C",
+        "length": 6,
+        "decimal": 0
+      },
+      {
+        "name": "ANO_CMPT",
+        "type": "C",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "MES_CMPT",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "ESPEC",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "CGC_HOSP",
+        "type": "C",
+        "length": 14,
+        "decimal": 0
+      },
+      {
+        "name": "N_AIH",
+        "type": "C",
+        "length": 13,
+        "decimal": 0
+      },
+      {
+        "name": "IDENT",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "CEP",
+        "type": "C",
+        "length": 8,
+        "decimal": 0
+      },
+      {
+        "name": "MUNIC_RES",
+        "type": "C",
+        "length": 6,
+        "decimal": 0
+      },
+      {
+        "name": "NASC",
+        "type": "C",
+        "length": 8,
+        "decimal": 0
+      },
+      {
+        "name": "SEXO",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "UTI_MES_IN",
+        "type": "N",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "UTI_MES_AN",
+        "type": "N",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "UTI_MES_AL",
+        "type": "N",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "UTI_MES_TO",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "MARCA_UTI",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "UTI_INT_IN",
+        "type": "N",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "UTI_INT_AN",
+        "type": "N",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "UTI_INT_AL",
+        "type": "N",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "UTI_INT_TO",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "DIAR_ACOM",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QT_DIARIAS",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "PROC_SOLIC",
+        "type": "C",
+        "length": 10,
+        "decimal": 0
+      },
+      {
+        "name": "PROC_REA",
+        "type": "C",
+        "length": 10,
+        "decimal": 0
+      },
+      {
+        "name": "VAL_SH",
+        "type": "N",
+        "length": 13,
+        "decimal": 2
+      },
+      {
+        "name": "VAL_SP",
+        "type": "N",
+        "length": 13,
+        "decimal": 2
+      },
+      {
+        "name": "VAL_SADT",
+        "type": "N",
+        "length": 13,
+        "decimal": 2
+      },
+      {
+        "name": "VAL_RN",
+        "type": "N",
+        "length": 13,
+        "decimal": 2
+      },
+      {
+        "name": "VAL_ACOMP",
+        "type": "N",
+        "length": 13,
+        "decimal": 2
+      },
+      {
+        "name": "VAL_ORTP",
+        "type": "N",
+        "length": 13,
+        "decimal": 2
+      },
+      {
+        "name": "VAL_SANGUE",
+        "type": "N",
+        "length": 13,
+        "decimal": 2
+      },
+      {
+        "name": "VAL_SADTSR",
+        "type": "N",
+        "length": 11,
+        "decimal": 2
+      },
+      {
+        "name": "VAL_TRANSP",
+        "type": "N",
+        "length": 13,
+        "decimal": 2
+      },
+      {
+        "name": "VAL_OBSANG",
+        "type": "N",
+        "length": 11,
+        "decimal": 2
+      },
+      {
+        "name": "VAL_PED1AC",
+        "type": "N",
+        "length": 11,
+        "decimal": 2
+      },
+      {
+        "name": "VAL_TOT",
+        "type": "N",
+        "length": 14,
+        "decimal": 2
+      },
+      {
+        "name": "VAL_UTI",
+        "type": "N",
+        "length": 8,
+        "decimal": 2
+      },
+      {
+        "name": "US_TOT",
+        "type": "N",
+        "length": 10,
+        "decimal": 2
+      },
+      {
+        "name": "DT_INTER",
+        "type": "C",
+        "length": 8,
+        "decimal": 0
+      },
+      {
+        "name": "DT_SAIDA",
+        "type": "C",
+        "length": 8,
+        "decimal": 0
+      },
+      {
+        "name": "DIAG_PRINC",
+        "type": "C",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "DIAG_SECUN",
+        "type": "C",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "COBRANCA",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "NATUREZA",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "NAT_JUR",
+        "type": "C",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "GESTAO",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "RUBRICA",
+        "type": "N",
+        "length": 5,
+        "decimal": 0
+      },
+      {
+        "name": "IND_VDRL",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "MUNIC_MOV",
+        "type": "C",
+        "length": 6,
+        "decimal": 0
+      },
+      {
+        "name": "COD_IDADE",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "IDADE",
+        "type": "N",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "DIAS_PERM",
+        "type": "N",
+        "length": 5,
+        "decimal": 0
+      },
+      {
+        "name": "MORTE",
+        "type": "N",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "NACIONAL",
+        "type": "C",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "NUM_PROC",
+        "type": "C",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "CAR_INT",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "TOT_PT_SP",
+        "type": "N",
+        "length": 6,
+        "decimal": 0
+      },
+      {
+        "name": "CPF_AUT",
+        "type": "C",
+        "length": 11,
+        "decimal": 0
+      },
+      {
+        "name": "HOMONIMO",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "NUM_FILHOS",
+        "type": "N",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "INSTRU",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "CID_NOTIF",
+        "type": "C",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "CONTRACEP1",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "CONTRACEP2",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "GESTRISCO",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "INSC_PN",
+        "type": "C",
+        "length": 12,
+        "decimal": 0
+      },
+      {
+        "name": "SEQ_AIH5",
+        "type": "C",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "CBOR",
+        "type": "C",
+        "length": 6,
+        "decimal": 0
+      },
+      {
+        "name": "CNAER",
+        "type": "C",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "VINCPREV",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "GESTOR_COD",
+        "type": "C",
+        "length": 5,
+        "decimal": 0
+      },
+      {
+        "name": "GESTOR_TP",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "GESTOR_CPF",
+        "type": "C",
+        "length": 15,
+        "decimal": 0
+      },
+      {
+        "name": "GESTOR_DT",
+        "type": "C",
+        "length": 8,
+        "decimal": 0
+      },
+      {
+        "name": "CNES",
+        "type": "C",
+        "length": 7,
+        "decimal": 0
+      },
+      {
+        "name": "CNPJ_MANT",
+        "type": "C",
+        "length": 14,
+        "decimal": 0
+      },
+      {
+        "name": "INFEHOSP",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "CID_ASSO",
+        "type": "C",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "CID_MORTE",
+        "type": "C",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "COMPLEX",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "FINANC",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "FAEC_TP",
+        "type": "C",
+        "length": 6,
+        "decimal": 0
+      },
+      {
+        "name": "REGCT",
+        "type": "C",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "RACA_COR",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "ETNIA",
+        "type": "C",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "SEQUENCIA",
+        "type": "N",
+        "length": 9,
+        "decimal": 0
+      },
+      {
+        "name": "REMESSA",
+        "type": "C",
+        "length": 21,
+        "decimal": 0
+      },
+      {
+        "name": "AUD_JUST",
+        "type": "C",
+        "length": 50,
+        "decimal": 0
+      },
+      {
+        "name": "SIS_JUST",
+        "type": "C",
+        "length": 50,
+        "decimal": 0
+      },
+      {
+        "name": "VAL_SH_FED",
+        "type": "N",
+        "length": 10,
+        "decimal": 2
+      },
+      {
+        "name": "VAL_SP_FED",
+        "type": "N",
+        "length": 10,
+        "decimal": 2
+      },
+      {
+        "name": "VAL_SH_GES",
+        "type": "N",
+        "length": 10,
+        "decimal": 2
+      },
+      {
+        "name": "VAL_SP_GES",
+        "type": "N",
+        "length": 10,
+        "decimal": 2
+      },
+      {
+        "name": "VAL_UCI",
+        "type": "N",
+        "length": 10,
+        "decimal": 2
+      },
+      {
+        "name": "MARCA_UCI",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "DIAGSEC1",
+        "type": "C",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "DIAGSEC2",
+        "type": "C",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "DIAGSEC3",
+        "type": "C",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "DIAGSEC4",
+        "type": "C",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "DIAGSEC5",
+        "type": "C",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "DIAGSEC6",
+        "type": "C",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "DIAGSEC7",
+        "type": "C",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "DIAGSEC8",
+        "type": "C",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "DIAGSEC9",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "TPDISEC1",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "TPDISEC2",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "TPDISEC3",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "TPDISEC4",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "TPDISEC5",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "TPDISEC6",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "TPDISEC7",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "TPDISEC8",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "TPDISEC9",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "FONTE_ORC",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      }
+    ],
+    "records": 39034,
+    "record_length": 704,
+    "fingerprint": "6685f81d8deff9c604a630b80ef2218e4f45aea8e61a3cbc87850611c9d73085"
+  },
+  "publication_status": "UNDER_VALIDATION",
+  "geography_validated": false,
+  "decoded_rows": 39034,
+  "selected_rows": 924,
+  "duplicate_aih": 4,
+  "duplicate_selected_rows": 4,
+  "excluded_f10_f19": 436,
+  "municipalities": 141,
+  "output_sha256": "0b222ed94543435e7e8190574f915dc389121f3e41602b8066b7a887d6c8a5d7"
+}

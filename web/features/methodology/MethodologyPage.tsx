@@ -642,9 +642,13 @@ export function MethodologyPage() {
               silenciosamente releases anteriores.
             </p>
             <p>
-              A edição pública atual utiliza eventos de 2022 a 2024 e estrutura do
-              SUS registrada em dezembro de 2024. Dados de 2025 só serão incluídos
-              depois da validação conjunta de todas as fontes necessárias.
+              A edição de referência utiliza eventos de 2022 a 2024 e estrutura do
+              SUS registrada em dezembro de 2024. Os sistemas de informação têm calendários
+              próprios: o período mais recente pode variar entre indicadores. Cada dado novo
+              depende da validação da própria fonte e de sua correspondência territorial.
+              Ausências são identificadas explicitamente, sem estimar ou substituir valores.
+              Necessidade, diferença e análise espacial de 2025 aguardam mortalidade consolidada;
+              a estrutura registrada pode ser validada independentemente.
             </p>
             <Link className="text-button" href="/dados">Ver fontes e cobertura</Link>
           </Section>

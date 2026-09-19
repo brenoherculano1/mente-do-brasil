@@ -17,6 +17,7 @@ from api.errors import (
 )
 from api.observability import configure_logging, operational_log, request_id_from_value
 from api.routers.advanced import router as advanced_router
+from api.routers.availability import router as availability_router
 from api.routers.financing import router as financing_router
 from api.routers.health import router as health_router
 from api.routers.health_regions import router as health_regions_router
@@ -85,6 +86,7 @@ app.include_router(indicators_router)
 app.include_router(health_regions_router)
 app.include_router(financing_router)
 app.include_router(advanced_router)
+app.include_router(availability_router)
 app.include_router(intelligence_router)
 app.include_router(manager_router)
 app.include_router(public_router)

@@ -1,0 +1,281 @@
+{
+  "file": "PFAC2512.dbc",
+  "family": "PF",
+  "uf": "AC",
+  "input_sha256": "08ede14d4c14f563d1705bba708eb159ebf9fbbe666e3e44ba39345e25caaccc",
+  "source": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/PF/PFAC2512.dbc",
+  "retrieved_at": "2026-09-14T20:32:50.610271+00:00",
+  "schema": {
+    "fields": [
+      {
+        "name": "CNES",
+        "type": "C",
+        "length": 7,
+        "decimal": 0
+      },
+      {
+        "name": "CODUFMUN",
+        "type": "C",
+        "length": 6,
+        "decimal": 0
+      },
+      {
+        "name": "REGSAUDE",
+        "type": "C",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "MICR_REG",
+        "type": "C",
+        "length": 6,
+        "decimal": 0
+      },
+      {
+        "name": "DISTRSAN",
+        "type": "C",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "DISTRADM",
+        "type": "C",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "TPGESTAO",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "PF_PJ",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "CPF_CNPJ",
+        "type": "C",
+        "length": 14,
+        "decimal": 0
+      },
+      {
+        "name": "NIV_DEP",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "CNPJ_MAN",
+        "type": "C",
+        "length": 14,
+        "decimal": 0
+      },
+      {
+        "name": "ESFERA_A",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "ATIVIDAD",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "RETENCAO",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "NATUREZA",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "CLIENTEL",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "TP_UNID",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "TURNO_AT",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "NIV_HIER",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "TERCEIRO",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "CPF_PROF",
+        "type": "C",
+        "length": 11,
+        "decimal": 0
+      },
+      {
+        "name": "CPFUNICO",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "CBO",
+        "type": "C",
+        "length": 6,
+        "decimal": 0
+      },
+      {
+        "name": "CBOUNICO",
+        "type": "C",
+        "length": 6,
+        "decimal": 0
+      },
+      {
+        "name": "NOMEPROF",
+        "type": "C",
+        "length": 60,
+        "decimal": 0
+      },
+      {
+        "name": "CNS_PROF",
+        "type": "C",
+        "length": 15,
+        "decimal": 0
+      },
+      {
+        "name": "CONSELHO",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "REGISTRO",
+        "type": "C",
+        "length": 13,
+        "decimal": 0
+      },
+      {
+        "name": "VINCULAC",
+        "type": "C",
+        "length": 6,
+        "decimal": 0
+      },
+      {
+        "name": "VINCUL_C",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "VINCUL_A",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "VINCUL_N",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "PROF_SUS",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "PROFNSUS",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "HORAOUTR",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "HORAHOSP",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "HORA_AMB",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "COMPETEN",
+        "type": "C",
+        "length": 6,
+        "decimal": 0
+      },
+      {
+        "name": "UFMUNRES",
+        "type": "C",
+        "length": 6,
+        "decimal": 0
+      },
+      {
+        "name": "NAT_JUR",
+        "type": "C",
+        "length": 4,
+        "decimal": 0
+      }
+    ],
+    "records": 24077,
+    "record_length": 230,
+    "fingerprint": "1f03db39c51b24d59af8ac91c3bc5cba3d38326d5cf7fab76d1729ff6e11e212"
+  },
+  "publication_status": "UNDER_VALIDATION",
+  "geography_validated": false,
+  "decoded_rows": 24077,
+  "selected_rows": 33,
+  "blank_hours": 0,
+  "locked_key_duplicates": 0,
+  "exact_link_duplicates": 0,
+  "key_collision_requires_review": false,
+  "unique_professionals": 22,
+  "multi_establishment_professionals": 8,
+  "individual_hours_over_168": 0,
+  "link_hours_over_168": 0,
+  "individual_hour_quantiles": {
+    "0.0": 1.0,
+    "0.01": 1.0,
+    "0.05": 1.05,
+    "0.5": 30.0,
+    "0.95": 54.75,
+    "0.99": 81.06999999999996,
+    "1.0": 88.0
+  },
+  "total_registered_weekly_hours": 627.0,
+  "cap_applied": false,
+  "sus_hours_interpretation": "Hours attached to SUS-linked registrations; not independently verified SUS-exclusive time",
+  "municipalities": 5,
+  "output_sha256": "231289d65a6fac95bed974e35fd1b2ac8576bd27d2f488f49e1f66b3e7d47213"
+}

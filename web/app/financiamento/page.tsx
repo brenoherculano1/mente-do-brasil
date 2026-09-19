@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { FinancingPage } from "@/features/financing/FinancingPage";
 import { pageMetadata } from "@/lib/seo";
+import { EditionGate } from "@/features/availability/EditionGate";
 
 export const metadata: Metadata = pageMetadata(
   "/financiamento",
@@ -8,6 +9,7 @@ export const metadata: Metadata = pageMetadata(
   "Contexto de recursos gerais da saúde por Região de Saúde, com limites de interpretação claros.",
 );
 
-export default function Page() {
-  return <FinancingPage />;
+export default async function Page({ searchParams }: { searchParams: Promise<{ ano?: string }> }) {
+  const { ano } = await searchParams;
+  return <EditionGate year={ano} context="Recursos gerais da saúde"><FinancingPage /></EditionGate>;
 }

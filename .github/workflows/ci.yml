@@ -24,6 +24,7 @@ jobs:
         run: >-
           pytest -q
           tests/api/test_production_security_unit.py
+          tests/test_modular_availability.py
           tests/regression/test_data_contract.py
           tests/regression/test_repository_secret_scan.py
           tests/regression/test_serving_database_static.py
@@ -38,6 +39,9 @@ jobs:
           api/config.py
           api/db.py
           api/main.py
+          api/routers/availability.py
+          api/services/availability.py
+          tests/test_modular_availability.py
           api/routers/public.py
           api/release_metadata.py
           app.py

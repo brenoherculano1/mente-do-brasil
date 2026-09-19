@@ -20,9 +20,11 @@ import { SpatialContext } from "@/features/profile/SpatialContext";
 import { RegionAdvanced } from "@/features/advanced/RegionAdvanced";
 import { ShareButton } from "@/features/share/ShareButton";
 import { toneForDirection, toneLabel } from "@/lib/indicator-tone";
+import { EditionGate } from "@/features/availability/EditionGate";
 
 type RegionPageProps = {
   params: Promise<{ codigo: string }>;
+  searchParams?: Promise<{ ano?: string }>;
 };
 
 export async function generateMetadata({ params }: RegionPageProps): Promise<Metadata> {
@@ -44,9 +46,11 @@ export async function generateMetadata({ params }: RegionPageProps): Promise<Met
   }
 }
 
-export default async function RegionProfilePage({ params }: RegionPageProps) {
+export default async function RegionProfilePage({ params, searchParams }: RegionPageProps) {
   const { codigo } = await params;
   if (!/^\d{5}$/.test(codigo)) notFound();
+  const query = await searchParams;
+  if (query?.ano === "2025") return <EditionGate year="2025" context="Perfil regional" code={codigo} />;
   let data: [HealthRegionProfile, ExplanationResponse, PeersResponse, HealthRegionMunicipalities];
   try {
     data = await Promise.all([
@@ -64,6 +68,7 @@ export default async function RegionProfilePage({ params }: RegionPageProps) {
   const situation = describeSituation(profile.need.score, profile.capacity.score);
   return (
     <div className="profile-shell page-shell">
+      <EditionGate year="2024" />
       <nav className="breadcrumbs" aria-label="Breadcrumb">
         <Link href="/">Brasil</Link>
         <span>/</span>

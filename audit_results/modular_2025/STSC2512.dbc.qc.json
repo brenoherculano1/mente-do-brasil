@@ -1,0 +1,1271 @@
+{
+  "file": "STSC2512.dbc",
+  "family": "ST",
+  "uf": "SC",
+  "input_sha256": "d3f82c265094fdb042a0def33f946bc498133b8706901f567bfeae79e193cd36",
+  "source": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/ST/STSC2512.dbc",
+  "retrieved_at": "2026-09-14T20:32:37.305880+00:00",
+  "schema": {
+    "fields": [
+      {
+        "name": "CNES",
+        "type": "C",
+        "length": 7,
+        "decimal": 0
+      },
+      {
+        "name": "CODUFMUN",
+        "type": "C",
+        "length": 6,
+        "decimal": 0
+      },
+      {
+        "name": "COD_CEP",
+        "type": "C",
+        "length": 8,
+        "decimal": 0
+      },
+      {
+        "name": "CPF_CNPJ",
+        "type": "C",
+        "length": 14,
+        "decimal": 0
+      },
+      {
+        "name": "PF_PJ",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "NIV_DEP",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "CNPJ_MAN",
+        "type": "C",
+        "length": 14,
+        "decimal": 0
+      },
+      {
+        "name": "COD_IR",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "REGSAUDE",
+        "type": "C",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "MICR_REG",
+        "type": "C",
+        "length": 6,
+        "decimal": 0
+      },
+      {
+        "name": "DISTRSAN",
+        "type": "C",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "DISTRADM",
+        "type": "C",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "VINC_SUS",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "TPGESTAO",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "ESFERA_A",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "RETENCAO",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "ATIVIDAD",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "NATUREZA",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "CLIENTEL",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "TP_UNID",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "TURNO_AT",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "NIV_HIER",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "TP_PREST",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "CO_BANCO",
+        "type": "C",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "CO_AGENC",
+        "type": "C",
+        "length": 5,
+        "decimal": 0
+      },
+      {
+        "name": "C_CORREN",
+        "type": "C",
+        "length": 14,
+        "decimal": 0
+      },
+      {
+        "name": "CONTRATM",
+        "type": "C",
+        "length": 11,
+        "decimal": 0
+      },
+      {
+        "name": "DT_PUBLM",
+        "type": "C",
+        "length": 8,
+        "decimal": 0
+      },
+      {
+        "name": "CONTRATE",
+        "type": "C",
+        "length": 11,
+        "decimal": 0
+      },
+      {
+        "name": "DT_PUBLE",
+        "type": "C",
+        "length": 8,
+        "decimal": 0
+      },
+      {
+        "name": "ALVARA",
+        "type": "C",
+        "length": 25,
+        "decimal": 0
+      },
+      {
+        "name": "DT_EXPED",
+        "type": "C",
+        "length": 8,
+        "decimal": 0
+      },
+      {
+        "name": "ORGEXPED",
+        "type": "C",
+        "length": 2,
+        "decimal": 0
+      },
+      {
+        "name": "AV_ACRED",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "CLASAVAL",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "DT_ACRED",
+        "type": "C",
+        "length": 6,
+        "decimal": 0
+      },
+      {
+        "name": "AV_PNASS",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "DT_PNASS",
+        "type": "C",
+        "length": 6,
+        "decimal": 0
+      },
+      {
+        "name": "GESPRG1E",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "GESPRG1M",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "GESPRG2E",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "GESPRG2M",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "GESPRG4E",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "GESPRG4M",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "NIVATE_A",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "GESPRG3E",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "GESPRG3M",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "GESPRG5E",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "GESPRG5M",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "GESPRG6E",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "GESPRG6M",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "NIVATE_H",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "QTLEITP1",
+        "type": "N",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "QTLEITP2",
+        "type": "N",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "QTLEITP3",
+        "type": "N",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "LEITHOSP",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST01",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST02",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST03",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST04",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST05",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST06",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST07",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST08",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST09",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST10",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST11",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST12",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST13",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST14",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "URGEMERG",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST15",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST16",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST17",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST18",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST19",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST20",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST21",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST22",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST23",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST24",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST25",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST26",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST27",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST28",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST29",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST30",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "ATENDAMB",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST31",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST32",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST33",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "CENTRCIR",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST34",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST35",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST36",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTINST37",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "CENTROBS",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "QTLEIT05",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTLEIT06",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTLEIT07",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTLEIT08",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTLEIT09",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTLEIT19",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTLEIT20",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTLEIT21",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTLEIT22",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTLEIT23",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTLEIT32",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTLEIT34",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTLEIT38",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTLEIT39",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "QTLEIT40",
+        "type": "N",
+        "length": 3,
+        "decimal": 0
+      },
+      {
+        "name": "CENTRNEO",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "ATENDHOS",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "SERAP01P",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "SERAP01T",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "SERAP02P",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "SERAP02T",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "SERAP03P",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "SERAP03T",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "SERAP04P",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "SERAP04T",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "SERAP05P",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "SERAP05T",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "SERAP06P",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "SERAP06T",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "SERAP07P",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "SERAP07T",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "SERAP08P",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "SERAP08T",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "SERAP09P",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "SERAP09T",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "SERAP10P",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "SERAP10T",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "SERAP11P",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "SERAP11T",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "SERAPOIO",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "RES_BIOL",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "RES_QUIM",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "RES_RADI",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "RES_COMU",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "COLETRES",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "COMISS01",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "COMISS02",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "COMISS03",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "COMISS04",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "COMISS05",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "COMISS06",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "COMISS07",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "COMISS08",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "COMISS09",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "COMISS10",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "COMISS11",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "COMISS12",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "COMISSAO",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP01CV01",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP01CV02",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP01CV03",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP01CV04",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP01CV05",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP01CV06",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP01CV07",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP02CV01",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP02CV02",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP02CV03",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP02CV04",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP02CV05",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP02CV06",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP02CV07",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP03CV01",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP03CV02",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP03CV03",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP03CV04",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP03CV05",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP03CV06",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP03CV07",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP04CV01",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP04CV02",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP04CV03",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP04CV04",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP04CV05",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP04CV06",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP04CV07",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP05CV01",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP05CV02",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP05CV03",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP05CV04",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP05CV05",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP05CV06",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP05CV07",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP06CV01",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP06CV02",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP06CV03",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP06CV04",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP06CV05",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP06CV06",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP06CV07",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP07CV01",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP07CV02",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP07CV03",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP07CV04",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP07CV05",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP07CV06",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "AP07CV07",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "ATEND_PR",
+        "type": "C",
+        "length": 1,
+        "decimal": 0
+      },
+      {
+        "name": "DT_ATUAL",
+        "type": "C",
+        "length": 6,
+        "decimal": 0
+      },
+      {
+        "name": "COMPETEN",
+        "type": "C",
+        "length": 6,
+        "decimal": 0
+      },
+      {
+        "name": "NAT_JUR",
+        "type": "C",
+        "length": 4,
+        "decimal": 0
+      }
+    ],
+    "records": 27839,
+    "record_length": 499,
+    "fingerprint": "46012727ee5fdaf2d19817ced244f3c547bf75144d2e2f7bd6d25c3214d96b57"
+  },
+  "publication_status": "UNDER_VALIDATION",
+  "geography_validated": false,
+  "decoded_rows": 27839,
+  "selected_rows": 126,
+  "duplicate_cnes": 0,
+  "multiple_municipalities_per_cnes": 0,
+  "municipalities": 96,
+  "output_sha256": "7b661f205faf12283b49fa3a9feca0f6fd075f9403685c65e3035b4550afc7f8"
+}

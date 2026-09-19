@@ -1,0 +1,89 @@
+{
+  "file": "POPSBR25.zip",
+  "family": "population",
+  "uf": "BR",
+  "input_sha256": "1b39018193b785f62f8c52e060761b5f11c8759393b4d26aa25e9f1b208400e0",
+  "source": "ftp://ftp.datasus.gov.br/dissemin/publicos/IBGE/POPSVS/POPSBR25.zip",
+  "retrieved_at": "2026-09-14T20:39:56.667577+00:00",
+  "schema": {
+    "fields": [
+      {
+        "name": "cod_mun",
+        "type": "C",
+        "length": 7,
+        "decimal": 0
+      },
+      {
+        "name": "ano",
+        "type": "C",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "sexo",
+        "type": "C",
+        "length": 4,
+        "decimal": 0
+      },
+      {
+        "name": "idade",
+        "type": "C",
+        "length": 5,
+        "decimal": 0
+      },
+      {
+        "name": "pop",
+        "type": "N",
+        "length": 9,
+        "decimal": 0
+      }
+    ],
+    "records": 902502,
+    "record_length": 30,
+    "fingerprint": "356b836f46d0a5c2455ea65c28c4b18d39fe404bc172dc74d63f72f02f7fa8d5",
+    "members": [
+      {
+        "name": "POP25.dbf",
+        "size": 27075253
+      }
+    ]
+  },
+  "publication_status": "UNDER_VALIDATION",
+  "geography_validated": false,
+  "decoded_rows": 902502,
+  "sex_codes": [
+    "1",
+    "2"
+  ],
+  "municipality_cell_counts": {
+    "162": 5571
+  },
+  "municipality_code_lengths": [
+    7
+  ],
+  "schema_case_normalized": true,
+  "municipalities": 5571,
+  "age_bands": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "total_population": 213421037,
+  "nonpositive_cells": 0,
+  "duplicate_municipality_band": 0,
+  "output_sha256": "a429136d96feed23defe550db16d62663465e4945c6ac9a7ad4e1ef63e6eb450"
+}

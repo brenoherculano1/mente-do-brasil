@@ -27,7 +27,7 @@ describe("about page", () => {
 
   it("keeps the manuscript status conservative and explains the update horizon", () => {
     render(<AboutPage />);
-    expect(screen.getByText(/A cobertura atual vai até 2024/)).toBeInTheDocument();
+    expect(screen.getByText(/A edição analítica de referência é de 2024/)).toBeInTheDocument();
     expect(screen.getByText(ABOUT_PAGE.manuscriptStatus)).toBeInTheDocument();
     expect(screen.getByText(new RegExp(ABOUT_PAGE.manuscriptTitle))).toBeInTheDocument();
   });

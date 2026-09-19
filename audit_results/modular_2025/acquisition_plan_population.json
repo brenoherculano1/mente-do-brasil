@@ -1,0 +1,11 @@
+[
+  {
+    "dataset": "population",
+    "family": "population",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "BR",
+    "original_filename": "POPSBR25.zip",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/IBGE/POPSVS/POPSBR25.zip"
+  }
+]

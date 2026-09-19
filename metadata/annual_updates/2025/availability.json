@@ -1,0 +1,391 @@
+{
+  "reference_year": 2025,
+  "public_release_status": "NOT_RELEASED",
+  "observed_release_created": false,
+  "geography_validated": false,
+  "indicators": [
+    {
+      "indicator_id": "caps_count",
+      "label": "CAPS registrados",
+      "reference_year": 2025,
+      "period": "2025-12",
+      "status": "UNDER_VALIDATION",
+      "source": "CNES",
+      "source_status": "UNDER_VALIDATION",
+      "last_updated": "2026-09-14",
+      "release_id": null,
+      "available_publicly": false,
+      "reason_unavailable": "O v\u00ednculo dos munic\u00edpios com as Regi\u00f5es de Sa\u00fade em 2025 ainda est\u00e1 em valida\u00e7\u00e3o. Os valores regionais ser\u00e3o apresentados ap\u00f3s essa confer\u00eancia e a valida\u00e7\u00e3o da pr\u00f3pria fonte.",
+      "latest_available_year": 2024,
+      "dependencies": [
+        "geography"
+      ]
+    },
+    {
+      "indicator_id": "caps_rate",
+      "label": "CAPS por 100 mil habitantes",
+      "reference_year": 2025,
+      "period": "2025-12",
+      "status": "UNDER_VALIDATION",
+      "source": "CNES; POPSVS",
+      "source_status": "UNDER_VALIDATION",
+      "last_updated": "2026-09-14",
+      "release_id": null,
+      "available_publicly": false,
+      "reason_unavailable": "O v\u00ednculo dos munic\u00edpios com as Regi\u00f5es de Sa\u00fade em 2025 ainda est\u00e1 em valida\u00e7\u00e3o. Os valores regionais ser\u00e3o apresentados ap\u00f3s essa confer\u00eancia e a valida\u00e7\u00e3o da pr\u00f3pria fonte.",
+      "latest_available_year": 2024,
+      "dependencies": [
+        "caps_count",
+        "population"
+      ]
+    },
+    {
+      "indicator_id": "beds_sus_count",
+      "label": "Leitos SUS de sa\u00fade mental",
+      "reference_year": 2025,
+      "period": "2025-12",
+      "status": "UNDER_VALIDATION",
+      "source": "CNES",
+      "source_status": "UNDER_VALIDATION",
+      "last_updated": "2026-09-14",
+      "release_id": null,
+      "available_publicly": false,
+      "reason_unavailable": "O v\u00ednculo dos munic\u00edpios com as Regi\u00f5es de Sa\u00fade em 2025 ainda est\u00e1 em valida\u00e7\u00e3o. Os valores regionais ser\u00e3o apresentados ap\u00f3s essa confer\u00eancia e a valida\u00e7\u00e3o da pr\u00f3pria fonte.",
+      "latest_available_year": 2024,
+      "dependencies": [
+        "geography"
+      ]
+    },
+    {
+      "indicator_id": "beds_sus_rate",
+      "label": "Leitos SUS por 100 mil habitantes",
+      "reference_year": 2025,
+      "period": "2025-12",
+      "status": "UNDER_VALIDATION",
+      "source": "CNES; POPSVS",
+      "source_status": "UNDER_VALIDATION",
+      "last_updated": "2026-09-14",
+      "release_id": null,
+      "available_publicly": false,
+      "reason_unavailable": "O v\u00ednculo dos munic\u00edpios com as Regi\u00f5es de Sa\u00fade em 2025 ainda est\u00e1 em valida\u00e7\u00e3o. Os valores regionais ser\u00e3o apresentados ap\u00f3s essa confer\u00eancia e a valida\u00e7\u00e3o da pr\u00f3pria fonte.",
+      "latest_available_year": 2024,
+      "dependencies": [
+        "beds_sus_count",
+        "population"
+      ]
+    },
+    {
+      "indicator_id": "psychiatrist_fte",
+      "label": "Jornadas equivalentes de psiquiatras",
+      "reference_year": 2025,
+      "period": "2025-12",
+      "status": "UNDER_VALIDATION",
+      "source": "CNES PF",
+      "source_status": "UNDER_VALIDATION",
+      "last_updated": "2026-09-14",
+      "release_id": null,
+      "available_publicly": false,
+      "reason_unavailable": "O v\u00ednculo dos munic\u00edpios com as Regi\u00f5es de Sa\u00fade em 2025 ainda est\u00e1 em valida\u00e7\u00e3o. Os valores regionais ser\u00e3o apresentados ap\u00f3s essa confer\u00eancia e a valida\u00e7\u00e3o da pr\u00f3pria fonte. A carga hor\u00e1ria e poss\u00edveis duplica\u00e7\u00f5es tamb\u00e9m est\u00e3o em revis\u00e3o.",
+      "latest_available_year": 2024,
+      "dependencies": [
+        "geography",
+        "workforce_qc"
+      ]
+    },
+    {
+      "indicator_id": "psychiatrist_fte_rate",
+      "label": "Jornadas equivalentes por 100 mil habitantes",
+      "reference_year": 2025,
+      "period": "2025-12",
+      "status": "UNDER_VALIDATION",
+      "source": "CNES PF; POPSVS",
+      "source_status": "UNDER_VALIDATION",
+      "last_updated": "2026-09-14",
+      "release_id": null,
+      "available_publicly": false,
+      "reason_unavailable": "O v\u00ednculo dos munic\u00edpios com as Regi\u00f5es de Sa\u00fade em 2025 ainda est\u00e1 em valida\u00e7\u00e3o. Os valores regionais ser\u00e3o apresentados ap\u00f3s essa confer\u00eancia e a valida\u00e7\u00e3o da pr\u00f3pria fonte. A carga hor\u00e1ria e poss\u00edveis duplica\u00e7\u00f5es tamb\u00e9m est\u00e3o em revis\u00e3o.",
+      "latest_available_year": 2024,
+      "dependencies": [
+        "psychiatrist_fte",
+        "population"
+      ]
+    },
+    {
+      "indicator_id": "psychiatric_admissions",
+      "label": "Interna\u00e7\u00f5es psiqui\u00e1tricas registradas",
+      "reference_year": 2025,
+      "period": "2025",
+      "status": "UNDER_VALIDATION",
+      "source": "SIH",
+      "source_status": "UNDER_VALIDATION",
+      "last_updated": "2026-09-14",
+      "release_id": null,
+      "available_publicly": false,
+      "reason_unavailable": "O v\u00ednculo dos munic\u00edpios com as Regi\u00f5es de Sa\u00fade em 2025 ainda est\u00e1 em valida\u00e7\u00e3o. Os valores regionais ser\u00e3o apresentados ap\u00f3s essa confer\u00eancia e a valida\u00e7\u00e3o da pr\u00f3pria fonte.",
+      "latest_available_year": 2024,
+      "dependencies": [
+        "geography",
+        "sih_qc"
+      ]
+    },
+    {
+      "indicator_id": "psychiatric_admissions_rate",
+      "label": "Interna\u00e7\u00f5es por 100 mil habitantes",
+      "reference_year": 2025,
+      "period": "2025",
+      "status": "UNDER_VALIDATION",
+      "source": "SIH; POPSVS",
+      "source_status": "UNDER_VALIDATION",
+      "last_updated": "2026-09-14",
+      "release_id": null,
+      "available_publicly": false,
+      "reason_unavailable": "O v\u00ednculo dos munic\u00edpios com as Regi\u00f5es de Sa\u00fade em 2025 ainda est\u00e1 em valida\u00e7\u00e3o. Os valores regionais ser\u00e3o apresentados ap\u00f3s essa confer\u00eancia e a valida\u00e7\u00e3o da pr\u00f3pria fonte.",
+      "latest_available_year": 2024,
+      "dependencies": [
+        "psychiatric_admissions",
+        "population"
+      ]
+    },
+    {
+      "indicator_id": "pooled_psychiatric_admissions",
+      "label": "Interna\u00e7\u00f5es no per\u00edodo agrupado",
+      "reference_year": 2025,
+      "period": "2023\u20132025",
+      "status": "UNDER_VALIDATION",
+      "source": "SIH; POPSVS",
+      "source_status": "UNDER_VALIDATION",
+      "last_updated": "2026-09-14",
+      "release_id": null,
+      "available_publicly": false,
+      "reason_unavailable": "O v\u00ednculo dos munic\u00edpios com as Regi\u00f5es de Sa\u00fade em 2025 ainda est\u00e1 em valida\u00e7\u00e3o. Os valores regionais ser\u00e3o apresentados ap\u00f3s essa confer\u00eancia e a valida\u00e7\u00e3o da pr\u00f3pria fonte.",
+      "latest_available_year": 2024,
+      "dependencies": [
+        "geography",
+        "pooled_denominators",
+        "sih_qc"
+      ]
+    },
+    {
+      "indicator_id": "suicide_deaths",
+      "label": "\u00d3bitos por suic\u00eddio",
+      "reference_year": 2025,
+      "period": "2023\u20132025",
+      "status": "UNAVAILABLE",
+      "source": "SIM",
+      "source_status": "PROVISIONAL_NOT_PUBLIC",
+      "last_updated": "2026-09-14",
+      "release_id": null,
+      "available_publicly": false,
+      "reason_unavailable": "Os dados consolidados de mortalidade por suic\u00eddio de 2025 ainda n\u00e3o est\u00e3o dispon\u00edveis. A pr\u00e9via do SIM n\u00e3o \u00e9 usada nesta camada.",
+      "latest_available_year": 2024,
+      "dependencies": [
+        "consolidated_sim",
+        "geography"
+      ]
+    },
+    {
+      "indicator_id": "suicide_asmr",
+      "label": "Mortalidade padronizada por suic\u00eddio",
+      "reference_year": 2025,
+      "period": "2023\u20132025",
+      "status": "UNAVAILABLE",
+      "source": "SIM; POPSVS",
+      "source_status": "PROVISIONAL_NOT_PUBLIC",
+      "last_updated": "2026-09-14",
+      "release_id": null,
+      "available_publicly": false,
+      "reason_unavailable": "Os dados consolidados de mortalidade por suic\u00eddio de 2025 ainda n\u00e3o est\u00e3o dispon\u00edveis. A pr\u00e9via do SIM n\u00e3o \u00e9 usada nesta camada.",
+      "latest_available_year": 2024,
+      "dependencies": [
+        "consolidated_sim",
+        "population",
+        "geography"
+      ]
+    },
+    {
+      "indicator_id": "population",
+      "label": "Popula\u00e7\u00e3o",
+      "reference_year": 2025,
+      "period": "2025",
+      "status": "UNDER_VALIDATION",
+      "source": "POPSVS",
+      "source_status": "UNDER_VALIDATION",
+      "last_updated": "2026-09-14",
+      "release_id": null,
+      "available_publicly": false,
+      "reason_unavailable": "O v\u00ednculo dos munic\u00edpios com as Regi\u00f5es de Sa\u00fade em 2025 ainda est\u00e1 em valida\u00e7\u00e3o. Os valores regionais ser\u00e3o apresentados ap\u00f3s essa confer\u00eancia e a valida\u00e7\u00e3o da pr\u00f3pria fonte.",
+      "latest_available_year": 2024,
+      "dependencies": [
+        "geography",
+        "denominator_qc"
+      ]
+    },
+    {
+      "indicator_id": "financing",
+      "label": "Recursos gerais da sa\u00fade",
+      "reference_year": 2025,
+      "period": "2025",
+      "status": "UNDER_VALIDATION",
+      "source": "SIOPS",
+      "source_status": "UNDER_VALIDATION",
+      "last_updated": "2026-09-14",
+      "release_id": null,
+      "available_publicly": false,
+      "reason_unavailable": "O v\u00ednculo dos munic\u00edpios com as Regi\u00f5es de Sa\u00fade em 2025 ainda est\u00e1 em valida\u00e7\u00e3o. Os valores regionais ser\u00e3o apresentados ap\u00f3s essa confer\u00eancia e a valida\u00e7\u00e3o da pr\u00f3pria fonte. Tamb\u00e9m falta reconciliar as contas e a cobertura do SIOPS, sem somar rubricas sobrepostas. Esta camada n\u00e3o mede gasto espec\u00edfico em sa\u00fade mental.",
+      "latest_available_year": 2024,
+      "dependencies": [
+        "geography",
+        "accounting_reconciliation"
+      ]
+    },
+    {
+      "indicator_id": "need_score",
+      "label": "Necessidade em sa\u00fade mental",
+      "reference_year": 2025,
+      "period": "2023\u20132025",
+      "status": "UNAVAILABLE",
+      "source": "SIM; SIH",
+      "source_status": "UNDER_VALIDATION",
+      "last_updated": "2026-09-14",
+      "release_id": null,
+      "available_publicly": false,
+      "reason_unavailable": "Este indicador depende de dados consolidados de mortalidade por suic\u00eddio de 2025, ainda n\u00e3o dispon\u00edveis. Os componentes ausentes n\u00e3o s\u00e3o estimados nem substitu\u00eddos.",
+      "latest_available_year": 2024,
+      "dependencies": [
+        "suicide_asmr",
+        "pooled_psychiatric_admissions"
+      ]
+    },
+    {
+      "indicator_id": "capacity_score",
+      "label": "Estrutura registrada",
+      "reference_year": 2025,
+      "period": "2025-12",
+      "status": "UNDER_VALIDATION",
+      "source": "CNES; POPSVS",
+      "source_status": "UNDER_VALIDATION",
+      "last_updated": "2026-09-14",
+      "release_id": null,
+      "available_publicly": false,
+      "reason_unavailable": "O v\u00ednculo dos munic\u00edpios com as Regi\u00f5es de Sa\u00fade em 2025 ainda est\u00e1 em valida\u00e7\u00e3o. Os valores regionais ser\u00e3o apresentados ap\u00f3s essa confer\u00eancia e a valida\u00e7\u00e3o da pr\u00f3pria fonte.",
+      "latest_available_year": 2024,
+      "dependencies": [
+        "caps_rate",
+        "beds_sus_rate",
+        "psychiatrist_fte_rate"
+      ]
+    },
+    {
+      "indicator_id": "mismatch_score",
+      "label": "Diferen\u00e7a necessidade-capacidade",
+      "reference_year": 2025,
+      "period": "2023\u20132025 / 2025-12",
+      "status": "UNAVAILABLE",
+      "source": "SIM; SIH; CNES; POPSVS",
+      "source_status": "UNDER_VALIDATION",
+      "last_updated": "2026-09-14",
+      "release_id": null,
+      "available_publicly": false,
+      "reason_unavailable": "Este indicador depende de dados consolidados de mortalidade por suic\u00eddio de 2025, ainda n\u00e3o dispon\u00edveis. Os componentes ausentes n\u00e3o s\u00e3o estimados nem substitu\u00eddos.",
+      "latest_available_year": 2024,
+      "dependencies": [
+        "need_score",
+        "capacity_score"
+      ]
+    },
+    {
+      "indicator_id": "moran",
+      "label": "Associa\u00e7\u00e3o espacial global",
+      "reference_year": 2025,
+      "period": "2025",
+      "status": "UNAVAILABLE",
+      "source": "An\u00e1lise espacial",
+      "source_status": "UNDER_VALIDATION",
+      "last_updated": "2026-09-14",
+      "release_id": null,
+      "available_publicly": false,
+      "reason_unavailable": "Este indicador depende de dados consolidados de mortalidade por suic\u00eddio de 2025, ainda n\u00e3o dispon\u00edveis. Os componentes ausentes n\u00e3o s\u00e3o estimados nem substitu\u00eddos.",
+      "latest_available_year": 2024,
+      "dependencies": [
+        "mismatch_score",
+        "spatial_reproduction"
+      ]
+    },
+    {
+      "indicator_id": "lisa",
+      "label": "Associa\u00e7\u00e3o espacial local",
+      "reference_year": 2025,
+      "period": "2025",
+      "status": "UNAVAILABLE",
+      "source": "An\u00e1lise espacial",
+      "source_status": "UNDER_VALIDATION",
+      "last_updated": "2026-09-14",
+      "release_id": null,
+      "available_publicly": false,
+      "reason_unavailable": "Este indicador depende de dados consolidados de mortalidade por suic\u00eddio de 2025, ainda n\u00e3o dispon\u00edveis. Os componentes ausentes n\u00e3o s\u00e3o estimados nem substitu\u00eddos.",
+      "latest_available_year": 2024,
+      "dependencies": [
+        "mismatch_score",
+        "spatial_reproduction"
+      ]
+    },
+    {
+      "indicator_id": "radar",
+      "label": "Conjunto completo de sinais",
+      "reference_year": 2025,
+      "period": "2025",
+      "status": "UNAVAILABLE",
+      "source": "SIM; SIH; CNES",
+      "source_status": "UNDER_VALIDATION",
+      "last_updated": "2026-09-14",
+      "release_id": null,
+      "available_publicly": false,
+      "reason_unavailable": "Este indicador depende de dados consolidados de mortalidade por suic\u00eddio de 2025, ainda n\u00e3o dispon\u00edveis. Os componentes ausentes n\u00e3o s\u00e3o estimados nem substitu\u00eddos.",
+      "latest_available_year": 2024,
+      "dependencies": [
+        "need_score",
+        "capacity_score",
+        "mismatch_score",
+        "lisa"
+      ]
+    },
+    {
+      "indicator_id": "radar_capacity_signals",
+      "label": "Sinais de estrutura registrada",
+      "reference_year": 2025,
+      "period": "2025-12",
+      "status": "UNDER_VALIDATION",
+      "source": "CNES; POPSVS",
+      "source_status": "UNDER_VALIDATION",
+      "last_updated": "2026-09-14",
+      "release_id": null,
+      "available_publicly": false,
+      "reason_unavailable": "O v\u00ednculo dos munic\u00edpios com as Regi\u00f5es de Sa\u00fade em 2025 ainda est\u00e1 em valida\u00e7\u00e3o. Os valores regionais ser\u00e3o apresentados ap\u00f3s essa confer\u00eancia e a valida\u00e7\u00e3o da pr\u00f3pria fonte.",
+      "latest_available_year": 2024,
+      "dependencies": [
+        "capacity_score",
+        "caps_rate",
+        "beds_sus_rate",
+        "psychiatrist_fte_rate"
+      ]
+    },
+    {
+      "indicator_id": "hospital_flows",
+      "label": "Fluxos de interna\u00e7\u00f5es",
+      "reference_year": 2025,
+      "period": "2025",
+      "status": "UNDER_VALIDATION",
+      "source": "SIH",
+      "source_status": "UNDER_VALIDATION",
+      "last_updated": "2026-09-14",
+      "release_id": null,
+      "available_publicly": false,
+      "reason_unavailable": "O v\u00ednculo dos munic\u00edpios com as Regi\u00f5es de Sa\u00fade em 2025 ainda est\u00e1 em valida\u00e7\u00e3o. Os valores regionais ser\u00e3o apresentados ap\u00f3s essa confer\u00eancia e a valida\u00e7\u00e3o da pr\u00f3pria fonte.",
+      "latest_available_year": 2024,
+      "dependencies": [
+        "geography",
+        "sih_qc"
+      ]
+    }
+  ]
+}

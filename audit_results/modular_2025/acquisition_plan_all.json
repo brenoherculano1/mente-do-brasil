@@ -1,0 +1,3656 @@
+[
+  {
+    "dataset": "CNES",
+    "family": "ST",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "AC",
+    "original_filename": "STAC2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/ST/STAC2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "ST",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "AL",
+    "original_filename": "STAL2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/ST/STAL2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "ST",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "AP",
+    "original_filename": "STAP2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/ST/STAP2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "ST",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "AM",
+    "original_filename": "STAM2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/ST/STAM2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "ST",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "BA",
+    "original_filename": "STBA2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/ST/STBA2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "ST",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "CE",
+    "original_filename": "STCE2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/ST/STCE2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "ST",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "DF",
+    "original_filename": "STDF2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/ST/STDF2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "ST",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "ES",
+    "original_filename": "STES2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/ST/STES2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "ST",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "GO",
+    "original_filename": "STGO2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/ST/STGO2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "ST",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "MA",
+    "original_filename": "STMA2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/ST/STMA2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "ST",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "MT",
+    "original_filename": "STMT2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/ST/STMT2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "ST",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "MS",
+    "original_filename": "STMS2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/ST/STMS2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "ST",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "MG",
+    "original_filename": "STMG2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/ST/STMG2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "ST",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "PA",
+    "original_filename": "STPA2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/ST/STPA2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "ST",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "PB",
+    "original_filename": "STPB2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/ST/STPB2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "ST",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "PR",
+    "original_filename": "STPR2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/ST/STPR2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "ST",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "PE",
+    "original_filename": "STPE2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/ST/STPE2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "ST",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "PI",
+    "original_filename": "STPI2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/ST/STPI2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "ST",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "RJ",
+    "original_filename": "STRJ2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/ST/STRJ2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "ST",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "RN",
+    "original_filename": "STRN2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/ST/STRN2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "ST",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "RS",
+    "original_filename": "STRS2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/ST/STRS2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "ST",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "RO",
+    "original_filename": "STRO2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/ST/STRO2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "ST",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "RR",
+    "original_filename": "STRR2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/ST/STRR2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "ST",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "SC",
+    "original_filename": "STSC2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/ST/STSC2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "ST",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "SP",
+    "original_filename": "STSP2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/ST/STSP2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "ST",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "SE",
+    "original_filename": "STSE2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/ST/STSE2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "ST",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "TO",
+    "original_filename": "STTO2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/ST/STTO2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "LT",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "AC",
+    "original_filename": "LTAC2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/LT/LTAC2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "LT",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "AL",
+    "original_filename": "LTAL2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/LT/LTAL2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "LT",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "AP",
+    "original_filename": "LTAP2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/LT/LTAP2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "LT",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "AM",
+    "original_filename": "LTAM2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/LT/LTAM2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "LT",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "BA",
+    "original_filename": "LTBA2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/LT/LTBA2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "LT",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "CE",
+    "original_filename": "LTCE2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/LT/LTCE2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "LT",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "DF",
+    "original_filename": "LTDF2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/LT/LTDF2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "LT",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "ES",
+    "original_filename": "LTES2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/LT/LTES2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "LT",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "GO",
+    "original_filename": "LTGO2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/LT/LTGO2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "LT",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "MA",
+    "original_filename": "LTMA2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/LT/LTMA2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "LT",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "MT",
+    "original_filename": "LTMT2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/LT/LTMT2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "LT",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "MS",
+    "original_filename": "LTMS2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/LT/LTMS2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "LT",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "MG",
+    "original_filename": "LTMG2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/LT/LTMG2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "LT",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "PA",
+    "original_filename": "LTPA2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/LT/LTPA2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "LT",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "PB",
+    "original_filename": "LTPB2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/LT/LTPB2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "LT",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "PR",
+    "original_filename": "LTPR2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/LT/LTPR2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "LT",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "PE",
+    "original_filename": "LTPE2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/LT/LTPE2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "LT",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "PI",
+    "original_filename": "LTPI2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/LT/LTPI2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "LT",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "RJ",
+    "original_filename": "LTRJ2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/LT/LTRJ2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "LT",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "RN",
+    "original_filename": "LTRN2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/LT/LTRN2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "LT",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "RS",
+    "original_filename": "LTRS2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/LT/LTRS2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "LT",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "RO",
+    "original_filename": "LTRO2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/LT/LTRO2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "LT",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "RR",
+    "original_filename": "LTRR2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/LT/LTRR2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "LT",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "SC",
+    "original_filename": "LTSC2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/LT/LTSC2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "LT",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "SP",
+    "original_filename": "LTSP2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/LT/LTSP2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "LT",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "SE",
+    "original_filename": "LTSE2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/LT/LTSE2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "LT",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "TO",
+    "original_filename": "LTTO2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/LT/LTTO2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "PF",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "AC",
+    "original_filename": "PFAC2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/PF/PFAC2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "PF",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "AL",
+    "original_filename": "PFAL2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/PF/PFAL2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "PF",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "AP",
+    "original_filename": "PFAP2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/PF/PFAP2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "PF",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "AM",
+    "original_filename": "PFAM2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/PF/PFAM2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "PF",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "BA",
+    "original_filename": "PFBA2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/PF/PFBA2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "PF",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "CE",
+    "original_filename": "PFCE2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/PF/PFCE2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "PF",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "DF",
+    "original_filename": "PFDF2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/PF/PFDF2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "PF",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "ES",
+    "original_filename": "PFES2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/PF/PFES2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "PF",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "GO",
+    "original_filename": "PFGO2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/PF/PFGO2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "PF",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "MA",
+    "original_filename": "PFMA2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/PF/PFMA2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "PF",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "MT",
+    "original_filename": "PFMT2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/PF/PFMT2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "PF",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "MS",
+    "original_filename": "PFMS2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/PF/PFMS2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "PF",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "MG",
+    "original_filename": "PFMG2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/PF/PFMG2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "PF",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "PA",
+    "original_filename": "PFPA2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/PF/PFPA2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "PF",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "PB",
+    "original_filename": "PFPB2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/PF/PFPB2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "PF",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "PR",
+    "original_filename": "PFPR2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/PF/PFPR2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "PF",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "PE",
+    "original_filename": "PFPE2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/PF/PFPE2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "PF",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "PI",
+    "original_filename": "PFPI2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/PF/PFPI2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "PF",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "RJ",
+    "original_filename": "PFRJ2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/PF/PFRJ2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "PF",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "RN",
+    "original_filename": "PFRN2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/PF/PFRN2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "PF",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "RS",
+    "original_filename": "PFRS2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/PF/PFRS2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "PF",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "RO",
+    "original_filename": "PFRO2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/PF/PFRO2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "PF",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "RR",
+    "original_filename": "PFRR2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/PF/PFRR2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "PF",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "SC",
+    "original_filename": "PFSC2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/PF/PFSC2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "PF",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "SP",
+    "original_filename": "PFSP2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/PF/PFSP2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "PF",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "SE",
+    "original_filename": "PFSE2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/PF/PFSE2512.dbc"
+  },
+  {
+    "dataset": "CNES",
+    "family": "PF",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "TO",
+    "original_filename": "PFTO2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/PF/PFTO2512.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-01",
+    "uf": "AC",
+    "original_filename": "RDAC2501.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAC2501.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-02",
+    "uf": "AC",
+    "original_filename": "RDAC2502.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAC2502.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-03",
+    "uf": "AC",
+    "original_filename": "RDAC2503.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAC2503.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-04",
+    "uf": "AC",
+    "original_filename": "RDAC2504.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAC2504.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-05",
+    "uf": "AC",
+    "original_filename": "RDAC2505.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAC2505.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-06",
+    "uf": "AC",
+    "original_filename": "RDAC2506.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAC2506.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-07",
+    "uf": "AC",
+    "original_filename": "RDAC2507.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAC2507.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-08",
+    "uf": "AC",
+    "original_filename": "RDAC2508.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAC2508.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-09",
+    "uf": "AC",
+    "original_filename": "RDAC2509.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAC2509.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-10",
+    "uf": "AC",
+    "original_filename": "RDAC2510.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAC2510.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-11",
+    "uf": "AC",
+    "original_filename": "RDAC2511.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAC2511.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "AC",
+    "original_filename": "RDAC2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAC2512.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-01",
+    "uf": "AL",
+    "original_filename": "RDAL2501.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAL2501.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-02",
+    "uf": "AL",
+    "original_filename": "RDAL2502.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAL2502.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-03",
+    "uf": "AL",
+    "original_filename": "RDAL2503.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAL2503.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-04",
+    "uf": "AL",
+    "original_filename": "RDAL2504.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAL2504.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-05",
+    "uf": "AL",
+    "original_filename": "RDAL2505.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAL2505.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-06",
+    "uf": "AL",
+    "original_filename": "RDAL2506.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAL2506.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-07",
+    "uf": "AL",
+    "original_filename": "RDAL2507.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAL2507.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-08",
+    "uf": "AL",
+    "original_filename": "RDAL2508.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAL2508.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-09",
+    "uf": "AL",
+    "original_filename": "RDAL2509.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAL2509.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-10",
+    "uf": "AL",
+    "original_filename": "RDAL2510.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAL2510.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-11",
+    "uf": "AL",
+    "original_filename": "RDAL2511.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAL2511.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "AL",
+    "original_filename": "RDAL2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAL2512.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-01",
+    "uf": "AP",
+    "original_filename": "RDAP2501.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAP2501.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-02",
+    "uf": "AP",
+    "original_filename": "RDAP2502.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAP2502.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-03",
+    "uf": "AP",
+    "original_filename": "RDAP2503.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAP2503.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-04",
+    "uf": "AP",
+    "original_filename": "RDAP2504.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAP2504.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-05",
+    "uf": "AP",
+    "original_filename": "RDAP2505.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAP2505.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-06",
+    "uf": "AP",
+    "original_filename": "RDAP2506.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAP2506.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-07",
+    "uf": "AP",
+    "original_filename": "RDAP2507.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAP2507.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-08",
+    "uf": "AP",
+    "original_filename": "RDAP2508.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAP2508.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-09",
+    "uf": "AP",
+    "original_filename": "RDAP2509.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAP2509.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-10",
+    "uf": "AP",
+    "original_filename": "RDAP2510.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAP2510.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-11",
+    "uf": "AP",
+    "original_filename": "RDAP2511.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAP2511.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "AP",
+    "original_filename": "RDAP2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAP2512.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-01",
+    "uf": "AM",
+    "original_filename": "RDAM2501.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAM2501.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-02",
+    "uf": "AM",
+    "original_filename": "RDAM2502.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAM2502.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-03",
+    "uf": "AM",
+    "original_filename": "RDAM2503.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAM2503.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-04",
+    "uf": "AM",
+    "original_filename": "RDAM2504.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAM2504.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-05",
+    "uf": "AM",
+    "original_filename": "RDAM2505.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAM2505.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-06",
+    "uf": "AM",
+    "original_filename": "RDAM2506.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAM2506.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-07",
+    "uf": "AM",
+    "original_filename": "RDAM2507.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAM2507.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-08",
+    "uf": "AM",
+    "original_filename": "RDAM2508.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAM2508.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-09",
+    "uf": "AM",
+    "original_filename": "RDAM2509.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAM2509.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-10",
+    "uf": "AM",
+    "original_filename": "RDAM2510.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAM2510.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-11",
+    "uf": "AM",
+    "original_filename": "RDAM2511.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAM2511.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "AM",
+    "original_filename": "RDAM2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDAM2512.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-01",
+    "uf": "BA",
+    "original_filename": "RDBA2501.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDBA2501.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-02",
+    "uf": "BA",
+    "original_filename": "RDBA2502.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDBA2502.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-03",
+    "uf": "BA",
+    "original_filename": "RDBA2503.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDBA2503.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-04",
+    "uf": "BA",
+    "original_filename": "RDBA2504.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDBA2504.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-05",
+    "uf": "BA",
+    "original_filename": "RDBA2505.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDBA2505.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-06",
+    "uf": "BA",
+    "original_filename": "RDBA2506.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDBA2506.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-07",
+    "uf": "BA",
+    "original_filename": "RDBA2507.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDBA2507.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-08",
+    "uf": "BA",
+    "original_filename": "RDBA2508.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDBA2508.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-09",
+    "uf": "BA",
+    "original_filename": "RDBA2509.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDBA2509.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-10",
+    "uf": "BA",
+    "original_filename": "RDBA2510.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDBA2510.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-11",
+    "uf": "BA",
+    "original_filename": "RDBA2511.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDBA2511.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "BA",
+    "original_filename": "RDBA2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDBA2512.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-01",
+    "uf": "CE",
+    "original_filename": "RDCE2501.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDCE2501.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-02",
+    "uf": "CE",
+    "original_filename": "RDCE2502.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDCE2502.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-03",
+    "uf": "CE",
+    "original_filename": "RDCE2503.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDCE2503.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-04",
+    "uf": "CE",
+    "original_filename": "RDCE2504.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDCE2504.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-05",
+    "uf": "CE",
+    "original_filename": "RDCE2505.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDCE2505.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-06",
+    "uf": "CE",
+    "original_filename": "RDCE2506.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDCE2506.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-07",
+    "uf": "CE",
+    "original_filename": "RDCE2507.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDCE2507.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-08",
+    "uf": "CE",
+    "original_filename": "RDCE2508.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDCE2508.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-09",
+    "uf": "CE",
+    "original_filename": "RDCE2509.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDCE2509.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-10",
+    "uf": "CE",
+    "original_filename": "RDCE2510.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDCE2510.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-11",
+    "uf": "CE",
+    "original_filename": "RDCE2511.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDCE2511.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "CE",
+    "original_filename": "RDCE2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDCE2512.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-01",
+    "uf": "DF",
+    "original_filename": "RDDF2501.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDDF2501.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-02",
+    "uf": "DF",
+    "original_filename": "RDDF2502.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDDF2502.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-03",
+    "uf": "DF",
+    "original_filename": "RDDF2503.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDDF2503.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-04",
+    "uf": "DF",
+    "original_filename": "RDDF2504.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDDF2504.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-05",
+    "uf": "DF",
+    "original_filename": "RDDF2505.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDDF2505.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-06",
+    "uf": "DF",
+    "original_filename": "RDDF2506.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDDF2506.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-07",
+    "uf": "DF",
+    "original_filename": "RDDF2507.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDDF2507.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-08",
+    "uf": "DF",
+    "original_filename": "RDDF2508.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDDF2508.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-09",
+    "uf": "DF",
+    "original_filename": "RDDF2509.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDDF2509.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-10",
+    "uf": "DF",
+    "original_filename": "RDDF2510.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDDF2510.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-11",
+    "uf": "DF",
+    "original_filename": "RDDF2511.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDDF2511.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "DF",
+    "original_filename": "RDDF2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDDF2512.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-01",
+    "uf": "ES",
+    "original_filename": "RDES2501.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDES2501.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-02",
+    "uf": "ES",
+    "original_filename": "RDES2502.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDES2502.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-03",
+    "uf": "ES",
+    "original_filename": "RDES2503.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDES2503.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-04",
+    "uf": "ES",
+    "original_filename": "RDES2504.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDES2504.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-05",
+    "uf": "ES",
+    "original_filename": "RDES2505.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDES2505.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-06",
+    "uf": "ES",
+    "original_filename": "RDES2506.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDES2506.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-07",
+    "uf": "ES",
+    "original_filename": "RDES2507.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDES2507.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-08",
+    "uf": "ES",
+    "original_filename": "RDES2508.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDES2508.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-09",
+    "uf": "ES",
+    "original_filename": "RDES2509.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDES2509.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-10",
+    "uf": "ES",
+    "original_filename": "RDES2510.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDES2510.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-11",
+    "uf": "ES",
+    "original_filename": "RDES2511.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDES2511.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "ES",
+    "original_filename": "RDES2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDES2512.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-01",
+    "uf": "GO",
+    "original_filename": "RDGO2501.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDGO2501.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-02",
+    "uf": "GO",
+    "original_filename": "RDGO2502.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDGO2502.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-03",
+    "uf": "GO",
+    "original_filename": "RDGO2503.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDGO2503.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-04",
+    "uf": "GO",
+    "original_filename": "RDGO2504.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDGO2504.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-05",
+    "uf": "GO",
+    "original_filename": "RDGO2505.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDGO2505.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-06",
+    "uf": "GO",
+    "original_filename": "RDGO2506.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDGO2506.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-07",
+    "uf": "GO",
+    "original_filename": "RDGO2507.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDGO2507.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-08",
+    "uf": "GO",
+    "original_filename": "RDGO2508.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDGO2508.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-09",
+    "uf": "GO",
+    "original_filename": "RDGO2509.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDGO2509.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-10",
+    "uf": "GO",
+    "original_filename": "RDGO2510.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDGO2510.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-11",
+    "uf": "GO",
+    "original_filename": "RDGO2511.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDGO2511.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "GO",
+    "original_filename": "RDGO2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDGO2512.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-01",
+    "uf": "MA",
+    "original_filename": "RDMA2501.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMA2501.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-02",
+    "uf": "MA",
+    "original_filename": "RDMA2502.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMA2502.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-03",
+    "uf": "MA",
+    "original_filename": "RDMA2503.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMA2503.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-04",
+    "uf": "MA",
+    "original_filename": "RDMA2504.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMA2504.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-05",
+    "uf": "MA",
+    "original_filename": "RDMA2505.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMA2505.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-06",
+    "uf": "MA",
+    "original_filename": "RDMA2506.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMA2506.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-07",
+    "uf": "MA",
+    "original_filename": "RDMA2507.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMA2507.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-08",
+    "uf": "MA",
+    "original_filename": "RDMA2508.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMA2508.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-09",
+    "uf": "MA",
+    "original_filename": "RDMA2509.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMA2509.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-10",
+    "uf": "MA",
+    "original_filename": "RDMA2510.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMA2510.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-11",
+    "uf": "MA",
+    "original_filename": "RDMA2511.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMA2511.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "MA",
+    "original_filename": "RDMA2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMA2512.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-01",
+    "uf": "MT",
+    "original_filename": "RDMT2501.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMT2501.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-02",
+    "uf": "MT",
+    "original_filename": "RDMT2502.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMT2502.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-03",
+    "uf": "MT",
+    "original_filename": "RDMT2503.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMT2503.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-04",
+    "uf": "MT",
+    "original_filename": "RDMT2504.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMT2504.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-05",
+    "uf": "MT",
+    "original_filename": "RDMT2505.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMT2505.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-06",
+    "uf": "MT",
+    "original_filename": "RDMT2506.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMT2506.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-07",
+    "uf": "MT",
+    "original_filename": "RDMT2507.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMT2507.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-08",
+    "uf": "MT",
+    "original_filename": "RDMT2508.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMT2508.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-09",
+    "uf": "MT",
+    "original_filename": "RDMT2509.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMT2509.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-10",
+    "uf": "MT",
+    "original_filename": "RDMT2510.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMT2510.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-11",
+    "uf": "MT",
+    "original_filename": "RDMT2511.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMT2511.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "MT",
+    "original_filename": "RDMT2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMT2512.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-01",
+    "uf": "MS",
+    "original_filename": "RDMS2501.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMS2501.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-02",
+    "uf": "MS",
+    "original_filename": "RDMS2502.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMS2502.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-03",
+    "uf": "MS",
+    "original_filename": "RDMS2503.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMS2503.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-04",
+    "uf": "MS",
+    "original_filename": "RDMS2504.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMS2504.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-05",
+    "uf": "MS",
+    "original_filename": "RDMS2505.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMS2505.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-06",
+    "uf": "MS",
+    "original_filename": "RDMS2506.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMS2506.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-07",
+    "uf": "MS",
+    "original_filename": "RDMS2507.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMS2507.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-08",
+    "uf": "MS",
+    "original_filename": "RDMS2508.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMS2508.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-09",
+    "uf": "MS",
+    "original_filename": "RDMS2509.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMS2509.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-10",
+    "uf": "MS",
+    "original_filename": "RDMS2510.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMS2510.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-11",
+    "uf": "MS",
+    "original_filename": "RDMS2511.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMS2511.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "MS",
+    "original_filename": "RDMS2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMS2512.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-01",
+    "uf": "MG",
+    "original_filename": "RDMG2501.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMG2501.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-02",
+    "uf": "MG",
+    "original_filename": "RDMG2502.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMG2502.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-03",
+    "uf": "MG",
+    "original_filename": "RDMG2503.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMG2503.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-04",
+    "uf": "MG",
+    "original_filename": "RDMG2504.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMG2504.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-05",
+    "uf": "MG",
+    "original_filename": "RDMG2505.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMG2505.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-06",
+    "uf": "MG",
+    "original_filename": "RDMG2506.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMG2506.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-07",
+    "uf": "MG",
+    "original_filename": "RDMG2507.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMG2507.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-08",
+    "uf": "MG",
+    "original_filename": "RDMG2508.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMG2508.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-09",
+    "uf": "MG",
+    "original_filename": "RDMG2509.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMG2509.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-10",
+    "uf": "MG",
+    "original_filename": "RDMG2510.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMG2510.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-11",
+    "uf": "MG",
+    "original_filename": "RDMG2511.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMG2511.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "MG",
+    "original_filename": "RDMG2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDMG2512.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-01",
+    "uf": "PA",
+    "original_filename": "RDPA2501.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPA2501.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-02",
+    "uf": "PA",
+    "original_filename": "RDPA2502.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPA2502.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-03",
+    "uf": "PA",
+    "original_filename": "RDPA2503.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPA2503.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-04",
+    "uf": "PA",
+    "original_filename": "RDPA2504.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPA2504.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-05",
+    "uf": "PA",
+    "original_filename": "RDPA2505.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPA2505.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-06",
+    "uf": "PA",
+    "original_filename": "RDPA2506.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPA2506.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-07",
+    "uf": "PA",
+    "original_filename": "RDPA2507.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPA2507.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-08",
+    "uf": "PA",
+    "original_filename": "RDPA2508.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPA2508.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-09",
+    "uf": "PA",
+    "original_filename": "RDPA2509.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPA2509.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-10",
+    "uf": "PA",
+    "original_filename": "RDPA2510.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPA2510.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-11",
+    "uf": "PA",
+    "original_filename": "RDPA2511.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPA2511.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "PA",
+    "original_filename": "RDPA2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPA2512.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-01",
+    "uf": "PB",
+    "original_filename": "RDPB2501.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPB2501.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-02",
+    "uf": "PB",
+    "original_filename": "RDPB2502.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPB2502.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-03",
+    "uf": "PB",
+    "original_filename": "RDPB2503.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPB2503.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-04",
+    "uf": "PB",
+    "original_filename": "RDPB2504.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPB2504.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-05",
+    "uf": "PB",
+    "original_filename": "RDPB2505.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPB2505.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-06",
+    "uf": "PB",
+    "original_filename": "RDPB2506.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPB2506.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-07",
+    "uf": "PB",
+    "original_filename": "RDPB2507.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPB2507.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-08",
+    "uf": "PB",
+    "original_filename": "RDPB2508.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPB2508.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-09",
+    "uf": "PB",
+    "original_filename": "RDPB2509.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPB2509.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-10",
+    "uf": "PB",
+    "original_filename": "RDPB2510.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPB2510.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-11",
+    "uf": "PB",
+    "original_filename": "RDPB2511.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPB2511.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "PB",
+    "original_filename": "RDPB2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPB2512.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-01",
+    "uf": "PR",
+    "original_filename": "RDPR2501.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPR2501.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-02",
+    "uf": "PR",
+    "original_filename": "RDPR2502.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPR2502.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-03",
+    "uf": "PR",
+    "original_filename": "RDPR2503.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPR2503.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-04",
+    "uf": "PR",
+    "original_filename": "RDPR2504.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPR2504.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-05",
+    "uf": "PR",
+    "original_filename": "RDPR2505.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPR2505.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-06",
+    "uf": "PR",
+    "original_filename": "RDPR2506.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPR2506.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-07",
+    "uf": "PR",
+    "original_filename": "RDPR2507.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPR2507.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-08",
+    "uf": "PR",
+    "original_filename": "RDPR2508.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPR2508.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-09",
+    "uf": "PR",
+    "original_filename": "RDPR2509.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPR2509.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-10",
+    "uf": "PR",
+    "original_filename": "RDPR2510.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPR2510.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-11",
+    "uf": "PR",
+    "original_filename": "RDPR2511.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPR2511.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "PR",
+    "original_filename": "RDPR2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPR2512.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-01",
+    "uf": "PE",
+    "original_filename": "RDPE2501.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPE2501.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-02",
+    "uf": "PE",
+    "original_filename": "RDPE2502.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPE2502.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-03",
+    "uf": "PE",
+    "original_filename": "RDPE2503.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPE2503.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-04",
+    "uf": "PE",
+    "original_filename": "RDPE2504.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPE2504.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-05",
+    "uf": "PE",
+    "original_filename": "RDPE2505.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPE2505.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-06",
+    "uf": "PE",
+    "original_filename": "RDPE2506.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPE2506.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-07",
+    "uf": "PE",
+    "original_filename": "RDPE2507.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPE2507.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-08",
+    "uf": "PE",
+    "original_filename": "RDPE2508.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPE2508.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-09",
+    "uf": "PE",
+    "original_filename": "RDPE2509.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPE2509.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-10",
+    "uf": "PE",
+    "original_filename": "RDPE2510.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPE2510.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-11",
+    "uf": "PE",
+    "original_filename": "RDPE2511.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPE2511.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "PE",
+    "original_filename": "RDPE2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPE2512.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-01",
+    "uf": "PI",
+    "original_filename": "RDPI2501.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPI2501.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-02",
+    "uf": "PI",
+    "original_filename": "RDPI2502.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPI2502.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-03",
+    "uf": "PI",
+    "original_filename": "RDPI2503.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPI2503.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-04",
+    "uf": "PI",
+    "original_filename": "RDPI2504.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPI2504.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-05",
+    "uf": "PI",
+    "original_filename": "RDPI2505.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPI2505.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-06",
+    "uf": "PI",
+    "original_filename": "RDPI2506.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPI2506.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-07",
+    "uf": "PI",
+    "original_filename": "RDPI2507.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPI2507.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-08",
+    "uf": "PI",
+    "original_filename": "RDPI2508.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPI2508.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-09",
+    "uf": "PI",
+    "original_filename": "RDPI2509.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPI2509.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-10",
+    "uf": "PI",
+    "original_filename": "RDPI2510.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPI2510.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-11",
+    "uf": "PI",
+    "original_filename": "RDPI2511.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPI2511.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "PI",
+    "original_filename": "RDPI2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDPI2512.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-01",
+    "uf": "RJ",
+    "original_filename": "RDRJ2501.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRJ2501.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-02",
+    "uf": "RJ",
+    "original_filename": "RDRJ2502.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRJ2502.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-03",
+    "uf": "RJ",
+    "original_filename": "RDRJ2503.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRJ2503.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-04",
+    "uf": "RJ",
+    "original_filename": "RDRJ2504.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRJ2504.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-05",
+    "uf": "RJ",
+    "original_filename": "RDRJ2505.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRJ2505.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-06",
+    "uf": "RJ",
+    "original_filename": "RDRJ2506.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRJ2506.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-07",
+    "uf": "RJ",
+    "original_filename": "RDRJ2507.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRJ2507.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-08",
+    "uf": "RJ",
+    "original_filename": "RDRJ2508.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRJ2508.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-09",
+    "uf": "RJ",
+    "original_filename": "RDRJ2509.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRJ2509.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-10",
+    "uf": "RJ",
+    "original_filename": "RDRJ2510.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRJ2510.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-11",
+    "uf": "RJ",
+    "original_filename": "RDRJ2511.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRJ2511.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "RJ",
+    "original_filename": "RDRJ2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRJ2512.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-01",
+    "uf": "RN",
+    "original_filename": "RDRN2501.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRN2501.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-02",
+    "uf": "RN",
+    "original_filename": "RDRN2502.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRN2502.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-03",
+    "uf": "RN",
+    "original_filename": "RDRN2503.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRN2503.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-04",
+    "uf": "RN",
+    "original_filename": "RDRN2504.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRN2504.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-05",
+    "uf": "RN",
+    "original_filename": "RDRN2505.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRN2505.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-06",
+    "uf": "RN",
+    "original_filename": "RDRN2506.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRN2506.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-07",
+    "uf": "RN",
+    "original_filename": "RDRN2507.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRN2507.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-08",
+    "uf": "RN",
+    "original_filename": "RDRN2508.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRN2508.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-09",
+    "uf": "RN",
+    "original_filename": "RDRN2509.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRN2509.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-10",
+    "uf": "RN",
+    "original_filename": "RDRN2510.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRN2510.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-11",
+    "uf": "RN",
+    "original_filename": "RDRN2511.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRN2511.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "RN",
+    "original_filename": "RDRN2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRN2512.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-01",
+    "uf": "RS",
+    "original_filename": "RDRS2501.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRS2501.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-02",
+    "uf": "RS",
+    "original_filename": "RDRS2502.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRS2502.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-03",
+    "uf": "RS",
+    "original_filename": "RDRS2503.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRS2503.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-04",
+    "uf": "RS",
+    "original_filename": "RDRS2504.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRS2504.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-05",
+    "uf": "RS",
+    "original_filename": "RDRS2505.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRS2505.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-06",
+    "uf": "RS",
+    "original_filename": "RDRS2506.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRS2506.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-07",
+    "uf": "RS",
+    "original_filename": "RDRS2507.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRS2507.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-08",
+    "uf": "RS",
+    "original_filename": "RDRS2508.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRS2508.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-09",
+    "uf": "RS",
+    "original_filename": "RDRS2509.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRS2509.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-10",
+    "uf": "RS",
+    "original_filename": "RDRS2510.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRS2510.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-11",
+    "uf": "RS",
+    "original_filename": "RDRS2511.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRS2511.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "RS",
+    "original_filename": "RDRS2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRS2512.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-01",
+    "uf": "RO",
+    "original_filename": "RDRO2501.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRO2501.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-02",
+    "uf": "RO",
+    "original_filename": "RDRO2502.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRO2502.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-03",
+    "uf": "RO",
+    "original_filename": "RDRO2503.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRO2503.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-04",
+    "uf": "RO",
+    "original_filename": "RDRO2504.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRO2504.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-05",
+    "uf": "RO",
+    "original_filename": "RDRO2505.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRO2505.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-06",
+    "uf": "RO",
+    "original_filename": "RDRO2506.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRO2506.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-07",
+    "uf": "RO",
+    "original_filename": "RDRO2507.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRO2507.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-08",
+    "uf": "RO",
+    "original_filename": "RDRO2508.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRO2508.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-09",
+    "uf": "RO",
+    "original_filename": "RDRO2509.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRO2509.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-10",
+    "uf": "RO",
+    "original_filename": "RDRO2510.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRO2510.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-11",
+    "uf": "RO",
+    "original_filename": "RDRO2511.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRO2511.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "RO",
+    "original_filename": "RDRO2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRO2512.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-01",
+    "uf": "RR",
+    "original_filename": "RDRR2501.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRR2501.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-02",
+    "uf": "RR",
+    "original_filename": "RDRR2502.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRR2502.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-03",
+    "uf": "RR",
+    "original_filename": "RDRR2503.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRR2503.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-04",
+    "uf": "RR",
+    "original_filename": "RDRR2504.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRR2504.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-05",
+    "uf": "RR",
+    "original_filename": "RDRR2505.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRR2505.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-06",
+    "uf": "RR",
+    "original_filename": "RDRR2506.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRR2506.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-07",
+    "uf": "RR",
+    "original_filename": "RDRR2507.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRR2507.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-08",
+    "uf": "RR",
+    "original_filename": "RDRR2508.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRR2508.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-09",
+    "uf": "RR",
+    "original_filename": "RDRR2509.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRR2509.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-10",
+    "uf": "RR",
+    "original_filename": "RDRR2510.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRR2510.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-11",
+    "uf": "RR",
+    "original_filename": "RDRR2511.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRR2511.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "RR",
+    "original_filename": "RDRR2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDRR2512.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-01",
+    "uf": "SC",
+    "original_filename": "RDSC2501.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSC2501.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-02",
+    "uf": "SC",
+    "original_filename": "RDSC2502.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSC2502.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-03",
+    "uf": "SC",
+    "original_filename": "RDSC2503.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSC2503.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-04",
+    "uf": "SC",
+    "original_filename": "RDSC2504.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSC2504.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-05",
+    "uf": "SC",
+    "original_filename": "RDSC2505.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSC2505.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-06",
+    "uf": "SC",
+    "original_filename": "RDSC2506.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSC2506.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-07",
+    "uf": "SC",
+    "original_filename": "RDSC2507.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSC2507.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-08",
+    "uf": "SC",
+    "original_filename": "RDSC2508.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSC2508.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-09",
+    "uf": "SC",
+    "original_filename": "RDSC2509.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSC2509.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-10",
+    "uf": "SC",
+    "original_filename": "RDSC2510.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSC2510.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-11",
+    "uf": "SC",
+    "original_filename": "RDSC2511.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSC2511.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "SC",
+    "original_filename": "RDSC2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSC2512.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-01",
+    "uf": "SP",
+    "original_filename": "RDSP2501.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSP2501.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-02",
+    "uf": "SP",
+    "original_filename": "RDSP2502.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSP2502.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-03",
+    "uf": "SP",
+    "original_filename": "RDSP2503.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSP2503.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-04",
+    "uf": "SP",
+    "original_filename": "RDSP2504.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSP2504.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-05",
+    "uf": "SP",
+    "original_filename": "RDSP2505.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSP2505.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-06",
+    "uf": "SP",
+    "original_filename": "RDSP2506.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSP2506.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-07",
+    "uf": "SP",
+    "original_filename": "RDSP2507.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSP2507.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-08",
+    "uf": "SP",
+    "original_filename": "RDSP2508.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSP2508.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-09",
+    "uf": "SP",
+    "original_filename": "RDSP2509.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSP2509.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-10",
+    "uf": "SP",
+    "original_filename": "RDSP2510.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSP2510.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-11",
+    "uf": "SP",
+    "original_filename": "RDSP2511.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSP2511.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "SP",
+    "original_filename": "RDSP2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSP2512.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-01",
+    "uf": "SE",
+    "original_filename": "RDSE2501.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSE2501.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-02",
+    "uf": "SE",
+    "original_filename": "RDSE2502.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSE2502.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-03",
+    "uf": "SE",
+    "original_filename": "RDSE2503.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSE2503.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-04",
+    "uf": "SE",
+    "original_filename": "RDSE2504.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSE2504.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-05",
+    "uf": "SE",
+    "original_filename": "RDSE2505.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSE2505.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-06",
+    "uf": "SE",
+    "original_filename": "RDSE2506.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSE2506.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-07",
+    "uf": "SE",
+    "original_filename": "RDSE2507.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSE2507.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-08",
+    "uf": "SE",
+    "original_filename": "RDSE2508.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSE2508.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-09",
+    "uf": "SE",
+    "original_filename": "RDSE2509.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSE2509.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-10",
+    "uf": "SE",
+    "original_filename": "RDSE2510.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSE2510.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-11",
+    "uf": "SE",
+    "original_filename": "RDSE2511.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSE2511.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "SE",
+    "original_filename": "RDSE2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDSE2512.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-01",
+    "uf": "TO",
+    "original_filename": "RDTO2501.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDTO2501.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-02",
+    "uf": "TO",
+    "original_filename": "RDTO2502.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDTO2502.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-03",
+    "uf": "TO",
+    "original_filename": "RDTO2503.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDTO2503.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-04",
+    "uf": "TO",
+    "original_filename": "RDTO2504.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDTO2504.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-05",
+    "uf": "TO",
+    "original_filename": "RDTO2505.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDTO2505.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-06",
+    "uf": "TO",
+    "original_filename": "RDTO2506.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDTO2506.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-07",
+    "uf": "TO",
+    "original_filename": "RDTO2507.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDTO2507.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-08",
+    "uf": "TO",
+    "original_filename": "RDTO2508.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDTO2508.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-09",
+    "uf": "TO",
+    "original_filename": "RDTO2509.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDTO2509.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-10",
+    "uf": "TO",
+    "original_filename": "RDTO2510.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDTO2510.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-11",
+    "uf": "TO",
+    "original_filename": "RDTO2511.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDTO2511.dbc"
+  },
+  {
+    "dataset": "SIH",
+    "family": "SIH",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "TO",
+    "original_filename": "RDTO2512.dbc",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RDTO2512.dbc"
+  },
+  {
+    "dataset": "population",
+    "family": "population",
+    "period": "2025",
+    "competence": "2025-12",
+    "uf": "BR",
+    "original_filename": "POPSBR25.zip",
+    "official_url": "ftp://ftp.datasus.gov.br/dissemin/publicos/IBGE/POPSVS/POPSBR25.zip"
+  }
+]

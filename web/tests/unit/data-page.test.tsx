@@ -7,7 +7,8 @@ describe("data page", () => {
     const { container } = render(<DataPage />);
     expect(screen.getByRole("heading", { level: 1, name: "De onde vêm os dados" })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Dados validados até 2024" })).toBeInTheDocument();
-    expect(screen.getByText(/Por que não há 2025/)).toBeInTheDocument();
+    expect(screen.getByText(/A disponibilidade varia por indicador/)).toBeInTheDocument();
+    expect(screen.getByText(/A estrutura pode ser atualizada independentemente/)).toBeInTheDocument();
     expect(container.textContent).not.toMatch(/MDB_|SHA-?256|\.parquet|metadata\//i);
   });
 

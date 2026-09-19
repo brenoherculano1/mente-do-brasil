@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { ManagerWorkbench } from "@/features/manager/ManagerWorkbench";
 import { pageMetadata } from "@/lib/seo";
+import { EditionGate } from "@/features/availability/EditionGate";
 
 type ComparePageProps = {
-  searchParams?: Promise<{ compare?: string | string[] }>;
+  searchParams?: Promise<{ compare?: string | string[]; ano?: string | string[] }>;
 };
 
 export const metadata: Metadata = pageMetadata(
@@ -16,6 +17,7 @@ export default async function ComparePage({ searchParams }: ComparePageProps) {
   const params = await searchParams;
   const compare = Array.isArray(params?.compare) ? params.compare[0] : params?.compare;
   return (
+    <EditionGate year={params?.ano} context="Comparação" code={compare}>
     <ManagerWorkbench
       initialCompare={compare ?? "12001,31001"}
       title="Compare regiões"
@@ -23,5 +25,6 @@ export default async function ComparePage({ searchParams }: ComparePageProps) {
       description="Compare de duas a quatro Regiões de Saúde e veja onde elas se aproximam ou se diferenciam. A ferramenta não cria ranking."
       comparisonOnly
     />
+    </EditionGate>
   );
 }

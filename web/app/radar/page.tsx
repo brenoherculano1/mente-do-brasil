@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { RadarPage } from "@/features/intelligence/RadarPage";
 import { pageMetadata } from "@/lib/seo";
+import { EditionGate } from "@/features/availability/EditionGate";
 
 type RadarRouteProps = {
-  searchParams?: Promise<{ uf?: string | string[] }>;
+  searchParams?: Promise<{ uf?: string | string[]; ano?: string | string[] }>;
 };
 
 export const metadata: Metadata = pageMetadata(
@@ -15,5 +16,5 @@ export const metadata: Metadata = pageMetadata(
 export default async function Page({ searchParams }: RadarRouteProps) {
   const params = await searchParams;
   const uf = Array.isArray(params?.uf) ? params?.uf[0] : params?.uf;
-  return <RadarPage initialUf={uf?.toUpperCase()} />;
+  return <EditionGate year={params?.ano} context="Sinais regionais"><RadarPage initialUf={uf?.toUpperCase()} /></EditionGate>;
 }

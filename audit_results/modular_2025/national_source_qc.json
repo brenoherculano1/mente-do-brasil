@@ -1,0 +1,69 @@
+{
+  "files_decoded": 406,
+  "families": {
+    "ST": {
+      "files_decoded": 27,
+      "rows_decoded": 470360,
+      "status": "UNDER_VALIDATION",
+      "regional_publication_allowed": false,
+      "municipality_codes_without_population": [],
+      "cross_file_duplicate_cnes": 0
+    },
+    "LT": {
+      "files_decoded": 27,
+      "rows_decoded": 51908,
+      "status": "UNDER_VALIDATION",
+      "regional_publication_allowed": false,
+      "municipality_codes_without_population": [],
+      "duplicate_rows_within_files": 0
+    },
+    "PF": {
+      "files_decoded": 27,
+      "rows_decoded": 6451672,
+      "status": "UNDER_VALIDATION",
+      "regional_publication_allowed": false,
+      "professionals": 12132,
+      "cross_uf_professionals": 410,
+      "multi_establishment_professionals": 5364,
+      "individual_hours_over_168": 0,
+      "total_registered_weekly_hours": 338636.0,
+      "exact_duplicate_links_removed": 0,
+      "locked_key_collision_files": [],
+      "cross_file_duplicate_cache_rows": 0,
+      "hours_quantiles": {
+        "0.0": 1.0,
+        "0.5": 22.0,
+        "0.95": 65.0,
+        "0.99": 94.0,
+        "1.0": 167.0
+      },
+      "cap_applied": false,
+      "unresolved": "Individual plausibility and SUS-exclusive allocation need review; no rate or FTE published."
+    },
+    "SIH": {
+      "files_decoded": 324,
+      "rows_decoded": 14647505,
+      "status": "UNDER_VALIDATION",
+      "regional_publication_allowed": false,
+      "municipality_codes_without_population": [],
+      "admissions": 249632,
+      "admissions_without_residence_denominator": 0,
+      "duplicate_aih_within_files": 3830,
+      "counting_unit": "SIH processing records; not unique people",
+      "pooled_2023_2025": "NOT_BUILT_PENDING_DENOMINATOR_AND_GEOGRAPHY"
+    },
+    "population": {
+      "files_decoded": 1,
+      "rows_decoded": 902502,
+      "status": "UNDER_VALIDATION",
+      "regional_publication_allowed": false,
+      "municipalities": 5571,
+      "total_population": 213421037,
+      "nonpositive_municipality_totals": 0
+    }
+  },
+  "regional_metrics_created": false,
+  "geography_2025": "UNDER_VALIDATION",
+  "source_rights": "PUBLIC_ACCESS_VERIFIED; VERSION_SPECIFIC_REUSE_REVIEW_PENDING",
+  "status": "PARTIAL_QC_NOT_PUBLIC_READY"
+}
