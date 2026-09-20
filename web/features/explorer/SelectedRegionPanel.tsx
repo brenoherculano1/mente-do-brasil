@@ -8,10 +8,12 @@ export function SelectedRegionPanel({
   feature,
   profile,
   loading,
+  year = 2024,
 }: {
   feature?: HealthRegionFeature;
-  profile: HealthRegionProfile | null;
+  profile: Pick<HealthRegionProfile, "need" | "capacity" | "mismatch"> | null;
   loading: boolean;
+  year?: number;
 }) {
   if (!feature) {
     return (
@@ -67,7 +69,7 @@ export function SelectedRegionPanel({
       {feature.properties.data_quality_flags.length > 0 && (
         <p className="small-text">Dados com observação</p>
       )}
-      <Link className="button" href={`/regiao/${feature.properties.health_region_code}`}>
+      <Link className="button" href={`/regiao/${feature.properties.health_region_code}${year === 2024 ? "" : `?ano=${year}`}`}>
         Ver perfil da região
       </Link>
     </div>

@@ -25,6 +25,7 @@ jobs:
           pytest -q
           tests/api/test_production_security_unit.py
           tests/test_modular_availability.py
+          tests/test_historical_selection.py
           tests/regression/test_data_contract.py
           tests/regression/test_repository_secret_scan.py
           tests/regression/test_serving_database_static.py

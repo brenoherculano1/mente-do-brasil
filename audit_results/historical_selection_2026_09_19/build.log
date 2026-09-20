@@ -1,0 +1,55 @@
+
+> mente-do-brasil-web@0.1.0 build
+> next build
+
+▲ Next.js 16.3.2 (Turbopack)
+✓ Running next.config.ts took 103ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 966ms
+  Running TypeScript ...
+  Finished TypeScript in 9.3s ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/18) ...
+  Generating static pages using 7 workers (4/18) 
+  Generating static pages using 7 workers (8/18) 
+  Generating static pages using 7 workers (13/18) 
+✓ Generating static pages using 7 workers (18/18) in 677ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ƒ /
+├ ○ /_not-found
+├ ƒ /.well-known/security.txt
+├ ƒ /api/public/v1/[...path]
+├ ƒ /api/v1/[...path]
+├ ƒ /atualizacao-2025
+├ ƒ /comparar
+├ ○ /contato
+├ ƒ /dados
+├ ○ /dados-abertos
+├ ○ /desenvolvedores
+├ ƒ /downloads/[release]/[filename]
+├ ƒ /estado/[uf]
+├ ƒ /financiamento
+├ ƒ /fluxos
+├ ƒ /gestor
+├ ○ /governanca
+├ ƒ /healthz
+├ ○ /icon.png
+├ ○ /metodologia
+├ ƒ /mudancas
+├ ○ /privacidade
+├ ƒ /radar
+├ ƒ /readyz
+├ ƒ /regiao/[codigo]
+├ ƒ /robots.txt
+├ ƒ /sitemap.xml
+└ ○ /sobre
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

@@ -1,21 +1,21 @@
 "use client";
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { HISTORICAL_YEARS, type HistoricalYear } from "@/lib/historical";
 
-export function YearSelector({ year, preview }: { year: number; preview: boolean }) {
+export function YearSelector({ year }: { year: HistoricalYear }) {
   const router = useRouter();
   const pathname = usePathname();
   const params = useSearchParams();
   return <div className="edition-selector">
     <label htmlFor="edition-year">Ano de referência</label>
-    <select id="edition-year" value={year} onChange={(event) => {
+    <select className="input" id="edition-year" value={year} onChange={(event) => {
       const next = new URLSearchParams(params.toString());
       next.set("ano", event.target.value);
       router.push(`${pathname}?${next.toString()}`, { scroll: false });
     }}>
-      <option value="2024">2024</option>
-      {preview && <option value="2025">2025</option>}
+      {HISTORICAL_YEARS.map((value) => <option key={value} value={value}>{value}</option>)}
     </select>
-    <span>{year === 2024 ? "Dados de referência de 2024" : "Disponibilidade por indicador"}</span>
+    <span>Necessidade: {year - 2}–{year}. Estrutura: dezembro de {year}. Geografia histórica preservada.</span>
   </div>;
 }

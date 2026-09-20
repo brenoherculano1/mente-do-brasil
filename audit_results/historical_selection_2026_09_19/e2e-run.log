@@ -1,0 +1,1810 @@
+
+> mente-do-brasil-web@0.1.0 test:e2e
+> playwright test tests/e2e/historical-selection.spec.ts tests/e2e/modular-availability.spec.ts tests/e2e/phase4-current.spec.ts tests/e2e/founder-review.spec.ts --workers=1 --reporter=line,json
+
+
+Running 38 tests using 1 worker
+
+(node:30359) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/38] [desktop] › tests/e2e/founder-review.spec.ts:9:7 › founder review and accessibility at 1440px
+[2/38] [desktop] › tests/e2e/founder-review.spec.ts:9:7 › founder review and accessibility at 1600px
+[3/38] [desktop] › tests/e2e/founder-review.spec.ts:9:7 › founder review and accessibility at 375px
+[4/38] [desktop] › tests/e2e/founder-review.spec.ts:9:7 › founder review and accessibility at 390px
+[5/38] [desktop] › tests/e2e/founder-review.spec.ts:9:7 › founder review and accessibility at 430px
+[6/38] [desktop] › tests/e2e/historical-selection.spec.ts:7:5 › default 2024 and each historical anchor return their frozen observations
+[7/38] [desktop] › tests/e2e/historical-selection.spec.ts:30:5 › historical profiles and comparisons never use a 2024 profile fallback
+[8/38] [desktop] › tests/e2e/historical-selection.spec.ts:46:5 › each product retains its own temporal meaning and normal navigation stays historical
+  1) [desktop] › tests/e2e/historical-selection.spec.ts:46:5 › each product retains its own temporal meaning and normal navigation stays historical 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 5
+    + Received  + 1
+
+    - Array [
+    -   "2022 → 2023",
+    -   "2023 → 2024",
+    -   "2022 → 2024",
+    - ]
+    + Array []
+
+      47 |   await page.goto("/mudancas");
+      48 |   await expect(page.locator("#edition-year")).toHaveCount(0);
+    > 49 |   expect(await page.getByLabel("Período", { exact: true }).locator("option").allTextContents()).toEqual(["2022 → 2023", "2023 → 2024", "2022 → 2024"]);
+         |                                                                                                 ^
+      50 |   await page.goto("/financiamento");
+      51 |   await expect(page.locator("#edition-year")).toHaveCount(0);
+      52 |   expect(await page.getByLabel("Exercício", { exact: true }).locator("option").allTextContents()).toEqual(["2022", "2023", "2024"]);
+        at /Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/historical-selection.spec.ts:49:97
+
+    Error Context: test-results/historical-selection-each--7105c-navigation-stays-historical-desktop/error-context.md
+
+
+(node:30546) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[9/38] [desktop] › tests/e2e/historical-selection.spec.ts:66:5 › unsupported year fails visibly and future status is separate
+[10/38] [desktop] › tests/e2e/modular-availability.spec.ts:4:5 › 2025 never renders historical map values and year selection returns to 2024
+[11/38] [desktop] › tests/e2e/modular-availability.spec.ts:18:5 › 2025 context pages explain unavailable data without inventing comparison or timeline
+[12/38] [desktop] › tests/e2e/modular-availability.spec.ts:28:7 › 2025 availability fits 1440px
+[13/38] [desktop] › tests/e2e/modular-availability.spec.ts:28:7 › 2025 availability fits 375px
+[14/38] [desktop] › tests/e2e/modular-availability.spec.ts:28:7 › 2025 availability fits 390px
+[15/38] [desktop] › tests/e2e/modular-availability.spec.ts:28:7 › 2025 availability fits 430px
+[16/38] [desktop] › tests/e2e/phase4-current.spec.ts:7:5 › current API and methodological presentation agree
+[17/38] [desktop] › tests/e2e/phase4-current.spec.ts:20:7 › critical mobile flows at 375px
+[18/38] [desktop] › tests/e2e/phase4-current.spec.ts:20:7 › critical mobile flows at 390px
+[19/38] [desktop] › tests/e2e/phase4-current.spec.ts:20:7 › critical mobile flows at 430px
+(node:30589) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[20/38] [mobile] › tests/e2e/founder-review.spec.ts:9:7 › founder review and accessibility at 1440px
+[21/38] [mobile] › tests/e2e/founder-review.spec.ts:9:7 › founder review and accessibility at 1600px
+[22/38] [mobile] › tests/e2e/founder-review.spec.ts:9:7 › founder review and accessibility at 375px
+[23/38] [mobile] › tests/e2e/founder-review.spec.ts:9:7 › founder review and accessibility at 390px
+[24/38] [mobile] › tests/e2e/founder-review.spec.ts:9:7 › founder review and accessibility at 430px
+[25/38] [mobile] › tests/e2e/historical-selection.spec.ts:7:5 › default 2024 and each historical anchor return their frozen observations
+[26/38] [mobile] › tests/e2e/historical-selection.spec.ts:30:5 › historical profiles and comparisons never use a 2024 profile fallback
+[27/38] [mobile] › tests/e2e/historical-selection.spec.ts:46:5 › each product retains its own temporal meaning and normal navigation stays historical
+  2) [mobile] › tests/e2e/historical-selection.spec.ts:46:5 › each product retains its own temporal meaning and normal navigation stays historical 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 5
+    + Received  + 1
+
+    - Array [
+    -   "2022 → 2023",
+    -   "2023 → 2024",
+    -   "2022 → 2024",
+    - ]
+    + Array []
+
+      47 |   await page.goto("/mudancas");
+      48 |   await expect(page.locator("#edition-year")).toHaveCount(0);
+    > 49 |   await expect(page.getByLabel("Período", { exact: true }).locator("option")).toHaveText(["2022 → 2023", "2023 → 2024", "2022 → 2024"]);
+         |                                                                                                 ^
+      50 |   await page.goto("/financiamento");
+      51 |   await expect(page.locator("#edition-year")).toHaveCount(0);
+      52 |   await expect(page.getByLabel("Exercício", { exact: true }).locator("option")).toHaveText(["2022", "2023", "2024"]);
+        at /Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/historical-selection.spec.ts:49:97
+
+    Error Context: test-results/historical-selection-each--7105c-navigation-stays-historical-mobile/error-context.md
+
+
+(node:30707) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[28/38] [mobile] › tests/e2e/historical-selection.spec.ts:66:5 › unsupported year fails visibly and future status is separate
+[29/38] [mobile] › tests/e2e/modular-availability.spec.ts:4:5 › 2025 never renders historical map values and year selection returns to 2024
+[30/38] [mobile] › tests/e2e/modular-availability.spec.ts:18:5 › 2025 context pages explain unavailable data without inventing comparison or timeline
+[31/38] [mobile] › tests/e2e/modular-availability.spec.ts:28:7 › 2025 availability fits 1440px
+[32/38] [mobile] › tests/e2e/modular-availability.spec.ts:28:7 › 2025 availability fits 375px
+[33/38] [mobile] › tests/e2e/modular-availability.spec.ts:28:7 › 2025 availability fits 390px
+[34/38] [mobile] › tests/e2e/modular-availability.spec.ts:28:7 › 2025 availability fits 430px
+[35/38] [mobile] › tests/e2e/phase4-current.spec.ts:7:5 › current API and methodological presentation agree
+[36/38] [mobile] › tests/e2e/phase4-current.spec.ts:20:7 › critical mobile flows at 375px
+[37/38] [mobile] › tests/e2e/phase4-current.spec.ts:20:7 › critical mobile flows at 390px
+[38/38] [mobile] › tests/e2e/phase4-current.spec.ts:20:7 › critical mobile flows at 430px
+  3) [mobile] › tests/e2e/phase4-current.spec.ts:20:7 › critical mobile flows at 430px ─────────────
+
+    Test timeout of 60000ms exceeded.
+
+    Error: locator.click: Test timeout of 60000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: /Alto Acre/ }).first()
+        - locator resolved to <button type="button" aria-current="true" class="radar-list-item">…</button>
+      - attempting click action
+        - waiting for element to be visible, enabled and stable
+      - element was detached from the DOM, retrying
+
+
+      47 |     await page.getByLabel("Mínimo de sinais encontrados").selectOption("1");
+      48 |     await page.getByLabel("Buscar Região de Saúde").fill("Alto Acre");
+    > 49 |     await page.getByRole("button", { name: /Alto Acre/ }).first().click();
+         |                                                                   ^
+      50 |     const cta = page.getByRole("link", { name: "Ver análise completa" });
+      51 |     await expect(cta).toBeVisible();
+      52 |     await cta.scrollIntoViewIfNeeded();
+        at /Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/phase4-current.spec.ts:49:67
+
+    Error Context: test-results/phase4-current-critical-mobile-flows-at-430px-mobile/error-context.md
+
+
+  3 failed
+    [desktop] › tests/e2e/historical-selection.spec.ts:46:5 › each product retains its own temporal meaning and normal navigation stays historical 
+    [mobile] › tests/e2e/historical-selection.spec.ts:46:5 › each product retains its own temporal meaning and normal navigation stays historical 
+    [mobile] › tests/e2e/phase4-current.spec.ts:20:7 › critical mobile flows at 430px ──────────────
+  8 skipped
+  27 passed (4.4m)
+{
+  "config": {
+    "argv": [
+      "/usr/local/bin/node",
+      "/Users/brenoherculano/Projects/mente-do-brasil/web/node_modules/.bin/playwright",
+      "test",
+      "tests/e2e/historical-selection.spec.ts",
+      "tests/e2e/modular-availability.spec.ts",
+      "tests/e2e/phase4-current.spec.ts",
+      "tests/e2e/founder-review.spec.ts",
+      "--workers=1",
+      "--reporter=line,json"
+    ],
+    "configFile": "/Users/brenoherculano/Projects/mente-do-brasil/web/playwright.config.ts",
+    "rootDir": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/brenoherculano/Projects/mente-do-brasil/web/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "desktop",
+        "name": "desktop",
+        "testDir": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/Users/brenoherculano/Projects/mente-do-brasil/web/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "mobile",
+        "name": "mobile",
+        "testDir": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "line"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run start",
+      "url": "http://127.0.0.1:3000",
+      "reuseExistingServer": true,
+      "timeout": 120000
+    }
+  },
+  "suites": [
+    {
+      "title": "founder-review.spec.ts",
+      "file": "founder-review.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "founder review and accessibility at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 22823,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:05:49.979Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8112db419a520ba3f96c-90f9172db582ff72f6bb",
+          "file": "founder-review.spec.ts",
+          "line": 9,
+          "column": 7
+        },
+        {
+          "title": "founder review and accessibility at 1600px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 26881,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:06:18.240Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8112db419a520ba3f96c-0858836585c2ad418580",
+          "file": "founder-review.spec.ts",
+          "line": 9,
+          "column": 7
+        },
+        {
+          "title": "founder review and accessibility at 375px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "viewport matrix",
+                  "location": {
+                    "file": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/founder-review.spec.ts",
+                    "line": 10,
+                    "column": 10
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 259,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:06:45.141Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "viewport matrix",
+                      "location": {
+                        "file": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/founder-review.spec.ts",
+                        "line": 10,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "8112db419a520ba3f96c-9ffb2bb7c49bbf4a3cf6",
+          "file": "founder-review.spec.ts",
+          "line": 9,
+          "column": 7
+        },
+        {
+          "title": "founder review and accessibility at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "viewport matrix",
+                  "location": {
+                    "file": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/founder-review.spec.ts",
+                    "line": 10,
+                    "column": 10
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 101,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:06:45.421Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "viewport matrix",
+                      "location": {
+                        "file": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/founder-review.spec.ts",
+                        "line": 10,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "8112db419a520ba3f96c-093277f07f0ea4c5d385",
+          "file": "founder-review.spec.ts",
+          "line": 9,
+          "column": 7
+        },
+        {
+          "title": "founder review and accessibility at 430px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "viewport matrix",
+                  "location": {
+                    "file": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/founder-review.spec.ts",
+                    "line": 10,
+                    "column": 10
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 104,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:06:45.541Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "viewport matrix",
+                      "location": {
+                        "file": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/founder-review.spec.ts",
+                        "line": 10,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "8112db419a520ba3f96c-f0f92bb6edfbc5a83b6e",
+          "file": "founder-review.spec.ts",
+          "line": 9,
+          "column": 7
+        },
+        {
+          "title": "founder review and accessibility at 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "viewport matrix",
+                  "location": {
+                    "file": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/founder-review.spec.ts",
+                    "line": 10,
+                    "column": 10
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 102,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:07:03.074Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "viewport matrix",
+                      "location": {
+                        "file": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/founder-review.spec.ts",
+                        "line": 10,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "8112db419a520ba3f96c-9336e3dcaf2ed215d62b",
+          "file": "founder-review.spec.ts",
+          "line": 9,
+          "column": 7
+        },
+        {
+          "title": "founder review and accessibility at 1600px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "viewport matrix",
+                  "location": {
+                    "file": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/founder-review.spec.ts",
+                    "line": 10,
+                    "column": 10
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 96,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:07:03.385Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "viewport matrix",
+                      "location": {
+                        "file": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/founder-review.spec.ts",
+                        "line": 10,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "8112db419a520ba3f96c-d6ad31df2388a7661c55",
+          "file": "founder-review.spec.ts",
+          "line": 9,
+          "column": 7
+        },
+        {
+          "title": "founder review and accessibility at 375px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 15598,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:07:03.496Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8112db419a520ba3f96c-438f7eef9b8fb88308c9",
+          "file": "founder-review.spec.ts",
+          "line": 9,
+          "column": 7
+        },
+        {
+          "title": "founder review and accessibility at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 14851,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:07:19.103Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8112db419a520ba3f96c-28806fd68bbc908ea4a9",
+          "file": "founder-review.spec.ts",
+          "line": 9,
+          "column": 7
+        },
+        {
+          "title": "founder review and accessibility at 430px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 17133,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:07:33.964Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8112db419a520ba3f96c-7af8f70d2d741bb92207",
+          "file": "founder-review.spec.ts",
+          "line": 9,
+          "column": 7
+        }
+      ]
+    },
+    {
+      "title": "historical-selection.spec.ts",
+      "file": "historical-selection.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "default 2024 and each historical anchor return their frozen observations",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5542,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:06:45.687Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a738154b301b528a2c46-46d852d2ba811e4c7c7a",
+          "file": "historical-selection.spec.ts",
+          "line": 7,
+          "column": 5
+        },
+        {
+          "title": "historical profiles and comparisons never use a 2024 profile fallback",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1175,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:06:51.242Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a738154b301b528a2c46-f7c5f3aef7990b1b9afd",
+          "file": "historical-selection.spec.ts",
+          "line": 30,
+          "column": 5
+        },
+        {
+          "title": "each product retains its own temporal meaning and normal navigation stays historical",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 405,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 5\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"2022 → 2023\",\u001b[39m\n\u001b[32m-   \"2023 → 2024\",\u001b[39m\n\u001b[32m-   \"2022 → 2024\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 5\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"2022 → 2023\",\u001b[39m\n\u001b[32m-   \"2023 → 2024\",\u001b[39m\n\u001b[32m-   \"2022 → 2024\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n    at /Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/historical-selection.spec.ts:49:97",
+                    "location": {
+                      "file": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/historical-selection.spec.ts",
+                      "column": 97,
+                      "line": 49
+                    },
+                    "snippet": "  47 |   await page.goto(\"/mudancas\");\n  48 |   await expect(page.locator(\"#edition-year\")).toHaveCount(0);\n> 49 |   expect(await page.getByLabel(\"Período\", { exact: true }).locator(\"option\").allTextContents()).toEqual([\"2022 → 2023\", \"2023 → 2024\", \"2022 → 2024\"]);\n     |                                                                                                 ^\n  50 |   await page.goto(\"/financiamento\");\n  51 |   await expect(page.locator(\"#edition-year\")).toHaveCount(0);\n  52 |   expect(await page.getByLabel(\"Exercício\", { exact: true }).locator(\"option\").allTextContents()).toEqual([\"2022\", \"2023\", \"2024\"]);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/historical-selection.spec.ts",
+                        "column": 97,
+                        "line": 49
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 5\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"2022 → 2023\",\u001b[39m\n\u001b[32m-   \"2023 → 2024\",\u001b[39m\n\u001b[32m-   \"2022 → 2024\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n\n  47 |   await page.goto(\"/mudancas\");\n  48 |   await expect(page.locator(\"#edition-year\")).toHaveCount(0);\n> 49 |   expect(await page.getByLabel(\"Período\", { exact: true }).locator(\"option\").allTextContents()).toEqual([\"2022 → 2023\", \"2023 → 2024\", \"2022 → 2024\"]);\n     |                                                                                                 ^\n  50 |   await page.goto(\"/financiamento\");\n  51 |   await expect(page.locator(\"#edition-year\")).toHaveCount(0);\n  52 |   expect(await page.getByLabel(\"Exercício\", { exact: true }).locator(\"option\").allTextContents()).toEqual([\"2022\", \"2023\", \"2024\"]);\n    at /Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/historical-selection.spec.ts:49:97"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:06:52.443Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/brenoherculano/Projects/mente-do-brasil/web/test-results/historical-selection-each--7105c-navigation-stays-historical-desktop/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/historical-selection.spec.ts",
+                    "column": 97,
+                    "line": 49
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a738154b301b528a2c46-d9a2731db1e61b3f08e5",
+          "file": "historical-selection.spec.ts",
+          "line": 46,
+          "column": 5
+        },
+        {
+          "title": "unsupported year fails visibly and future status is separate",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 803,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:06:53.537Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a738154b301b528a2c46-33aeda18eda35cf5b78a",
+          "file": "historical-selection.spec.ts",
+          "line": 66,
+          "column": 5
+        },
+        {
+          "title": "default 2024 and each historical anchor return their frozen observations",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4916,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:07:51.116Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a738154b301b528a2c46-9a4e53adf12ad0962798",
+          "file": "historical-selection.spec.ts",
+          "line": 7,
+          "column": 5
+        },
+        {
+          "title": "historical profiles and comparisons never use a 2024 profile fallback",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 816,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:07:56.041Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a738154b301b528a2c46-0ba0059ff17343bcf0c6",
+          "file": "historical-selection.spec.ts",
+          "line": 30,
+          "column": 5
+        },
+        {
+          "title": "each product retains its own temporal meaning and normal navigation stays historical",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 351,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 5\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"2022 → 2023\",\u001b[39m\n\u001b[32m-   \"2023 → 2024\",\u001b[39m\n\u001b[32m-   \"2022 → 2024\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 5\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"2022 → 2023\",\u001b[39m\n\u001b[32m-   \"2023 → 2024\",\u001b[39m\n\u001b[32m-   \"2022 → 2024\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n    at /Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/historical-selection.spec.ts:49:97",
+                    "location": {
+                      "file": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/historical-selection.spec.ts",
+                      "column": 97,
+                      "line": 49
+                    },
+                    "snippet": "  47 |   await page.goto(\"/mudancas\");\n  48 |   await expect(page.locator(\"#edition-year\")).toHaveCount(0);\n> 49 |   await expect(page.getByLabel(\"Período\", { exact: true }).locator(\"option\")).toHaveText([\"2022 → 2023\", \"2023 → 2024\", \"2022 → 2024\"]);\n     |                                                                                                 ^\n  50 |   await page.goto(\"/financiamento\");\n  51 |   await expect(page.locator(\"#edition-year\")).toHaveCount(0);\n  52 |   await expect(page.getByLabel(\"Exercício\", { exact: true }).locator(\"option\")).toHaveText([\"2022\", \"2023\", \"2024\"]);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/historical-selection.spec.ts",
+                        "column": 97,
+                        "line": 49
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 5\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"2022 → 2023\",\u001b[39m\n\u001b[32m-   \"2023 → 2024\",\u001b[39m\n\u001b[32m-   \"2022 → 2024\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n\n  47 |   await page.goto(\"/mudancas\");\n  48 |   await expect(page.locator(\"#edition-year\")).toHaveCount(0);\n> 49 |   await expect(page.getByLabel(\"Período\", { exact: true }).locator(\"option\")).toHaveText([\"2022 → 2023\", \"2023 → 2024\", \"2022 → 2024\"]);\n     |                                                                                                 ^\n  50 |   await page.goto(\"/financiamento\");\n  51 |   await expect(page.locator(\"#edition-year\")).toHaveCount(0);\n  52 |   await expect(page.getByLabel(\"Exercício\", { exact: true }).locator(\"option\")).toHaveText([\"2022\", \"2023\", \"2024\"]);\n    at /Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/historical-selection.spec.ts:49:97"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:07:56.868Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/brenoherculano/Projects/mente-do-brasil/web/test-results/historical-selection-each--7105c-navigation-stays-historical-mobile/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/historical-selection.spec.ts",
+                    "column": 97,
+                    "line": 49
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a738154b301b528a2c46-2b4aeeb596557a113914",
+          "file": "historical-selection.spec.ts",
+          "line": 46,
+          "column": 5
+        },
+        {
+          "title": "unsupported year fails visibly and future status is separate",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 742,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:07:57.817Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a738154b301b528a2c46-fcc8dc58a443a51f95d4",
+          "file": "historical-selection.spec.ts",
+          "line": 66,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "modular-availability.spec.ts",
+      "file": "modular-availability.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "2025 never renders historical map values and year selection returns to 2024",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1547,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:06:54.653Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9753b7876db12ab11194-a7d41e8da4257eeb39e6",
+          "file": "modular-availability.spec.ts",
+          "line": 4,
+          "column": 5
+        },
+        {
+          "title": "2025 context pages explain unavailable data without inventing comparison or timeline",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2041,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:06:56.213Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9753b7876db12ab11194-77c529346ffe096cc061",
+          "file": "modular-availability.spec.ts",
+          "line": 18,
+          "column": 5
+        },
+        {
+          "title": "2025 availability fits 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1190,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:06:58.266Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9753b7876db12ab11194-a59572d2d9fab218fc9a",
+          "file": "modular-availability.spec.ts",
+          "line": 28,
+          "column": 7
+        },
+        {
+          "title": "2025 availability fits 375px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 839,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:06:59.472Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9753b7876db12ab11194-7cbdd4137530f7744c0f",
+          "file": "modular-availability.spec.ts",
+          "line": 28,
+          "column": 7
+        },
+        {
+          "title": "2025 availability fits 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 744,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:07:00.329Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9753b7876db12ab11194-993b75675fc67e6b1ec0",
+          "file": "modular-availability.spec.ts",
+          "line": 28,
+          "column": 7
+        },
+        {
+          "title": "2025 availability fits 430px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 510,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:07:01.089Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9753b7876db12ab11194-bd66e0c1d61a02c33698",
+          "file": "modular-availability.spec.ts",
+          "line": 28,
+          "column": 7
+        },
+        {
+          "title": "2025 never renders historical map values and year selection returns to 2024",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2310,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:07:58.933Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9753b7876db12ab11194-6fadb2932d06f6ff2f37",
+          "file": "modular-availability.spec.ts",
+          "line": 4,
+          "column": 5
+        },
+        {
+          "title": "2025 context pages explain unavailable data without inventing comparison or timeline",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2228,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:08:01.264Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9753b7876db12ab11194-161f55b541e94093d912",
+          "file": "modular-availability.spec.ts",
+          "line": 18,
+          "column": 5
+        },
+        {
+          "title": "2025 availability fits 1440px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2746,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:08:03.499Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9753b7876db12ab11194-c85219bc83d854558b03",
+          "file": "modular-availability.spec.ts",
+          "line": 28,
+          "column": 7
+        },
+        {
+          "title": "2025 availability fits 375px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1191,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:08:06.258Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9753b7876db12ab11194-ee0c8d4fd3b91e9fcd42",
+          "file": "modular-availability.spec.ts",
+          "line": 28,
+          "column": 7
+        },
+        {
+          "title": "2025 availability fits 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2242,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:08:07.459Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9753b7876db12ab11194-01bd154cc127be7a6edd",
+          "file": "modular-availability.spec.ts",
+          "line": 28,
+          "column": 7
+        },
+        {
+          "title": "2025 availability fits 430px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1543,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:08:09.713Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9753b7876db12ab11194-cf16046db767e7a089b5",
+          "file": "modular-availability.spec.ts",
+          "line": 28,
+          "column": 7
+        }
+      ]
+    },
+    {
+      "title": "phase4-current.spec.ts",
+      "file": "phase4-current.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "current API and methodological presentation agree",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 542,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:07:01.616Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7256b7654ae89d8d623a-fcc02308e3b2de0f39db",
+          "file": "phase4-current.spec.ts",
+          "line": 7,
+          "column": 5
+        },
+        {
+          "title": "critical mobile flows at 375px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "mobile matrix",
+                  "location": {
+                    "file": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/phase4-current.spec.ts",
+                    "line": 21,
+                    "column": 10
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 103,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:07:02.180Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "mobile matrix",
+                      "location": {
+                        "file": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/phase4-current.spec.ts",
+                        "line": 21,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "7256b7654ae89d8d623a-6fb370bbabacaaa5bd85",
+          "file": "phase4-current.spec.ts",
+          "line": 20,
+          "column": 7
+        },
+        {
+          "title": "critical mobile flows at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "mobile matrix",
+                  "location": {
+                    "file": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/phase4-current.spec.ts",
+                    "line": 21,
+                    "column": 10
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 77,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:07:02.297Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "mobile matrix",
+                      "location": {
+                        "file": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/phase4-current.spec.ts",
+                        "line": 21,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "7256b7654ae89d8d623a-9ce3fc355235cd76e6e9",
+          "file": "phase4-current.spec.ts",
+          "line": 20,
+          "column": 7
+        },
+        {
+          "title": "critical mobile flows at 430px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "mobile matrix",
+                  "location": {
+                    "file": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/phase4-current.spec.ts",
+                    "line": 21,
+                    "column": 10
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 73,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:07:02.385Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "mobile matrix",
+                      "location": {
+                        "file": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/phase4-current.spec.ts",
+                        "line": 21,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "7256b7654ae89d8d623a-4362ec43aec1fadec4f9",
+          "file": "phase4-current.spec.ts",
+          "line": 20,
+          "column": 7
+        },
+        {
+          "title": "current API and methodological presentation agree",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 521,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:08:11.279Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7256b7654ae89d8d623a-aa2cf7364fcc5bc90702",
+          "file": "phase4-current.spec.ts",
+          "line": 7,
+          "column": 5
+        },
+        {
+          "title": "critical mobile flows at 375px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 26323,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:08:11.823Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7256b7654ae89d8d623a-585b9eb024b480a5017c",
+          "file": "phase4-current.spec.ts",
+          "line": 20,
+          "column": 7
+        },
+        {
+          "title": "critical mobile flows at 390px",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 33308,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:08:38.173Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7256b7654ae89d8d623a-b081d0263fb4206a63c5",
+          "file": "phase4-current.spec.ts",
+          "line": 20,
+          "column": 7
+        },
+        {
+          "title": "critical mobile flows at 430px",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 60500,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/phase4-current.spec.ts",
+                        "column": 67,
+                        "line": 49
+                      },
+                      "message": "Error: locator.click: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /Alto Acre/ }).first()\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" aria-current=\"true\" class=\"radar-list-item\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m  - element was detached from the DOM, retrying\u001b[22m\n\n\n  47 |     await page.getByLabel(\"Mínimo de sinais encontrados\").selectOption(\"1\");\n  48 |     await page.getByLabel(\"Buscar Região de Saúde\").fill(\"Alto Acre\");\n> 49 |     await page.getByRole(\"button\", { name: /Alto Acre/ }).first().click();\n     |                                                                   ^\n  50 |     const cta = page.getByRole(\"link\", { name: \"Ver análise completa\" });\n  51 |     await expect(cta).toBeVisible();\n  52 |     await cta.scrollIntoViewIfNeeded();\n    at /Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/phase4-current.spec.ts:49:67"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:09:11.498Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/brenoherculano/Projects/mente-do-brasil/web/test-results/phase4-current-critical-mobile-flows-at-430px-mobile/error-context.md"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "7256b7654ae89d8d623a-70ec8e9eb739e05299ea",
+          "file": "phase4-current.spec.ts",
+          "line": 20,
+          "column": 7
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-09-19T23:05:48.879Z",
+    "duration": 263270.669,
+    "expected": 27,
+    "skipped": 8,
+    "unexpected": 3,
+    "flaky": 0
+  }
+}

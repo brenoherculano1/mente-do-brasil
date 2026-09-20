@@ -1,6 +1,7 @@
 import { ExplorerPage } from "@/features/explorer/ExplorerPage";
 import { parseMetric } from "@/lib/metrics";
 import { EditionGate } from "@/features/availability/EditionGate";
+import { historicalYear } from "@/lib/historical";
 
 type HomeProps = {
   searchParams?: Promise<{ indicador?: string | string[]; ano?: string | string[] }>;
@@ -8,5 +9,6 @@ type HomeProps = {
 
 export default async function Home({ searchParams }: HomeProps) {
   const params = await searchParams;
-  return <EditionGate year={params?.ano} context="Mapa"><ExplorerPage initialMetric={parseMetric(params?.indicador)} /></EditionGate>;
+  const year = historicalYear(params?.ano);
+  return <EditionGate year={params?.ano} context="Mapa" historical>{year && <ExplorerPage key={year} year={year} initialMetric={parseMetric(params?.indicador)} />}</EditionGate>;
 }

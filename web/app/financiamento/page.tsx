@@ -11,5 +11,5 @@ export const metadata: Metadata = pageMetadata(
 
 export default async function Page({ searchParams }: { searchParams: Promise<{ ano?: string }> }) {
   const { ano } = await searchParams;
-  return <EditionGate year={ano} context="Recursos gerais da saúde"><FinancingPage /></EditionGate>;
+  return <EditionGate year={ano} context="Recursos gerais da saúde" period="Financiamento: série própria por exercício fiscal, independente do ano analítico."><FinancingPage /></EditionGate>;
 }

@@ -32,6 +32,8 @@ export function DataPage() {
         <section className="data-section" aria-labelledby="coverage-title">
           <p className="eyebrow">Cobertura atual</p>
           <h2 id="coverage-title">Dados validados até 2024</h2>
+          <p>Há observações históricas para 2022, 2023 e 2024: 439 Regiões de Saúde em cada ano, totalizando 1.317 observações. O ano selecionado é o fim da janela de três anos da necessidade e o dezembro de referência da estrutura.</p>
+          <p>Assim, 2022 usa necessidade de 2020–2022; 2023, de 2021–2023; e 2024, de 2022–2024. A edição analítica atual é a de 2024; ela não se confunde com os anos históricos consultáveis.</p>
           <p>
             A versão atual combina eventos registrados entre 2022 e 2024 com a
             estrutura do SUS registrada em dezembro de 2024. Essa edição permanece preservada.
@@ -52,6 +54,7 @@ export function DataPage() {
         <section className="data-section" aria-labelledby="indicators-title">
           <p className="eyebrow">O que é medido</p>
           <h2 id="indicators-title">Indicadores e períodos</h2>
+          <p>A tabela resume a edição analítica de 2024. Os indicadores históricos estão disponíveis no mapa, no perfil e no comparador para os três anos; o Radar e a análise espacial continuam vinculados a 2024.</p>
           <div className="table-wrap" tabIndex={0} role="region" aria-labelledby="indicators-title">
             <table>
               <thead><tr><th>Indicador</th><th>Valores apresentados</th><th>Período</th></tr></thead>

@@ -18,15 +18,16 @@ test.beforeAll(() => {
 
 test("home loads map, metric selector, search, and navigates to region profile", async ({ page }, testInfo) => {
   const mapResponse = page.waitForResponse((response) =>
-    response.url().includes("/api/v1/map/health-regions") &&
-    response.url().includes("geometry_profile=overview") &&
+    response.url().includes("/api/v1/historical/health-regions") &&
+    response.url().includes("year=2024") &&
     response.status() === 200,
   );
   await page.goto("/");
   const response = await mapResponse;
   const body = await response.json();
-  expect(body.features).toHaveLength(439);
-  expect(body.geometry_metadata.profile).toBe("overview");
+  expect(body.reference_year).toBe(2024);
+  expect(body.geometry.features).toHaveLength(439);
+  expect(body.geometry.geometry_metadata.profile).toBe("overview");
   await waitForMapPixels(page);
 
   await expect(page.getByRole("heading", { name: "Mente do Brasil" })).toBeVisible();
@@ -51,8 +52,8 @@ test("home loads map, metric selector, search, and navigates to region profile",
 
 test("captures home screenshot and keeps mobile layout usable", async ({ page }, testInfo) => {
   const mapResponse = page.waitForResponse((response) =>
-    response.url().includes("/api/v1/map/health-regions") &&
-    response.url().includes("geometry_profile=overview") &&
+    response.url().includes("/api/v1/historical/health-regions") &&
+    response.url().includes("year=2024") &&
     response.status() === 200,
   );
   await page.goto("/");

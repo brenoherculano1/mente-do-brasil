@@ -2,6 +2,7 @@ import { Suspense, type ReactNode } from "react";
 import Link from "next/link";
 import { internalApiBaseUrl, internalApiHeaders } from "@/lib/api/server";
 import { YearSelector } from "./YearSelector";
+import { historicalYear } from "@/lib/historical";
 import "./availability.css";
 
 type Availability = {
@@ -16,17 +17,33 @@ export function modularPreviewEnabled() {
   return process.env.VERCEL_ENV === "preview" || process.env.NODE_ENV === "development" || process.env.MDB_MODULAR_PREVIEW === "1";
 }
 
-export async function EditionGate({ year, children, context = "Dados", code }: {
+export function FutureUpdateLink() {
+  return modularPreviewEnabled() ? <Link className="small-text" href="/atualizacao-2025">Atualização 2025 — em validação</Link> : null;
+}
+
+export async function EditionGate({ year, children, context = "Dados", code, historical = false, period }: {
   year?: string | string[]; children?: ReactNode; context?: string; code?: string;
+  historical?: boolean; period?: string;
 }) {
-  const selected = (Array.isArray(year) ? year[0] : year) === "2025" ? 2025 : 2024;
+  // Legacy explicit review URLs remain supported, but are not historical years.
+  const review = year === "2025";
+  const selected = historicalYear(year);
   const preview = modularPreviewEnabled();
-  if (selected === 2025 && !preview) return <section className="page-shell">
+  if (!review && selected === null) return <section className="page-shell" role="alert">
+    <h1>Ano histórico indisponível</h1><p>Os anos consultáveis são 2022, 2023 e 2024. Nenhum dado de outro ano foi usado.</p>
+    <Link href="/">Consultar 2024</Link>
+  </section>;
+  if (review && !preview) return <section className="page-shell">
     <h1>Dados de 2025</h1><p>Esta atualização está reservada ao ambiente de revisão.</p>
     <Link href="/?ano=2024">Consultar dados de 2024</Link>
   </section>;
-  const selector = <div className="page-shell edition-bar"><Suspense><YearSelector year={selected} preview={preview} /></Suspense></div>;
-  if (selected === 2024) return <>{selector}{children}</>;
+  if (!review) return <>
+    <div className="page-shell edition-bar">
+      {historical && selected !== null && <Suspense><YearSelector year={selected} /></Suspense>}
+      {period && <p className="small-text">{period}</p>}
+      <FutureUpdateLink />
+    </div>{children}
+  </>;
   const response = await fetch(`${internalApiBaseUrl()}/api/v1/observations/availability?year=2025`, {
     headers: internalApiHeaders(), cache: "no-store",
   });
@@ -39,7 +56,8 @@ export async function EditionGate({ year, children, context = "Dados", code }: {
     throw new Error("A apresentação de valores observados exige um contrato validado.");
   }
   const core = catalog.indicators.filter((item) => !item.indicator_id.endsWith("_rate") && !["pooled_psychiatric_admissions", "suicide_deaths", "radar_capacity_signals"].includes(item.indicator_id));
-  return <>{selector}<div className="page-shell availability-page">
+  return <div className="page-shell availability-page">
+    <Link href="/">Voltar aos dados históricos de 2024</Link>
     <header><p className="eyebrow">{context}</p><h1>Dados disponíveis para 2025</h1>
       <p>Cada indicador tem seu próprio calendário de atualização. Valores ausentes não são estimados nem substituídos.</p>
       {code && <p>A seleção territorial de 2024 foi preservada. A composição regional de 2025 ainda está em validação.</p>}
@@ -64,7 +82,7 @@ export async function EditionGate({ year, children, context = "Dados", code }: {
           <p>{item.reason_unavailable}</p></div>
       </section>)}
     </div>
-    <p>Não existe uma edição analítica completa de 2025. Os dados históricos de 2024 permanecem preservados.</p>
-    <Link href="/dados?ano=2025">Fontes e disponibilidade por indicador</Link>
-  </div></>;
+    <p>Não existe uma edição analítica completa de 2025. Os dados históricos de 2022, 2023 e 2024 permanecem preservados.</p>
+    <Link href="/dados">Fontes e cobertura histórica</Link>
+  </div>;
 }

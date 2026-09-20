@@ -91,8 +91,8 @@ export type MapItem = {
   metric: MetricId;
   value: number | null;
   data_quality_flags: string[];
-  lisa_significant: boolean;
-  lisa_cluster: LisaCluster | null;
+  lisa_significant?: boolean;
+  lisa_cluster?: LisaCluster | null;
 };
 
 export type HealthRegionFeature = {

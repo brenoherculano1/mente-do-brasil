@@ -1,27 +1,29 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { getHealthRegionProfile, getMapData } from "@/lib/api/client";
+import { request } from "@/lib/api/client";
+import { historicalSummary, validateHistoricalResponse, type HistoricalRecord, type HistoricalResponse, type HistoricalYear } from "@/lib/historical";
 import { DEFAULT_METRIC, getMetricConfig, METRICS } from "@/lib/metrics";
-import type { HealthRegionFeatureCollection, HealthRegionProfile, MetricId } from "@/types/api";
+import type { HealthRegionFeatureCollection, MetricId } from "@/types/api";
 import { HealthRegionMap } from "./HealthRegionMap";
 import { MapLegend } from "./MapLegend";
 import { MetricSelector } from "./MetricSelector";
 import { SelectedRegionPanel } from "./SelectedRegionPanel";
 import { TerritorySearch } from "./TerritorySearch";
 
-export function ExplorerPage({ initialMetric }: { initialMetric: MetricId }) {
+export function ExplorerPage({ initialMetric, year = 2024 }: { initialMetric: MetricId; year?: HistoricalYear }) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [metric, setMetric] = useState<MetricId>(initialMetric || DEFAULT_METRIC);
   const [mapData, setMapData] = useState<HealthRegionFeatureCollection | null>(null);
   const [selectedCode, setSelectedCode] = useState<string | null>(null);
-  const [selectedProfile, setSelectedProfile] = useState<HealthRegionProfile | null>(null);
+  const [records, setRecords] = useState<HistoricalRecord[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const metricConfig = useMemo(() => getMetricConfig(metric), [metric]);
+  const requestSequence = useRef(0);
 
   useEffect(() => {
     const indicator = searchParams.get("indicador");
@@ -32,31 +34,33 @@ export function ExplorerPage({ initialMetric }: { initialMetric: MetricId }) {
   }, [metric, searchParams]);
 
   const loadMap = useCallback(async () => {
+    const sequence = ++requestSequence.current;
     setLoading(true);
     setError(null);
     try {
-      const data = await getMapData(metric);
-      setMapData(data);
+      const data = validateHistoricalResponse(await request<HistoricalResponse>(`/api/v1/historical/health-regions?year=${year}&metric=${metric}&include_geometry=true`), year);
+      if (sequence !== requestSequence.current) return;
+      if (!data.geometry || data.geometry.features.length !== 439) throw new Error("Mapa histórico incompleto.");
+      setMapData(data.geometry);
+      setRecords(data.records);
     } catch {
+      if (sequence !== requestSequence.current) return;
       setError("Não foi possível carregar os dados agora.");
     } finally {
-      setLoading(false);
+      if (sequence === requestSequence.current) setLoading(false);
     }
-  }, [metric]);
+  }, [metric, year]);
 
   useEffect(() => {
     void loadMap();
+    return () => { requestSequence.current += 1; };
   }, [loadMap]);
 
-  const selectRegion = useCallback(async (code: string) => {
+  const selectRegion = useCallback((code: string) => {
     setSelectedCode(code);
-    try {
-      const profile = await getHealthRegionProfile(code);
-      setSelectedProfile(profile);
-    } catch {
-      setSelectedProfile(null);
-    }
   }, []);
+  const selectedRecord = records.find((record) => record.health_region_code === selectedCode);
+  const selectedProfile = selectedRecord ? historicalSummary(selectedRecord) : null;
 
   const onMetricChange = (nextMetric: MetricId) => {
     setMetric(nextMetric);
@@ -81,7 +85,7 @@ export function ExplorerPage({ initialMetric }: { initialMetric: MetricId }) {
         <h2>Como está a saúde mental da minha região e quais são os principais desafios?</h2>
         <div className="home-actions">
           <a className="button" href="#mapa">Explore sua região</a>
-          <Link className="text-button" href="/comparar">Compare territórios</Link>
+          <Link className="text-button" href={`/comparar?ano=${year}`}>Compare territórios</Link>
           <Link className="text-button" href="/radar">Entenda os desafios</Link>
         </div>
         <dl className="home-facts" aria-label="Cobertura da plataforma">
@@ -130,6 +134,7 @@ export function ExplorerPage({ initialMetric }: { initialMetric: MetricId }) {
             feature={selectedFeature}
             profile={selectedProfile}
             loading={Boolean(selectedCode && !selectedProfile)}
+            year={year}
           />
           <div className="control-group">
             <p className="field-label">Indicador selecionado</p>
@@ -142,7 +147,7 @@ export function ExplorerPage({ initialMetric }: { initialMetric: MetricId }) {
             values={mapData?.features.map((f) => f.properties.value) ?? []}
           />
           <p className="small-text">
-            Dados de 2022 a 2024 e registros de dezembro de 2024, conforme o indicador.
+            Necessidade: {year - 2} a {year}. Estrutura: dezembro de {year}.
             Consulte a metodologia para conhecer fontes, períodos e limitações.
           </p>
           <AccessibleRegionList

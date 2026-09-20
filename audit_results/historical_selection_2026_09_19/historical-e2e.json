@@ -1,0 +1,437 @@
+{
+  "config": {
+    "argv": [
+      "/usr/local/bin/node",
+      "/Users/brenoherculano/Projects/mente-do-brasil/web/node_modules/.bin/playwright",
+      "test",
+      "tests/e2e/historical-selection.spec.ts",
+      "--workers=1",
+      "--reporter=line,json"
+    ],
+    "configFile": "/Users/brenoherculano/Projects/mente-do-brasil/web/playwright.config.ts",
+    "rootDir": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/brenoherculano/Projects/mente-do-brasil/web/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "desktop",
+        "name": "desktop",
+        "testDir": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/Users/brenoherculano/Projects/mente-do-brasil/web/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "mobile",
+        "name": "mobile",
+        "testDir": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "line"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run start",
+      "url": "http://127.0.0.1:3000",
+      "reuseExistingServer": true,
+      "timeout": 120000
+    }
+  },
+  "suites": [
+    {
+      "title": "historical-selection.spec.ts",
+      "file": "historical-selection.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "default 2024 and each historical anchor return their frozen observations",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11278,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:11:11.524Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a738154b301b528a2c46-46d852d2ba811e4c7c7a",
+          "file": "historical-selection.spec.ts",
+          "line": 7,
+          "column": 5
+        },
+        {
+          "title": "historical profiles and comparisons never use a 2024 profile fallback",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2658,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:11:23.438Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a738154b301b528a2c46-f7c5f3aef7990b1b9afd",
+          "file": "historical-selection.spec.ts",
+          "line": 31,
+          "column": 5
+        },
+        {
+          "title": "each product retains its own temporal meaning and normal navigation stays historical",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 15682,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByLabel('Período', { exact: true }).locator('option')\nTimeout: 15000ms\n\u001b[32m- Expected  - 5\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"2022 → 2023\",\u001b[39m\n\u001b[32m-   \"2023 → 2024\",\u001b[39m\n\u001b[32m-   \"2022 → 2024\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Período', { exact: true }).locator('option')\u001b[22m\n\u001b[2m    33 × locator resolved to 0 elements\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByLabel('Período', { exact: true }).locator('option')\nTimeout: 15000ms\n\u001b[32m- Expected  - 5\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"2022 → 2023\",\u001b[39m\n\u001b[32m-   \"2023 → 2024\",\u001b[39m\n\u001b[32m-   \"2022 → 2024\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Período', { exact: true }).locator('option')\u001b[22m\n\u001b[2m    33 × locator resolved to 0 elements\u001b[22m\n\n    at /Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/historical-selection.spec.ts:50:79",
+                    "location": {
+                      "file": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/historical-selection.spec.ts",
+                      "column": 79,
+                      "line": 50
+                    },
+                    "snippet": "  48 |   await page.goto(\"/mudancas\");\n  49 |   await expect(page.locator(\"#edition-year\")).toHaveCount(0);\n> 50 |   await expect(page.getByLabel(\"Período\", { exact: true }).locator(\"option\")).toHaveText([\"2022 → 2023\", \"2023 → 2024\", \"2022 → 2024\"]);\n     |                                                                               ^\n  51 |   await page.goto(\"/financiamento\");\n  52 |   await expect(page.locator(\"#edition-year\")).toHaveCount(0);\n  53 |   await expect(page.getByLabel(\"Exercício\", { exact: true }).locator(\"option\")).toHaveText([\"2022\", \"2023\", \"2024\"]);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/historical-selection.spec.ts",
+                        "column": 79,
+                        "line": 50
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByLabel('Período', { exact: true }).locator('option')\nTimeout: 15000ms\n\u001b[32m- Expected  - 5\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"2022 → 2023\",\u001b[39m\n\u001b[32m-   \"2023 → 2024\",\u001b[39m\n\u001b[32m-   \"2022 → 2024\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Período', { exact: true }).locator('option')\u001b[22m\n\u001b[2m    33 × locator resolved to 0 elements\u001b[22m\n\n\n  48 |   await page.goto(\"/mudancas\");\n  49 |   await expect(page.locator(\"#edition-year\")).toHaveCount(0);\n> 50 |   await expect(page.getByLabel(\"Período\", { exact: true }).locator(\"option\")).toHaveText([\"2022 → 2023\", \"2023 → 2024\", \"2022 → 2024\"]);\n     |                                                                               ^\n  51 |   await page.goto(\"/financiamento\");\n  52 |   await expect(page.locator(\"#edition-year\")).toHaveCount(0);\n  53 |   await expect(page.getByLabel(\"Exercício\", { exact: true }).locator(\"option\")).toHaveText([\"2022\", \"2023\", \"2024\"]);\n    at /Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/historical-selection.spec.ts:50:79"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:11:26.138Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/brenoherculano/Projects/mente-do-brasil/web/test-results/historical-selection-each--7105c-navigation-stays-historical-desktop/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/historical-selection.spec.ts",
+                    "column": 79,
+                    "line": 50
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a738154b301b528a2c46-d9a2731db1e61b3f08e5",
+          "file": "historical-selection.spec.ts",
+          "line": 47,
+          "column": 5
+        },
+        {
+          "title": "unsupported year fails visibly and future status is separate",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1280,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:11:42.356Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a738154b301b528a2c46-33aeda18eda35cf5b78a",
+          "file": "historical-selection.spec.ts",
+          "line": 67,
+          "column": 5
+        },
+        {
+          "title": "default 2024 and each historical anchor return their frozen observations",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 14381,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:11:45.124Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a738154b301b528a2c46-9a4e53adf12ad0962798",
+          "file": "historical-selection.spec.ts",
+          "line": 7,
+          "column": 5
+        },
+        {
+          "title": "historical profiles and comparisons never use a 2024 profile fallback",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2853,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:11:59.879Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a738154b301b528a2c46-0ba0059ff17343bcf0c6",
+          "file": "historical-selection.spec.ts",
+          "line": 31,
+          "column": 5
+        },
+        {
+          "title": "each product retains its own temporal meaning and normal navigation stays historical",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 15541,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByLabel('Período', { exact: true }).locator('option')\nTimeout: 15000ms\n\u001b[32m- Expected  - 5\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"2022 → 2023\",\u001b[39m\n\u001b[32m-   \"2023 → 2024\",\u001b[39m\n\u001b[32m-   \"2022 → 2024\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Período', { exact: true }).locator('option')\u001b[22m\n\u001b[2m    32 × locator resolved to 0 elements\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByLabel('Período', { exact: true }).locator('option')\nTimeout: 15000ms\n\u001b[32m- Expected  - 5\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"2022 → 2023\",\u001b[39m\n\u001b[32m-   \"2023 → 2024\",\u001b[39m\n\u001b[32m-   \"2022 → 2024\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Período', { exact: true }).locator('option')\u001b[22m\n\u001b[2m    32 × locator resolved to 0 elements\u001b[22m\n\n    at /Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/historical-selection.spec.ts:50:79",
+                    "location": {
+                      "file": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/historical-selection.spec.ts",
+                      "column": 79,
+                      "line": 50
+                    },
+                    "snippet": "  48 |   await page.goto(\"/mudancas\");\n  49 |   await expect(page.locator(\"#edition-year\")).toHaveCount(0);\n> 50 |   await expect(page.getByLabel(\"Período\", { exact: true }).locator(\"option\")).toHaveText([\"2022 → 2023\", \"2023 → 2024\", \"2022 → 2024\"]);\n     |                                                                               ^\n  51 |   await page.goto(\"/financiamento\");\n  52 |   await expect(page.locator(\"#edition-year\")).toHaveCount(0);\n  53 |   await expect(page.getByLabel(\"Exercício\", { exact: true }).locator(\"option\")).toHaveText([\"2022\", \"2023\", \"2024\"]);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/historical-selection.spec.ts",
+                        "column": 79,
+                        "line": 50
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByLabel('Período', { exact: true }).locator('option')\nTimeout: 15000ms\n\u001b[32m- Expected  - 5\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"2022 → 2023\",\u001b[39m\n\u001b[32m-   \"2023 → 2024\",\u001b[39m\n\u001b[32m-   \"2022 → 2024\",\u001b[39m\n\u001b[32m- ]\u001b[39m\n\u001b[31m+ Array []\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Período', { exact: true }).locator('option')\u001b[22m\n\u001b[2m    32 × locator resolved to 0 elements\u001b[22m\n\n\n  48 |   await page.goto(\"/mudancas\");\n  49 |   await expect(page.locator(\"#edition-year\")).toHaveCount(0);\n> 50 |   await expect(page.getByLabel(\"Período\", { exact: true }).locator(\"option\")).toHaveText([\"2022 → 2023\", \"2023 → 2024\", \"2022 → 2024\"]);\n     |                                                                               ^\n  51 |   await page.goto(\"/financiamento\");\n  52 |   await expect(page.locator(\"#edition-year\")).toHaveCount(0);\n  53 |   await expect(page.getByLabel(\"Exercício\", { exact: true }).locator(\"option\")).toHaveText([\"2022\", \"2023\", \"2024\"]);\n    at /Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/historical-selection.spec.ts:50:79"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:12:02.769Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/brenoherculano/Projects/mente-do-brasil/web/test-results/historical-selection-each--7105c-navigation-stays-historical-mobile/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/brenoherculano/Projects/mente-do-brasil/web/tests/e2e/historical-selection.spec.ts",
+                    "column": 79,
+                    "line": 50
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a738154b301b528a2c46-2b4aeeb596557a113914",
+          "file": "historical-selection.spec.ts",
+          "line": 47,
+          "column": 5
+        },
+        {
+          "title": "unsupported year fails visibly and future status is separate",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 722,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-19T23:12:18.832Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a738154b301b528a2c46-fcc8dc58a443a51f95d4",
+          "file": "historical-selection.spec.ts",
+          "line": 67,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-09-19T23:11:10.631Z",
+    "duration": 69210.476,
+    "expected": 6,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}

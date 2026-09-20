@@ -7,11 +7,11 @@ test("2025 never renders historical map values and year selection returns to 202
   await expect(page.getByLabel("Indicador do mapa em 2025")).toBeDisabled();
   await expect(page.locator(".maplibregl-canvas")).toHaveCount(0);
   await expect(page.locator(".availability-row")).toHaveCount(14);
-  await page.getByLabel("Ano de referência").selectOption("2024");
-  await expect(page).toHaveURL(/ano=2024/);
+  await page.getByRole("link", { name: "Voltar aos dados históricos de 2024" }).click();
+  await expect(page.getByLabel("Ano de referência")).toHaveValue("2024");
   await expect(page.locator(".availability-list")).toHaveCount(0);
   await expect(page.locator(".maplibregl-canvas")).toBeVisible();
-  await page.getByLabel("Ano de referência").selectOption("2025");
+  await page.getByRole("link", { name: "Atualização 2025 — em validação" }).click();
   await expect(page.getByLabel("Indicador do mapa em 2025")).toBeDisabled();
 });
 

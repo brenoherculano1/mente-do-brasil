@@ -14,7 +14,7 @@ from api.config import get_settings
 from api.routers import health_regions as health_regions_router
 from api.schemas.common import GeometryProfile, Metric
 
-RELEASE_ID = "MDB_ANALYTICAL_2024_1"
+RELEASE_ID = "MDB_ANALYTICAL_2024_2"
 WEB_GEOMETRY_VERSION = "MDB_WEB_GEOMETRY_V1"
 
 
@@ -75,6 +75,28 @@ def test_health_and_ready_contracts():
         200,
         {"status": "ready", "database": "ok", "release_id": RELEASE_ID},
     )
+
+
+@pytest.mark.parametrize("year", [2022, 2023, 2024])
+def test_live_historical_anchor_matches_all_frozen_database_records(year):
+    status, body = api_get(f"/api/v1/historical/health-regions?year={year}")
+    assert status == 200
+    assert body["reference_year"] == year
+    assert body["count"] == len(body["records"]) == 439
+    frozen = db_fetchone(
+        'SELECT jsonb_agg("values" ORDER BY health_region_code) '
+        "FROM analytics.health_region_temporal WHERE temporal_version=%s AND year=%s",
+        ("MDB_TEMPORAL_2022_2024_1", year),
+    )[0]
+    assert body["records"] == frozen
+    assert {r["year"] for r in body["records"]} == {year}
+
+
+def test_live_historical_default_and_invalid_years():
+    status, body = api_get("/api/v1/historical/health-regions")
+    assert status == 200 and body["reference_year"] == 2024
+    for year in (2021, 2025, 2026, "invalid"):
+        assert api_get(f"/api/v1/historical/health-regions?year={year}")[0] == 422
 
 
 def test_release_and_indicator_contracts():
@@ -459,7 +481,7 @@ def test_error_contracts_and_parameter_guards():
 def test_territorial_intelligence_radar_contract():
     status, radar = api_get("/api/v1/radar/health-regions")
     assert status == 200
-    assert radar["release"]["intelligence_version"] == "MDB_TERRITORIAL_INTELLIGENCE_1.0"
+    assert radar["release"]["intelligence_version"] == "MDB_TERRITORIAL_INTELLIGENCE_1.1"
     assert radar["filters"]["min_signal_families"] == 2
     assert radar["total_matching"] == 113
     assert radar["geometry"] is None
@@ -526,10 +548,10 @@ def test_territorial_intelligence_explanation_and_peers_contract():
 def test_manager_brief_compare_and_pdf_contracts():
     status, brief = api_get("/api/v1/manager/health-regions/12001")
     assert status == 200
-    assert brief["versions"]["manager_mode_version"] == "MDB_MANAGER_MODE_1.0"
-    assert brief["versions"]["report_version"] == "MDB_TERRITORIAL_REPORT_1.0"
-    assert brief["versions"]["investigation_guide_version"] == "MDB_INVESTIGATION_GUIDE_1.0"
-    assert brief["versions"]["manager_brief_version"] == "MDB_MANAGER_BRIEF_1.0"
+    assert brief["versions"]["manager_mode_version"] == "MDB_MANAGER_MODE_2.0"
+    assert brief["versions"]["report_version"] == "MDB_TERRITORIAL_REPORT_2.0"
+    assert brief["versions"]["investigation_guide_version"] == "MDB_INVESTIGATION_GUIDE_2.0"
+    assert brief["versions"]["manager_brief_version"] == "MDB_MANAGER_BRIEF_2.0"
     assert brief["region"]["health_region_code"] == "12001"
     assert len(brief["decomposition"]) == 5
     assert len(brief["investigation_questions"]) <= 8

@@ -17,6 +17,69 @@ FAMILIES = (
 )
 
 
+def historical_regions(db: Database, year: int, metric: str, geometry: bool):
+    """Retrieve an anchor, never substitute the current analytical release."""
+    if year not in (2022, 2023, 2024):
+        raise api_error(422, "UNSUPPORTED_YEAR", "Historical year unavailable.")
+    select, join = "", ""
+    params = []
+    if geometry:
+        select = ", ST_AsGeoJSON(w.geom)::json AS geometry"
+        join = (
+            "JOIN web.health_region_geometry w ON w.geography_version=t.geography_version "
+            "AND w.health_region_code=t.health_region_code "
+            "AND w.web_geometry_version=%s AND w.geometry_profile='overview' "
+        )
+        params.append(WEB_GEOMETRY_VERSION)
+    params.extend([TEMPORAL, year])
+    rows = db.rows(
+        f'SELECT t."values"{select} FROM analytics.health_region_temporal t '
+        f"{join}WHERE t.temporal_version=%s AND t.year=%s ORDER BY t.health_region_code",
+        tuple(params),
+    )
+    if len(rows) != 439 or any(r["values"]["year"] != year for r in rows):
+        raise api_error(503, "INCOMPLETE_HISTORICAL_YEAR", "Historical anchor is incomplete.")
+    records = [r["values"] for r in rows]
+    result = {
+        "reference_year": year,
+        "temporal_version": TEMPORAL,
+        "release_id": CURRENT,
+        "count": len(records),
+        "records": records,
+        "geometry": None,
+    }
+    if geometry:
+        result["geometry"] = {
+            "type": "FeatureCollection",
+            "reference_year": year,
+            "crs": {"type": "name", "properties": {"name": "EPSG:4326"}},
+            "geometry_metadata": {
+                "profile": "overview",
+                "version": WEB_GEOMETRY_VERSION,
+                "crs": "EPSG:4326",
+            },
+            "features": [
+                {
+                    "type": "Feature",
+                    "id": r["health_region_code"],
+                    "geometry": row["geometry"],
+                    "properties": {
+                        "health_region_code": r["health_region_code"],
+                        "health_region_name": r["health_region_name"],
+                        "uf": r["uf"],
+                        "population": r["population"],
+                        "year": year,
+                        "metric": metric,
+                        "value": r[metric],
+                        "data_quality_flags": r["quality_flags"],
+                    },
+                }
+                for r, row in zip(records, rows, strict=True)
+            ],
+        }
+    return result
+
+
 def timeline(db: Database, code: str):
     rows = db.rows(
         'SELECT "values" FROM analytics.health_region_temporal '
@@ -74,7 +137,11 @@ def list_changes(
     select, join = "", ""
     if geometry:
         select = ", ST_AsGeoJSON(w.geom)::json AS geometry"
-        join = "JOIN web.health_region_geometry w ON w.geography_version=c.geography_version AND w.health_region_code=c.health_region_code AND w.web_geometry_version=%s AND w.geometry_profile='overview'"
+        join = (
+            "JOIN web.health_region_geometry w ON w.geography_version=c.geography_version "
+            "AND w.health_region_code=c.health_region_code AND w.web_geometry_version=%s "
+            "AND w.geometry_profile='overview'"
+        )
         params.insert(0, WEB_GEOMETRY_VERSION)
     rows = db.rows(
         f'SELECT c."values", g.health_region_name, g.uf{select} '
@@ -137,7 +204,8 @@ def flows(db: Database, code: str, perspective: str, limit: int):
         (FLOW, code, limit),
     )
     center = db.row(
-        "SELECT health_region_name,uf,ST_X(ST_Transform(ST_PointOnSurface(geom),4326)) AS longitude, "
+        "SELECT health_region_name,uf,"
+        "ST_X(ST_Transform(ST_PointOnSurface(geom),4326)) AS longitude, "
         "ST_Y(ST_Transform(ST_PointOnSurface(geom),4326)) AS latitude FROM geo.health_regions "
         "WHERE geography_version=%s AND health_region_code=%s",
         ("BR_HEALTH_REGIONS_END2024_V1", code),
@@ -151,5 +219,8 @@ def flows(db: Database, code: str, perspective: str, limit: int):
         "summary": summary["values"],
         "connections": rows,
         "unit": "AIHs/admissions; not unique patients",
-        "suppression": "Counts below five suppressed. Regional pairs containing suppressed contributions are unavailable.",
+        "suppression": (
+            "Counts below five suppressed. "
+            "Regional pairs containing suppressed contributions are unavailable."
+        ),
     }

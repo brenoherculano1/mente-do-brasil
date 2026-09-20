@@ -21,6 +21,8 @@ import { RegionAdvanced } from "@/features/advanced/RegionAdvanced";
 import { ShareButton } from "@/features/share/ShareButton";
 import { toneForDirection, toneLabel } from "@/lib/indicator-tone";
 import { EditionGate } from "@/features/availability/EditionGate";
+import { historicalYear } from "@/lib/historical";
+import { HistoricalTerritories } from "@/features/advanced/HistoricalTerritories";
 
 type RegionPageProps = {
   params: Promise<{ codigo: string }>;
@@ -51,6 +53,10 @@ export default async function RegionProfilePage({ params, searchParams }: Region
   if (!/^\d{5}$/.test(codigo)) notFound();
   const query = await searchParams;
   if (query?.ano === "2025") return <EditionGate year="2025" context="Perfil regional" code={codigo} />;
+  const year = historicalYear(query?.ano);
+  if (year !== 2024) return <EditionGate year={query?.ano} historical context="Perfil regional">
+    {year && <HistoricalTerritories key={`${codigo}-${year}`} year={year} code={codigo} />}
+  </EditionGate>;
   let data: [HealthRegionProfile, ExplanationResponse, PeersResponse, HealthRegionMunicipalities];
   try {
     data = await Promise.all([
@@ -68,7 +74,7 @@ export default async function RegionProfilePage({ params, searchParams }: Region
   const situation = describeSituation(profile.need.score, profile.capacity.score);
   return (
     <div className="profile-shell page-shell">
-      <EditionGate year="2024" />
+      <EditionGate year="2024" historical />
       <nav className="breadcrumbs" aria-label="Breadcrumb">
         <Link href="/">Brasil</Link>
         <span>/</span>

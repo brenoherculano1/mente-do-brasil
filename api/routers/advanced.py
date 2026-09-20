@@ -3,11 +3,30 @@ from typing import Annotated, Literal
 from fastapi import APIRouter, Path, Query
 
 from api.dependencies import DatabaseDep
-from api.services.advanced import flows, list_changes, timeline
+from api.services.advanced import flows, historical_regions, list_changes, timeline
 
 router = APIRouter(prefix="/api/v1", tags=["advanced territorial"])
 Code = Annotated[str, Path(pattern=r"^\d{5}$")]
 Year = Annotated[int, Query(ge=2022, le=2024)]
+
+
+@router.get("/historical/health-regions")
+def historical_anchor(
+    db: DatabaseDep,
+    year: Year = 2024,
+    metric: Literal[
+        "mismatch_score",
+        "need_score",
+        "capacity_score",
+        "suicide_asmr",
+        "psychiatric_admission_rate",
+        "caps_rate",
+        "mental_health_beds_sus_rate",
+        "psychiatrist_fte_rate",
+    ] = "mismatch_score",
+    include_geometry: bool = False,
+):
+    return historical_regions(db, year, metric, include_geometry)
 
 
 @router.get("/health-regions/{code}/timeline")

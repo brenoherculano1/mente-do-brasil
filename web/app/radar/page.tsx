@@ -16,5 +16,5 @@ export const metadata: Metadata = pageMetadata(
 export default async function Page({ searchParams }: RadarRouteProps) {
   const params = await searchParams;
   const uf = Array.isArray(params?.uf) ? params?.uf[0] : params?.uf;
-  return <EditionGate year={params?.ano} context="Sinais regionais"><RadarPage initialUf={uf?.toUpperCase()} /></EditionGate>;
+  return <EditionGate year={params?.ano} context="Sinais regionais" period="Radar da edição analítica de 2024. Não há Radar histórico de 2022 ou 2023."><RadarPage initialUf={uf?.toUpperCase()} /></EditionGate>;
 }
